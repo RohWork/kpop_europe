@@ -9,7 +9,7 @@
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container-fluid">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-nonee">
                       <svg class="bi me-4" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
                       <span class="fs-4">Kpop In Europe</span>
                     </a>
