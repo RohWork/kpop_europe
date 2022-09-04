@@ -1,4 +1,4 @@
-<div class="flex-shrink-0 p-3 bg-white" style="width:100px">
+<div class="flex-shrink-0 p-3 bg-white" style="width:200px">
     <a class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <span class="fs-5 fw-semibold">Kpop</span>
     </a>
