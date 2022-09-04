@@ -15,7 +15,7 @@
                     <li>
                         <a href="#"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false" class="link-dark rounded">Germany</a>
                         <div class="collapse show" id="germany-collapse">
-                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small">Schedule</span></a>
+                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small text-decoration-none">Schedule</span></a>
                         </div>
                     </li>
                 </ul>
