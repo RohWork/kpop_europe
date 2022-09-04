@@ -13,7 +13,7 @@
             <div class="collapse" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li>
-                        <button class="btn btn-toggle align-items-center rounded pb-1 smal"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false">Germany</button>
+                        <button class="btn btn-toggle align-items-center rounded pb-1 small"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false">Germany</button>
                         <div class="collapse" id="germany-collapse">
                             <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </div>
