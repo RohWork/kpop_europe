@@ -66,6 +66,9 @@
                 </ul>
             </div>
         </li>
+        <li class="mb-1">
+            <a href="#" class="nav-link link-dark">Community</a>
+        </li>
     </ul>
 </div>
 <div class="b-example-divider"></div>
