@@ -1,4 +1,4 @@
-<link href="/asset/css/sidebars.css" rel="stylesheet">
+<link href="/asset/css/sidebar.css" rel="stylesheet">
 <div class="flex-shrink-0 p-3 bg-white" style="width:200px">
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
         <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
