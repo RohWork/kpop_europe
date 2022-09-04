@@ -12,12 +12,9 @@
             <span class="fs-4">Kppop In Europe</span>
           </a>
 
-          <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-          </ul>
+          <span class="nav nav-pills">
+              to add,modify your schedule<br/>
+              Contact us
+          </span>
         </header>
 
