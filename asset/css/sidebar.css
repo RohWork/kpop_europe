@@ -48,6 +48,11 @@ main {
   background-color: transparent;
   border: 0;
 }
+
+.btn-toggle2{
+    font-weight: 300;
+    padding: .1px .1px;
+}
 .btn-toggle:hover,
 .btn-toggle:focus {
   color: rgba(0, 0, 0, .85);
@@ -61,6 +66,8 @@ main {
   transition: transform .35s ease;
   transform-origin: .5em 50%;
 }
+
+
 
 .btn-toggle[aria-expanded="true"] {
   color: rgba(0, 0, 0, .85);
