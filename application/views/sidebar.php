@@ -7,13 +7,13 @@
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
                 Kpop Party
             </button>
             <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li>
-                        <a href="#"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="true" class="link-dark rounded">Germany</a>
+                        <a href="#"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false" class="link-dark rounded">Germany</a>
                         <div class="collapse show" id="germany-collapse">
                             <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small">Schedule</span></a>
                         </div>
