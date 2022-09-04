@@ -12,7 +12,12 @@
             </button>
             <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-dark rounded">Schedule</a></li>
+                    <li>
+                        <a href="#"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="true" class="link-dark rounded">Germany</a>
+                        <div class="collapse show" id="germany-collapse">
+                            Schedule
+                        </div>
+                    </li>
                 </ul>
             </div>
         </li>
