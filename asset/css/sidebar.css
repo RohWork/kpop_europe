@@ -89,6 +89,20 @@ main {
   background-color: #d2f4ea;
 }
 
+
+.btn-toggle-nav2 a {
+  display: inline-flex;
+  padding: .1875rem 1rem;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+}
+.btn-toggle-nav2 a:hover,
+.btn-toggle-nav2 a:focus {
+  background-color: #d2f4ea;
+}
+
+
 .scrollarea {
   overflow-y: auto;
 }
