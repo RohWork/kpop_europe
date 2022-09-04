@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Main extends CI_Controller {
 
     function __construct() {
         parent ::__construct();
@@ -10,7 +10,7 @@ class Welcome extends CI_Controller {
         
         
         $this->load->view('header');
-        $this->load->view('welcome_message');
+        $this->load->view('main');
         $this->load->view('header');
     }
 
