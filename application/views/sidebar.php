@@ -7,7 +7,7 @@
             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                 Kpop Party
             </button>
-            <div class="btn btn-toggle align-items-center rounded collapsed">
+            <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a class="link-dark rounded">Schedule</a></li>
                 </ul>
