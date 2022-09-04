@@ -7,10 +7,10 @@
     </a>
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#party-collapse" aria-expanded="false">
                 Kpop Party
             </button>
-            <div class="collapse" id="home-collapse">
+            <div class="collapse" id="party-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li>
                         <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false">Germany</button>
@@ -18,8 +18,33 @@
                             <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </div>
                     </li>
+                    <li>
+                        <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small"  data-bs-toggle="collapse" data-bs-target="#france-collapse" aria-expanded="false">France</button>
+                        <div class="collapse" id="france-collapse">
+                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small"  data-bs-toggle="collapse" data-bs-target="#uk-collapse" aria-expanded="false">UK</button>
+                        <div class="collapse" id="uk-collapse">
+                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small"  data-bs-toggle="collapse" data-bs-target="#poland-collapse" aria-expanded="false">Poland</button>
+                        <div class="collapse" id="poland-collapse">
+                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small"  data-bs-toggle="collapse" data-bs-target="#czech-collapse" aria-expanded="false">Czech</button>
+                        <div class="collapse" id="czech-collapse">
+                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                        </div>
+                    </li>
                 </ul>
             </div>
+            
         </li>
     </ul>
 </div>
