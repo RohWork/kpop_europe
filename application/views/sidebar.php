@@ -10,11 +10,11 @@
             <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
                 Kpop Party
             </button>
-            <div class="collapse show" id="home-collapse">
+            <div class="collapse" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li>
                         <a href="#"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false" class="link-dark rounded">Germany</a>
-                        <div class="collapse show" id="germany-collapse">
+                        <div class="collapse" id="germany-collapse">
                             <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </div>
                     </li>
