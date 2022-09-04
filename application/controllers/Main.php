@@ -10,7 +10,7 @@ class Main extends CI_Controller {
         
         
         $this->load->view('header');
-        $this->load->vier('sidebar');
+        $this->load->view('sidebar');
         $this->load->view('main');
         $this->load->view('footer');
     }
