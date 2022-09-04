@@ -66,8 +66,9 @@
                 </ul>
             </div>
         </li>
+        <li class="border-top my-3"></li>
         <li class="mb-1">
-            <a href="#" class="nav-link link-dark">Community</a>
+            <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
         </li>
     </ul>
 </div>
