@@ -11,7 +11,7 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                       <svg class="bi me-4" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                      <span class="fs-4">Kppop In Europe</span>
+                      <span class="fs-4">Kpop In Europe</span>
                     </a>
 
                     <div class="text-end">
