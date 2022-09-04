@@ -7,14 +7,18 @@
     </head>
     <body>
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container-fluid">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <svg class="bi me-4" width="50%" height="32"><use xlink:href="#bootstrap"/></svg>
-            <span class="fs-4">Kppop In Europe</span>
-          </a>
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                      <svg class="bi me-4" width="50%" height="32"><use xlink:href="#bootstrap"/></svg>
+                      <span class="fs-4">Kppop In Europe</span>
+                    </a>
 
-          <span class="nav nav-pills">
-              to add,modify your schedule<br/>
-              Contact us
-          </span>
+                    <div class="text-end">
+                        to add,modify your schedule<br/>
+                        Contact us
+                    </span>
+                </div>
+            </div>
         </header>
 
