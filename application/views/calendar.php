@@ -67,7 +67,7 @@
                         echo '</font>';
                     }
                     
-                    echo $calendar['name'];
+                    echo $calendar[$year."-".$month."-".$day]['name'];
                     
                     // 14. 날짜 증가
                     $day++;
