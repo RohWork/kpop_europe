@@ -38,6 +38,7 @@ class Main extends CI_Controller {
             $data_array[$cal['start_date']]['idx'] = $cal['idx'];
             $data_array[$cal['start_date']]['name'] = $cal['name'];
         }
+        $data['calendar'] = $data_array;
         
         
         $data['prev_month'] = $prev_month = $month - 1;
