@@ -24,9 +24,9 @@ class Main extends CI_Controller {
         $today = date('j'); // 0을 포함하지 않는 일
 
         //------ $year, $month 값이 없으면 현재 날짜
-        $data['year'] = $year = isset($this->input->get('year')) ? $this->input->get('year') : $thisyear;
-        $data['month'] =$month =  isset($this->input->get('month')) ?$this->input->get('month') : $thismonth;
-        $data['day'] = $day = isset($this->input->get('month')) ? $this->input->get('month') : $today;
+        $data['year'] = $year = $this->input->get('year') !== null ? $this->input->get('year') : $thisyear;
+        $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
+        $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
 
         $data['prev_month'] = $prev_month = $month - 1;
