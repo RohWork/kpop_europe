@@ -14,5 +14,13 @@ class Main extends CI_Controller {
         $this->load->view('main');
         $this->load->view('footer');
     }
+    
+    function calendar(){
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('calendar');
+        $this->load->view('footer');
+    }
 
 }
