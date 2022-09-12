@@ -31,9 +31,11 @@ class Main extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-        $data_calendar = $this->sch_md->get_schedule($country, $year , $month);
+        
+        
+        $data_calendar = $this->sch_md->get_schedule($country, $year , sprinf("%02d",$month));
         $data_array = array();
-        var_dump($data_calendar);
+
         foreach ($data_calendar as $cal) {
             $data_array[$cal['start_date']] = array();
             $data_array[$cal['start_date']]['idx'] = $cal['idx'];
