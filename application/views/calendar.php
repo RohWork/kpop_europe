@@ -1,7 +1,7 @@
 
 
     <div class="container">
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered table-responsive" style="width:700px">
           <tr align="center" >
             <td>
                 <a href=<?php echo '/main/calendar?year='.$preyear.'&month='.$month . '&day=1'; ?>>◀◀</a>
@@ -21,13 +21,13 @@
             </td>
           </tr>
           <tr class="info">
-            <th hight="30">일</td>
-            <th>월</th>
-            <th>화</th>
-            <th>수</th>
-            <th>목</th>
-            <th>금</th>
-            <th>토</th>
+            <th hight="30" width="100">일</td>
+            <th width="100">월</th>
+            <th width="100">화</th>
+            <th width="100">수</th>
+            <th width="100">목</th>
+            <th width="100">금</th>
+            <th width="100">토</th>
           </tr>
 
           <?php
