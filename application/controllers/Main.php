@@ -36,7 +36,7 @@ class Main extends CI_Controller {
         foreach ($data_calendar as $cal) {
             $data_array[$cal['start_date']] = array();
             $data_array[$cal['start_date']]['idx'] = $cal['idx'];
-            $data_array[$cal['start_date']]['company'] = $cal['company'];
+            $data_array[$cal['start_date']]['name'] = $cal['name'];
         }
         
         
