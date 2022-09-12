@@ -31,7 +31,7 @@ class Main extends CI_Controller {
 
         $data['prev_month'] = $prev_month = $month - 1;
         $data['next_month'] = $next_month =  $month + 1;
-        $data['prev_year'] = $prev_year = $year;
+        $data['prev_year'] = $data['next_year'] = $year;
         
         if ($month == 1) {
             $data['prev_month'] = 12;
