@@ -5,6 +5,8 @@ class Main extends CI_Controller {
 
     function __construct() {
         parent ::__construct();
+        
+        $this->load->model('Schedule_model', 'sch_md', TRUE);
     }
     function index(){
         
@@ -29,7 +31,15 @@ class Main extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-
+        $data_calendar = $this->sch_md->get_schedule($country, $year , $month);
+        $data_array = array();
+        foreach ($data_calendar as $cal) {
+            $data_array[$cal['start_date']] = array();
+            $data_array[$cal['start_date']]['idx'] = $cal['idx'];
+            $data_array[$cal['start_date']]['company'] = $cal['company'];
+        }
+        
+        
         $data['prev_month'] = $prev_month = $month - 1;
         $data['next_month'] = $next_month =  $month + 1;
         $data['prev_year'] = $data['next_year'] = $year;
