@@ -14,7 +14,7 @@ class Schedule_model extends CI_Model {
                  WHERE ki.start_date LIKE '$year-$month%' AND ki.country ='$country'";
         
         $this->db->query($sSql);
-        $this->db->result_array();
+        return $this->db->result_array();
         
     }
     
