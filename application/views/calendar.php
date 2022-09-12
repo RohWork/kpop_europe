@@ -66,9 +66,9 @@
                         echo $day;
                         echo '</font>';
                     }
-                    
-                    echo $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)]['name'];
-                    
+                    if(!empty($calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)])){
+                        echo $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)]['name'];
+                    }
                     // 14. 날짜 증가
                     $day++;
                 }
