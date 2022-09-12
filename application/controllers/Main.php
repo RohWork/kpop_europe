@@ -33,6 +33,7 @@ class Main extends CI_Controller {
         
         $data_calendar = $this->sch_md->get_schedule($country, $year , $month);
         $data_array = array();
+        var_dump($data_calendar);
         foreach ($data_calendar as $cal) {
             $data_array[$cal['start_date']] = array();
             $data_array[$cal['start_date']]['idx'] = $cal['idx'];
