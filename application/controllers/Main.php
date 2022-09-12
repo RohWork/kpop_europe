@@ -19,9 +19,9 @@ class Main extends CI_Controller {
         
 
         //---- 오늘 날짜
-        $thisyear = date('Y'); // 4자리 연도
-        $thismonth = date('n'); // 0을 포함하지 않는 월
-        $today = date('j'); // 0을 포함하지 않는 일
+        $data['thisyear'] = $thisyear = date('Y'); // 4자리 연도
+        $data['thismonth'] = $thismonth = date('n'); // 0을 포함하지 않는 월
+        $data['today'] = $today = date('j'); // 0을 포함하지 않는 일
 
         //------ $year, $month 값이 없으면 현재 날짜
         $data['year'] = $year = $this->input->get('year') !== null ? $this->input->get('year') : $thisyear;
