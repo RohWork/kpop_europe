@@ -113,7 +113,7 @@
 
     function go_detail(idx_name){
         
-        var idxurl = idX_name.split("_");
+        var idxurl = idx_name.split("_");
         
         
         var url = "/main/detail/"+idxurl[0];
