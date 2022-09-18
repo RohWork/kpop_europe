@@ -77,7 +77,7 @@
                     <label class="form-label"><strong>설명글</strong></label>
                 </div>
                 <div class="col-10">
-                    <p><?=$detail_info['remark']?></p>
+                    <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
         </div>
