@@ -100,7 +100,7 @@
                 <iframe src="URL" id="detail_frame" style="width:100%; height:100%">대체 내용</iframe>  
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
             </div>
         </div>
     </div>
