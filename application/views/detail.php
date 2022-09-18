@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label">이벤트기간</label>
+                    <label class="form-label">행사기간</label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
