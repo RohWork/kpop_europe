@@ -90,7 +90,7 @@
                     <?php
                       foreach($detail_img as $img){
                     ?>
-                        <div class="carousel-item">
+                      <div class="carousel-item">
                         <img src="<?=$img['src']?>" class="d-block w-100" alt="<?=$img['title']?>">
                       </div>
                     <?php
