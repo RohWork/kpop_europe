@@ -86,7 +86,7 @@
         </table>
     </div>
     
-    <div id="detail_modal" class="modal fade">
+    <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true"W>
         
         <div class="modal-dialog" role="document">
         <div class="modal-content">
