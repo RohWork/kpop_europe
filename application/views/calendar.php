@@ -83,7 +83,7 @@
         </table>
     </div>
     
-<div id="detail_modal" class="modal" style="display: none">
+    <div id="detail_modal" class="modal">
         
         <div class="modal-dialog" role="document">
         <div class="modal-content">
