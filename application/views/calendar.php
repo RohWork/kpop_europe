@@ -119,6 +119,7 @@
         var url = "/main/detail/"+idxurl[0];
         
         $('#detail_frame').attr('src', url);
+        console.log(idxurl[1]);
         $("#modal-title").text(idxurl[1]);
         // 모달창 띄우기
         $('#detail_modal').modal("show");
