@@ -83,9 +83,25 @@
         </table>
     </div>
     
-    <div id="detail_modal" style="display: none">
-        <iframe src="URL" id="detail_frame">대체 내용</iframe>  
-        <div class="modal_close">close</div>
+<div id="detail_modal" class="modal" style="display: none">
+        
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">공지</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe src="URL" id="detail_frame">대체 내용</iframe>  
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id = "modal-today-close">today</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
     </div>
 
 
