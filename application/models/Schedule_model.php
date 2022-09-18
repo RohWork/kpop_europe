@@ -17,5 +17,11 @@ class Schedule_model extends CI_Model {
         return $query->result_array();
         
     }
-    
+    public function get_detail_schedule($idx){
+        
+        $sSql = "SELECT * FROM kpop_info WHERE idx =".$idx;
+        
+        $query = $this->db->query($sSql);
+        return $query->row_array();
+    }
 }
