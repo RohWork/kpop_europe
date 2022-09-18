@@ -80,6 +80,27 @@
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label"><strong>행사이미지</strong></label>
+                </div>
+                <div class="col-10">
+                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                    <?php
+                      foreach($detail_img as $img){
+                    ?>
+                        <div class="carousel-item active">
+                        <img src="<?=$img['src']?>" class="d-block w-100" alt="<?=$title?>">
+                      </div>
+                    <?php
+                    }
+                    ?>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
         </div>
     </body>
 </html>
