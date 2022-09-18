@@ -85,7 +85,7 @@
     
     <div id="detail_modal" style="display: none">
         <iframe src="URL" id="detail_frame">대체 내용</iframe>  
-        <div class="modal_close"><a href="#">close</a></div>
+        <div class="modal_close">close</div>
     </div>
 
 
