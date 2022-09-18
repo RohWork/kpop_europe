@@ -7,6 +7,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-xs-1">
+                    <label class="form-control">행사명</label>
+                </div>
+                <div class="col">
+                    <p><?=$detail_info['name']?></p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
