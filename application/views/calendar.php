@@ -70,7 +70,10 @@
                         $cal_data = $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)];
                         
                         echo "<br/>";
-                        echo "<font style='font-size:10px;cursor:pointer' onclick=go_detail('".$cal_data['idx']."_".$cal_data['name']."')>".$cal_data['name']."</font>";
+                        ?>
+                       <font style='font-size:10px;cursor:pointer' onclick=go_detail("<?=$cal_data['idx']."_".$cal_data['name']?>")><?=$cal_data['name']?></font>
+              <?php
+                        
                     }
                     // 14. 날짜 증가
                     $day++;
