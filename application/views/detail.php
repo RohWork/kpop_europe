@@ -85,7 +85,7 @@
                     <label class="form-label"><strong>행사이미지</strong></label>
                 </div>
                 <div class="col-10">
-                   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                     <?php
 
