@@ -70,7 +70,7 @@
                         $cal_data = $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)];
                         
                         echo "<br/>";
-                        echo "<font style='font-size:10px;cursor:pointer' onclick=go_detail('".$cal_data['idx']."')>".$cal_data['name']."</font>";
+                        echo "<font style='font-size:10px;cursor:pointer' onclick=go_detail('".$cal_data['idx']."_".$cal_data['name']."')>".$cal_data['name']."</font>";
                     }
                     // 14. 날짜 증가
                     $day++;
@@ -108,12 +108,15 @@
 
 <script>
 
-    function go_detail(idx, name){
+    function go_detail(idx_name){
         
-        var url = "/main/detail/"+idx;
+        var idxurl = idX_name.split("_");
+        
+        
+        var url = "/main/detail/"+idxurl[0];
         
         $('#detail_frame').attr('src', url);
-        $("#modal-title").text(name);
+        $("#modal-title").text(idxurl[1]);
         // 모달창 띄우기
         $('#detail_modal').modal("show");
         
