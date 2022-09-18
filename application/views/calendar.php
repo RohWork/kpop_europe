@@ -127,7 +127,7 @@
     }
     
     $(".close").on('click', function(){    
-        $('#modalBox').modal('hide');	
+        $('#detail_modal').modal('hide');	
         console.log("click close"); 
     });
 
