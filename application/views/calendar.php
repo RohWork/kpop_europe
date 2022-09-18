@@ -83,7 +83,7 @@
         </table>
     </div>
     
-    <div id="detail_modal">
+    <div id="detail_modal" style="display: none">
         <iframe src="URL" id="detail_frame">대체 내용</iframe>  
         <a class="modal_close_btn">닫기</a>
     </div>
