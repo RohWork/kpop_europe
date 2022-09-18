@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container">
+        <div class="container" style="font-size: 12px">
             <div class="row">
                 <div class="col-2">
                     <label class="form-label">행사명</label>
