@@ -12,7 +12,7 @@
                 <div class="col col-md-1 col-xs-1">
                     <label class="form-control">행사명</label>
                 </div>
-                <div class="col">
+                <div class="col col-md-10 col-xs-1">
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
