@@ -116,7 +116,7 @@
         $('#detail_frame').attr('src', url);
         
         // 모달창 띄우기
-        $('#detail_modal').modal(show);
+        $('#detail_modal').modal("show");
         
     }
 </script>
