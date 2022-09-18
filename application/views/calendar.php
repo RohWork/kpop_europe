@@ -97,7 +97,6 @@
                 <iframe src="URL" id="detail_frame">대체 내용</iframe>  
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id = "modal-today-close">today</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
