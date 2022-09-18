@@ -88,7 +88,7 @@ class Main extends CI_Controller {
         $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
-        $this->load->view('detail',$detail_info);
+        $this->load->view('detail',$data);
         
         
     }
