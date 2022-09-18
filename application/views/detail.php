@@ -72,6 +72,14 @@
                     <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label"><strong>설명글</strong></label>
+                </div>
+                <div class="col-10">
+                    <p><?=$detail_info['remark']?></p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
