@@ -16,6 +16,62 @@
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">주관업체</label>
+                </div>
+                <div class="col-10">
+                    <p><?=$detail_info['company']?></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">홈페이지</label>
+                </div>
+                <div class="col-10">
+                    <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">행사위치</label>
+                </div>
+                <div class="col-10">
+                    <p><?=$detail_info['addr']?></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">페이스북주소</label>
+                </div>
+                <div class="col-10">
+                    <a href="<?=$detail_info['face']?>?>"><?=$detail_info['face']?></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">인스타그램주소</label>
+                </div>
+                <div class="col-10">
+                    <a href="<?=$detail_info['insta']?>?>"><?=$detail_info['insta']?></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">유튜브주소</label>
+                </div>
+                <div class="col-10">
+                    <a href="<?=$detail_info['yout']?>?>"><?=$detail_info['yout']?></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label">이벤트기간</label>
+                </div>
+                <div class="col-10">
+                    <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
