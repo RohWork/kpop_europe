@@ -81,5 +81,15 @@ class Main extends CI_Controller {
         $this->load->view('calendar',$data);
         $this->load->view('footer');
     }
-
+    
+    function detail($idx){
+        
+        $data = array();
+        $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
+        $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
+        
+        $this->load->view('detail',$detail_info);
+        
+        
+    }
 }
