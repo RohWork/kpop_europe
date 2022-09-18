@@ -88,10 +88,12 @@
                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                     <?php
-                      foreach($detail_img as $img){
+
+                      for($i=0; $i<count($detail_img);$i++){
+                          
                     ?>
                       <div class="carousel-item">
-                        <img src="<?=$img['src']?>" class="d-block w-100" alt="<?=$img['title']?>">
+                        <img src="<?=$detail_img[$i]['src']?>" class="d-block w-100 <?=$i==0? "active" : "" ?>" alt="<?=$detail_img[$i]['title']?>">
                       </div>
                     <?php
                     }
