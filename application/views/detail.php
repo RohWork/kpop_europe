@@ -9,10 +9,10 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col col-md-2 col-xs-2 col-sm-2">
+                <div class="col-md-2 col-xs-2 col-sm-2">
                     <label class="form-label">행사명</label>
                 </div>
-                <div class="col col-md-10 col-xs-10 col-sm-10">
+                <div class="col-md-10 col-xs-10 col-sm-10">
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
