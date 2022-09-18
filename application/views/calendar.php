@@ -71,7 +71,7 @@
                         
                         echo "<br/>";
                         ?>
-                       <font style='font-size:10px;cursor:pointer' onclick="go_detail(<?=$cal_data['idx']."_".$cal_data['name']?>)"><?=$cal_data['name']?></font>
+                       <font style='font-size:10px;cursor:pointer' onclick="go_detail('<?=$cal_data['idx']."_".$cal_data['name']?>')"><?=$cal_data['name']?></font>
               <?php
                         
                     }
