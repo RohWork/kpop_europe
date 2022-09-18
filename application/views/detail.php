@@ -92,8 +92,8 @@
                       for($i=0; $i<count($detail_img);$i++){
                           
                     ?>
-                      <div class="carousel-item">
-                        <img src="<?=$detail_img[$i]['src']?>" class="d-block w-100 <?=$i==0? "active" : "" ?>" alt="<?=$detail_img[$i]['title']?>">
+                      <div class="carousel-item <?=$i==0? "active" : "" ?>">
+                        <img src="<?=$detail_img[$i]['src']?>" class="d-block w-100" alt="<?=$detail_img[$i]['title']?>">
                       </div>
                     <?php
                     }
