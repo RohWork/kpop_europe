@@ -10,7 +10,7 @@
         <div class="container" style="font-size: 12px">
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label bold"><strong>행사명</strong></label>
+                    <label class="form-label bold"><strong>Event</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['name']?></p>
@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>주관업체</strong></label>
+                    <label class="form-label"><strong>Organizer</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['company']?></p>
@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>홈페이지</strong></label>
+                    <label class="form-label"><strong>Hompage</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
@@ -34,7 +34,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>행사위치</strong></label>
+                    <label class="form-label"><strong>Address</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['addr']?></p>
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>페이스북주소</strong></label>
+                    <label class="form-label"><strong>Facebook</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['face']?>?>"><?=$detail_info['face']?></a>
@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>인스타그램주소</strong></label>
+                    <label class="form-label"><strong>Instagram</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['insta']?>?>"><?=$detail_info['insta']?></a>
@@ -58,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>유튜브주소</strong></label>
+                    <label class="form-label"><strong>Youtube</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['yout']?>?>"><?=$detail_info['yout']?></a>
@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>행사기간</strong></label>
+                    <label class="form-label"><strong>Date</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
@@ -74,7 +74,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>설명글</strong></label>
+                    <label class="form-label"><strong>Etc</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
@@ -82,7 +82,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>행사이미지</strong></label>
+                    <label class="form-label"><strong>Image</strong></label>
                 </div>
                 <div class="col-10">
                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
