@@ -46,16 +46,6 @@
             </div>     
         </li>
         <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#club-collapse" aria-expanded="false">
-                Kpop Club
-            </button>
-            <div class="collapse" id="club-collapse">
-                <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
-                    <li><a href="#"><span class="btn-toggle-nav2 list-unstyled pb-1 small link-dark">Contact us</span></a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#concert-collapse" aria-expanded="false">
                 Kpop Concert
             </button>
@@ -63,6 +53,16 @@
                 <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                     <li><a href="#"><span class="btn-toggle-nav2 list-unstyled pb-1 small link-dark">Kpop.flex</span></a></li
                     <li><a href="#"><span class="btn-toggle-nav2 list-unstyled pb-1 small link-dark">Black Pink</span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#club-collapse" aria-expanded="false">
+                Kpop Club
+            </button>
+            <div class="collapse" id="club-collapse">
+                <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
+                    <li><a href="#"><span class="btn-toggle-nav2 list-unstyled pb-1 small link-dark">Contact us</span></a></li>
                 </ul>
             </div>
         </li>
