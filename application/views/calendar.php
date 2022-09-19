@@ -11,7 +11,7 @@
             </td>
             <td height="50" bgcolor="#FFFFFF" colspan="3">
                 <a href=<?php echo '/main/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1'; ?>>
-                <?php echo "&nbsp;&nbsp;" . $year . ' -  ' . $month  . "&nbsp;&nbsp;"; ?></a>
+                <?php echo "&nbsp;&nbsp;" . $month . ' - ' . $year  . "&nbsp;&nbsp;"; ?></a>
             </td>
             <td>
                 <a href=<?php echo '/main/calendar?year='.$next_year.'&month='.$next_month.'&day=1'; ?>>▶</a>
