@@ -11,7 +11,7 @@
             </td>
             <td height="50" bgcolor="#FFFFFF" colspan="3">
                 <a href=<?php echo '/main/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1'; ?>>
-                <?php echo "&nbsp;&nbsp;" . $year . '년 ' . $month . '월 ' . "&nbsp;&nbsp;"; ?></a>
+                <?php echo "&nbsp;&nbsp;" . $year . ' -  ' . $month  . "&nbsp;&nbsp;"; ?></a>
             </td>
             <td>
                 <a href=<?php echo '/main/calendar?year='.$next_year.'&month='.$next_month.'&day=1'; ?>>▶</a>
@@ -21,13 +21,13 @@
             </td>
           </tr>
           <tr class="info">
-            <th hight="30" width="100">일</td>
-            <th width="100">월</th>
-            <th width="100">화</th>
-            <th width="100">수</th>
-            <th width="100">목</th>
-            <th width="100">금</th>
-            <th width="100">토</th>
+            <th hight="30" width="100">SUN</td>
+            <th width="100">MON</th>
+            <th width="100">TUE</th>
+            <th width="100">WED</th>
+            <th width="100">THU</th>
+            <th width="100">FRI</th>
+            <th width="100">SAT</th>
           </tr>
 
           <?php
@@ -97,7 +97,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <iframe src="" id="detail_frame" style="width:100%; height:100%">대체 내용</iframe>  
+                <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
