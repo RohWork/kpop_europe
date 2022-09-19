@@ -15,7 +15,7 @@
                     <li>
                         <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false">Germany</button>
                         <div class="collapse" id="germany-collapse">
-                            <a href="#"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                            <a href="/main/calendar?country=Germany"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </div>
                     </li>
                     <li>
