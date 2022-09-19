@@ -51,7 +51,7 @@
             </button>
             <div class="collapse" id="club-collapse">
                 <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
-                    <li><a href="#"><span class="btn-toggle-nav2 list-unstyled pb-1 small link-dark">Schedule</span></a></li>
+                    <li><a href="#"><span class="btn-toggle-nav2 list-unstyled pb-1 small link-dark">Contact us</span></a></li>
                 </ul>
             </div>
         </li>
