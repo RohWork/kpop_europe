@@ -45,7 +45,7 @@
                     <label class="form-label"><strong>Facebook</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['face']?>?>"><?=$detail_info['face']?></a>
+                    <a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a>
                 </div>
             </div>
             <div class="row">
@@ -53,7 +53,7 @@
                     <label class="form-label"><strong>Instagram</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['insta']?>?>"><?=$detail_info['insta']?></a>
+                    <a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a>
                 </div>
             </div>
             <div class="row">
@@ -61,7 +61,7 @@
                     <label class="form-label"><strong>Youtube</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['yout']?>?>"><?=$detail_info['yout']?></a>
+                    <a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a>
                 </div>
             </div>
             <div class="row">
