@@ -11,7 +11,7 @@ class Mem extends CI_Controller {
     function login(){
         
         $this->load->view('login');
-        
+        $this->load->view('footer');
     }
     
     function login_process(){
