@@ -2,20 +2,12 @@
   <head>
   </head>
   <body>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com">
-    <div class="g-signin2" data-onsuccess="handleCredentialResponse"></div>
-    <script>
-      function handleCredentialResponse(googleUser) {
-        ...
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/member/login_process');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-          console.log('Signed in as: ' + xhr.responseText);
-        };
-        xhr.send('idtoken=' + id_token);
-      }
-    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+         data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
+         data-ux_mode="redirect"
+         data-login_uri="https://www.kpopineu.com">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
   </body>
 </html>
