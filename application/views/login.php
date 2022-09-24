@@ -15,7 +15,7 @@
      // to decode the credential response.
      
      //const responsePayload = decodeJwtResponse(response.credential);
-     const responsePaylod = atob(response.credential.split('.')[1]);
+     const responsePayload = atob(response.credential.split('.')[1]);
 
      console.log("ID: " + responsePayload.sub);
      console.log('Full Name: ' + responsePayload.name);
