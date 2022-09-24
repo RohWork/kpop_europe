@@ -2,10 +2,11 @@
   <head>
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
   </head>
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>+
+    <a href="#" onclick="signOut();">Sign out</a>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -21,6 +22,13 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
+      
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+              console.log('User signed out.');
+            });
+          }
     </script>
   </body>
 </html>
