@@ -3,7 +3,7 @@
   </head>
   <body>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.co">
+    <meta name="google-signin-client_id" content="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com">
     <div class="g-signin2" data-onsuccess="handleCredentialResponse"></div>
     <script>
       function handleCredentialResponse(googleUser) {
