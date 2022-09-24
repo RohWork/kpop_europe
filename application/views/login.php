@@ -6,7 +6,7 @@
     <div id="g_id_onload"
          data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
          data-ux_mode="redirect"
-         data-login_uri="https://www.kpopineu.com">
+         data-login_uri="https://www.kpopineu.com/member/login_process">
     </div>
     <div class="g_id_signin" data-type="standard"></div>
   </body>
