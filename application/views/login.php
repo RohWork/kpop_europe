@@ -33,29 +33,14 @@
      //const responsePayload = decodeJwtResponse(response.credential);
      const responsePayload = parseJwt(response.credential);
 
-     //console.log("ID: " + responsePayload.sub);
-     //console.log('Full Name: ' + responsePayload.name);
-     //console.log('Given Name: ' + responsePayload.given_name);
+     console.log("ID: " + responsePayload.sub);
+     console.log('Full Name: ' + responsePayload.name);
+     console.log('Given Name: ' + responsePayload.given_name);
      console.log('Family Name: ' + responsePayload.family_name);
-     //console.log("Image URL: " + responsePayload.picture);
-     //console.log("Email: " + responsePayload.email);
-     var id = responsePayload.sub;
-     var name = responsePayload.name;
-     var picture = responsePayload.picture;
-     var email = responsePayload.email;
-     var nick = "Test";
+     console.log("Image URL: " + responsePayload.picture);
+     console.log("Email: " + responsePayload.email);
      
-     
-    var formData = new FormData();
-
-    formData.append('id', id);
-    formData.append('name', name);
-    formData.append('image_url', picture);
-    formData.append('email', email);
-    formData.append('nick', nick);
-     
-     
-     google_set(formData);
+     google_set(responsePayload);
      
   }
   
@@ -70,11 +55,20 @@
     return JSON.parse(jsonPayload);
 };
   
-  function google_set(formData){
+  function google_set(responsePayload){
 
+            var formData = new FormData();
+            
 
             
-            console.log(formData);
+            formData.append('id', responsePayload.sub);
+            formData.append('name', responsePayload.name);
+            formData.append('image_url', responsePayload.picture);
+            formData.append('email', responsePayload.email);
+            formData.append('nick', responsePayload.given_name);
+            
+            console.log(formData.getAll('item'););
+            
             $.ajax({
                 url:'/member/set_member_google',
                 type:'post',
