@@ -74,7 +74,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('hello, '+responsePayload.name);
-                        location.href("/main");
+                        location.href("/");
                     }else{
                         alert('login fail, retry to login');
                     }
