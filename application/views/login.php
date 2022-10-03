@@ -67,7 +67,7 @@
             formData.append('email', responsePayload.email);
             formData.append('nick', responsePayload.given_name);
             
-            console.log(responsePayload);
+            console.log(responsePayload.sub);
             
             console.log(formData.getAll('item'));
             
