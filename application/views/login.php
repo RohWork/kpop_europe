@@ -57,8 +57,12 @@
                 contentType : false,
                 data:formData,
                 success:function(data){
-                    alert('hello, '+responsePayload.name);
-                    location.href("/main");
+                    if(data.result == 200){
+                        alert('hello, '+responsePayload.name);
+                        location.href("/main");
+                    }else{
+                        alert('login fail, retry to login');
+                    }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
