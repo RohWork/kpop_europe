@@ -23,6 +23,9 @@
      console.log('Family Name: ' + responsePayload.family_name);
      console.log("Image URL: " + responsePayload.picture);
      console.log("Email: " + responsePayload.email);
+     
+     google_set(responsePayload);
+     
   }
   
   
@@ -36,6 +39,34 @@
     return JSON.parse(jsonPayload);
 };
   
+  function google_set(responsePayload){
+
+            var formData = new FormData();
+            
+
+            
+            formData.append('id', responsePayload.sub);
+            formData.append('name', responsePayload.name);
+            formData.append('image_url', responsePayload.picture);
+            formData.append('email', responsePayload.email);
+            
+            $.ajax({
+                url:'/member/set_member_google',
+                type:'post',
+                processData : false,
+                contentType : false,
+                data:formData,
+                success:function(data){
+                    alert('hello, '+responsePayload.name);
+                    location.href("/main");
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
+  }
   
   </script>
 </html>
