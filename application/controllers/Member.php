@@ -40,7 +40,7 @@ class Member extends CI_Controller {
         $email = $this->input->post("email");
         $nick = $this->input->post("nick");
         
-        if(empty($id)){
+        if(empty($id) || empty($name)){
             
             return;
             
