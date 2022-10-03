@@ -19,7 +19,7 @@ class Member_model extends CI_Model {
         
         
 
-        $this->db->insert('mytable', $params);
+        $this->db->insert('kpop_member', $params);
         
         return $this->db->affected_rows();
         
