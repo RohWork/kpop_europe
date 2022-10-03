@@ -42,12 +42,7 @@ class Member extends CI_Controller {
         
         $join_history = $this->mem_md->get_member($email);
         $join_result = false;
-        
-        echo $email;
-        var_dump($join_history);
-        
-        exit;
-        
+                
         if(empty($join_history)){
             
             $data = array(
