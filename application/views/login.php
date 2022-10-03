@@ -43,7 +43,8 @@
      var name = responsePayload.name;
      var picture = responsePayload.picture;
      var email = responsePayload.email;
-     var nick = responsePayload.given_name
+     var nick = "Test";
+     
      
     var formData = new FormData();
 
