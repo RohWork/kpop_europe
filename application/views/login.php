@@ -40,7 +40,16 @@
      console.log("Image URL: " + responsePayload.picture);
      console.log("Email: " + responsePayload.email);
      
-     google_set(responsePayload);
+    var formData = new FormData();
+
+    formData.append('id', responsePayload.sub);
+    formData.append('name', responsePayload.name);
+    formData.append('image_url', responsePayload.picture);
+    formData.append('email', responsePayload.email);
+    formData.append('nick', responsePayload.given_name);
+     
+     
+     google_set(formData);
      
   }
   
@@ -57,15 +66,7 @@
   
   function google_set(responsePayload){
 
-            var formData = new FormData();
-            
 
-            
-            formData.append('id', responsePayload.sub);
-            formData.append('name', responsePayload.name);
-            formData.append('image_url', responsePayload.picture);
-            formData.append('email', responsePayload.email);
-            formData.append('nick', responsePayload.given_name);
             
             console.log(formData);
             $.ajax({
