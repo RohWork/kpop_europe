@@ -46,6 +46,8 @@ class Member extends CI_Controller {
         echo $email;
         var_dump($join_history);
         
+        exit;
+        
         if(empty($join_history)){
             
             $data = array(
