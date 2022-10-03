@@ -38,6 +38,7 @@ class Member extends CI_Controller {
         $name = $this->input->post("name");
         $image_url = $this->input->post("image_url");
         $email = $this->input->post("email");
+        $nick = $this->input->post("nick");
         
         $join_history = $this->mem_md->get_member($email);
         $join_result = false;
@@ -49,6 +50,8 @@ class Member extends CI_Controller {
                 "name" => $name,
                 "image_url" => $image_url,
                 "email" => $email,
+                "nick" => $nick,
+                
                 
             );
             $join_result = $this->mem_md->set_member($data);
@@ -60,6 +63,22 @@ class Member extends CI_Controller {
             
             
         }else{
+            
+            $login_result = $this->mem_md->get_member($email);
+            
+            $session_data = array(    //로그인 성공시 session 생성
+                    'id'      => $result->id,
+                    'name'       => $result->name,
+                    'image_url'     => $result->image_url,
+                    'email'      => $result->email,
+                    'nick'      => $result->nick,
+            );
+
+            $this->session->set_userdata($session_data);	//session 등록
+            session_commit();
+
+            $message = "";
+
             
             $data['result'] = 200;
             
