@@ -73,15 +73,8 @@ class Member extends CI_Controller {
             
             $result = $this->mem_md->get_member($email);
             
-            $session_data = array(    //로그인 성공시 session 생성
-                    'id'      => $result['id'],
-                    'name'       => $result['name'],
-                    'image_url'     => $result['image_url'],
-                    'email'      => $result['email'],
-                    'nick'      => $result['nick'],
-            );
 
-            $this->session->set_userdata($session_data);	//session 등록
+            $this->session->set_userdata($result);	//session 등록
             session_commit();
 
             $message = "";
