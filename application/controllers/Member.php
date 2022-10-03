@@ -40,6 +40,13 @@ class Member extends CI_Controller {
         $email = $this->input->post("email");
         $nick = $this->input->post("nick");
         
+        if(empty($id)){
+            
+            return;
+            
+        }
+        
+        
         $join_history = $this->mem_md->get_member($email);
         $join_result = false;
                 
