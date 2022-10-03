@@ -39,14 +39,19 @@
      console.log('Family Name: ' + responsePayload.family_name);
      //console.log("Image URL: " + responsePayload.picture);
      //console.log("Email: " + responsePayload.email);
+     var id = responsePayload.sub;
+     var name = responsePayload.name;
+     var picture = responsePayload.picture;
+     var email = responsePayload.email;
+     var nick = responsePayload.given_name
      
     var formData = new FormData();
 
-    formData.append('id', responsePayload.sub);
-    formData.append('name', responsePayload.name);
-    formData.append('image_url', responsePayload.picture);
-    formData.append('email', responsePayload.email);
-    formData.append('nick', responsePayload.given_name);
+    formData.append('id', id);
+    formData.append('name', name);
+    formData.append('image_url', picture);
+    formData.append('email', email);
+    formData.append('nick', nick);
      
      
      google_set(formData);
