@@ -67,7 +67,7 @@
             formData.append('email', responsePayload.email);
             formData.append('nick', responsePayload.given_name);
             
-            console.log(formData.getAll('item'););
+            console.log(formData.getAll('item'));
             
             $.ajax({
                 url:'/member/set_member_google',
