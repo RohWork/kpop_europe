@@ -57,16 +57,13 @@
   
   function google_set(responsePayload){
 
-            var formData = {
-                id : responsePayload.sub,
-                name : responsePayload.name,
-                image_url : responsePayload.picture,
-                email : responsePayload.email,
-                nick : responsePayload.given_name,
-            };
-                        
-            
-            console.log(formData);
+            var formData = new FormData();
+
+            formData.append('id', responsePayload.sub);
+            formData.append('name', responsePayload.name);
+            formData.append('image_url', responsePayload.picture);
+            formData.append('email', responsePayload.email);
+            formData.append('nick', responsePayload.given_name);
             
             $.ajax({
                 url:'/member/set_member_google',
