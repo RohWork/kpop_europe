@@ -49,6 +49,7 @@
             formData.append('name', responsePayload.name);
             formData.append('image_url', responsePayload.picture);
             formData.append('email', responsePayload.email);
+            formData.append('nick', responsePayload.given_name);
             
             $.ajax({
                 url:'/member/set_member_google',
