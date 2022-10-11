@@ -22,7 +22,14 @@
     <div class="container text-center">
         <div class="row">
             <div class="col">
-                
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" id="login_pass" name="login_pass" placeholder="id@kpopineurope.com"/>
             </div>
         </div>
         <div class="row">
