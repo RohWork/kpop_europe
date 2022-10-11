@@ -23,7 +23,7 @@
         
         <div class="row">
 
-            <div class="col-sm-10">
+            <div class="col-sm-5">
                 
                 <table align="center" style="width:100%;margin-top:50px;">
                     <tr>
