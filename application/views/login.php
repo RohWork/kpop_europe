@@ -37,7 +37,7 @@
                             <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
                         </td>
                         <td rowspan="2">
-                            <button class="form-control" style="height:100%">LOGIN</button>
+                            <button style="width:100%;height:100%">LOGIN</button>
                         </td>
                     </tr>
                     <tr>
