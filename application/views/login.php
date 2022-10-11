@@ -20,7 +20,7 @@
   <body>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div class="container text-center">
-        <div class="row">
+        <div class="mb-3 row">
             <div class="col">
                 <label class="form-label">Email</label>
             </div>
@@ -28,7 +28,7 @@
                 <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
             </div>
         </div>
-        <div class="row">
+        <div class="mb-3 row">
             <div class="col">
                 <label class="form-label">Password</label>
             </div>
@@ -36,7 +36,7 @@
                 <input type="password" class="form-control" id="login_pass" name="login_pass" />
             </div>
         </div>
-        <div class="row">
+        <div class="mb-3 row">
             <div class="col">
                 <div id="g_id_onload"
                      data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
