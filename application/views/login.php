@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="mb-3 row">
-            <div class="col">
+            <div class="col" style="text-align: center">
                 <div id="g_id_onload"
                      data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
                      data-callback="handleCredentialResponse">
