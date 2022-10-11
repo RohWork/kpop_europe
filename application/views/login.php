@@ -30,7 +30,7 @@
                         <td colspan="3" align="center"><h1>LOGIN</h1></td>
                     </tr>
                     <tr>
-                        <td colspan="3">
+                        <td colspan="3" style="width:100%">
                             <center>
                                 <div id="g_id_onload"
                                     data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
