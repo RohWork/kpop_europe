@@ -20,33 +20,50 @@
   <body>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div class="container text-center">
+        
         <div class="mb-3 row">
 
             <label class="col-form-label col-sm-2">Email</label>
 
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
+                
+                <table>
+                    <tr>
+                        <td colspan="3"> LOGIN</td>
+                    </tr>
+                    <tr>
+                        <td>
+                             <label class="form-label" for="login_email">Email</label>
+                        </td>
+                        <td>
+                            <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
+                        </td>
+                        <td rowspan="2">
+                            <button class="form-control">LOGIN</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-label" for="login_pass">Password</label>
+                        </td>
+                        
+                        <td>
+                            <input type="password" class="form-control" id="login_pass" name="login_pass" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div id="g_id_onload"
+                                data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
+                                data-callback="handleCredentialResponse">
+                           </div>
+                            <div class="g_id_signin" data-type="standard"></div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <div class="mb-3 row">
-           
-            <label class="col-form-label col-sm-2">Password</label>
-            
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="login_pass" name="login_pass" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4" style="text-align: center">
-                <div id="g_id_onload"
-                     data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
-                     data-callback="handleCredentialResponse">
-                </div>
-                <div class="g_id_signin" data-type="standard"></div>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
+
     </div>
   </body>
   <script>
