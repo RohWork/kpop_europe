@@ -25,9 +25,9 @@
 
             <div class="col-sm-10">
                 
-                <table align="center" style="width:100%">
+                <table align="center" style="width:100%;margin-top:50px;">
                     <tr>
-                        <td colspan="3" align="center"> LOGIN</td>
+                        <td colspan="3" align="center"><h1>LOGIN</h1></td>
                     </tr>
                     <tr>
                         <td>
@@ -60,6 +60,7 @@
                                     data-callback="handleCredentialResponse">
                                </div>
                                 <div class="g_id_signin" data-width="300" data-type="standard"></div>
+                                
                             </center>
                         </td>
                     </tr>
