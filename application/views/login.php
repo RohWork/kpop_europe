@@ -23,12 +23,16 @@
         <div class="row">
             <div class="col">
                 <label class="form-label">Email</label>
+            </div>
+            <div class="col">
                 <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label class="form-label">Password</label>
+            </div>
+            <div class="col">
                 <input type="password" class="form-control" id="login_pass" name="login_pass" />
             </div>
         </div>
