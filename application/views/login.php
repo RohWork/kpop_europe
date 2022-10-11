@@ -72,10 +72,10 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button id="find_pasword">find pw</button>
+                            <button id="find_pasword" class="form-control">find pw</button>
                         </td>
                         <td>
-                            <button id="find_pasword">join us</button>
+                            <button id="find_pasword" class="form-control">join us</button>
                         </td>
                     </tr>
                 </table>
