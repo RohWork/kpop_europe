@@ -50,12 +50,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3" style="text-align: center">
-                            <div id="g_id_onload"
-                                data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
-                                data-callback="handleCredentialResponse">
-                           </div>
-                            <div class="g_id_signin" data-width="300" data-type="standard"></div>
+                        <td colspan="3">
+                            <center>
+                                <div id="g_id_onload"
+                                    data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
+                                    data-callback="handleCredentialResponse">
+                               </div>
+                                <div class="g_id_signin" data-width="300" data-type="standard"></div>
+                            </center>
                         </td>
                     </tr>
                 </table>
