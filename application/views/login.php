@@ -59,7 +59,7 @@
                                     data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
                                     data-callback="handleCredentialResponse">
                                </div>
-                                <div class="g_id_signin" data-width="300" data-type="standard"></div>
+                                <div class="g_id_signin" data-width="100%" data-type="standard"></div>
                                 
                             </center>
                         </td>
