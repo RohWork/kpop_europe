@@ -67,6 +67,17 @@
                             </center>
                         </td>
                     </tr>
+                    <tr>
+                        <td height="15"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="find_pasword">find pw</button>
+                        </td>
+                        <td>
+                            <button id="find_pasword">join us</button>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
