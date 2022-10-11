@@ -22,7 +22,7 @@
     <div class="container text-center">
         <div class="mb-3 row">
 
-            <label class="form-label col-auto">Email</label>
+            <label class="col-form-label col-auto">Email</label>
 
             <div class="col-auto">
                 <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
@@ -30,7 +30,7 @@
         </div>
         <div class="mb-3 row">
            
-            <label class="form-label col-auto">Password</label>
+            <label class="col-form-label col-auto">Password</label>
             
             <div class="col-auto">
                 <input type="password" class="form-control" id="login_pass" name="login_pass" />
