@@ -27,7 +27,7 @@
                 
                 <table>
                     <tr>
-                        <td colspan="3"> LOGIN</td>
+                        <td colspan="3" align="center"> LOGIN</td>
                     </tr>
                     <tr>
                         <td>
