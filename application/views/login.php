@@ -30,6 +30,21 @@
                         <td colspan="3" align="center"><h1>LOGIN</h1></td>
                     </tr>
                     <tr>
+                        <td colspan="3">
+                            <center>
+                                <div id="g_id_onload"
+                                    data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
+                                    data-callback="handleCredentialResponse">
+                               </div>
+                                <div class="g_id_signin" data-width="100%" data-type="standard"></div>
+                                
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="15"></td>
+                    </tr>
+                    <tr>
                         <td>
                              <label class="form-label" for="login_email">Email</label>
                         </td>
@@ -51,18 +66,6 @@
                     </tr>
                     <tr>
                         <td height="15"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <center>
-                                <div id="g_id_onload"
-                                    data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
-                                    data-callback="handleCredentialResponse">
-                               </div>
-                                <div class="g_id_signin" data-width="100%" data-type="standard"></div>
-                                
-                            </center>
-                        </td>
                     </tr>
                 </table>
             </div>
