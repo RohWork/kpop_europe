@@ -21,7 +21,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div class="container text-center">
         
-        <div class="mb-3 row">
+        <div class="row">
 
             <div class="col-sm-10">
                 
