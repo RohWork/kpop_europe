@@ -21,18 +21,18 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div class="container text-center">
         <div class="mb-3 row">
-            <div class="col">
+            <div class="col-auto">
                 <label class="form-label">Email</label>
             </div>
-            <div class="col">
+            <div class="col-auto">
                 <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
             </div>
         </div>
         <div class="mb-3 row">
-            <div class="col">
+            <div class="col-auto">
                 <label class="form-label">Password</label>
             </div>
-            <div class="col">
+            <div class="col-auto">
                 <input type="password" class="form-control" id="login_pass" name="login_pass" />
             </div>
         </div>
