@@ -22,7 +22,7 @@
     <div class="container text-center">
         
         <div class="row">
-
+            <div class="col-sm-4"></div>
             <div class="col-sm-5">
                 
                 <table align="center" style="width:100%;margin-top:50px;">
