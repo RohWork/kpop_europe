@@ -19,11 +19,22 @@
   </head>
   <body>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div id="g_id_onload"
-         data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="g_id_onload"
+                     data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
+                     data-callback="handleCredentialResponse">
+                </div>
+                <div class="g_id_signin" data-type="standard"></div>
+            </div>
+        </div>
     </div>
-    <div class="g_id_signin" data-type="standard"></div>
   </body>
   <script>
     function handleCredentialResponse(response) {
