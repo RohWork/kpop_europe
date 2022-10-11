@@ -25,7 +25,7 @@
 
             <div class="col-sm-10">
                 
-                <table align="center">
+                <table align="center" style="width=100%">
                     <tr>
                         <td colspan="3" align="center"> LOGIN</td>
                     </tr>
