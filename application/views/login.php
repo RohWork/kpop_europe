@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col">
                 <label class="form-label">Password</label>
-                <input type="password" class="form-control" id="login_pass" name="login_pass" placeholder="id@kpopineurope.com"/>
+                <input type="password" class="form-control" id="login_pass" name="login_pass" />
             </div>
         </div>
         <div class="row">
