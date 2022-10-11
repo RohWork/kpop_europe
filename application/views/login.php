@@ -36,14 +36,16 @@
                 <input type="password" class="form-control" id="login_pass" name="login_pass" />
             </div>
         </div>
-        <div class="mb-3 row">
-            <div class="col" style="text-align: center">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center">
                 <div id="g_id_onload"
                      data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
                      data-callback="handleCredentialResponse">
                 </div>
                 <div class="g_id_signin" data-type="standard"></div>
             </div>
+            <div class="col-sm-4"></div>
         </div>
     </div>
   </body>
