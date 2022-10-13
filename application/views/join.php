@@ -45,7 +45,7 @@
           </div>
           
           <div class="row">
-              <button class="btn form-control btn-success">Go join</button>
+              <div class="col-sm-10"><button class="btn form-control btn-success">Go join</button></div>
           </div>
       </div>
       
