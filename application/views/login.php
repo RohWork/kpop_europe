@@ -75,7 +75,7 @@
                             <button id="find_pasword" class="form-control">find pw</button>
                         </td>
                         <td>
-                            <button id="find_pasword" class="form-control">join us</button>
+                            <button id="join_member" class="form-control">join us</button>
                         </td>
                     </tr>
                 </table>
@@ -143,6 +143,11 @@
                     alert("네트워크 오류!! 관리자에게 문의 주세요!!");
                     return false;
                 }	 
+            });
+            
+            
+            $("#join_member").click(function(){
+               location.href="/member/join"; 
             });
   }
   
