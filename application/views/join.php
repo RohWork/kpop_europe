@@ -21,7 +21,7 @@
       <div class="container">
           <div class="row">
               <label class="col-3 form-label">Email</label>
-              <div class="col-9"><input type="text" id="user_email" name="user_email" class="form-control"></div>
+              <div class="col-8"><input type="text" id="user_email" name="user_email" class="form-control"></div>
               
           </div>
           
