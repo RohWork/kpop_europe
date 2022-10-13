@@ -20,6 +20,10 @@
   <body>
       <div class="container">
           <div class="row">
+              <div col-auto> <h1>Join Us</h1></div>
+              
+          </div>
+          <div class="row">
               <label class="col-sm-3 form-label">Email</label>
               <div class="col-sm-8"><input type="text" id="user_email" name="user_email" class="form-control"></div>
               
