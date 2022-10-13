@@ -24,61 +24,62 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-5">
-                
-                <table align="center" style="width:100%;margin-top:50px;">
-                    <tr>
-                        <td colspan="3" align="center"><h1>LOGIN</h1></td>
-                    </tr>
-                    <tr>
-                        <td height="15"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                             <label class="form-label" for="login_email">Email</label>
-                        </td>
-                        <td>
-                            <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
-                        </td>
-                        <td rowspan="2">
-                            <button class="form-control" style="height:68px;">LOGIN</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="form-label" for="login_pass">Password</label>
-                        </td>
-                        
-                        <td>
-                            <input type="password" class="form-control" id="login_pass" name="login_pass" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="15"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">
-                            <center>
-                                <div id="g_id_onload"
-                                    data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
-                                    data-callback="handleCredentialResponse">
-                               </div>
-                                <div class="g_id_signin" data-width="100%" data-type="standard"></div>
-                                
-                            </center>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="15"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <button id="find_pasword" class="form-control">find pw</button>
-                        </td>
-                        <td>
-                            <button id="join_member" class="form-control">join us</button>
-                        </td>
-                    </tr>
-                </table>
+                <form action="/member/login_process">
+                    <table align="center" style="width:100%;margin-top:50px;">
+                        <tr>
+                            <td colspan="3" align="center"><h1>LOGIN</h1></td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                 <label class="form-label" for="login_email">Email</label>
+                            </td>
+                            <td>
+                                <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
+                            </td>
+                            <td rowspan="2">
+                                <button class="form-control" style="height:68px;">LOGIN</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="form-label" for="login_pass">Password</label>
+                            </td>
+
+                            <td>
+                                <input type="password" class="form-control" id="login_pass" name="login_pass" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <center>
+                                    <div id="g_id_onload"
+                                        data-client_id="238139026847-mudgpdqus93r42v9cpa8bmcsb4igto5e.apps.googleusercontent.com"
+                                        data-callback="handleCredentialResponse">
+                                   </div>
+                                    <div class="g_id_signin" data-width="100%" data-type="standard"></div>
+
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="15"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button id="find_pasword" class="form-control">find pw</button>
+                            </td>
+                            <td>
+                                <button id="join_member" class="form-control">join us</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
         </div>
 
