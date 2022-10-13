@@ -21,6 +21,13 @@ class Member extends CI_Controller {
     
     function join(){
         
+        $this->load->view('join');
+        
+    }
+    
+    function mail_check(){
+        
+        
     }
     
     function join_process(){
