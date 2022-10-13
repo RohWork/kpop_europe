@@ -20,7 +20,7 @@
   <body>
       <div class="container">
           <div class="row">
-              <div class="col-auto" style="text-align: center"> <h1>Join Us</h1></div>
+              <div class="col-sm-10" style="text-align: center"> <h1>Join Us</h1></div>
               
           </div>
           <div class="row">
