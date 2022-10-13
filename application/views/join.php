@@ -43,6 +43,10 @@
               <label class="col-sm-2 form-label">Family Name</label>
               <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control"></div>
           </div>
+          
+          <div class="row">
+              <button class="btn form-control btn-success">Go join</button>
+          </div>
       </div>
       
       
