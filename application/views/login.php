@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-5">
-                <form action="/member/login_process">
+                
                     <table align="center" style="width:100%;margin-top:50px;">
                         <tr>
                             <td colspan="3" align="center"><h1>LOGIN</h1></td>
@@ -32,6 +32,7 @@
                         <tr>
                             <td height="15"></td>
                         </tr>
+                        <form action="/member/login_process">
                         <tr>
                             <td>
                                  <label class="form-label" for="login_email">Email</label>
@@ -51,7 +52,9 @@
                             <td>
                                 <input type="password" class="form-control" id="login_pass" name="login_pass" />
                             </td>
+                            
                         </tr>
+                        </form>
                         <tr>
                             <td height="15"></td>
                         </tr>
@@ -79,7 +82,7 @@
                             </td>
                         </tr>
                     </table>
-                </form>
+                
             </div>
         </div>
 
