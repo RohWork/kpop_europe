@@ -145,12 +145,10 @@
                     return false;
                 }	 
             });
-            
-            
-            $("#join_member").click(function(){
-               location.href="/member/join"; 
-            });
   }
   
+    $("#join_member").click(function(){
+       location.href="/member/join"; 
+    });
   </script>
 </html>
