@@ -29,8 +29,20 @@
               <div class="col-sm-2"><button class="btn form-control btn-info">confirm</button></div>
           </div>
           
+          <div class="row">
+              <label class="col-sm-2 form-label">Password</label>
+              <div class="col-sm-6"><input type="password" id="user_pass" name="user_pass" class="form-control"></div>
+          </div>
           
+          <div class="row">
+              <label class="col-sm-2 form-label">Given Name</label>
+              <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control"></div>
+          </div>
           
+          <div class="row">
+              <label class="col-sm-2 form-label">Family Name</label>
+              <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control"></div>
+          </div>
       </div>
       
       
