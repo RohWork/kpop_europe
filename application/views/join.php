@@ -57,7 +57,8 @@
   </body>
   
   <script>
-    function id_check(){
+    $("#email_confirm").click(function(){
+        
         
         var check_id = $("#user_email").val();
         
@@ -70,7 +71,11 @@
             success:function(data){
                 if(data.result == 200){
                     
+                    $("#email_confirm").val("Y");
+                    $("#user_email").css("background-color"."green");
                 }else{
+                    $("#email_confirm").val("N");
+                    $("#user_email").css("background-color"."red");
                     alert('login fail, retry to login');
                 }
             },
@@ -82,7 +87,7 @@
         });
         
         
-    }
+    });
       
   </script>
 </html>
