@@ -18,37 +18,71 @@
         <!-- Custom styles for this template -->
   </head>
   <body>
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-10" style="text-align: center"> <h1>Join Us</h1></div>
-              
-          </div>
-          <div class="row" style="padding:10px">
-              <label class="col-sm-2 form-label">Email</label>
-              <div class="col-sm-6"><input type="text" id="user_email" name="user_email" class="form-control"></div>
-              <div class="col-sm-2"><button class="btn form-control btn-info">confirm</button></div>
-          </div>
-          
-          <div class="row" style="padding:10px">
-              <label class="col-sm-2 form-label">Password</label>
-              <div class="col-sm-6"><input type="password" id="user_pass" name="user_pass" class="form-control"></div>
-          </div>
-          
-          <div class="row" style="padding:10px">
-              <label class="col-sm-2 form-label">Given Name</label>
-              <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control"></div>
-          </div>
-          
-          <div class="row" style="padding:10px">
-              <label class="col-sm-2 form-label">Family Name</label>
-              <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control"></div>
-          </div>
-          
-          <div class="row" style="padding:10px">
-              <div class="col-sm-10"><button class="btn form-control btn-success">Go join</button></div>
-          </div>
-      </div>
-      
+      <form id="join_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10" style="text-align: center"> <h1>Join Us</h1></div>
+                
+            </div>
+            <div class="row" style="padding:10px">
+                <label class="col-sm-2 form-label">Email</label>
+                <div class="col-sm-6">
+                    <input type="text" id="user_email" name="user_email" class="form-control"/>
+                    <input type="hidden" id="email_confirm" name="email_confirm" class="form-control" value="N"/>
+                </div>
+                <div class="col-sm-2"><button class="btn form-control btn-info">confirm</button></div>
+            </div>
+
+            <div class="row" style="padding:10px">
+                <label class="col-sm-2 form-label">Password</label>
+                <div class="col-sm-6"><input type="password" id="user_pass" name="user_pass" class="form-control"></div>
+            </div>
+
+            <div class="row" style="padding:10px">
+                <label class="col-sm-2 form-label">Given Name</label>
+                <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control"></div>
+            </div>
+
+            <div class="row" style="padding:10px">
+                <label class="col-sm-2 form-label">Family Name</label>
+                <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control"></div>
+            </div>
+
+            <div class="row" style="padding:10px">
+                <div class="col-sm-10"><button type="button" class="btn form-control btn-success">Go join</button></div>
+            </div>
+        </div>
+      </form>
       
   </body>
+  
+  <script>
+    function id_check(){
+        
+        var check_id = $("#user_email").val();
+        
+        $.ajax({
+            url:'/member/set_member_google',
+            type:'post',
+            processData : false,
+            contentType : false,
+            data: {check_id:check_id},
+            success:function(data){
+                if(data.result == 200){
+                    
+                }else{
+                    alert('login fail, retry to login');
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                return false;
+            }	 
+        });
+        
+        
+    }
+      
+  </script>
 </html>
