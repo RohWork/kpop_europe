@@ -61,7 +61,7 @@
         
         
         var check_email = $("#user_email").val();
-        console.log('test');
+
         $.ajax({
             url:'/member/mail_check',
             type:'post',
