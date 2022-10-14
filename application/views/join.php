@@ -75,7 +75,7 @@
                 }else{
                     $("#email_confirm").val("N");
                     $("#user_email").css("background-color","#FFEBEE");
-                    alert('login fail, retry to login');
+                    alert('duplicated email. check to your email');
                 }
             },
             error: function(xhr,status,error) {
