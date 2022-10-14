@@ -72,10 +72,10 @@
                 if(data.result == 200){
                     
                     $("#email_confirm").val("Y");
-                    $("#user_email").css("background-color"."green");
+                    $("#user_email").css("background-color","green");
                 }else{
                     $("#email_confirm").val("N");
-                    $("#user_email").css("background-color"."red");
+                    $("#user_email").css("background-color","red");
                     alert('login fail, retry to login');
                 }
             },
