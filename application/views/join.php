@@ -68,7 +68,7 @@
             type:'post',
             processData : false,
             contentType : false,
-            data: { check_email : check_email },
+            data: JSON.stringify({ check_email : check_email }),
             success:function(data){
                 if(data.result == 200){
                     
