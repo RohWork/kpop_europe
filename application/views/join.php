@@ -34,22 +34,25 @@
             </div>
 
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label">Password</label>
-                <div class="col-sm-6"><input type="password" id="user_pass" name="user_pass" class="form-control"></div>
+                <label class="col-sm-2 form-label" for="user_pass1">Password</label>
+                <div class="col-sm-6"><input type="password" id="user_pass1" name="user_pass1" class="form-control"></div>
             </div>
-
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label">Given Name</label>
+                <label class="col-sm-2 form-label" for="user_pass2">Password2</label>
+                <div class="col-sm-6"><input type="password" id="user_pass2" name="user_pass2" class="form-control"></div>
+            </div>
+            <div class="row" style="padding:10px">
+                <label class="col-sm-2 form-label" for="user_name1">Given Name</label>
                 <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control"></div>
             </div>
 
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label">Family Name</label>
+                <label class="col-sm-2 form-label" for="user_name2">Family Name</label>
                 <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control"></div>
             </div>
 
             <div class="row" style="padding:10px">
-                <div class="col-sm-10"><button type="button" class="btn form-control btn-success">Go join</button></div>
+                <div class="col-sm-10"><button type="button" class="btn form-control btn-success" id="set_join">Go join</button></div>
             </div>
         </div>
       </form>
