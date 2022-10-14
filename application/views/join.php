@@ -60,14 +60,14 @@
     $("#email_confirm").click(function(){
         
         
-        var check_id = $("#user_email").val();
+        var check_email = $("#user_email").val();
         
         $.ajax({
             url:'/member/mail_check',
             type:'post',
             processData : false,
             contentType : false,
-            data: {check_id:check_id},
+            data: {check_email:check_email},
             success:function(data){
                 if(data.result == 200){
                     
