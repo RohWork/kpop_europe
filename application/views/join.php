@@ -30,7 +30,7 @@
                     <input type="text" id="user_email" name="user_email" class="form-control"/>
                     <input type="hidden" id="email_confirm" name="email_confirm" class="form-control" value="N"/>
                 </div>
-                <div class="col-sm-2"><button class="btn form-control btn-info">confirm</button></div>
+                <div class="col-sm-2"><button class="btn form-control btn-info" type="button">confirm</button></div>
             </div>
 
             <div class="row" style="padding:10px">
