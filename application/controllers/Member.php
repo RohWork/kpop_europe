@@ -27,6 +27,18 @@ class Member extends CI_Controller {
     
     function mail_check(){
         
+        $email = $this->input->post("check_email");
+        
+        $join_history = $this->mem_md->get_member($email);
+        
+        if(empty($join_history)){
+            $data['result'] = 200;
+        }else{
+            $data['result'] = 201;
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
         
     }
     
