@@ -29,7 +29,12 @@ class Member extends CI_Controller {
         
         $email = $this->input->post("check_email");
         
+        
+        echo $email;
+        
         $join_history = $this->mem_md->get_member($email);
+        
+        var_dump($join_history);
         
         if(empty($join_history)){
             $data['result'] = 200;
