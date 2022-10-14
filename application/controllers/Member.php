@@ -32,9 +32,9 @@ class Member extends CI_Controller {
         $join_history = $this->mem_md->get_member($email);
         
         if(empty($join_history)){
-            $data['result'] = 201;
-        }else{
             $data['result'] = 200;
+        }else{
+            $data['result'] = 201;
         }
         
         header("Content-Type: application/json;");
