@@ -63,7 +63,7 @@
         var check_id = $("#user_email").val();
         
         $.ajax({
-            url:'/member/set_member_google',
+            url:'/member/mail_check',
             type:'post',
             processData : false,
             contentType : false,
