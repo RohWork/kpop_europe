@@ -66,8 +66,6 @@
         $.ajax({
             url:'/member/mail_check',
             type:'post',
-            processData : false,
-            contentType : false,
             data: { check_email : check_email },
             success:function(data){
                 if(data.result == 200){
