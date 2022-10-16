@@ -78,7 +78,7 @@ class Member extends CI_Controller {
         }else{
             
 
-            $data['message'] = "이메일 중복입니다.";
+            $data['message'] = "Duplicate email. Check to your email.";
 
             $data['result'] = 202;
             
