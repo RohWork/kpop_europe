@@ -1,16 +1,21 @@
-<div class="container">
-    <div class="row">
-        <div class="col col-3">
-        </div>
-        <div class="col col-4">
-            <h1>Check to Your E-mail!</h1>
-        </div>
-        <div class="col col-3">
-        </div>
-    </div>
+<html>
     
-    
-    
-</div>
+    <head>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col col-3">
+                </div>
+                <div class="col col-4">
+                    <h1>Check to Your E-mail!</h1>
+                </div>
+                <div class="col col-3">
+                </div>
+            </div>
 
-</main>
+
+
+        </div>
+    </body>
+</html>
