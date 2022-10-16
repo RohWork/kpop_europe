@@ -47,11 +47,11 @@ class Member extends CI_Controller {
     function join_process(){
         
                 
-        $id = $this->input->post("id");
-        $name = $this->input->post("name");
-        $image_url = $this->input->post("image_url");
-        $email = $this->input->post("email");
-        $nick = $this->input->post("nick");
+        $email = $this->input->post("user_email");
+        $password = md5($this->input->post("user_pass1"));
+        $name = $this->input->post("user_name1").".".$this->input->post("user_name2");
+        $nick = $this->input->post("user_name1");
+        $id = md5(date('Y-m-d h:i:s'));
         
         if(empty($id) || empty($name)){
             
@@ -68,10 +68,10 @@ class Member extends CI_Controller {
             $data = array(
                 "id" => $id,
                 "name" => $name,
-                "image_url" => $image_url,
+                "password" => $password,
                 "email" => $email,
                 "nick" => $nick,
-                
+                "type"  => 2 ,
                 
             );
             $join_result = $this->mem_md->set_member($data);
@@ -136,7 +136,7 @@ class Member extends CI_Controller {
                 "image_url" => $image_url,
                 "email" => $email,
                 "nick" => $nick,
-                
+                "type" => 1,
                 
             );
             $join_result = $this->mem_md->set_member($data);
