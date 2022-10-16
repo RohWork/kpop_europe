@@ -30,25 +30,25 @@
                     <input type="email" id="user_email" name="user_email" class="form-control"/>
                     <input type="hidden" id="email_confirm" name="email_confirm" class="form-control" value="N"/>
                 </div>
-                <div class="col-sm-2"><button class="btn form-control btn-info" type="button" id="check_email">confirm</button></div>
+                <div class="col-sm-2"><button class="btn form-control btn-info" type="button" id="check_email" required>confirm</button></div>
             </div>
 
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_pass1">Password</label>
-                <div class="col-sm-6"><input type="password" id="user_pass1" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass1" class="form-control"></div>
+                <div class="col-sm-6"><input type="password" id="user_pass1" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass1" class="form-control" required></div>
             </div>
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_pass2">Password2</label>
-                <div class="col-sm-6"><input type="password" id="user_pass2" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass2" class="form-control"></div>
+                <div class="col-sm-6"><input type="password" id="user_pass2" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass2" class="form-control" required></div>
             </div>
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_name1">Given Name</label>
-                <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control"></div>
+                <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control" required></div>
             </div>
 
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_name2">Family Name</label>
-                <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control"></div>
+                <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control" required></div>
             </div>
 
             <div class="row" style="padding:10px">
@@ -98,7 +98,10 @@
        var up1 = $("#user_pass1").val();
        var up2 = $("#user_pass2").val();
        
-       if(confirm != "Y"){
+       if(check_param){
+           alert("Take Confirm to your data.");
+           return false;
+       }else if(confirm != "Y"){
            alert("Take Confirm to your Email address.");
            $("#user_email").focus();
            return false;
@@ -131,6 +134,32 @@
        
        
     });
-      
+    
+    function check_param(){
+        
+        var f  = $("#join_form");
+        var $f = jQuery(f);
+        var $b = jQuery(this);
+        var $t, t;
+        var result = true;
+        
+        $f.find("input, select, textarea").each(function(i) {
+            $t = jQuery(this);
+
+            if($t.prop("required")) {
+                if(!jQuery.trim($t.val())) {
+                    t = jQuery("label[for='"+$t.attr("id")+"']").text();
+                    result = false;
+                    $t.focus();
+                    alert(t+" 필수 입력입니다.");
+                    return false;
+                }
+            }
+        });
+        
+        if(!result)
+            return false;
+    }
+    
   </script>
 </html>
