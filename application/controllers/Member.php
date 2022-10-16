@@ -107,7 +107,7 @@ class Member extends CI_Controller {
     
     function mail_process(){
         
-        
+        $this->load->view('mail_process');
     }
     
     function set_member_google(){
