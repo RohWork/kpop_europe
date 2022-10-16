@@ -95,7 +95,7 @@ class Member extends CI_Controller {
         }else{
             
 
-            $data['message'] = "Duplicate email. Check to your email.";
+            $data['message'] = "Duplicate email. Check to your email adress.";
 
             $data['result'] = 202;
             
