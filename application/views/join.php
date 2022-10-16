@@ -35,11 +35,11 @@
 
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_pass1">Password</label>
-                <div class="col-sm-6"><input type="password" id="user_pass1" name="user_pass1" class="form-control"></div>
+                <div class="col-sm-6"><input type="password" id="user_pass1" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass1" class="form-control"></div>
             </div>
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_pass2">Password2</label>
-                <div class="col-sm-6"><input type="password" id="user_pass2" name="user_pass2" class="form-control"></div>
+                <div class="col-sm-6"><input type="password" id="user_pass2" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass2" class="form-control"></div>
             </div>
             <div class="row" style="padding:10px">
                 <label class="col-sm-2 form-label" for="user_name1">Given Name</label>
@@ -93,11 +93,17 @@
     
     
     $("#set_join").click(function(){
+        
        var confirm = $("#email_confirm").val();
+       var up1 = $("#user_pass1").val();
+       var up2 = $("#user_pass2").val();
+       
        if(confirm != "Y"){
            alert("Take Confirm to your Email address.");
            $("#user_email").focus();
            return false;
+       }else if(up1 != up2){
+           
        }else{
            
         $.ajax({
