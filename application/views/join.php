@@ -98,7 +98,7 @@
        var up1 = $("#user_pass1").val();
        var up2 = $("#user_pass2").val();
        
-       if(check_param){
+       if(!check_param){
            alert("Take Confirm to your data.");
            return false;
        }else if(confirm != "Y"){
