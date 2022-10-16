@@ -103,7 +103,8 @@
            $("#user_email").focus();
            return false;
        }else if(up1 != up2){
-           
+           alert("check to your Password");
+           $("#user_pass1").focuse();
        }else{
            
         $.ajax({
