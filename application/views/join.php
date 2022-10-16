@@ -151,7 +151,7 @@
                     t = jQuery("label[for='"+$t.attr("id")+"']").text();
                     result = false;
                     $t.focus();
-                    alert(t+" 필수 입력입니다.");
+                    alert(t+" Required input. ");
                     return false;
                 }
             }
