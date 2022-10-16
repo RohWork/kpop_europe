@@ -83,7 +83,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                alert("Network Error!! take support to web manager");
                 return false;
             }	 
         });
@@ -103,7 +103,7 @@
         $.ajax({
             url:'/member/join_process',
             type:'post',
-            data: { check_email : check_email },
+            data: $("#join_form").serialize(),
             success:function(data){
                 if(data.result == 200){
                     location.href="/member/mail_process";
