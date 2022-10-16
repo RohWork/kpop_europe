@@ -75,6 +75,23 @@ class Member extends CI_Controller {
                 
             );
             $join_result = $this->mem_md->set_member($data);
+            
+            if(!$join_result){
+
+                $data['message'] = "Data processing failure";
+
+                $data['result'] = 201;
+
+
+            }else{
+
+
+                $data['message'] = "";
+
+                $data['result'] = 200;
+
+            }
+            
         }else{
             
 
@@ -83,23 +100,7 @@ class Member extends CI_Controller {
             $data['result'] = 202;
             
         }
-        
-        if(!$join_result){
-            
-            $data['message'] = "Data processing failure";
-            
-            $data['result'] = 201;
-            
-            
-        }else{
-            
 
-            $data['message'] = "";
-
-            $data['result'] = 200;
-            
-        }
-        
         header("Content-Type: application/json;");
         echo json_encode($data);
     }
