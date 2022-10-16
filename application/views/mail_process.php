@@ -25,7 +25,7 @@
                 </div>
                 <div class="col col-6" style="text-align: center">
                     <h1>Check to Your E-mail!</h1>
-                    <button onclick="location.href=/main">HOME</button>
+                    <button onclick="location.href='/main'" class="btn btn-success">HOME</button>
                 </div>
                 <div class="col col-3">
                 </div>
