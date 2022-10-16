@@ -118,6 +118,7 @@
                 if(data.result == 200){
                     location.href="/member/mail_process";
                 }else{
+                    alert('실패');
                     alert(data.message);
                     return false;
                 }
