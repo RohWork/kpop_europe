@@ -1,6 +1,7 @@
 <style>
     .a_border{
         text-decoration: none;
+        color:#000;
     }
 </style>
 
