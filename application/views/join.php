@@ -148,9 +148,7 @@
 
             if($t.prop("required")) {
                 if(!jQuery.trim($t.val())) {
-                    t = jQuery("label[for='"+$t.attr("id")+"']").text();
                     result = false;
-                    $t.focus();
                     alert(t+" Required input. ");
                     return false;
                 }
