@@ -25,7 +25,7 @@
                 
             </div>
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label">Email</label>
+                <label class="col-sm-2 form-label" for="user_email">Email</label>
                 <div class="col-sm-6">
                     <input type="email" id="user_email" name="user_email" class="form-control"/>
                     <input type="hidden" id="email_confirm" name="email_confirm" class="form-control" value="N"/>
@@ -89,6 +89,40 @@
         });
         
         
+    });
+    
+    
+    $("#set_join").click(function(){
+       var confirm = $("#email_confirm").val();
+       if(confirm != "Y"){
+           alert("Take Confirm to your Email address.");
+           $("#user_email").focus();
+           return false;
+       }else{
+           
+        $.ajax({
+            url:'/member/join_process',
+            type:'post',
+            data: { check_email : check_email },
+            success:function(data){
+                if(data.result == 200){
+                    location.href="/member/mail_process";
+                }else{
+                    alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
+        });
+           
+           
+       }
+       
+       
     });
       
   </script>
