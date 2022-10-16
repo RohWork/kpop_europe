@@ -139,7 +139,6 @@
         
         var f  = $("#join_form");
         var $f = jQuery(f);
-        var $b = jQuery(this);
         var $t, t;
         var result = true;
         
