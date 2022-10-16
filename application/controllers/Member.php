@@ -86,7 +86,7 @@ class Member extends CI_Controller {
         
         if(!$join_result){
             
-            $data['message'] = "데이터 처리 실패.";
+            $data['message'] = "Data processing failure";
             
             $data['result'] = 201;
             
