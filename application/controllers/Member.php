@@ -106,12 +106,9 @@ class Member extends CI_Controller {
     }
     
     function mail_process(){
-        
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        
+
         $this->load->view('mail_process');
-        $this->load->view('footer');
+
     }
     
     function set_member_google(){
