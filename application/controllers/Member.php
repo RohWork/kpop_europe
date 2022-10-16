@@ -46,6 +46,62 @@ class Member extends CI_Controller {
     
     function join_process(){
         
+                
+        $id = $this->input->post("id");
+        $name = $this->input->post("name");
+        $image_url = $this->input->post("image_url");
+        $email = $this->input->post("email");
+        $nick = $this->input->post("nick");
+        
+        if(empty($id) || empty($name)){
+            
+            return;
+            
+        }
+        
+        
+        $join_history = $this->mem_md->get_member($email);
+        $join_result = false;
+                
+        if(empty($join_history)){
+            
+            $data = array(
+                "id" => $id,
+                "name" => $name,
+                "image_url" => $image_url,
+                "email" => $email,
+                "nick" => $nick,
+                
+                
+            );
+            $join_result = $this->mem_md->set_member($data);
+        }else{
+            
+
+            $data['message'] = "이메일 중복입니다.";
+
+            $data['result'] = 202;
+            
+        }
+        
+        if(!$join_result){
+            
+            $data['message'] = "데이터 처리 실패.";
+            
+            $data['result'] = 201;
+            
+            
+        }else{
+            
+
+            $data['message'] = "";
+
+            $data['result'] = 200;
+            
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
     }
     
     function mail_process(){
