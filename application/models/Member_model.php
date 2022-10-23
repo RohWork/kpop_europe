@@ -18,7 +18,6 @@ class Member_model extends CI_Model {
         
         $sSql = "SELECT * FROM kpop_member WHERE email = '$email' and password = '$pass' ";
         
-        echo $sSql;
         $query = $this->db->query($sSql);
         return $query->row_array();
         
