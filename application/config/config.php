@@ -391,11 +391,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= '';
-$config['cookie_domain']	= 'www.kpopineu.com';
-$config['cookie_path']		= '/';
-$config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
+//$config['cookie_prefix']	= '';
+//$config['cookie_domain']	= 'www.kpopineu.com';
+//$config['cookie_path']		= '/';
+//$config['cookie_secure']	= FALSE;
+//$config['cookie_httponly'] 	= FALSE;
 
 /*
 |--------------------------------------------------------------------------
