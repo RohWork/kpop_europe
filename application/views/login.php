@@ -32,7 +32,7 @@
                         <tr>
                             <td height="15"></td>
                         </tr>
-                        <form>
+                        <form id="login_form">
                         <tr>
                             <td>
                                  <label class="form-label" for="login_email">Email</label>
