@@ -97,7 +97,7 @@
          login_set();
 
      }
-    }
+    });
       
       
     function handleCredentialResponse(response) {
