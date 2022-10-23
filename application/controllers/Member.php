@@ -21,7 +21,7 @@ class Member extends CI_Controller {
     
     function logout(){
         
-        $this->session->flashdata();
+        $this->session->sess_destroy();
         sleep(1);
         header('Location: /main');
     }
