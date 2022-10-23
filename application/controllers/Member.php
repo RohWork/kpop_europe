@@ -25,7 +25,7 @@ class Member extends CI_Controller {
         
         if($result){
             
-            if($result['email_confirm'] == "Y"){
+            if($result['state'] == "1"){
             
                 $this->session->set_userdata($result);	//session 등록
                 session_commit();
