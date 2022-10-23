@@ -1,7 +1,4 @@
 <main>
-    <?php
-        var_dump($this->session);
-    ?>
 <link href="/asset/css/sidebar.css" rel="stylesheet">
 <div class="flex-shrink-0 p-3 bg-white" style="width:200px">
     
