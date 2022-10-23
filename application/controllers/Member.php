@@ -15,7 +15,36 @@ class Member extends CI_Controller {
     }
     
     function login_process(){
+        $email= $this->input->post("login_email");
+        $pass = md5($this->input->post("login_pass"));
+
+        $result = $this->mem_md->login_check_member($email, $pass);
         
+        if($result){
+            
+            if($result['email_confirm'] == "Y"){
+            
+                $this->session->set_userdata($result);	//session 등록
+                session_commit();
+                session_write_close();
+
+                $data['message'] = "";
+
+                $data['result'] = 200;
+            }else{
+                $data['message'] = "this E-mail is not confirmed. Take to E-mail confirm";
+
+                $data['result'] = 202;
+            }
+            
+        }else{
+            $data['message'] = "Check To you're ID or PASSWORD";
+
+            $data['result'] = 201;
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
         
     }
     
