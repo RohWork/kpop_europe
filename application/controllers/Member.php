@@ -22,13 +22,13 @@ class Member extends CI_Controller {
     function logout(){
         
         $this->session->flashdata();
-        
+        header('Location: /main');
     }
     
     function join(){
         
         $this->load->view('join');
-        header('Location: /main');
+        
 
     }
     
