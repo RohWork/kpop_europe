@@ -7,7 +7,7 @@
         <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/login'">LOGIN</button>
         <?php }else{ ?>
         <p class="text-center" style="width:100%">hi! <b><?=$this->session->userdata('nick')?></b></p>
-        <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/logout'">LOGIN</button>
+        <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/logout'">LOGOUT</button>
         <?php } ?>
     </div>
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
