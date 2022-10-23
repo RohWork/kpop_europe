@@ -4,7 +4,7 @@
     
     <div class="mb-1 border-bottom">
         <?php if(empty($this->session->userdata('name') )){ ?>
-            login
+        <button class="btn btn-toggle">login</button>
         <?php }else{ ?>
             welecome! <br/>
             <?=$this->session->userdata('name')?>
