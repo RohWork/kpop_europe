@@ -158,7 +158,7 @@ class Member extends CI_Controller {
 
             $message = "";
 
-            
+            echo $this->session->userdata('name');
             $data['result'] = 200;
             
         }
