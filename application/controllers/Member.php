@@ -19,6 +19,8 @@ class Member extends CI_Controller {
         $email= $this->input->post("login_email");
         $pass = md5($this->input->post("login_pass"));
 
+        echo $email;
+        
         $result = $this->mem_md->login_check_member($email, $pass);
         
         if($result){
