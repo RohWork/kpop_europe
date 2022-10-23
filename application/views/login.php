@@ -89,6 +89,17 @@
     </div>
   </body>
   <script>
+      
+     $( "#login_pass" ).keypress(function( event ) {
+
+        if ( event.which == 13 ) {
+
+         login_set();
+
+     }
+    }
+      
+      
     function handleCredentialResponse(response) {
      // decodeJwtResponse() is a custom function defined by you
      // to decode the credential response.
