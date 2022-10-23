@@ -19,10 +19,17 @@ class Member extends CI_Controller {
         
     }
     
+    function logout(){
+        
+        $this->session->flashdata();
+        
+    }
+    
     function join(){
         
         $this->load->view('join');
-        
+        header('Location: /main');
+
     }
     
     function mail_check(){
