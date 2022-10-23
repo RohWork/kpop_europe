@@ -32,7 +32,7 @@
                         <tr>
                             <td height="15"></td>
                         </tr>
-                        <form id="login_form" onsubmit="login_set()">
+                        <form id="login_form" onsubmit="login_set() return false" method="post" >
                         <tr>
                             <td>
                                  <label class="form-label" for="login_email">Email</label>
