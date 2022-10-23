@@ -6,7 +6,7 @@
         <?php if(empty($this->session->userdata('name') )){ ?>
         <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/login'">LOGIN</button>
         <?php }else{ ?>
-        <span class="text-center">hi! <?=$this->session->userdata('nick')?></span><br/>
+        <span class="text-center" style="width:100%">hi! <b><?=$this->session->userdata('nick')?></b></span><br/>
         <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/logout'">LOGIN</button>
         <?php } ?>
     </div>
