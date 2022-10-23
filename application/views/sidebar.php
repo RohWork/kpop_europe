@@ -2,7 +2,7 @@
 <link href="/asset/css/sidebar.css" rel="stylesheet">
 <div class="flex-shrink-0 p-3 bg-white" style="width:200px">
     
-    <div class="mb-1" style="margin-bottom: 70em;">
+    <div class="mb-1" style="margin-bottom: 70px;">
         <?php if(empty($this->session->userdata('name') )){ ?>
         <button class="btn btn-success text-center" style="width:100%">login</button>
         <?php }else{ ?>
