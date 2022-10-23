@@ -169,7 +169,7 @@
                         alert('hello, '+responsePayload.name);
                         location.href = "/";
                     }else{
-                        alert('login fail, retry to login');
+                        alert(data.message);
                     }
                 },
                 error: function(xhr,status,error) {
