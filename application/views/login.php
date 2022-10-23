@@ -151,33 +151,34 @@
   }
   
     function login_set(){
+        
+        event.preventDefault(); 
+        var formData = new FormData();
 
-            var formData = new FormData();
 
+        formData.append('login_email', $("#login_email").val());
+        formData.append('login_pass', $("#login_pass").val());
 
-            formData.append('login_email', $("#login_email").val());
-            formData.append('login_pass', $("#login_pass").val());
-            
-            $.ajax({
-                url:'/member/login_process',
-                type:'post',
-                processData : false,
-                contentType : false,
-                data:formData,
-                success:function(data){
-                    if(data.result == 200){
-                        alert('hello, '+responsePayload.name);
-                        location.href = "/";
-                    }else{
-                        alert(data.message);
-                    }
-                },
-                error: function(xhr,status,error) {
-                    console.log(xhr,status,error);
-                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
-                    return false;
-                }	 
-            });
+        $.ajax({
+            url:'/member/login_process',
+            type:'post',
+            processData : false,
+            contentType : false,
+            data:formData,
+            success:function(data){
+                if(data.result == 200){
+                    alert('hello, '+responsePayload.name);
+                    location.href = "/";
+                }else{
+                    alert(data.message);
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                return false;
+            }	 
+        });
   }
   
     $("#join_member").click(function(){
