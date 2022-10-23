@@ -177,11 +177,13 @@
             contentType : false,
             data:formData,
             success:function(data){
+                
+                alert(data.message);
+                
                 if(data.result == 200){
-                    alert('hello, '+responsePayload.name);
                     location.href = "/";
                 }else{
-                    alert(data.message);
+                    return false;
                 }
             },
             error: function(xhr,status,error) {
