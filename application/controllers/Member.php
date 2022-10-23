@@ -178,6 +178,7 @@ class Member extends CI_Controller {
                 "email" => $email,
                 "nick" => $nick,
                 "type" => 1,
+                'state' => 1,
                 
             );
             $join_result = $this->mem_md->set_member($data);
