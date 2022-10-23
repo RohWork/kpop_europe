@@ -22,7 +22,7 @@ class Member extends CI_Controller {
     function logout(){
         
         $this->session->flashdata();
-        sleep(5);
+        sleep(1);
         header('Location: /main');
     }
     
