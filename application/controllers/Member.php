@@ -31,7 +31,7 @@ class Member extends CI_Controller {
                 session_commit();
                 session_write_close();
 
-                $data['message'] = "";
+                $data['message'] = "hello ".$result['nick'];
 
                 $data['result'] = 200;
             }else{
