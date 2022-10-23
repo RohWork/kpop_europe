@@ -32,7 +32,7 @@
                         <tr>
                             <td height="15"></td>
                         </tr>
-                        <form id="login_form" onsubmit="login_set() return false" method="post" >
+                        <form id="login_form" onsubmit="return false" method="post" >
                         <tr>
                             <td>
                                  <label class="form-label" for="login_email">Email</label>
@@ -41,7 +41,7 @@
                                 <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
                             </td>
                             <td rowspan="2">
-                                <button class="form-control" type="button" style="height:68px;" >LOGIN</button>
+                                <button class="form-control" onclick="login_set()" type="button" style="height:68px;" >LOGIN</button>
                             </td>
                         </tr>
                         <tr>
