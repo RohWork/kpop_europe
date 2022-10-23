@@ -151,14 +151,12 @@ class Member extends CI_Controller {
         }else{
             
             $result = $this->mem_md->get_member($email);
-            var_dump($result);
 
             $this->session->set_userdata($result);	//session 등록
             session_commit();
 
             $message = "";
 
-            echo $this->session->userdata('name');
             $data['result'] = 200;
             
         }
