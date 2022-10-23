@@ -15,6 +15,7 @@ class Member extends CI_Controller {
     }
     
     function login_process(){
+        
         $email= $this->input->post("login_email");
         $pass = md5($this->input->post("login_pass"));
 
