@@ -32,7 +32,7 @@
                         <tr>
                             <td height="15"></td>
                         </tr>
-                        <form action="/member/login_process">
+                        <form>
                         <tr>
                             <td>
                                  <label class="form-label" for="login_email">Email</label>
@@ -41,7 +41,7 @@
                                 <input type="email" class="form-control" id="login_email" name="login_email" placeholder="id@kpopineurope.com"/>
                             </td>
                             <td rowspan="2">
-                                <button class="form-control" style="height:68px;">LOGIN</button>
+                                <button class="form-control" type="button" style="height:68px;" onclick="login_set">LOGIN</button>
                             </td>
                         </tr>
                         <tr>
@@ -130,6 +130,36 @@
             
             $.ajax({
                 url:'/member/set_member_google',
+                type:'post',
+                processData : false,
+                contentType : false,
+                data:formData,
+                success:function(data){
+                    if(data.result == 200){
+                        alert('hello, '+responsePayload.name);
+                        location.href = "/";
+                    }else{
+                        alert('login fail, retry to login');
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
+  }
+  
+    function login_set(){
+
+            var formData = new FormData();
+
+
+            formData.append('login_email', $("#login_email").val());
+            formData.append('login_pass', $("#login_pass").val());
+            
+            $.ajax({
+                url:'/member/login_process',
                 type:'post',
                 processData : false,
                 contentType : false,
