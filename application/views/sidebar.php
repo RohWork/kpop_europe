@@ -4,7 +4,7 @@
     
     <div class="mb-4 pb-4" >
         <?php if(empty($this->session->userdata('name') )){ ?>
-        <button class="btn btn-success text-center" style="width:100%">LOGIN</button>
+        <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/login'">LOGIN</button>
         <?php }else{ ?>
             welecome! <br/>
             <?=$this->session->userdata('name')?>
