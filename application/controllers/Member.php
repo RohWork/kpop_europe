@@ -166,13 +166,14 @@ class Member extends CI_Controller {
         $this->email->to("shxodwk@naver.com");
         $this->email->subject('인증테스트');
         $this->email->message('인증내용');
+        
         if($this->email->send()) {
-                echo "성공";
+                 $this->load->view('mail_process');
         } else {
                 echo $this->email->print_debugger();
         }
 
-        $this->load->view('mail_process');
+       
 
     }
     
