@@ -149,10 +149,10 @@ class Member extends CI_Controller {
         
         $config = array(
 	'protocol' => "smtp",
-	'smtp_host' => "ssl://smtp.gmail.com",
+	'smtp_host' => "ssl://smtp.daum.net",
 	'smtp_port' => "465",//"587", // 465 나 587 중 하나를 사용
-	'smtp_user' => "kpopineu@gmail.com",
-	'smtp_pass' => "Enqjr1220!",
+	'smtp_user' => "roh@kakao.com",
+	'smtp_pass' => "s3628742",
 	'charset' => "utf-8",
 	'mailtype' => "html",
 	'smtp_timeout' => 10,
@@ -162,8 +162,8 @@ class Member extends CI_Controller {
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
         $this->email->clear();
-        $this->email->from("kpopineu@gmail.com", "kpopineu");
-        $this->email->to("roh@kakao.com");
+        $this->email->from("admin@kpopineu.com", "kpopineu");
+        $this->email->to("shxodwk@naver.com");
         $this->email->subject('인증테스트');
         $this->email->message('인증내용');
         if($this->email->send()) {
