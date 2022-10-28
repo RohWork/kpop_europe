@@ -181,7 +181,7 @@ class Member extends CI_Controller {
     
     function confirm_email(){
         
-        $id = $this->input->get("idx");
+        $id = $this->input->get("id");
         
         if(empty($id)){
             echo "id is null";
