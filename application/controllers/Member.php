@@ -169,7 +169,7 @@ class Member extends CI_Controller {
         $this->email->from("admin@kpopineu.com", "kpopineu");
         $this->email->to($mail);
         $this->email->subject('confirm to your address');
-        $this->email->message('visit to this url : https://www.kpopineu.com/member/confirm_email?id='.$result['id']);
+        $this->email->message('visit to : <a href=https://www.kpopineu.com/member/confirm_email?id='.$result['id'].">this url</a>");
         
         if($this->email->send()) {
                  $this->load->view('mail_process');
