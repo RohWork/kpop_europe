@@ -149,7 +149,7 @@ class Member extends CI_Controller {
         
         $mail = $this->input->get("email");
         
-        $result = $this->member_model->get_member($mail);
+        $result = $this->member_model->mem_md($mail);
         
         $config = array(
 	'protocol' => "smtp",
