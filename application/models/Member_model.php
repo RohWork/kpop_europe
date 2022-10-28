@@ -21,7 +21,7 @@ class Member_model extends CI_Model {
         );
         
         $this->db->where('id', $id);
-        $this->db->update('member', $params);
+        $this->db->update('kpop_member', $params);
         
         return $this->db->affected_rows();
     }
