@@ -167,9 +167,9 @@ class Member extends CI_Controller {
         $this->email->set_newline("\r\n");
         $this->email->clear();
         $this->email->from("admin@kpopineu.com", "kpopineu");
-        $this->email->to("shxodwk@naver.com");
+        $this->email->to($email);
         $this->email->subject('confirm to your address');
-        $this->email->message('인증내용');
+        $this->email->message('<a href=https://www.kpopineu.com/member/confirm_email?id='.$result['id']);
         
         if($this->email->send()) {
                  $this->load->view('mail_process');
