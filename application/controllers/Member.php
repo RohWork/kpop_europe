@@ -169,7 +169,7 @@ class Member extends CI_Controller {
         if($this->email->send()) {
                 echo "성공";
         } else {
-                echo "실패";
+                echo $this->email->print_debugger();
         }
 
         $this->load->view('mail_process');
