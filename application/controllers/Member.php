@@ -146,6 +146,31 @@ class Member extends CI_Controller {
     }
     
     function mail_process(){
+        
+        $config = array(
+	'protocol' => "smtp",
+	'smtp_host' => "ssl://smtp.gmail.com",
+	'smtp_port' => "465",//"587", // 465 나 587 중 하나를 사용
+	'smtp_user' => "kpopineu@gmail.com",
+	'smtp_pass' => "Enqjr1220!",
+	'charset' => "utf-8",
+	'mailtype' => "html",
+	'smtp_timeout' => 10,
+);
+
+        // gmail smtp 메일 발송
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+        $this->email->clear();
+        $this->email->from("kpopineu@gmail.com", "kpopineu.com");
+        $this->email->to("roh@kakao.com");
+        $this->email->subject('인증테스트');
+        $this->email->message('인증내용');
+        if($this->email->send()) {
+                echo "성공";
+        } else {
+                echo "실패";
+        }
 
         $this->load->view('mail_process');
 
