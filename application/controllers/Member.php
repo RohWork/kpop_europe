@@ -189,13 +189,9 @@ class Member extends CI_Controller {
         }else{
             $result = $this->mem_md->set_id_member($id); 
             
-            if($result){
-                $this->load->view('confirm_email');
-            }else{
-                echo "data error";
-                return;
-            }
-            
+
+            $this->load->view('confirm_email');
+
         }
         
         
