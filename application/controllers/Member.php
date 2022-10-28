@@ -147,6 +147,10 @@ class Member extends CI_Controller {
     
     function mail_process(){
         
+        $mail = $this->input->get("email");
+        
+        $result = $this->member_model->get_member($mail);
+        
         $config = array(
 	'protocol' => "smtp",
 	'smtp_host' => "ssl://smtp.kakao.com",
