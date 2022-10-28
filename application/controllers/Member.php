@@ -164,7 +164,7 @@ class Member extends CI_Controller {
         $this->email->clear();
         $this->email->from("admin@kpopineu.com", "kpopineu");
         $this->email->to("shxodwk@naver.com");
-        $this->email->subject('인증테스트');
+        $this->email->subject('confirm to your address');
         $this->email->message('인증내용');
         
         if($this->email->send()) {
