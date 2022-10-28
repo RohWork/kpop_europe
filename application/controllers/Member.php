@@ -149,7 +149,7 @@ class Member extends CI_Controller {
         
         $config = array(
 	'protocol' => "smtp",
-	'smtp_host' => "ssl://smtp.daum.net",
+	'smtp_host' => "ssl://smtp.kakao.com",
 	'smtp_port' => "465",//"587", // 465 나 587 중 하나를 사용
 	'smtp_user' => "roh@kakao.com",
 	'smtp_pass' => "s3628742",
