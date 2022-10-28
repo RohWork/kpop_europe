@@ -191,6 +191,9 @@ class Member extends CI_Controller {
             
             if($result){
                 $this->load->view('confirm_email');
+            }else{
+                echo "data error";
+                return;
             }
             
         }
