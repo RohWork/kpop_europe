@@ -162,7 +162,7 @@ class Member extends CI_Controller {
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
         $this->email->clear();
-        $this->email->from("kpopineu@gmail.com", "kpopineu.com");
+        $this->email->from("kpopineu@gmail.com", "kpopineu");
         $this->email->to("roh@kakao.com");
         $this->email->subject('인증테스트');
         $this->email->message('인증내용');
