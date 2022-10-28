@@ -177,8 +177,27 @@ class Member extends CI_Controller {
                 echo $this->email->print_debugger();
         }
 
-       
-
+    }
+    
+    function confirm_email(){
+        
+        $id = $this->input->get("idx");
+        
+        if(empty($id)){
+            echo "id is null";
+            return;
+        }else{
+            $result = $this->mem_md->set_id_member($mail); 
+            
+            if($result){
+                $this->load->view('confirm_email');
+            }else{
+                $this->load->view('confirm_email');
+            }
+            
+        }
+        
+        
     }
     
     function set_member_google(){
