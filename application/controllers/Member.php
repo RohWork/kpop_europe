@@ -191,8 +191,6 @@ class Member extends CI_Controller {
             
             if($result){
                 $this->load->view('confirm_email');
-            }else{
-                $this->load->view('confirm_email');
             }
             
         }
