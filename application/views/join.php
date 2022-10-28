@@ -109,6 +109,8 @@
            alert("check to your Password");
            $("#user_pass1").focuse();
        }else{
+        
+        var email = $("#user_email").val();
            
         $.ajax({
             url:'/member/join_process',
@@ -116,7 +118,7 @@
             data: $("#join_form").serialize(),
             success:function(data){
                 if(data.result == 200){
-                    location.href="/member/mail_process";
+                    location.href="/member/mail_process?email="+email;
                 }else{
                     alert('실패');
                     alert(data.message);
