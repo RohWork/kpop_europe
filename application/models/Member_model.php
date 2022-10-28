@@ -14,6 +14,18 @@ class Member_model extends CI_Model {
         
     }
     
+    function set_id_member($id){
+        
+        $params = array(
+            'state' => 1,
+        );
+        
+        $this->db->where('id', $id);
+        $this->db->update('member', $params);
+        
+        return $this->db->affected_rows();
+    }
+    
     function login_check_member($email, $pass){
         
         $sSql = "SELECT * FROM kpop_member WHERE email = '$email' and password = '$pass' ";
@@ -23,6 +35,8 @@ class Member_model extends CI_Model {
         
         
     }
+    
+    
     
     function set_member($params){
         
