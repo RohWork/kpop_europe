@@ -187,7 +187,7 @@ class Member extends CI_Controller {
             echo "id is null";
             return;
         }else{
-            $result = $this->mem_md->set_id_member($mail); 
+            $result = $this->mem_md->set_id_member($id); 
             
             if($result){
                 $this->load->view('confirm_email');
