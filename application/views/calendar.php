@@ -89,6 +89,11 @@
           </tr>
           <?php } ?>
         </table>
+        <div class="row">
+            <div class="col-4">
+                <button type="button" id="insert_cal" name="insert_cal">INSERT</button>
+            </div>
+        </div>
     </div>
     
     <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
