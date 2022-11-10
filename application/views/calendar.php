@@ -100,22 +100,123 @@
         
         <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
             <div class="modal-content" style="height:800px">
-            <div class="modal-header">
-                <h5 class="modal-title">detail</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                <div class="modal-header">
+                    <h5 class="modal-title">detail</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
             </div>
         </div>
     </div>
-    </div>
 
+<div id="insert_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+        
+        <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
+            <div class="modal-content" style="height:800px">
+                <div class="modal-header">
+                    <h5 class="modal-title">insert</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label bold"><strong>Event</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="input_name" name="input_name"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Organizer</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="input_company" name="input_company"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Hompage</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
+                                <input type="text" id="input_homepage" name="input_homepage"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Address</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="input_addr" name="input_addr"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Facebook</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="input_face" name="input_face"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Instagram</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="input_insta'" name="input_insta'"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Youtube</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="input_yout" name="input_yout"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Date</strong></label>
+                            </div>
+                            <div class="col-10">
+                                <input type="date" id="input_start_date" name="input_start_date"/>
+                                ~
+                                <input type="date" id="input_end_date" name="input_end_date"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <label class="form-label"><strong>Etc</strong></label>
+                            </div>
+                            <div class="col-10">
+                                
+                                <textarea id="input_remark" name="input_remark"> </textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <input type="text" id="input_image[]" name="input_image[]"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </main>
 
