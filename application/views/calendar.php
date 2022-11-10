@@ -186,13 +186,15 @@
                         </div>
                         <div class="row">
                             <div class="col-2">
-                                <label class="form-label"><strong>Date</strong></label>
+                                <label class="form-label"><strong>Start Date</strong></label>
                             </div>
-                            <div class="col-5">
+                            <div class="col-4">
                                 <input type="date" class="form-control" id="input_start_date" name="input_start_date"/>
                             </div>
-                            <div class="col-5">
-                                ~
+                            <div class="col-2">
+                                <label class="form-label"><strong> ~ </strong></label>
+                            </div>
+                            <div class="col-4">
                                 <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
                             </div>
                         </div>
