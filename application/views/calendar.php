@@ -256,6 +256,6 @@
     });
     
     $("#insert_cal").on("click", function(){
-       $('#detail_modal').modal("show"); 
+       $('#insert_modal').modal("show"); 
     });
 </script>
