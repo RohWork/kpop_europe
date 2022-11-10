@@ -39,4 +39,12 @@ class Schedule_model extends CI_Model {
         return $this->db->insert_id();
         
     }
+    
+    function insert_schedule_image($params){
+        
+        $this->db->insert('kpop_gallery', $params);
+        
+        return $this->db->insert_id();
+        
+    }
 }
