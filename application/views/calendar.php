@@ -91,7 +91,7 @@
         </table>
         <div class="row">
             <div class="col-4">
-                <button type="button" id="insert_cal" name="insert_cal">INSERT</button>
+                <button type="button" id="insert_cal" name="insert_cal" class="btn btn-primary">INSERT</button>
             </div>
         </div>
     </div>
