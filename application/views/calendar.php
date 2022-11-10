@@ -244,8 +244,8 @@
     }
     
     $(".close").on('click', function(){    
-        $('#detail_modal').modal('hide');	
-        console.log("click close"); 
+        $('#detail_modal').modal('hide');
+        $('#insert_modal').modal('hide');
     });
 
     $('#detail_modal').on('show.bs.modal', function () {
