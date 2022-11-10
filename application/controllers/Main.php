@@ -96,6 +96,7 @@ class Main extends CI_Controller {
     function calendar_insert(){
         
         $data = array();
+        $image_data = array();
         
         $data['name']= $this->input->post("input_name");
         $data['company'] = $this->input->post("input_company");
@@ -107,27 +108,28 @@ class Main extends CI_Controller {
         $data['start_date'] = $this->input->post("input_start_date");
         $data['end_date'] = $this->input->post("input_end_date");
         $data['remark'] = $this->input->post("input_remark");
-        $data['image'] = $this->input->post("input_image");
+        $data['type'] = $this->input->post("type");
         
-        
+        $image_title = $this->input->post("input_name");
+        $image_data['src'] = $this->input->post("input_image");
         
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
             
-            if($result['state'] == "1"){
-            
-                $this->session->set_userdata($result);	//session 등록
-                session_commit();
-                session_write_close();
+            $image_data['kpop_idx'] = $this->sch_md->insert_schedule($data);
 
-                $data['message'] = "hello ".$result['nick'];
-
-                $data['result'] = 200;
-            }else{
-                $data['message'] = "this E-mail is not confirmed. Take to E-mail confirm";
-
-                $data['result'] = 202;
+            if(!empty($image_data['src'])){
+                $i =1;
+                foreach($image_data['src'] as $img){
+                    
+                    $image_data['title'] =  $image_title.$i;
+                    $this->sch_md->insert_schedule($image_data);
+                    $i++;
+                }
             }
+            
+            $data['result'] = 200;
+
             
         }else{
             $data['message'] = "Check To you're name or start_date or end_date";
