@@ -133,7 +133,7 @@
                                 <label class="form-label bold"><strong>Event</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_name" name="input_name"/>
+                                <input type="text" class="form-control" id="input_name" name="input_name"/>
                             </div>
                         </div>
                         <div class="row">
@@ -141,7 +141,7 @@
                                 <label class="form-label"><strong>Organizer</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_company" name="input_company"/>
+                                <input type="text" class="form-control" id="input_company" name="input_company"/>
                             </div>
                         </div>
                         <div class="row">
@@ -149,7 +149,7 @@
                                 <label class="form-label"><strong>Hompage</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_homepage" name="input_homepage"/>
+                                <input type="text" class="form-control" id="input_homepage" name="input_homepage"/>
                             </div>
                         </div>
                         <div class="row">
@@ -157,7 +157,7 @@
                                 <label class="form-label"><strong>Address</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_addr" name="input_addr"/>
+                                <input type="text" class="form-control" id="input_addr" name="input_addr"/>
                             </div>
                         </div>
                         <div class="row">
@@ -165,7 +165,7 @@
                                 <label class="form-label"><strong>Facebook</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_face" name="input_face"/>
+                                <input type="text" class="form-control" id="input_face" name="input_face"/>
                             </div>
                         </div>
                         <div class="row">
@@ -173,7 +173,7 @@
                                 <label class="form-label"><strong>Instagram</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_insta" name="input_insta"/>
+                                <input type="text" class="form-control" id="input_insta" name="input_insta"/>
                             </div>
                         </div>
                         <div class="row">
@@ -181,17 +181,19 @@
                                 <label class="form-label"><strong>Youtube</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_yout" name="input_yout"/>
+                                <input type="text" class="form-control" id="input_yout" name="input_yout"/>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-2">
                                 <label class="form-label"><strong>Date</strong></label>
                             </div>
-                            <div class="col-10">
-                                <input type="date" id="input_start_date" name="input_start_date"/>
+                            <div class="col-5">
+                                <input type="date" class="form-control" id="input_start_date" name="input_start_date"/>
+                            </div>
+                            <div class="col-5">
                                 ~
-                                <input type="date" id="input_end_date" name="input_end_date"/>
+                                <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
                             </div>
                         </div>
                         <div class="row">
@@ -200,7 +202,7 @@
                             </div>
                             <div class="col-10">
                                 
-                                <textarea id="input_remark" name="input_remark"> </textarea>
+                                <textarea id="input_remark" class="form-control" name="input_remark"> </textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -208,7 +210,7 @@
                                 <label class="form-label"><strong>Etc</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_image[]" name="input_image[]"/>
+                                <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
                             </div>
                         </div>
 
