@@ -119,7 +119,7 @@
 <div id="insert_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         
         <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
-            <div class="modal-content" style="height:800px">
+            <div class="modal-content" style="height:650px">
                 <div class="modal-header">
                     <h5 class="modal-title">insert</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
