@@ -207,7 +207,7 @@
                         </div>
                         <div class="row">
                             <div class="col-2">
-                                <label class="form-label"><strong>Etc</strong></label>
+                                <label class="form-label"><strong>Image</strong></label>
                             </div>
                             <div class="col-10">
                                 <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
