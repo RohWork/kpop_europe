@@ -191,8 +191,8 @@
                             <div class="col-4">
                                 <input type="date" class="form-control" id="input_start_date" name="input_start_date"/>
                             </div>
-                            <div class="col-2">
-                                <label class="form-label" style="text-align: center"><strong> ~ </strong></label>
+                            <div class="col-2" style="text-align: center">
+                                <label class="form-label"><strong> ~ </strong></label>
                             </div>
                             <div class="col-4">
                                 <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
