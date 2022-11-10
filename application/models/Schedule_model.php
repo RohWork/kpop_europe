@@ -32,8 +32,11 @@ class Schedule_model extends CI_Model {
         $query = $this->db->query($sSql);
         return $query->result_array();
     }
-    function insert_schedle($params){
+    function insert_schedule($params){
         
+        $this->db->insert('kpop_info', $params);
+        
+        return $this->db->insert_id();
         
     }
 }
