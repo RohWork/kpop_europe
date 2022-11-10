@@ -254,4 +254,8 @@
                   'max-height':'100%'
            });
     });
+    
+    $("#insert_cal").on("click", function(){
+       $('#detail_modal').modal("show"); 
+    });
 </script>
