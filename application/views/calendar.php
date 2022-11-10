@@ -174,7 +174,7 @@
                                 <label class="form-label"><strong>Instagram</strong></label>
                             </div>
                             <div class="col-10">
-                                <input type="text" id="input_insta'" name="input_insta'"/>
+                                <input type="text" id="input_insta" name="input_insta"/>
                             </div>
                         </div>
                         <div class="row">
@@ -206,12 +206,17 @@
                         </div>
                         <div class="row">
                             <div class="col-2">
+                                <label class="form-label"><strong>Etc</strong></label>
+                            </div>
+                            <div class="col-10">
                                 <input type="text" id="input_image[]" name="input_image[]"/>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="insert_submit" aria-label="Close">Submit</button>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
                 </div>
             </div>
