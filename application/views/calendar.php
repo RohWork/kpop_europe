@@ -149,7 +149,6 @@
                                 <label class="form-label"><strong>Hompage</strong></label>
                             </div>
                             <div class="col-10">
-                                <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
                                 <input type="text" id="input_homepage" name="input_homepage"/>
                             </div>
                         </div>
