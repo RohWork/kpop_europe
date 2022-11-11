@@ -262,4 +262,28 @@
     $("#insert_cal").on("click", function(){
        $('#insert_modal').modal("show"); 
     });
+    
+    $("#insert_submit").on("click", function(){
+
+        $.ajax({
+            url:'/main/calendar_insert',
+            type:'post',
+            data: $("#calendar_insert").serialize(),
+            success:function(data){
+                if(data.result == 200){
+                    location.reload();
+                }else{
+
+                    alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
+        });
+            
+    });
 </script>
