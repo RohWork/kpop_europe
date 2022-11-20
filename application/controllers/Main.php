@@ -123,7 +123,7 @@ class Main extends CI_Controller {
                 for($i=0; $i<count($image_data);$i++){
                     
                     $image_params['title'] =  $image_title.$i;
-                    $image_parmas['src'] = $image_data[$i];
+                    $image_params['src'] = $image_data[$i];
                     
                     $this->sch_md->insert_schedule_image($image_params);
 
