@@ -122,8 +122,10 @@ class Main extends CI_Controller {
                 $i =1;
                 foreach($image_data['src'] as $img){
                     
-                    $image_data['title'] =  $image_title.$i;
-                    $this->sch_md->insert_schedule_image($image_data);
+                    $image_params['title'] =  $image_title.$i;
+                    $image_parmas['src'] = $img['src'];
+                    
+                    $this->sch_md->insert_schedule_image($image_params);
                     $i++;
                 }
             }
