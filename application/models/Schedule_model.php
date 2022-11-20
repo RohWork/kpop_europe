@@ -34,6 +34,7 @@ class Schedule_model extends CI_Model {
     }
     function insert_schedule($params){
         
+        $params['reg_date'] = date('Y-m-d h:i:s');
         $this->db->insert('kpop_info', $params);
         
         return $this->db->insert_id();
