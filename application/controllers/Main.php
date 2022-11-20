@@ -111,7 +111,7 @@ class Main extends CI_Controller {
         $data['type'] = $this->input->post("type");
         
         $image_title = $this->input->post("input_name");
-        $image_data['src'] = $this->input->post("input_image");
+        $image_data = $this->input->post("input_image");
         
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
@@ -119,14 +119,14 @@ class Main extends CI_Controller {
             $image_data['kpop_idx'] = $this->sch_md->insert_schedule($data);
 
             if(!empty($image_data['src'])){
-                $i =1;
-                foreach($image_data['src'] as $img){
+
+                for($i=0; $i<count($image_data);$i++){
                     
                     $image_params['title'] =  $image_title.$i;
-                    $image_parmas['src'] = $img['src'];
+                    $image_parmas['src'] = $image_data['src'];
                     
                     $this->sch_md->insert_schedule_image($image_params);
-                    $i++;
+
                 }
             }
             
