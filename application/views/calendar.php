@@ -220,7 +220,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="insert_submit" aria-label="Close">Submit</button>
+                    <button type="button" class="btn btn-primary" id="insert_submit">Submit</button>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
                 </div>
             </div>
