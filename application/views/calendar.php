@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="col-10">
 
-                                    <textarea id="input_remark" class="form-control" name="input_remark"> </textarea>
+                                    <textarea id="input_remark" class="form-control form-control-sm" name="input_remark"> </textarea>
                                 </div>
                             </div>
                             <div class="row">
