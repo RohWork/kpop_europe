@@ -147,6 +147,20 @@
                             </div>
                             <div class="row mt-1">
                                 <div class="col-2">
+                                    <label class="form-label"><strong>Country</strong></label>
+                                </div>
+                                <div class="col-10">
+                                    <select class="form-select" multiple aria-label="multiple select example" id="input_country" name="input_country"/>
+                                        <option value="Germany">Germany</option>
+                                        <option value="France">France</option>
+                                        <option value="UK">UK</option>
+                                        <option value="Poland">Poland</option>
+                                        <option value="Czech">Czech</option>
+                                    <select>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-2">
                                     <label class="form-label"><strong>Hompage</strong></label>
                                 </div>
                                 <div class="col-10">
