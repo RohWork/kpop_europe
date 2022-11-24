@@ -112,7 +112,7 @@ class Main extends CI_Controller {
         $data['type'] = $this->input->post("type");
         
         $image_title = $this->input->post("input_name");
-        $image_data = $this->input->post("input_image");
+        $image_data[] = $this->input->post("input_image");
         
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
