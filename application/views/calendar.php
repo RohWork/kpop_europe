@@ -309,7 +309,7 @@
             console.log(item.value);
         });
         
-        memberData += "&input_image="+imgList;
+        data += "&input_image="+imgList;
         
         console.log(data);
         
