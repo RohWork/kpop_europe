@@ -213,7 +213,7 @@
                                     <label class="form-label"><strong>Image</strong></label>
                                     
                                 </div>
-                                <div class="col-2">
+                                <div class="col-1">
                                     <button type="button" class="btn btn-primary" id="input_url">+</button>
                                 </div>
                                 <div class="col-10">
