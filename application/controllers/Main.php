@@ -121,7 +121,7 @@ class Main extends CI_Controller {
 
             for($i=0; $i<count($image_data);$i++){
                 
-                if($image_data[$i] != ""){
+                if(!empty($image_data[$i]){
                     $image_params['title'] =  $image_title.$i;
                     $image_params['src'] = $image_data[$i];
 
