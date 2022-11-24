@@ -304,7 +304,7 @@
         $.ajax({
             url:'/main/calendar_insert',
             type:'post',
-            data: $("#calendar_insert").serializeObject(),
+            data: $("#calendar_insert").serializeArray(),
             success:function(data){
                 if(data.result == 200){
                     alert('complete');
