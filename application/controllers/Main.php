@@ -113,8 +113,7 @@ class Main extends CI_Controller {
         
         $image_title = $this->input->post("input_name");
         $image_data = $this->input->post("input_image");
-        
-        var_dump($image_data);
+       
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
             
