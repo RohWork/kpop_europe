@@ -120,7 +120,11 @@ class Main extends CI_Controller {
             $image_params['kpop_idx'] = $this->sch_md->insert_schedule($data);
             
             $i=1;
+            
+            var_dump($image_data);
             foreach ($image_data as $img){
+                
+                
                 
                 if(!empty($img[$i])){
                     $image_params['title'] =  $image_title.$i;
