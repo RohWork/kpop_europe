@@ -209,8 +209,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-2">
-                                    <label class="form-label"><strong>Image</strong></label><br/>
+                                <div class="col-1">
+                                    <label class="form-label"><strong>Image</strong></label>
                                     <button type="button" class="btn btn-primary" id="input_url">+</button>
                                 </div>
                                 <div class="col-10">
