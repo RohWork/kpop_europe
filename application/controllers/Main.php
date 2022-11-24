@@ -123,6 +123,7 @@ class Main extends CI_Controller {
             
             
             foreach ($image_data as $img){
+
                 
                 if(!empty($img[$i])){
                     $image_params['title'] =  $image_title.$i;
