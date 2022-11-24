@@ -129,7 +129,7 @@
                 <div class="modal-body">
                     <div class="container">
                         <form id="calendar_insert">
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label bold"><strong>Event</strong></label>
                                 </div>
@@ -137,7 +137,7 @@
                                     <input type="text" class="form-control" id="input_name" name="input_name"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Organizer</strong></label>
                                 </div>
@@ -145,7 +145,7 @@
                                     <input type="text" class="form-control" id="input_company" name="input_company"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Hompage</strong></label>
                                 </div>
@@ -153,7 +153,7 @@
                                     <input type="text" class="form-control" id="input_homepage" name="input_homepage"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Address</strong></label>
                                 </div>
@@ -161,7 +161,7 @@
                                     <input type="text" class="form-control" id="input_addr" name="input_addr"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Facebook</strong></label>
                                 </div>
@@ -169,7 +169,7 @@
                                     <input type="text" class="form-control" id="input_face" name="input_face"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Instagram</strong></label>
                                 </div>
@@ -177,7 +177,7 @@
                                     <input type="text" class="form-control" id="input_insta" name="input_insta"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Youtube</strong></label>
                                 </div>
@@ -185,7 +185,7 @@
                                     <input type="text" class="form-control" id="input_yout" name="input_yout"/>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Date</strong></label>
                                 </div>
@@ -208,7 +208,7 @@
                                     <textarea id="input_remark" class="form-control" name="input_remark"> </textarea>
                                 </div>
                             </div>
-                            <div class="row gy-2">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Image</strong></label>
                                     
