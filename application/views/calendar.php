@@ -309,7 +309,7 @@
             console.log(item.value);
         });
         
-        console.log(imgList);
+        data['input_image'] = imgList;
  
         
         $.ajax({
