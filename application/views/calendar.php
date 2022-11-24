@@ -199,7 +199,7 @@
                                     <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
                                 </div>
                             </div>
-                            <div class="row gy-2">
+                            <div class="row mt-1">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Etc</strong></label>
                                 </div>
