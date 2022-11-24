@@ -214,6 +214,7 @@
                                 </div>
                                 <div class="col-10">
                                     <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
+                                    <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
                                 </div>
                             </div>
                         </form>
