@@ -124,7 +124,7 @@ class Main extends CI_Controller {
                 if(!empty($image_data[$i])){
                     $image_params['title'] =  $image_title.$i;
                     $image_params['src'] = $image_data[$i];
-
+                    $image_params['sort'] = $i;
                     $this->sch_md->insert_schedule_image($image_params);
                 }
             }
