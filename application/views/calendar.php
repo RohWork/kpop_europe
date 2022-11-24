@@ -214,7 +214,7 @@
                                     
                                 </div>
                                 
-                                <div class="col-10" id="image_group" style="overflow-y: auto">
+                                <div class="col-10" id="image_group" style="overflow-y: auto;height: 100px">
                                     <div class="input-group mb-2 mt-1">
                                         <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
                                         <button type="button" class="btn btn-primary" id="input_url">+</button>
