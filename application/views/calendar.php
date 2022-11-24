@@ -323,7 +323,7 @@
             success:function(data){
                 if(data.result == 200){
                     alert('complete');
-                    //location.reload();
+                    location.reload();
                 }else{
 
                     alert(data.message);
