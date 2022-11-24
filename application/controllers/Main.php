@@ -118,18 +118,16 @@ class Main extends CI_Controller {
             
             $image_data['kpop_idx'] = $this->sch_md->insert_schedule($data);
 
-            if(!empty($image_data['src'])){
+            for($i=0; $i<count($image_data);$i++){
 
-                for($i=0; $i<count($image_data);$i++){
-                    
-                    if(!empty($image_params['title'])){
-                        $image_params['title'] =  $image_title.$i;
-                        $image_params['src'] = $image_data[$i];
+                if(!empty($image_params['title'])){
+                    $image_params['title'] =  $image_title.$i;
+                    $image_params['src'] = $image_data[$i];
 
-                        $this->sch_md->insert_schedule_image($image_params);
-                    }
+                    $this->sch_md->insert_schedule_image($image_params);
                 }
             }
+            
             
             $data['result'] = 200;
 
