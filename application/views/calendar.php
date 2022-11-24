@@ -301,13 +301,15 @@
     
     $("#insert_submit").on("click", function(){
         
-        var data = $("#calendar_insert").serializeArray();
+        var data = $("#calendar_insert").serialize();
         
-       /* var imgList = new Array();
+        var imgList = new Array();
         $('.i_img').each((index, item) => {
             imgList.push(item.value);
             console.log(item.value);
-        });*/
+        });
+        
+        memberData += "&input_image="+imgList;
         
         console.log(data);
         
