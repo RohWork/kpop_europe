@@ -302,7 +302,13 @@
     $("#insert_submit").on("click", function(){
         
         var data = $("#calendar_insert").serialize();
-        console.log(data);
+        
+        let imgList = [];
+        $('#input_image').each((index, item) => {
+            imgList.push(item.value);
+        });
+
+        data['input_image'] = imgList;
         
         $.ajax({
             url:'/main/calendar_insert',
