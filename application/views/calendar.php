@@ -293,6 +293,7 @@
             data: $("#calendar_insert").serialize(),
             success:function(data){
                 if(data.result == 200){
+                    alert('complete');
                     location.reload();
                 }else{
 
