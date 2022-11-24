@@ -230,7 +230,7 @@
                                 
                                 <div class="col-10" id="image_group" style="overflow-y: auto;height: 100px">
                                     <div class="input-group mb-2 mt-1">
-                                        <input type="text" id="input_image" class="form-control" name="input_image"/>
+                                        <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
                                         <button type="button" class="btn btn-primary" id="input_url">+</button>
                                     </div>
                                 </div>
@@ -293,18 +293,21 @@
     
     $("#input_url").click(function() {
         $("#image_group").append(
-                "<div class='input-group mb-2 mt-1'><input type='text' id='input_image' class='form-control name='input_image'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
+                "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
         );
         
         $("#insert_modal").dialogHeight = document.body.scrollHeight + 'px';
     });
     
     $("#insert_submit").on("click", function(){
-
+        
+        var data = $("#calendar_insert").serialize();
+        console.log(data);
+        
         $.ajax({
             url:'/main/calendar_insert',
             type:'post',
-            data: $("#calendar_insert").serializeArray(),
+            data: data,
             success:function(data){
                 if(data.result == 200){
                     alert('complete');
