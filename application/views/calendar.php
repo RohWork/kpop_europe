@@ -211,8 +211,8 @@
                             <div class="row">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Image</strong></label><br/>
-                                    <button type="button" class="btn btn-primary" id="input_url">url+</button>
-                                    <button type="button" class="btn btn-primary" id="input_img">image+</button>
+                                    <button type="button" class="btn btn-primary" id="input_url">url</button>
+                                    <button type="button" class="btn btn-primary" id="input_img">image</button>
                                 </div>
                                 <div class="col-10">
                                     <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
