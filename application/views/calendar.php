@@ -196,7 +196,7 @@
                                     <label class="form-label"><strong> ~ </strong></label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
+                                    <input type="date" class="form-control form-control-sm" id="input_end_date" name="input_end_date"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="col-10">
 
-                                    <textarea id="input_remark" class="form-control form-control-sm" name="input_remark"> </textarea>
+                                    <textarea id="input_remark" class="form-control " name="input_remark"> </textarea>
                                 </div>
                             </div>
                             <div class="row">
