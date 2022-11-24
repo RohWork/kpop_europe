@@ -308,7 +308,7 @@
             imgList.push(item.value);
         });
 
-        data['input_image'] = imgList;
+        data['input_image'] = JSON.stringify(imgList);
         
         $.ajax({
             url:'/main/calendar_insert',
