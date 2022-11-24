@@ -209,12 +209,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <label class="form-label"><strong>Image</strong></label>
                                     
                                 </div>
                                 
-                                <div class="col-10">
+                                <div class="col-9">
                                     <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
                                 </div>
                                 <div class="col-1">
