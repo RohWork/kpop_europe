@@ -304,7 +304,7 @@
         var data = $("#calendar_insert").serialize();
         
         var imgList = new Array();
-        $('#input_image').each((index, item) => {
+        $('.i_img').each((index, item) => {
             imgList.push(item.value);
             console.log(item.value);
         });
