@@ -307,7 +307,9 @@
         $('#input_image').each((index, item) => {
             imgList.push(item.value);
         });
-
+        
+        console.log(imgList);
+        
         data['input_image'] = JSON.stringify(imgList);
         
         $.ajax({
