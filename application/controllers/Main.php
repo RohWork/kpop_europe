@@ -107,6 +107,7 @@ class Main extends CI_Controller {
         $data['yout'] = $this->input->post("input_yout");
         $data['start_date'] = $this->input->post("input_start_date");
         $data['end_date'] = $this->input->post("input_end_date");
+        $data['country'] = $this->input->post("input_country");
         $data['remark'] = $this->input->post("input_remark");
         $data['type'] = $this->input->post("type");
         
