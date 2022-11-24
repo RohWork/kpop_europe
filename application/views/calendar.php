@@ -306,6 +306,7 @@
         lvar imgList = new Array();
         $('#input_image').each((index, item) => {
             imgList.push(item.value);
+            console.log(item.value);
         });
         
         console.log(imgList);
