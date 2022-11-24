@@ -204,13 +204,13 @@
                                     <label class="form-label"><strong>Date</strong></label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="date" class="form-control" id="input_start_date" name="input_start_date"/>
+                                    <input type="date" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('Y-m-d')?>"/>
                                 </div>
                                 <div class="col-2" style="text-align: center">
                                     <label class="form-label"><strong> ~ </strong></label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
+                                    <input type="date" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('Y-m-d')?>"/>
                                 </div>
                             </div>
                             <div class="row mt-1">
