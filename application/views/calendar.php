@@ -199,7 +199,7 @@
                                     <input type="date" class="form-control" id="input_end_date" name="input_end_date"/>
                                 </div>
                             </div>
-                            <div class="row gap-1">
+                            <div class="row">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Etc</strong></label>
                                 </div>
@@ -208,7 +208,7 @@
                                     <textarea id="input_remark" class="form-control" name="input_remark"> </textarea>
                                 </div>
                             </div>
-                            <div class="row gap-1">
+                            <div class="row">
                                 <div class="col-2">
                                     <label class="form-label"><strong>Image</strong></label>
                                     
