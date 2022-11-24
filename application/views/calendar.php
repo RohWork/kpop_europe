@@ -268,6 +268,15 @@
        $('#insert_modal').modal("show"); 
     });
     
+    $('#insert_modal').on('show.bs.modal', function () {
+           $(this).find('.modal-body').css({
+                  width:'auto', //probably not needed
+                  height:'auto', //probably not needed 
+                  'max-height':'100%'
+           });
+    });
+    
+    
     $("#input_url").click(function() {
         $("#image_group").append(
                 "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
