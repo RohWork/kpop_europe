@@ -134,7 +134,7 @@
                                     <label class="form-label bold"><strong>Event</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_name" name="input_name"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_name" name="input_name"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -142,7 +142,7 @@
                                     <label class="form-label"><strong>Organizer</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_company" name="input_company"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_company" name="input_company"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -150,7 +150,7 @@
                                     <label class="form-label"><strong>Hompage</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_homepage" name="input_homepage"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_homepage" name="input_homepage"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -158,7 +158,7 @@
                                     <label class="form-label"><strong>Address</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_addr" name="input_addr"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_addr" name="input_addr"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -166,7 +166,7 @@
                                     <label class="form-label"><strong>Facebook</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_face" name="input_face"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_face" name="input_face"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -174,7 +174,7 @@
                                     <label class="form-label"><strong>Instagram</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_insta" name="input_insta"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_insta" name="input_insta"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -182,7 +182,7 @@
                                     <label class="form-label"><strong>Youtube</strong></label>
                                 </div>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="input_yout" name="input_yout"/>
+                                    <input type="text" class="form-control form-control-sm" id="input_yout" name="input_yout"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -190,7 +190,7 @@
                                     <label class="form-label"><strong>Date</strong></label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="date" class="form-control" id="input_start_date" name="input_start_date"/>
+                                    <input type="date" class="form-control form-control-sm" id="input_start_date" name="input_start_date"/>
                                 </div>
                                 <div class="col-2" style="text-align: center">
                                     <label class="form-label"><strong> ~ </strong></label>
