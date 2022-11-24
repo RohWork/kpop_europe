@@ -214,7 +214,7 @@
                                     
                                 </div>
                                 
-                                <div class="col-10 ">
+                                <div class="col-10" id="image_group">
                                     <div class="input-group mb-2 mt-1">
                                         <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
                                         <button type="button" class="btn btn-primary" id="input_url">+</button>
@@ -267,6 +267,16 @@
     $("#insert_cal").on("click", function(){
        $('#insert_modal').modal("show"); 
     });
+    
+    $("#input_url").click(function() {
+        $("#image_group").append(
+                "<div class='input-group mb-2 mt-1'>\n\
+                    <input type='text' id='input_image[]' class='form-control name='input_image[]'/>\n\
+                    <button type='button' class='btn btn-primary' id='input_url'>+</button>\n\
+                </div>";
+        );
+        
+    }
     
     $("#insert_submit").on("click", function(){
 
