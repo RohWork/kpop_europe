@@ -270,10 +270,7 @@
     
     $("#input_url").click(function() {
         $("#image_group").append(
-                "<div class='input-group mb-2 mt-1'>\n\
-                    <input type='text' id='input_image[]' class='form-control name='input_image[]'/>\n\
-                    <button type='button' class='btn btn-primary' id='input_url'>+</button>\n\
-                </div>";
+                "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>";
         );
         
     }
