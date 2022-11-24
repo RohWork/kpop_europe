@@ -214,11 +214,11 @@
                                     
                                 </div>
                                 
-                                <div class="col-9">
-                                    <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
-                                </div>
-                                <div class="col-1">
-                                    <button type="button" class="btn btn-primary" id="input_url">+</button>
+                                <div class="col-10 ">
+                                    <div class="input-group mb-2">
+                                        <input type="text" id="input_image[]" class="form-control" name="input_image[]"/>
+                                        <button type="button" class="btn btn-primary" id="input_url">+</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
