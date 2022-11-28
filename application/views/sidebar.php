@@ -42,13 +42,13 @@
                     <li>
                         <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#poland-collapse" aria-expanded="false">Poland</button>
                       <div class="collapse" id="Poland-collapse">
-                            <a href="main/calendar?country=Poland"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                            <a href="/main/calendar?country=Poland"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </div>
                     </li>                 
                     <li>
                         <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav " data-bs-toggle="collapse" data-bs-target="#czech-collapse" aria-expanded="false">Czech</button>
                         <div class="collapse" id="czech-collapse">
-                            <a href="main/calendar?country=Czech"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                            <a href="/main/calendar?country=Czech"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </div>
                     </li>
                 </ul>
