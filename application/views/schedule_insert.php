@@ -5,8 +5,8 @@
                 <label class="form-label"><h3>calendar_insert</h3></label>
             </div>
             <div class="row">
-                <label class="form-label bold col-3">Event</label>
-                <div class="col-4 col-offset-5"><input type="text" class="form-control" id="input_name" name="input_name"/><div>
+                <label class="form-label bold col-2">Event</label>
+                <div class="col-4 col-offset-6"><input type="text" class="form-control" id="input_name" name="input_name"/><div>
 
             </div>
         </form>
