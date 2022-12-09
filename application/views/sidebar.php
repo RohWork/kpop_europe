@@ -122,7 +122,7 @@
         <?php if($this->session->userdata('level') > 2){ ?>
         <li class="border-top my-3"></li>
         <li class="mb-1">
-            <a href="/main/organiztion_insert" class="btn btn-toggle align-items-center rounded">Organization Insert</a>
+            <a href="/main/organization_insert" class="btn btn-toggle align-items-center rounded">Org Insert</a>
         </li>
         <?php }?>
     </ul>
