@@ -107,6 +107,12 @@
         <li class="mb-1">
             <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
         </li>
+        <?php if($this->session->userdata('level') > 2){ ?>
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+            <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
+        </li>
+        <php }?>
     </ul>
 </div>
 <div class="b-example-divider"></div>
