@@ -91,6 +91,7 @@
         </table>
         <div class="row">
             <div class="col-4">
+                <?php ?>
                 <button type="button" id="insert_cal" name="insert_cal" class="btn btn-primary">INSERT</button>
             </div>
         </div>
