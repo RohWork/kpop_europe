@@ -95,18 +95,26 @@ class Main extends CI_Controller {
     
     
     function country_insert(){
+        $data = array();
+        
         $this->load->view('country_insert',$data);
     }
     
     function city_insert(){
+        $data = array();
+        
         $this->load->view('city_insert',$data);
     }
         
     function organization_insert(){
+        $data = array();
+        
         $this->load->view('organization_insert',$data);
     }
     
     function schedule_insert(){
+        $data = array();
+        
         $this->load->view('schedule_insert',$data);
     }
     
