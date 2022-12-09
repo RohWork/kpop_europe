@@ -110,7 +110,7 @@
         <?php if($this->session->userdata('level') > 2){ ?>
         <li class="border-top my-3"></li>
         <li class="mb-1">
-            <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
+            <a href="/main/schedule_insert" class="btn btn-toggle align-items-center rounded">Schedule Insert</a>
         </li>
         <php }?>
     </ul>
