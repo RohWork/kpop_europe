@@ -15,7 +15,7 @@
 
                 <div class="col-4 col-offset-6">
                     <select class="form-control" id="input_country" name="input_country">
-                        <option></option>
+                        <option value=""></option>
                     </select>
                 </div>
             </div>    
