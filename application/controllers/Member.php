@@ -225,7 +225,7 @@ class Member extends CI_Controller {
                 "nick" => $nick,
                 "type" => 1,
                 'state' => 1,
-                
+                'level' => $join_history['level'],
             );
             $join_result = $this->mem_md->set_member($data);
         }
