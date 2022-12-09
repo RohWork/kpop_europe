@@ -93,7 +93,24 @@ class Main extends CI_Controller {
         
     }
     
-    function calendar_insert(){
+    
+    function country_insert(){
+        $this->load->view('country_insert',$data);
+    }
+    
+    function city_insert(){
+        $this->load->view('city_insert',$data);
+    }
+        
+    function organization_insert(){
+        $this->load->view('organization_insert',$data);
+    }
+    
+    function schedule_insert(){
+        $this->load->view('schedule_insert',$data);
+    }
+    
+    function schedule_insert_ajax(){
         
         $data = array();
         $image_data = array();
