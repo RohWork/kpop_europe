@@ -14,7 +14,7 @@
                 <label class="form-label col-2"><strong>Country</strong></label>
 
                 <div class="col-4 col-offset-6">
-                    <select class="form-control" id="input_country" name="input_country">
+                    <select class="form-select" id="input_country" name="input_country">
                         <option value=""></option>
                     </select>
                 </div>
