@@ -11,6 +11,15 @@
                 </div>
             </div>
             <div class="row mt-1">
+                <label class="form-label col-2"><strong>Country</strong></label>
+
+                <div class="col-4 col-offset-6">
+                    <select class="form-control" id="input_country" name="input_country">
+                        <option></option>
+                    </select>
+                </div>
+            </div>    
+            <div class="row mt-1">
 
                 <label class="form-label col-2"><strong>Organizer</strong></label>
 
