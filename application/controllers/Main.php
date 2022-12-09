@@ -97,25 +97,37 @@ class Main extends CI_Controller {
     function country_insert(){
         $data = array();
         
+        $this->load->view('header');
+        $this->load->view('sidebar');
         $this->load->view('country_insert',$data);
+        $this->load->view('footer');
     }
     
     function city_insert(){
         $data = array();
         
+        $this->load->view('header');
+        $this->load->view('sidebar');
         $this->load->view('city_insert',$data);
+        $this->load->view('footer');
     }
         
     function organization_insert(){
         $data = array();
         
+        $this->load->view('header');
+        $this->load->view('sidebar');
         $this->load->view('organization_insert',$data);
+        $this->load->view('footer');
     }
     
     function schedule_insert(){
         $data = array();
         
+        $this->load->view('header');
+        $this->load->view('sidebar');
         $this->load->view('schedule_insert',$data);
+        $this->load->view('footer');
     }
     
     function schedule_insert_ajax(){
