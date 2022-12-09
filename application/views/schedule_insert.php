@@ -1,4 +1,4 @@
-<div>
+
     <div class="container">
         <form id="calendar_insert">
             <div class="row">
@@ -11,5 +11,5 @@
             </div>
         </form>
     </div>
-</div>
+
 </main>
