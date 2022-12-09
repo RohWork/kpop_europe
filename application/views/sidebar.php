@@ -112,7 +112,7 @@
         <li class="mb-1">
             <a href="/main/schedule_insert" class="btn btn-toggle align-items-center rounded">Schedule Insert</a>
         </li>
-        <php }?>
+        <?php }?>
     </ul>
 </div>
 <div class="b-example-divider"></div>
