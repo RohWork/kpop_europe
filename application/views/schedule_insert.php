@@ -6,7 +6,7 @@
             </div>
             <div class="row">
                 <label class="form-label bold col-3">Event</label>
-                <div class="col-6 col-offset-3"><input type="text" class="form-control" id="input_name" name="input_name"/><div>
+                <div class="col-4 col-offset-5"><input type="text" class="form-control" id="input_name" name="input_name"/><div>
 
             </div>
         </form>
