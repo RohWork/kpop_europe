@@ -2,7 +2,7 @@
     <div class="container">
         <form id="calendar_insert">
             <div class="row">
-                <label class="form-label"><h3>calendar_insert</h3></div>
+                <label class="form-label"><h3>calendar_insert</h3></label>
             </div>
             <div class="row">
                 <label class="form-label bold col-3">Event</label>
