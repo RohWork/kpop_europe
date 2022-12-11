@@ -2,7 +2,7 @@
     <div class="container">
         <form id="calendar_insert">
             <div class="row">
-                <label class="form-label"><h3>calendar_insert</h3></label>
+                <label class="form-label"><h3>Schedule Insert</h3></label>
             </div>
             <div class="row mt-1">
                 <label class="form-label col-2"><strong>Event</strong></label>
