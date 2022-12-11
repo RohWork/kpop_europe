@@ -25,7 +25,7 @@
     $("#btn_insert").on('click', function(){
         var country_val = $("#input_country").val();
         if(country_val == ""){
-            alert("insert to couintry data");
+            alert("insert to country data");
             return;
         }else{
             
