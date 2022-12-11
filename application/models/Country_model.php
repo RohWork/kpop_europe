@@ -20,4 +20,17 @@ class Country_model extends CI_Model {
         return $this->db->insert_id();
         
     }
+    
+    function get_country(){
+        
+        
+            
+        
+        $sSql = "SELECT idx, name FROM `kpop_country`";
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
+
+        
+    }
 }
