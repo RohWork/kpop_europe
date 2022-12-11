@@ -30,7 +30,7 @@
         }else{
             
             $.ajax({
-                url:'/main/set_country',
+                url:'/main/country_insert_ajax',
                 type:'post',
                 processData : false,
                 contentType : false,
