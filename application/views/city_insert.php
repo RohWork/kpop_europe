@@ -1,4 +1,4 @@
-    <div class="container">
+    <div class="container form-group">
         <form id="city_insert">
             <div class="row">
                 <label class="form-label"><h3>City Insert</h3></label>
