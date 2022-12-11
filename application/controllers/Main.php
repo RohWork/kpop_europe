@@ -127,7 +127,10 @@ class Main extends CI_Controller {
     }
     
     function city_insert(){
+        
         $data = array();
+        
+        $data['country'] = $this->cont_md->get_country();
         
         $this->load->view('header');
         $this->load->view('sidebar');
