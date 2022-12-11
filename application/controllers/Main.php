@@ -7,6 +7,7 @@ class Main extends CI_Controller {
         parent ::__construct();
         
         $this->load->model('Schedule_model', 'sch_md', TRUE);
+        $this->load->model('Country_model', 'cont_md', TRUE);
     }
     function index(){
         
@@ -105,11 +106,20 @@ class Main extends CI_Controller {
     
     function country_insert_ajax(){
         
-        $insert_country = $this->input->post("input_country");
-        
+        $data = array();
         
         $data['result'] == 200;
         $data['message'] == "";
+        
+        $insert_country = $this->input->post("input_country");
+        $result = $this->cont_md->insert_country($insert_country);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = "data process error";
+        }
+        
+
         
         
         header("Content-Type: application/json;");
