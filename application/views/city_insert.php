@@ -1,26 +1,28 @@
-    <div class="container form-group">
+    <div class="container">
         <form id="city_insert">
-            <div class="row">
-                <label class="form-label"><h3>City Insert</h3></label>
-            </div>
-            <div class="row mt-1">
-                <label class="form-label col-2"><strong>Country</strong></label>
-
-                <div class="col-4 col-offset-6">
-                    <select id="check_country" class="form-select">
-                        <?php foreach($country as $cnt){ ?>
-                            <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
-                        
-                        <?php } ?>
-                    </select>
+            <div class="form-group">
+                <div class="row">
+                    <label class="form-label"><h3>City Insert</h3></label>
                 </div>
-            </div>
-            
-            <div class="row mt-1">
-                <label class="form-label col-2"><strong>City name</strong></label>
+                <div class="row mt-1">
+                    <label class="form-label col-2"><strong>Country</strong></label>
 
-                <div class="col-4 col-offset-6">
-                    <input type="text" class="form-control" id="input_city" name="input_city"/>
+                    <div class="col-4 col-offset-6">
+                        <select id="check_country" class="form-select">
+                            <?php foreach($country as $cnt){ ?>
+                                <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <label class="form-label col-2"><strong>City name</strong></label>
+
+                    <div class="col-4 col-offset-6">
+                        <input type="text" class="form-control" id="input_city" name="input_city"/>
+                    </div>
                 </div>
             </div>
             <div class="row mt-1">
