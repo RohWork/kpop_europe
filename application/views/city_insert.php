@@ -15,6 +15,14 @@
                     </select>
                 </div>
             </div>
+            
+            <div class="row mt-1">
+                <label class="form-label col-2"><strong>City name</strong></label>
+
+                <div class="col-4 col-offset-6">
+                    <input type="text" class="form-control" id="input_city" name="input_city"/>
+                </div>
+            </div>
             <div class="row mt-1">
                 
                 <div class="col-4"></div>
