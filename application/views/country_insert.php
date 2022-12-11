@@ -12,9 +12,9 @@
             </div>
             <div class="row mt-1">
                 
-                <div class="col4"></div>
-                <div class="col4"><button type="button" id="btn_insert">INSERT</button></div>
-                <div class="col4"></div>
+                <div class="col-4"></div>
+                <div class="col-4"><button type="button" id="btn_insert">INSERT</button></div>
+                <div class="col-4"></div>
             </div>
         </form>
         
