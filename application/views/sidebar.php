@@ -116,19 +116,15 @@
         <?php if($this->session->userdata('level') > 2){ ?>
         <li class="border-top my-3"></li>
         <li class="mb-1">
+            <a href="/main/country_insert" class="btn btn-toggle align-items-center rounded">Country Insert</a>
+        </li>
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
             <a href="/main/city_insert" class="btn btn-toggle align-items-center rounded">City Insert</a>
         </li>
-        <?php }?>
-        <?php if($this->session->userdata('level') > 2){ ?>
         <li class="border-top my-3"></li>
         <li class="mb-1">
             <a href="/main/organization_insert" class="btn btn-toggle align-items-center rounded">Org Insert</a>
-        </li>
-        <?php }?>
-                <?php if($this->session->userdata('level') > 2){ ?>
-        <li class="border-top my-3"></li>
-        <li class="mb-1">
-            <a href="/main/country_insert" class="btn btn-toggle align-items-center rounded">Country Insert</a>
         </li>
         <?php }?>
     </ul>
