@@ -7,7 +7,7 @@ class Country_model extends CI_Model {
     {
         parent::__construct();
     }
-    function insert_schedule($country){
+    function insert_country($country){
         
         $params = array();
         
