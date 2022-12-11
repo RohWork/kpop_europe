@@ -38,16 +38,16 @@
 </main>
 <script>
     $("#btn_insert").on('click', function(){
-        var country_val = $("#input_country").val();
-        if(country_val == ""){
-            alert("insert to couintry data");
+        var city = $("#input_city").val();
+        if(city == ""){
+            alert("insert to city data");
             return;
         }else{
             
             $.ajax({
-                url:'/main/country_insert_ajax',
+                url:'/main/city_insert_ajax',
                 type:'post',
-                data:$("#country_insert").serialize(),
+                data:$("#city_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to insert');
