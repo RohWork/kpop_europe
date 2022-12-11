@@ -108,8 +108,8 @@ class Main extends CI_Controller {
         
         $data = array();
         
-        $data['result'] == 200;
-        $data['message'] == "";
+        $data['result'] = 200;
+        $data['message'] = "";
         
         $insert_country = $this->input->post("input_country");
         $result = $this->cont_md->insert_country($insert_country);
