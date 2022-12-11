@@ -4,7 +4,7 @@
                 <label class="form-label"><h3>Country Insert</h3></label>
             </div>
             <div class="row mt-1">
-                <label class="form-label col-2"><strong>Country</strong></label>
+                <label class="form-label col-2"><strong>Country name</strong></label>
 
                 <div class="col-4 col-offset-6">
                     <input type="text" class="form-control" id="input_country" name="input_country"/>
