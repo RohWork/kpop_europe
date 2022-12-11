@@ -26,7 +26,7 @@
             <div class="row mt-1">
                 
                 <div class="col-2"></div>
-                <div class="col-4 col-offset-6"><button type="button" id="btn_insert">INSERT</button></div>
+                <div class="col-4 col-offset-6"><button type="button" class="btn btn-success" id="btn_insert">INSERT</button></div>
             </div>
         </form>
         
