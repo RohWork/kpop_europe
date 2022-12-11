@@ -103,6 +103,19 @@ class Main extends CI_Controller {
         $this->load->view('footer');
     }
     
+    function country_insert_ajax(){
+        
+        $insert_country = $this->input->post("input_country");
+        
+        
+        $data['result'] == 200;
+        $data['message'] == "";
+        
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
+    
     function city_insert(){
         $data = array();
         
