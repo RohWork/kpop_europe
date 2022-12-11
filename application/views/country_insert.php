@@ -32,8 +32,6 @@
             $.ajax({
                 url:'/main/country_insert_ajax',
                 type:'post',
-                processData : false,
-                contentType : false,
                 data:$("#country_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
