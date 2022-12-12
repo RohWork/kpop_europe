@@ -178,6 +178,7 @@
             success:function(data){
                 if(data.code == 200){
                     
+                    console.log(data.result);
                     $('#check_city').empty();
                     for(var i =0; i<data.result.size();i ++){
                         var option = $("<option value="+data.result[i]['idx']+">"+data.result['name']+"</option>");
