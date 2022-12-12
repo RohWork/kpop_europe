@@ -25,7 +25,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>City</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                    <select class="form-select" id="check_city" name="input_check_citycountry">
+                    <select class="form-select" id="check_city" name="check_city">
                         <option value=""></option>
                     </select>
                 </div>
@@ -178,7 +178,12 @@
             success:function(data){
                 if(data.result == 200){
                     
-                    
+                    $('#check_city').empty();
+                    for(var i =0; i<data.result.size();i ++){
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result['name']+"</option>");
+                        $('#check_city').append(option)
+                        
+                    }
                     
                     
                     
