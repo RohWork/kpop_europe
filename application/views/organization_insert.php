@@ -2,7 +2,7 @@
         <form id="organization_insert">
             <div class="form-group">
                 <div class="row">
-                    <label class="form-label"><h3>Organization Insert</h3></label>
+                    <label class="form-label"><h3>Organizer Insert</h3></label>
                 </div>
                 <div class="row mt-1">
                     <label class="form-label col-md-2 col-xs-4"><strong>Organization name</strong></label>
