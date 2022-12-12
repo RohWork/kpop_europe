@@ -89,8 +89,8 @@
                 <div class="col-md-2 col-xs-2 form-inline">
                     <div class="form_group">
                         <input type="date" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('Y-m-d')?>"/>
+                        ~
                     </div>
-                    <div class="form_group">~</div>
                 </div>
                 <div class="col-md-2 col-md-offset-6 col-xs-2 col-xs-offset-2">
                     <input type="date" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('Y-m-d')?>"/>
