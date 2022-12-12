@@ -36,7 +36,12 @@
                 <label class="form-label col-2"><strong>Organizer</strong></label>
 
                 <div class="col-4 col-offset-6">
-                    <input type="text" class="form-control" id="input_company" name="input_company"/>
+                        <select id="check_organization" name="check_organization" class="form-select">
+                            <?php foreach($organization as $org){ ?>
+                                <option value="<?=$org['idx']?>"><?=$org['name']?></option>
+
+                            <?php } ?>
+                        </select>
                 </div>
             </div>     
         </form>
