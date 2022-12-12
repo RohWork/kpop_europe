@@ -7,7 +7,7 @@
                 <div class="row mt-1">
                     <label class="form-label col-md-2 col-xs-4"><strong>Country</strong></label>
 
-                    <div class="col-4 col-offset-6 col-xs-offset-4">
+                    <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                         <select id="check_country" class="form-select">
                             <?php foreach($country as $cnt){ ?>
                                 <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
@@ -20,7 +20,7 @@
                 <div class="row mt-1">
                     <label class="form-label col-md-2 col-xs-4"><strong>City name</strong></label>
 
-                    <div class="col-4 col-md-offset-6 col-xs-offset-4">
+                    <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                         <input type="text" class="form-control" id="input_city" name="input_city"/>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
             <div class="row mt-1" style="padding-top:50px">
                 
                 <div class="col-2 "></div>
-                <div class="col-4 col-xs-6 col-offset-6 col-xs-offset-4">
+                <div class="col-md-4 col-xs-4 col-xs-6 col-offset-6 col-xs-offset-4">
                     <button type="button" class="btn btn-success" id="btn_insert">INSERT</button>
                     <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();">RESET</button>
                 </div>
