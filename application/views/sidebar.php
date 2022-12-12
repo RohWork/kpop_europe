@@ -5,7 +5,9 @@
         #side_bar{
             display: none;
         }
-        
+        #side_bar_shadow{
+            display: none;
+        }
     }
 </style>
 <div id="side_bar">
