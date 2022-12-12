@@ -170,6 +170,6 @@
     $("#country").on('change', function(){
        var cnt_idx = $("#country option:selected").val();
        
-       location.href="/main/calendar?country="+cnt_idx; 
+       location.href="/main/calendar?country="+cnt_idx+"&year=<?=$year?>&month=<?=$month?>"; 
     });
 </script>
