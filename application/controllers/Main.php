@@ -22,7 +22,7 @@ class Main extends CI_Controller {
     
     function calendar(){
         
-        $data['country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : 'Germany';
+        $data['country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : '1';
 
         //---- 오늘 날짜
         $data['thisyear'] = $thisyear = date('Y'); // 4자리 연도
