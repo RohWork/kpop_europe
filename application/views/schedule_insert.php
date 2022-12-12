@@ -176,7 +176,7 @@
             type:'post',
             data: data,
             success:function(data){
-                if(data.result == 200){
+                if(data.code == 200){
                     
                     $('#check_city').empty();
                     for(var i =0; i<data.result.size();i ++){
