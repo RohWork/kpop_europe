@@ -1,6 +1,6 @@
 
     <div class="container">
-        <form id="calendar_insert" class="form-inline">
+        <form id="calendar_insert">
             <div class="row">
                 <label class="form-label"><h3>Schedule Insert</h3></label>
             </div>
