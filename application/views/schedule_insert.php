@@ -4,7 +4,7 @@
     <?php
         foreach($city as $c){
     ?>
-            city_array[<?=$c['country_idx']?>] = new Array( "<?=$c['idx']?>"  => "<?=$c['name']?>");
+            city_array[<?=$c['country_idx']?>] = new Array( <?=$c['idx']?>  => "<?=$c['name']?>");
     <?php
         }
     ?>
