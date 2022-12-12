@@ -8,7 +8,7 @@
                     <label class="form-label col-md-2 col-xs-4"><strong>Organization name</strong></label>
 
                     <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                        <input type="text" class="form-control" id="input_city" name="input_city"/>
+                        <input type="text" class="form-control" id="input_organization" name="input_organization"/>
                     </div>
                 </div>
             </div>
