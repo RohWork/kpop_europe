@@ -9,6 +9,7 @@ class Main extends CI_Controller {
         $this->load->model('Schedule_model', 'sch_md', TRUE);
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
+        $this->load->model('Organization_model', 'org_md', TRUE);
     }
     function index(){
         
@@ -173,6 +174,25 @@ class Main extends CI_Controller {
         $this->load->view('sidebar');
         $this->load->view('organization_insert',$data);
         $this->load->view('footer');
+    }
+    
+    function organization_insert_ajax(){
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $organization = $this->input->post("input_organization");
+        $result = $this->org_md->insert_organization($organization);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = "data process error";
+        }
+
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
     }
     
     function schedule_insert(){
