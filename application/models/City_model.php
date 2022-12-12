@@ -20,12 +20,9 @@ class City_model extends CI_Model {
         
     }
     
-    function get_city(){
+    function get_city( $country_idx ){
         
-        
-            
-        
-        $sSql = "SELECT idx, country_idx, name FROM `kpop_city`";
+        $sSql = "SELECT idx, country_idx, name FROM `kpop_city` where country_idx = $country_idx";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
