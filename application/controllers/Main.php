@@ -170,7 +170,7 @@ class Main extends CI_Controller {
                 
         $data = array();
         
-        $data['result'] = 200;
+        $data['code'] = 200;
         $data['message'] = "";
         
         
@@ -179,8 +179,9 @@ class Main extends CI_Controller {
         $result = $this->city_md->get_city($country_idx);
         
         if(!$result){
-            $data['result'] = 400;
+            $data['code'] = 400;
             $data['message'] = "data process error";
+            $data['result'] = $result;
         }
         
         
