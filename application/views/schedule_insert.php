@@ -13,9 +13,8 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>Event Type</strong></label>
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <select class="form-select" id="input_type" name="input_type">
-                        <option value="concert">concert</option>
                         <option value="party">party</option>
-                        
+                        <option value="concert">concert</option>      
                     </select>
                 </div>
             </div>
