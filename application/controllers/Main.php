@@ -149,9 +149,7 @@ class Main extends CI_Controller {
         $params = array();
         $params['country_idx'] = $this->input->post("check_country");
         $params['name'] = $this->input->post("input_city");
-        
-        var_dump($params);
-        exit;
+       
         
         $result = $this->city_md->insert_city($params);
         
