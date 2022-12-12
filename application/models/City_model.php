@@ -8,11 +8,14 @@ class City_model extends CI_Model {
         parent::__construct();
     }
     
-        function insert_city($params){
+    function insert_city($params){
         
 
         $params['writer'] = $this->session->userdata('name');        
         $params['regi_date'] = date('Y-m-d h:i:s');
+        
+        var_dump($params);
+        exit;
         
         $this->db->insert('kpop_city', $params);
         
