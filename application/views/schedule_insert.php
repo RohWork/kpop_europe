@@ -178,10 +178,11 @@
             success:function(data){
                 if(data.code == 200){
                     
-                    console.log(data);
+                    var data_array = data.result;
+                    console.log(data_array);
                     
                     $('#check_city').empty();
-                    for(var i =0; i<data.result.length();i++){
+                    for(var i =0; i<data_array.length;i++){
                         var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
                         $('#check_city').append(option)
                         
