@@ -89,10 +89,10 @@
                 <div class="col-md-2 col-xs-3">
                     <input type="date" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('Y-m-d')?>"/>
                 </div>
-                <div class="col-md-2 col-xs-2" style="text-align: center">
+                <div class="col-md-1 col-xs-2" style="text-align: center">
                     <label class="form-label"><strong> ~ </strong></label>
                 </div>
-                <div class="col-md-2 col-md-offset-4 col-xs-3">
+                <div class="col-md-2 col-md-offset-5 col-xs-3">
                     <input type="date" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('Y-m-d')?>"/>
                 </div>
             </div>
