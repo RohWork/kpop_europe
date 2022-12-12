@@ -86,7 +86,7 @@
 
                 <label class="form-label col-md-2 col-xs-4"><strong>Date</strong></label>
 
-                <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4 form-inline">
+                <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                     <div class="form_group">
                         <input type="date" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('Y-m-d')?>"/>
                     </div>
