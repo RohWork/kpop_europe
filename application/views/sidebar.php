@@ -137,5 +137,5 @@
             <?php }?>
         </ul>
     </div>
+    <div class="b-example-divider"></div>
 </div>
-<div class="b-example-divider"></div>
