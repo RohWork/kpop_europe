@@ -180,6 +180,13 @@
     });
     
     $("#check_country").change(function(){
+        var j = $("#check_country option:selected").val();
+        
+        city_array[j].forEach (function (el, index) {
+            
+            console.log(el.name);
+            console.log(idx);
+        }
         
     })
     </script>
