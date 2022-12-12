@@ -31,35 +31,11 @@
                     Kpop Party
                 </button>
                 <div class="collapse" id="party-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false">Germany</button>
-                            <div class="collapse" id="germany-collapse">
-                                <a href="/main/calendar?country=Germany"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#france-collapse" aria-expanded="false">France</button>
-                            <div class="collapse" id="france-collapse">
-                                <a href="/main/calendar?country=France"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#uk-collapse" aria-expanded="false">UK</button>
-                            <div class="collapse" id="uk-collapse">
-                                <a href="/main/calendar?country=UK"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#poland-collapse" aria-expanded="false">Poland</button>
-                          <div class="collapse" id="Poland-collapse">
-                                <a href="/main/calendar?country=Poland"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>                 
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">   
                         <li>
                             <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav " data-bs-toggle="collapse" data-bs-target="#czech-collapse" aria-expanded="false">Czech</button>
                             <div class="collapse" id="czech-collapse">
-                                <a href="/main/calendar?country=Czech"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                                <a href="/main/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                             </div>
                         </li>
                     </ul>
@@ -71,30 +47,6 @@
                 </button>
                 <div class="collapse" id="concert-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#germany-collapse" aria-expanded="false">Germany</button>
-                            <div class="collapse" id="germany-collapse">
-                                <a href="/main/calendar?country=Germany"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#france-collapse" aria-expanded="false">France</button>
-                            <div class="collapse" id="france-collapse">
-                                <a href="/main/calendar?country=France"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#uk-collapse" aria-expanded="false">UK</button>
-                            <div class="collapse" id="uk-collapse">
-                                <a href="/main/calendar?country=UK"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
-                        <li>
-                            <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav"  data-bs-toggle="collapse" data-bs-target="#poland-collapse" aria-expanded="false">Poland</button>
-                            <div class="collapse" id="poland-collapse">
-                                <a href="/main/calendar?country=Poland"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
-                            </div>
-                        </li>
                         <li>
                             <button class="btn btn-toggle btn-toggle2 align-items-center rounded pb-1 small btn-toggle-nav " data-bs-toggle="collapse" data-bs-target="#czech-collapse" aria-expanded="false">Czech</button>
                             <div class="collapse" id="czech-collapse">
