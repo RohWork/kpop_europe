@@ -12,7 +12,7 @@
                 <select id="country" name="country" class="form-select">
                     <?php
                         foreach($country as $cont){
-                            if($cnt['idx'] == $get_country){
+                            if($cont['idx'] == $get_country){
                                 $selected = "selected";
                             }else{
                                 $selected = "";
