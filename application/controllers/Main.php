@@ -22,8 +22,8 @@ class Main extends CI_Controller {
     
     function calendar(){
         
-        $data['country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : '1';
-
+        $data['get_country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : '1';
+        
         //---- 오늘 날짜
         $data['thisyear'] = $thisyear = date('Y'); // 4자리 연도
         $data['thismonth'] = $thismonth = date('n'); // 0을 포함하지 않는 월
@@ -34,7 +34,7 @@ class Main extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-        
+        $data['country'] = $this->cont_md->get_country(); 
         
         $data_calendar = $this->sch_md->get_schedule($country, $year , sprintf("%02d",$month));
         $data_array = array();
