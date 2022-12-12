@@ -20,7 +20,7 @@ class City_model extends CI_Model {
         
     }
     
-    function get_city( $country_idx ){
+    function get_city( $country_idx = "" ){
         
         $where = "";
         if(!empty($country_idx)){
