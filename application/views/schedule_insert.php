@@ -140,7 +140,7 @@
         $("#insert_modal").dialogHeight = document.body.scrollHeight + 'px';
     });
         
-    $("#insert_submit").on("click", function(){
+    $("#btn_insert").on("click", function(){
         
         var data = $("#calendar_insert").serializeArray();
 
