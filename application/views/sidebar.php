@@ -135,7 +135,7 @@
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/main/organization_insert" class="btn btn-toggle align-items-center rounded">Organization Insert</a>
+                <a href="/main/organization_insert" class="btn btn-toggle align-items-center rounded">Organzation Insert</a>
             </li>
             <?php }?>
         </ul>
