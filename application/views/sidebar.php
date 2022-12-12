@@ -5,6 +5,7 @@
         #side_bar{
             display: none;
         }
+        
     }
 </style>
 <div id="side_bar">
@@ -137,5 +138,5 @@
             <?php }?>
         </ul>
     </div>
-    <div class="b-example-divider"></div>
+    <div class="b-example-divider" id="side_bar_shadow"></div>
 </div>
