@@ -12,8 +12,13 @@
                 <select id="country" name="country" class="form-select">
                     <?php
                         foreach($country as $cont){
+                            if($cnt['idx'] == $get_country){
+                                $selected = "selected";
+                            }else{
+                                $selected = "";
+                            }
                     ?>
-                    <option value="<?=$cont['idx']?>"><?=$cont['name']?></option>
+                    <option value="<?=$cont['idx']?>" <?=$selected?>'><?=$cont['name']?></option>
                     <?php
                         }
                     ?>
