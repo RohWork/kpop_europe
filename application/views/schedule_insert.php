@@ -188,7 +188,8 @@
             console.log(idx);
         }
         
-    })
+    });
+    
     </script>
 
 </main>
