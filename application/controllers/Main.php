@@ -166,6 +166,28 @@ class Main extends CI_Controller {
         echo json_encode($data);
     }
     
+    function city_get_ajax(){
+                
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        
+        $country_idx = $this->input->post("country_idx");
+        
+        $result = $this->city_md->get_city($country_idx);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = "data process error";
+        }
+        
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
     
     function organization_insert(){
         $data = array();
