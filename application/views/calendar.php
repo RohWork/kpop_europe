@@ -7,7 +7,20 @@
 
     <div class="container">
         
-        <div class="row"></div>
+        <div class="row">
+            <div class="col-1">
+                <select id="country" name="country">
+                    <?php
+                        foreach($country as $cont){
+                    ?>
+                    <option value="<?=$cont['idx']?>"><?=$cont['name']?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+                
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-12">
