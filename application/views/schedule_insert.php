@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div class="row mt-1">
-                <label class="form-label col-2"><strong>City</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong>City</strong></label>
 
-                <div class="col-4 col-offset-6">
+                <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                     <select class="form-select" id="input_country" name="input_country">
                         <option value=""></option>
                     </select>
@@ -33,9 +33,9 @@
             </div>    
             <div class="row mt-1">
 
-                <label class="form-label col-2"><strong>Organizer</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong>Organizer</strong></label>
 
-                <div class="col-4 col-offset-6">
+                <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                         <select id="check_organization" name="check_organization" class="form-select">
                             <?php foreach($organization as $org){ ?>
                                 <option value="<?=$org['idx']?>"><?=$org['name']?></option>
