@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-1">
+            <div class="row mt-1" style="margin-top:50px">
                 
                 <div class="col-2"></div>
                 <div class="col-4 col-offset-6">
