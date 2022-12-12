@@ -184,7 +184,7 @@
         
         city_array[j].forEach (function (el, index) {
             
-            console.log(el.name);
+            console.log(el);
             console.log(idx);
         }
         
