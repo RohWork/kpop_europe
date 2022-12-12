@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="row mt-1">
-                    <label class="form-label col-2 col-4"><strong>City name</strong></label>
+                    <label class="form-label col-2 col-xs-4"><strong>City name</strong></label>
 
                     <div class="col-4 col-offset-6">
                         <input type="text" class="form-control" id="input_city" name="input_city"/>
