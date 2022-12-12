@@ -140,5 +140,5 @@
             <?php }?>
         </ul>
     </div>
-    <div class="b-example-divider" id="side_bar_shadow"></div>
 </div>
+<div class="b-example-divider" id="side_bar_shadow"></div>
