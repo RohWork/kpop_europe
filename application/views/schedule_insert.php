@@ -186,7 +186,7 @@
             
             console.log(el);
             console.log(idx);
-        }
+        });
         
     });
     
