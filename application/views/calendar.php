@@ -32,20 +32,20 @@
             <table class="table table-bordered table-responsive" style="width:700px">
               <tr align="center" >
                 <td>
-                    <a class="a_border" href=<?php echo '/main/calendar?year='.$preyear.'&month='.$month . '&day=1'; ?>>◀◀</a>
+                    <a class="a_border" href=<?php echo '/main/calendar?year='.$preyear.'&month='.$month . '&day=1&country='.$get_country; ?>>◀◀</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?php echo '/main/calendar?year='.$prev_year.'&month='.$prev_month . '&day=1'; ?>>◀</a>
+                    <a class="a_border" href=<?php echo '/main/calendar?year='.$prev_year.'&month='.$prev_month . '&day=1&country='.$get_country; ?>>◀</a>
                 </td>
                 <td height="50" bgcolor="#FFFFFF" colspan="3">
-                    <a class="a_border" href=<?php echo '/main/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1'; ?>>
+                    <a class="a_border" href=<?php echo '/main/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1&country='.$get_country; ?>>
                     <?php echo "&nbsp;&nbsp;" . $month . ' - ' . $year  . "&nbsp;&nbsp;"; ?></a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?php echo '/main/calendar?year='.$next_year.'&month='.$next_month.'&day=1'; ?>>▶</a>
+                    <a class="a_border" href=<?php echo '/main/calendar?year='.$next_year.'&month='.$next_month.'&day=1&country='.$get_country; ?>>▶</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?php echo '/main/calendar?year='.$nextyear.'&month='.$month.'&day=1'; ?>>▶▶</a>
+                    <a class="a_border" href=<?php echo '/main/calendar?year='.$nextyear.'&month='.$month.'&day=1&country='.$get_country; ?>>▶▶</a>
                 </td>
               </tr>
               <tr class="info">
