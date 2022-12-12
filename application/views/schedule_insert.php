@@ -1,15 +1,3 @@
-    <script>
-    var city_array = new Array();
-    
-    <?php
-        foreach($city as $c){
-    ?>
-            city_array[<?=$c['country_idx']?>][<?=$c['idx']?>] =  "<?=$c['name']?>";
-    <?php
-        }
-    ?>
-    </script>
-
     <div class="container">
         <form id="calendar_insert">
             <div class="row">
@@ -181,11 +169,30 @@
     
     $("#check_country").change(function(){
         var j = $("#check_country option:selected").val();
+        var data = { country_idx : j };
         
-        city_array[j].forEach (function (el, index) {
-            
-            console.log(el);
-            console.log(idx);
+        $.ajax({
+            url:'/main/city_get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.result == 200){
+                    
+                    
+                    
+                    
+                    
+                }else{
+
+                    alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
         });
         
     });
