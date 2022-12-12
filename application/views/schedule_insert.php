@@ -4,7 +4,7 @@
     <?php
         foreach($city as $c){
     ?>
-            city_array[<?=$c['country_idx']?>] = "<?=$c['name']?>";
+            city_array[<?=$c['country_idx']?>] = new Array( "<?=$c['idx']?>"  => "<?=$c['name']?>");
     <?php
         }
     ?>
@@ -37,7 +37,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>City</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                    <select class="form-select" id="input_country" name="input_country">
+                    <select class="form-select" id="check_city" name="input_check_citycountry">
                         <option value=""></option>
                     </select>
                 </div>
@@ -142,15 +142,15 @@
 
     <script>
     
-        $("#input_url").click(function() {
-            $("#image_group").append(
-                    "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control i_img' name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
-            );
+    $("#input_url").click(function() {
+        $("#image_group").append(
+                "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control i_img' name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
+        );
 
-            $("#insert_modal").dialogHeight = document.body.scrollHeight + 'px';
-        });
+        $("#insert_modal").dialogHeight = document.body.scrollHeight + 'px';
+    });
         
-        $("#insert_submit").on("click", function(){
+    $("#insert_submit").on("click", function(){
         
         var data = $("#calendar_insert").serializeArray();
         
@@ -178,6 +178,10 @@
         });
             
     });
+    
+    $("#check_country").change(function(){
+        
+    })
     </script>
 
 </main>
