@@ -252,7 +252,7 @@ class Main extends CI_Controller {
         $data['city_idx'] = $this->input->post("check_city");
         $data['organization_idx'] = $this->input->post("check_organization");
         $data['remark'] = $this->input->post("input_remark");
-        $data['type'] = $this->input->post("type");
+        $data['type'] = $this->input->post("input_type");
         
         $image_title = $this->input->post("input_name");
         $image_data = $this->input->post("input_image");
