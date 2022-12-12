@@ -31,7 +31,6 @@ class City_model extends CI_Model {
         
         $query = $this->db->query($sSql);
         return $query->result_array();
-
         
     }
 }
