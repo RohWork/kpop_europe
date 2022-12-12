@@ -182,7 +182,7 @@
                     
                     $('#check_city').empty();
                     for(var i =0; i<data.result.length();i++){
-                        var option = $("<option value="+data.result[i]['idx']+">"+data.result['name']+"</option>");
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
                         $('#check_city').append(option)
                         
                     }
