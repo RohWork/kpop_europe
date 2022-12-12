@@ -9,7 +9,7 @@
         
         <div class="row">
             <div class="col-1">
-                <select id="country" name="country">
+                <select id="country" name="country" class="form-select">
                     <?php
                         foreach($country as $cont){
                     ?>
