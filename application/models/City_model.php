@@ -13,10 +13,7 @@ class City_model extends CI_Model {
 
         $params['writer'] = $this->session->userdata('name');        
         $params['regi_date'] = date('Y-m-d h:i:s');
-        
-        var_dump($params);
-        exit;
-        
+                
         $this->db->insert('kpop_city', $params);
         
         return $this->db->insert_id();
