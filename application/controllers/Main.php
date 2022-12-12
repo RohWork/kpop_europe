@@ -177,6 +177,7 @@ class Main extends CI_Controller {
     }
     
     function organization_insert_ajax(){
+        
         $data = array();
         
         $data['result'] = 200;
