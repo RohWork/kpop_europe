@@ -197,7 +197,12 @@ class Main extends CI_Controller {
     }
     
     function schedule_insert(){
+        
         $data = array();
+        
+        $data['country'] = $this->cont_md->get_country();
+        $data['city'] = $this->city_md->get_city();
+        $data['organization'] = $this->org_md->get_organization();
         
         $this->load->view('header');
         $this->load->view('sidebar');
