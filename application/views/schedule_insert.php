@@ -130,6 +130,8 @@
 
     <script>
     
+    get_country_data();
+    
     $("#input_url").click(function() {
         $("#image_group").append(
                 "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control i_img' name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
@@ -168,6 +170,12 @@
     });
     
     $("#check_country").change(function(){
+        get_country_data();
+    });
+    
+    
+    function get_country_data(){
+        
         var j = $("#check_country option:selected").val();
         var data = { country_idx : j };
         
@@ -203,7 +211,7 @@
             }	 
         });
         
-    });
+    }
     
     </script>
 
