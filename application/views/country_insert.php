@@ -10,7 +10,7 @@
                     <input type="text" class="form-control" id="input_country" name="input_country"/>
                 </div>
             </div>
-            <div class="row mt-1">
+            <div class="row mt-1" style="padding-top:50px">
                 
                 <div class="col-4"></div>
                 <div class="col-4"><button type="button" id="btn_insert">INSERT</button></div>
