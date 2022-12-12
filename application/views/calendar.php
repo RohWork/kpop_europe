@@ -18,7 +18,7 @@
                                 $selected = "";
                             }
                     ?>
-                    <option value="<?=$cont['idx']?>" <?=$selected?>'><?=$cont['name']?></option>
+                    <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
                     <?php
                         }
                     ?>
