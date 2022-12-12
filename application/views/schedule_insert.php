@@ -143,8 +143,6 @@
     $("#insert_submit").on("click", function(){
         
         var data = $("#calendar_insert").serializeArray();
-        
-        console.log(data);
 
         $.ajax({
             url:'/main/calendar_insert',
