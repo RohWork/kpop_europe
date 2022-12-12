@@ -84,17 +84,18 @@
             </div>
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>Date</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong>Start Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <div class="input-group">
-                        <div class="input-group-addon">start</div>
-                        <input type="date" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('Y-m-d')?>"/>
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-addon">end</div>
-                        <input type="date" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('Y-m-d')?>"/>
-                    </div>
+                    <input type="date" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('Y-m-d')?>"/>
+                </div>
+            </div>
+            <div class="row mt-1">
+
+                <label class="form-label col-md-2 col-xs-4"><strong>End Date</strong></label>
+
+                <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
+                    <input type="date" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('Y-m-d')?>"/>
                 </div>
             </div>
             <div class="row mt-1">
