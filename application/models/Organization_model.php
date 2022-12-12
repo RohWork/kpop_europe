@@ -8,8 +8,11 @@ class Organization_model extends CI_Model {
         parent::__construct();
     }
  
-    function insert_organization($params){
+    function insert_organization($organization){
         
+        $params = array();
+        
+        $params['name'] = $organization;
 
         $params['writer'] = $this->session->userdata('name');        
         $params['regi_date'] = date('Y-m-d h:i:s');
