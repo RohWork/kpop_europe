@@ -31,7 +31,7 @@
                     Kpop Party
                 </button>
                 <div class="collapse" id="party-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">   
+                    <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">   
                         <li>
                             <a href="/main/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a> 
                         </li>
