@@ -89,13 +89,6 @@
           </tr>
           <?php } ?>
         </table>
-        <div class="row">
-            <div class="col-4">
-                <?php if($this->session->userdata('level') > 2){ ?>
-                <button type="button" id="insert_cal" name="insert_cal" class="btn btn-primary">INSERT</button>
-                <?php } ?>
-            </div>
-        </div>
     </div>
     
     <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
