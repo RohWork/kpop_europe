@@ -181,6 +181,7 @@ class Main extends CI_Controller {
         if(!$result){
             $data['code'] = 400;
             $data['message'] = "data process error";
+        }else{
             $data['result'] = $result;
         }
         
