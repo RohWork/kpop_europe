@@ -14,9 +14,12 @@
                 <label class="form-label col-2"><strong>Country</strong></label>
 
                 <div class="col-4 col-offset-6">
-                    <select class="form-select" id="input_country" name="input_country">
-                        <option value=""></option>
-                    </select>
+                        <select id="check_country" name="check_country" class="form-select">
+                            <?php foreach($country as $cnt){ ?>
+                                <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+
+                            <?php } ?>
+                        </select>
                 </div>
             </div>
             <div class="row mt-1">
