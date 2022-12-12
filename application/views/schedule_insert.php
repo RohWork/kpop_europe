@@ -144,10 +144,7 @@
         var data = $("#calendar_insert").serializeArray();
         
         console.log(data);
-        
-        
- 
-        
+
         $.ajax({
             url:'/main/calendar_insert',
             type:'post',
