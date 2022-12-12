@@ -5,7 +5,7 @@
                     <label class="form-label"><h3>City Insert</h3></label>
                 </div>
                 <div class="row mt-1">
-                    <label class="form-label col-2"><strong>Country</strong></label>
+                    <label class="form-label col-2 col-xs-4"><strong>Country</strong></label>
 
                     <div class="col-4 col-offset-6">
                         <select id="check_country" class="form-select">
