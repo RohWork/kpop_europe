@@ -23,10 +23,10 @@ class Organization_model extends CI_Model {
         
     }
     
-    function get_organization($country_idx, $city_idx){
+    function get_organization(){
         
-
-        $sSql = "SELECT idx, country_idx, name FROM `kpop_city` where country_idx = $country_idx and city_idx = $city_idx";
+        
+        $sSql = "SELECT idx, country_idx, name FROM `kpop_organization`";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
