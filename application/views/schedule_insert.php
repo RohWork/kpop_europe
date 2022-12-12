@@ -1,3 +1,14 @@
+    <script>
+    var city_array = new Array();
+    
+    <?php
+        foreach($city as $c){
+    ?>
+            city_array[<?=$c['country_idx']?>] = "<?=$c['name']?>";
+    <?php
+        }
+    ?>
+    </script>
 
     <div class="container">
         <form id="calendar_insert">
