@@ -1,31 +1,9 @@
     <div class="container">
-        <form id="city_insert">
+        <form id="organization_insert">
             <div class="form-group">
                 <div class="row">
-                    <label class="form-label"><h3>City Insert</h3></label>
+                    <label class="form-label"><h3>Organization Insert</h3></label>
                 </div>
-                <div class="row mt-1">
-                    <label class="form-label col-md-2 col-xs-4"><strong>Country</strong></label>
-
-                    <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
-                        <select id="check_country" name="check_country" class="form-select">
-                            <?php foreach($country as $cnt){ ?>
-                                <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
-
-                            <?php } ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="row mt-1">
-                    <label class="form-label col-md-2 col-xs-4"><strong>City</strong></label>
-
-                    <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
-                        <select id="city_country" name="city_country" class="form-select">
-
-                        </select>
-                    </div>
-                </div>
-
                 <div class="row mt-1">
                     <label class="form-label col-md-2 col-xs-4"><strong>Organization name</strong></label>
 
@@ -56,9 +34,9 @@
         }else{
             
             $.ajax({
-                url:'/main/city_insert_ajax',
+                url:'/main/organization_insert_ajax',
                 type:'post',
-                data:$("#city_insert").serialize(),
+                data:$("#organization_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to insert');
@@ -70,7 +48,7 @@
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    alert("Network error!! Confirm to Manager!!");
                     return false;
                 }	 
             });
