@@ -92,7 +92,7 @@
                     </div>
                     <div class="form_group">
                         ~
-                    </dv>
+                    </div>
                     <div class="form_group">
                         <input type="date" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('Y-m-d')?>"/>
                     </div>
