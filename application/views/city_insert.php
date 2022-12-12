@@ -56,6 +56,7 @@
                         location.href = "/";
                     }else{
                         alert('input fail. check to data.');
+                        console.log(data);
                     }
                 },
                 error: function(xhr,status,error) {
