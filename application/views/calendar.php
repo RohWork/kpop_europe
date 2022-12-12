@@ -162,4 +162,9 @@
            });
     });
     
+    $("#country").on('change', function(){
+       var cnt_idx = $("#country option:selected").val();
+       
+       location.href="/main/calendar?country="+cnt_idx; 
+    });
 </script>
