@@ -73,7 +73,7 @@
             <?php if($this->session->userdata('level') > 2){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/country/insert" class="btn btn-toggle align-items-center rounded">Country Insert</a>
+                <a href="/country" class="btn btn-toggle align-items-center rounded">Country</a>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
