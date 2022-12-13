@@ -71,7 +71,7 @@ class Country extends CI_Controller {
         $data['result'] = 200;
         $data['message'] = "";
         
-        $country = $this->input->post("modify_country");
+        $country = $this->input->post("country");
         $result = $this->cont_md->modify_country($country);
         
         if(!$result){
