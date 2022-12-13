@@ -1,6 +1,6 @@
     <div class="container">
         <div class="row">
-            <table class="table table-striped" style="width:70vw">
+            <table class="table table-striped" style="width:30vw">
                 <thead>
                 <tr>
                     <th>번호</th>
@@ -26,7 +26,7 @@
             </table>
         </div>
         <div class="row">
-            <div class="col-md-2 col-xs-2">
+            <div class="col-5 col-offset-7 ">
                 <button type="button" class="btn btn-primary" id="insert_button">INSERT</button>
             </div>
         </div>
