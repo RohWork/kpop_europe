@@ -34,9 +34,10 @@
             <div class="col-5 col-offset-7 text-end">
                 <button type="button" class="btn btn-primary" id="insert_button">INSERT</button>
             </div>
-        </div>
-        
-        
+        </div>         
+    </div>
+    
+    
     <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         
         <div class="modal-dialog" role="document">
@@ -56,8 +57,7 @@
             </div>
         </div>
     </div>
-               
-    </div>
+    
     <script>
         $("#insert_button").on("click",function(){
             alert('test');
