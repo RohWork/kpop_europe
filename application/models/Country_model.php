@@ -21,14 +21,15 @@ class Country_model extends CI_Model {
         
     }
     
-    function modify_country($country){
+    function modify_country($country, $country_idx){
         
         $params = array();
         
         $params['name'] = $country;
         $params['modifier'] = $this->session->userdata('name');
-        
         $params['modi_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->where("idx", $country_idx);
         $this->db->update('kpop_country', $params);
         
         return $this->db->affected_rows();
