@@ -40,5 +40,9 @@
         $("#insert_button").on("click",function(){
             alert('test');
         })
+        
+        function view_info(){
+            alert('test');
+        }
     </script>
 </main>
