@@ -18,7 +18,7 @@
                     <?php
                         $i =1;
                         foreach($list as $con){
-                            echo "<tr onclick='view_info(".$con['idx']."_".$con['name'].")' class='onpointer'>";
+                            echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
                             echo "<td>".$i."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
