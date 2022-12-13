@@ -30,7 +30,7 @@ class City_model extends CI_Model {
             $where = "and idx = $city_idx";
         }
         
-        $sSql = "SELECT idx, country_idx, name FROM `kpop_city` where state = 1 $where";
+        $sSql = "SELECT * FROM `kpop_city` where state = 1 $where";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
