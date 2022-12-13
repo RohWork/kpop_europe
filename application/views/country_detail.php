@@ -9,10 +9,10 @@
     <body>
         <div class="container" style="font-size: 15px">
             <div class="row">
-                <div class="col-2">
+                <div class="col-4">
                     <label class="form-label bold"><strong>Country name</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-8">
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
