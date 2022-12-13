@@ -26,10 +26,19 @@ class Organization_model extends CI_Model {
     function get_organization(){
         
         
-        $sSql = "SELECT * FROM `kpop_organization` where state = 1";
+        $sSql = "SELECT * FROM `kpop_organization` where state = 1 order by idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
+        
+    }
+    
+    function get_organization_idx($idx){
+        
+        $sSql = "SELECT * FROM `kpop_organization` where state = 1 and idx=$idx";
+        
+        $query = $this->db->query($sSql);
+        return $query->row_array();
         
     }
 }
