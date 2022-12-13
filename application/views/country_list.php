@@ -82,9 +82,15 @@
             
             frame.modify_country();
         }
+        
+        function modal_close(){
+            $('#detail_modal').modal('hide');
+        }
+        
         $(".close").on('click', function(){    
             $('#detail_modal').modal('hide');
         });
+        
 
         $('#detail_modal').on('show.bs.modal', function () {
                $(this).find('.modal-body').css({
