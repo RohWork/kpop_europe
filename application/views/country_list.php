@@ -1,6 +1,6 @@
     <div class="container">
         <div class="row">
-            <table class="table table-striped" style="width:150vw">
+            <table class="table table-striped" style="width:70vw">
                 <thead>
                 <tr>
                     <th>번호</th>
