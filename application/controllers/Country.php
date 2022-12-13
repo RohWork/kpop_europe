@@ -21,9 +21,9 @@ class Country extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function detail(){
+    function detail($idx){
         
-        $data = array($idx);
+        $data = array();
         
         $data['detail_info'] = $this->cont_md->get_country_idx($idx);
   
