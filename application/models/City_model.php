@@ -48,7 +48,7 @@ class City_model extends CI_Model {
                 . "where kc.state = 1 $where order by kc.country_idx asc, ko.idx desc";
         
         $query = $this->db->query($sSql);
-        return $query->result_array();
+        return $query->row_array();
     }
     
     function modify_city($city, $city_idx){
