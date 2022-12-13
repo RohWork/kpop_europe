@@ -11,6 +11,24 @@
             <form id="form_modify">
                 <div class="row">
                     <div class="col-4">
+                        <label class="form-label bold"><strong>Country_name</strong></label>
+                    </div>
+                    <div class="col-8">
+                        <select id="country_idx" name="counry_idx">
+                            <?php foreach($country as $cont){
+                                    $selected = "";
+                                    if($cont['idx'] == $detail_info['country_idx']){
+                                        $selected = "selected";
+                                    }
+                            ?>
+                                
+                                <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
                         <label class="form-label bold"><strong>City_name</strong></label>
                     </div>
                     <div class="col-8">
