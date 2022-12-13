@@ -19,7 +19,14 @@ class Organization extends CI_Controller {
         $this->load->view('organization_list',$data);
         $this->load->view('footer');
     }
-    
+    function detail($idx){
+        
+        $data = array();
+        
+        $data['detail_info'] = $this->org_md->get_organization_idx($idx);
+  
+        $this->load->view('country_detail',$data);
+    }
     function insert(){
         $data = array();
         
