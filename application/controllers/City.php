@@ -28,7 +28,7 @@ class City extends CI_Controller {
         
         $data = array();
         
-        $data['detail_info'] = $this->city_md->get_city('',$idx);
+        $data['detail_info'] = $this->city_md->get_city_idx($idx);
   
         
         $this->load->view('city_detail',$data);
