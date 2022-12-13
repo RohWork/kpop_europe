@@ -51,16 +51,16 @@ class City_model extends CI_Model {
         return $query->row_array();
     }
     
-    function modify_city($city, $city_idx){
+    function modify_city($params){
         
-        $params = array();
+        $data = array();
+        $data['name'] = $params['city'];
+        $data['country_idx'] = $params['country_idx'];
+        $data['modifier'] = $this->session->userdata('name');
+        $data['modi_date'] = date('Y-m-d h:i:s');
         
-        $params['name'] = $city;
-        $params['modifier'] = $this->session->userdata('name');
-        $params['modi_date'] = date('Y-m-d h:i:s');
-        
-        $this->db->where("idx", $city_idx);
-        $this->db->update('kpop_city', $params);
+        $this->db->where("idx", $params['idx']);
+        $this->db->update('kpop_city', $data);
         
         return $this->db->affected_rows();
     }
