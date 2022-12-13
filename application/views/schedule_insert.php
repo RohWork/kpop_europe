@@ -188,7 +188,7 @@
         var data = { country_idx : j };
         
         $.ajax({
-            url:'/main/city_get_ajax',
+            url:'/city/get_ajax',
             type:'post',
             data: data,
             success:function(data){
