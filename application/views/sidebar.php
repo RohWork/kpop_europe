@@ -73,15 +73,15 @@
             <?php if($this->session->userdata('level') > 2){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/main/country_insert" class="btn btn-toggle align-items-center rounded">Country Insert</a>
+                <a href="/country/insert" class="btn btn-toggle align-items-center rounded">Country Insert</a>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/main/city_insert" class="btn btn-toggle align-items-center rounded">City Insert</a>
+                <a href="/city/insert" class="btn btn-toggle align-items-center rounded">City Insert</a>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/main/organization_insert" class="btn btn-toggle align-items-center rounded">Organizer Insert</a>
+                <a href="/organization/insert" class="btn btn-toggle align-items-center rounded">Organizer Insert</a>
             </li>
             <?php }?>
         </ul>
