@@ -21,6 +21,20 @@ class Country_model extends CI_Model {
         
     }
     
+    function modify_country($country){
+        
+        $params = array();
+        
+        $params['name'] = $country;
+        $params['modifier'] = $this->session->userdata('name');
+        
+        $params['modi_date'] = date('Y-m-d h:i:s');
+        $this->db->update('kpop_country', $params);
+        
+        return $this->db->affected_rows();
+        
+    }
+    
     function get_country(){
         
         $sSql = "SELECT * FROM `kpop_country` where state = '1' order by idx desc";
