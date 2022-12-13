@@ -97,36 +97,6 @@ class Main extends CI_Controller {
     }
     
     
-    function country_insert(){
-        $data = array();
-        
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        $this->load->view('country_insert',$data);
-        $this->load->view('footer');
-    }
-    
-    function country_insert_ajax(){
-        
-        $data = array();
-        
-        $data['result'] = 200;
-        $data['message'] = "";
-        
-        $country = $this->input->post("input_country");
-        $result = $this->cont_md->insert_country($country);
-        
-        if(!$result){
-            $data['result'] = 400;
-            $data['message'] = "data process error";
-        }
-        
-
-        
-        
-        header("Content-Type: application/json;");
-        echo json_encode($data);
-    }
     
     function city_insert(){
         
