@@ -81,7 +81,7 @@
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/organization" class="btn btn-toggle align-items-center rounded">Organizer</a>
+                <a href="/organization" class="btn btn-toggle align-items-center rounded">Organization</a>
             </li>
             <?php }?>
         </ul>
