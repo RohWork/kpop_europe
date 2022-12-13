@@ -12,7 +12,7 @@
                 <tbody>
                     <?php
                         $i =1;
-                        foreach($country as $con){
+                        foreach($list as $con){
                             echo "<tr>";
                             echo "<td>".$i."</td>";
                             echo "<td>".$con['name']."<td>";
