@@ -28,12 +28,29 @@ class City extends CI_Controller {
         
         $data = array();
         
-        $data['detail_info'] = $this->cont_md->get_city($idx);
+        $data['detail_info'] = $this->city_md->get_city($idx);
   
         
         $this->load->view('city_detail',$data);
     }
-    
+    function modify_ajax(){
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $city = $this->input->post("city");
+        $city_idx = $this->input->post("city_idx");
+        $result = $this->city_md->modify_city($city,$city_idx);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = "data process error";
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
     
     function insert(){
         
