@@ -63,4 +63,23 @@ class Country extends CI_Controller {
         header("Content-Type: application/json;");
         echo json_encode($data);
     }
+    
+    function modify_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $country = $this->input->post("modify_country");
+        $result = $this->cont_md->modify_country($country);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = "data process error";
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
 }
