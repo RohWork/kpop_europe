@@ -8,15 +8,16 @@
     </head>
     <body>
         <div class="container" style="font-size: 15px">
-            <div class="row">
-                <div class="col-4">
-                    <label class="form-label bold"><strong>Country name</strong></label>
+            <form id="form_modify">
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label bold"><strong>Country name</strong></label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="modify_country" name="modify_country" value="<?=$detail_info['name']?>"/>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <p><?=$detail_info['name']?></p>
-                </div>
-            </div>
-
+            </form>
         </div>
     </body>
 </html>
