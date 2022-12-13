@@ -20,14 +20,17 @@ class City_model extends CI_Model {
         
     }
     
-    function get_city( $country_idx = "" ){
+    function get_city( $country_idx = "" , $city_idx = "" ){
         
         $where = "";
         if(!empty($country_idx)){
-            $where = "where country_idx = $country_idx";
+            $where = "and country_idx = $country_idx";
+        }
+        if(!empty($city_idx)){
+            $where = "and idx = $city_idx";
         }
         
-        $sSql = "SELECT idx, country_idx, name FROM `kpop_city` $where";
+        $sSql = "SELECT idx, country_idx, name FROM `kpop_city` where state = 1 $where";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
