@@ -82,7 +82,7 @@
         function modal_submit(){
             const frame =  document.getElementById("detail_frame").contentWindow;
             
-            frame.modify_country();
+            frame.modify_city();
         }
         
         function modal_close(){
