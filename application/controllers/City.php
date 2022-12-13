@@ -42,7 +42,7 @@ class City extends CI_Controller {
         $params = array();
         $params['city'] = $this->input->post("city");
         $params['city_idx'] = $this->input->post("city_idx");
-        $params['counry_idx'] = $this->input->post("counry_idx");
+        $params['country_idx'] = $this->input->post("country_idx");
         
         $result = $this->city_md->modify_city($params);
         
