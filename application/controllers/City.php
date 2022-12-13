@@ -24,6 +24,17 @@ class City extends CI_Controller {
         
     }
     
+    function detail($idx){
+        
+        $data = array();
+        
+        $data['detail_info'] = $this->cont_md->get_city($idx);
+  
+        
+        $this->load->view('country_detail',$data);
+    }
+    
+    
     function insert(){
         
         $data = array();
