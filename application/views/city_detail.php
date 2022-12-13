@@ -14,7 +14,7 @@
                         <label class="form-label bold"><strong>Country_name</strong></label>
                     </div>
                     <div class="col-8">
-                        <select id="country_idx" name="counry_idx">
+                        <select id="country_idx" name="counry_idx"  class="form-select">
                             <?php foreach($country as $cont){
                                     $selected = "";
                                     if($cont['idx'] == $detail_info['country_idx']){
@@ -32,7 +32,7 @@
                         <label class="form-label bold"><strong>City_name</strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="city" name="city" value="<?=$detail_info['name']?>"/>
+                        <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
                         <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
