@@ -8,10 +8,10 @@
             <table class="table table-striped" style="width:30vw">
                 <thead>
                 <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>등록자</th>
-                    <th>등록일</th>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Writer</th>
+                    <th>Regist_date</th>
                 </tr>
                 </thead>
                 <tbody>
