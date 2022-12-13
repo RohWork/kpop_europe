@@ -40,7 +40,7 @@
     <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         
         <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content" style="height:auto">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">detail</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
