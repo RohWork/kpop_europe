@@ -18,7 +18,7 @@
                     <?php
                         $i =1;
                         foreach($list as $con){
-                            echo "<tr onclick='view_info()' class='onpointer'>";
+                            echo "<tr onclick='view_info(".$con['idx']."_".$con['name'].")' class='onpointer'>";
                             echo "<td>".$i."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
@@ -42,7 +42,7 @@
             <div class="modal-dialog modal-lg"  role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">insert</h5>
+                        <h5 class="modal-title">detail</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
