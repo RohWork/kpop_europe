@@ -14,8 +14,8 @@
                         <label class="form-label bold"><strong>Country name</strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="country" name="country" value="<?=$detail_info['name']?>" class="form-control"/>
-                        <input type="hidden" id="country_idx" name="country_idx" value="<?=$detail_info['idx']?>"/>
+                        <input type="text" id="organization" name="organization" value="<?=$detail_info['name']?>" class="form-control"/>
+                        <input type="hidden" id="organization_idx" name="organization_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
             </form>
@@ -25,7 +25,7 @@
         function modify_country(){
             
             $.ajax({
-                url:'/country/modify_ajax',
+                url:'/organization/modify_ajax',
                 type:'post',
                 data:$("#form_modify").serialize(),
                 success:function(data){
