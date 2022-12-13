@@ -38,4 +38,18 @@ class City_model extends CI_Model {
         return $query->result_array();
         
     }
+    
+    function modify_city($city, $city_idx){
+        
+        $params = array();
+        
+        $params['name'] = $city;
+        $params['modifier'] = $this->session->userdata('name');
+        $params['modi_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->where("idx", $city_idx);
+        $this->db->update('kpop_city', $params);
+        
+        return $this->db->affected_rows();
+    }
 }
