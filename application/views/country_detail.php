@@ -20,4 +20,29 @@
             </form>
         </div>
     </body>
+    <script>
+        function modify_country(){
+            
+            $.ajax({
+                url:'/country/modify_ajax',
+                type:'post',
+                data:$("#form_modify").serialize(),
+                success:function(data){
+                    if(data.result == 200){
+                        alert('complete to modify');
+                        self.close();
+                    }else{
+                        alert('input fail. check to data.');
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
+            
+        }
+        
+    </script>
 </html>
