@@ -1,5 +1,10 @@
     <div class="container">
         <div class="row">
+            <div class="col-md-2 col-xs2">
+                
+            </div>
+        </div>
+        <div class="row">
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -17,7 +22,7 @@
                             echo "<td>".$i."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
-                            echo "<td>".substr($con['regi_date'],10)."</td>";
+                            echo "<td>".substr($con['regi_date'],0,10)."</td>";
                             echo "</tr>";
                             $i++;
                         }
