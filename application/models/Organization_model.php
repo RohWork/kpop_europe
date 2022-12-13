@@ -26,7 +26,7 @@ class Organization_model extends CI_Model {
     function get_organization(){
         
         
-        $sSql = "SELECT idx, name FROM `kpop_organization`";
+        $sSql = "SELECT idx, name FROM `kpop_organization` where state = 1";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
