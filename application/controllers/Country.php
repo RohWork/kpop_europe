@@ -10,7 +10,7 @@ class Country extends CI_Controller {
 
     }
     
-    function main(){
+    function index(){
         $data = array();
         
         $data['list'] = $this->cont_md->get_country();
