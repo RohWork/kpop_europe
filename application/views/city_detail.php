@@ -25,7 +25,7 @@
         function modify_country(){
             
             $.ajax({
-                url:'/country/modify_ajax',
+                url:'/city/modify_ajax',
                 type:'post',
                 data:$("#form_modify").serialize(),
                 success:function(data){
