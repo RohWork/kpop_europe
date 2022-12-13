@@ -32,7 +32,7 @@
         }else{
             
             $.ajax({
-                url:'/main/country_insert_ajax',
+                url:'/country/insert_ajax',
                 type:'post',
                 data:$("#country_insert").serialize(),
                 success:function(data){
