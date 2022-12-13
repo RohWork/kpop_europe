@@ -8,10 +8,11 @@
             <table class="table table-striped" style="width:30vw">
                 <thead>
                 <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>등록자</th>
-                    <th>등록일</th>
+                    <th>No</th>
+                    <th>Country Name</th>
+                    <th>Name</th>
+                    <th>Writer</th>
+                    <th>Regist_date</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -20,6 +21,7 @@
                         foreach($list as $con){
                             echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
                             echo "<td>".$i."</td>";
+                            echo "<td>".$con['country_name']."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
                             echo "<td>".substr($con['regi_date'],0,10)."</td>";
