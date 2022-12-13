@@ -173,8 +173,17 @@
             alert('test');
         })
         
-        function view_info(){
-            alert('test');
+        function view_info(idx_name){
+            var idxurl = idx_name.split("_");
+
+
+            var url = "/country/detail/"+idxurl[0];
+
+            $('#detail_frame').attr('src', url);
+
+            $(".modal-title").text(idxurl[1]);
+            // 모달창 띄우기
+            $('#detail_modal').modal("show");
         }
     </script>
 </main>
