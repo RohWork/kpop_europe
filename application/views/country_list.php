@@ -78,7 +78,7 @@
         }
         
         function modal_submit(){
-            $("detail_frame").contentWindow.modify_country();
+            $("#detail_frame").contentWindow.modify_country();
         }
         $(".close").on('click', function(){    
             $('#detail_modal').modal('hide');
