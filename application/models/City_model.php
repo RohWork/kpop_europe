@@ -30,7 +30,7 @@ class City_model extends CI_Model {
             $where = "and kc.idx = $city_idx";
         }
         
-        $sSql = "SELECT kc.*, ko.name as country_name FROM `kpop_city` as kc"
+        $sSql = "SELECT kc.*, ko.name as country_name FROM `kpop_city` as kc "
                 . "left join kpop_country as ko on kc.country_idx = ko.idx "
                 . "where kc.state = 1 $where order by kc.country_idx asc, ko.idx desc";
         
