@@ -27,7 +27,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="padding-top: 10px">
                     <div class="col-4">
                         <label class="form-label bold"><strong>City_name</strong></label>
                     </div>
