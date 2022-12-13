@@ -31,6 +31,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to modify');
+                        window.parent.location.reload();
                         self.close();
                     }else{
                         alert('input fail. check to data.');
