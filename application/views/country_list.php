@@ -1,3 +1,8 @@
+    <style>
+        .onpointer{
+            cursor: pointer;
+        }
+    </style>
     <div class="container">
         <div class="row">
             <table class="table table-striped" style="width:30vw">
@@ -13,7 +18,7 @@
                     <?php
                         $i =1;
                         foreach($list as $con){
-                            echo "<tr>";
+                            echo "<tr onclick='view_info()' class='onpointer'>";
                             echo "<td>".$i."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
