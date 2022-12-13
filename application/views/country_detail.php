@@ -33,7 +33,6 @@
                         alert('complete to modify');
                         window.parent.location.reload();
                         window.parent.modal_close();
-                        self.close();
                     }else{
                         alert('input fail. check to data.');
                     }
