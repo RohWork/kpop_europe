@@ -34,7 +34,7 @@
         }else{
             
             $.ajax({
-                url:'/main/organization_insert_ajax',
+                url:'/organization/insert_ajax',
                 type:'post',
                 data:$("#organization_insert").serialize(),
                 success:function(data){
