@@ -47,7 +47,7 @@
         }else{
             
             $.ajax({
-                url:'/main/city_insert_ajax',
+                url:'/city/insert_ajax',
                 type:'post',
                 data:$("#city_insert").serialize(),
                 success:function(data){
