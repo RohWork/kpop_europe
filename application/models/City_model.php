@@ -24,13 +24,15 @@ class City_model extends CI_Model {
         
         $where = "";
         if(!empty($country_idx)){
-            $where = "and country_idx = $country_idx";
+            $where = "and kc.country_idx = $country_idx";
         }
         if(!empty($city_idx)){
-            $where = "and idx = $city_idx";
+            $where = "and kc.idx = $city_idx";
         }
         
-        $sSql = "SELECT * FROM `kpop_city` where state = 1 $where";
+        $sSql = "SELECT kc.*, ko.name as country_name FROM `kpop_city` as kc"
+                . "left join kpop_country as ko on kc.country_idx = ko.idx "
+                . "where kc.state = 1 $where";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
