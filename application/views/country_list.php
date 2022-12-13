@@ -15,11 +15,11 @@
                         foreach($list as $con){
                             echo "<tr>";
                             echo "<td>".$i."</td>";
-                            echo "<td>".$con['name']."<td>";
-                            echo "<td>".substr($con['writer'],10)."<td>";
-                            echo "<td>".substr($con['regi_date'],10)."<td>";
+                            echo "<td>".$con['name']."</td>";
+                            echo "<td>".$con['writer']."</td>";
+                            echo "<td>".substr($con['regi_date'],10)."</td>";
                             echo "</tr>";
-                            
+                            $i++;
                         }
                     ?>
                 </tbody>
