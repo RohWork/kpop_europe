@@ -38,7 +38,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to insert');
-                        location.href = "/";
+                        location.href = "/country";
                     }else{
                         alert('input fail. check to data.');
                     }
