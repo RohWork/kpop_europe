@@ -14,7 +14,7 @@
                         <label class="form-label bold"><strong>Country name</strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="country" name="country" value="<?=$detail_info['name']?>"/>
+                        <input type="text" id="country" name="country" value="<?=$detail_info['name']?>" class="form-control"/>
                         <input type="hidden" id="country_idx" name="country_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
