@@ -37,6 +37,9 @@ class City_model extends CI_Model {
     }
     
     function get_city_idx($city){
+        
+        $where = "";
+        
         if(!empty($city_idx)){
             $where = "and kc.idx = $city_idx";
         }
