@@ -1,10 +1,5 @@
     <div class="container">
         <div class="row">
-            <div class="col-md-2 col-xs-2">
-                <button type="button" class="btn btn-primary" id="insert_button">INSERT</button>
-            </div>
-        </div>
-        <div class="row">
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -29,6 +24,11 @@
                     ?>
                 </tbody>
             </table>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-2">
+                <button type="button" class="btn btn-primary" id="insert_button">INSERT</button>
+            </div>
         </div>
     </div>
 </main>
