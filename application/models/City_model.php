@@ -26,10 +26,7 @@ class City_model extends CI_Model {
         if(!empty($country_idx)){
             $where = "and kc.country_idx = $country_idx";
         }
-        if(!empty($city_idx)){
-            $where = "and kc.idx = $city_idx";
-        }
-        
+
         $sSql = "SELECT kc.*, ko.name as country_name FROM `kpop_city` as kc "
                 . "left join kpop_country as ko on kc.country_idx = ko.idx "
                 . "where kc.state = 1 $where order by kc.country_idx asc, ko.idx desc";
@@ -37,6 +34,18 @@ class City_model extends CI_Model {
         $query = $this->db->query($sSql);
         return $query->result_array();
         
+    }
+    
+    function get_city_idx($city){
+        if(!empty($city_idx)){
+            $where = "and kc.idx = $city_idx";
+        }
+        $sSql = "SELECT kc.*, ko.name as country_name FROM `kpop_city` as kc "
+                . "left join kpop_country as ko on kc.country_idx = ko.idx "
+                . "where kc.state = 1 $where order by kc.country_idx asc, ko.idx desc";
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
     }
     
     function modify_city($city, $city_idx){
