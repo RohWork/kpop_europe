@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container" style="font-size: 15px">
+        <div class="container" style="font-size: 14px">
             <form id="form_modify">
                 <div class="row">
                     <div class="col-4">
