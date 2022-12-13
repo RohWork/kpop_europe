@@ -39,9 +39,12 @@ class City extends CI_Controller {
         $data['result'] = 200;
         $data['message'] = "";
         
-        $city = $this->input->post("city");
-        $city_idx = $this->input->post("city_idx");
-        $result = $this->city_md->modify_city($city,$city_idx);
+        $params = array();
+        $params['city'] = $this->input->post("city");
+        $params['city_idx'] = $this->input->post("city_idx");
+        $params['counry_idx'] = $this->input->post("counry_idx");
+        
+        $result = $this->city_md->modify_city($params);
         
         if(!$result){
             $data['result'] = 400;
