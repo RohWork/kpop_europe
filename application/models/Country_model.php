@@ -38,6 +38,7 @@ class Country_model extends CI_Model {
     
     function get_country($idx = ""){
         
+        $where = "";
         if(!empty($idx)){
             $where  = "and idx = ".$idx;
         }
