@@ -38,7 +38,7 @@
     </div>
     
     
-    <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+    <div class="modal fade" id="detail_modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         
         <div class="modal-dialog" role="document">
             <div class="modal-content">
