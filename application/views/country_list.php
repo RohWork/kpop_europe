@@ -36,4 +36,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $("#insert_button").on("click",function(){
+            alert('test');
+        })
+    </script>
 </main>
