@@ -61,14 +61,14 @@
     
     <script>
         $("#insert_button").on("click",function(){
-            location.href= "/country/insert";
+            location.href= "/city/insert";
         })
         
         function view_info(idx_name){
             var idxurl = idx_name.split("_");
 
 
-            var url = "/country/detail/"+idxurl[0];
+            var url = "/city/detail/"+idxurl[0];
 
             $('#detail_frame').attr('src', url);
 
