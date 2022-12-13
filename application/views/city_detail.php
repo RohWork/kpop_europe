@@ -22,7 +22,7 @@
         </div>
     </body>
     <script>
-        function modify_country(){
+        function modify_city(){
             
             $.ajax({
                 url:'/city/modify_ajax',
