@@ -52,6 +52,7 @@
                     <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="modal_submit();">Save</button>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
                 </div>
             </div>
@@ -76,6 +77,9 @@
             $('#detail_modal').modal("show");
         }
         
+        function modal_submit(){
+            $("detail_frame").contentWindow.modify_country();
+        }
         $(".close").on('click', function(){    
             $('#detail_modal').modal('hide');
         });
