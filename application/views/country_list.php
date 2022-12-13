@@ -78,7 +78,7 @@
         }
         
         function modal_submit(){
-            const frame =  document.getElmentById("detail_frame").contentWindow;
+            const frame =  document.getElementById("detail_frame").contentWindow;
             
             frame.modify_country();
         }
