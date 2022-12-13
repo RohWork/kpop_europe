@@ -59,7 +59,7 @@ class City_model extends CI_Model {
         $data['modifier'] = $this->session->userdata('name');
         $data['modi_date'] = date('Y-m-d h:i:s');
         
-        $this->db->where("idx", $params['idx']);
+        $this->db->where("idx", $params['city_idx']);
         $this->db->update('kpop_city', $data);
         
         return $this->db->affected_rows();
