@@ -55,4 +55,24 @@ class Organization extends CI_Controller {
         header("Content-Type: application/json;");
         echo json_encode($data);
     }
+    
+    function modify_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $organization = $this->input->post("organization");
+        $organization_idx = $this->input->post("organization_idx");
+        $result = $this->org_md->modify_organization($country,$country_idx);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = "data process error";
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
 }
