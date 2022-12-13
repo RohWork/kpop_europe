@@ -20,6 +20,17 @@ class Country extends CI_Controller {
         $this->load->view('country_list',$data);
         $this->load->view('footer');
     }
+    
+    function detail(){
+        
+        $data = array($idx);
+        
+        $data['detail_info'] = $this->cont_md->get_country_idx($idx);
+  
+        
+        $this->load->view('country_detail',$data);
+    }
+    
     function insert(){
         
         $data = array();
