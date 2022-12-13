@@ -61,7 +61,7 @@
     
     <script>
         $("#insert_button").on("click",function(){
-            alert('test');
+            location.href= "/country/insert";
         })
         
         function view_info(idx_name){
