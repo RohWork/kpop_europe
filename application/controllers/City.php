@@ -11,9 +11,16 @@ class City extends CI_Controller {
         $this->load->model('City_model', 'city_md', TRUE);
     }
     
-    function main(){
+    function index(){
         
         
+        $data = array();
+        $data['list'] = $this->city_md->get_city();
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('city_list', $data);
+        $this->load->view('footer');
         
     }
     
