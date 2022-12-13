@@ -15,6 +15,7 @@
                     </div>
                     <div class="col-8">
                         <input type="text" id="country" name="country" value="<?=$detail_info['name']?>"/>
+                        <input type="hidden" id="country_idx" name="country_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
             </form>
