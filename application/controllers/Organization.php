@@ -25,7 +25,7 @@ class Organization extends CI_Controller {
         
         $data['detail_info'] = $this->org_md->get_organization_idx($idx);
   
-        $this->load->view('country_detail',$data);
+        $this->load->view('organization_detail',$data);
     }
     function insert(){
         $data = array();
