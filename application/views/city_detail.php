@@ -11,7 +11,7 @@
             <form id="form_modify">
                 <div class="row">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>Country name</strong></label>
+                        <label class="form-label bold"><strong>City_name</strong></label>
                     </div>
                     <div class="col-8">
                         <input type="text" id="city" name="city" value="<?=$detail_info['name']?>"/>
