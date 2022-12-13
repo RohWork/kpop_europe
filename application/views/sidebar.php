@@ -77,7 +77,7 @@
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/city/insert" class="btn btn-toggle align-items-center rounded">City Insert</a>
+                <a href="/city/insert" class="btn btn-toggle align-items-center rounded">City</a>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
