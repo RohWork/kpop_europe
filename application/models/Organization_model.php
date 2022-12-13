@@ -23,6 +23,21 @@ class Organization_model extends CI_Model {
         
     }
     
+    function modify_organization($organization, $organization_idx){
+        
+        $params = array();
+        
+        $params['name'] = $organization;
+        $params['modifier'] = $this->session->userdata('name');
+        $params['modi_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->where("idx", $organization_idx);
+        $this->db->update('kpop_organization', $params);
+        
+        return $this->db->affected_rows();
+        
+    }
+    
     function get_organization(){
         
         
