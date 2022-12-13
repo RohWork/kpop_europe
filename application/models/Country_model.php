@@ -23,7 +23,7 @@ class Country_model extends CI_Model {
     
     function get_country(){
         
-        $sSql = "SELECT idx, name FROM `kpop_country` where state = '1' order by idx desc";
+        $sSql = "SELECT * FROM `kpop_country` where state = '1' order by idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
