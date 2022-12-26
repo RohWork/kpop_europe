@@ -2,7 +2,7 @@
         <form id="calendar_insert" action="/main/schedule_excel_process" enctype="multipart/form-data" method="post">
             <div class="row">
                 <div class="col-12">
-                    <h3 style="font-size: bold">only excel file<br/> ex) </h3>
+                    <h3 style="font-size: bold">only excel file. <br/> ex) </h3>
                     <table class="table table-striped table-bordered">
                         <tr>
                             <th>Type</th>
