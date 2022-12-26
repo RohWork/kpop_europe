@@ -321,7 +321,8 @@ class Main extends CI_Controller {
             echo $exception;
         }
 
-        echo "</table>";
+        echo "</table></body>";
+        $this->load->view('footer');
     }
     
 }
