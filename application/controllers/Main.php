@@ -232,7 +232,6 @@ class Main extends CI_Controller {
                     $date = PHPExcel_Style_NumberFormat::toFormattedString($d, 'YYYY-MM-DD');
                     
                     
-                    
                     $e = $activesheet->getCell('E' . $row)->getValue();  // DOW 
 
 
