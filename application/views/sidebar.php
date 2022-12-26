@@ -81,7 +81,7 @@
                         <li>
                             
                             <a href="/country"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Country</span></a>
-                            <a href="/city""><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">CCity</span></a>
+                            <a href="/city""><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">City</span></a>
                             <a href="/organization"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Organization</span></a>
                         </li>
                     </ul>
