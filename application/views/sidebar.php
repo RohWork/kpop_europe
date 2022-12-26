@@ -67,7 +67,17 @@
             <?php if($this->session->userdata('level') > 1){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/main/schedule_insert" class="btn btn-toggle align-items-center rounded">Schedule Insert</a>
+                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
+                    Schedule Insert
+                </button>
+                <div class="collapse" id="management-collapse">
+                    <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
+                        <li>
+                            <a href="/main/schedule_insert" class="btn btn-toggle align-items-center rounded">Data Insert</a>
+                        </li>
+                    </ul>
+                </div>
+                
             </li>
             <?php }?>
             <?php if($this->session->userdata('level') > 2){ ?>
