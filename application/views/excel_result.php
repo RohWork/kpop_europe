@@ -1,5 +1,5 @@
-    <
-    <table class='table table-striped table-bordered' style='font-size:12px;overflow: auto;'>
+<div style="overflow: auto">
+    <table class='table table-striped table-bordered' style='font-size:12px;'>
         <tr>
             <th>result</th>
             <th>type</th>
@@ -45,10 +45,11 @@
     <center>
         <input type="button" value="HOME" onclick="go_home()"/>
     </center>
-
-    <script>
-        function go_home(){
-            location.href="/main";
-        }
-    </script>
+</div>
 </main>
+
+<script>
+    function go_home(){
+        location.href="/main";
+    }
+</script>
