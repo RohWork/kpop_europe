@@ -5,21 +5,20 @@
                     <h3 style="font-size: bold">ex)</h3>
                     <table class="table table-striped">
                         <th>
-                            <tr>
-                                <td>No</td>
-                                <td>Subject</td>
-                                <td>Company</td>
-                                <td>Date</td>
-                                <td>DOW</td>
-                                <td>Country</td>
-                                <td>City</td>
-                                <td>Address</td>
-                                <td>Open</td>
-                                <td>Close</td>
-                                <td>Homepage</td>
-                                <td>Instagram</td>
-                                <td>FaceBook</td>
-                            </tr>
+
+                            <td>No</td>
+                            <td>Subject</td>
+                            <td>Company</td>
+                            <td>Date</td>
+                            <td>DOW</td>
+                            <td>Country</td>
+                            <td>City</td>
+                            <td>Address</td>
+                            <td>Open</td>
+                            <td>Close</td>
+                            <td>Homepage</td>
+                            <td>Instagram</td>
+                            <td>FaceBook</td>
                         </th>
                         <tr>
                             <td>1</td>
