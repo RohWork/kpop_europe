@@ -196,7 +196,7 @@ class Main extends CI_Controller {
         
             $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
             $sheetsCount = $objPHPExcel -> getSheetCount();
-            echo "<table class='table table-striped table-bordered'>";
+            echo "<table class='table table-striped table-bordered' style='font-size:11px'>";
             echo "<tr>"
                     . "<th>result</th>"
                     . "<th>type</th>"
