@@ -196,7 +196,6 @@ class Main extends CI_Controller {
         
             $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
             $sheetsCount = $objPHPExcel -> getSheetCount();
-            echo "<div class='container' style='margin-left:10px'>";
             echo "<table class='table table-striped table-bordered'>";
             echo "<tr>"
                     . "<th>result</th>"
@@ -324,7 +323,7 @@ class Main extends CI_Controller {
         }
 
         echo "</table>";
-        echo "<center><button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button></center> </div>";
+        echo "<center><button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button></center>";
 
 
     }
