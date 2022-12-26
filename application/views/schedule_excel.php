@@ -5,8 +5,8 @@
                     <h3 style="font-size: bold">only excel file ex) </h3>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <th>No</th>
-                            <th>Subject</th>
+                            <th>Type</th>
+                            <th>Party name</th>
                             <th>Company</th>
                             <th>Date</th>
                             <th>DOW</th>
@@ -20,8 +20,8 @@
                             <th>FaceBook</th>
                         </tr>
                         <tr>
-                            <td>1</td>
                             <td>Party</td>
+                            <td>korean night in hanover</td>
                             <td>company name</td>
                             <td><?=date('Y-m-d')?></td>
                             <td>FR</td>
