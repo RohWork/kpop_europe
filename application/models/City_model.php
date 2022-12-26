@@ -68,7 +68,7 @@ class City_model extends CI_Model {
     function get_city_name($name){
         
 
-        $sSql = "SELECT * FROM `kpop_city` where state = 1 and name = $name";
+        $sSql = "SELECT * FROM `kpop_city` where state = 1 and name = '$name'";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
