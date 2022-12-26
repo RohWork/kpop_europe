@@ -35,7 +35,7 @@
                         <td><?=$ex['open']?></td>
                         <td><?=$ex['close']?></td>
                         <td><?=$ex['homepage']?></td>
-                        <td><?=$ex['instagram']?></td>
+                        <td><?=$ex['insta']?></td>
                         <td><?=$ex['facebook']?></td>
                     </tr>
 
