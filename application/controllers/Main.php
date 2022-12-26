@@ -323,7 +323,7 @@ class Main extends CI_Controller {
         }
 
         echo "</table></div></main>";
-        $this->load->view('footer');
+
     }
     
 }
