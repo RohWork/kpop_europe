@@ -180,6 +180,7 @@ class Main extends CI_Controller {
     }
     
     function schedule_excel_process(){
+        $this->load->view('header');
         
         // PHPExcel 라이브러리 로드
         $this->load->library('excel');
@@ -194,7 +195,7 @@ class Main extends CI_Controller {
             $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
             $sheetsCount = $objPHPExcel -> getSheetCount();
             
-            echo "<table>";
+            echo "<table class='table table-border table-stripe'>";
             
             
             
