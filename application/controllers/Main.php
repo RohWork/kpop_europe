@@ -276,8 +276,12 @@ class Main extends CI_Controller {
             echo $exception;
         }
 
-        var_dump($excel_data);
-
+        $data['excel'] = $excel_data;
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('excel_result',$data);
+        $this->load->view('footer');
     }
     
 }
