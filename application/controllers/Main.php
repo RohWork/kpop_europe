@@ -184,11 +184,11 @@ class Main extends CI_Controller {
         // PHPExcel 라이브러리 로드
         $this->load->library('excel');
         
-        $file =  iconv("UTF-8", "EUC-KR", $_FILES['upload_excel']['tmp_name']);
+        $filename =  iconv("UTF-8", "EUC-KR", $_FILES['upload_excel']['tmp_name']);
         
         try{
         // 엑셀 파일 읽기
-        $objPHPExcel = PHPExcel_IOFactory::load($file);
+        $objPHPExcel = PHPExcel_IOFactory::load($filename);
         
         
             $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
