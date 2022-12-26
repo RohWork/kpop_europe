@@ -70,14 +70,19 @@
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
                     Schedule Insert
                 </button>
+                
                 <div class="collapse" id="input-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
                             <a href="/main/schedule_insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
                         </li>
+                        <?php if($this->session->userdata('level') > 2){ ?>
+                        <li>
+                            <a href="/main/schedule_excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Excel Upload</span></a>
+                        </li>
+                        <?php }?>
                     </ul>
                 </div>
-                
             </li>
             <?php }?>
             <?php if($this->session->userdata('level') > 2){ ?>
