@@ -168,4 +168,15 @@ class Main extends CI_Controller {
         echo json_encode($data);
         
     }
+    
+    function schedule_excel(){
+        
+        $data = array();
+                
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('schedule_excel',$data);
+        $this->load->view('footer');
+    }
+    
 }
