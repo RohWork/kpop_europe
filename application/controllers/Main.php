@@ -212,7 +212,7 @@ class Main extends CI_Controller {
                     // $rowData에 들어가는 값은 계속 초기화 되기때문에 값을 담을 새로운 배열을 선안하고 담는다.
                     $allData[$row] = $rowData[0];
                     
-                    echo $rowData[0];
+                    var_dump($rowData[0]);
                 }
             }
         } catch(exception $exception) {
