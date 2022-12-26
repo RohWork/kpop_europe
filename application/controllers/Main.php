@@ -211,7 +211,7 @@ class Main extends CI_Controller {
                     
                     // $rowData에 들어가는 값은 계속 초기화 되기때문에 값을 담을 새로운 배열을 선안하고 담는다.
                     $allData[$row] = $rowData[0];
-                    if($sheet == 1){
+                    if($sheet >= 1){
                         $allData[$row][2] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][2], PHPExcel_Style_NumberFormat::FORMAT_DATE_YYYYMMDD);
                         $allData[$row][8] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][8], PHPExcel_Style_NumberFormat::FORMAT_DATE_TIME4);
                         $allData[$row][9] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][9], PHPExcel_Style_NumberFormat::FORMAT_DATE_TIME4);
