@@ -305,7 +305,7 @@ class Main extends CI_Controller {
             echo $exception;
         }
 
-
+        echo "</table>";
     }
     
 }
