@@ -203,7 +203,7 @@ class Main extends CI_Controller {
                 $highestColumn = $activesheet -> getHighestColumn();    // 마지막 컬럼
 
                 // 한줄읽기
-                for($row = 1; $row <= $highestRow; $row++) {
+                for($row = 2; $row <= $highestRow; $row++) {
                     
                     
                     /*// $rowData가 한줄의 데이터를 셀별로 배열처리 된다.
