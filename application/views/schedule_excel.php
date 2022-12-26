@@ -31,7 +31,7 @@
                             <td>Hannover</td>
                             <td>Infinity Club, Marktstraße ...</td>
                             <td><?=date('Y-m-d')?> 22:00</td>
-                            <td><?=date('Y-m-d', strtime("+1 days"))?> 05:00</td>
+                            <td><?=date('Y-m-d', strtotime("+1 days"))?> 05:00</td>
                             <td>http://google.com</td>
                             <td>https://www.instagram.com/test/</td>
                             <td>https://fb.me/e/fakePage</td>
