@@ -196,7 +196,22 @@ class Main extends CI_Controller {
             $sheetsCount = $objPHPExcel -> getSheetCount();
             
             echo "<table class='table table-striped table-bordered'>";
-            
+            echo "<tr>"
+                    . "<th>result</th>"
+                    . "<th>type</th>"
+                    . "<th>party_name</th>"
+                    . "<th>orgnizer</th>"
+                    . "<th>date</th>"
+                    . "<th>DOW</th>"
+                    . "<th>country</th>"
+                    . "<th>city</th>"
+                    . "<th>address</th>"
+                    . "<th>start_date</th>"
+                    . "<th>end_date</th>"
+                    . "<th>homepage</th>"
+                    . "<th>instagram</th>"
+                    . "<th>facebook</th>"
+                    . "</tr>";
             
             
             // 시트Sheet별로 읽기
@@ -288,7 +303,7 @@ class Main extends CI_Controller {
                             . "<td>". $a . " </td>"
                             . "<td>" . $b. " </td>"
                             . "<td> " . $c . " </td>"
-                            . "<td> " . $d . " </td>"
+                            . "<td> " . $date . " </td>"
                             . "<td> " . $e . " </td>"
                             . "<td> " . $f . " </td> "
                             . "<td>" . $g . " </td>"
