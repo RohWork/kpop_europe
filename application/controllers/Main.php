@@ -324,7 +324,7 @@ class Main extends CI_Controller {
         }
 
         echo "</table>";
-        echo "<button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button></div> </div>";
+        echo "<center><button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button></center></div> </div>";
 
 
     }
