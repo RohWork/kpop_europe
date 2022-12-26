@@ -231,7 +231,7 @@ class Main extends CI_Controller {
                 if($key2 == 8  ||  $key2 == 9 || $key2==3){
                     $dt = new DateTime();
                     $dt->setTimestamp($value2);
-                    $val = $dt->format('Y-m-d h:i:s');
+                    $val = $dt->format('h:i:s');
                 }else{
                     $val = $value2;
                 }
