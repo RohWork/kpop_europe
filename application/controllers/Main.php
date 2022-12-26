@@ -210,11 +210,12 @@ class Main extends CI_Controller {
                 // 한줄읽기
                 for($row = 2; $row <= $highestRow; $row++) {
                     
-                    $a = $activesheet->getCell('A' . $row)->getValue(); // A열
+                    $params['type'] = $a = $activesheet->getCell('A' . $row)->getValue(); // type
                     
                     $params = array();
                     
-                    $params['type'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
+                    
+                    $params['name'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
 
                     $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
                     $organization = $this->org_md->get_organization_name($c);
@@ -265,6 +266,23 @@ class Main extends CI_Controller {
                         }
                         
                     }
+                    $excel_data[$row] = array(
+                        "result" => $result,
+                        "type" => $a,
+                        "party_name" => $b,
+                        "orgnizer" => $c,
+                        "date" => $d,
+                        "dow" => $e,
+                        "country" => $f,
+                        "city" => $g,
+                        "address" => $h,
+                        "open" => $i,
+                        "close" => $j,
+                        "homepage" => $k,
+                        "insta" => $l,
+                        "facebook" => $m,
+                    );
+                    
                     
                     $excel_data[$row] = $params;
                     $excel_data[$row]['result'] = $result;
