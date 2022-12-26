@@ -254,8 +254,26 @@ class Main extends CI_Controller {
                     $params['homepage']=  $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
                     $params['insta'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
                     $params['face'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
-
-                    echo $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " / " . $h . " / " . $i . " / " . $j . " / " . $k . " / " . $l . " / " . $m . " <br>\n";
+                    
+                    
+                    if(!empty($params['organization_idx']) && !empty($params['country_idx']) && !empty($params['city_idx'])){
+                        
+                        $result = $this->sch_md->insert_schedule($params);
+                        
+                    }else{
+                        
+                        if(empty($params['organization_idx'])){
+                            $result = "not found Organizer.";
+                        }else if(empty($params['country_idx'])){
+                            $result = "not found Country.";
+                        }else{
+                            $result = "not found City.";
+                        }
+                        
+                    }
+                    
+                    
+                    echo $result .":". $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " / " . $h . " / " . $i . " / " . $j . " / " . $k . " / " . $l . " / " . $m . " <br>\n";
                 
                     
                 }
