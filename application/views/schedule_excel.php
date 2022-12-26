@@ -43,7 +43,11 @@
                     <input type="file" name="upload_excel"/>
                 </div>
             </div>
-            
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" name="upload_excel" value="upload"/>
+                </div>
+            </div>
         </form>
         
     </div>
