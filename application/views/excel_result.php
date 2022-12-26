@@ -20,9 +20,9 @@
         <?php
             foreach($excel as $ex){
                 if($ex['code'] ==1){
-                    $color = "font-color:#B71C1C";
-                }else{
                     $color = "font-color:#004D40";
+                }else{
+                    $color = "font-color:#B71C1C";
                 }
         ?>        
         <tr>
