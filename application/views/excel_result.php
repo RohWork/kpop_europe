@@ -56,4 +56,4 @@
             location.href="/main";
         }
     </script>
-</body>
+</main>
