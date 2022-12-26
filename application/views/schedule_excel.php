@@ -1,5 +1,5 @@
     <div class="container">
-        <form id="calendar_insert">
+        <form id="calendar_insert" target="/main/schedule_excle_process" method="post">
             <div class="row">
                 <div class="col-12">
                     <h3 style="font-size: bold">only excel file ex) </h3>
