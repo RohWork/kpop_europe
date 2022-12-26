@@ -254,6 +254,7 @@ class Main extends CI_Controller {
                         
                         
                         $result = $this->sch_md->insert_schedule($params);
+                        $result_code = "1";
                         
                     }else{
                         
@@ -264,9 +265,10 @@ class Main extends CI_Controller {
                         }else{
                             $result = "not found City.";
                         }
-                        
+                        $result_code = "0";
                     }
                     $excel_data[$row] = array(
+                        "code" => $result_code,
                         "result" => $result,
                         "type" => $a,
                         "party_name" => $b,
