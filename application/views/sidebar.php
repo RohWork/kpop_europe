@@ -70,7 +70,7 @@
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
                     Schedule Insert
                 </button>
-                <div class="collapse" id="management-collapse">
+                <div class="collapse" id="input-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
                             <a href="/main/schedule_insert" class="btn btn-toggle align-items-center rounded">Data Insert</a>
