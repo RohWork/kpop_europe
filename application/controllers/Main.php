@@ -284,8 +284,6 @@ class Main extends CI_Controller {
                     );
                     
                     
-                    $excel_data[$row] = $params;
-                    $excel_data[$row]['result'] = $result;
                     
                     
                 }
