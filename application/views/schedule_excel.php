@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12">
                     <h3 style="font-size: bold">ex)</h3>
-                    <table class="table table-striped">
+                    <table class="table table-striped table-bordered">
                         <th>
 
                             <td>No</td>
