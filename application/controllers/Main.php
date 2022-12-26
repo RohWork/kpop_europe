@@ -204,10 +204,11 @@ class Main extends CI_Controller {
 
                 // 한줄읽기
                 for($row = 1; $row <= $highestRow; $row++) {
-
+                    
+                    
                     // $rowData가 한줄의 데이터를 셀별로 배열처리 된다.
                     $rowData = $activesheet -> rangeToArray("A" . $row . ":" . $highestColumn . $row, NULL, TRUE, FALSE);
-
+                    
                     // $rowData에 들어가는 값은 계속 초기화 되기때문에 값을 담을 새로운 배열을 선안하고 담는다.
                     $allData[$row] = $rowData[0];
 
@@ -227,7 +228,14 @@ class Main extends CI_Controller {
             //echo $key . " : " . $value . "</br>";
 
             foreach($value as $key2=>$value2){
-                echo $key2 . " : " . $value2 . "</br>";
+                if($key2 == 8  ||  $key2 == 9){
+                    $dt = new DateTime();
+                    $dt->setTimestamp($value2);
+                    $val = $dt->format('Y-m-d h:i:s');
+                }else{
+                    $val = $value2;
+                }
+                echo $key2 . " : " . $val . "</br>";
             }
 
             echo "</br>";
