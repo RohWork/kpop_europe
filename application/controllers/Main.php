@@ -227,7 +227,7 @@ class Main extends CI_Controller {
                     $params['type'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
 
                     $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
-                    $params['organization_idx'] = $this->org_md->get_organization_name($c)['idx'];
+                    $organization = $this->org_md->get_organization_name($c);
                     
                     
                     
@@ -238,10 +238,10 @@ class Main extends CI_Controller {
                     $e = $activesheet->getCell('E' . $row)->getValue();  // DOW 
 
                     $f = $activesheet->getCell('F' . $row)->getValue(); // Country
-                    $params['country_idx'] = $this->cont_md->get_country_name($f)['idx'];
+                    $country = $this->cont_md->get_country_name($f);
 
                     $g = $activesheet->getCell('G' . $row)->getValue(); // City 
-                    $params['city_idx'] = $this->city_md->get_city_name($g)['idx'];
+                    $city = $this->city_md->get_city_name($g);
 
                     $params['addr'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
 
@@ -256,15 +256,20 @@ class Main extends CI_Controller {
                     $params['face'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
                     
                     
-                    if(!empty($params['organization_idx']) && !empty($params['country_idx']) && !empty($params['city_idx'])){
+                    if(!empty($organization) && !empty($country) && !empty($city)){
+                        
+                        $params['organization_idx'] = $organization['idx'];
+                        $params['country_idx'] = $country['idx'];
+                        $params['city_idx'] = $city['idx'];
+                        
                         
                         $result = $this->sch_md->insert_schedule($params);
                         
                     }else{
                         
-                        if(empty($params['organization_idx'])){
+                        if(empty($organization)){
                             $result = "not found Organizer.";
-                        }else if(empty($params['country_idx'])){
+                        }else if(empty($countrty)){
                             $result = "not found Country.";
                         }else{
                             $result = "not found City.";
