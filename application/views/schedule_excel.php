@@ -4,22 +4,21 @@
                 <div class="col-12">
                     <h3 style="font-size: bold">only excel file ex) </h3>
                     <table class="table table-striped table-bordered">
-                        <th>
-
-                            <td>No</td>
-                            <td>Subject</td>
-                            <td>Company</td>
-                            <td>Date</td>
-                            <td>DOW</td>
-                            <td>Country</td>
-                            <td>City</td>
-                            <td>Address</td>
-                            <td>Open</td>
-                            <td>Close</td>
-                            <td>Homepage</td>
-                            <td>Instagram</td>
-                            <td>FaceBook</td>
-                        </th>
+                        <tr>
+                            <th>No</th>
+                            <th>Subject</th>
+                            <th>Company</th>
+                            <th>Date</th>
+                            <th>DOW</th>
+                            <th>Country</th>
+                            <th>City</th>
+                            <th>Address</th>
+                            <th>Open</th>
+                            <th>Close</th>
+                            <th>Homepage</th>
+                            <th>Instagram</th>
+                            <th>FaceBook</th>
+                        </tr>
                         <tr>
                             <td>1</td>
                             <td>Party</td>
