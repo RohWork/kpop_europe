@@ -40,7 +40,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input type="file" name="upload_excel" class="btn"/>
+                    <input type="file" name="upload_excel" class="form-control"/>
                 </div>
             </div>
             <div class="row">
