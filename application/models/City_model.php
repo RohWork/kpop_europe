@@ -64,4 +64,14 @@ class City_model extends CI_Model {
         
         return $this->db->affected_rows();
     }
+    
+    function get_city_name($name){
+        
+
+        $sSql = "SELECT * FROM `kpop_city` where state = 1 and name = $name";
+        
+        $query = $this->db->query($sSql);
+        return $query->row_array();
+    }
+    
 }
