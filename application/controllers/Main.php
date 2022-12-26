@@ -182,7 +182,7 @@ class Main extends CI_Controller {
     function schedule_excel_process(){
         
         
-        $this->load->view('header_pop');
+        $data = array();
         
         // PHPExcel 라이브러리 로드
         $this->load->library('excel');
@@ -196,24 +196,8 @@ class Main extends CI_Controller {
         
             $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
             $sheetsCount = $objPHPExcel -> getSheetCount();
-            echo "<table class='table table-striped table-bordered' style='font-size:12px'>";
-            echo "<tr>"
-                    . "<th>result</th>"
-                    . "<th>type</th>"
-                    . "<th>party_name</th>"
-                    . "<th>orgnizer</th>"
-                    . "<th>date</th>"
-                    . "<th>DOW</th>"
-                    . "<th>country</th>"
-                    . "<th>city</th>"
-                    . "<th>address</th>"
-                    . "<th>start_date</th>"
-                    . "<th>end_date</th>"
-                    . "<th>homepage</th>"
-                    . "<th>instagram</th>"
-                    . "<th>facebook</th>"
-                    . "</tr>";
-            
+
+            $excel_data = array();
             
             // 시트Sheet별로 읽기
             for($sheet = 0; $sheet < $sheetsCount; $sheet++) {
@@ -226,21 +210,6 @@ class Main extends CI_Controller {
                 // 한줄읽기
                 for($row = 2; $row <= $highestRow; $row++) {
                     
-                    
-                    /*// $rowData가 한줄의 데이터를 셀별로 배열처리 된다.
-                    $rowData = $activesheet -> rangeToArray("A" . $row . ":" . $highestColumn . $row, NULL, TRUE, FALSE);
-                    
-                    // $rowData에 들어가는 값은 계속 초기화 되기때문에 값을 담을 새로운 배열을 선안하고 담는다.
-                    $allData[$row] = $rowData[0];
-                    if($sheet >= 1){
-                        $allData[$row][2] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][2], PHPExcel_Style_NumberFormat::FORMAT_DATE_YYYYMMDD);
-                        $allData[$row][8] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][8], PHPExcel_Style_NumberFormat::FORMAT_DATE_TIME4);
-                        $allData[$row][9] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][9], PHPExcel_Style_NumberFormat::FORMAT_DATE_TIME4);
-                    }
-                    
-                    echo PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][3], PHPExcel_Style_NumberFormat::FORMAT_DATE_YYYYMMDD);*/
-                    
-                    
                     $a = $activesheet->getCell('A' . $row)->getValue(); // A열
                     
                     $params = array();
@@ -249,7 +218,6 @@ class Main extends CI_Controller {
 
                     $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
                     $organization = $this->org_md->get_organization_name($c);
-                    
                     
                     
                     $d = $activesheet->getCell('D' . $row)->getValue(); // Date
@@ -298,23 +266,9 @@ class Main extends CI_Controller {
                         
                     }
                     
-                    echo "<tr>";
+                    $excel_data[$row] = $params;
+                    $excel_data[$row]['result'] = $result;
                     
-                    echo "<td>".$result ."</td>"
-                            . "<td>". $a . " </td>"
-                            . "<td>" . $b. " </td>"
-                            . "<td> " . $c . " </td>"
-                            . "<td> " . $date . " </td>"
-                            . "<td> " . $e . " </td>"
-                            . "<td> " . $f . " </td> "
-                            . "<td>" . $g . " </td>"
-                            . "<td> " . $h . " </td>"
-                            . "<td> " . $i . " </td>"
-                            . "<td> " . $j . " </td>"
-                            . "<td> " . $k . " </td>"
-                            . "<td> " . $l . " </td>"
-                            . "<td> " . $m . " </td>";
-                    echo "</tr>";
                     
                 }
             }
@@ -322,9 +276,7 @@ class Main extends CI_Controller {
             echo $exception;
         }
 
-        echo "</table>";
-        echo "<center><button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button></center>";
-
+        var_dump($excel_data);
 
     }
     
