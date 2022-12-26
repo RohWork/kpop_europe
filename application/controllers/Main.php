@@ -222,9 +222,9 @@ class Main extends CI_Controller {
             echo $exception;
         }
 
-        //echo "<pre>";
-        //print_r($allData);
-        //echo "</pre>";
+        echo "<pre>";
+        print_r($allData);
+        echo "</pre>";
 
     }
     
