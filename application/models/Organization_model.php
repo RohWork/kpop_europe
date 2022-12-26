@@ -62,7 +62,7 @@ class Organization_model extends CI_Model {
         $sSql = "SELECT * FROM `kpop_organization` where state = 1 and name='$name'";
         
         $query = $this->db->query($sSql);
-        return $query->row()->idx;
+        return $query->row_array();
         
     }
 }
