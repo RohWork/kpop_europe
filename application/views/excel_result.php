@@ -1,4 +1,4 @@
-    <div class="container">
+<div class="container" style="overflow: auto;">
         <div class="row">
             <div class="col-12">
                 <table class='table table-striped table-bordered' style='font-size:12px'>
