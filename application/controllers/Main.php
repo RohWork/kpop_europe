@@ -186,17 +186,61 @@ class Main extends CI_Controller {
         
         $file =  iconv("UTF-8", "EUC-KR", $_FILES['upload_excel']['tmp_name']);
         
+        try{
         // 엑셀 파일 읽기
         $objPHPExcel = PHPExcel_IOFactory::load($file);
-
-        // 엑셀 내용을 배열로 변환
-        $sheetData = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-
-        echo "<xmp>";
-        var_dump($sheetData);
-        echo "</xmp>";
         
         
+            $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
+            $sheetsCount = $objPHPExcel -> getSheetCount();
+
+            // 시트Sheet별로 읽기
+            for($sheet = 0; $sheet < $sheetsCount; $sheet++) {
+
+                $objPHPExcel -> setActiveSheetIndex($sheet);
+                $activesheet = $objPHPExcel -> getActiveSheet();
+                $highestRow = $activesheet -> getHighestRow();          // 마지막 행
+                $highestColumn = $activesheet -> getHighestColumn();    // 마지막 컬럼
+
+                // 한줄읽기
+                for($row = 1; $row <= $highestRow; $row++) {
+
+                    // $rowData가 한줄의 데이터를 셀별로 배열처리 된다.
+                    $rowData = $activesheet -> rangeToArray("A" . $row . ":" . $highestColumn . $row, NULL, TRUE, FALSE);
+
+                    // $rowData에 들어가는 값은 계속 초기화 되기때문에 값을 담을 새로운 배열을 선안하고 담는다.
+                    $allData[$row] = $rowData[0];
+
+                    //echo $rowData[0];
+                }
+            }
+        } catch(exception $exception) {
+            echo $exception;
+        }
+
+        //echo "<pre>";
+        //print_r($allData);
+        //echo "</pre>";
+
+
+        foreach($allData as $key=>$value){
+            //echo $key . " : " . $value . "</br>";
+
+            foreach($value as $key2=>$value2){
+                echo $key2 . " : " . $value2 . "</br>";
+            }
+
+            echo "</br>";
+        }
+
+        echo "</br></br></br></br>";
+
+
+
+        foreach($allData as $key=>$value){
+            echo $value[0]."/".$value[1]."</br>";
+        }
+
     }
     
 }
