@@ -179,4 +179,24 @@ class Main extends CI_Controller {
         $this->load->view('footer');
     }
     
+    function schedule_excle_process(){
+        
+        // PHPExcel 라이브러리 로드
+        $this->load->library('excel');
+        
+        $file =  iconv("UTF-8", "EUC-KR", $_FILES['upload_excel']['tmp_name']);
+        
+        // 엑셀 파일 읽기
+        $objPHPExcel = PHPExcel_IOFactory::load($file);
+
+        // 엑셀 내용을 배열로 변환
+        $sheetData = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+
+        echo "<xmp>";
+        var_dump($sheetData);
+        echo "</xmp>";
+        
+        
+    }
+    
 }
