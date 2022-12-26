@@ -73,15 +73,20 @@
             <?php if($this->session->userdata('level') > 2){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/country" class="btn btn-toggle align-items-center rounded">Country</a>
-            </li>
-            <li class="border-top my-3"></li>
-            <li class="mb-1">
-                <a href="/city" class="btn btn-toggle align-items-center rounded">City</a>
-            </li>
-            <li class="border-top my-3"></li>
-            <li class="mb-1">
-                <a href="/organization" class="btn btn-toggle align-items-center rounded">Organization</a>
+                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#management-collapse" aria-expanded="false">
+                    Management
+                </button>
+                <div class="collapse" id="management-collapse">
+                    <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
+                        <li>
+                            
+                            <a href="/country"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Country</span></a>
+                            <a href="/city""><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">CCity</span></a>
+                            <a href="/organization"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Organization</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
             </li>
             <?php }?>
         </ul>
