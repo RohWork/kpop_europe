@@ -12,8 +12,8 @@
                         <th>country</th>
                         <th>city</th>
                         <th>address</th>
-                        <th>start_date</th>
-                        <th>end_date</th>
+                        <th>open</th>
+                        <th>close</th>
                         <th>homepage</th>
                         <th>instagram</th>
                         <th>facebook</th>
@@ -28,12 +28,12 @@
                         <td><?=$ex['party_name']?></td>
                         <td><?=$ex['orgnizer']?></td>
                         <td><?=$ex['date']?></td>
-                        <td><?=$ex['DOW']?></td>
+                        <td><?=$ex['dow']?></td>
                         <td><?=$ex['country']?></td>
                         <td><?=$ex['city']?></td>
                         <td><?=$ex['address']?></td>
-                        <td><?=$ex['start_date']?></td>
-                        <td><?=$ex['end_date']?></td>
+                        <td><?=$ex['open']?></td>
+                        <td><?=$ex['close']?></td>
                         <td><?=$ex['homepage']?></td>
                         <td><?=$ex['instagram']?></td>
                         <td><?=$ex['facebook']?></td>
