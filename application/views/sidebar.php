@@ -73,7 +73,7 @@
                 <div class="collapse" id="input-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
-                            <a href="/main/schedule_insert" class="btn btn-toggle align-items-center rounded">Data Insert</a>
+                            <a href="/main/schedule_insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
                         </li>
                     </ul>
                 </div>
