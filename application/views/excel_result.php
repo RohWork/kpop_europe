@@ -19,9 +19,14 @@
 
         <?php
             foreach($excel as $ex){
+                if($ex['code'] ==1){
+                    $color = "font-color:#B71C1C";
+                }else{
+                    $color = "font-color:#004D40";
+                }
         ?>        
         <tr>
-            <td><?=$ex['result']?></td>
+            <td style="<?=$color?>"><?=$ex['result']?></td>
             <td><?=$ex['type']?></td>
             <td><?=$ex['party_name']?></td>
             <td><?=$ex['orgnizer']?></td>
