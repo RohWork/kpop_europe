@@ -248,11 +248,11 @@ class Main extends CI_Controller {
                     $j = $activesheet->getCell('J' . $row)->getValue(); // Close
                     $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'h:i');
 
-                    $k = $activesheet->getCell('K' . $row)->getValue(); // K열 
+                    $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
 
-                    $l = $activesheet->getCell('L' . $row)->getValue(); // L열 
+                    $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
 
-                    $m = $activesheet->getCell('M' . $row)->getValue(); // M열 
+                    $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
 
                     echo $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " / " . $h . " / " . $i . " / " . $j . " / " . $k . " / " . $l . " / " . $m . " <br>\n";
                 
