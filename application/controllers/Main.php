@@ -239,10 +239,10 @@ class Main extends CI_Controller {
                $h = $activesheet->getCell('H' . $row)->getValue(); // H열 
                
                $i = $activesheet->getCell('I' . $row)->getValue(); // I열
-               $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'YYYY-MM-DD');
+               $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'h:i');
                
                $j = $activesheet->getCell('J' . $row)->getValue(); // J열
-               $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'YYYY-MM-DD');
+               $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'h:i');
                
                $k = $activesheet->getCell('K' . $row)->getValue(); // K열 
                
