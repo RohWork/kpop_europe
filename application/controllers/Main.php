@@ -323,8 +323,9 @@ class Main extends CI_Controller {
             echo $exception;
         }
 
-        echo "</table></div>";
-        echo "<button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button>";
+        echo "</table>";
+        echo "<button type='button' class='btn btn-primary' onclick='location.href=/main'>HOME</button> </div>";
+
 
     }
     
