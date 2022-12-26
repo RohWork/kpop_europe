@@ -40,12 +40,12 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input type="file" name="upload_excel"/>
+                    <input type="file" name="upload_excel" class="btn"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input type="submit" name="upload_excel" value="upload"/>
+                    <input type="submit" name="upload_excel" value="upload" class="btn btn-primary"/>
                 </div>
             </div>
         </form>
