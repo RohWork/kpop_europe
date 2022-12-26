@@ -179,7 +179,7 @@ class Main extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function schedule_excle_process(){
+    function schedule_excel_process(){
         
         // PHPExcel 라이브러리 로드
         $this->load->library('excel');
