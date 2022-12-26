@@ -48,7 +48,7 @@
 
     </table>
     <center>
-        <input type="button" value="HOME" onclick="go_home()"/>
+        <input type="button" value="HOME" onclick="go_home()" class="btn btn-primary"/>
     </center>
 </div>
 </main>
