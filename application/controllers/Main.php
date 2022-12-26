@@ -228,7 +228,7 @@ class Main extends CI_Controller {
             //echo $key . " : " . $value . "</br>";
 
             foreach($value as $key2=>$value2){
-                if($key2 == 8  ||  $key2 == 9){
+                if($key2 == 8  ||  $key2 == 9 || $ket==3){
                     $dt = new DateTime();
                     $dt->setTimestamp($value2);
                     $val = $dt->format('Y-m-d h:i:s');
