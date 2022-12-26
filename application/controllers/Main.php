@@ -193,7 +193,11 @@ class Main extends CI_Controller {
         
             $extension = strtoupper(pathinfo($filename, PATHINFO_EXTENSION));
             $sheetsCount = $objPHPExcel -> getSheetCount();
-
+            
+            echo "<table>";
+            
+            
+            
             // 시트Sheet별로 읽기
             for($sheet = 0; $sheet < $sheetsCount; $sheet++) {
 
@@ -277,9 +281,23 @@ class Main extends CI_Controller {
                         
                     }
                     
+                    echo "<tr>";
                     
-                    echo $result .":". $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " / " . $h . " / " . $i . " / " . $j . " / " . $k . " / " . $l . " / " . $m . " <br>\n";
-                
+                    echo "<td>".$result ."</td>"
+                            . "<td>". $a . " </td>"
+                            . "<td>" . $b. " </td>"
+                            . "<td> " . $c . " </td>"
+                            . "<td> " . $d . " </td>"
+                            . "<td> " . $e . " </td>"
+                            . "<td> " . $f . " </td> "
+                            . "<td>" . $g . " </td>"
+                            . "<td> " . $h . " </td>"
+                            . "<td> " . $i . " </td>"
+                            . "<td> " . $j . " </td>"
+                            . "<td> " . $k . " </td>"
+                            . "<td> " . $l . " </td>"
+                            . "<td> " . $m . " </td>";
+                    echo "</tr>";
                     
                 }
             }
