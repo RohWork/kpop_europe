@@ -182,7 +182,7 @@ class Main extends CI_Controller {
     function schedule_excel_process(){
         
         
-        $this->load->view('header');
+        $this->load->view('header_pop');
         
         // PHPExcel 라이브러리 로드
         $this->load->library('excel');
