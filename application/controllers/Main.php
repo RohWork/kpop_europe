@@ -211,8 +211,8 @@ class Main extends CI_Controller {
                     
                     // $rowData에 들어가는 값은 계속 초기화 되기때문에 값을 담을 새로운 배열을 선안하고 담는다.
                     $allData[$row] = $rowData[0];
-
-                    //echo $rowData[0];
+                    
+                    echo $rowData[0];
                 }
             }
         } catch(exception $exception) {
@@ -222,32 +222,6 @@ class Main extends CI_Controller {
         //echo "<pre>";
         //print_r($allData);
         //echo "</pre>";
-
-
-        foreach($allData as $key=>$value){
-            //echo $key . " : " . $value . "</br>";
-
-            foreach($value as $key2=>$value2){
-                if($key2 == 8  ||  $key2 == 9 || $key2==3){
-                    $dt = new DateTime();
-                    $dt->setTimestamp($value2);
-                    $val = $dt->format('h:i:s');
-                }else{
-                    $val = $value2;
-                }
-                echo $key2 . " : " . $val . "</br>";
-            }
-
-            echo "</br>";
-        }
-
-        echo "</br></br></br></br>";
-
-
-
-        foreach($allData as $key=>$value){
-            echo $value[0]."/".$value[1]."</br>";
-        }
 
     }
     
