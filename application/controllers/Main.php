@@ -220,28 +220,37 @@ class Main extends CI_Controller {
                     echo PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][3], PHPExcel_Style_NumberFormat::FORMAT_DATE_YYYYMMDD);*/
                     
                     
-                $a = $activesheet->getCell('A' . $i)->getValue(); // A열
+                $a = $activesheet->getCell('A' . $row)->getValue(); // A열
 
-               $b = $activesheet->getCell('B' . $i)->getValue(); // B열 
+               $b = $activesheet->getCell('B' . $row)->getValue(); // B열 
  
-               $c = $activesheet->getCell('C' . $i)->getValue(); // C열 
+               $c = $activesheet->getCell('C' . $row)->getValue(); // C열 
 
-               $d = $activesheet->getCell('D' . $i)->getValue(); // D열
+               $d = $activesheet->getCell('D' . $row)->getValue(); // D열
                $d = PHPExcel_Style_NumberFormat::toFormattedString($d, 'YYYY-MM-DD');
 
-               $e = $activesheet->getCell('E' . $i)->getValue();  // E열 
+               $e = $activesheet->getCell('E' . $row)->getValue();  // E열 
 
  
+               $f = $activesheet->getCell('F' . $row)->getValue(); // F열
 
-               $f = $activesheet->getCell('F' . $i)->getValue(); // F열
+               $g = $activesheet->getCell('G' . $row)->getValue(); // G열 
 
-               $g = $activesheet->getCell('G' . $i)->getValue(); // G열 
-
- 
-
-               $h = $activesheet->getCell('H' . $i)->getValue(); // H열 
+               $h = $activesheet->getCell('H' . $row)->getValue(); // H열 
+               
+               $i = $activesheet->getCell('I' . $row)->getValue(); // I열
+               $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'YYYY-MM-DD');
+               
+               $j = $activesheet->getCell('J' . $row)->getValue(); // J열
+               $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'YYYY-MM-DD');
+               
+               $k = $activesheet->getCell('K' . $row)->getValue(); // K열 
+               
+               $l = $activesheet->getCell('L' . $row)->getValue(); // L열 
+               
+               $m = $activesheet->getCell('M' . $row)->getValue(); // M열 
                     
-               echo $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " <br>\n";
+               echo $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " / " . $h . " / " . $i . " / " . $j . " / " . $k . " / " . $l . " / " . $m . " <br>\n";
                
                
                 }
