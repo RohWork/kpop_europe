@@ -224,34 +224,36 @@ class Main extends CI_Controller {
                     
                     $params = array();
                     
-                    $params['type'] = $b= $activesheet->getCell('B' . $row)->getValue(); // B열 
+                    $params['type'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
 
-                    $params['company'] = $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
-
+                    $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
+                    $params['organization_idx'] = $this->org_md->get_organization_name($c)['idx'];
+                    
+                    
+                    
                     $d = $activesheet->getCell('D' . $row)->getValue(); // Date
                     $date = PHPExcel_Style_NumberFormat::toFormattedString($d, 'YYYY-MM-DD');
                     
                     
                     $e = $activesheet->getCell('E' . $row)->getValue();  // DOW 
 
-
                     $f = $activesheet->getCell('F' . $row)->getValue(); // Country
+                    $params['country_idx'] = $this->cont_md->get_country_name($f)['idx'];
 
                     $g = $activesheet->getCell('G' . $row)->getValue(); // City 
+                    $params['city_idx'] = $this->city_md->get_city_name($g)['idx'];
 
-                    $h = $activesheet->getCell('H' . $row)->getValue(); // Address
+                    $params['addr'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
 
                     $i = $activesheet->getCell('I' . $row)->getValue(); // Open
-                    $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'h:i');
-
+                    $params['start_date'] = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'h:i');
+                    
                     $j = $activesheet->getCell('J' . $row)->getValue(); // Close
-                    $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'h:i');
-
-                    $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
-
-                    $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
-
-                    $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
+                    $params['end_date'] = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'h:i');
+                    
+                    $params['homepage']=  $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
+                    $params['insta'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
+                    $params['face'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
 
                     echo $a . " / " . $b. " / " . $c . " / " . $d . " / " . $e . " / " . $f . " / " . $g . " / " . $h . " / " . $i . " / " . $j . " / " . $k . " / " . $l . " / " . $m . " <br>\n";
                 
