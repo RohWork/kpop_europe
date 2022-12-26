@@ -216,6 +216,8 @@ class Main extends CI_Controller {
                         $allData[$row][8] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][8], PHPExcel_Style_NumberFormat::FORMAT_DATE_TIME4);
                         $allData[$row][9] = PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][9], PHPExcel_Style_NumberFormat::FORMAT_DATE_TIME4);
                     }
+                    
+                    echo PHPExcel_Style_NumberFormat::toFormattedString($rowData[0][2], PHPExcel_Style_NumberFormat::FORMAT_DATE_YYYYMMDD);
                 }
             }
         } catch(exception $exception) {
