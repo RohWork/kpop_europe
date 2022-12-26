@@ -2,7 +2,7 @@
         <form id="calendar_insert">
             <div class="row">
                 <div class="col-12">
-                    <h3 style="font-size: bold">ex)</h3>
+                    <h3 style="font-size: bold">only excel file ex) </h3>
                     <table class="table table-striped table-bordered">
                         <th>
 
