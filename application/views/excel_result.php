@@ -1,5 +1,5 @@
-
-    <table class='table table-striped table-bordered' style='font-size:12px'>
+    <
+    <table class='table table-striped table-bordered' style='font-size:12px;overflow: auto;'>
         <tr>
             <th>result</th>
             <th>type</th>
