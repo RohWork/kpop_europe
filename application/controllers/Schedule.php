@@ -71,6 +71,18 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
+    
+    function list($date){
+        
+        $data = array();
+        $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
+        $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
+        
+        $this->load->view('detail',$data);
+        
+        
+    }
+    
     function detail($idx){
         
         $data = array();
