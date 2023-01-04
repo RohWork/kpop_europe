@@ -99,13 +99,13 @@
                             
                             
                             if( $calendar[$s]['start_date'] <= $date && $calendar[$s]['end_date'] >= $date){   
-                        }
+                        
                                                  
                             echo "<br/>";
                             ?>
                            <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$year?>-<?=sprintf('%02d',$month)?>-<?=$date?>')"><?=$calendar[$s]['cnt']?></font>
                   <?php
-
+                            }
                         }
                         // 14. 날짜 증가
                         $day++;
