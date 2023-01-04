@@ -62,12 +62,9 @@
     <script>
     
     function go_detail(idx){
-\
-        
-        
+
         var url = "/schedule/detail/"+idx;
-        
-\
+       
         
         $('#detail_frame').attr('src', url);
 
