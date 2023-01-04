@@ -102,11 +102,14 @@
                             
                             if( $calendar[$s]['start_date'] <= $date && $calendar[$s]['end_date'] >= $date){   
                                 $cnt += $calendar[$s]['cnt'];
-                            ?>
-                           <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$calendar[$s]['cnt']?></font>
-                  <?php
+                            
+                           
+                  
                             }
                         }
+                        ?>
+                        <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$calendar[$s]['cnt']?></font>
+                    <?php
                         // 14. 날짜 증가
                         $day++;
                     }
