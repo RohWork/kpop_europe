@@ -154,7 +154,7 @@
 
         $(".modal-title").text(date);
         // 모달창 띄우기
-        $('#detail_modal').modal("show");
+        $('#list_modal').modal("show");
     }
 
     $(".close").on('click', function(){    
