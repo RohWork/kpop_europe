@@ -155,7 +155,7 @@
         var data = $("#calendar_insert").serializeArray();
 
         $.ajax({
-            url:'/main/schedule_insert_ajax',
+            url:'/schedule/insert_ajax',
             type:'post',
             data: data,
             success:function(data){
