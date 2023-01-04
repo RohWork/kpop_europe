@@ -32,20 +32,20 @@
             <table class="table table-bordered table-responsive" style="width:700px">
               <tr align="center" >
                 <td>
-                    <a class="a_border" href=<?='/main/calendar?year='.$preyear.'&month='.$month . '&day=1&country='.$get_country; ?>>◀◀</a>
+                    <a class="a_border" href=<?='/schedule/calendar?year='.$preyear.'&month='.$month . '&day=1&country='.$get_country; ?>>◀◀</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/main/calendar?year='.$prev_year.'&month='.$prev_month . '&day=1&country='.$get_country; ?>>◀</a>
+                    <a class="a_border" href=<?='/schedule/calendar?year='.$prev_year.'&month='.$prev_month . '&day=1&country='.$get_country; ?>>◀</a>
                 </td>
                 <td height="50" bgcolor="#FFFFFF" colspan="3">
-                    <a class="a_border" href=<?='/main/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1&country='.$get_country; ?>>
+                    <a class="a_border" href=<?='/schedule/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1&country='.$get_country; ?>>
                     <?php echo "&nbsp;&nbsp;" . $month . ' - ' . $year  . "&nbsp;&nbsp;"; ?></a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/main/calendar?year='.$next_year.'&month='.$next_month.'&day=1&country='.$get_country; ?>>▶</a>
+                    <a class="a_border" href=<?='/schedule/calendar?year='.$next_year.'&month='.$next_month.'&day=1&country='.$get_country; ?>>▶</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/main/calendar?year='.$nextyear.'&month='.$month.'&day=1&country='.$get_country; ?>>▶▶</a>
+                    <a class="a_border" href=<?='/schedule/calendar?year='.$nextyear.'&month='.$month.'&day=1&country='.$get_country; ?>>▶▶</a>
                 </td>
               </tr>
               <tr class="info">
@@ -145,7 +145,7 @@
         var idxurl = idx_name.split("_");
         
         
-        var url = "/main/detail/"+idxurl[0];
+        var url = "/schedule/detail/"+idxurl[0];
         
         $('#detail_frame').attr('src', url);
 
@@ -170,6 +170,6 @@
     $("#country").on('change', function(){
        var cnt_idx = $("#country option:selected").val();
        
-       location.href="/main/calendar?country="+cnt_idx+"&year=<?=$year?>&month=<?=$month?>"; 
+       location.href="/schedule/calendar?country="+cnt_idx+"&year=<?=$year?>&month=<?=$month?>"; 
     });
 </script>
