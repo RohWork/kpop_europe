@@ -97,7 +97,7 @@
                         for($s =0; $s<count($calendar); $s++){
                             $date = $year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day);
                             
-                            echo $calendar[$s]['start_date']."<=".$date."&&". $calendar[$s]['end_date'].">=".$date;
+                            
                             
                             if( $calendar[$s]['start_date'] <= $date && $calendar[$s]['end_date'] >= $date){   
                         
