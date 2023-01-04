@@ -157,21 +157,6 @@
         $('#detail_modal').modal("show");
     }
 
-    function go_detail(idx_name){
-        
-        var idxurl = idx_name.split("_");
-        
-        
-        var url = "/schedule/detail/"+idxurl[0];
-        
-        $('#detail_frame').attr('src', url);
-
-        $(".modal-title").text(idxurl[1]);
-        // 모달창 띄우기
-        $('#detail_modal').modal("show");
-        
-    }
-    
     $(".close").on('click', function(){    
         $('#detail_modal').modal('hide');
     });
