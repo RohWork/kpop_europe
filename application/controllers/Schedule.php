@@ -28,7 +28,7 @@ class Schedule extends CI_Controller {
         
         $data['country'] = $this->cont_md->get_country(); 
         
-        $data_calendar = $this->sch_md->get_schedule($country, $year , sprintf("%02d",$month));
+        $data_calendar = $this->sch_md->get_schedule_cnt($country, $year , sprintf("%02d",$month));
         $data_array = array();
 
         foreach ($data_calendar as $cal) {
