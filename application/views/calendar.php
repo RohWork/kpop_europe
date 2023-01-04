@@ -120,7 +120,7 @@
         </div>
     </div>
     
-    <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+    <div id="list_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         
         <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
             <div class="modal-content" style="height:800px">
@@ -131,7 +131,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
+                    <iframe src="" id="list_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
@@ -150,7 +150,7 @@
         
         var url = "/schedule/list?date="+date+"&country=<?=$get_country?>";
         
-        $('#detail_frame').attr('src', url);
+        $('#list_frame').attr('src', url);
 
         $(".modal-title").text(date);
         // 모달창 띄우기
@@ -158,10 +158,10 @@
     }
 
     $(".close").on('click', function(){    
-        $('#detail_modal').modal('hide');
+        $('#list_modal').modal('hide');
     });
 
-    $('#detail_modal').on('show.bs.modal', function () {
+    $('#list_modal').on('show.bs.modal', function () {
            $(this).find('.modal-body').css({
                   width:'auto', //probably not needed
                   height:'auto', //probably not needed 
