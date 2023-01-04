@@ -21,7 +21,7 @@
                             $i=1;
                             foreach($list as $li){
                         ?>        
-                        <tr onclick="go_detail(<?=$li['idx']?>)">
+                        <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
                             <td><?=$i?></td>
                             <td><?=$li['name']?></td>
                             <td><?=$li['start_date']?></td>
