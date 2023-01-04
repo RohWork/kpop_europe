@@ -102,7 +102,7 @@
                                                  
                             echo "<br/>";
                             ?>
-                           <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$year?>-<?=$month?>-<?=$date?>')"><?=$cal_data['cnt']?></font>
+                           <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$year?>-<?=$month?>-<?=$date?>')"><?=$calendar[$s]['cnt']?></font>
                   <?php
 
                         }
