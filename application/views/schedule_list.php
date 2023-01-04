@@ -27,7 +27,8 @@
                             <td><?=$li['start_date']?></td>
                             <td><?=$li['end_date']?></td>
                         </tr>   
-                        <?php        
+                        <?php 
+                            $i++;
                             }
                         ?>
                     </table>
