@@ -71,7 +71,8 @@
                     // 8. 첫번째 주이고 시작요일보다 $j가 작거나 마지막주이고 $j가 마지막 요일보다 크면 표시하지 않음
                     echo '<td height="50" valign="top">';
                     if (!(($i == 1 && $j < $start_week) || ($i == $total_week && $j > $last_week))) {
-
+                        
+                        $cnt = 0;
                         if ($j == 0) {
                             // 9. $j가 0이면 일요일이므로 빨간색
                             $style = "holy";
@@ -100,9 +101,7 @@
                             
                             
                             if( $calendar[$s]['start_date'] <= $date && $calendar[$s]['end_date'] >= $date){   
-                        
-                                                 
-                            echo "<br/>";
+                                $cnt += $calendar[$s]['cnt'];
                             ?>
                            <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$calendar[$s]['cnt']?></font>
                   <?php
