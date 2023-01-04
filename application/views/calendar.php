@@ -152,7 +152,7 @@
         
         $('#detail_frame').attr('src', url);
 
-        $(".modal-title").text(idxurl[1]);
+        $(".modal-title").text(date);
         // 모달창 띄우기
         $('#detail_modal').modal("show");
     }
