@@ -97,20 +97,17 @@
                         }
                         for($s =0; $s<count($calendar); $s++){
                             $date = $year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day);
-                            
-                            
-                            
                             if( $calendar[$s]['start_date'] <= $date && $calendar[$s]['end_date'] >= $date){   
                                 $cnt += $calendar[$s]['cnt'];
-                            
-                           
-                  
                             }
                         }
-                        ?>
+                        if($cnt > 0){ ?>
+                        
                         <br/>
                         <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$cnt?></font>
-                    <?php
+                        
+                        <?php
+                        }
                         // 14. 날짜 증가
                         $day++;
                     }
