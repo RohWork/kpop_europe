@@ -1,4 +1,4 @@
-    <div class="container">
+    <div class="container" style="overflow-y: auto">
         <form id="calendar_insert">
             <div class="row">
                 <label class="form-label"><h3>Schedule Insert</h3></label>
