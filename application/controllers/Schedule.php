@@ -88,7 +88,7 @@ class Schedule extends CI_Controller {
         
     }
     
-    function schedule_insert(){
+    function insert(){
         
         $data = array();
         
@@ -102,7 +102,7 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function schedule_insert_ajax(){
+    function insert_ajax(){
         
         $data = array();
         $image_data = array();
@@ -161,7 +161,7 @@ class Schedule extends CI_Controller {
         
     }
     
-    function schedule_excel(){
+    function excel(){
         
         $data = array();
                 
@@ -171,7 +171,7 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function schedule_excel_process(){
+    function excel_process(){
         
         
         $data = array();
