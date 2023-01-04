@@ -32,6 +32,13 @@ class PHPExcel_Shared_String
     //    Fraction
     const STRING_REGEXP_FRACTION    = '(-?)(\d+)\s+(\d+\/\d+)';
 
+    function __construct() {
+        parent ::__construct();
+        
+        error_reporting(E_ALL ^ E_DEPRECATED);
+    }
+    
+    
 
     /**
      * Control characters array
