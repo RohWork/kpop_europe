@@ -148,7 +148,7 @@
 
     function go_list(date){
         
-        var url = "/schedule/list/"+date;
+        var url = "/schedule/list?date="+date+"&country=<?=$get_country?>";
         
         $('#detail_frame').attr('src', url);
 
