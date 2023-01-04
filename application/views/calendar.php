@@ -95,7 +95,6 @@
                             echo '</font>';
                         }
                         if(!empty($calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)])){
-                            var_dump($calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)]);
                             $cal_data = $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)];
                             
                             echo "<br/>";
