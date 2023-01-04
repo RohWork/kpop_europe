@@ -94,12 +94,15 @@
                             echo $day;
                             echo '</font>';
                         }
-                        if(!empty($calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)])){
-                            $cal_data = $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)];
+                        for($s =0; $s<count($calendar); $s++){
+                            $date = sprintf('%02d',$day);    
                             
+                            if( $calendar[$s]['start_date'] <= $date && $calendar[$s]['end_date'] >= $date){   
+                        }
+                                                 
                             echo "<br/>";
                             ?>
-                           <font style='font-size:10px;cursor:pointer' onclick="go_detail('<?=$cal_data['idx']."_".$cal_data['name']?>')"><?=$cal_data['name']?></font>
+                           <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$year?>-<?=$month?>-<?=$date?>')"><?=$cal_data['cnt']?></font>
                   <?php
 
                         }
