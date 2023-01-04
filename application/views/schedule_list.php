@@ -35,17 +35,59 @@
                 </div>
             </div>
         </div>
+        
+        
+        
+        <div id="detail_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+
+            <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
+                <div class="modal-content" style="height:800px">
+                    <div class="modal-header">
+                        <h5 class="modal-title">detail</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
     <script>
+    
     function go_detail(idx){
-        
+\
         
         
         var url = "/schedule/detail/"+idx;
         
-        location.href = url;
+\
+        
+        $('#detail_frame').attr('src', url);
+
+        $(".modal-title").text(idxurl[1]);
+        // 모달창 띄우기
+        $('#detail_modal').modal("show");
         
     }
+    
+    $(".close").on('click', function(){    
+        $('#detail_modal').modal('hide');
+    });
+
+    $('#detail_modal').on('show.bs.modal', function () {
+           $(this).find('.modal-body').css({
+                  width:'auto', //probably not needed
+                  height:'auto', //probably not needed 
+                  'max-height':'100%'
+           });
+    });
     
     </script>
 </html>
