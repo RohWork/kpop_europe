@@ -74,8 +74,8 @@ class Schedule extends CI_Controller {
     
     function list(){
         
-        $date = $this->input->postget("date");
-        $country = $this->input->postget("country");
+        $date = $this->input->getpost("date");
+        $country = $this->input->getpost("country");
         
         
         $data = array();
