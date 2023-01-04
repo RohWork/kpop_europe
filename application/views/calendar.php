@@ -108,6 +108,7 @@
                             }
                         }
                         ?>
+                        <br/>
                         <font style='font-size:10px;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$cnt?></font>
                     <?php
                         // 14. 날짜 증가
