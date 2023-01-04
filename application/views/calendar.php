@@ -95,8 +95,9 @@
                             echo '</font>';
                         }
                         if(!empty($calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)])){
+                            var_dump($calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)]);
                             $cal_data = $calendar[$year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day)];
-
+                            
                             echo "<br/>";
                             ?>
                            <font style='font-size:10px;cursor:pointer' onclick="go_detail('<?=$cal_data['idx']."_".$cal_data['name']?>')"><?=$cal_data['name']?></font>
