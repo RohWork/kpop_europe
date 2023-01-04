@@ -33,7 +33,7 @@
                 <div class="collapse" id="party-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">   
                         <li>
-                            <a href="/main/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a> 
+                            <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a> 
                         </li>
                     </ul>
                 </div>     
@@ -45,7 +45,7 @@
                 <div class="collapse" id="concert-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
-                            <a href="/main/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
+                            <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a>
                         </li>
                     </ul>
                 </div>
@@ -74,11 +74,11 @@
                 <div class="collapse" id="input-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
-                            <a href="/main/schedule_insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
+                            <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
                         </li>
                         <?php if($this->session->userdata('level') > 2){ ?>
                         <li>
-                            <a href="/main/schedule_excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Excel Upload</span></a>
+                            <a href="/schedule/excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Excel Upload</span></a>
                         </li>
                         <?php }?>
                     </ul>
