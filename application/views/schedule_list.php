@@ -10,7 +10,7 @@
         <div class="container" style="font-size: 12px">
             <div class="row">
                 <div class="col-12">
-                    <table>
+                    <table class="table table-striped">
                         <tr>
                             <th>No</th>
                             <th>Name</th>
