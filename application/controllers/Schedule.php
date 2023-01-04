@@ -72,13 +72,16 @@ class Schedule extends CI_Controller {
     }
     
     
-    function list($date){
+    function list(){
+        
+        $date = $this->input->postget("date");
+        $country = $this->input->postget("country");
+        
         
         $data = array();
-        $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
-        $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
+        $data['list'] = $this->sch_md->get_schedule($date);
         
-        $this->load->view('detail',$data);
+        $this->load->view('schedule_list',$data);
         
         
     }
