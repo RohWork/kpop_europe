@@ -9,8 +9,42 @@
     <body>
         <div class="container" style="font-size: 12px">
             <div class="row">
-                
+                <div class="col-12">
+                    <table>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>START_DATE</th>
+                            <th>END_DATE</th>
+                        </tr>
+                        <?php 
+                            $i=1;
+                            foreach($list as $li){
+                        ?>        
+                        <tr onclick="go_detail(<?=$li['idx']?>)">
+                            <td><?=$i?></td>
+                            <td><?=$li['name']?></td>
+                            <td><?=$li['start_date']?></td>
+                            <td><?=$li['end_date']?></td>
+                        </tr>   
+                        <?php        
+                            }
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
     </body>
+    <script>
+    function go_detail(idx){
+        
+        
+        
+        var url = "/schedule/detail/"+idx;
+        
+        location.href = url;
+        
+    }
+    
+    </script>
 </html>
