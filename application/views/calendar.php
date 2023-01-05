@@ -152,6 +152,7 @@
 <script>
 
     var select_date;
+    var detail_idx;
     
     function go_list(date){
         
@@ -167,7 +168,9 @@
     }
     
     function go_detail(idx, name){
-     
+        
+        detail_idx = idx;
+        
         var url = "/schedule/detail/"+idx;
        
         
@@ -185,6 +188,23 @@
         
     }
     
+    function calendar_modify(){
+        
+        var url = "/schedule/detail/"+detail_idx;
+        $('#list_frame').attr('src', url);
+        
+        // 모달창 띄우기
+        $('#list_modal').modal("show");
+    }
+    
+    function calendar_delete(){
+        
+        const frame = document.getElementById("list_frame").contentWindow;
+        
+        frame.modify()
+        
+    }
+    
     function return_list(){
         
         var date = select_date;
@@ -193,6 +213,8 @@
         
         $('#list_frame').attr('src', url);
         $(".list").hide();
+        $(".modify").hide();
+        $(".delete").hide();
         
         $(".modal-title").text(date);
         
