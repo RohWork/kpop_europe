@@ -199,9 +199,9 @@
     
     function calendar_delete(){
         
-        const frame = document.getElementById("list_frame").contentWindow;
+        const frame = $('#list_frame')get(0).contentWindow;
         
-        frame.modify()
+        frame.set_delete();
         
     }
     
@@ -220,10 +220,13 @@
         
     }
     
+    
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
     });
-
+    
+    
+    
     $('#list_modal').on('show.bs.modal', function () {
            $(this).find('.modal-body').css({
                   width:'auto', //probably not needed
