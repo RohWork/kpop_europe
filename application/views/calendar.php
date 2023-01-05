@@ -136,8 +136,8 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> List </button>
                     <?php if($this->session->userdata('level') > 2){ ?>
-                    <button type="button" class="btn btn-primary modify" onclick="calendar_modify()" aria-label="Modify" style="display: none"> Modify </button>
-                    <button type="button" class="btn btn-primary delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> Delete </button>
+                    <button type="button" class="btn btn-warning modify" onclick="calendar_modify()" aria-label="Modify" style="display: none"> Modify </button>
+                    <button type="button" class="btn btn-danger delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> Delete </button>
                     <?php } ?>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
                     
