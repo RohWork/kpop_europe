@@ -170,7 +170,7 @@ class Schedule extends CI_Controller {
         
     }
     
-        function delete_ajax(){
+    function delete_ajax(){
         
         $data = array();
         $image_data = array();
