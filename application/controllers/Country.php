@@ -95,7 +95,7 @@ class Country extends CI_Controller {
         
         if(!empty($idx)){
             
-            $this->city_md->delete_country($idx);
+            $this->cont_md->delete_country($idx);
             
             $data['result'] = 200;
 
