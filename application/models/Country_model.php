@@ -65,4 +65,13 @@ class Country_model extends CI_Model {
 
         
     }
+    
+    
+    function delete_country($idx){
+        
+        $this->db->where('idx', $idx);
+        $this->db->delete('kpop_country');
+        
+        return $this->db->affected_rows();
+    }
 }
