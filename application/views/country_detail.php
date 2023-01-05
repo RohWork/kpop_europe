@@ -52,7 +52,7 @@
                 var data = {idx : <?=$detail_info['idx']?>};
 
                 $.ajax({
-                    url:'/country/delete_country',
+                    url:'/country/delete_ajax',
                     type:'post',
                     data:data,
                     success:function(data){
