@@ -21,7 +21,7 @@
                             $i=1;
                             foreach($list as $li){
                         ?>        
-                        <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
+                        <tr onclick="go_detail(<?=$li['idx']?>,"<?=$li['name']?>")" style="cursor: pointer">
                             <td><?=$i?></td>
                             <td><?=$li['name']?></td>
                             <td><?=$li['start_date']?></td>
@@ -61,14 +61,14 @@
     </body>
     <script>
     
-    function go_detail(idx){
+    function go_detail(idx, name){
 
         var url = "/schedule/detail/"+idx;
        
         
         $('#detail_frame').attr('src', url);
 
-        $(".modal-title").text(idx);
+        $(".modal-title").text(name);
         // 모달창 띄우기
         $('#detail_modal').modal("show");
         
