@@ -179,7 +179,7 @@ class Schedule extends CI_Controller {
 
        
         
-        if(!empty(idx)){
+        if(!empty($idx)){
             
             $this->sch_md->delete_schedule($idx);
             
