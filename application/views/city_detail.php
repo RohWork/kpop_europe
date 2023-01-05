@@ -67,7 +67,7 @@
             
             
             if(confirm("do you want to delete city?")){
-                var data = {idx => <?=$detail_info['idx']?>};
+                var data = {idx : <?=$detail_info['idx']?>};
 
                 $.ajax({
                     url:'/city/delete_ajax',
