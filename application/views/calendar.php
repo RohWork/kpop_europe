@@ -135,7 +135,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
-                    <button type="button" class="btn btn-secondary list" aria-label="List" style="display: none">List</button>
+                    <button type="button" class="btn btn-primary list" aria-label="List" style="display: none">List</button>
                 </div>
             </div>
         </div>
@@ -146,8 +146,11 @@
 
 <script>
 
-
+    var select_date;
+    
     function go_list(date){
+        
+        select_date = date;
         
         var url = "/schedule/list?date="+date+"&country=<?=$get_country?>";
         
@@ -166,11 +169,25 @@
         $('#list_frame').attr('src', url);
         
         $(".modal-title").text(name);
+        $(".list").show();
+        
         // 모달창 띄우기
         $('#list_frame').modal("show");
         
     }
     
+    function return_list(){
+        
+        var date = select_date;
+        
+        var url = "/schedule/list?date="+date+"&country=<?=$get_country?>";
+        
+        $('#list_frame').attr('src', url);
+        $(".list").hide();
+        
+        $(".modal-title").text(date);
+        
+    }
     
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
