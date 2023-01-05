@@ -75,4 +75,31 @@ class Organization extends CI_Controller {
         header("Content-Type: application/json;");
         echo json_encode($data);
     }
+    
+    function delete_ajax(){
+        
+        $data = array();
+        $image_data = array();
+        
+        $idx= $this->input->post("idx");
+
+       
+        
+        if(!empty($idx)){
+            
+            $this->city_md->delete_organization($idx);
+            
+            $data['result'] = 200;
+
+            
+        }else{
+            $data['message'] = "Check To you're idx";
+
+            $data['result'] = 201;
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
 }
