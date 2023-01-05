@@ -22,7 +22,7 @@
         </div>
     </body>
     <script>
-        function modify_country(){
+        function modify_organization(){
             
             $.ajax({
                 url:'/organization/modify_ajax',
@@ -45,6 +45,32 @@
             });
             
         }
-        
+        function delete_organization(){
+            
+            
+            if(confirm("do you want to delete country?")){
+                var data = {idx : <?=$detail_info['idx']?>};
+
+                $.ajax({
+                    url:'/organization/delete_ajax',
+                    type:'post',
+                    data:data,
+                    success:function(data){
+                        if(data.result == 200){
+                            alert('complete to delete');
+                            window.parent.location.reload();
+                            window.parent.modal_close();
+                        }else{
+                            alert('input fail. check to data.');
+                        }
+                    },
+                    error: function(xhr,status,error) {
+                        console.log(xhr,status,error);
+                        alert("Network error!! Confirm to Manager!!");
+                        return false;
+                    }	 
+                });
+            }
+        }
     </script>
 </html>
