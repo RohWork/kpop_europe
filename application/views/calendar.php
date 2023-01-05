@@ -158,6 +158,19 @@
         $('#list_modal').modal("show");
     }
     
+    function go_detail(idx, name){
+     
+        var url = "/schedule/detail/"+idx;
+       
+        
+        $('#detail_frame').attr('src', url);
+        
+        $(".modal-title").text(name);
+        // 모달창 띄우기
+        $('#detail_modal').modal("show");
+        
+    }
+    
     
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
