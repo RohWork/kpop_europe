@@ -54,6 +54,7 @@
                     <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" onclick="modal_delete();">Delete</button>
                     <button type="button" class="btn btn-primary" onclick="modal_submit();">Save</button>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
                 </div>
