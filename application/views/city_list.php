@@ -85,6 +85,12 @@
             frame.modify_city();
         }
         
+        function modal_delete(){
+            const frame =  document.getElementById("detail_frame").contentWindow;
+            
+            frame.delete_city();
+        }
+        
         function modal_close(){
             $('#detail_modal').modal('hide');
         }
