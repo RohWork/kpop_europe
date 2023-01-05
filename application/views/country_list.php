@@ -87,7 +87,7 @@
         function modal_delete(){
             const frame =  document.getElementById("detail_frame").contentWindow;
             
-            frame.delete_city();
+            frame.delete_country();
         }
         
         function modal_close(){
