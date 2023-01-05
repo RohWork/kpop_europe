@@ -172,7 +172,7 @@
         $(".list").show();
         
         // 모달창 띄우기
-        $('#list_frame').modal("show");
+        $('#list_modal').modal("show");
         
     }
     
