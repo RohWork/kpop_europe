@@ -163,11 +163,11 @@
         var url = "/schedule/detail/"+idx;
        
         
-        $('#detail_frame').attr('src', url);
+        $('#list_frame').attr('src', url);
         
         $(".modal-title").text(name);
         // 모달창 띄우기
-        $('#detail_modal').modal("show");
+        $('#list_frame').modal("show");
         
     }
     
