@@ -48,7 +48,7 @@
         function delete_organization(){
             
             
-            if(confirm("do you want to delete country?")){
+            if(confirm("do you want to delete organization?")){
                 var data = {idx : <?=$detail_info['idx']?>};
 
                 $.ajax({
