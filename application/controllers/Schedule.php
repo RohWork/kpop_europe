@@ -181,7 +181,7 @@ class Schedule extends CI_Controller {
         
         if(!empty(idx)){
             
-            $image_params['kpop_idx'] = $this->sch_md->delete_schedule($idx);
+            $this->sch_md->delete_schedule($idx);
             
             $data['result'] = 200;
 
