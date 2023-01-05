@@ -54,6 +54,12 @@ class Schedule_model extends CI_Model {
         
     }
     
+    function delete_schedule($idx){
+        
+        $this->db->where('idx', $idx);
+        $this->db->delete('kpop_info');
+    }
+    
     function insert_schedule_image($params){
         
         $this->db->insert('kpop_gallery', $params);
