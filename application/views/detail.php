@@ -113,4 +113,42 @@
             </div>
         </div>
     </body>
+    
+    <script>
+        function set_delete(){
+            
+            <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
+                    if(confirm("do you want to delete to the schedule?")){
+                        
+                            var data = { idx : <?=$detail_info['idx']?>};
+                        
+                            $.ajax({
+                                url:'/calendar/delete_ajax',
+                                type:'post',
+                                data:data,
+                                success:function(data){
+                                    if(data.result == 200){
+                                        alert('complete to delete');
+                                        window.parent.location.reload();
+                                    }else{
+                                        alert('input fail. check to data.');
+                                        console.log(data);
+                                    }
+                                },
+                                error: function(xhr,status,error) {
+                                    console.log(xhr,status,error);
+                                    alert("Network error!! Confirm to Manager!!");
+                                    return false;
+                                }	 
+                            });
+            
+                    }
+            <?php }else{ ?>
+                
+                alert("this not permmited");
+                
+            <?php } ?>
+        }
+        
+    </script>
 </html>
