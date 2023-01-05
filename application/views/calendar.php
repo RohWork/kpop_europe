@@ -135,6 +135,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                    <button type="button" class="btn btn-secondary list" aria-label="List" style="display: none">List</button>
                 </div>
             </div>
         </div>
@@ -156,7 +157,8 @@
         // 모달창 띄우기
         $('#list_modal').modal("show");
     }
-
+    
+    
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
     });
