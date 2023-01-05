@@ -74,4 +74,11 @@ class City_model extends CI_Model {
         return $query->row_array();
     }
     
+    function delete_city($idx){
+        
+        $this->db->where('idx', $idx);
+        $this->db->delete('kpop_city');
+        
+        return $this->db->affected_rows();
+    }
 }
