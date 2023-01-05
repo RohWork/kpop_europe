@@ -123,7 +123,7 @@
                             var data = { idx : <?=$detail_info['idx']?>};
                         
                             $.ajax({
-                                url:'/calendar/delete_ajax',
+                                url:'/schedule/delete_ajax',
                                 type:'post',
                                 data:data,
                                 success:function(data){
