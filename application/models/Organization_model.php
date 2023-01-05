@@ -65,4 +65,12 @@ class Organization_model extends CI_Model {
         return $query->row_array();
         
     }
+    
+    function delete_organization($idx){
+        
+        $this->db->where('idx', $idx);
+        $this->db->delete('kpop_organization');
+        
+        return $this->db->affected_rows();
+    }
 }
