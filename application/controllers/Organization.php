@@ -87,7 +87,7 @@ class Organization extends CI_Controller {
         
         if(!empty($idx)){
             
-            $this->city_md->delete_organization($idx);
+            $this->org_md->delete_organization($idx);
             
             $data['result'] = 200;
 
