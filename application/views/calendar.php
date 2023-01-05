@@ -134,8 +134,9 @@
                     <iframe src="" id="list_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-primary list" aria-label="List" style="display: none"> List </button>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
-                    <button type="button" class="btn btn-primary list" aria-label="List" style="display: none">List</button>
+                    
                 </div>
             </div>
         </div>
