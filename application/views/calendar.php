@@ -199,7 +199,7 @@
     
     function calendar_delete(){
         
-        const frame = $('#list_frame')get(0).contentWindow;
+        const frame = $('#list_frame').get(0).contentWindow;
         
         frame.set_delete();
         
