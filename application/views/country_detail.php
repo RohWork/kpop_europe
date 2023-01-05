@@ -39,7 +39,7 @@
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    alert("Network error!! Confirm to Manager!!");
                     return false;
                 }	 
             });
@@ -66,7 +66,7 @@
                     },
                     error: function(xhr,status,error) {
                         console.log(xhr,status,error);
-                        alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                        alert("Network error!! Confirm to Manager!!");
                         return false;
                     }	 
                 });
