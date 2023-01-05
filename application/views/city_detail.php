@@ -63,6 +63,30 @@
             });
             
         }
-        
+        function delete_city(){
+            
+            var data = {idx => <?=$detail_info['idx']?>};
+            
+            $.ajax({
+                url:'/city/delete_ajax',
+                type:'post',
+                data:data,
+                success:function(data){
+                    if(data.result == 200){
+                        alert('complete to delete');
+                        window.parent.location.reload();
+                        window.parent.modal_close();
+                    }else{
+                        alert('input fail. check to data.');
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    return false;
+                }	 
+            });
+            
+        }
     </script>
 </html>
