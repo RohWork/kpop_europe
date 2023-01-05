@@ -170,6 +170,33 @@ class Schedule extends CI_Controller {
         
     }
     
+        function delete_ajax(){
+        
+        $data = array();
+        $image_data = array();
+        
+        $idx= $this->input->post("idx");
+
+       
+        
+        if(!empty(idx)){
+            
+            $image_params['kpop_idx'] = $this->sch_md->delete_schedule($idx);
+            
+            $data['result'] = 200;
+
+            
+        }else{
+            $data['message'] = "Check To you're idx";
+
+            $data['result'] = 201;
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
+    
     function excel(){
         
         $data = array();
