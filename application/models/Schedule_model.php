@@ -30,7 +30,7 @@ class Schedule_model extends CI_Model {
         }
         
         $sSql = "SELECT  ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx FROM kpop_info AS ki 
-                 WHERE 1=1 ".$where
+                 WHERE 1=1 ".$where;
         
         
         $query = $this->db->query($sSql);
