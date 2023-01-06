@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container" style="font-size: 12px">
+        <div class="container" style="font-size: 12px;max-width:100%">
             <div class="row">
                 <div class="col-12">
                     <table class="table table-striped">
