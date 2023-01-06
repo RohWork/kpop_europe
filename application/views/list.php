@@ -55,7 +55,7 @@
     
     function go_detail(idx, name){
 
-        parent.go_detail(idx, name);
+        location.href="/schedule/detail/"+idx;
         
     }
     
