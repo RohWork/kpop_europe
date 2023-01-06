@@ -22,7 +22,6 @@ class Schedule_model extends CI_Model {
        
         $where = "";
         if(!empty($country)){
-            
             $where .= " AND ki.country_idx ='$country'";
         }
         if(!empty($date)){
