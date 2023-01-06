@@ -157,7 +157,7 @@
         
         select_date = date;
         
-        var url = "/schedule/list?date="+date+"&country=<?=$get_country?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$get_country?>";
         
         $('#list_frame').attr('src', url);
 
