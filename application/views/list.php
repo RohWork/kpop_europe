@@ -53,23 +53,11 @@
         
     <script>
     
-    function go_detail(idx, name){
+    function go_detail(idx){
 
         location.href="/schedule/detail/"+idx;
         
     }
-    
-    $(".close").on('click', function(){    
-        $('#detail_modal').modal('hide');
-    });
 
-    $('#detail_modal').on('show.bs.modal', function () {
-           $(this).find('.modal-body').css({
-                  width:'auto', //probably not needed
-                  height:'auto', //probably not needed 
-                  'max-height':'100%'
-           });
-    });
-    
     </script>
 </main>
