@@ -72,7 +72,7 @@ class Schedule extends CI_Controller {
     }
     
     
-    function list(){
+    function frame_list(){
         
         $date = $this->input->get_post("date");
         $country = $this->input->get_post("country");
