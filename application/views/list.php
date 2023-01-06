@@ -13,7 +13,7 @@
                             $i=1;
                             foreach($list as $li){
                         ?>        
-                        <tr onclick="go_detail(<?=$li['idx']?>,'<?=$li['name']?>')" style="cursor: pointer">
+                        <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
                             <td><?=$i?></td>
                             <td><?=$li['name']?></td>
                             <td><?=$li['start_date']?></td>
@@ -30,11 +30,11 @@
         
     <script>
     
-    function go_detail(idx, name){
+    function go_detail(idx){
 
         var url="/schedule/detail/"+idx;
         
-        window.open(url, name, "width=500, height=700" );
+        window.open(url, 'detail', "width=500, height=700" );
         
     }
     
