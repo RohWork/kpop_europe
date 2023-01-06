@@ -181,7 +181,7 @@ class Schedule extends CI_Controller {
         
         if($this->session->userdata('level') < 2 || $this->session->userdata('org_idx') != $info['organization_idx'] ){ 
             
-                $data['message'] = "Not Your Schedule";
+                $data['message'] = "Not You'r Schedule";
 
                 $data['result'] = 201;
             
