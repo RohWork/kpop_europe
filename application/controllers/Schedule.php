@@ -177,23 +177,46 @@ class Schedule extends CI_Controller {
         
         $idx= $this->input->post("idx");
 
-       
+        $info =  $this->sch_md->get_detail_schedule($idx);
         
-        if(!empty($idx)){
+        if($this->session->userdata('level') < 2 || $this->session->userdata('org_idx') != $info['organization_idx'] ){ 
             
-            $this->sch_md->delete_schedule($idx);
-            
-            $data['result'] = 200;
+                $data['message'] = "Not Your Schedule";
 
+                $data['result'] = 201;
             
         }else{
-            $data['message'] = "Check To you're idx";
+            if(!empty($idx)){
 
-            $data['result'] = 201;
+                $this->sch_md->delete_schedule($idx);
+
+                $data['result'] = 200;
+
+
+            }else{
+                $data['message'] = "Check To you're idx";
+
+                $data['result'] = 201;
+            }
         }
         
         header("Content-Type: application/json;");
         echo json_encode($data);
+        
+    }
+    
+    function modify(){
+        
+        $idx = $this->input->get("idx");
+        
+        $data = array();
+        $data['detail_info'] = $detail_info =  $this->sch_md->get_detail_schedule($idx);
+        
+        if($detail_info[''])
+        
+        $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
+        
+        $this->load->view('detail',$data);
         
     }
     
