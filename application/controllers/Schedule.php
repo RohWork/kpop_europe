@@ -81,10 +81,8 @@ class Schedule extends CI_Controller {
         $data = array();
         $data['list'] = $this->sch_md->get_schedule($country,$date);
         
-        $this->load->view('header');
-        $this->load->view('sidebar');
         $this->load->view('schedule_list',$data);
-        $this->load->view('footer');
+        
         
     }
     
