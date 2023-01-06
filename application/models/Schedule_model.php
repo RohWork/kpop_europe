@@ -23,10 +23,10 @@ class Schedule_model extends CI_Model {
         $where = "";
         if(!empty($country)){
             
-            $where .= "WHERE 1=1  AND ki.country_idx ='$country'";
+            $where .= " AND ki.country_idx ='$country'";
         }
         if(!empty($date)){
-            $where .= "and ki.start_date <= '$date' and ki.end_date >= '$date'";
+            $where .= " and ki.start_date <= '$date' and ki.end_date >= '$date'";
         }
         
         $sSql = "SELECT  ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx FROM kpop_info AS ki 
