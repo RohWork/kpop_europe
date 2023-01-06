@@ -64,7 +64,6 @@
             <li class="mb-1">
                 <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
             </li>
-            <?php if($this->session->userdata('level') > 1){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
@@ -76,9 +75,11 @@
                         <li>
                              <a href="/schedule/list"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">List</span></a>
                         </li>
+                        <?php if($this->session->userdata('level') > 1){ ?>
                         <li>
                             <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
                         </li>
+                        <?php }?>
                         <?php if($this->session->userdata('level') > 2){ ?>
                         <li>
                             <a href="/schedule/excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Excel Upload</span></a>
@@ -87,7 +88,7 @@
                     </ul>
                 </div>
             </li>
-            <?php }?>
+            
             <?php if($this->session->userdata('level') > 2){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
