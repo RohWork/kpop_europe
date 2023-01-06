@@ -87,9 +87,8 @@ class Schedule extends CI_Controller {
         
     }
     
-    function detail(){
+    function detail($idx){
         
-        $idx = $this->input->get_post("idx");
 
         $data = array();
         
