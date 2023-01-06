@@ -68,11 +68,14 @@
             <li class="border-top my-3"></li>
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
-                    Schedule Insert
+                    Schedule
                 </button>
                 
                 <div class="collapse" id="input-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
+                        <li>
+                             <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">List</span></a>
+                        </li>
                         <li>
                             <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
                         </li>
