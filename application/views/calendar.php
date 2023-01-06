@@ -170,7 +170,7 @@
         
         detail_idx = idx;
         
-        var url = "/schedule/detail/"+idx;
+        var url = "/schedule/frame_detail/"+idx;
        
         
         $('#list_frame').attr('src', url);
@@ -187,14 +187,6 @@
         
     }
     
-    function calendar_modify(){
-        
-        var url = "/schedule/detail/"+detail_idx;
-        $('#list_frame').attr('src', url);
-        
-        // 모달창 띄우기
-        $('#list_modal').modal("show");
-    }
     
     function calendar_delete(){
         
