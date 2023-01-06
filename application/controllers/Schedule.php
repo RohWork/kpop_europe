@@ -71,6 +71,20 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
+    function list(){
+        
+        $date = $this->input->get_post("date");
+        $country = $this->input->get_post("country");
+        
+        
+        $data = array();
+        $data['list'] = $this->sch_md->get_schedule($country,$date);
+        
+        $this->load->view('frame_list',$data);
+        
+        
+    }
+    
     
     function frame_list(){
         
