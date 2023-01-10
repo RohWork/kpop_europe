@@ -93,7 +93,7 @@ class Schedule extends CI_Controller {
             "end"   => $config['per_page']
         );
         
-        $total = $this->sch_md->get_schedule($country,$date, $paging);
+        $data['list'] = $this->sch_md->get_schedule($country,$date, $paging);
         
         
         
