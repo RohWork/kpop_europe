@@ -5,75 +5,80 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .row_border{
+                border-bottom: 1px solid #CCCCCC;
+            }
+        </style>
     </head>
     <body>
         <div class="container" style="font-size: 12px;padding-top: 15px">
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Event</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Organizer</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['company']?></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Hompage</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Address</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['addr']?></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Facebook</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Instagram</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Youtube</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Date</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2 bg-secondary">
+            <div class="row row_border">
+                <div class="col-2">
                     <label class="form-label"><strong>Etc</strong></label>
                 </div>
                 <div class="col-10">
@@ -81,7 +86,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-2 bg-secondary">
+                <div class="col-2">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
                 <div class="col-10">
