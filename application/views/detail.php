@@ -33,7 +33,7 @@
                 <div class="col-3">
                     <label class="form-label"><strong>Hompage</strong></label>
                 </div>
-                <div class="col-9>
+                <div class="col-9">
                     <p><a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a></p>
                 </div>
             </div>
