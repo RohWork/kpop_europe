@@ -114,7 +114,7 @@
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 text-end">
                 <button type="button" class="btn btn-warning">MODIFY</button>
                 </div>
                 <div class="col-6">
