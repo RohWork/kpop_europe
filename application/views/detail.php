@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             .row_border{
-                border-bottom: 1px solid #CCCCCC;
+                border-bottom: 1px solid #CCCCCC; height: 30px;
             }
         </style>
     </head>
