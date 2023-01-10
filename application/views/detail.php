@@ -14,82 +14,82 @@
     <body>
         <div class="container" style="font-size: 12px;padding-top: 15px">
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Event</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Organizer</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><?=$detail_info['company']?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Hompage</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9>
                     <p><a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Address</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><?=$detail_info['addr']?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Facebook</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Instagram</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Youtube</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Date</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Etc</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-2">
+                <div class="col-3">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                     <?php
