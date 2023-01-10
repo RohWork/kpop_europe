@@ -85,11 +85,11 @@
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
-            <div class="row row_border">
+            <div class="row row_border" style="min-height: 100px">
                 <div class="col-3">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
-                <div class="col-9" style="min-height: 100px">
+                <div class="col-9" >
                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                        <div class="carousel-inner">
                     <?php
