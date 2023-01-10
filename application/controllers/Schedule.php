@@ -71,7 +71,7 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function list($page=""){
+    function list($page=0){
         
         
         
