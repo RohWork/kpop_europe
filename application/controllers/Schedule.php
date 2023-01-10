@@ -71,7 +71,9 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function list($page){
+    function list($page=""){
+        
+        
         
         $date = $this->input->get_post("date");
         $country = $this->input->get_post("country");
