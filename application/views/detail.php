@@ -85,7 +85,7 @@
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row_border">
                 <div class="col-2">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
