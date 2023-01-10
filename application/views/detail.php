@@ -9,80 +9,80 @@
     <body>
         <div class="container" style="font-size: 12px;padding-top: 15px">
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Event</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Event</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['name']?></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Organizer</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Organizer</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['company']?></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Hompage</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Hompage</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Address</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Address</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['addr']?></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Facebook</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Facebook</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Instagram</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Instagram</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Youtube</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Youtube</strong></label>
                 </div>
                 <div class="col-10">
                     <a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Date</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Date</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Etc</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Etc</strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <label class="form-label bg-secondary"><strong>Image</strong></label>
+                <div class="col-2 bg-secondary">
+                    <label class="form-label"><strong>Image</strong></label>
                 </div>
                 <div class="col-10">
                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
