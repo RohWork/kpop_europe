@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <?=$paging?>ss
+                    <?=$paging?>
                 </div>
             </div>
         </div>
