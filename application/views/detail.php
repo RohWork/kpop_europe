@@ -34,7 +34,7 @@
                     <label class="form-label"><strong>Hompage</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
+                    <p><a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
@@ -50,7 +50,7 @@
                     <label class="form-label"><strong>Facebook</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a>
+                    <p><a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
@@ -58,7 +58,7 @@
                     <label class="form-label"><strong>Instagram</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a>
+                    <p><a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
@@ -66,7 +66,7 @@
                     <label class="form-label"><strong>Youtube</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a>
+                    <p><a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a></p>
                 </div>
             </div>
             <div class="row row_border">
