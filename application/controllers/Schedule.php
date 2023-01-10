@@ -71,22 +71,31 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function list(){
+    function list($page){
         
         $date = $this->input->get_post("date");
         $country = $this->input->get_post("country");
         
         
         $data = array();
-        $data['list'] = $this->sch_md->get_schedule($country,$date);
+        $total = $this->sch_md->get_schedule($country,$date);
         
         $this->load->library('pagination');
         
         $config['base_url'] = '/schedule/list';
-        $config['total_rows'] = count($data['list']);
-        $config['per_page'] = 3;
+        $config['total_rows'] = count($total);
+        $config['per_page'] = 10;
         $this->pagination->initialize($config);
         $data['paging'] = $this->pagination->create_links();
+        
+        $paging = array(
+            "start" => $page,
+            "end"   => $config['per_page']
+        );
+        
+        $total = $this->sch_md->get_schedule($country,$date, $paging);
+        
+        
         
         $this->load->view('header');
         $this->load->view('sidebar');
