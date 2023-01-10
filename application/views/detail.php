@@ -118,7 +118,7 @@
                 <button type="button" class="btn btn-warning">MODIFY</button>
                 </div>
                 <div class="col-6">
-                <button type="button" class="btn btn-errror">DELETE</button>
+                <button type="button" class="btn btn-error">DELETE</button>
                 </div>
             </div>
             <?php } ?>
