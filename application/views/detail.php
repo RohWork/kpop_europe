@@ -89,9 +89,9 @@
                 <div class="col-3">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
-                <div class="col-9">
+                <div class="col-9" style="min-height: 100px">
                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                       <div class="carousel-inner" style="min-height: 100px">
+                       <div class="carousel-inner">
                     <?php
 
                       for($i=0; $i<count($detail_img);$i++){
