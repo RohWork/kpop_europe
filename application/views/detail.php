@@ -111,11 +111,15 @@
 
                 </div>
             </div>
-            ss
+            
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row">
+                <div class="col-6">
                 <button type="button" class="btn btn-warning">MODIFY</button>
+                </div>
+                <div class="col-6">
                 <button type="button" class="btn btn-errror">DELETE</button>
+                </div>
             </div>
             <?php } ?>
         </div>
