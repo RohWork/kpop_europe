@@ -80,6 +80,14 @@ class Schedule extends CI_Controller {
         $data = array();
         $data['list'] = $this->sch_md->get_schedule($country,$date);
         
+        $this->load->library('pagination');
+        
+        $config['base_url'] = 'http://example.com/index.php/test/page/';
+        $config['total_rows'] = count($data['list']);
+        $config['per_page'] = 20;
+        $this->pagination->initialize($config);
+        $data['paging'] = $this->pagination->create_links();
+        
         $this->load->view('header');
         $this->load->view('sidebar');
         $this->load->view('list',$data);
