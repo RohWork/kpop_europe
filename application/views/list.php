@@ -6,7 +6,7 @@
                 <div class="row">
                     
                     
-                    <div class="col-1">
+                    <div class="col-2">
                         <div class="form-floating">
                             <select id="country" name="country" class="form-select">
 
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-1">
+                    <div class="col-2">
                         <div class="form-floating">
                             <select id="city" name="city" class="form-select">
 
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-1">
+                    <div class="col-2">
                         <div class="form-floating">
                             <select id="organization" name="organization" class="form-select">
 
