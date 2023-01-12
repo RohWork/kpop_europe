@@ -132,7 +132,7 @@ class Schedule extends CI_Controller {
         
         
         $data = array();
-        $data['list'] = $this->sch_md->get_schedule($search,$date);
+        $data['list'] = $this->sch_md->get_schedule($search);
         
         $this->load->view('frame_list',$data);
         
