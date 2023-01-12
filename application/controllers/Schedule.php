@@ -122,18 +122,7 @@ class Schedule extends CI_Controller {
 
         
     }
-    function modify($idx){
-        
 
-        $data = array();
-        
-        $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
-        $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
-        
-        $this->load->view('modify',$data);
-
-        
-    }
     function frame_list(){
         
         $date = $this->input->get_post("date");
@@ -272,10 +261,7 @@ class Schedule extends CI_Controller {
         $idx = $this->input->get("idx");
         
         $data = array();
-        $data['detail_info'] = $detail_info =  $this->sch_md->get_detail_schedule($idx);
-        
-        if($detail_info[''])
-        
+        $data['detail_info'] = $detail_info =  $this->sch_md->get_detail_schedule($idx);        
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
         $this->load->view('detail',$data);
