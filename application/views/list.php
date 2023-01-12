@@ -1,7 +1,7 @@
 
 
 
-        <div class="container" style="font-size: 12px;max-width:100%;">
+        <div class="container" style="font-size: 12px;">
             <form method="get">
                 <div class="row">
                     
