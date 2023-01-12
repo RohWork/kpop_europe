@@ -5,21 +5,27 @@
             <form method="get">
                 <div class="row">
                     
-                    <label class="form-label col-1">
-                        SEARCH COUNTRY
-                    </label>
+                    
                     <div class="col-1">
-                        <select id="country" name="country" class="form-select">
-                            
-                        </select>
+                        <div class="form-floating">
+                            <select id="country" name="country" class="form-select">
+
+                            </select>
+                            <label class="form-label col-1">
+                            SEARCH COUNTRY
+                            </label>
+                        </div>
                     </div>
-                    <label class="form-label col-1">
-                        SEARCH CITY
-                    </label>
+                    
                     <div class="col-1">
-                        <select id="city" name="city" class="form-select">
-                            
-                        </select>
+                        <div class="form-floating">
+                            <select id="city" name="city" class="form-select">
+
+                            </select>
+                            <label class="form-label col-1">
+                                SEARCH CITY
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="col-1">
