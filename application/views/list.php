@@ -26,7 +26,7 @@
                         <select id="organization" name="organization" class="form-select">
                             
                         </select>
-                        <label class="form-label col-1">
+                        <label for="organization">
                         ORGERNIZER
                         </label>
                     </div>
