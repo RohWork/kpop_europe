@@ -24,10 +24,10 @@ class Schedule_model extends CI_Model {
         $limit = "";
         
         if(!empty($search['country'])){
-            $where .= " AND ki.country_idx ='$country'";
+            $where .= " AND ki.country_idx ='".$search['country']."'";
         }
         if(!empty($search['date'])){
-            $where .= " and DATE_FORMAT(ki.start_date,'%Y-%m-%d') <= '$date' and DATE_FORMAT(ki.end_date,'%Y-%m-%d') >= '$date'";
+            $where .= " and DATE_FORMAT(ki.start_date,'%Y-%m-%d') <= '".$search['date']."' and DATE_FORMAT(ki.end_date,'%Y-%m-%d') >= '".$search['date']."'";
         }
         if(!empty($paging)){
             $limit = "limit ".$paging['start'].",".$paging['end'];
