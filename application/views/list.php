@@ -5,15 +5,27 @@
             <div class="row">
                 <form method="post">
                     <div class="col-1">
-                        
+                        <select id="country" name="country" class="form-select">
+                            
+                        </select>
                     </div>
                     <div class="col-1">
-                        
+                        <select id="city" name="city" class="form-select">
+                            
+                        </select>
                     </div>
                     <div class="col-1">
-                        
+                        <select id="organization" name="organization" class="form-select">
+                            
+                        </select>
+                    </div>
+                    <div class="col-1">
+                        <input type="date" id="date" name="date" class="form-control"/>
                     </div>
                     
+                    <div class="col-1">
+                        <input type="submit" value="SEARCH" class="form-control"/>
+                    </div>
                 </form>
             </div>
             <div class="row" style="padding-top: 20px">
