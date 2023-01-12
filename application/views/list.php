@@ -1,6 +1,22 @@
 
-        <div class="container" style="font-size: 12px;max-width:100%">
+
+
+        <div class="container" style="font-size: 12px;max-width:100%;">
             <div class="row">
+                <form method="post">
+                    <div class="col-1">
+                        
+                    </div>
+                    <div class="col-1">
+                        
+                    </div>
+                    <div class="col-1">
+                        
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="row" style="padding-top: 20px">
                 <div class="col-12">
                     <table class="table table-striped">
                         <tr>
