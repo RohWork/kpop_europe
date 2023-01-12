@@ -2,7 +2,7 @@
 
 
         <div class="container" style="font-size: 12px;max-width:100%;">
-            <form method="post">
+            <form method="get">
                 <div class="row">
                 
                     <div class="col-1">
