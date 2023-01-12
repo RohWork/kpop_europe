@@ -18,15 +18,15 @@ class Schedule_model extends CI_Model {
         
     }
     
-    public function get_schedule($country="", $date="", $paging=""){
+    public function get_schedule($search, $paging=""){
        
         $where = "";
         $limit = "";
         
-        if(!empty($country)){
+        if(!empty($search['country'])){
             $where .= " AND ki.country_idx ='$country'";
         }
-        if(!empty($date)){
+        if(!empty($search['date'])){
             $where .= " and DATE_FORMAT(ki.start_date,'%Y-%m-%d') <= '$date' and DATE_FORMAT(ki.end_date,'%Y-%m-%d') >= '$date'";
         }
         if(!empty($paging)){
