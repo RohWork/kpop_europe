@@ -84,7 +84,7 @@ class Schedule extends CI_Controller {
         
         
         $data = array();
-        $total = $this->sch_md->get_schedule($search,$date);
+        $total = $this->sch_md->get_schedule($search);
         
         $this->load->library('pagination');
         
