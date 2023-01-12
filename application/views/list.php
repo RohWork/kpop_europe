@@ -25,7 +25,7 @@
                     </div>
                     
                     <div class="col-1">
-                        <input type="submit" value="SEARCH" class="form-control"/>
+                        <input type="submit" value="SEARCH" class="btn btn-success"/>
                     </div>
                 
                 </div>
