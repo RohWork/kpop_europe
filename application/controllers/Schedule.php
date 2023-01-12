@@ -74,13 +74,17 @@ class Schedule extends CI_Controller {
     function list($page=0){
         
         
+        $search = array();
         
-        $date = $this->input->get_post("date");
-        $country = $this->input->get_post("country");
+        $search['date'] = $this->input->get_post("date");
+        $search['country'] = $this->input->get_post("country");
+        $search['city'] = $this->input->get_post("country");
+        $search['organizer'] = $this->input->get_post("organizer");
+        
         
         
         $data = array();
-        $total = $this->sch_md->get_schedule($country,$date);
+        $total = $this->sch_md->get_schedule($search,$date);
         
         $this->load->library('pagination');
         
@@ -95,7 +99,7 @@ class Schedule extends CI_Controller {
             "end"   => $config['per_page']
         );
         
-        $data['list'] = $this->sch_md->get_schedule($country,$date, $paging);
+        $data['list'] = $this->sch_md->get_schedule($search, $paging);
         
         
         
