@@ -22,13 +22,15 @@
                         </select>
                     </div>
                     
-                    <div class="col-1 form-floating">
-                        <select id="organization" name="organization" class="form-select">
-                            
-                        </select>
-                        <label for="organization">
-                            ORGERNIZER
-                        </label>
+                    <div class="col-1">
+                        <div class="form-floating">
+                            <select id="organization" name="organization" class="form-select">
+
+                            </select>
+                            <label for="organization">
+                                ORGERNIZER
+                            </label>
+                        </div>
                     </div>
                     <label class="form-label col-1 ">
                         SEARCH DATE
