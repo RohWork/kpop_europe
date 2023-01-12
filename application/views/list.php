@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-1">
+                    <div class="col-2">
                         <div class="form-floating">
                             <input type="date" id="date" name="date" class="form-control"/>
                             <label for="date">
