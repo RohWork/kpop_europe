@@ -9,7 +9,10 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="country" name="country" class="form-select">
+                                <?php foreach($country_list as $cnt){ ?>
+                                    <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
 
+                                <?php } ?>
                             </select>
                             <label class="form-label col-1">
                                 COUNTRY
@@ -31,7 +34,10 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="organization" name="organization" class="form-select">
+                                <?php foreach($organization_list as $org){ ?>
+                                    <option value="<?=$org['idx']?>"><?=$org['name']?></option>
 
+                                <?php } ?>
                             </select>
                             <label for="organization">
                                 ORGERNIZER
