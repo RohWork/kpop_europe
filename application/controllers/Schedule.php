@@ -76,10 +76,10 @@ class Schedule extends CI_Controller {
         
         $search = array();
         
-        $date = $this->input->get_post("date");
-        $country = $this->input->get_post("country");
-        $city = $this->input->get_post("country");
-        $organizer = $this->input->get_post("organizer");
+        $search['date'] = $this->input->get_post("date");
+        $search['country'] = $this->input->get_post("country");
+        $search['city'] = $this->input->get_post("country");
+        $search['organizer'] = $this->input->get_post("organizer");
         
         
         
@@ -125,12 +125,14 @@ class Schedule extends CI_Controller {
 
     function frame_list(){
         
-        $date = $this->input->get_post("date");
-        $country = $this->input->get_post("country");
+        $search = array();
+        
+        $search['date'] = $this->input->get_post("date");
+        $search['country'] = $this->input->get_post("country");
         
         
         $data = array();
-        $data['list'] = $this->sch_md->get_schedule($country,$date);
+        $data['list'] = $this->sch_md->get_schedule($search,$date);
         
         $this->load->view('frame_list',$data);
         
