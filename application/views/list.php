@@ -21,15 +21,16 @@
                             
                         </select>
                     </div>
-                    <label class="form-label col-1">
-                        ORGERNIZER
-                    </label>
-                    <div class="col-1">
+                    
+                    <div class="col-1 form-floating">
                         <select id="organization" name="organization" class="form-select">
                             
                         </select>
+                        <label class="form-label col-1">
+                        ORGERNIZER
+                        </label>
                     </div>
-                    <label class="form-label col-1">
+                    <label class="form-label col-1 ">
                         SEARCH DATE
                     </label>
                     <div class="col-1">
