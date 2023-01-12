@@ -2,8 +2,9 @@
 
 
         <div class="container" style="font-size: 12px;max-width:100%;">
-            <div class="row">
-                <form method="post">
+            <form method="post">
+                <div class="row">
+                
                     <div class="col-1">
                         <select id="country" name="country" class="form-select">
                             
@@ -26,8 +27,9 @@
                     <div class="col-1">
                         <input type="submit" value="SEARCH" class="form-control"/>
                     </div>
-                </form>
-            </div>
+                
+                </div>
+            </form>
             <div class="row" style="padding-top: 20px">
                 <div class="col-12">
                     <table class="table table-striped">
