@@ -38,11 +38,14 @@
                             </label>
                         </div>
                     </div>
-                    <label class="form-label col-1 ">
-                        SEARCH DATE
-                    </label>
+                    
                     <div class="col-1">
-                        <input type="date" id="date" name="date" class="form-control"/>
+                        <div class="form-floating">
+                            <input type="date" id="date" name="date" class="form-control"/>
+                            <label for="date">
+                                SEARCH DATE
+                            </label>
+                        </div>
                     </div>
                     
                     
