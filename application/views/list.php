@@ -12,7 +12,7 @@
 
                             </select>
                             <label class="form-label col-1">
-                            SEARCH COUNTRY
+                                COUNTRY
                             </label>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
 
                             </select>
                             <label class="form-label col-1">
-                                SEARCH CITY
+                                CITY
                             </label>
                         </div>
                     </div>
