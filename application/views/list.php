@@ -162,7 +162,7 @@
                     
                 }else{
 
-                    //alert(data.message);
+                    alert(data.message);
                     return false;
                 }
             },
