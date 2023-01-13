@@ -61,7 +61,7 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <input type="date" id="date" name="date" class="form-control" value=<?=$search['date']?>""/>
+                            <input type="date" id="date" name="date" class="form-control" value="<?=$search['date']?>"/>
                             <label for="date">
                                 SEARCH DATE
                             </label>
@@ -137,7 +137,14 @@
                     $('#check_city').empty();
                     $('#check_city').append("<option value=''></option>");
                     for(var i =0; i<data_array.length;i++){
-                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        
+                        var selected = "";
+                        
+                        if(data.result[i]['idx'] == '<?=$select['city'?>'){
+                            selected = "selected";
+                        }
+                        
+                        var option = $("<option value="+data.result[i]['idx']+selected+">"+data.result[i]['name']+"</option>");
                         $('#check_city').append(option)
                         
                     }
