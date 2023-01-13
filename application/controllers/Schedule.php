@@ -101,7 +101,7 @@ class Schedule extends CI_Controller {
         
         $data['list'] = $this->sch_md->get_schedule($search, $paging);
         $data['country_list'] = $this->cont_md->get_country();
-        if(!$search['country']){
+        if(!empty($search['country'])){
             $data['city_list'] = $this->city_md->get_city($search['country']);
         }else{
             $data['city_list'] = "";
