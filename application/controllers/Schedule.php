@@ -103,7 +103,7 @@ class Schedule extends CI_Controller {
         $data['country_list'] = $this->cont_md->get_country();
         $data['city_list'] = $this->city_md->get_city();
         $data['organization_list'] = $this->org_md->get_organization();
-        
+        $data['search'] = $search;
         
         $this->load->view('header');
         $this->load->view('sidebar');
