@@ -43,7 +43,7 @@
                                 <option value=""></option>
                                 <?php foreach($organization_list as $org){ 
                                     
-                                    $search_cnt = "";
+                                    $search_org = "";
                                     if($search['orgernizer'] == $org['idx']){
                                         $search_org = "selected";
                                     }
