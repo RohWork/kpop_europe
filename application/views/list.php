@@ -123,6 +123,8 @@
         
         var j = $("#check_country option:selected").val();
         var data = { country_idx : j };
+        var city = <?=$search['city']?>;
+        
         
         $.ajax({
             url:'/city/get_ajax',
@@ -141,7 +143,7 @@
                         var selected = "";
                         
                         
-                        if(data.result[i]['idx'] == "<?=$search['city']?>"){
+                        if(data.result[i]['idx'] == city){
                             selected = "selected";
                         }
                         
