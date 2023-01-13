@@ -135,7 +135,7 @@
         var j = $("#check_country option:selected").val();
         var data = { country_idx : j };
 
-        console.log(data);
+       $('#check_city').empty();
         
         $.ajax({
             url:'/city/get_ajax',
@@ -145,9 +145,7 @@
                 if(data.code == 200){
                     
                     var data_array = data.result;
-                    console.log(data_array);
-                    
-                    $('#check_city').empty();
+
                     $('#check_city').append("<option value=''></option>");
                     for(var i =0; i<data_array.length;i++){
                         
@@ -162,7 +160,7 @@
                     
                 }else{
 
-                    alert(data.message);
+                    //alert(data.message);
                     return false;
                 }
             },
