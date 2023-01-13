@@ -16,7 +16,7 @@
                                         $search_cnt = "selected";
                                     }
                                 ?>
-                                    <option value="<?=$cnt['idx']?>" <?=$search_cnt?>"><?=$cnt['name']?></option>
+                                    <option value="<?=$cnt['idx']?>" <?=$search_cnt?>><?=$cnt['name']?></option>
 
                                 <?php } ?>
                             </select>
