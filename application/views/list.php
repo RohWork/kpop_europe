@@ -35,6 +35,7 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="organization" name="organization" class="form-select">
+                                <option value=""></option>
                                 <?php foreach($organization_list as $org){ ?>
                                     <option value="<?=$org['idx']?>"><?=$org['name']?></option>
 
