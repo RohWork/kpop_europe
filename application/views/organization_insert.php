@@ -40,7 +40,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to insert');
-                        location.href = "/";
+                        location.href = "/organization";
                     }else{
                         alert('input fail. check to data.');
                         console.log(data);
