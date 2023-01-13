@@ -44,7 +44,7 @@
                                 <?php foreach($organization_list as $org){ 
                                     
                                     $search_org = "";
-                                    if($search['orgernizer'] == $org['idx']){
+                                    if($search['organizer'] == $org['idx']){
                                         $search_org = "selected";
                                     }
                                     
