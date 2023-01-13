@@ -147,7 +147,7 @@
                             selected = "selected";
                         }
                         
-                        var option = $("<option value="+data.result[i]['idx']+selected+">"+data.result[i]['name']+"</option>");
+                        var option = $("<option value="+data.result[i]['idx']+" "+selected">"+data.result[i]['name']+"</option>");
                         $('#check_city').append(option)
                         
                     }
