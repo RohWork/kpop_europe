@@ -110,7 +110,6 @@
         </div>
         
     <script>
-    var selected_value = <?=$select['city']?>";
     
     function go_detail(idx){
 
