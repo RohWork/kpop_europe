@@ -22,7 +22,7 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <select id="city" name="city" class="form-select">
+                            <select id="check_city" name="city" class="form-select">
 
                             </select>
                             <label class="form-label col-1">
@@ -102,6 +102,45 @@
         var url="/schedule/detail/"+idx;
         
         window.open(url, 'detail', "width=500, height=700" );
+        
+    }
+    
+    function get_country_data(){
+        
+        var j = $("#check_country option:selected").val();
+        var data = { country_idx : j };
+        
+        $.ajax({
+            url:'/city/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+                    console.log(data_array);
+                    
+                    $('#check_city').empty();
+                    for(var i =0; i<data_array.length;i++){
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        $('#check_city').append(option)
+                        
+                    }
+                    
+                    
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
+        });
         
     }
     
