@@ -8,7 +8,7 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <select id="country" name="country" class="form-select">
+                            <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
                                 <?php foreach($country_list as $cnt){ ?>
                                     <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
 
