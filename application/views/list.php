@@ -33,6 +33,7 @@
                                 <?php foreach($city_list as $cty){ 
                                     
                                     $search_cty = "";
+                                    echo $search['city']."==".$cty['idx'];
                                     if($search['city'] == $cty['idx']){
                                         $search_cty = "selected";
                                     }
