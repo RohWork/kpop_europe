@@ -29,7 +29,18 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="check_city" name="city" class="form-select">
+                                <option value=""></option>
+                                <?php foreach($city_list as $cty){ 
+                                    
+                                    $search_cty = "";
+                                    if($search['city'] == $cty['idx']){
+                                        $search_cty = "selected";
+                                    }
+                                    
+                                ?>
+                                    <option value="<?=$org['idx']?>" <?=$search_cty?>><?=$org['name']?></option>
 
+                                <?php } ?>
                             </select>
                             <label class="form-label col-1">
                                 CITY
