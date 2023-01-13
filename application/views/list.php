@@ -38,7 +38,7 @@
                                     }
                                     
                                 ?>
-                                    <option value="<?=$org['idx']?>" <?=$search_cty?>><?=$org['name']?></option>
+                                    <option value="<?=$cty['idx']?>" <?=$search_cty?>><?=$cty['name']?></option>
 
                                 <?php } ?>
                             </select>
