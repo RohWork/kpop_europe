@@ -135,7 +135,7 @@
         var j = $("#check_country option:selected").val();
         var data = { country_idx : j };
 
-        console.log('test');
+        console.log(data);
         
         $.ajax({
             url:'/city/get_ajax',
