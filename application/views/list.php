@@ -10,8 +10,13 @@
                         <div class="form-floating">
                             <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
                                 <option value=""></option>
-                                <?php foreach($country_list as $cnt){ ?>
-                                    <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+                                <?php foreach($country_list as $cnt){ 
+                                    $search_cnt = "";
+                                    if($search['country'] == $cnt['idx']){
+                                        $search_cnt = "selected";
+                                    }
+                                ?>
+                                    <option value="<?=$cnt['idx']?>" <?=$search_cnt?>"><?=$cnt['name']?></option>
 
                                 <?php } ?>
                             </select>
@@ -36,8 +41,15 @@
                         <div class="form-floating">
                             <select id="organization" name="organization" class="form-select">
                                 <option value=""></option>
-                                <?php foreach($organization_list as $org){ ?>
-                                    <option value="<?=$org['idx']?>"><?=$org['name']?></option>
+                                <?php foreach($organization_list as $org){ 
+                                    
+                                    $search_cnt = "";
+                                    if($search['orgernizer'] == $org['idx']){
+                                        $search_org = "selected";
+                                    }
+                                    
+                                ?>
+                                    <option value="<?=$org['idx']?>" <?=$search_org?>><?=$org['name']?></option>
 
                                 <?php } ?>
                             </select>
