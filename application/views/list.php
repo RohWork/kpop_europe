@@ -141,7 +141,7 @@
                         var selected = "";
                         
                         
-                        if(data.result[i]['idx'] == "<?=$select['city']?>"){
+                        if(data.result[i]['idx'] == "<?=$search['city']?>"){
                             selected = "selected";
                         }
                         
