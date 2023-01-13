@@ -110,6 +110,7 @@
         </div>
         
     <script>
+    var selected_value = <?=$select['city']?>";
     
     function go_detail(idx){
 
@@ -140,7 +141,8 @@
                         
                         var selected = "";
                         
-                        if(data.result[i]['idx'] == '<?=$select['city'?>'){
+                        
+                        if(data.result[i]['idx'] == <?=$select['city']?>){
                             selected = "selected";
                         }
                         
