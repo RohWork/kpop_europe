@@ -18,7 +18,7 @@
                     <label class="form-label"><strong>Event</strong></label>
                 </div>
                 <div class="col-9">
-                    <input type="text" id="name" name="name" value="<?=$detail_info['name']?>"/>
+                    <input type="text" id="name" name="name" class="form-control" value="<?=$detail_info['name']?>"/>
                 </div>
             </div>
             <div class="row row_border">
