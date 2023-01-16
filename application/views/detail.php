@@ -168,7 +168,7 @@
         
         function set_modify(){
             
-            location.href="schedule/modify/<?=$detail_info['idx']?>";
+            location.href="/schedule/modify/<?=$detail_info['idx']?>";
             
             
         }
