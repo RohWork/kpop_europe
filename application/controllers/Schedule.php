@@ -264,9 +264,7 @@ class Schedule extends CI_Controller {
         
     }
     
-    function modify(){
-        
-        $idx = $this->input->get("idx");
+    function modify($idx){
         
         $data = array();
         $data['detail_info'] = $detail_info =  $this->sch_md->get_detail_schedule($idx);        
