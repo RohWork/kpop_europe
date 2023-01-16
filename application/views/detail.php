@@ -120,7 +120,7 @@
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row">
                 <div class="col-6 text-end">
-                <button type="button" class="btn btn-warning">MODIFY</button>
+                    <button type="button" class="btn btn-warning" onclick="set_modify()">MODIFY</button>
                 </div>
                 <div class="col-6">
                     <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
@@ -164,6 +164,13 @@
                 alert("this not permmited");
                 
             <?php } ?>
+        }
+        
+        function set_modify(){
+            
+            location.href="schedule/modify/<?=$detail_info['idx']?>";
+            
+            
         }
         
     </script>
