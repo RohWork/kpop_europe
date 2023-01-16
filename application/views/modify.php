@@ -12,7 +12,7 @@
         </style>
     </head>
     <body>
-        <div class="container" style="font-size: 12px;padding-top: 15px;padding-left: 15px">
+        <div class="container" style="font-size: 15px;padding-top: 15px;padding-left: 15px">
             <div class="row row_border">
                 <div class="col-3">
                     <label class="form-label"><strong>Event</strong></label>
