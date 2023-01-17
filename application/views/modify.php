@@ -14,6 +14,7 @@
     <body>
         <form id="schedule_form" target="/schedule/modify_set">
             <div class="container" style="font-size: 15px;padding-top: 15px;padding-left: 15px">
+                <input type="hidden" id="idx" name="idx" value="<?=$detail_info['idx']?>"/>
                 <div class="row row_border">
                     <div class="col-3">
                         <label class="form-label"><strong>Event</strong></label>
@@ -114,7 +115,7 @@
                         <button type="button" onclick="set_modify()" class="btn btn-warning">SET MODIFY</button>
                     </div>
                     <div class="col-4 text-end">
-                        <button type="button" onclick="form_rest()" class="btn btn-warning">RESET</button>
+                        <button type="button" onclick="form_reset()" class="btn btn-warning">RESET</button>
                     </div>
                     <div class="col-4">
                         <button type="button" onclick="go_return()" class="btn btn-warning">CANCEL</button>
@@ -137,7 +138,7 @@
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             
-            
+                $("#schedule_form").submit();
             
             <?php }else{ ?>
                 
@@ -146,5 +147,12 @@
             <?php } ?>
         }
         
+        function form_reset(){
+            $("#schedule_form").reset();
+        }
+        
+        function go_return(){
+            location.href="/schedule/detail/<?=$detail_info['idx']?>";
+        }
     </script>
 </html>
