@@ -109,11 +109,8 @@
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row">
-                <div class="col-6 text-end">
+                <div class="col-6 col-offset-6 text-end">
                 <button type="button" class="btn btn-warning">SET MODIFY</button>
-                </div>
-                <div class="col-6">
-                    <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
                 </div>
             </div>
             <?php } ?>
@@ -121,6 +118,13 @@
     </body>
     
     <script>
+        $("#input_url").click(function() {
+            $("#image_group").append(
+                    "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control i_img' name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
+            );
+
+            $("#insert_modal").dialogHeight = document.body.scrollHeight + 'px';
+        });
         function set_delete(){
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
