@@ -97,7 +97,7 @@
                         </textarea>
                     </div>
                 </div>
-                <div class="row row_border mt-1" style="min-height: 100px">
+                <div class="row row_border mt-1" style="min-height: 100px;padding-top: 50px">
                     <div class="col-3">
                         <label class="form-label"><strong>Image</strong></label>
                     </div>
