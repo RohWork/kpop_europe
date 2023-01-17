@@ -111,13 +111,13 @@
 
                 <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
                 <div class="row">
-                    <div class="col-4 text-center">
+                    <div class="col-2 col-offset-2 text-center">
                         <button type="button" onclick="set_modify()" class="btn btn-warning">SUBMIT</button>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-2 text-center">
                         <button type="button" onclick="form_reset()" class="btn btn-info">RESET</button>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-2 text-center">
                         <button type="button" onclick="go_return()" class="btn btn-info">CANCEL</button>
                     </div>
                 </div>
