@@ -26,7 +26,7 @@
                     <label class="form-label"><strong>Organizer</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><?=$detail_info['company']?></p>
+                    <input type="text" id="company" name="company" class="form-control" value="<?=$detail_info['company']?>"/>
                 </div>
             </div>
             <div class="row row_border">
@@ -34,7 +34,7 @@
                     <label class="form-label"><strong>Hompage</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a></p>
+                    <input type="text" id="homepage" name="homepage" class="form-control" value="<?=$detail_info['homepage']?>"/>
                 </div>
             </div>
             <div class="row row_border">
@@ -42,7 +42,7 @@
                     <label class="form-label"><strong>Address</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><?=$detail_info['addr']?></p>
+                    <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['addr']?>"/>
                 </div>
             </div>
             <div class="row row_border">
@@ -50,7 +50,7 @@
                     <label class="form-label"><strong>Facebook</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><a href="<?=$detail_info['face']?>" target="_blankt"><?=$detail_info['face']?></a></p>
+                    <input type="text" id="face" name="face" class="form-control" value="<?=$detail_info['face']?>"/>
                 </div>
             </div>
             <div class="row row_border">
@@ -58,7 +58,7 @@
                     <label class="form-label"><strong>Instagram</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><a href="<?=$detail_info['insta']?>"  target="_blank"><?=$detail_info['insta']?></a></p>
+                    <input type="text" id="insta" name="insta" class="form-control" value="<?=$detail_info['insta']?>"/>
                 </div>
             </div>
             <div class="row row_border">
@@ -66,15 +66,23 @@
                     <label class="form-label"><strong>Youtube</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><a href="<?=$detail_info['yout']?>" target="_blankt"><?=$detail_info['yout']?></a></p>
+                    <input type="text" id="yout" name="yout" class="form-control" value="<?=$detail_info['yout']?>"/>
                 </div>
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Date</strong></label>
+                    <label class="form-label"><strong>Start Date</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><?=$detail_info['start_date']?> ~ <?=$detail_info['end_date']?></p>
+                    <input type="datetime" id="start_date" name="start_date" class="form-control" value="<?=$detail_info['start_date']?>"/>
+                </div>
+            </div>
+            <div class="row row_border">
+                <div class="col-3">
+                    <label class="form-label"><strong>End Date</strong></label>
+                </div>
+                <div class="col-9">
+                    <input type="datetime" id="end_date" name="end_date" class="form-control" value="<?=$detail_info['end_date']?>"/>
                 </div>
             </div>
             <div class="row row_border">
@@ -82,45 +90,27 @@
                     <label class="form-label"><strong>Etc</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
+                    <textarea class="form-control" id="remark" name="remark">
+                        <?=$detail_info['remark']?>
+                    </textarea>
                 </div>
             </div>
             <div class="row row_border" style="min-height: 100px">
                 <div class="col-3">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
-                <div class="col-9" >
-                   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                       <div class="carousel-inner">
-                    <?php
-
-                      for($i=0; $i<count($detail_img);$i++){
-                          
-                    ?>
-                      <div class="carousel-item <?=$i==0? "active" : "" ?>">
-                        <img src="<?=$detail_img[$i]['src']?>" class="d-block w-100" alt="<?=$detail_img[$i]['title']?>">
-                      </div>
-                    <?php
-                    }
-                    ?>
+                <div class="col-9" id="image_group" >
+                    <div class="input-group mb-2 mt-1">
+                        <input type="text" id="input_image[]" class="form-control i_img" name="input_image[]"/>
+                        <button type="button" class="btn btn-primary" id="input_url">+</button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                  </div>
-
                 </div>
             </div>
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row">
                 <div class="col-6 text-end">
-                <button type="button" class="btn btn-warning">MODIFY</button>
+                <button type="button" class="btn btn-warning">SET MODIFY</button>
                 </div>
                 <div class="col-6">
                     <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
