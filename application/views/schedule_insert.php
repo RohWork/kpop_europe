@@ -96,7 +96,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>Start Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="datetime" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('d-m-Y h:i:s')?>"/>
+                    <input type="datetime-local" class="form-control" id="input_start_date" name="input_start_date" value="<?=date('d-m-Y h:i:s')?>"/>
                 </div>
             </div>
             <div class="row mt-1">
@@ -104,7 +104,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>End Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="datetime" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('d-m-Y h:i:s')?>"/>
+                    <input type="datetime-local" class="form-control" id="input_end_date" name="input_end_date" value="<?=date('d-m-Y h:i:s')?>"/>
                 </div>
             </div>
             <div class="row mt-1">
