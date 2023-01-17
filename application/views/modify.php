@@ -116,7 +116,7 @@
                         <button type="button" onclick="set_modify()" class="btn btn-warning">SUBMIT</button>
                     </div>
                     <div class="col-3 text-center">
-                        <button type="button" onclick="form_reset()" class="btn btn-info">RESET</button>
+                        <button type="button" onclick="form_reset()" class="btn btn-success">RESET</button>
                     </div>
                     <div class="col-2 text-center">
                         <button type="button" onclick="go_return()" class="btn btn-info">CANCEL</button>
