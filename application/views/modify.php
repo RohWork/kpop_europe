@@ -110,7 +110,7 @@
                 </div>
 
                 <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
-                <div class="row">
+                <div class="row" style="padding-top:30px;">
                     <div class="col-2"></div>
                     <div class="col-3 text-center">
                         <button type="button" onclick="set_modify()" class="btn btn-success">SUBMIT</button>
