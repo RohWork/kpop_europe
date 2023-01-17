@@ -25,10 +25,32 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
+                        <label class="form-label"><strong>Country</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <select id="country" name="country" class="form-select">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>City</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <select id="city" name="city" class="form-select">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
                         <label class="form-label"><strong>Organizer</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="company" name="company" class="form-control" value="<?=$detail_info['company']?>"/>
+                        <select id="company" name="company" class="form-select">
+                            
+                        </select>
                     </div>
                 </div>
                 <div class="row row_border">
