@@ -12,109 +12,117 @@
         </style>
     </head>
     <body>
-        <div class="container" style="font-size: 15px;padding-top: 15px;padding-left: 15px">
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Event</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="name" name="name" class="form-control" value="<?=$detail_info['name']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Organizer</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="company" name="company" class="form-control" value="<?=$detail_info['company']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Hompage</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="homepage" name="homepage" class="form-control" value="<?=$detail_info['homepage']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Address</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['addr']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Facebook</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="face" name="face" class="form-control" value="<?=$detail_info['face']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Instagram</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="insta" name="insta" class="form-control" value="<?=$detail_info['insta']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Youtube</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="text" id="yout" name="yout" class="form-control" value="<?=$detail_info['yout']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Start Date</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="datetime" id="start_date" name="start_date" class="form-control" value="<?=$detail_info['start_date']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>End Date</strong></label>
-                </div>
-                <div class="col-9">
-                    <input type="datetime" id="end_date" name="end_date" class="form-control" value="<?=$detail_info['end_date']?>"/>
-                </div>
-            </div>
-            <div class="row row_border">
-                <div class="col-3">
-                    <label class="form-label"><strong>Etc</strong></label>
-                </div>
-                <div class="col-9">
-                    <textarea class="form-control" id="remark" name="remark">
-                        <?=$detail_info['remark']?>
-                    </textarea>
-                </div>
-            </div>
-            <div class="row row_border" style="min-height: 100px">
-                <div class="col-3">
-                    <label class="form-label"><strong>Image</strong></label>
-                </div>
-                <div class="col-9" id="image_group" >
-                    <div class="input-group mb-2 mt-1">
-                        <input type="text" id="input_image[]" class="form-control i_img" name="input_image[]"/>
-                        <button type="button" class="btn btn-primary" id="input_url">+</button>
+        <form id="schedule_form" target="/schedule/modify_set">
+            <div class="container" style="font-size: 15px;padding-top: 15px;padding-left: 15px">
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Event</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="name" name="name" class="form-control" value="<?=$detail_info['name']?>"/>
                     </div>
                 </div>
-            </div>
-            
-            <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
-            <div class="row">
-                <div class="col-6 col-offset-6 text-end">
-                <button type="button" class="btn btn-warning">SET MODIFY</button>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Organizer</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="company" name="company" class="form-control" value="<?=$detail_info['company']?>"/>
+                    </div>
                 </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Hompage</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="homepage" name="homepage" class="form-control" value="<?=$detail_info['homepage']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Address</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['addr']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Facebook</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="face" name="face" class="form-control" value="<?=$detail_info['face']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Instagram</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="insta" name="insta" class="form-control" value="<?=$detail_info['insta']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Youtube</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="yout" name="yout" class="form-control" value="<?=$detail_info['yout']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Start Date</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="datetime" id="start_date" name="start_date" class="form-control" value="<?=$detail_info['start_date']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>End Date</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="datetime" id="end_date" name="end_date" class="form-control" value="<?=$detail_info['end_date']?>"/>
+                    </div>
+                </div>
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Etc</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <textarea class="form-control" id="remark" name="remark">
+                            <?=$detail_info['remark']?>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row row_border" style="min-height: 100px">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Image</strong></label>
+                    </div>
+                    <div class="col-9" id="image_group" >
+                        <div class="input-group mb-2 mt-1">
+                            <input type="text" id="input_image[]" class="form-control i_img" name="input_image[]"/>
+                            <button type="button" class="btn btn-primary" id="input_url">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
+                <div class="row">
+                    <div class="col-4 text-end">
+                        <button type="button" onclick="set_modify()" class="btn btn-warning">SET MODIFY</button>
+                    </div>
+                    <div class="col-4 text-end">
+                        <button type="button" onclick="form_rest()" class="btn btn-warning">RESET</button>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" onclick="go_return()" class="btn btn-warning">CANCEL</button>
+                    </div>
+                </div>
+                <?php } ?>
             </div>
-            <?php } ?>
-        </div>
+        </form>
     </body>
     
     <script>
@@ -125,34 +133,12 @@
 
             $("#insert_modal").dialogHeight = document.body.scrollHeight + 'px';
         });
-        function set_delete(){
+        function set_modify(){
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
-                    if(confirm("do you want to delete to the schedule?")){
-                        
-                            var data = { idx : <?=$detail_info['idx']?>};
-                        
-                            $.ajax({
-                                url:'/schedule/delete_ajax',
-                                type:'post',
-                                data:data,
-                                success:function(data){
-                                    if(data.result == 200){
-                                        alert('complete to delete');
-                                        window.parent.location.reload();
-                                    }else{
-                                        alert('input fail. check to data.');
-                                        console.log(data);
-                                    }
-                                },
-                                error: function(xhr,status,error) {
-                                    console.log(xhr,status,error);
-                                    alert("Network error!! Confirm to Manager!!");
-                                    return false;
-                                }	 
-                            });
             
-                    }
+            
+            
             <?php }else{ ?>
                 
                 alert("this not permmited");
