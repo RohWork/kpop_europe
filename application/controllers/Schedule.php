@@ -267,7 +267,12 @@ class Schedule extends CI_Controller {
     function modify($idx){
         
         $data = array();
-        $data['detail_info'] = $detail_info =  $this->sch_md->get_detail_schedule($idx);        
+        $data['detail_info'] = $detail_info =  $this->sch_md->get_detail_schedule($idx);
+
+        $data['country'] = $this->cont_md->get_country();
+        $data['city'] = $this->city_md->get_city();
+        $data['organization'] = $this->org_md->get_organization();
+        
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
         $this->load->view('modify',$data);
