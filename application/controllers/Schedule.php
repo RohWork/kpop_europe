@@ -278,7 +278,7 @@ class Schedule extends CI_Controller {
         $this->load->view('modify',$data);
         
     }
-    function modify_process(){
+    function modify_ajax(){
         
         $sch_idx = $this->input->post("idx");
         
@@ -324,8 +324,21 @@ class Schedule extends CI_Controller {
                     }
 
                 }
+                $data['result'] = 200;
+
+            }else{
+                $data['message'] = "Data Procss Fail";
+
+                $data['result'] = 201;
             }
+        }else{
+            $data['message'] = "Check To you're name or start_date or end_date";
+
+            $data['result'] = 201;
         }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
         
     }
     
