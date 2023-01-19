@@ -122,7 +122,7 @@
                 <div class="col-4 text-end">
                     <button type="button" class="btn btn-warning" onclick="set_modify()">MODIFY</button>
                 </div>
-                <div class="col-4 text-end">
+                <div class="col-4 text-center">
                     <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
                 </div>
                 <div class="col-4">
