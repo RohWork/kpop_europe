@@ -266,8 +266,8 @@
             data: data,
             success:function(data){
                 if(data.result == 200){
-                    alert('complete');
-                    location.reload();
+                    alert('modify complete');
+                    go_return();
                 }else{
 
                     alert(data.message);
