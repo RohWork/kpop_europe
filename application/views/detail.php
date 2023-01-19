@@ -126,7 +126,7 @@
                     <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-danger" onclick="self.close();">CANCEL</button>
+                    <button type="button" class="btn btn-info" onclick="self.close();">CANCEL</button>
                 </div>
             </div>
             <?php } ?>
