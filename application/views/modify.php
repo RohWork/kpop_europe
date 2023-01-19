@@ -29,7 +29,10 @@
                     </div>
                     <div class="col-9">
                         <select id="country" name="country" class="form-select">
-                            
+                            <?php foreach($country as $cnt){ ?>
+                                <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+
+                            <?php } ?>
                         </select>
                     </div>
                 </div>
@@ -49,7 +52,10 @@
                     </div>
                     <div class="col-9">
                         <select id="company" name="company" class="form-select">
-                            
+                            <?php foreach($organization as $org){ ?>
+                                <option value="<?=$org['idx']?>"><?=$org['name']?></option>
+
+                            <?php } ?>
                         </select>
                     </div>
                 </div>
