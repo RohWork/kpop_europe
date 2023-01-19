@@ -119,11 +119,14 @@
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row" style="padding-top: 15px">
-                <div class="col-6 text-end">
+                <div class="col-4 text-end">
                     <button type="button" class="btn btn-warning" onclick="set_modify()">MODIFY</button>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-danger" onclick="self.close();">CANCEL</button>
                 </div>
             </div>
             <?php } ?>
