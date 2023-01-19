@@ -23,10 +23,26 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
+                    <label class="form-label"><strong>Country</strong></label>
+                </div>
+                <div class="col-9">
+                    <p><?=$detail_info['country_name']?></p>
+                </div>
+            </div>
+            <div class="row row_border">
+                <div class="col-3">
+                    <label class="form-label"><strong>City</strong></label>
+                </div>
+                <div class="col-9">
+                    <p><?=$detail_info['city_name']?></p>
+                </div>
+            </div>
+            <div class="row row_border">
+                <div class="col-3">
                     <label class="form-label"><strong>Organizer</strong></label>
                 </div>
                 <div class="col-9">
-                    <p><?=$detail_info['company']?></p>
+                    <p><?=$detail_info['orgernizer']?></p>
                 </div>
             </div>
             <div class="row row_border">
