@@ -280,6 +280,7 @@ class Schedule extends CI_Controller {
     }
     function modify_process(){
         
+        $sch_idx = $this->input->post("idx");
         
         $data['name']= $this->input->post("name");
         
@@ -303,21 +304,26 @@ class Schedule extends CI_Controller {
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
             
-            $image_params['kpop_idx'] = $this->sch_md->insert_schedule($data);
+            $result = $this->sch_md->modify_schedule($data,$sch_idx);
             
-            $i=1;
-            
-            foreach ($image_data as $img){
+            if($result){
+                
+                $image_params['kpop_idx'] = $sch_idx;
+                
+                $i=1;
+
+                foreach ($image_data as $img){
 
 
-                if(!empty($img[$i])){
-                    $image_params['title'] =  $image_title.$i;
-                    $image_params['src'] = $img;
-                    $image_params['sort'] = $i;
-                    $this->sch_md->insert_schedule_image($image_params);
-                    $i++;
+                    if(!empty($img[$i])){
+                        $image_params['title'] =  $image_title.$i;
+                        $image_params['src'] = $img;
+                        $image_params['sort'] = $i;
+                        $this->sch_md->insert_schedule_image($image_params);
+                        $i++;
+                    }
+
                 }
-
             }
         }
         
