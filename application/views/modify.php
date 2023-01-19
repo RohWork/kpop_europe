@@ -173,7 +173,7 @@
     <script>
         $( document ).ready(function() {
             get_country_data();
-        }
+        });
         
         
         $("#input_url").click(function() {
