@@ -233,8 +233,15 @@
                     console.log(data_array);
                     
                     $('#city').empty();
+                    var selected = "";
                     for(var i =0; i<data_array.length;i++){
-                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        
+                        if(data.result[i]['idx'] == <?=$detail_info['city_idx']?>){
+                            selected = "selected";
+                        }
+                        
+                        
+                        var option = $("<option value="+data.result[i]['idx']+selected+">"+data.result[i]['name']+"</option>");
                         $('#city').append(option)
                         
                     }
