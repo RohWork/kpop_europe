@@ -145,6 +145,17 @@
                         <label class="form-label"><strong>Image</strong></label>
                     </div>
                     <div class="col-9" id="image_group" style="overflow-y: auto;height: 100px">
+                        <?php
+                            foreach($detail_img as $img){
+                        ?>
+                        <div class="input-group mb-2 mt-1">
+                            <input type="text" id="input_image[]" class="form-control i_img" name="input_image[]" value="<?=$img['src']?>"/>
+                            <button type="button" class="btn btn-primary" id="input_url">+</button>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                        
                         <div class="input-group mb-2 mt-1">
                             <input type="text" id="input_image[]" class="form-control i_img" name="input_image[]"/>
                             <button type="button" class="btn btn-primary" id="input_url">+</button>
