@@ -241,7 +241,7 @@
                         }
                         
                         
-                        var option = $("<option value="+data.result[i]['idx']+selected+">"+data.result[i]['name']+"</option>");
+                        var option = $("<option value='"+data.result[i]['idx']+"'"+selected+">"+data.result[i]['name']+"</option>");
                         $('#city').append(option)
                         
                     }
