@@ -29,8 +29,15 @@
                     </div>
                     <div class="col-9">
                         <select id="country" name="country" class="form-select">
-                            <?php foreach($country as $cnt){ ?>
-                                <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+                            <?php foreach($country as $cnt){ 
+                                $select_cnt = "";
+                                
+                                if($cnt['idx'] == $detail_info['country_idx']){
+                                    $select_cnt = "selected";
+                                }
+                                
+                                ?>
+                                <option value="<?=$cnt['idx']?>" <?=$select_cnt?>><?=$cnt['name']?></option>
 
                             <?php } ?>
                         </select>
@@ -52,8 +59,16 @@
                     </div>
                     <div class="col-9">
                         <select id="company" name="company" class="form-select">
-                            <?php foreach($organization as $org){ ?>
-                                <option value="<?=$org['idx']?>"><?=$org['name']?></option>
+                            <?php foreach($organization as $org){ 
+                                $select_org = "";
+                                
+                                if($org['idx'] == $detail_info['organization_idx']){
+                                    $select_org = "selected";
+                                }
+                                
+                                ?>
+                            
+                                <option value="<?=$org['idx']?>" <?=$select_org?>><?=$org['name']?></option>
 
                             <?php } ?>
                         </select>
@@ -183,5 +198,45 @@
         function go_return(){
             location.href="/schedule/detail/<?=$detail_info['idx']?>";
         }
+        
+        
+    function get_country_data(){
+        
+        var j = $("#country option:selected").val();
+        var data = { country_idx : j };
+        
+        $.ajax({
+            url:'/city/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+                    console.log(data_array);
+                    
+                    $('#city').empty();
+                    for(var i =0; i<data_array.length;i++){
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        $('#city').append(option)
+                        
+                    }
+                    
+                    
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
+        });
+        
+    }
     </script>
 </html>
