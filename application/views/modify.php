@@ -12,7 +12,7 @@
         </style>
     </head>
     <body>
-        <form id="schedule_form" target="/schedule/modify_process" method="post">
+        <form id="calendar_modify"  method="post">
             <div class="container" style="font-size: 15px;padding-top: 15px;padding-left: 15px">
                 <input type="hidden" id="idx" name="idx" value="<?=$detail_info['idx']?>"/>
                 <div class="row row_border">
@@ -167,7 +167,7 @@
                 <div class="row" style="padding-top:30px;">
                     <div class="col-2"></div>
                     <div class="col-3 text-center">
-                        <button type="button" onclick="set_modify()" class="btn btn-success">SUBMIT</button>
+                        <button type="button" id="btn_modfiy" class="btn btn-success">SUBMIT</button>
                     </div>
                     <div class="col-3 text-center">
                         <button type="button" onclick="form_reset()" class="btn btn-warning">RESET</button>
@@ -185,6 +185,7 @@
         $( document ).ready(function() {
             get_country_data();
         });
+        
         
         
         $("#input_url").click(function() {
@@ -254,5 +255,33 @@
         });
         
     }
+    
+    $("#btn_modfiy").on("click", function(){
+        
+        var data = $("#calendar_modify").serializeArray();
+
+        $.ajax({
+            url:'/schedule/modify_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.result == 200){
+                    alert('complete');
+                    location.reload();
+                }else{
+
+                    alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
+        });
+            
+    });
+    
     </script>
 </html>
