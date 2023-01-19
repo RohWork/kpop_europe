@@ -28,7 +28,7 @@
                         <label class="form-label"><strong>Country</strong></label>
                     </div>
                     <div class="col-9">
-                        <select id="country" name="country" class="form-select">
+                        <select id="country" name="country" class="form-select" onchange="get_country_data()">
                             <?php foreach($country as $cnt){ 
                                 $select_cnt = "";
                                 
@@ -171,6 +171,11 @@
     </body>
     
     <script>
+        $( document ).ready(function() {
+            get_country_data();
+        }
+        
+        
         $("#input_url").click(function() {
             $("#image_group").append(
                     "<div class='input-group mb-2 mt-1'><input type='text' id='input_image[]' class='form-control i_img' name='input_image[]'/><button type='button' class='btn btn-primary' id='input_url'>+</button></div>"
