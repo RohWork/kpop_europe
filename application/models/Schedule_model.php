@@ -48,7 +48,11 @@ class Schedule_model extends CI_Model {
     }
     public function get_detail_schedule($idx){
         
-        $sSql = "SELECT * FROM kpop_info WHERE idx = $idx ";
+        $sSql = "SELECT ki.*, kc.name AS country_name, kci.name AS city_name, ko.name AS orgernizer FROM kpop_info AS ki 
+                    LEFT JOIN kpop_country AS kc ON kc.`idx` = ki.`country_idx`
+                    LEFT JOIN `kpop_city` AS kci ON kci.`idx` = ki.`city_idx`
+                    LEFT JOIN `kpop_organization` AS ko ON ko.idx = ki.`organization_idx`
+                    WHERE ki.idx = $idx ";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
