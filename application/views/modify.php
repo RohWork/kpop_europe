@@ -12,7 +12,7 @@
         </style>
     </head>
     <body>
-        <form id="schedule_form" target="/schedule/modify_process">
+        <form id="schedule_form" target="/schedule/modify_process" method="post">
             <div class="container" style="font-size: 15px;padding-top: 15px;padding-left: 15px">
                 <input type="hidden" id="idx" name="idx" value="<?=$detail_info['idx']?>"/>
                 <div class="row row_border">
