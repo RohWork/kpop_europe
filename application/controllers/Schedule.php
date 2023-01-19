@@ -278,6 +278,50 @@ class Schedule extends CI_Controller {
         $this->load->view('modify',$data);
         
     }
+    function modify_process(){
+        
+        
+        $data['name']= $this->input->post("name");
+        
+        $data['homepage'] = $this->input->post("homepage");
+        $data['addr'] = $this->input->post("addr");
+        $data['face'] = $this->input->post("face");
+        $data['insta'] = $this->input->post("insta");
+        $data['yout'] = $this->input->post("yout");
+        $data['start_date'] = $this->input->post("start_date");
+        $data['end_date'] = $this->input->post("end_date");
+        
+        $data['country_idx'] = $this->input->post("country");
+        $data['city_idx'] = $this->input->post("city");
+        $data['organization_idx'] = $this->input->post("company");
+        
+        $data['remark'] = $this->input->post("remark");
+        $data['type'] = "party";
+        
+        $image_title = $this->input->post("name");
+        $image_data = $this->input->post("input_image");
+        
+        if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
+            
+            $image_params['kpop_idx'] = $this->sch_md->insert_schedule($data);
+            
+            $i=1;
+            
+            foreach ($image_data as $img){
+
+
+                if(!empty($img[$i])){
+                    $image_params['title'] =  $image_title.$i;
+                    $image_params['src'] = $img;
+                    $image_params['sort'] = $i;
+                    $this->sch_md->insert_schedule_image($image_params);
+                    $i++;
+                }
+
+            }
+        }
+        
+    }
     
     function excel(){
         
