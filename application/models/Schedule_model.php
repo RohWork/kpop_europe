@@ -71,6 +71,15 @@ class Schedule_model extends CI_Model {
         
     }
     
+    function modify_schedule($params, $idx){
+        
+        $this->db->where("idx" , $idx);
+        $this->db->set($params);
+        $this->db->update('kpop_info');
+        
+        return $this->db->affected_rows();
+    }
+    
     function delete_schedule($idx){
         
         $this->db->where('idx', $idx);
