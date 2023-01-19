@@ -233,8 +233,9 @@
                     console.log(data_array);
                     
                     $('#city').empty();
-                    var selected = "";
+                    
                     for(var i =0; i<data_array.length;i++){
+                        var selected = "";
                         
                         if(data.result[i]['idx'] == <?=$detail_info['city_idx']?>){
                             selected = "selected";
