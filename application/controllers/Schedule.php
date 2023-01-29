@@ -301,6 +301,7 @@ class Schedule extends CI_Controller {
         
         $image_title = $this->input->post("name");
         $image_data = $this->input->post("input_image");
+        $data['result'] = 200;
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
             
