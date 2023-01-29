@@ -60,7 +60,7 @@ class Schedule_model extends CI_Model {
     
     public function get_schedule_image($idx){
         
-        $sSql = "SELECT * FROM kpop_gallery WHERE kpop_idx = $idx";
+        $sSql = "SELECT * FROM kpop_gallery WHERE kpop_idx = $idx and state = 1";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
