@@ -321,7 +321,9 @@ class Schedule extends CI_Controller {
                         $image_params['src'] = $img;
                         $image_params['sort'] = $i;
                         
-                        if($this->sch_md->select_schedule_image($img) == 0){
+                        $check_img = $this->sch_md->select_schedule_image($img);
+                        
+                        if($check_img['cnt'] == 0){
                             $this->sch_md->insert_schedule_image($image_params);
                         }
                             $i++;
