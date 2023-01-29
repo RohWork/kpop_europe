@@ -92,6 +92,21 @@ class Schedule_model extends CI_Model {
         return $this->db->affected_rows();
     }
     
+    function set_schedule_image($kpop_idx){
+        $this->db->where("kpop_idx" , $kpop_idx);
+        $this->db->set("state", 2);
+        $this->db->update('kpop_gallery');
+        
+        return $this->db->affected_rows();
+    }
+    
+    function update_schedule_image($sort){
+        $this->db->where("sort" , $sort);
+        $this->db->set("state", 1);
+        $this->db->update('kpop_gallery');
+        return $query->row_array();
+    }
+    
     function select_schedule_image($src){
         $sSql = "SELECT count(*) as cnt FROM kpop_gallery WHERE src = '".$src."'";
         
