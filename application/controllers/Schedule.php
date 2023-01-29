@@ -309,7 +309,7 @@ class Schedule extends CI_Controller {
             
             if($result){
                 
-                $this->sch_md->set_schedule_image($sch_idx);
+                $this->sch_md->set_schedule_image($sch_idx); //전체사용안함
                 $image_params['kpop_idx'] = $sch_idx;
                 
                 $i=1;
@@ -322,12 +322,12 @@ class Schedule extends CI_Controller {
                         $image_params['src'] = $img;
                         $image_params['sort'] = $i;
                         
-                        $check_img = $this->sch_md->select_schedule_image($img);
+                        $check_img = $this->sch_md->select_schedule_image($img);    // 존재하는 이미지인지 확인
                         
                         if($check_img['cnt'] == 0){
-                            $this->sch_md->insert_schedule_image($image_params);
+                            $this->sch_md->insert_schedule_image($image_params);    // 생성
                         }else{
-                            $this->sch_md->update_schedule_image($i);
+                            $this->sch_md->update_schedule_image($i);               // 사용으로 상태값 수정
                         }
                             $i++;
                         
