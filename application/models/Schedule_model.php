@@ -93,7 +93,7 @@ class Schedule_model extends CI_Model {
     }
     
     function select_schedule_image($src){
-        $sSql = "SELECT count(*) as cnt FROM kpop_gallery WHERE src = $src";
+        $sSql = "SELECT count(*) as cnt FROM kpop_gallery WHERE src = '".$src."'";
         
         $query = $this->db->query($sSql);
         return $query->result->cnt;
