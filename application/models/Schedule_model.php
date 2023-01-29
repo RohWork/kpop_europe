@@ -101,9 +101,11 @@ class Schedule_model extends CI_Model {
     }
     
     function update_schedule_image($sort){
+        
         $this->db->where("sort" , $sort);
         $this->db->set("state", 1);
         $this->db->update('kpop_gallery');
+        
         return $this->db->affected_rows();
     }
     
