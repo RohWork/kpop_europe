@@ -309,10 +309,11 @@ class Schedule extends CI_Controller {
             
             if($result){
                 
+                $this->sch_md->set_schedule_image($sch_idx);
                 $image_params['kpop_idx'] = $sch_idx;
                 
                 $i=1;
-
+                
                 foreach ($image_data as $img){
 
                     
@@ -325,6 +326,8 @@ class Schedule extends CI_Controller {
                         
                         if($check_img['cnt'] == 0){
                             $this->sch_md->insert_schedule_image($image_params);
+                        }else{
+                            $this->sch_md->update_schedule_image($i);
                         }
                             $i++;
                         
