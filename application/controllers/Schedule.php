@@ -282,30 +282,30 @@ class Schedule extends CI_Controller {
         
         $sch_idx = $this->input->post("idx");
         
-        $data['name']= $this->input->post("name");
+        $params['name']= $this->input->post("name");
         
-        $data['homepage'] = $this->input->post("homepage");
-        $data['addr'] = $this->input->post("addr");
-        $data['face'] = $this->input->post("face");
-        $data['insta'] = $this->input->post("insta");
-        $data['yout'] = $this->input->post("yout");
-        $data['start_date'] = $this->input->post("start_date");
-        $data['end_date'] = $this->input->post("end_date");
+        $params['homepage'] = $this->input->post("homepage");
+        $params['addr'] = $this->input->post("addr");
+        $params['face'] = $this->input->post("face");
+        $params['insta'] = $this->input->post("insta");
+        $params['yout'] = $this->input->post("yout");
+        $params['start_date'] = $this->input->post("start_date");
+        $params['end_date'] = $this->input->post("end_date");
         
-        $data['country_idx'] = $this->input->post("country");
-        $data['city_idx'] = $this->input->post("city");
-        $data['organization_idx'] = $this->input->post("company");
+        $params['country_idx'] = $this->input->post("country");
+        $params['city_idx'] = $this->input->post("city");
+        $params['organization_idx'] = $this->input->post("company");
         
-        $data['remark'] = $this->input->post("remark");
-        $data['type'] = "party";
+        $params['remark'] = $this->input->post("remark");
+        $params['type'] = "party";
         
         $image_title = $this->input->post("name");
         $image_data = $this->input->post("input_image");
-        $data['result'] = 200;
         
-        if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
+        
+        if(!empty($params['name']) && !empty($params['start_date']) && !empty($params['end_date'])){
             
-            $result = $this->sch_md->modify_schedule($data,$sch_idx);
+            $result = $this->sch_md->modify_schedule($params,$sch_idx);
             
             if($result){
                 
