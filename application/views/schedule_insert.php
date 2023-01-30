@@ -220,8 +220,12 @@
         });
         
     }
-    $('#input_end_date') .datepicker({});
-    $('#input_start_date') .datepicker({});
+    $('#input_end_date') .datepicker({
+        format: 'HH:mm:ss DD-MM-YYYY'
+    });
+    $('#input_start_date') .datepicker({
+        format: 'HH:mm:ss DD-MM-YYYY'
+    });
     </script>
 </main>
 
