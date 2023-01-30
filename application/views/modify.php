@@ -119,7 +119,7 @@
                         <label class="form-label"><strong>Start Date</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="datetime-local" id="start_date" name="start_date" class="form-control" value="<?=$detail_info['start_date']?>"/>
+                        <input type="text" id="start_date" name="start_date" class="form-control" value="<?=$detail_info['start_date']?>"/>
                     </div>
                 </div>
                 <div class="row row_border">
@@ -127,7 +127,7 @@
                         <label class="form-label"><strong>End Date</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="datetime-local" id="end_date" name="end_date" class="form-control" value="<?=$detail_info['end_date']?>"/>
+                        <input type="text" id="end_date" name="end_date" class="form-control" value="<?=$detail_info['end_date']?>"/>
                     </div>
                 </div>
                 <div class="row row_border">
@@ -184,6 +184,12 @@
     <script>
         $( document ).ready(function() {
             get_country_data();
+            $('#input_end_date').datetimepicker({
+                dateFormat: 'h:m:s dd-mm-yy'
+            });
+            $('#input_start_date').datetimepicker({
+                dateFormat: 'h:m:s dd-mm-yy'
+            });
         });
         
         
