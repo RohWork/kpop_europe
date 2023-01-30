@@ -182,8 +182,10 @@ class Schedule extends CI_Controller {
         $data['face'] = $this->input->post("input_face");
         $data['insta'] = $this->input->post("input_insta");
         $data['yout'] = $this->input->post("input_yout");
-        $data['start_date'] = $this->input->post("input_start_date");
-        $data['end_date'] = $this->input->post("input_end_date");
+        $data['start_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("input_start_date")));
+        $data['end_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("input_end_date")));
+        
+        
         $data['country_idx'] = $this->input->post("check_country");
         $data['city_idx'] = $this->input->post("check_city");
         $data['organization_idx'] = $this->input->post("check_organization");
