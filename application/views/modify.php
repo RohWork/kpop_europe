@@ -184,10 +184,10 @@
     <script>
         $( document ).ready(function() {
             get_country_data();
-            $('#input_end_date').datetimepicker({
+            $('#start_date').datetimepicker({
                 dateFormat: 'h:m:s dd-mm-yy'
             });
-            $('#input_start_date').datetimepicker({
+            $('#end_date').datetimepicker({
                 dateFormat: 'h:m:s dd-mm-yy'
             });
         });
