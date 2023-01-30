@@ -96,7 +96,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>Start Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="datetime-local" class="form-control" id="input_start_date" required pattern="\d{2}-\d{2}-\d{4}" name="input_start_date" />
+                    <input type="text" class="form-control" id="input_start_date" required pattern="\d{2}-\d{2}-\d{4}" name="input_start_date" />
                 </div>
             </div>
             <div class="row mt-1">
@@ -104,7 +104,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>End Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="datetime-local" class="form-control" id="input_end_date" placeholder="h:i:s dd-mm-yyyy" name="input_end_date" />
+                    <input type="text" class="form-control" id="input_end_date" placeholder="h:i:s dd-mm-yyyy" name="input_end_date" />
                 </div>
             </div>
             <div class="row mt-1">
@@ -220,8 +220,11 @@
         });
         
     }
-    
+    $('#input_end_date') .datepicker();
+    $('#input_start_date') .datepicker();
     </script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="resources/css/plugin/datepicker/bootstrap-datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </main>
 
