@@ -220,8 +220,8 @@
         });
         
     }
-    $('#input_end_date') .datepicker();
-    $('#input_start_date') .datepicker();
+    $('#input_end_date') .datepicker({});
+    $('#input_start_date') .datepicker({});
     </script>
 </main>
 
