@@ -96,7 +96,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>Start Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="datetime-local" class="form-control" id="input_start_date" placeholder="h:i:s dd-mm-yyyy" name="input_start_date" />
+                    <input type="datetime-local" class="form-control" id="input_start_date" required pattern="\d{4}-\d{2}-\d{2}" name="input_start_date" />
                 </div>
             </div>
             <div class="row mt-1">
