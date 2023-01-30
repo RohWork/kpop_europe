@@ -122,7 +122,7 @@
         
     <script>
     $("#date").datepicker({
-        dateFormat: "d-M-Y"
+        dateFormat: "d-mm-yyyy"
     });
     
     function go_detail(idx){
