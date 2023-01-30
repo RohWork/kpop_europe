@@ -186,10 +186,10 @@
         $( document ).ready(function() {
             get_country_data();
             $('#start_date').datetimepicker({
-                dateFormat: 'h:m:s dd-mm-yy'
+                dateFormat: 'h dd-mm-yy'
             });
             $('#end_date').datetimepicker({
-                dateFormat: 'h:m:s dd-mm-yy'
+                dateFormat: 'h dd-mm-yy'
             });
         });
         
