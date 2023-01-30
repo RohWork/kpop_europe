@@ -72,7 +72,7 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <input type="date" id="date" name="date" class="form-control" value="<?=$search['date']?>"/>
+                            <input type="text" id="date" name="date" class="form-control" value="<?=$search['date']?>"/>
                             <label for="date">
                                 SEARCH DATE
                             </label>
@@ -121,6 +121,9 @@
         </div>
         
     <script>
+    $("#date").datepicker({
+        dateFormat("d-m-y")
+    });
     
     function go_detail(idx){
 
