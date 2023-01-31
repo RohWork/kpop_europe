@@ -85,7 +85,7 @@
                     <label class="form-label"><strong>Date</strong></label>
                 </div>
                 <div class="col-10">
-                    <p><?=date('H:i:s d-m-Y',strtotime($detail_info['start_date']))?> ~ <?=date('H:i:s d-m-Y',strtotime($detail_info['end_date']))?></p>
+                    <p><?=date('H:00:00 d-m-Y',strtotime($detail_info['start_date']))?> ~ <?=date('H:00:00 d-m-Y',strtotime($detail_info['end_date']))?></p>
                 </div>
             </div>
             <div class="row">
