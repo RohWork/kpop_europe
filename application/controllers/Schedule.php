@@ -297,7 +297,7 @@ class Schedule extends CI_Controller {
         $params['insta'] = $this->input->post("insta");
         $params['yout'] = $this->input->post("yout");
         $params['start_date'] = $data['start_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("start_date")));
-        $params['end_date'] = $data['start_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("end_date")));
+        $params['end_date'] = $data['end_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("end_date")));
         
         $params['country_idx'] = $this->input->post("country");
         $params['city_idx'] = $this->input->post("city");
