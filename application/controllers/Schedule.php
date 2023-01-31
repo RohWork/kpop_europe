@@ -187,9 +187,11 @@ class Schedule extends CI_Controller {
         $data['face'] = $this->input->post("input_face");
         $data['insta'] = $this->input->post("input_insta");
         $data['yout'] = $this->input->post("input_yout");
-        $data['start_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("input_start_date")));
-        $data['end_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("input_end_date")));
         
+        $date_start = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
+        $date_end = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
+        $params['start_date'] = $date_start->format("Y-m-d H:i:s");
+        $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
         
         $data['country_idx'] = $this->input->post("check_country");
         $data['city_idx'] = $this->input->post("check_city");
@@ -296,8 +298,13 @@ class Schedule extends CI_Controller {
         $params['face'] = $this->input->post("face");
         $params['insta'] = $this->input->post("insta");
         $params['yout'] = $this->input->post("yout");
-        $params['start_date'] = $data['start_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("start_date")));
-        $params['end_date'] = $data['end_date'] = date("Y-m-d H:i:s", strtotime($this->input->post("end_date")));
+        
+        
+        
+        $date_start = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
+        $date_end = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
+        $params['start_date'] = $date_start->format("Y-m-d H:i:s");
+        $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
         
         $params['country_idx'] = $this->input->post("country");
         $params['city_idx'] = $this->input->post("city");
