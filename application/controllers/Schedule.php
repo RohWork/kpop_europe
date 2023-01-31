@@ -109,6 +109,8 @@ class Schedule extends CI_Controller {
             $data['city_list'] = "";
         }
         $data['organization_list'] = $this->org_md->get_organization();
+        
+        //유럽식으로 표기
         $search['date'] = $this->input->get_post("date");
         $data['search'] = $search;
         
