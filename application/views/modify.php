@@ -120,7 +120,7 @@
                         <label class="form-label"><strong>Start Date</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="start_date" name="start_date" class="form-control" value="<?=date('h:i:s d-m-Y',strtotime($detail_info['start_date']))?>"/>
+                        <input type="text" id="start_date" name="start_date" class="form-control" value="<?=date('d/m/Y h:i:s',strtotime($detail_info['start_date']))?>"/>
                     </div>
                 </div>
                 <div class="row row_border">
@@ -128,7 +128,7 @@
                         <label class="form-label"><strong>End Date</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="end_date" name="end_date" class="form-control" value="<?=date('h:i:s d-m-Y',strtotime($detail_info['end_date']))?>"/>
+                        <input type="text" id="end_date" name="end_date" class="form-control" value="<?=date('d/m/Y h:i:s',strtotime($detail_info['end_date']))?>"/>
                     </div>
                 </div>
                 <div class="row row_border">
