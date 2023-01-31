@@ -188,10 +188,10 @@
         });
         
         $('#start_date').datetimepicker({
-            format: 'H:00:00 d-m-Y'
+            format: 'H d-m-Y'
         });
         $('#end_date').datetimepicker({
-            format: 'H:00:00 d-m-Y'
+            format: 'H d-m-Y'
         });
         
         
