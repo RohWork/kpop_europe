@@ -185,14 +185,14 @@
     <script>
         $( document ).ready(function() {
             get_country_data();
-            $('#start_date').datetimepicker({
-                format: 'H:00:00 d-m-Y'
-            });
-            $('#end_date').datetimepicker({
-                format: 'H:00:00 d-m-Y'
-            });
         });
         
+        $('#start_date').datetimepicker({
+            format: 'H:00:00 d-m-Y'
+        });
+        $('#end_date').datetimepicker({
+            format: 'H:00:00 d-m-Y'
+        });
         
         
         $("#input_url").click(function() {
