@@ -188,8 +188,8 @@ class Schedule extends CI_Controller {
         $data['insta'] = $this->input->post("input_insta");
         $data['yout'] = $this->input->post("input_yout");
         
-        $date_start = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
-        $date_end = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
+        $date_start = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("start_date"));
+        $date_end = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("start_date"));
         $params['start_date'] = $date_start->format("Y-m-d H:i:s");
         $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
         
@@ -301,8 +301,8 @@ class Schedule extends CI_Controller {
         
         
         
-        $date_start = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
-        $date_end = DateTime::createFromFormat("m/d/Y H:i:s" , $this->input->post("start_date"));
+        $date_start = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("start_date"));
+        $date_end = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("end_date"));
         $params['start_date'] = $date_start->format("Y-m-d H:i:s");
         $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
         
