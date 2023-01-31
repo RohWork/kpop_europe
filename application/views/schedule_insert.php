@@ -221,10 +221,10 @@
         
     }
     $('#input_end_date').datetimepicker({
-        format: 'h:i:s d-m-Y'
+        format: 'H:i:s d-m-Y'
     });
     $('#input_start_date').datetimepicker({
-        format: 'h:i:s d-m-Y'
+        format: 'H:i:s d-m-Y'
     });
     </script>
 </main>
