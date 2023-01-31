@@ -24,8 +24,8 @@
                         <tr onclick="go_detail(<?=$li['idx']?>,'<?=$li['name']?>')" style="cursor: pointer">
                             <td><?=$i?></td>
                             <td><?=$li['name']?></td>
-                            <td><?=$li['start_date']?></td>
-                            <td><?=$li['end_date']?></td>
+                            <td><?=date('d-m-Y',strtotime($li['start_date']))?></td>
+                            <td><?=date('d-m-Y',strtotime($li['end_date']))?></td>
                         </tr>   
                         <?php 
                             $i++;
