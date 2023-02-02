@@ -241,12 +241,12 @@
         });
         
     }
-    $('#input_end_date').datetimepicker({
-        format: 'H:00:00 d-m-Y'
-    });
-    $('#input_start_date').datetimepicker({
-        format: 'H:00:00 d-m-Y'
-    });
+        $('#start_date').datetimepicker({
+            format: 'd/m/Y H:00:00'
+        });
+        $('#end_date').datetimepicker({
+            format: 'd/m/Y H:00:00'
+        });
     </script>
     <style>
         .error{ color:red; font-weight: bold; }
