@@ -472,7 +472,7 @@ class Schedule extends CI_Controller {
                         
                         if(empty($organization)){
                             $result = "Not found Organizer.";
-                        }else if(empty($countrty)){
+                        }else if(empty($country)){
                             $result = "Not found Country.";
                         }else{
                             $result = "Not found City.";
