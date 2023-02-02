@@ -18,6 +18,14 @@ class Schedule_model extends CI_Model {
         
     }
     
+    public function get_duple_schedule_cnt($city, $space, $start){
+        
+        $sSql = "select count(*) as cnt from kpop_info where city_idx =  $city and space = '$space' and start_date = '$start'";
+        
+        $query = $this->db->query($sSql);
+        return $query->row()->cnt;
+    }
+    
     public function get_schedule($search, $paging=""){
        
         $where = "";
