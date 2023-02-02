@@ -189,11 +189,10 @@ class Schedule extends CI_Controller {
         $data['yout'] = $this->input->post("input_yout");
         $data['space'] = $this->input->post("input_space");
         
-        $date_start = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("intput_start_date"));
+        $date_start = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("input_start_date"));
         $date_end = DateTime::createFromFormat("d/m/Y H:i:s" , $this->input->post("input_end_date"));
         
-        var_dump($date_start);
-        var_dump(DateTime::getLastErrors());
+
         //$date_start = new DateTime($this->input->post("input_start_date"));
         //$date_end = new DateTime($this->input->post("input_end_date"));
         
