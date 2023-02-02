@@ -434,17 +434,20 @@ class Schedule extends CI_Controller {
                     $g = $activesheet->getCell('G' . $row)->getValue(); // City 
                     $city = $this->city_md->get_city_name($g);
 
-                    $params['addr'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
+                    $params['space'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
 
-                    $i = $activesheet->getCell('I' . $row)->getValue(); // Open
+                    
+                    $params['addr'] = $h = $activesheet->getCell('I' . $row)->getValue(); // Address
+
+                    $i = $activesheet->getCell('J' . $row)->getValue(); // Open
                     $params['start_date'] = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'YYYY-MM-DD h:i');
                     
-                    $j = $activesheet->getCell('J' . $row)->getValue(); // Close
+                    $j = $activesheet->getCell('K' . $row)->getValue(); // Close
                     $params['end_date'] = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'YYYY-MM-DD h:i');
                     
-                    $params['homepage']=  $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
-                    $params['insta'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
-                    $params['face'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
+                    $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
+                    $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
+                    $params['face'] = $m = $activesheet->getCell('Q' . $row)->getValue(); // Facebook
                     
                     
                     if(!empty($organization) && !empty($country) && !empty($city)){
