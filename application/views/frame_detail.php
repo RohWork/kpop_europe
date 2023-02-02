@@ -17,26 +17,26 @@
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-3">
+                <div class="col-2">
                     <label class="form-label"><strong>Country</strong></label>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     <p><?=$detail_info['country_name']?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-3">
+                <div class="col-2">
                     <label class="form-label"><strong>City</strong></label>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     <p><?=$detail_info['city_name']?></p>
                 </div>
             </div>
             <div class="row row_border">
-                <div class="col-3">
+                <div class="col-2">
                     <label class="form-label"><strong>Organizer</strong></label>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     <p><?=$detail_info['orgernizer']?></p>
                 </div>
             </div>
