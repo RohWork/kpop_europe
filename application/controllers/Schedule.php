@@ -208,7 +208,7 @@ class Schedule extends CI_Controller {
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
             
-            $cnt = $this->sch_md->get_duple_schedule_cnt($data['idx'], $data['space'], $data['start_date']);
+            $cnt = $this->sch_md->get_duple_schedule_cnt($data['city_idx'], $data['space'], $data['start_date']);
             if($cnt < 1){
                 $image_params['kpop_idx'] = $this->sch_md->insert_schedule($data);
 
