@@ -75,20 +75,32 @@
                         </select>
                     </div>
                 </div>
+                
+                
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Hompage</strong></label>
+                        <label class="form-label"><strong>Club name</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="homepage" name="homepage" class="form-control" value="<?=$detail_info['homepage']?>"/>
+                        <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['space']?>"/>
                     </div>
                 </div>
+                
                 <div class="row row_border">
                     <div class="col-3">
                         <label class="form-label"><strong>Address</strong></label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['addr']?>"/>
+                    </div>
+                </div>
+                
+                <div class="row row_border">
+                    <div class="col-3">
+                        <label class="form-label"><strong>Hompage</strong></label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="homepage" name="homepage" class="form-control" value="<?=$detail_info['homepage']?>"/>
                     </div>
                 </div>
                 <div class="row row_border">
