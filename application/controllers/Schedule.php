@@ -449,17 +449,24 @@ class Schedule extends CI_Controller {
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
                     $params['face'] = $m = $activesheet->getCell('Q' . $row)->getValue(); // Facebook
                     
-                    $cnt = $this->sch_md->get_duple_schedule_cnt($city['idx'], $params['space'], $params['start_date']);
                     
-                    if(!empty($organization) && !empty($country) && !empty($city) && $cnt < 1){
+                    
+                    if(!empty($organization) && !empty($country) && !empty($city)){
                         
-                        $params['organization_idx'] = $organization['idx'];
-                        $params['country_idx'] = $country['idx'];
-                        $params['city_idx'] = $city['idx'];
+                        $cnt = $this->sch_md->get_duple_schedule_cnt($city['idx'], $params['space'], $params['start_date']);
+                        if($cnt < 1){
                         
-                        
-                        $result = $this->sch_md->insert_schedule($params);
-                        $result_code = "1";
+                            $params['organization_idx'] = $organization['idx'];
+                            $params['country_idx'] = $country['idx'];
+                            $params['city_idx'] = $city['idx'];
+
+
+                            $result = $this->sch_md->insert_schedule($params);
+                            $result_code = "1";
+                        }else{
+                            $result = "Duplicated schedule.";
+                            $result_code = "0";
+                        }
                         
                     }else{
                         
@@ -467,10 +474,8 @@ class Schedule extends CI_Controller {
                             $result = "Not found Organizer.";
                         }else if(empty($countrty)){
                             $result = "Not found Country.";
-                        }else if(empty($city)){
-                            $result = "Not found City.";
                         }else{
-                            $result = "Duplicated schedule.";
+                            $result = "Not found City.";
                         }
                         $result_code = "0";
                     }
