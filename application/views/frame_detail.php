@@ -42,10 +42,10 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>Hompage</strong></label>
+                    <label class="form-label"><strong>Club name</strong></label>
                 </div>
                 <div class="col-10">
-                    <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
+                    <p><?=$detail_info['space']?></p>
                 </div>
             </div>
             <div class="row">
@@ -54,6 +54,14 @@
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['addr']?></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <label class="form-label"><strong>Hompage</strong></label>
+                </div>
+                <div class="col-10">
+                    <a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a>
                 </div>
             </div>
             <div class="row">
