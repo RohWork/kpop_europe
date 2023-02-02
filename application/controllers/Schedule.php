@@ -196,11 +196,13 @@ class Schedule extends CI_Controller {
         //$date_end = new DateTime($this->input->post("input_end_date"));
         
         
+        var_dump(DateTime::getLastErrors());
+
+        
         $data['start_date'] = $date_start->format("Y-m-d H:i:s");
         $data['end_date'] =  $date_end->format("Y-m-d H:i:s");
         
-        var_dump(DateTime::getLastErrors());
-
+        
         $data['country_idx'] = $this->input->post("check_country");
         $data['city_idx'] = $this->input->post("check_city");
         $data['organization_idx'] = $this->input->post("check_organization");
