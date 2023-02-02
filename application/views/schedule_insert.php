@@ -6,7 +6,7 @@
             <div class="row mt-1">
                 <label class="form-label col-md-2 col-xs-4"><strong>Event</strong></label>
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                    <input type="text" class="form-control" id="input_name" name="input_name"/>
+                    <input type="text" class="form-control" id="input_name" name="input_name" required/>
                 </div>
             </div>
             <div class="row mt-1">
@@ -61,10 +61,18 @@
             </div>
             <div class="row mt-1">
 
+                <label class="form-label col-md-2 col-xs-4"><strong>Club name</strong></label>
+
+                <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
+                    <input type="text" class="form-control" id="input_space" name="input_space" required/>
+                </div>
+            </div>
+            <div class="row mt-1">
+
                 <label class="form-label col-md-2 col-xs-4"><strong>Address</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                    <input type="text" class="form-control" id="input_addr" name="input_addr"/>
+                    <input type="text" class="form-control" id="input_addr" name="input_addr" required/>
                 </div>
             </div>
             <div class="row mt-1">
@@ -96,7 +104,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>Start Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="text" class="form-control" id="input_start_date" placeholder="h:i:s dd-mm-yyyy" name="input_start_date" />
+                    <input type="text" class="form-control" id="input_start_date" placeholder="h:i:s dd-mm-yyyy" name="input_start_date" required/>
                 </div>
             </div>
             <div class="row mt-1">
@@ -104,7 +112,7 @@
                 <label class="form-label col-md-2 col-xs-4"><strong>End Date</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
-                    <input type="text" class="form-control" id="input_end_date" placeholder="h:i:s dd-mm-yyyy" name="input_end_date" />
+                    <input type="text" class="form-control" id="input_end_date" placeholder="h:i:s dd-mm-yyyy" name="input_end_date" required/>
                 </div>
             </div>
             <div class="row mt-1">
@@ -152,27 +160,37 @@
         
     $("#btn_insert").on("click", function(){
         
-        var data = $("#calendar_insert").serializeArray();
-
-        $.ajax({
-            url:'/schedule/insert_ajax',
-            type:'post',
-            data: data,
-            success:function(data){
-                if(data.result == 200){
-                    alert('complete');
-                    location.reload();
-                }else{
-
-                    alert(data.message);
-                    return false;
+        $("#calendar_insert").validate({
+            messages:{
+                title: {
+                    required : "Custom required, Please enter a title."
                 }
             },
-            error: function(xhr,status,error) {
-                console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
-                return false;
-            }	 
+            submitHandler: function (form){
+   
+                var data = $("#calendar_insert").serializeArray();
+
+                $.ajax({
+                    url:'/schedule/insert_ajax',
+                    type:'post',
+                    data: data,
+                    success:function(data){
+                        if(data.result == 200){
+                            alert('complete');
+                            location.reload();
+                        }else{
+
+                            alert(data.message);
+                            return false;
+                        }
+                    },
+                    error: function(xhr,status,error) {
+                        console.log(xhr,status,error);
+                        alert("Network Error!! take support to web manager!!");
+                        return false;
+                    }	 
+                });
+            }
         });
             
     });
