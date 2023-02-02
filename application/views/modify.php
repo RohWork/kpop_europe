@@ -82,7 +82,7 @@
                         <label class="form-label"><strong>Club name</strong></label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['space']?>"/>
+                        <input type="text" id="space" name="space" class="form-control" value="<?=$detail_info['space']?>"/>
                     </div>
                 </div>
                 
