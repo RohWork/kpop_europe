@@ -449,7 +449,7 @@ class Schedule extends CI_Controller {
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
                     $params['face'] = $m = $activesheet->getCell('Q' . $row)->getValue(); // Facebook
                     
-                    $cnt = $this->sch_md->get_duple_schedule_cnt($city, $params['space'], $params['start_date']);
+                    $cnt = $this->sch_md->get_duple_schedule_cnt($city['idx'], $params['space'], $params['start_date']);
                     
                     if(!empty($organization) && !empty($country) && !empty($city) && $cnt < 1){
                         
