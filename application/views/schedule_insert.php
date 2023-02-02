@@ -241,10 +241,10 @@
         });
         
     }
-        $('#start_date').datetimepicker({
+        $('#input_start_date').datetimepicker({
             format: 'd/m/Y H:00:00'
         });
-        $('#end_date').datetimepicker({
+        $('#input_end_date').datetimepicker({
             format: 'd/m/Y H:00:00'
         });
     </script>
