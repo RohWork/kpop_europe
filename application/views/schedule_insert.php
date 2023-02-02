@@ -248,5 +248,8 @@
         format: 'H:00:00 d-m-Y'
     });
     </script>
+    <style>
+        .error{ color:red; font-weight: bold; }
+    </style>
 </main>
 
