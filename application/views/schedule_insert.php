@@ -175,7 +175,7 @@
             },
             submitHandler: function (form){
    
-                var data = $("#calendar_insert").serializeArray();
+                var data = form.serializeArray();
 
                 $.ajax({
                     url:'/schedule/insert_ajax',
