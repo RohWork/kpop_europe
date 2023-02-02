@@ -231,7 +231,7 @@ class Schedule extends CI_Controller {
 
                 $data['result'] = 200;
             }else{
-                $data['message'] = "Duplicated data.";
+                $data['message'] = "Duplicated schedule data.";
 
                 $data['result'] = 202;
             }
