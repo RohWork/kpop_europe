@@ -194,8 +194,8 @@ class Schedule extends CI_Controller {
         //$params['start_date'] = $date_start->format("Y-m-d H:i:s");
         //$params['end_date'] =  $date_end->format("Y-m-d H:i:s");
         
-        $params['start_date'] = date('Y-m-d', strtotime($this->input->post("input_start_date")));
-        $params['end_date'] = date('Y-m-d', strtotime($this->input->post("input_end_date")));
+        $data['start_date'] = date('Y-m-d', strtotime($this->input->post("input_start_date")));
+        $data['end_date'] = date('Y-m-d', strtotime($this->input->post("input_end_date")));
         
         $data['country_idx'] = $this->input->post("check_country");
         $data['city_idx'] = $this->input->post("check_city");
