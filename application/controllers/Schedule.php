@@ -449,8 +449,9 @@ class Schedule extends CI_Controller {
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
                     $params['face'] = $m = $activesheet->getCell('Q' . $row)->getValue(); // Facebook
                     
+                    $cnt = $this->sch_md->get_duple_schedule_cnt($city, $params['space'], $params['start_date']);
                     
-                    if(!empty($organization) && !empty($country) && !empty($city)){
+                    if(!empty($organization) && !empty($country) && !empty($city) && $cnt < 1){
                         
                         $params['organization_idx'] = $organization['idx'];
                         $params['country_idx'] = $country['idx'];
@@ -463,11 +464,13 @@ class Schedule extends CI_Controller {
                     }else{
                         
                         if(empty($organization)){
-                            $result = "not found Organizer.";
+                            $result = "Not found Organizer.";
                         }else if(empty($countrty)){
-                            $result = "not found Country.";
+                            $result = "Not found Country.";
+                        }else if(empty($city)){
+                            $result = "Not found City.";
                         }else{
-                            $result = "not found City.";
+                            $result = "Duplicated schedule.";
                         }
                         $result_code = "0";
                     }
