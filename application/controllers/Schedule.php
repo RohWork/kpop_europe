@@ -208,27 +208,33 @@ class Schedule extends CI_Controller {
         
         if(!empty($data['name']) && !empty($data['start_date']) && !empty($data['end_date'])){
             
-            $image_params['kpop_idx'] = $this->sch_md->insert_schedule($data);
-            
-            $i=1;
-            
-            
-            foreach ($image_data as $img){
+            $cnt = $this->sch_md->get_duple_schedule_cnt($data['idx'], $data['space'], $data['start_date']);
+            if($cnt < 1){
+                $image_params['kpop_idx'] = $this->sch_md->insert_schedule($data);
 
-                
-                if(!empty($img[$i])){
-                    $image_params['title'] =  $image_title.$i;
-                    $image_params['src'] = $img;
-                    $image_params['sort'] = $i;
-                    $this->sch_md->insert_schedule_image($image_params);
-                    $i++;
+                $i=1;
+
+
+                foreach ($image_data as $img){
+
+
+                    if(!empty($img[$i])){
+                        $image_params['title'] =  $image_title.$i;
+                        $image_params['src'] = $img;
+                        $image_params['sort'] = $i;
+                        $this->sch_md->insert_schedule_image($image_params);
+                        $i++;
+                    }
+
                 }
-                
-            }
-            
-            
-            $data['result'] = 200;
 
+
+                $data['result'] = 200;
+            }else{
+                $data['message'] = "Duplicated data.";
+
+                $data['result'] = 202;
+            }
             
         }else{
             $data['message'] = "Check To you're name or start_date or end_date";
