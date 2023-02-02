@@ -1,3 +1,4 @@
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <div class="container" style="overflow:auto">
         <form id="calendar_insert">
             <div class="row">
