@@ -54,12 +54,7 @@
                         </select>
                 </div>
             </div>
-            <div class="row mt-1">
-                <label class="form-label col-md-2 col-xs-4"><strong>Hompage</strong></label>
-                <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                    <input type="text" class="form-control" id="input_homepage" name="input_homepage"/>
-                </div>
-            </div>
+
             <div class="row mt-1">
 
                 <label class="form-label col-md-2 col-xs-4"><strong>Club name</strong></label>
@@ -74,6 +69,12 @@
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <input type="text" class="form-control" id="input_addr" name="input_addr" required/>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <label class="form-label col-md-2 col-xs-4"><strong>Hompage</strong></label>
+                <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
+                    <input type="text" class="form-control" id="input_homepage" name="input_homepage"/>
                 </div>
             </div>
             <div class="row mt-1">
