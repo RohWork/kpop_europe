@@ -159,7 +159,14 @@
     });
         
     $("#btn_insert").on("click", function(){
-        
+        $("#calendar_insert").submit();   
+    });
+    
+    $("#check_country").change(function(){
+        get_country_data();
+    });
+    
+    $(function(){
         $("#calendar_insert").validate({
             messages:{
                 title: {
@@ -192,13 +199,8 @@
                 });
             }
         });
-            
+        
     });
-    
-    $("#check_country").change(function(){
-        get_country_data();
-    });
-    
     
     function get_country_data(){
         
