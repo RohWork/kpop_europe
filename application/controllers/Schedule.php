@@ -93,7 +93,7 @@ class Schedule extends CI_Controller {
        // $config['base_url'] = '/schedule/list';
        // $config['total_rows'] = count($total);
        // $config['per_page'] = 10;
-        $this->pagination->initialize($config);
+       // $this->pagination->initialize($config);
         $data['paging'] = $this->pagination->create_links();
         
         $paging = array(
