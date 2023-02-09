@@ -52,7 +52,7 @@ $config['num_tag_close'] = '</a></li>';
 $config['base_url'] = current_url();
 $config['per_page'] = 10;
 
-$config['page_query_string'] = true;
+//$config['page_query_string'] = true;
 
 $config['first_link'] = "";
 $config['first_tag_open'] = "";
