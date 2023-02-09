@@ -34,20 +34,20 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 //$config['last_tag_close'] = '</p></div></li>';
 
 
-$config['prev_link']   		= '<img src="/images/icon/left_arrow.png"/>';
-$config['next_link']		= '<img src="/images/icon/right_arrow.png"/>';
+$config['prev_link']   		= '&laquo;';
+$config['next_link']		= '&raquo;';
 
-$config['prev_tag_open'] = '<li class="pageL_btn"><p>';
+$config['prev_tag_open'] = '<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">';
 $config['prev_tag_close'] = '</p></li>';
 
-$config['next_tag_open'] = '<li class="pageR_btn"><p>';
+$config['next_tag_open'] = '<li class="page-item"><a class="page-link" href="#">';
 $config['next_tag_close'] = '</p></li>';
 
-$config['cur_tag_open'] = '<li class="pageNum_btn"><div class="active"><p>';
-$config['cur_tag_close'] = '</p></div></li>';
+$config['cur_tag_open'] = '<li class="page-item active" aria-current="page"> <a class="page-link" href="#">';
+$config['cur_tag_close'] = '</a></li>';
 
-$config['num_tag_open'] = '<li class="pageNum_btn"><div><p>';
-$config['num_tag_close'] = '</p></div></li>';
+$config['num_tag_open'] = '<li class="page-item"><a class="page-link" href="#">';
+$config['num_tag_close'] = '</a></li>';
 
 $config['base_url'] = current_url();
 $config['per_page'] = 10;
