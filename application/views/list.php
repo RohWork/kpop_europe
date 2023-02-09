@@ -115,7 +115,9 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <?=$paging?>
+                    <ul class="pagination">
+                        <?=$paging?>
+                    </ul>
                 </div>
             </div>
         </div>
