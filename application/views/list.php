@@ -115,9 +115,11 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <ul class="pagination">
-                        <?=$paging?>
-                    </ul>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <?=$paging?>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
