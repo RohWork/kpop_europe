@@ -51,7 +51,7 @@ class Schedule_model extends CI_Model {
                     kpop_info AS ki 
                     left join kpop_country as kc on ki.country_idx = kc.idx
                     left join kpop_city as ky on ki.city_idx = ky.idx
-                 WHERE  (@rownum:=0)=0 ".$where." order by ki.end_date desc $limit";
+                 WHERE  1=1 ".$where." order by ki.end_date desc $limit";
 
         $query = $this->db->query($sSql);
         return $query->result_array();
