@@ -461,10 +461,7 @@ class Schedule extends CI_Controller {
                     $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
                     $params['face'] = $m = $activesheet->getCell('Q' . $row)->getValue(); // Facebook
-                    
-                    var_dump($params);
-                    exit;
-                    
+
                     
                     if(!empty($organization) && !empty($country) && !empty($city)){
                         
