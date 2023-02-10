@@ -55,11 +55,11 @@ $config['per_page'] = 10;
 
 //$config['page_query_string'] = true;
 
-$config['first_link'] = "";
+$config['first_link'] = "First";
 $config['first_tag_open'] = "";
 $config['first_tag_close'] = "";
 
-$config['last_link'] = "";
+$config['last_link'] = "Last";
 $config['last_tag_open'] = "";
 $config['last_tag_close'] = "";
 
