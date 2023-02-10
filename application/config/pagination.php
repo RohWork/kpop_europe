@@ -38,10 +38,10 @@ $config['prev_link']   		= '&laquo;';
 $config['next_link']		= '&raquo;';
 
 $config['prev_tag_open'] = '<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">';
-$config['prev_tag_close'] = '</p></li>';
+$config['prev_tag_close'] = '</a></li>';
 
 $config['next_tag_open'] = '<li class="page-item"><a class="page-link" href="#">';
-$config['next_tag_close'] = '</p></li>';
+$config['next_tag_close'] = '</a></li>';
 
 $config['cur_tag_open'] = '<li class="page-item active" aria-current="page"> <a class="page-link" href="#">';
 $config['cur_tag_close'] = '</a></li>';
