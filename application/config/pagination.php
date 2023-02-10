@@ -39,13 +39,13 @@ $config['full_tag_open'] = '<ul class="pagination navigation justify-content-cen
 $config['full_tag_close'] = '</ul>';
 
 
-$config['prev_link']   		= '&laquo;';
-$config['next_link']		= '&raquo;';
+$config['prev_link']   		= '<button class="bi bi-chevron-double-left"></button>';
+$config['next_link']		= '<button class="bi bi-chevron-double-left"></button>';
 
-$config['prev_tag_open'] = '<li class="page-item bi bi-chevron-double-left"> ';
+$config['prev_tag_open'] = '<li class="page-item"> ';
 $config['prev_tag_close'] = '</li>';
 
-$config['next_tag_open'] = '<li class="page-item bi bi-chevron-double-right"> ';
+$config['next_tag_open'] = '<li class="page-item"> ';
 $config['next_tag_close'] = '</li>';
 
 $config['cur_tag_open'] = '<li class="page-item active" aria-current="page"> <a class="page-link" href="#">';
