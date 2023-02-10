@@ -447,12 +447,13 @@ class Schedule extends CI_Controller {
                     $params['addr'] = $h = $activesheet->getCell('I' . $row)->getValue(); // Address
 
                     $i = $activesheet->getCell('J' . $row)->getValue(); // Open
+                    echo "test";
+                    echo $i;
                     $date_start = $i = DateTime::createFromFormat( 'd-m-Y h:i', $i);
                     
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
                     
-                    echo "test";
-                    echo $i;
+                    
                     
                     $date_end = $j = DateTime::createFromFormat( 'd-m-Y h:i', $j);
                     
