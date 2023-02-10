@@ -41,13 +41,13 @@ $config['prev_tag_open'] = '<li class="page-item disabled"><a class="page-link" 
 $config['prev_tag_close'] = '</a></li>';
 
 $config['next_tag_open'] = '<li class="page-item">';
-$config['next_tag_close'] = '</a></li>';
+$config['next_tag_close'] = '</li>';
 
 $config['cur_tag_open'] = '<li class="page-item active" aria-current="page"> ';
-$config['cur_tag_close'] = '</a></li>';
+$config['cur_tag_close'] = '</li>';
 
 $config['num_tag_open'] = '<li class="page-item">';
-$config['num_tag_close'] = '</a></li>';
+$config['num_tag_close'] = '</li>';
 
 $config['base_url'] = current_url();
 $config['per_page'] = 10;
