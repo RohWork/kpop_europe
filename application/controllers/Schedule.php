@@ -415,6 +415,8 @@ class Schedule extends CI_Controller {
                 $highestRow = $activesheet -> getHighestRow();          // 마지막 행
                 $highestColumn = $activesheet -> getHighestColumn();    // 마지막 컬럼
 
+                echo $highestRow;
+                exit;
                 // 한줄읽기
                 for($row = 2; $row <= $highestRow; $row++) {
                     
