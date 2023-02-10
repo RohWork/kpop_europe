@@ -448,11 +448,11 @@ class Schedule extends CI_Controller {
 
                     $i = $activesheet->getCell('J' . $row)->getValue(); // Open
 
-                    $date_start = DateTime::createFromFormat( 'd-m-Y h:i', $i);
+                    $date_start = DateTime::createFromFormat( 'd-m-Y h:i:s', $i);
                     
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
                     
-                    $date_end = DateTime::createFromFormat( 'd-m-Y h:i', $j);
+                    $date_end = DateTime::createFromFormat( 'd-m-Y h:i:s', $j);
                     
                     echo $date_start."<br/>";
                     echo $date_end;
