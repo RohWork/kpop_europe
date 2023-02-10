@@ -452,8 +452,8 @@ class Schedule extends CI_Controller {
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
                     $date_end = $j = DateTime::createFromFormat( 'd-m-Y h:i', $j);
                     
-                    $data['start_date'] = $date_start->format("Y-m-d H:i:s");
-                    $data['end_date'] =  $date_end->format("Y-m-d H:i:s");
+                    $data['start_date'] = $date_start->format("Y-m-d H:i:00");
+                    $data['end_date'] =  $date_end->format("Y-m-d H:i:00");
                     
                     $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
