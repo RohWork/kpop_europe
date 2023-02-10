@@ -447,10 +447,10 @@ class Schedule extends CI_Controller {
                     $params['addr'] = $h = $activesheet->getCell('I' . $row)->getValue(); // Address
 
                     $i = $activesheet->getCell('J' . $row)->getValue(); // Open
-                    $params['start_date'] = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'YYYY-MM-DD h:i');
+                    $params['start_date'] = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:i');
                     
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
-                    $params['end_date'] = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'YYYY-MM-DD h:i');
+                    $params['end_date'] = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY h:i');
                     
                     $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
