@@ -59,11 +59,11 @@ $config['per_page'] = 10;
 
 //$config['page_query_string'] = true;
 
-$config['first_link'] = "";
+$config['first_link'] = false;
 $config['first_tag_open'] = '';
 $config['first_tag_close'] = '';
 
-$config['last_link'] = "";
+$config['last_link'] = false;
 $config['last_tag_open'] = '';
 $config['last_tag_close'] = '';
 
