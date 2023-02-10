@@ -35,7 +35,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 $config['attributes'] = array('class' => 'page-link');
 
-$config['full_tag_open'] = '<ul class="pagination justify-content-center">';
+$config['full_tag_open'] = '<ul class="pagination navigation justify-content-center">';
 $config['full_tag_close'] = '</ul>';
 
 
