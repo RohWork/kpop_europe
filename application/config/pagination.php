@@ -60,7 +60,7 @@ $config['cur_tag_close'] = '</a></li>';
 $config['num_tag_open'] = '<li class="page-item">';
 $config['num_tag_close'] = '</li>';
 
-$config['base_url'] = current_url();
+//$config['base_url'] = current_url();
 $config['per_page'] = 10;
 
 //$config['page_query_string'] = true;
