@@ -430,7 +430,7 @@ class Schedule extends CI_Controller {
                     
                     
                     $d = $activesheet->getCell('D' . $row)->getValue(); // Date
-                    $date = PHPExcel_Style_NumberFormat::toFormattedString($d, 'YYYY-MM-DD');
+                    $date = PHPExcel_Style_NumberFormat::toFormattedString($d, 'DD-MM-YYYY');
                     
                     
                     $e = $activesheet->getCell('E' . $row)->getValue();  // DOW 
@@ -447,10 +447,13 @@ class Schedule extends CI_Controller {
                     $params['addr'] = $h = $activesheet->getCell('I' . $row)->getValue(); // Address
 
                     $i = $activesheet->getCell('J' . $row)->getValue(); // Open
-                    $params['start_date'] = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:i');
+                    $date_start = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:i');
                     
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
-                    $params['end_date'] = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY h:i');
+                    $date_end = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY h:i');
+                    
+                    $data['start_date'] = $date_start->format("Y-m-d H:i:s");
+                    $data['end_date'] =  $date_end->format("Y-m-d H:i:s");
                     
                     $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
