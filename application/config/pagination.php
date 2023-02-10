@@ -59,13 +59,13 @@ $config['per_page'] = 10;
 
 //$config['page_query_string'] = true;
 
-//$config['first_link'] = "";
-//$config['first_tag_open'] = '<li class="page-item">';
-//$config['first_tag_close'] = '</li>';
+$config['first_link'] = "";
+$config['first_tag_open'] = '';
+$config['first_tag_close'] = '';
 
-//$config['last_link'] = "";
-//$config['last_tag_open'] = '<li class="page-item">';
-//$config['last_tag_close'] = '</li>';
+$config['last_link'] = "";
+$config['last_tag_open'] = '';
+$config['last_tag_close'] = '';
 
 //$config['use_page_numbers'] = TRUE;
 //$config['reuse_query_string'] = TRUE;
