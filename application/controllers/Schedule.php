@@ -454,14 +454,14 @@ class Schedule extends CI_Controller {
                     
                     $date_end = DateTime::createFromFormat( 'd-m-Y h:i', $j);
                     
-                    
+                    echo $date_start."<br/>";
+                    echo $date_end;
+                    exit;
                     
                     $data['start_date'] = $date_start->format("Y-m-d H:i:s");
                     $data['end_date'] =  $date_end->format("Y-m-d H:i:s");
                     
-                    echo $data['start_date']."<br/>";
-                    echo $data['end_date'];
-                    exit;
+                    
                     
                     $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
                     $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
