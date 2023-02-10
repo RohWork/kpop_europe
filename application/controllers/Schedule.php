@@ -456,8 +456,8 @@ class Schedule extends CI_Controller {
                     
                     
                     
-                    $data['start_date'] = $date_start->format("Y-m-d H:i:00");
-                    $data['end_date'] =  $date_end->format("Y-m-d H:i:00");
+                    $data['start_date'] = $date_start->format("Y-m-d H:i:s");
+                    $data['end_date'] =  $date_end->format("Y-m-d H:i:s");
                     
                     echo $data['start_date']."<br/>";
                     echo $data['end_date'];
