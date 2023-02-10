@@ -40,7 +40,7 @@ $config['full_tag_close'] = '</ul>';
 
 
 $config['prev_link']   		= '<button class="bi bi-chevron-double-left"></button>';
-$config['next_link']		= '<button class="bi bi-chevron-double-left"></button>';
+$config['next_link']		= '<button class="bi bi-chevron-double-right"></button>';
 
 $config['prev_tag_open'] = '<li class="page-item"> ';
 $config['prev_tag_close'] = '</li>';
