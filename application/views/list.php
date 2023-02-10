@@ -91,8 +91,10 @@
                 <div class="col-12">
                     <table class="table table-striped">
                         <tr>
-                            <th>No</th>
                             <th>Name</th>
+                            <th>Club Name</th>
+                            <th>Country</th>
+                            <th>City</th>
                             <th>START_DATE</th>
                             <th>END_DATE</th>
                         </tr>
@@ -100,8 +102,10 @@
                             foreach($list as $li){
                         ?>        
                         <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
-                            <td><?=$li['rownum']?></td>
                             <td><?=$li['name']?></td>
+                            <td><?=$li['space']?></td>
+                            <td><?=$li['country_name']?></td>
+                            <td><?=$li['city_name']?></td>
                             <td><?=$li['start_date']?></td>
                             <td><?=$li['end_date']?></td>
                         </tr>   
