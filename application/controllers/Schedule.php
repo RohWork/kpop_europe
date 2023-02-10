@@ -454,6 +454,7 @@ class Schedule extends CI_Controller {
                     
                     $date_end = DateTime::createFromFormat( 'd/m/Y h:i:s', $j);
                     
+                    echo $date;
                     var_dump($params);
                     exit;
                     
