@@ -447,10 +447,10 @@ class Schedule extends CI_Controller {
                     $params['addr'] = $h = $activesheet->getCell('I' . $row)->getValue(); // Address
 
                     $i = $activesheet->getCell('J' . $row)->getValue(); // Open
-                    $date_start = $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:i');
+                    $date_start = $i = DateTime::createFromFormat( 'DD-MM-YYYY h:i', $i);
                     
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
-                    $date_end = $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY h:i');
+                    $date_end = $j = DateTime::createFromFormat( 'DD-MM-YYYY h:i', $j);
                     
                     $data['start_date'] = $date_start->format("Y-m-d H:i:s");
                     $data['end_date'] =  $date_end->format("Y-m-d H:i:s");
