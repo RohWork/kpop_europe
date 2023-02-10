@@ -41,7 +41,7 @@ class Schedule_model extends CI_Model {
             $where .= " AND ki.organization_idx ='".$search['organizer']."'";
         }
         if(!empty($search['date'])){
-            $where .= " and DATE_FORMAT(ki.start_date,'%Y-%m-%d') <= '".$search['date']."' and DATE_FORMAT(ki.end_date,'%Y-%m-%d') >= '".$search['date']."'";
+            $where .= " and DATE_FORMAT(ki.start_date,'%Y-%m-%d') = '".$search['date']."'";
         }
         if(!empty($paging)){
             $limit = "limit ".$paging['start'].",".$paging['end'];
