@@ -106,7 +106,6 @@
                             <td><?=$li['end_date']?></td>
                         </tr>   
                         <?php 
-                            $i++;
                             }
                         ?>
                     </table>
