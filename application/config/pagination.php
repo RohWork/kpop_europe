@@ -34,6 +34,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 //$config['last_tag_close'] = '</p></div></li>';
 
 $config['attributes'] = array('class' => 'page-link');
+
 $config['prev_link']   		= '&laquo;';
 $config['next_link']		= '&raquo;';
 
