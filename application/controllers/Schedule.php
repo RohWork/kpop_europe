@@ -451,6 +451,7 @@ class Schedule extends CI_Controller {
                     
                     $j = $activesheet->getCell('K' . $row)->getValue(); // Close
                     
+                    echo "test";
                     echo $i;
                     
                     $date_end = $j = DateTime::createFromFormat( 'd-m-Y h:i', $j);
