@@ -174,8 +174,9 @@
                                         alert('complete to delete');
                                         window.parent.location.reload();
                                     }else{
-                                        data.message;
-                                        console.log(data);
+                                        alert(data.message);
+                                        //console.log(data);
+                                        return false;
                                     }
                                 },
                                 error: function(xhr,status,error) {
