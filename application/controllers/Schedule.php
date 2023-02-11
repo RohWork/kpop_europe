@@ -257,24 +257,18 @@ class Schedule extends CI_Controller {
 
         $info =  $this->sch_md->get_detail_schedule($idx);
         
-        if($this->session->userdata('level') < 2 ){
+        if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $info['organization_idx'] ){
             
-                $data['message'] = "Not You'r Schedule";
+                 $this->sch_md->delete_schedule($idx);
 
-                $data['result'] = 201;
-            
-        }else if($this->session->userdata('org_idx') != $info['organization_idx'] ){ 
-            
-                $data['message'] = "Not You'r Schedule";
-
-                $data['result'] = 201;
+                $data['result'] = 200;
             
         }else{
             if(!empty($idx)){
 
-                $this->sch_md->delete_schedule($idx);
+                 $data['message'] = "Not You'r Schedule";
 
-                $data['result'] = 200;
+                $data['result'] = 201;
 
 
             }else{
