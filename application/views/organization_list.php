@@ -3,7 +3,7 @@
             cursor: pointer;
         }
     </style>
-    <div class="container">
+    <div class="container" style="overflow-y: auto">
         <div class="row">
             <table class="table table-striped" style="width:30vw">
                 <thead>
