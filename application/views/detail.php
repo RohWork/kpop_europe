@@ -172,7 +172,7 @@
                                 success:function(data){
                                     if(data.result == 200){
                                         alert('complete to delete');
-                                        window.parent.location.reload();
+                                        window.opener.location.reload();
                                         self.close();
                                     }else{
                                         alert(data.message);
