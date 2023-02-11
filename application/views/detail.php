@@ -173,6 +173,7 @@
                                     if(data.result == 200){
                                         alert('complete to delete');
                                         window.parent.location.reload();
+                                        self.close();
                                     }else{
                                         alert(data.message);
                                         //console.log(data);
