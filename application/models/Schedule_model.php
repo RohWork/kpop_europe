@@ -54,7 +54,6 @@ class Schedule_model extends CI_Model {
                     left join kpop_organization as kz on ki.organization_idx = kz.idx
                  WHERE  1=1 ".$where." order by ki.end_date desc $limit";
         
-        echo $sSql;
         $query = $this->db->query($sSql);
         return $query->result_array();
         
