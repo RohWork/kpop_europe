@@ -174,7 +174,7 @@
                                         alert('complete to delete');
                                         window.parent.location.reload();
                                     }else{
-                                        alert('input fail. check to data.');
+                                        data.message;
                                         console.log(data);
                                     }
                                 },
