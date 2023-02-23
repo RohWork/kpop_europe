@@ -8,10 +8,20 @@ class Schedule_model extends CI_Model {
         parent::__construct();
     }
     
-    public function get_schedule_cnt($country, $year , $month){
+    public function get_schedule_cnt($search, $year , $month){
        
+        if(!empty($search['country'])){
+            $where .= " AND ki.country_idx ='".$search['country']."'";
+        }
+        if(!empty($search['city'])){
+            $where .= " AND ki.city_idx ='".$search['country']."'";
+        }
+        if(!empty($search['organizer'])){
+            $where .= " AND ki.organization_idx ='".$search['organizer']."'";
+        }
+        
         $sSql = "SELECT count(*) as cnt,DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date,DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date FROM kpop_info AS ki 
-                 WHERE ki.start_date LIKE '$year-$month%' AND ki.country_idx ='$country' GROUP BY ki.start_date,ki.end_date";
+                 WHERE ki.start_date LIKE '$year-$month%'".$where."GROUP BY ki.start_date,ki.end_date";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
