@@ -16,7 +16,7 @@ class Main extends CI_Controller {
         $mobile_agent = "/(iPod|iPhone|Android|BlackBerry|SymbianOS|SCH-M\d+|Opera Mini|Windows CE|Nokia|SonyEricsson|webOS|PalmOS)/";
 
         if(preg_match($mobile_agent, $_SERVER['HTTP_USER_AGENT'])){ //MOBILE
-                $this->load->view('header');
+                $this->load->view('/mobile/header');
                 
                 $this->load->view('footer');
         }else{                                                      //PC
