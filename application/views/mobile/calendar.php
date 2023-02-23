@@ -49,13 +49,13 @@
                 </td>
               </tr>
               <tr class="info">
-                <th hight="30" width="100">SUN</td>
-                <th width="100">MON</th>
-                <th width="100">TUE</th>
-                <th width="100">WED</th>
-                <th width="100">THU</th>
-                <th width="100">FRI</th>
-                <th width="100">SAT</th>
+                <th hight="30" width="10%">SUN</td>
+                <th width="10%">MON</th>
+                <th width="10%">TUE</th>
+                <th width="10%">WED</th>
+                <th width="10%">THU</th>
+                <th width="10%">FRI</th>
+                <th width="10%">SAT</th>
               </tr>
 
               <?php
