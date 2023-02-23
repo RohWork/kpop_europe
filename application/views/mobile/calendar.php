@@ -104,7 +104,7 @@
                         if($cnt > 0){ ?>
                         
                         <br/>
-                        <div class="text-end text-pimary"><font style='font-size:15px;font-weight: 600;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$cnt?></font></div>
+                        <div class="text-end blue"><font style='font-size:15px;font-weight: 600;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$cnt?></font></div>
                         
                         <?php
                         }
