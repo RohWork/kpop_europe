@@ -14,7 +14,16 @@ class Schedule extends CI_Controller {
     
     function calendar(){
         
-        $data['get_country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : '1';
+        
+        
+        $search = array();
+        
+        if(!empty($this->input->get_post("date"))){
+            $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
+        }
+        $search['country'] = $this->input->get_post("country");
+        $search['city'] = $this->input->get_post("city");
+        $search['organizer'] = $this->input->get_post("organization");
         
 
         $data['country_list'] = $this->cont_md->get_country();
@@ -24,6 +33,11 @@ class Schedule extends CI_Controller {
             $data['city_list'] = "";
         }
         $data['organization_list'] = $this->org_md->get_organization();
+        
+        
+        //유럽식으로 표기
+        $search['date'] = $this->input->get_post("date");
+        $data['search'] = $search;
         
         //---- 오늘 날짜
         $data['thisyear'] = $thisyear = date('Y'); // 4자리 연도
@@ -37,7 +51,7 @@ class Schedule extends CI_Controller {
         
         $data['country'] = $this->cont_md->get_country(); 
         
-        $data_calendar = $this->sch_md->get_schedule_cnt($country, $year , sprintf("%02d",$month));
+        $data_calendar = $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
 
         $data['calendar'] = $data_calendar;
         
