@@ -14,9 +14,9 @@ class Main extends CI_Controller {
     function index(){
 
         if(confirm_mobile()){ //MOBILE
-                $this->load->view('/mobile/header');
-                
-                $this->load->view('footer');
+            $this->load->view('/mobile/header');
+
+            $this->load->view('footer');
         }else{                                                      //PC
             $this->load->view('header');
             $this->load->view('sidebar');
