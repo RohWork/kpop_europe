@@ -146,9 +146,11 @@ class Schedule extends CI_Controller {
         $data = array();
         $data['list'] = $this->sch_md->get_schedule($search);
         
-        $this->load->view('frame_list',$data);
-        
-        
+        if(confirm_mobile()){ //MOBILE
+            $this->load->view('/mobile/frame_list',$data);
+        }else{
+            $this->load->view('frame_list',$data);
+        }
     }
     
     function frame_detail($idx){
