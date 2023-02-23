@@ -1,19 +1,14 @@
 <main>
 <link href="/asset/css/sidebar.css" rel="stylesheet">
 <style>
-       @media screen and (max-width: 768px) { /* 4. 모바일용 레이아웃이 되었을때 적용되는 CSS  */
-        .row-offcanvas {
-         position: relative;
-         -webkit-transition: all 0.25s ease-out;
-         -moz-transition: all 0.25s ease-out;
-         transition: all 0.25s ease-out;
+    @media(max-width:767px){
+        #side_bar{
+            display: none;
         }
-        .row-offcanvas-right .sidebar-offcanvas {right: -50%;}
-        .row-offcanvas-left  .sidebar-offcanvas  {left: -50%;}
-        .row-offcanvas-right .active                  {right: 50%;}
-        .row-offcanvas-left  .active                   {left: 50%;}
-        .sidebar-offcanvas                              {position: absolute; top: 0; width: 50%;}
-   }
+        #side_bar_shadow{
+            display: none;
+        }
+    }
 </style>
 <div id="side_bar">
     <div class="flex-shrink-0 p-3 bg-white" style="width:200px">
