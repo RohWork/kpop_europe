@@ -64,7 +64,7 @@ class Main extends CI_Controller {
 
         if(confirm_mobile()){ //MOBILE
             $this->load->view('/mobile/header');
-            $this->load->view('calendar',$data);
+            $this->load->view('/mobile/calendar',$data);
             $this->load->view('footer');
         }else{                                                      //PC
             $this->load->view('header');
