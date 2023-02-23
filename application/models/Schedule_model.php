@@ -10,6 +10,8 @@ class Schedule_model extends CI_Model {
     
     public function get_schedule_cnt($search, $year , $month){
        
+        $where = "";
+        
         if(!empty($search['country'])){
             $where .= " AND ki.country_idx ='".$search['country']."'";
         }
