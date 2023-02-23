@@ -14,7 +14,6 @@
                         <tr>
                             <th>Orgernizer</th>
                             <th>Club Name</th>
-                            <th>Country</th>
                             <th>City</th>
                         </tr>
                         <?php 
@@ -24,7 +23,6 @@
                         <tr onclick="go_detail(<?=$li['idx']?>,'<?=$li['name']?>')" style="cursor: pointer">
                             <td><?=$li['organization_name']?></td>
                             <td><?=$li['space']?></td>
-                            <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
                         </tr>   
                         <?php 
