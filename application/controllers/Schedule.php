@@ -49,8 +49,6 @@ class Schedule extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-        $data['country'] = $this->cont_md->get_country(); 
-        
         $data_calendar = $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
 
         $data['calendar'] = $data_calendar;
