@@ -16,6 +16,15 @@ class Schedule extends CI_Controller {
         
         $data['get_country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : '1';
         
+
+        $data['country_list'] = $this->cont_md->get_country();
+        if(!empty($search['country'])){
+            $data['city_list'] = $this->city_md->get_city($search['country']);
+        }else{
+            $data['city_list'] = "";
+        }
+        $data['organization_list'] = $this->org_md->get_organization();
+        
         //---- 오늘 날짜
         $data['thisyear'] = $thisyear = date('Y'); // 4자리 연도
         $data['thismonth'] = $thismonth = date('n'); // 0을 포함하지 않는 월
