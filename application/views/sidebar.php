@@ -28,7 +28,7 @@
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#party-collapse" aria-expanded="false">
-                    Kpop Party
+                    Kpop Schedule
                 </button>
                 <div class="collapse" id="party-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">   
@@ -38,6 +38,7 @@
                     </ul>
                 </div>     
             </li>
+            <!--
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#concert-collapse" aria-expanded="false">
                     Kpop Concert
@@ -60,6 +61,7 @@
                     </ul>
                 </div>
             </li>
+            -->
             <li class="border-top my-3"></li>
             <li class="mb-1">
                 <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
