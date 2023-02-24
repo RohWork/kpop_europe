@@ -9,7 +9,7 @@
         
         <form method="get" id="search_form">
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <div class="form-floating">
                         <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
                             <option value=""></option>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-3">
                     <div class="form-floating">
                         <select id="check_city" name="city" class="form-select">
                             <option value=""></option>
@@ -50,9 +50,7 @@
                         </label>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <div class="form-floating">
                         <select id="organization" name="organization" class="form-select" onchange="this.form.submit()">
                             <option value=""></option>
