@@ -281,7 +281,7 @@
         $("#year").val(year);
         $("#month").val(month);
         
-        $"#search_form")[0].submit();
+        $("#search_form").submit();
     }
     
     $(".close").on('click', function(){    
