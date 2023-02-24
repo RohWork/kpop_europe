@@ -7,7 +7,7 @@
 
     <div class="container">
         
-        <form method="get">
+        <form method="get" id="search_form">
             <div class="row">
                 <div class="col-2">
                     <div class="form-floating">
@@ -87,7 +87,9 @@
 
                     <input type="submit" value="SEARCH" class="btn btn-success"/>
                 </div>
-
+                <input type="hidden" id="year" name="year" />
+                <input type="hidden" id="month" name="month" />
+                <input type="hidden" id="day" name="day" value="1" />
             </div>
         </form>
         
@@ -96,20 +98,20 @@
             <table class="table table-bordered table-responsive" style="width:700px">
               <tr align="center" >
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$preyear.'&month='.$month . '&day=1&country='.$get_country; ?>>◀◀</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$month?>')">◀◀</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$prev_year.'&month='.$prev_month . '&day=1&country='.$get_country; ?>>◀</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$prev_month?>')">◀</a>
                 </td>
                 <td height="50" bgcolor="#FFFFFF" colspan="3">
-                    <a class="a_border" href=<?='/schedule/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1&country='.$get_country; ?>>
+                    <a class="a_border" href="#" onclick="date_move('<?=$thisyear?>','<?=$thismonth?>')">
                     <?php echo "&nbsp;&nbsp;" . $month . ' - ' . $year  . "&nbsp;&nbsp;"; ?></a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$next_year.'&month='.$next_month.'&day=1&country='.$get_country; ?>>▶</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$next_year?>','<?=$next_month?>')">▶</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$nextyear.'&month='.$month.'&day=1&country='.$get_country; ?>>▶▶</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$next_year?>','<?=$month?>')">▶▶</a>
                 </td>
               </tr>
               <tr class="info">
@@ -275,6 +277,12 @@
         
     }
     
+    function date_move(year,month){
+        $("#year").val(year);
+        $("#month").val(month);
+        
+        $"#search_form").submit();
+    }
     
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
@@ -295,4 +303,5 @@
        
        location.href="/schedule/calendar?country="+cnt_idx+"&year=<?=$year?>&month=<?=$month?>"; 
     });
+    
 </script>
