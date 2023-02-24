@@ -45,7 +45,7 @@ class Main extends CI_Controller {
         
         $data['search'] = $search;
         
-        $data_calendar = $this->sch_md->get_schedule_cnt($country, $year , sprintf("%02d",$month));
+        $data_calendar = $this->sch_md->get_schedule_cnt($search['country'], $year , sprintf("%02d",$month));
 
         $data['calendar'] = $data_calendar;
         
