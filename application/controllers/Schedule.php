@@ -85,11 +85,16 @@ class Schedule extends CI_Controller {
         $data['last_week'] = date('w', mktime(0, 0, 0, $month, $max_day, $year));
 
         
-        
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        $this->load->view('calendar',$data);
-        $this->load->view('footer');
+        if(confirm_mobile()){ //MOBILE
+            $this->load->view('/mobile/header');
+            $this->load->view('/mobile/calendar',$data);
+            $this->load->view('footer');
+        }else{   
+            $this->load->view('header');
+            $this->load->view('sidebar');
+            $this->load->view('calendar',$data);
+            $this->load->view('footer');
+        }
     }
     
     function list($page=0){
