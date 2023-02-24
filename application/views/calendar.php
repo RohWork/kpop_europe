@@ -72,17 +72,6 @@
                         </label>
                     </div>
                 </div>
-
-                <div class="col-2">
-                    <div class="form-floating">
-                        <input type="text" id="date" name="date" class="form-control" value="<?=$search['date']?>"/>
-                        <label for="date">
-                            SEARCH DATE
-                        </label>
-                    </div>
-                </div>
-
-
                 <div class="col-1">
 
                     <input type="submit" value="SEARCH" class="btn btn-success"/>
@@ -223,7 +212,7 @@
         
         select_date = date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>+"&city=<?=$search['city']?>";
         
         $('#list_frame').attr('src', url);
 
