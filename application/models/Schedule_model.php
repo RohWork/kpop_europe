@@ -16,7 +16,7 @@ class Schedule_model extends CI_Model {
             $where .= " AND ki.country_idx ='".$search['country']."'";
         }
         if(!empty($search['city'])){
-            $where .= " AND ki.city_idx ='".$search['country']."'";
+            $where .= " AND ki.city_idx ='".$search['city']."'";
         }
         if(!empty($search['organizer'])){
             $where .= " AND ki.organization_idx ='".$search['organizer']."'";
@@ -47,7 +47,7 @@ class Schedule_model extends CI_Model {
             $where .= " AND ki.country_idx ='".$search['country']."'";
         }
         if(!empty($search['city'])){
-            $where .= " AND ki.city_idx ='".$search['country']."'";
+            $where .= " AND ki.city_idx ='".$search['city']."'";
         }
         if(!empty($search['organizer'])){
             $where .= " AND ki.organization_idx ='".$search['organizer']."'";
