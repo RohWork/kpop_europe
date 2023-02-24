@@ -7,45 +7,100 @@
 
     <div class="container">
         
-        <div class="row">
-            <div class="col">
-                <select id="country" name="country" class="form-select">
-                    <?php
-                        foreach($country as $cont){
-                            if($cont['idx'] == $get_country){
-                                $selected = "selected";
-                            }else{
-                                $selected = "";
-                            }
-                    ?>
-                    <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
-                    <?php
-                        }
-                    ?>
-                </select>
-                
+        <form method="get" id="search_form">
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-floating">
+                        <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
+                            <option value=""></option>
+                            <?php foreach($country_list as $cnt){ 
+                                $search_cnt = "";
+                                if($search['country'] == $cnt['idx']){
+                                    $search_cnt = "selected";
+                                }
+                            ?>
+                                <option value="<?=$cnt['idx']?>" <?=$search_cnt?>><?=$cnt['name']?></option>
+
+                            <?php } ?>
+                        </select>
+                        <label class="form-label col-1">
+                            COUNTRY
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="form-floating">
+                        <select id="check_city" name="city" class="form-select">
+                            <option value=""></option>
+                            <?php foreach($city_list as $cty){ 
+
+                                $search_cty = "";
+                                if($search['city'] == $cty['idx']){
+                                    $search_cty = "selected";
+                                }
+
+                            ?>
+                                <option value="<?=$cty['idx']?>" <?=$search_cty?>><?=$cty['name']?></option>
+
+                            <?php } ?>
+                        </select>
+                        <label class="form-label col-1">
+                            CITY
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="form-floating">
+                        <select id="organization" name="organization" class="form-select">
+                            <option value=""></option>
+                            <?php foreach($organization_list as $org){ 
+
+                                $search_org = "";
+                                if($search['organizer'] == $org['idx']){
+                                    $search_org = "selected";
+                                }
+
+                            ?>
+                                <option value="<?=$org['idx']?>" <?=$search_org?>><?=$org['name']?></option>
+
+                            <?php } ?>
+                        </select>
+                        <label for="organization">
+                            ORGERNIZER
+                        </label>
+                    </div>
+                </div>
+                <div class="col-1">
+
+                    <input type="submit" value="SEARCH" class="btn btn-success"/>
+                </div>
+                <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
+                <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
+                <input type="hidden" id="day" name="day" value="1" />
             </div>
-        </div>
+        </form>
         
         <div class="row">
             <div class="col-12">
             <table class="table table-bordered table-responsive" style="width:100%">
               <tr align="center" >
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$preyear.'&month='.$month . '&day=1&country='.$get_country; ?>>◀◀</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$month?>')">◀◀</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$prev_year.'&month='.$prev_month . '&day=1&country='.$get_country; ?>>◀</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$prev_month?>')">◀</a>
                 </td>
                 <td height="50" bgcolor="#FFFFFF" colspan="3">
-                    <a class="a_border" href=<?='/schedule/calendar?year=' . $thisyear . '&month=' . $thismonth . '&day=1&country='.$get_country; ?>>
+                    <a class="a_border" href="#" onclick="date_move('<?=$thisyear?>','<?=$thismonth?>')">
                     <?php echo "&nbsp;&nbsp;" . $month . ' - ' . $year  . "&nbsp;&nbsp;"; ?></a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$next_year.'&month='.$next_month.'&day=1&country='.$get_country; ?>>▶</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$next_year?>','<?=$next_month?>')">▶</a>
                 </td>
                 <td>
-                    <a class="a_border" href=<?='/schedule/calendar?year='.$nextyear.'&month='.$month.'&day=1&country='.$get_country; ?>>▶▶</a>
+                    <a class="a_border" href="#" onclick="date_move('<?=$next_year?>','<?=$month?>')">▶▶</a>
                 </td>
               </tr>
               <tr class="info">
@@ -157,7 +212,7 @@
         
         select_date = date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$get_country?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>&city=<?=$search['city']?>&organization=<?=$search['organizer']?>";
         
         $('#list_frame').attr('src', url);
 
@@ -200,7 +255,7 @@
         
         var date = select_date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$get_country?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>&city=<?=$search['city']?>&organization=<?=$search['organizer']?>";
         
         $('#list_frame').attr('src', url);
         $(".list").hide();
@@ -210,6 +265,17 @@
         $(".modal-title").text(date);
         
     }
+    
+    function date_move(year,month){
+        $("#year").val(year);
+        $("#month").val(month);
+        
+        $("#search_form").submit();
+    }
+    
+    $(".close").on('click', function(){    
+        $('#list_modal').modal('hide');
+    });
     
     
     $(".close").on('click', function(){    
