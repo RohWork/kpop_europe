@@ -50,7 +50,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4">
+                <!--<div class="col-4">
                     <div class="form-floating">
                         <select id="organization" name="organization" class="form-select" onchange="this.form.submit()">
                             <option value=""></option>
@@ -71,6 +71,7 @@
                         </label>
                     </div>
                 </div>
+                -->
                 <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
                 <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
                 <input type="hidden" id="day" name="day" value="1" />
