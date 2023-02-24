@@ -271,7 +271,7 @@
     }
     
     
-        function get_country_data(){
+    function get_country_data(){
         
         var j = $("#country option:selected").val();
         var data = { country_idx : j };
@@ -332,9 +332,4 @@
            });
     });
     
-    $("#country").on('change', function(){
-       var cnt_idx = $("#check_country option:selected").val();
-       
-       location.href="/schedule/calendar?country="+cnt_idx+"&year=<?=$year?>&month=<?=$month?>"; 
-    });
 </script>
