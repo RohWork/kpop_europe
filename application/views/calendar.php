@@ -212,7 +212,7 @@
         
         select_date = date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>+"&city=<?=$search['city']?>+"&organization=<?=$search['organizer']?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>&city=<?=$search['city']?>&organization=<?=$search['organizer']?>";
         
         $('#list_frame').attr('src', url);
 
@@ -255,7 +255,7 @@
         
         var date = select_date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>+"&city=<?=$search['city']?>+"&organization=<?=$search['organizer']?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>&city=<?=$search['city']?>&organization=<?=$search['organizer']?>";
         
         $('#list_frame').attr('src', url);
         $(".list").hide();
