@@ -13,6 +13,16 @@ class Main extends CI_Controller {
     }
     function index(){
         
+        
+        $search = array();
+        
+        if(!empty($this->input->get_post("date"))){
+            $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
+        }
+        $search['country'] = $this->input->get_post("country");
+        $search['city'] = $this->input->get_post("city");
+        $search['organizer'] = $this->input->get_post("organization");
+        
         $data['get_country'] = $country = $this->input->get('country') !== null ? $this->input->get('country') : '1';
         
         //---- 오늘 날짜
@@ -25,7 +35,7 @@ class Main extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-        $data['country'] = $this->cont_md->get_country(); 
+        $data['search'] = $search;
         
         $data_calendar = $this->sch_md->get_schedule_cnt($country, $year , sprintf("%02d",$month));
 
