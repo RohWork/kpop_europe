@@ -273,7 +273,7 @@
     
     function get_country_data(){
         
-        var j = $("#country option:selected").val();
+        var j = $("#check_country option:selected").val();
         var data = { country_idx : j };
 
        $('#check_city').empty();
