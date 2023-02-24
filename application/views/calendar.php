@@ -87,8 +87,8 @@
 
                     <input type="submit" value="SEARCH" class="btn btn-success"/>
                 </div>
-                <input type="hidden" id="year" name="year" />
-                <input type="hidden" id="month" name="month" />
+                <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
+                <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
                 <input type="hidden" id="day" name="day" value="1" />
             </div>
         </form>
