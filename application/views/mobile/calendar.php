@@ -31,7 +31,7 @@
 
                 <div class="col-4">
                     <div class="form-floating">
-                        <select id="check_city" name="city" class="form-select">
+                        <select id="check_city" name="city" class="form-select" onchange="this.form.submit()">
                             <option value=""></option>
                             <?php foreach($city_list as $cty){ 
 
