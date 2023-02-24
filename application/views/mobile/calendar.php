@@ -9,7 +9,7 @@
         
         <form method="get" id="search_form">
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <div class="form-floating">
                         <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
                             <option value=""></option>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-4">
                     <div class="form-floating">
                         <select id="check_city" name="city" class="form-select">
                             <option value=""></option>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <div class="form-floating">
                         <select id="organization" name="organization" class="form-select">
                             <option value=""></option>
@@ -72,10 +72,6 @@
                             ORGERNIZER
                         </label>
                     </div>
-                </div>
-                <div class="col-6">
-
-                    <input type="submit" value="SEARCH" class="btn btn-success"/>
                 </div>
                 <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
                 <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
@@ -273,6 +269,49 @@
         
         $("#search_form").submit();
     }
+    
+    
+        function get_country_data(){
+        
+        var j = $("#check_country option:selected").val();
+        var data = { country_idx : j };
+
+       $('#check_city').empty();
+        
+        $.ajax({
+            url:'/city/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+
+                    $('#check_city').append("<option value=''></option>");
+                    for(var i =0; i<data_array.length;i++){
+                        
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        $('#check_city').append(option)
+                        
+                    }
+                    
+                    
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("Network Error!! take support to web manager!!");
+                return false;
+            }	 
+        });
+        
+    }
+    
     
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
