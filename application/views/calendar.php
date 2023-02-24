@@ -266,7 +266,7 @@
         
         var date = select_date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$get_country?>";
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>";
         
         $('#list_frame').attr('src', url);
         $(".list").hide();
