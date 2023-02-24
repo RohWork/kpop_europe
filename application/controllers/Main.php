@@ -73,9 +73,9 @@ class Main extends CI_Controller {
         $data['last_week'] = date('w', mktime(0, 0, 0, $month, $max_day, $year));
 
         if(confirm_mobile()){ //MOBILE
-            $this->load->view('/mobile/header');
+            /*$this->load->view('/mobile/header');
             $this->load->view('/mobile/calendar',$data);
-            $this->load->view('footer');
+            $this->load->view('footer');*/
         }else{                                                      //PC
             $this->load->view('header');
             $this->load->view('sidebar');
