@@ -333,7 +333,7 @@
     });
     
     $("#country").on('change', function(){
-       var cnt_idx = $("#country option:selected").val();
+       var cnt_idx = $("#check_country option:selected").val();
        
        location.href="/schedule/calendar?country="+cnt_idx+"&year=<?=$year?>&month=<?=$month?>"; 
     });
