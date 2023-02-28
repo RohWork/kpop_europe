@@ -89,7 +89,7 @@
             </form>
             <div class="row" style="padding-top: 20px">
                 <div class="col-12">
-                    <table class="table table-striped">
+                    <table class="table table-striped" style="font-size:0.8rem">
                         <tr>
                             <th>Name</th>
                             <th>Club Name</th>
