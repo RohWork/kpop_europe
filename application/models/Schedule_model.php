@@ -29,6 +29,8 @@ class Schedule_model extends CI_Model {
         $sSql = "SELECT count(*) as cnt,DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date,DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date FROM kpop_info AS ki 
                  WHERE ki.start_date LIKE '$year-$month%'".$where."GROUP BY ki.start_date,ki.end_date";
         
+        
+        echo $sSql;
         $query = $this->db->query($sSql);
         return $query->result_array();
         
