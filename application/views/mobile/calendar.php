@@ -15,7 +15,7 @@
                      <?php 
                         $select = array(
                             "type" => "",
-                            "concert" => ""
+                            "concert" => "",
                         );
                         if(!empty($search['type'])){
                             if($search['type'] == 'party'){
