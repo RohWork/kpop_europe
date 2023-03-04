@@ -9,6 +9,19 @@
         
         <form method="get" id="search_form">
             <div class="row">
+                
+                <div class="col-2">
+                    <div class="form-floating">
+                        <select id="check_type" name="type" class="form-select" onchange="get_country_data()">
+                            <option value="party">PARTY</option>
+                            <option value="concert">CONCERT</option>
+                        </select>
+                        <label class="form-label col-1">
+                            type
+                        </label>
+                    </div>
+                </div>
+                
                 <div class="col-2">
                     <div class="form-floating">
                         <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
