@@ -22,6 +22,10 @@ class Schedule_model extends CI_Model {
             $where .= " AND ki.organization_idx ='".$search['organizer']."'";
         }
         
+        if(!empty($search['type'])){
+            $where .= " AND ki.type ='".$search['type']."'";
+        }
+        
         $sSql = "SELECT count(*) as cnt,DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date,DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date FROM kpop_info AS ki 
                  WHERE ki.start_date LIKE '$year-$month%'".$where."GROUP BY ki.start_date,ki.end_date";
         
@@ -54,6 +58,9 @@ class Schedule_model extends CI_Model {
         }
         if(!empty($search['date'])){
             $where .= " and DATE_FORMAT(ki.start_date,'%Y-%m-%d') = '".$search['date']."'";
+        }
+        if(!empty($search['type'])){
+            $where .= " AND ki.type ='".$search['type']."'";
         }
         if(!empty($paging)){
             $limit = "limit ".$paging['start'].",".$paging['end'];
