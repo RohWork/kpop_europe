@@ -11,7 +11,7 @@
             <div class="row">
                  <div class="col-4">
                     <div class="form-floating">
-                        <select id="check_type" name="type" class="form-select">
+                        <select id="check_type" name="type" class="form-select"  onchange="this.form.submit()">
                             <option value=""></option>
                             <option value="party" <?=$search['type'] == 'party' ? "selected" : "" ?>>PARTY</option>
                             <option value="concert" <?=$search['type'] == 'concert' ? "selected" : "" ?>>CONCERT</option>
