@@ -5,7 +5,7 @@
     }
 </style>
 
-    <div class="container">
+    <div class="container" style="font-size: 12px;">
         
         <form method="get" id="search_form">
             <div class="row">
