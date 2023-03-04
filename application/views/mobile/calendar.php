@@ -14,7 +14,7 @@
                  <div class="col-4">
                      <?php 
                         $select = array(
-                            "type" => "",
+                            "party" => "",
                             "concert" => "",
                         );
                         if(!empty($search['type'])){
