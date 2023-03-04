@@ -30,7 +30,6 @@ class Schedule_model extends CI_Model {
                  WHERE ki.start_date LIKE '$year-$month%'".$where."GROUP BY ki.start_date,ki.end_date";
         
         
-        echo $sSql;
         $query = $this->db->query($sSql);
         return $query->result_array();
         
