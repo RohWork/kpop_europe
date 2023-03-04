@@ -25,7 +25,9 @@ class Schedule extends CI_Controller {
         $search['city'] = $this->input->get_post("city");
         $search['organizer'] = $this->input->get_post("organization");
         $search['type'] = $this->input->get_post("type");
-
+        
+        echo $search['type'];
+        
         $data['country_list'] = $this->cont_md->get_country();
         if(!empty($search['country'])){
             $data['city_list'] = $this->city_md->get_city($search['country']);
