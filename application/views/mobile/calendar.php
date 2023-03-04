@@ -9,7 +9,7 @@
 
     <div class="container">
         
-        <form method="get" id="search_form">
+        <form method="get" id="search_form" action="/schedule/calendar">
             <div class="row">
                  <div class="col-4">
                      <?php 
