@@ -4,23 +4,39 @@
         color:#000;
     }
 </style>
+    
+    
 
     <div class="container">
         
         <form method="get" id="search_form">
             <div class="row">
                  <div class="col-4">
+                     <?php 
+                        $select = array();
+                        if(!empty($search['type'])){
+                            if($search['type'] == 'party'){
+                                $select['party'] = "selected";
+                            }else{
+                                $select['concert'] = "selected";
+                            }
+                            
+                            
+                        }
+                     ?>
+                     
                     <div class="form-floating">
                         <select id="check_type" name="type" class="form-select"  onchange="this.form.submit()">
                             <option value=""></option>
-                            <option value="party" <?=$search['type'] == 'party' ? "selected" : "" ?>>PARTY</option>
-                            <option value="concert" <?=$search['type'] == 'concert' ? "selected" : "" ?>>CONCERT</option>
+                            <option value="party" <?=$select['party']?>>PARTY</option>
+                            <option value="concert" <?=$select['concert']?>>CONCERT</option>
                         </select>
                         <label class="form-label col-1">
                             type
                         </label>
                     </div>
                 </div>
+                
                 <div class="col-4">
                     <div class="form-floating">
                         <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
