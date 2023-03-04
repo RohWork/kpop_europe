@@ -5,6 +5,19 @@
             <form method="get">
                 <div class="row">
                     
+                <div class="col-2">
+                    <div class="form-floating">
+                        <select id="check_type" name="type" class="form-select">
+                            <option value=""></option>
+                            <option value="party" <?=$search['type'] == 'party' ? "selected" : "" ?>>PARTY</option>
+                            <option value="concert" <?=$search['type'] == 'concert' ? "selected" : "" ?>>CONCERT</option>
+                        </select>
+                        <label class="form-label col-1">
+                            type
+                        </label>
+                    </div>
+                </div>
+                    
                     
                     <div class="col-2">
                         <div class="form-floating">
