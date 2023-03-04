@@ -108,7 +108,7 @@ class Schedule extends CI_Controller {
         $search['country'] = $this->input->get_post("country");
         $search['city'] = $this->input->get_post("city");
         $search['organizer'] = $this->input->get_post("organization");
-        
+        $search['type'] = $this->input->get_post("type");
 
         
         $data = array();
