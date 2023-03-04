@@ -9,7 +9,19 @@
         
         <form method="get" id="search_form">
             <div class="row">
-                <div class="col-6">
+                 <div class="col-4">
+                    <div class="form-floating">
+                        <select id="check_type" name="type" class="form-select">
+                            <option value=""></option>
+                            <option value="party" <?=$search['type'] == 'party' ? "selected" : "" ?>>PARTY</option>
+                            <option value="concert" <?=$search['type'] == 'concert' ? "selected" : "" ?>>CONCERT</option>
+                        </select>
+                        <label class="form-label col-1">
+                            type
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
                     <div class="form-floating">
                         <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
                             <option value=""></option>
@@ -29,7 +41,7 @@
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-4">
                     <div class="form-floating">
                         <select id="check_city" name="city" class="form-select" onchange="this.form.submit()">
                             <option value=""></option>
