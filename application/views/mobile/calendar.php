@@ -13,7 +13,10 @@
             <div class="row">
                  <div class="col-4">
                      <?php 
-                        $select = array();
+                        $select = array(
+                            "type" => "",
+                            "concert" => ""
+                        );
                         if(!empty($search['type'])){
                             if($search['type'] == 'party'){
                                 $select['party'] = "selected";
