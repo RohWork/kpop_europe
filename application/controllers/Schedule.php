@@ -461,29 +461,24 @@ class Schedule extends CI_Controller {
 
                     $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
                     $organization = $this->org_md->get_organization_name($c);
-                    
-                    
-                    $d = $activesheet->getCell('D' . $row)->getValue(); // Date
-                    $date = PHPExcel_Style_NumberFormat::toFormattedString($d, 'DD-MM-YYYY');
-                    
-                    
-                    $e = $activesheet->getCell('E' . $row)->getValue();  // DOW 
 
-                    $f = $activesheet->getCell('F' . $row)->getValue(); // Country
+                    $e = $activesheet->getCell('D' . $row)->getValue();  // DOW 
+
+                    $f = $activesheet->getCell('E' . $row)->getValue(); // Country
                     $country = $this->cont_md->get_country_name($f);
 
-                    $g = $activesheet->getCell('G' . $row)->getValue(); // City 
+                    $g = $activesheet->getCell('F' . $row)->getValue(); // City 
                     $city = $this->city_md->get_city_name($g);
 
-                    $params['space'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
+                    $params['space'] = $h = $activesheet->getCell('G' . $row)->getValue(); // Address
 
                     
-                    $params['addr'] = $h = $activesheet->getCell('I' . $row)->getValue(); // Address
+                    $params['addr'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
 
-                    $i = $activesheet->getCell('J' . $row)->getValue(); // Open
+                    $i = $activesheet->getCell('I' . $row)->getValue(); // Open
                     $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:m');
                     
-                    $j = $activesheet->getCell('K' . $row)->getValue(); // Close
+                    $j = $activesheet->getCell('J' . $row)->getValue(); // Close
                     $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY h:m');
                     
                     $date_start = DateTime::createFromFormat("d-m-Y H:i:s" , $i);
@@ -492,9 +487,9 @@ class Schedule extends CI_Controller {
                     $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
 
                     
-                    $params['homepage']=  $k = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
-                    $params['insta'] = $l = $activesheet->getCell('M' . $row)->getValue(); // Insta
-                    $params['face'] = $m = $activesheet->getCell('Q' . $row)->getValue(); // Facebook
+                    $params['homepage']=  $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
+                    $params['insta'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
+                    $params['face'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
 
                     
                     if(!empty($organization) && !empty($country) && !empty($city)){
