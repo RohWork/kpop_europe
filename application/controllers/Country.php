@@ -45,12 +45,18 @@ class Country extends CI_Controller {
     function insert_ajax(){
         
         $data = array();
+        $params = array();
         
         $data['result'] = 200;
         $data['message'] = "";
         
-        $country = $this->input->post("input_country");
-        $result = $this->cont_md->insert_country($country);
+        $cnt = count($this->cont_md->get_country());
+        $cnt = $cnt+1;
+        
+        $params['country'] = $this->input->post("input_country");
+        $params['order'] = $cnt;
+        
+        $result = $this->cont_md->insert_country($params);
         
         if(!$result){
             $data['result'] = 400;
