@@ -15,7 +15,7 @@ class City extends CI_Controller {
         
         
         $data = array();
-        $data['country_idx'] = $this->input->post("country");
+        $data['country_idx'] = $this->input->getpost("country");
         
         
         
