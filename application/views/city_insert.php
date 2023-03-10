@@ -9,8 +9,15 @@
 
                     <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                         <select id="check_country" name="check_country" class="form-select">
-                            <?php foreach($country as $cnt){ ?>
-                                <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+                            <?php 
+                                foreach($country as $cnt){ 
+                                    $selected = "";
+                                    if($cnt['idx'] == $select_country){
+                                        $selected = "selected";
+                                    }
+                                    ?>
+                                
+                                <option value="<?=$cnt['idx']?>" <?=$selected?>"><?=$cnt['name']?></option>
 
                             <?php } ?>
                         </select>
