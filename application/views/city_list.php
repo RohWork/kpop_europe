@@ -84,7 +84,9 @@
     
     <script>
         $("#insert_button").on("click",function(){
-            location.href= "/city/insert";
+            var country_idx = $("#country_list option:selected").val(); 
+            
+            location.href= "/city/insert?country_idx="+country_idx;
         })
         
         function view_info(idx_name){
