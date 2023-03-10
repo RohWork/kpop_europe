@@ -23,7 +23,7 @@
                         <label class="form-label bold"><strong>Order</strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="order" name="order" value="<?=$detail_info['order']?>" class="form-control"/>
+                        <input type="number" id="order" name="order" value="<?=$detail_info['order']?>" class="form-control"/>
                     </div>
                 </div>
             </form>
