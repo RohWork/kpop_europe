@@ -25,34 +25,36 @@
             </div>
         </div>
         <div class="row">
-            <table class="table table-striped" style="width:30vw">
-                <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Order</th>
-                    <th>Country Name</th>
-                    <th>Name</th>
-                    <th>Writer</th>
-                    <th>Regist_date</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $i =1;
-                        foreach($list as $con){
-                            echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
-                            echo "<td>".$i."</td>";
-                            echo "<td>".$con['ord']."</td>";
-                            echo "<td>".$con['country_name']."</td>";
-                            echo "<td>".$con['name']."</td>";
-                            echo "<td>".$con['writer']."</td>";
-                            echo "<td>".substr($con['regi_date'],0,10)."</td>";
-                            echo "</tr>";
-                            $i++;
-                        }
-                    ?>
-                </tbody>
-            </table>
+            <div class="col">
+                <table class="table table-striped" style="width:30vw">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Order</th>
+                        <th>Country Name</th>
+                        <th>Name</th>
+                        <th>Writer</th>
+                        <th>Regist_date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $i =1;
+                            foreach($list as $con){
+                                echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
+                                echo "<td>".$i."</td>";
+                                echo "<td>".$con['ord']."</td>";
+                                echo "<td>".$con['country_name']."</td>";
+                                echo "<td>".$con['name']."</td>";
+                                echo "<td>".$con['writer']."</td>";
+                                echo "<td>".substr($con['regi_date'],0,10)."</td>";
+                                echo "</tr>";
+                                $i++;
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="row">
             <div class="col-5 col-offset-7 text-end">
