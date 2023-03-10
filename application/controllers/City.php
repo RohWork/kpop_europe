@@ -15,11 +15,11 @@ class City extends CI_Controller {
         
         
         $data = array();
-        $country = $this->input->post("country");
+        $data['country_idx'] = $this->input->post("country");
         
         
         
-        $data['list'] = $this->city_md->get_city($country);
+        $data['list'] = $this->city_md->get_city($data['country_idx']);
         $data['country'] = $this->cont_md->get_country();
         
         $this->load->view('header');
