@@ -19,6 +19,7 @@
                     <?php
                         $i =1;
                         foreach($list as $con){
+                            echo $con['idx']."_".$con['name'];
                             $val = $con['idx']."_".$con['name'];
                             echo "<tr onclick=view_info('$val') class='onpointer'>";
                             echo "<td>".$i."</td>";
