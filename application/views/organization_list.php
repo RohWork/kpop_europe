@@ -24,7 +24,7 @@
                             <tr onclick=view_info('<?=$con['idx']?>') class='onpointer'>
                                 <td>
                                     <?=$i?>
-                                    <input type='hidden' id='<?=$con['idx']?>' value='<?=$con['name']?>'/>
+                                    <input type='hidden' id='h_<?=$con['idx']?>' value='<?=$con['name']?>'/>
                                 </td>
                                 <td><?=$con['ord']?></td>
                                 <td><?=$con['name']?></td>
@@ -77,7 +77,7 @@
         
         function view_info(idx){
             var idxurl = idx;
-            var name $("#"+idx).val();
+            var name $("#h_"+idx).val();
             
             var url = "/organization/detail/"+idxurl[0];
 
