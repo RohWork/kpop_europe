@@ -77,7 +77,7 @@
         
         function view_info(idx){
             var idxurl = idx;
-            var name $("#h_"+idx).val();
+            var name =  $("#h_"+idx).val();
             
             var url = "/organization/detail/"+idxurl[0];
 
