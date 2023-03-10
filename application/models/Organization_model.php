@@ -24,11 +24,13 @@ class Organization_model extends CI_Model {
         
     }
     
-    function modify_organization($organization, $organization_idx){
+    function modify_organization($data, $organization_idx){
         
         $params = array();
         
-        $params['name'] = $organization;
+        $params['name'] = $data['organization'];
+        $params['ord'] = $data['ord'];
+        
         $params['modifier'] = $this->session->userdata('name');
         $params['modi_date'] = date('Y-m-d h:i:s');
         
