@@ -64,6 +64,9 @@ class City extends CI_Controller {
         
         $data = array();
         
+        
+        $data['select_country'] = $this->input->get("country_idx");
+        
         $data['country'] = $this->cont_md->get_country();
         
         $this->load->view('header');
