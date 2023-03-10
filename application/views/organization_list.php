@@ -21,8 +21,11 @@
                         foreach($list as $con){
                     ?>
                             
-                            <tr onclick=view_info(<?=$con['idx']?>, <?=$con['name']?>) class='onpointer'>
-                                <td><?=$i?></td>
+                            <tr onclick=view_info('<?=$con['idx']?>') class='onpointer'>
+                                <td>
+                                    <?=$i?>
+                                    <input type='hidden' id='<?=$con['idx']?>' value='<?=$con['name']?>'/>
+                                </td>
                                 <td><?=$con['ord']?></td>
                                 <td><?=$con['name']?></td>
                                 <td><?=$con['writer']?></td>
