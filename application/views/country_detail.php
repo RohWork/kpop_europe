@@ -18,6 +18,14 @@
                         <input type="hidden" id="country_idx" name="country_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label bold"><strong>Country Order</strong></label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="order" name="order" value="<?=$detail_info['order']?>" class="form-control"/>
+                    </div>
+                </div>
             </form>
         </div>
     </body>
