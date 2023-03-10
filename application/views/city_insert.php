@@ -60,7 +60,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to insert');
-                        location.href = "/city?country_idx=<?=$select_country?>";
+                        location.href = "/city?country=<?=$select_country?>";
                     }else{
                         alert('input fail. check to data.');
                         console.log(data);
