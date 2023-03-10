@@ -7,6 +7,7 @@
         <div class="row">
             <form action="/city" method="post">
                 <select name="country" id="country_list" onchange="">
+                    <option value="">
                     <?php
                         foreach($country as $cnt){
                     ?>        
