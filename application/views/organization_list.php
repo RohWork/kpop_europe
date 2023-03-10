@@ -19,16 +19,19 @@
                     <?php
                         $i =1;
                         foreach($list as $con){
-  
-                            $val = $con['idx'].",".$con['name'];
-                            echo "<tr onclick=view_info('".$val."') class='onpointer'>";
-                            echo "<td>".$i."</td>";
-                            echo "<td>".$con['ord']."</td>";
-                            echo "<td>".$con['name']."</td>";
-                            echo "<td>".$con['writer']."</td>";
-                            echo "<td>".substr($con['regi_date'],0,10)."</td>";
-                            echo "</tr>";
-                            $i++;
+                    ?>
+                            
+                            <tr onclick=view_info(<?=$con['idx']?>, <?=$con['name']?>) class='onpointer'>
+                                <td><?=$i?></td>
+                                <td><?=$con['ord']?></td>
+                                <td><?=$con['name']?></td>
+                                <td><?=$con['writer']?></td>
+                                <td><?=substr($con['regi_date'],0,10)?></td>
+                            </tr>
+                            
+                        
+                    <?php
+                        $i++;
                         }
                     ?>
                 </tbody>
