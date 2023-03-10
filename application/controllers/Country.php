@@ -67,13 +67,16 @@ class Country extends CI_Controller {
     function modify_ajax(){
         
         $data = array();
+        $params = array();
         
         $data['result'] = 200;
         $data['message'] = "";
         
-        $country = $this->input->post("country");
+        
+        $params['country'] = $this->input->post("country");
         $country_idx = $this->input->post("country_idx");
-        $result = $this->cont_md->modify_country($country,$country_idx);
+        $params['order'] = $this->input->post("order");
+        $result = $this->cont_md->modify_country($params,$country_idx);
         
         if(!$result){
             $data['result'] = 400;
