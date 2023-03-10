@@ -5,7 +5,7 @@
     </style>
     <div class="container" style="overflow: auto">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <form action="/city" method="post">
                     <select name="country" id="country_list" onchange="this.form.submit();" class="form-select">
                         <option value="">
