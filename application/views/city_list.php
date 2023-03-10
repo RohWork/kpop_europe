@@ -10,8 +10,12 @@
                     <option value="">
                     <?php
                         foreach($country as $cnt){
+                            $selected = "";
+                            if($cnt['idx'] == $country_idx){
+                                $selected = "selected";
+                            }
                     ?>        
-                    <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
+                    <option value="<?=$cnt['idx']?>" <?=$selected?>><?=$cnt['name']?></option>
                     <?php
                         }
                     ?>
