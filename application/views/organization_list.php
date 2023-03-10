@@ -79,7 +79,7 @@
             var idxurl = idx;
             var name =  $("#h_"+idx).val();
             
-            var url = "/organization/detail/"+idxurl[0];
+            var url = "/organization/detail/"+idxurl;
 
             $('#detail_frame').attr('src', url);
 
