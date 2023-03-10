@@ -11,8 +11,9 @@ class Country_model extends CI_Model {
         
         $params = array();
         
-        $params['name'] = $country;
+        $params['name'] = $country['country'];
         $params['writer'] = $this->session->userdata('name');
+        $params['order'] = $country['order'];
         
         $params['regi_date'] = date('Y-m-d h:i:s');
         $this->db->insert('kpop_country', $params);
