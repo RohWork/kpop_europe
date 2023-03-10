@@ -13,7 +13,7 @@ class Country_model extends CI_Model {
         
         $params['name'] = $country['country'];
         $params['writer'] = $this->session->userdata('name');
-        $params['order'] = $country['order'];
+        $params['ord'] = $country['order'];
         
         $params['regi_date'] = date('Y-m-d h:i:s');
         $this->db->insert('kpop_country', $params);
@@ -27,7 +27,7 @@ class Country_model extends CI_Model {
         $params = array();
         
         $params['name'] = $data['country'];
-        $params['order'] = $data['order'];
+        $params['ord'] = $data['order'];
         $params['modifier'] = $this->session->userdata('name');
         $params['modi_date'] = date('Y-m-d h:i:s');
         
@@ -40,7 +40,7 @@ class Country_model extends CI_Model {
     
     function get_country(){
         
-        $sSql = "SELECT * FROM `kpop_country` where state = '1' order by order asc, idx desc";
+        $sSql = "SELECT * FROM `kpop_country` where state = '1' order by ord asc, idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
