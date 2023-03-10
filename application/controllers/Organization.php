@@ -73,7 +73,7 @@ class Organization extends CI_Controller {
         $params['ord'] = $this->input->post("order");
         
         $organization_idx = $this->input->post("organization_idx");
-        $result = $this->org_md->modify_organization($organization,$organization_idx);
+        $result = $this->org_md->modify_organization($params,$organization_idx);
         
         if(!$result){
             $data['result'] = 400;
