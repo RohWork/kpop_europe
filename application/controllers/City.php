@@ -81,6 +81,10 @@ class City extends CI_Controller {
         
         $params = array();
         $params['country_idx'] = $this->input->post("check_country");
+        
+        $city_order = count($this->city_md->get_city($params['country_idx']));
+        $params['ord'] = $city_order++;
+        
         $params['name'] = $this->input->post("input_city");
        
         
