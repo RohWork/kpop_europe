@@ -39,12 +39,17 @@ class Organization extends CI_Controller {
     function insert_ajax(){
         
         $data = array();
+        $params = array();
         
         $data['result'] = 200;
         $data['message'] = "";
         
-        $organization = $this->input->post("input_organization");
-        $result = $this->org_md->insert_organization($organization);
+        $params['organization'] = $this->input->post("input_organization");
+        
+        $org_order = count($this->org_md->get_organization());
+        $params['ord'] = $org_order+1;
+        
+        $result = $this->org_md->insert_organization($params);
         
         if(!$result){
             $data['result'] = 400;
