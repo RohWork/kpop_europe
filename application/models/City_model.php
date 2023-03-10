@@ -55,6 +55,7 @@ class City_model extends CI_Model {
         
         $data = array();
         $data['name'] = $params['city'];
+        $data['ord'] = $params['ord'];
         $data['country_idx'] = $params['country_idx'];
         $data['modifier'] = $this->session->userdata('name');
         $data['modi_date'] = date('Y-m-d h:i:s');
