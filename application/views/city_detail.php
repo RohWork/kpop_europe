@@ -29,11 +29,19 @@
                 </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>City_name</strong></label>
+                        <label class="form-label bold"><strong>City Name</strong></label>
                     </div>
                     <div class="col-8">
                         <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
                         <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-4">
+                        <label class="form-label bold"><strong>City Order</strong></label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="order" name="order" value="<?=$detail_info['order']?>" class="form-control"/>
                     </div>
                 </div>
             </form>
