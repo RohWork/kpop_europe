@@ -5,7 +5,9 @@
     </style>
     <div class="container" style="overflow: auto">
         <div class="row">
-            
+            <select name="country" id="country_list">
+                
+            </select>
         </div>
         <div class="row">
             <table class="table table-striped" style="width:30vw">
