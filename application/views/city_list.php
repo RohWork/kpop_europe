@@ -5,6 +5,9 @@
     </style>
     <div class="container" style="overflow: auto">
         <div class="row">
+            
+        </div>
+        <div class="row">
             <table class="table table-striped" style="width:30vw">
                 <thead>
                 <tr>
