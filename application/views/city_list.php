@@ -5,22 +5,24 @@
     </style>
     <div class="container" style="overflow: auto">
         <div class="row">
-            <form action="/city" method="post">
-                <select name="country" id="country_list" onchange="this.form.submit();" class="form-select">
-                    <option value="">
-                    <?php
-                        foreach($country as $cnt){
-                            $selected = "";
-                            if($cnt['idx'] == $country_idx){
-                                $selected = "selected";
+            <div class="col-md-4">
+                <form action="/city" method="post">
+                    <select name="country" id="country_list" onchange="this.form.submit();" class="form-select">
+                        <option value="">
+                        <?php
+                            foreach($country as $cnt){
+                                $selected = "";
+                                if($cnt['idx'] == $country_idx){
+                                    $selected = "selected";
+                                }
+                        ?>        
+                        <option value="<?=$cnt['idx']?>" <?=$selected?>><?=$cnt['name']?></option>
+                        <?php
                             }
-                    ?>        
-                    <option value="<?=$cnt['idx']?>" <?=$selected?>><?=$cnt['name']?></option>
-                    <?php
-                        }
-                    ?>
-                </select>
-            </form>
+                        ?>
+                    </select>
+                </form>
+            </div>
         </div>
         <div class="row">
             <table class="table table-striped" style="width:30vw">
