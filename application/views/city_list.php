@@ -5,9 +5,17 @@
     </style>
     <div class="container" style="overflow: auto">
         <div class="row">
-            <select name="country" id="country_list">
-                
-            </select>
+            <form action="/city" method="post">
+                <select name="country" id="country_list" onchange="">
+                    <?php
+                        foreach($country as $cnt){
+                    ?>        
+                    <option value="<?=$cnt['idx']?>"><?=$cnt['name'?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+            </form>
         </div>
         <div class="row">
             <table class="table table-striped" style="width:30vw">
