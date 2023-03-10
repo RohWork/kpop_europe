@@ -9,6 +9,7 @@
                 <thead>
                 <tr>
                     <th>No</th>
+                    <th>Order</th>
                     <th>Country Name</th>
                     <th>Name</th>
                     <th>Writer</th>
@@ -21,6 +22,7 @@
                         foreach($list as $con){
                             echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
                             echo "<td>".$i."</td>";
+                            echo "<td>".$con['order']."</td>";
                             echo "<td>".$con['country_name']."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
