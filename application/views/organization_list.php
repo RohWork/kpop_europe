@@ -75,15 +75,15 @@
             location.href= "/organization/insert";
         })
         
-        function view_info(idx_name){
-            var idxurl = idx_name.split("_");
-
-
+        function view_info(idx){
+            var idxurl = idx;
+            var name $("#"+idx).val();
+            
             var url = "/organization/detail/"+idxurl[0];
 
             $('#detail_frame').attr('src', url);
 
-            $(".modal-title").text(idxurl[1]);
+            $(".modal-title").text(name);
             // 모달창 띄우기
             $('#detail_modal').modal("show");
         }
