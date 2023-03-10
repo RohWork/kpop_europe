@@ -21,11 +21,12 @@ class Country_model extends CI_Model {
         
     }
     
-    function modify_country($country, $country_idx){
+    function modify_country($data, $country_idx){
         
         $params = array();
         
-        $params['name'] = $country;
+        $params['name'] = $data['country'];
+        $params['order'] = $data['order'];
         $params['modifier'] = $this->session->userdata('name');
         $params['modi_date'] = date('Y-m-d h:i:s');
         
