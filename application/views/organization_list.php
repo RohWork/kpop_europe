@@ -19,9 +19,10 @@
                     <?php
                         $i =1;
                         foreach($list as $con){
-                            echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
+                            $val = $con['idx']."_".$con['name'];
+                            echo "<tr onclick=view_info('$val') class='onpointer'>";
                             echo "<td>".$i."</td>";
-                            echo "<td>".$con['ord']." </td>";
+                            echo "<td>".$con['ord']."</td>";
                             echo "<td>".$con['name']."</td>";
                             echo "<td>".$con['writer']."</td>";
                             echo "<td>".substr($con['regi_date'],0,10)."</td>";
