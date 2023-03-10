@@ -40,7 +40,7 @@ class Country_model extends CI_Model {
     
     function get_country(){
         
-        $sSql = "SELECT * FROM `kpop_country` where state = '1' order by idx desc";
+        $sSql = "SELECT * FROM `kpop_country` where state = '1' order by order asc, idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
@@ -50,7 +50,7 @@ class Country_model extends CI_Model {
     
     function get_country_idx($idx){
         
-        $sSql = "SELECT * FROM `kpop_country` where state = '1' and idx = $idx order by idx desc";
+        $sSql = "SELECT * FROM `kpop_country` where state = '1' and idx = $idx order by order asc, idx desc";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
@@ -60,7 +60,7 @@ class Country_model extends CI_Model {
     
     function get_country_name($name){
         
-        $sSql = "SELECT * FROM `kpop_country` where state = '1' and name = '$name' order by idx desc";
+        $sSql = "SELECT * FROM `kpop_country` where state = '1' and name = '$name' order by order asc, idx desc";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
