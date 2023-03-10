@@ -64,11 +64,14 @@ class Organization extends CI_Controller {
     function modify_ajax(){
         
         $data = array();
+        $params = array();
         
         $data['result'] = 200;
         $data['message'] = "";
         
-        $organization = $this->input->post("organization");
+        $params['organization'] = $this->input->post("organization");
+        $params['ord'] = $this->input->post("order");
+        
         $organization_idx = $this->input->post("organization_idx");
         $result = $this->org_md->modify_organization($organization,$organization_idx);
         
