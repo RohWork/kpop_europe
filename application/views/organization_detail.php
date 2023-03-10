@@ -18,6 +18,14 @@
                         <input type="hidden" id="organization_idx" name="organization_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-4">
+                        <label class="form-label bold"><strong>Organization Order</strong></label>
+                    </div>
+                    <div class="col-8">
+                        <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
+                    </div>
+                </div>
             </form>
         </div>
     </body>
