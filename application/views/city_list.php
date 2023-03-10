@@ -10,7 +10,7 @@
                     <?php
                         foreach($country as $cnt){
                     ?>        
-                    <option value="<?=$cnt['idx']?>"><?=$cnt['name'?></option>
+                    <option value="<?=$cnt['idx']?>"><?=$cnt['name']?></option>
                     <?php
                         }
                     ?>
