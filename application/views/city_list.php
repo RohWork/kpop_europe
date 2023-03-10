@@ -6,7 +6,7 @@
     <div class="container" style="overflow: auto">
         <div class="row">
             <form action="/city" method="post">
-                <select name="country" id="country_list" onchange="this.form.submit();">
+                <select name="country" id="country_list" onchange="this.form.submit();" class="form-select">
                     <option value="">
                     <?php
                         foreach($country as $cnt){
