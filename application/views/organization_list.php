@@ -20,7 +20,7 @@
                         $i =1;
                         foreach($list as $con){
   
-                            $val = $con['idx']."_".$con['name'];
+                            $val = $con['idx'].",".$con['name'];
                             echo "<tr onclick=view_info('".$val."') class='onpointer'>";
                             echo "<td>".$i."</td>";
                             echo "<td>".$con['ord']."</td>";
