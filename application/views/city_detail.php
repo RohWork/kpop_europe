@@ -41,7 +41,7 @@
                         <label class="form-label bold"><strong>City Order</strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
+                        <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
                     </div>
                 </div>
             </form>
