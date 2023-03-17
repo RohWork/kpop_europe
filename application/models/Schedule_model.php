@@ -67,7 +67,7 @@ class Schedule_model extends CI_Model {
             $limit = "limit ".$paging['start'].",".$paging['end'];
         }
         
-        $sSql = "SELECT ki.space, kc.name as country_name, ky.name as city_name, kz.name as organization_name , ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx FROM 
+        $sSql = "SELECT ki.space, kc.name as country_name, ky.name as city_name, kz.name as organization_name , ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx, ki.type as type FROM 
                     kpop_info AS ki 
                     left join kpop_country as kc on ki.country_idx = kc.idx
                     left join kpop_city as ky on ki.city_idx = ky.idx
