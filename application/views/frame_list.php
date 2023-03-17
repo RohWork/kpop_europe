@@ -12,10 +12,10 @@
                 <div class="col-12">
                     <table class="table table-striped">
                         <tr>
-                            <th>Orgernizer</th>
-                            <th>Club Name</th>
                             <th>Country</th>
                             <th>City</th>
+                            <th>Space</th>
+                            <th>Orgernizer</th>
                             <th>START_DATE</th>
                             <th>END_DATE</th>
                         </tr>
@@ -24,10 +24,10 @@
                             foreach($list as $li){
                         ?>        
                         <tr onclick="go_detail(<?=$li['idx']?>,'<?=$li['name']?>')" style="cursor: pointer">
-                            <td><?=$li['organization_name']?></td>
-                            <td><?=$li['space']?></td>
                             <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
+                            <td><?=$li['space']?></td>
+                            <td><?=$li['organization_name']?></td>
                             <td><?=date('d-m-Y',strtotime($li['start_date']))?></td>
                             <td><?=date('d-m-Y',strtotime($li['end_date']))?></td>
                         </tr>   
