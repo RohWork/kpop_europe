@@ -104,23 +104,21 @@
                 <div class="col-12">
                     <table class="table table-striped" style="font-size:0.8rem">
                         <tr>
-                            <th>Name</th>
-                            <th>Club Name</th>
+                            <th>Type</th>
+                            <th>START_DATE</th>
                             <th>Country</th>
                             <th>City</th>
-                            <th>START_DATE</th>
-                            <th>END_DATE</th>
+                            <th>Space</th>
                         </tr>
                         <?php 
                             foreach($list as $li){
                         ?>        
                         <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
-                            <td><?=$li['name']?></td>
-                            <td><?=$li['space']?></td>
+                            <td><?=$li['type']?></td>
+                            <td><?=$li['start_date']?></td>
                             <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
-                            <td><?=$li['start_date']?></td>
-                            <td><?=$li['end_date']?></td>
+                            <td><?=$li['space']?></td>
                         </tr>   
                         <?php 
                             }
