@@ -42,7 +42,7 @@
                 
                 <div class="col-4">
                     <div class="form-floating">
-                        <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
+                        <select id="check_country" name="country" class="form-select" onchange="this.form.submit()">
                             <option value=""></option>
                             <?php foreach($country_list as $cnt){ 
                                 $search_cnt = "";
