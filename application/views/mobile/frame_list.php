@@ -12,18 +12,19 @@
                 <div class="col-12">
                     <table class="table table-striped">
                         <tr>
-                            <th>Orgernizer</th>
-                            <th>Club Name</th>
+                            <th>Country</th>
                             <th>City</th>
+                            <th>Space</th>
+                            
                         </tr>
                         <?php 
                             $i=1;
                             foreach($list as $li){
                         ?>        
                         <tr onclick="go_detail(<?=$li['idx']?>,'<?=$li['name']?>')" style="cursor: pointer">
-                            <td><?=$li['organization_name']?></td>
-                            <td><?=$li['space']?></td>
+                            <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
+                            <td><?=$li['space']?></td>
                         </tr>   
                         <?php 
                             $i++;
