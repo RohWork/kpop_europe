@@ -26,7 +26,7 @@
                             <option value="party" <?=$search['type'] == 'party' ? "selected" : "" ?>>PARTY</option>
                             <option value="concert" <?=$search['type'] == 'concert' ? "selected" : "" ?>>CONCERT</option>
                         </select>
-                        <label class="form-label col-1">
+                        <label class="form-label">
                             <?=$this->lang->line('type')?>
                         </label>
                     </div>
@@ -46,7 +46,7 @@
 
                             <?php } ?>
                         </select>
-                        <label class="form-label col-1">
+                        <label class="form-label">
                             <?=$this->lang->line('country')?>
                         </label>
                     </div>
@@ -68,7 +68,7 @@
 
                             <?php } ?>
                         </select>
-                        <label class="form-label col-1">
+                        <label class="form-label">
                             <?=$this->lang->line('city')?>
                         </label>
                     </div>
