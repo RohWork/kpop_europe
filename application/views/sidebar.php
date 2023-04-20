@@ -36,7 +36,7 @@
                 <div class="collapse" id="party-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">   
                         <li>
-                            <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('schedule')?></span></a> 
+                            <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('calendar')?></span></a> 
                         </li>
                     </ul>
                 </div>     
