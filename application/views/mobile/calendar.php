@@ -35,7 +35,7 @@
                             <option value="concert" <?=$select['concert']?>>CONCERT</option>
                         </select>
                         <label class="form-label col-1">
-                            type
+                            <?=$this->lang->line('type')?>
                         </label>
                     </div>
                 </div>
@@ -54,8 +54,8 @@
 
                             <?php } ?>
                         </select>
-                        <label class="form-label col-1">
-                            COUNTRY
+                        <label class="form-label">
+                            <?=$this->lang->line('country')?>
                         </label>
                     </div>
                 </div>
@@ -76,8 +76,8 @@
 
                             <?php } ?>
                         </select>
-                        <label class="form-label col-1">
-                            CITY
+                        <label class="form-label">
+                            <?=$this->lang->line('city')?>
                         </label>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                             <?php } ?>
                         </select>
                         <label for="organization">
-                            ORGERNIZER
+                            <?=$this->lang->line('orgernizer')?>
                         </label>
                     </div>
                 </div>
@@ -131,13 +131,13 @@
                 </td>
               </tr>
               <tr class="info">
-                <th hight="30" width="10%">SUN</td>
-                <th width="10%">MON</th>
-                <th width="10%">TUE</th>
-                <th width="10%">WED</th>
-                <th width="10%">THU</th>
-                <th width="10%">FRI</th>
-                <th width="10%">SAT</th>
+                <th hight="30" width="10%"><?=$this->lang->line('sun')?></td>
+                <th width="10%"><?=$this->lang->line('mon')?></th>
+                <th width="10%"><?=$this->lang->line('tue')?></th>
+                <th width="10%"><?=$this->lang->line('wed')?></th>
+                <th width="10%"><?=$this->lang->line('thu')?></th>
+                <th width="10%"><?=$this->lang->line('fri')?></th>
+                <th width="10%"><?=$this->lang->line('sat')?></th>
               </tr>
 
               <?php
@@ -207,7 +207,7 @@
         <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
             <div class="modal-content" style="height:800px">
                 <div class="modal-header">
-                    <h5 class="modal-title">detail</h5>
+                    <h5 class="modal-title"><?=$this->lang->line('detail')?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -335,7 +335,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
