@@ -19,6 +19,22 @@ class Main extends CI_Controller {
         if(!empty($this->input->get_post("date"))){
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
         }
+        
+        $lang = $this->input->get_post("lang");
+        if(empty($lang)){
+            $lang = $this->session->get_userdata('lang');
+        }
+        if(empty($lang)){
+            $lang = "eng";
+        }
+        
+        
+        
+        $this->session->set_userdata('lang',$lang);
+        
+        
+        
+        
         $search['country'] = $this->input->get_post("country");
         $search['city'] = $this->input->get_post("city");
         $search['organizer'] = $this->input->get_post("organization");
