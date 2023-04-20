@@ -1,3 +1,10 @@
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('menu', $lang);
+
+?>
+
+
 <main>
 <link href="/asset/css/sidebar.css" rel="stylesheet">
 <style>
@@ -29,7 +36,7 @@
                 <div class="collapse" id="party-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">   
                         <li>
-                            <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Schedule</span></a> 
+                            <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('schedule')?></span></a> 
                         </li>
                     </ul>
                 </div>     
@@ -60,27 +67,27 @@
             -->
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="#" class="btn btn-toggle align-items-center rounded">Community</a>
+                <a href="#" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('community')?></a>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
-                    Schedule
+                    <?=$this->lang->line('schedule')?>
                 </button>
                 
                 <div class="collapse" id="input-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
-                             <a href="/schedule/list"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">List</span></a>
+                             <a href="/schedule/list"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('list')?></span></a>
                         </li>
                         <?php if($this->session->userdata('level') > 1){ ?>
                         <li>
-                            <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Data Insert</span></a>
+                            <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('data_insert')?></span></a>
                         </li>
                         <?php }?>
                         <?php if($this->session->userdata('level') > 2){ ?>
                         <li>
-                            <a href="/schedule/excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Excel Upload</span></a>
+                            <a href="/schedule/excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('excel_upload')?></span></a>
                         </li>
                         <?php }?>
                     </ul>
@@ -97,9 +104,9 @@
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
                             
-                            <a href="/country"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Country</span></a>
-                            <a href="/city""><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">City</span></a>
-                            <a href="/organization"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark">Organizer</span></a>
+                            <a href="/country"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('Country')?><</span></a>
+                            <a href="/city""><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('City')?><</span></a>
+                            <a href="/organization"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('Organizer')?><</span></a>
                         </li>
                     </ul>
                 </div>
