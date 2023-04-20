@@ -1,3 +1,12 @@
+
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('calendar', $lang);
+
+?>
+
+
+
 <style>
     .a_border{
         text-decoration: none;
@@ -18,7 +27,7 @@
                             <option value="concert" <?=$search['type'] == 'concert' ? "selected" : "" ?>>CONCERT</option>
                         </select>
                         <label class="form-label col-1">
-                            type
+                            <?=$this->lang->line('type')?>
                         </label>
                     </div>
                 </div>
@@ -38,7 +47,7 @@
                             <?php } ?>
                         </select>
                         <label class="form-label col-1">
-                            COUNTRY
+                            <?=$this->lang->line('country')?>
                         </label>
                     </div>
                 </div>
@@ -60,7 +69,7 @@
                             <?php } ?>
                         </select>
                         <label class="form-label col-1">
-                            CITY
+                            <?=$this->lang->line('city')?>
                         </label>
                     </div>
                 </div>
@@ -82,7 +91,7 @@
                             <?php } ?>
                         </select>
                         <label for="organization">
-                            ORGERNIZER
+                            <?=$this->lang->line('orgernizer')?>
                         </label>
                     </div>
                 </div>
@@ -118,13 +127,13 @@
                 </td>
               </tr>
               <tr class="info">
-                <th hight="30" width="100">SUN</td>
-                <th width="100">MON</th>
-                <th width="100">TUE</th>
-                <th width="100">WED</th>
-                <th width="100">THU</th>
-                <th width="100">FRI</th>
-                <th width="100">SAT</th>
+                <th hight="30" width="100"><?=$this->lang->line('sun')?></td>
+                <th width="100"><?=$this->lang->line('mon')?></th>
+                <th width="100"><?=$this->lang->line('tue')?></th>
+                <th width="100"><?=$this->lang->line('wed')?></th>
+                <th width="100"><?=$this->lang->line('thu')?></th>
+                <th width="100"><?=$this->lang->line('fri')?></th>
+                <th width="100"><?=$this->lang->line('sat')?></th>
               </tr>
 
               <?php
@@ -173,7 +182,7 @@
                         if($cnt > 0){ ?>
                         
                         <br/>
-                        <div style="text-align: right"><font style='font-size:0.8rem;font-weight: 600;cursor:pointer' onclick="go_list('<?=$date?>')">COUNT : <?=$cnt?></font></div>
+                        <div style="text-align: right"><font style='font-size:0.8rem;font-weight: 600;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$this->lang->line('count')?> : <?=$cnt?></font></div>
                         
                         <?php
                         }
