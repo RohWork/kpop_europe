@@ -23,7 +23,7 @@ class Main extends CI_Controller {
         $lang = $this->input->get_post("language");
         
         if(empty($lang)){
-            $lang = $this->session->get_userdata('language');
+            $lang = $this->session->userdata('language');
         }
         if(empty($lang)){
             $lang = "eng";
