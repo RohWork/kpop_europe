@@ -11,7 +11,7 @@
             <form id="form_modify">
                 <div class="row">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>Country_name</strong></label>
+                        <label class="form-label bold"><strong>Country name</strong></label>
                     </div>
                     <div class="col-8">
                         <select id="country_idx" name="country_idx"  class="form-select">
