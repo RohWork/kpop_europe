@@ -20,16 +20,16 @@ class Main extends CI_Controller {
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
         }
         
-        $lang = $this->input->get_post("language");
+        $lang = $this->input->get_post("lang");
         
         if(empty($lang)){
-            $lang = $this->session->userdata('language');
+            $lang = $this->session->userdata('lang');
         }
         if(empty($lang)){
             $lang = "eng";
         }
 
-        $this->session->set_userdata('language',$lang);
+        $this->session->set_userdata('lang',$lang);
         session_commit();
         session_write_close();
         
