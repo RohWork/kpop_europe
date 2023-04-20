@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-1">
 
-                    <input type="submit" value="SEARCH" class="btn btn-success"/>
+                    <input type="submit" value="<?=$this->lang->line('search')?>" class="btn btn-success"/>
                 </div>
                 <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
                 <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
