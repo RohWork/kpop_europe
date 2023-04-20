@@ -3,7 +3,7 @@
     $lang['kpop_schedule'] = 'Kpop Schedule';
     $lang['schedule'] = 'Schedule';
     $lang['community'] = 'Community';
-    $lang['List'] = 'List';
+    $lang['list'] = 'List';
     $lang['data_insert'] = 'Data Insert';
     $lang['excel_upload'] = 'Excel Upload';
     $lang['Management'] = 'Management';
