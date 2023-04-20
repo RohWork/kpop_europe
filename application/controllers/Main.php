@@ -29,7 +29,8 @@ class Main extends CI_Controller {
         }
 
         $this->session->set_userdata('lang',$lang);
-        
+        session_commit();
+        session_write_close();
         
         
         
