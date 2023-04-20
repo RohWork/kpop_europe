@@ -21,6 +21,7 @@ class Main extends CI_Controller {
         }
         
         $lang = $this->input->get_post("lang");
+        
         if(empty($lang)){
             $lang = $this->session->get_userdata('lang');
         }
