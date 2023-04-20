@@ -105,7 +105,7 @@
                         <li>
                             
                             <a href="/country"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('Country')?></span></a>
-                            <a href="/city""><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('City')?></span></a>
+                            <a href="/city"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('City')?></span></a>
                             <a href="/organization"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('Organizer')?></span></a>
                         </li>
                     </ul>
