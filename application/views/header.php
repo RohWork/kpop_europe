@@ -1,3 +1,10 @@
+<?php
+    $lang = $this->session->get_userdata('lang');
+    $this->lang->load('menu', $lang);
+
+?>
+
+
 <html>
     <head>
         <title>Kpop In Europe</title>
@@ -21,8 +28,8 @@
                     </a>
 
                     <div class="text-end">
-                        to add,modify your schedule<br/>
-                        Contact us
+                        <?=$this->lang->line('toadd')?><br/>
+                        <?=$this->lang->line('contact')?>
                     </span>
                 </div>
             </div>
