@@ -203,7 +203,7 @@
         <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
             <div class="modal-content" style="height:800px">
                 <div class="modal-header">
-                    <h5 class="modal-title">detail</h5>
+                    <h5 class="modal-title"><?=$this->lang->line('detail')?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -330,7 +330,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
