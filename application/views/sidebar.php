@@ -98,7 +98,7 @@
             <li class="border-top my-3"></li>
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#management-collapse" aria-expanded="false">
-                    <?=$this->lang->line('management')?>
+                    <?=$this->lang->line('Management')?>
                 </button>
                 <div class="collapse" id="management-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
