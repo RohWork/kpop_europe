@@ -1,6 +1,6 @@
 <?php
     $lang = $this->session->get_userdata('lang');
-    echo $lang;
+    echo $lang;exit;
     $this->lang->load('menu', $lang);
 
 ?>
