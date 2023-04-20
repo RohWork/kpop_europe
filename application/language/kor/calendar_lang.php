@@ -1,8 +1,8 @@
 <?php
 
-    $lang['type'] = '타입';
-    $lang['country'] = '국가';
-    $lang['city'] = '도시';
+    $lang['type'] = '타 입';
+    $lang['country'] = '국 가';
+    $lang['city'] = '도 시';
     $lang['orgernizer'] = '사업자';
     $lang['search'] = '검색';
     $lang['sun'] = '일';
