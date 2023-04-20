@@ -13,5 +13,7 @@
     $lang['fri'] = '금';
     $lang['sat'] = '토';
     $lang['count'] = '갯수';
+    $lang['detail'] = '상세보기';
+    $lang['neterror'] = '네트워크 오류!! 관리자에게 문의 주세요!!';
     
 ?>
