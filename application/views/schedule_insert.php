@@ -57,7 +57,7 @@
 
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>Club name</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong>Location</strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <input type="text" class="form-control" id="input_space" name="input_space" required/>
