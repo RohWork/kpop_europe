@@ -55,7 +55,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Club name</strong></label>
+                    <label class="form-label"><strong>Location</strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['space']?></p>
