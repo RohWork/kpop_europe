@@ -120,7 +120,7 @@
                 if(data.result == 200){
                     location.href="/member/mail_process?email="+email;
                 }else{
-                    alert('실패');
+                    alert('input fail. check to data.');
                     alert(data.message);
                     return false;
                 }
