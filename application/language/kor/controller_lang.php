@@ -3,7 +3,7 @@
     $lang['type'] = '타입';
     $lang['country'] = '국가';
     $lang['city'] = '도시';
-    $lang['orgernizer'] = '사업자';
+    $lang['orgernizer'] = '주최사';
     $lang['search'] = '검색';
     $lang['sun'] = '일';
     $lang['mon'] = '월';
