@@ -15,8 +15,8 @@
 
     
     
-    $lang['sun'] = 'SUN';
-    $lang['mon'] = 'MON';
+    $lang['sun'] = "SUN";
+    $lang['mon'] = "MON";
     $lang['tue'] = 'TUE';
     $lang['wed'] = 'WED';
     $lang['thu'] = 'THU';
@@ -27,14 +27,17 @@
     $lang['enddate'] = "END DATE";
     $lang['searchdate'] = "SEARCH DATE";
     
-    $lang['detail'] = 'DETAIL';
+    $lang['detail'] = "DETAIL";
     $lang['insert'] = "INSERT";
     $lang['delete'] = "DELETE";
     $lang['modify'] = "MODIFY";
     $lang['cancel'] = "CANCEL";
     $lang['list'] = "LIST";
-    $lang['search'] = 'SEARCH';
-    $lang['login'] = 'LOGIN';
+    $lang['search'] = "SEARCH";
+    $lang['login'] = "LOGIN";
+    $lang['save'] = "SAVE";
+    $lang['close'] = "CLOSE";
+    $lang['reset'] = "RESET";
     
     $lang['home'] = "HOME";
     $lang['event'] = "Event";
@@ -49,15 +52,15 @@
     $lang['fname'] = "Family Name";
     
     
-    $lang['save'] = "SAVE";
-    $lang['close'] = "CLOSE";
-    $lang['reset'] = "RESET";
+
     $lang['order'] = "Order";
     $lang['name'] = "Name";
     $lang['writer'] = "Writer";
     $lang['registdate'] = "Regist date";
     $lang['orgernizationname'] = "Organization name";
     $lang['orgernizationorder'] = "Organization Order";
+    $lang['orgernizationinert'] = "Organization Insert";
+    
     
     $lang['neterror'] = 'Network Error!! take support to web manager!!';
     $lang['countryerror'] = "insert to country data";
@@ -69,6 +72,8 @@
     $lang['loginfail'] = "login fail, retry to login";
     
      
+    $lang['eventtype'] = "Event Type";
+    
     $lang['cityname'] = "CITY NAME";
     $lang['cityorder'] = "City Order";
     $lang['countryname'] = "Country name";
@@ -79,6 +84,7 @@
     
     $lang['checktodata.'] = "input fail. check to data.";
     $lang['deletecity'] = "do you want to delete city?";
+    $lang['deleteorganization'] = "do you want to delete organization?";
     $lang['completedelete'] = "complete to delete";
     $lang['checkemail'] = "Check to Your E-mail!";
     
