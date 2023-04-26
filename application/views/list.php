@@ -108,7 +108,7 @@
                             <th>START_DATE</th>
                             <th>Country</th>
                             <th>City</th>
-                            <th>Space</th>
+                            <th>Location</th>
                         </tr>
                         <?php 
                             foreach($list as $li){
