@@ -14,7 +14,7 @@
                         <tr>
                             <th>Country</th>
                             <th>City</th>
-                            <th>Space</th>
+                            <th>Location</th>
                             <th>Orgernizer</th>
                             <th>START_DATE</th>
                             <th>END_DATE</th>
