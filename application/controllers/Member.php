@@ -31,17 +31,17 @@ class Member extends CI_Controller {
                 session_commit();
                 session_write_close();
 
-                $data['message'] = "hello ".$result['nick'];
+                $data['message'] = $this->lang->line('hi').$result['nick'];
 
                 $data['result'] = 200;
             }else{
-                $data['message'] = "this E-mail is not confirmed. Take to E-mail confirm";
+                $data['message'] = $this->lang->line('mailerror2');
 
                 $data['result'] = 202;
             }
             
         }else{
-            $data['message'] = "Check To you're ID or PASSWORD";
+            $data['message'] = $this->lang->line('checkid');
 
             $data['result'] = 201;
         }
@@ -118,7 +118,7 @@ class Member extends CI_Controller {
             
             if(!$join_result){
 
-                $data['message'] = "Data processing failure";
+                $data['message'] = $this->lang->line('dataerror2');
 
                 $data['result'] = 201;
 
@@ -135,7 +135,7 @@ class Member extends CI_Controller {
         }else{
             
 
-            $data['message'] = "Duplicate email. Check to your email adress.";
+            $data['message'] = $this->lang->line('mailerror');
 
             $data['result'] = 202;
             
@@ -168,8 +168,8 @@ class Member extends CI_Controller {
         $this->email->clear();
         $this->email->from("admin@kpopineu.com", "kpopineu");
         $this->email->to($mail);
-        $this->email->subject('Confirm to your address');
-        $this->email->message('visit to : <a href=https://www.kpopineu.com/member/confirm_email?id='.$result['id'].'>this url</a>');
+        $this->email->subject($this->lang->line('confirm'));
+        $this->email->message($this->lang->line('visit').'<a href=https://www.kpopineu.com/member/confirm_email?id='.$result['id'].'>'.$this->lang->line('url').'</a>');
         
         if($this->email->send()) {
                  $this->load->view('mail_process');
@@ -184,7 +184,7 @@ class Member extends CI_Controller {
         $id = $this->input->get("id");
         
         if(empty($id)){
-            echo "id is null";
+            echo $this->lang->line('idcheck');
             return;
         }else{
             $result = $this->mem_md->set_id_member($id); 
