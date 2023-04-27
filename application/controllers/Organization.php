@@ -53,7 +53,7 @@ class Organization extends CI_Controller {
         
         if(!$result){
             $data['result'] = 400;
-            $data['message'] = "data process error";
+            $data['message'] = $this->lang->line('dataerror');
         }
 
         
@@ -77,7 +77,7 @@ class Organization extends CI_Controller {
         
         if(!$result){
             $data['result'] = 400;
-            $data['message'] = "data process error";
+            $data['message'] = $this->lang->line('dataerror');
         }
         
         header("Content-Type: application/json;");
@@ -101,7 +101,7 @@ class Organization extends CI_Controller {
 
             
         }else{
-            $data['message'] = "Check To you're idx";
+            $data['message'] = $this->lang->line('idxerror');
 
             $data['result'] = 201;
         }
