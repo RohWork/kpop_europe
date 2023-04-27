@@ -6,7 +6,9 @@ class City extends CI_Controller {
     function __construct() {
         parent ::__construct();
         
-
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('controller', $lang);
+        
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
     }
@@ -54,7 +56,7 @@ class City extends CI_Controller {
         
         if(!$result){
             $data['result'] = 400;
-            $data['message'] = "data process error";
+            $data['message'] = $this->lang->line('dataerror');
         }
         
         header("Content-Type: application/json;");
@@ -96,7 +98,7 @@ class City extends CI_Controller {
         
         if(!$result){
             $data['result'] = 400;
-            $data['message'] = "data process error";
+            $data['message'] = $this->lang->line('dataerror');
         }
         
 
@@ -120,7 +122,7 @@ class City extends CI_Controller {
         
         if(!$result){
             $data['code'] = 400;
-            $data['message'] = "data process error";
+            $data['message'] = $this->lang->line('dataerror');
         }else{
             $data['result'] = $result;
         }
@@ -148,7 +150,7 @@ class City extends CI_Controller {
 
             
         }else{
-            $data['message'] = "Check To you're idx";
+            $data['message'] = $this->lang->line('idxerror');
 
             $data['result'] = 201;
         }
