@@ -16,6 +16,7 @@
     $lang['detail'] = '상세';
     $lang['hi'] = "안녕하세요";
     
+    $lang['idcheck'] = "아이디를 확인하세요.";
     $lang['neterror'] = '네트워크 에러!! 웹관리자에게 문의 하세요!!';
     $lang['dataerror'] = '데이터 처리 오류';
     $lang['dataerror2'] = "데이터 처리가 실패했습니다.";
