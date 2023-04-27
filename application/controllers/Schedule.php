@@ -264,13 +264,13 @@ class Schedule extends CI_Controller {
 
                 $data['result'] = 200;
             }else{
-                $data['message'] = "Duplicated schedule data.";
+                $data['message'] = $this->lang->line('dupleschedule');
 
                 $data['result'] = 202;
             }
             
         }else{
-            $data['message'] = "Check To you're name or start_date or end_date";
+            $data['message'] = $this->lang->line('paramerror');
 
             $data['result'] = 201;
         }
@@ -298,13 +298,13 @@ class Schedule extends CI_Controller {
         }else{
             if(!empty($idx)){
 
-                 $data['message'] = "Not You'r Schedule";
+                 $data['message'] = $this->lang->line('mineerror');
 
                 $data['result'] = 201;
 
 
             }else{
-                $data['message'] = "Check To you're idx";
+                $data['message'] = $this->lang->line('idxerror');
 
                 $data['result'] = 201;
             }
@@ -394,12 +394,12 @@ class Schedule extends CI_Controller {
                 $data['result'] = 200;
 
             }else{
-                $data['message'] = "Data Procss Fail";
+                $data['message'] = $this->lang->line('dataerror2');
 
                 $data['result'] = 201;
             }
         }else{
-            $data['message'] = "Check To you're name or start_date or end_date";
+            $data['message'] = $this->lang->line('paramerror');
 
             $data['result'] = 201;
         }
@@ -508,7 +508,7 @@ class Schedule extends CI_Controller {
                             $result = $this->sch_md->insert_schedule($params);
                             $result_code = "1";
                         }else{
-                            $result = "Duplicated schedule.";
+                            $result = $this->lang->line('dupleschedule');
                             $result_code = "0";
                         }
                         
