@@ -16,6 +16,7 @@
     $lang['detail'] = 'DETAIL';
     $lang['hi'] = "hello";
     
+    $lang['idcheck'] = "id is null";
     $lang['neterror'] = 'Network Error!! take support to web manager!!';
     $lang['dataerror'] = 'data process error';
     $lang['dataerror2'] = "Data processing failure";
