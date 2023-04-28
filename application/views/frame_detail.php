@@ -10,7 +10,7 @@
         <div class="container" style="font-size: 12px">
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label bold"><strong>Event</strong></label>
+                    <label class="form-label bold"><strong><?=$this->lang->line('event')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['name']?></p>
@@ -18,7 +18,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-2">
-                    <label class="form-label"><strong>Country</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('country')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['country_name']?></p>
@@ -26,7 +26,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-2">
-                    <label class="form-label"><strong>City</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('city')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['city_name']?></p>
@@ -34,7 +34,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-2">
-                    <label class="form-label"><strong>Organizer</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('orgernizer')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['orgernizer']?></p>
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>Location</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('location')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['space']?></p>
@@ -50,7 +50,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>Address</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('address')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=$detail_info['addr']?></p>
@@ -90,7 +90,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>Date</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('date')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=date('d-m-Y H:00:00',strtotime($detail_info['start_date']))?> ~ <?=date('d-m-Y H:00:00',strtotime($detail_info['end_date']))?></p>
@@ -98,7 +98,7 @@
             </div>
             <div class="row">
                 <div class="col-2">
-                    <label class="form-label"><strong>Etc</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('etc')?></strong></label>
                 </div>
                 <div class="col-10">
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
@@ -125,11 +125,11 @@
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                        <span class="visually-hidden"><?=$this->lang->line('previous')?></span>
                       </button>
                       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                        <span class="visually-hidden"><?=$this->lang->line('next')?></span>
                       </button>
                   </div>
 
