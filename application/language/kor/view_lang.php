@@ -13,7 +13,7 @@
     $lang['concert'] = "콘서트";
     $lang['findpw'] = "비밀번호찾기";
 
-    
+    $lang['hi'] = "안녕하세요";
     
     $lang['sun'] = '일';
     $lang['mon'] = '월';
