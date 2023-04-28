@@ -99,5 +99,5 @@
     $lang['completedelete'] = "complete to delete";
     $lang['checkemail'] = "Check to Your E-mail!";
     
-    
+    $lang['require'] = "Required input";
 ?>
