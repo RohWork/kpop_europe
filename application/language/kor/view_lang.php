@@ -97,5 +97,6 @@
     $lang['deleteschedule'] = "스케줄을 삭제 하시겠습니까?";
     $lang['checkemail'] = "이메일을 확인하세요!";
     
+    $lang['require'] = "입력을 요구함";
     
 ?>
