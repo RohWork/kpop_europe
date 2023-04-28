@@ -2,10 +2,10 @@
         <form id="city_insert">
             <div class="form-group">
                 <div class="row">
-                    <label class="form-label"><h3>City Insert</h3></label>
+                    <label class="form-label"><h3><?=$this->lang->line('cityinsert')?></h3></label>
                 </div>
                 <div class="row mt-1">
-                    <label class="form-label col-md-2 col-xs-4"><strong>Country</strong></label>
+                    <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('country')?></strong></label>
 
                     <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                         <select id="check_country" name="check_country" class="form-select">
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="row mt-1">
-                    <label class="form-label col-md-2 col-xs-4"><strong>City name</strong></label>
+                    <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('cityname')?></strong></label>
 
                     <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                         <input type="text" class="form-control" id="input_city" name="input_city"/>
@@ -36,8 +36,8 @@
                 
                 <div class="col-md-2 col-xs-2 "></div>
                 <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
-                    <button type="button" class="btn btn-success" id="btn_insert">INSERT</button>
-                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();">RESET</button>
+                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
                 </div>
             </div>
         </form>
@@ -62,13 +62,13 @@
                         alert('complete to insert');
                         location.href = "/city?country=<?=$select_country?>";
                     }else{
-                        alert('input fail. check to data.');
+                        alert('<?=$this->lang->line('checktodata')?>');
                         console.log(data);
                     }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("Network error!! Confirm to Manager!!");
+                    alert("<?=$this->lang->line('neterror')?>");
                     return false;
                 }	 
             });
