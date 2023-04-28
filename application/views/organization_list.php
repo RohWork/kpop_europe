@@ -1,3 +1,11 @@
+    <?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('view', $lang);
+
+?>
+
+
+
     <style>
         .onpointer{
             cursor: pointer;
