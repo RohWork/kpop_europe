@@ -23,6 +23,7 @@
     $lang['fri'] = 'FRI';
     $lang['sat'] = 'SAT';
     $lang['count'] = 'COUNT';
+    
     $lang['startdate'] = "START DATE";
     $lang['enddate'] = "END DATE";
     $lang['searchdate'] = "SEARCH DATE";
@@ -41,7 +42,6 @@
     
     $lang['home'] = "HOME";
     $lang['event'] = "Event";
-    $lang['home'] = "HOME";
     $lang['date'] = "DATE";
     $lang['etc'] = "Etc";
     $lang['image'] = "Image";
@@ -52,7 +52,6 @@
     $lang['fname'] = "Family Name";
     
     
-
     $lang['order'] = "Order";
     $lang['name'] = "Name";
     $lang['writer'] = "Writer";
