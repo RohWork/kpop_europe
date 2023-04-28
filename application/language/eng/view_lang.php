@@ -52,6 +52,7 @@
     $lang['gname'] = "Given Name";
     $lang['fname'] = "Family Name";
     $lang['confirm'] = "Confirm";
+    $lang['homepage'] = "Homepage";
     
     $lang['order'] = "Order";
     $lang['name'] = "Name";
@@ -81,7 +82,9 @@
     $lang['cityname'] = "CITY NAME";
     $lang['cityorder'] = "City Order";
     $lang['countryname'] = "Country name";
-    
+    $lang['countryinsert'] = "Country Insert";
+    $lang['cityinsert'] = "City Insert";
+    $lang['orgernizationinsert'] = "Orgernization Insert";
     
     $lang['completemodify'] = "Complete to modify";
     $lang['completeinsert'] = "Complete to insert";
