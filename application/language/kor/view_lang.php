@@ -82,7 +82,7 @@
     $lang['completedelete'] = "삭제 완료";
     $lang['completeemail'] = "이메일 확인완료";
     
-    $lang['checktodata.'] = "입력된 데이터를 확인 하세요.";
+    $lang['checktodata'] = "입력된 데이터를 확인 하세요.";
     $lang['deletecity'] = "도시 데이터를 삭제하시겠습니까??";
     $lang['deleteorganization'] = "주최사 데이터를 삭제 하시겠습니까?";
     $lang['checkemail'] = "이메일을 확인하세요!";
