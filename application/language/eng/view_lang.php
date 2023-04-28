@@ -85,6 +85,7 @@
     $lang['countryinsert'] = "Country Insert";
     $lang['cityinsert'] = "City Insert";
     $lang['orgernizationinsert'] = "Orgernization Insert";
+    $lang['scheduleinsert'] = "Schedule Insert";
     
     $lang['completemodify'] = "Complete to modify";
     $lang['completeinsert'] = "Complete to insert";
