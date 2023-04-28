@@ -64,7 +64,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" onclick="modal_delete();"><?=$this->lang->line('delete')?><</button>
                     <button type="button" class="btn btn-primary" onclick="modal_submit();"><?=$this->lang->line('save')?><</button>
-                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close"><?=$this->lang->line('close')?><</button>
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close"><?=$this->lang->line('close')?></button>
                 </div>
             </div>
         </div>
