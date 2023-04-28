@@ -9,10 +9,10 @@
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th>Order</th>
-                    <th>Name</th>
-                    <th>Writer</th>
-                    <th>Regist_date</th>
+                    <th><?=$this->lang->line('order')?><</th>
+                    <th><?=$this->lang->line('name')?><</th>
+                    <th><?=$this->lang->line('writer')?><</th>
+                    <th><?=$this->lang->line('registdate')?><</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,7 @@
         </div>
         <div class="row">
             <div class="col-5 col-offset-7 text-end">
-                <button type="button" class="btn btn-primary" id="insert_button">INSERT</button>
+                <button type="button" class="btn btn-primary" id="insert_button"><?=$this->lang->line('insert')?><</button>
             </div>
         </div>         
     </div>
@@ -53,7 +53,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">detail</h5>
+                    <h5 class="modal-title"><?=$this->lang->line('detail')?><</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -62,9 +62,9 @@
                     <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" onclick="modal_delete();">Delete</button>
-                    <button type="button" class="btn btn-primary" onclick="modal_submit();">Save</button>
-                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="modal_delete();"><?=$this->lang->line('delete')?><</button>
+                    <button type="button" class="btn btn-primary" onclick="modal_submit();"><?=$this->lang->line('save')?><</button>
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close"><?=$this->lang->line('close')?><</button>
                 </div>
             </div>
         </div>
