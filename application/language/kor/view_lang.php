@@ -52,6 +52,7 @@
     $lang['gname'] = "이름";
     $lang['fname'] = "성";
     $lang['confirm'] = "확인";
+    $lang['homepage'] = "홈페이지";
    
     $lang['order'] = "순서";
     $lang['name'] = "이름";
@@ -61,7 +62,9 @@
     $lang['orgernizationorder'] = "주최사 순서";
     $lang['orgernizationinsert'] = "주최사 추가";
     $lang['excelupload'] = "엑셀 데이터 입력.";
-    
+    $lang['countryinsert'] = "국가 데이터 입력";
+    $lang['cityinsert'] = "도시 데이터 입력";
+    $lang['orgernizationinsert'] = "주최사 데이터 입력";    
     
     $lang['neterror'] = '네트워크 에러!! 웹관리자에게 문의 하세요!!';
     $lang['countryerror'] = "국가 데이터를 입력하세요.";
