@@ -73,7 +73,7 @@
     $lang['mailerror2'] = "이메일이 확인되지 않았습니다. 이메일 확인을 실행하세요.";
     $lang['errorinsertcity'] = "도시정보 데이터를 추가하세요.";
     $lang['errorinsertcountry'] = "국가정보 데이터를 추가하세요.";
-    $lang['confirmdata'] = "입력된 데이터를 확인하세요..";
+    $lang['confirmdata'] = "입력된 데이터를 확인하세요.";
     $lang['confirmemail'] = "이메일주소를 확인하세요.";
     $lang['confirmpassword'] = "비밀번호를 확인하세요.";
     $lang['loginfail'] = "로그인실패, 다시 로그인을 진행하세요.";
