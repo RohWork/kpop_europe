@@ -2,7 +2,7 @@
     <div class="container" style="overflow:auto">
         <form id="calendar_insert">
             <div class="row">
-                <label class="form-label"><h3>Schedule Insert</h3></label>
+                <label class="form-label"><h3><?=$this->lang->line('scheduleinsert')?></h3></label>
             </div>
             <div class="row mt-1">
                 <label class="form-label col-md-2 col-xs-4"><strong>Event</strong></label>
@@ -21,7 +21,7 @@
             </div>
             
             <div class="row mt-1">
-                <label class="form-label col-md-2 col-xs-4"><strong>Country</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('country')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <select id="check_country" name="check_country" class="form-select">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="row mt-1">
-                <label class="form-label col-md-2 col-xs-4"><strong>City</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('city')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <select class="form-select" id="check_city" name="check_city">
@@ -43,7 +43,7 @@
             </div>    
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>Organization</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('orgernization')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                         <select id="check_organization" name="check_organization" class="form-select">
@@ -57,7 +57,7 @@
 
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>Location</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('location')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <input type="text" class="form-control" id="input_space" name="input_space" required/>
@@ -65,7 +65,7 @@
             </div>
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>Address</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('address')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
                     <input type="text" class="form-control" id="input_addr" name="input_addr" required/>
@@ -103,7 +103,7 @@
             </div>
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>Start Date</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('startdate')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
                     <input type="text" class="form-control" id="input_start_date"  name="input_start_date" required/>
@@ -111,7 +111,7 @@
             </div>
             <div class="row mt-1">
 
-                <label class="form-label col-md-2 col-xs-4"><strong>End Date</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('enddate')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4 ">
                     <input type="text" class="form-control" id="input_end_date"  name="input_end_date" required/>
@@ -119,7 +119,7 @@
             </div>
             <div class="row mt-1">
                 
-                <label class="form-label col-md-2 col-xs-4"><strong>Etc</strong></label>
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('etc')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
 
@@ -141,8 +141,8 @@
                 
                 <div class="col-md-2 col-xs-2 "></div>
                 <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
-                    <button type="button" class="btn btn-success" id="btn_insert">INSERT</button>
-                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();">RESET</button>
+                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
                 </div>
             </div>
         </form>
@@ -172,7 +172,7 @@
         $("#calendar_insert").validate({
             messages:{
                 title: {
-                    required : "Custom required, Please enter a title."
+                    required : "<?=$this->lang->line('titleerror')?>"
                 }
             },
             submitHandler: function (form){
@@ -185,7 +185,7 @@
                     data: data,
                     success:function(data){
                         if(data.result == 200){
-                            alert('complete');
+                            alert('<?=$this->lang->line('completeinsert')?>');
                             location.reload();
                         }else{
 
@@ -195,7 +195,7 @@
                     },
                     error: function(xhr,status,error) {
                         console.log(xhr,status,error);
-                        alert("Network Error!! take support to web manager!!");
+                        alert("<?=$this->lang->line('neterror')?>");
                         return false;
                     }	 
                 });
@@ -236,7 +236,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
