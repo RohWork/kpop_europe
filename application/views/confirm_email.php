@@ -1,3 +1,10 @@
+
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('calendar', $lang);
+
+?>
+
 <html>
     
     <head>
