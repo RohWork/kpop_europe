@@ -1,10 +1,10 @@
     <div class="container form-group">
         <form id="country_insert">
             <div class="row">
-                <label class="form-label"><h3>Country Insert</h3></label>
+                <label class="form-label"><h3><?=$this->lang->line('countryinert')?></h3></label>
             </div>
             <div class="row mt-1">
-                <label class="form-label col-2"><strong>Country name</strong></label>
+                <label class="form-label col-2"><strong><?=$this->lang->line('countryname')?></strong></label>
 
                 <div class="col-4 col-offset-6">
                     <input type="text" class="form-control" id="input_country" name="input_country"/>
@@ -14,8 +14,8 @@
                 
                 <div class="col-md-2 col-xs-2 "></div>
                 <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
-                    <button type="button" class="btn btn-success" id="btn_insert">INSERT</button>
-                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();">RESET</button>
+                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
                 </div>
             </div>
         </form>
@@ -27,7 +27,7 @@
     $("#btn_insert").on('click', function(){
         var country_val = $("#input_country").val();
         if(country_val == ""){
-            alert("insert to country data");
+            alert("<?=$this->lang->line('errorinsertcountry')?>");
             return;
         }else{
             
@@ -37,15 +37,15 @@
                 data:$("#country_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
-                        alert('complete to insert');
+                        alert('<?=$this->lang->line('completeinsert')?>');
                         location.href = "/country";
                     }else{
-                        alert('input fail. check to data.');
+                        alert('<?=$this->lang->line('checkdata')?>');
                     }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    alert("<?=$this->lang->line('neterror')?>");
                     return false;
                 }	 
             });
