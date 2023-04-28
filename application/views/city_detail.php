@@ -11,7 +11,7 @@
             <form id="form_modify">
                 <div class="row">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>Country name</strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
                     </div>
                     <div class="col-8">
                         <select id="country_idx" name="country_idx"  class="form-select">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>City Name</strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
                     </div>
                     <div class="col-8">
                         <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>City Order</strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('cityorder')?></strong></label>
                     </div>
                     <div class="col-8">
                         <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
@@ -56,16 +56,16 @@
                 data:$("#form_modify").serialize(),
                 success:function(data){
                     if(data.result == 200){
-                        alert('complete to modify');
+                        alert('<?=$this->lang->line('completemodify')?>');
                         window.parent.location.reload();
                         window.parent.modal_close();
                     }else{
-                        alert('input fail. check to data.');
+                        alert('<?=$this->lang->line('checktodata')?>');
                     }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("Network error!! Confirm to Manager!!");
+                    alert("<?=$this->lang->line('neterror')?>");
                     return false;
                 }	 
             });
@@ -74,7 +74,7 @@
         function delete_city(){
             
             
-            if(confirm("do you want to delete city?")){
+            if(confirm("<?=$this->lang->line('deletecountry')?>")){
                 var data = {idx : <?=$detail_info['idx']?>};
 
                 $.ajax({
@@ -83,16 +83,16 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
-                            alert('complete to delete');
+                            alert('<?=$this->lang->line('completedelete')?>');
                             window.parent.location.reload();
                             window.parent.modal_close();
                         }else{
-                            alert('input fail. check to data.');
+                            alert('<?=$this->lang->line('checktodata')?>');
                         }
                     },
                     error: function(xhr,status,error) {
                         console.log(xhr,status,error);
-                        alert("Network error!! Confirm to Manager!!");
+                        alert("<?=$this->lang->line('neterror')?>");
                         return false;
                     }	 
                 });
