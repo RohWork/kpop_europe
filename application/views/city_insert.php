@@ -49,7 +49,7 @@
     $("#btn_insert").on('click', function(){
         var city = $("#input_city").val();
         if(city == ""){
-            alert("insert to city data");
+            alert("<?=$this->lang->line('errorinsertcity')?>");
             return;
         }else{
             
