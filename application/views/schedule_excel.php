@@ -1,3 +1,11 @@
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('view', $lang);
+
+?>
+
+
+
     <div class="container">
         <form id="calendar_insert" action="/schedule/excel_process" enctype="multipart/form-data" method="post">
             <div class="row">

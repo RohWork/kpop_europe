@@ -1,6 +1,6 @@
 <?php
     $lang = $this->session->userdata('lang');
-    $this->lang->load('calendar', $lang);
+    $this->lang->load('view', $lang);
 
 ?>
 

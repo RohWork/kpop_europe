@@ -1,3 +1,11 @@
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('view', $lang);
+
+?>
+
+
+
     <div class="container">
         <form id="organization_insert">
             <div class="form-group">

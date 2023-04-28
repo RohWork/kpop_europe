@@ -1,3 +1,11 @@
+
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('view', $lang);
+
+?>
+
+
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <div class="container" style="overflow:auto">
         <form id="calendar_insert">
