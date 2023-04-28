@@ -46,7 +46,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <label class="form-label" for="login_pass">Password</label>
+                                <label class="form-label" for="login_pass"><?=$this->lang->line('password')?></label>
                             </td>
 
                             <td>
@@ -75,10 +75,10 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <button id="find_pasword" class="form-control">find pw</button>
+                                <button id="find_pasword" class="form-control"><?=$this->lang->line('findpw')?></button>
                             </td>
                             <td>
-                                <button id="join_member" class="form-control">join us</button>
+                                <button id="join_member" class="form-control"><?=$this->lang->line('joinus')?></button>
                             </td>
                         </tr>
                     </table>
@@ -147,15 +147,15 @@
                 data:formData,
                 success:function(data){
                     if(data.result == 200){
-                        alert('hello, '+responsePayload.name);
+                        alert('<?=$this->lang->line('hi')?>, '+responsePayload.name);
                         location.href = "/";
                     }else{
-                        alert('login fail, retry to login');
+                        alert('<?=$this->lang->line('loginfail')?>');
                     }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("Network error!! Confirm to Manager!!");
+                    alert("<?=$this->lang->line('neterror')?>");
                     return false;
                 }	 
             });
@@ -188,7 +188,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network error!! Confirm to Manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
