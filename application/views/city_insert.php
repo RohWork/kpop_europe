@@ -1,3 +1,9 @@
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('calendar', $lang);
+
+?>
+
     <div class="container">
         <form id="city_insert">
             <div class="form-group">
