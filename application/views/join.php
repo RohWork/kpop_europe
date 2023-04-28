@@ -21,7 +21,7 @@
       <form id="join_form">
         <div class="container">
             <div class="row">
-                <div class="col-sm-10" style="text-align: center"> <h1>Join Us</h1></div>
+                <div class="col-sm-10" style="text-align: center"> <h1><?=$this->lang->line('joinus')?></h1></div>
                 
             </div>
             <div class="row" style="padding:10px">
@@ -30,29 +30,29 @@
                     <input type="email" id="user_email" name="user_email" class="form-control"/>
                     <input type="hidden" id="email_confirm" name="email_confirm" class="form-control" value="N"/>
                 </div>
-                <div class="col-sm-2"><button class="btn form-control btn-info" type="button" id="check_email" required>confirm</button></div>
+                <div class="col-sm-2"><button class="btn form-control btn-info" type="button" id="check_email" required><?=$this->lang->line('confirm')?></button></div>
             </div>
 
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label" for="user_pass1">Password</label>
+                <label class="col-sm-2 form-label" for="user_pass1"><?=$this->lang->line('password')?></label>
                 <div class="col-sm-6"><input type="password" id="user_pass1" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass1" class="form-control" required></div>
             </div>
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label" for="user_pass2">Password2</label>
+                <label class="col-sm-2 form-label" for="user_pass2"><?=$this->lang->line('password')?>2</label>
                 <div class="col-sm-6"><input type="password" id="user_pass2" min="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" name="user_pass2" class="form-control" required></div>
             </div>
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label" for="user_name1">Given Name</label>
+                <label class="col-sm-2 form-label" for="user_name1"><?=$this->lang->line('gname')?></label>
                 <div class="col-sm-6"><input type="Text" id="user_name1" name="user_name1" class="form-control" required></div>
             </div>
 
             <div class="row" style="padding:10px">
-                <label class="col-sm-2 form-label" for="user_name2">Family Name</label>
+                <label class="col-sm-2 form-label" for="user_name2"><?=$this->lang->line('fname')?></label>
                 <div class="col-sm-6"><input type="Text" id="user_name2" name="user_name2" class="form-control" required></div>
             </div>
 
             <div class="row" style="padding:10px">
-                <div class="col-sm-10"><button type="button" class="btn form-control btn-success" id="set_join">Go join</button></div>
+                <div class="col-sm-10"><button type="button" class="btn form-control btn-success" id="set_join"><?=$this->lang->line('gojoin')?></button></div>
             </div>
         </div>
       </form>
@@ -78,12 +78,12 @@
                 }else{
                     $("#email_confirm").val("N");
                     $("#user_email").css("background-color","#FFEBEE");
-                    alert('Duplicate email. Check to your email adress');
+                    alert('<?=$this->lang->line('mailerror')?>');
                 }
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
@@ -99,14 +99,14 @@
        var up2 = $("#user_pass2").val();
        
        if(!check_param){
-           alert("Take Confirm to your data.");
+           alert("<?=$this->lang->line('confirmdata')?>");
            return false;
        }else if(confirm != "Y"){
-           alert("Take Confirm to your Email address.");
+           alert("<?=$this->lang->line('confirmemail')?>");
            $("#user_email").focus();
            return false;
        }else if(up1 != up2){
-           alert("check to your Password");
+           alert("<?=$this->lang->line('confirmpassword')?>");
            $("#user_pass1").focuse();
        }else{
         
@@ -120,14 +120,14 @@
                 if(data.result == 200){
                     location.href="/member/mail_process?email="+email;
                 }else{
-                    alert('input fail. check to data.');
+                    alert('<?=$this->lang->line('checktodata')?>');
                     alert(data.message);
                     return false;
                 }
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
@@ -151,7 +151,7 @@
             if($t.prop("required")) {
                 if(!jQuery.trim($t.val())) {
                     result = false;
-                    alert(t+" Required input. ");
+                    alert(t+" <?=$this->lang->line('require')?> ");
                     return false;
                 }
             }
