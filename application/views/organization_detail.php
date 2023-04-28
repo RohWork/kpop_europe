@@ -11,7 +11,7 @@
             <form id="form_modify">
                 <div class="row">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>Organization name</strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('orgerzationname')?></strong></label>
                     </div>
                     <div class="col-8">
                         <input type="text" id="organization" name="organization" value="<?=$detail_info['name']?>" class="form-control"/>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-4">
-                        <label class="form-label bold"><strong>Organization Order</strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('orgernizationorder')?></strong></label>
                     </div>
                     <div class="col-8">
                         <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
@@ -38,16 +38,16 @@
                 data:$("#form_modify").serialize(),
                 success:function(data){
                     if(data.result == 200){
-                        alert('complete to modify');
+                        alert('<?=$this->lang->line('completemodify')?>');
                         window.parent.location.reload();
                         window.parent.modal_close();
                     }else{
-                        alert('input fail. check to data.');
+                        alert('<?=$this->lang->line('checktodata')?>');
                     }
                 },
                 error: function(xhr,status,error) {
                     console.log(xhr,status,error);
-                    alert("네트워크 오류!! 관리자에게 문의 주세요!!");
+                    alert("<?=$this->lang->line('neterror')?>");
                     return false;
                 }	 
             });
@@ -65,16 +65,16 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
-                            alert('complete to delete');
+                            alert('<?=$this->lang->line('completedelete')?>');
                             window.parent.location.reload();
                             window.parent.modal_close();
                         }else{
-                            alert('input fail. check to data.');
+                            alert('<?=$this->lang->line('checktodata')?>');
                         }
                     },
                     error: function(xhr,status,error) {
                         console.log(xhr,status,error);
-                        alert("Network error!! Confirm to Manager!!");
+                        alert("<?=$this->lang->line('neterror')?>");
                         return false;
                     }	 
                 });
