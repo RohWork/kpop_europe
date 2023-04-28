@@ -1,3 +1,11 @@
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('calendar', $lang);
+
+?>
+
+
+
     <style>
         .onpointer{
             cursor: pointer;
