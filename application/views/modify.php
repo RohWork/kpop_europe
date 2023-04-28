@@ -26,7 +26,7 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Country</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('country')?></strong></label>
                     </div>
                     <div class="col-9">
                         <select id="country" name="country" class="form-select" onchange="get_country_data()">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>City</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('city')?></strong></label>
                     </div>
                     <div class="col-9">
                         <select id="city" name="city" class="form-select">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Organizer</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('orgernizer')?></strong></label>
                     </div>
                     <div class="col-9">
                         <select id="company" name="company" class="form-select">
@@ -79,7 +79,7 @@
                 
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Location</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('location')?></strong></label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="space" name="space" class="form-control" value="<?=$detail_info['space']?>"/>
@@ -88,7 +88,7 @@
                 
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Address</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="addr" name="addr" class="form-control" value="<?=$detail_info['addr']?>"/>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Start Date</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('startdate')?></strong></label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="start_date" name="start_date" class="form-control" value="<?=date('d/m/Y h:i:s',strtotime($detail_info['start_date']))?>"/>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>End Date</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('enddate')?></strong></label>
                     </div>
                     <div class="col-9">
                         <input type="text" id="end_date" name="end_date" class="form-control" value="<?=date('d/m/Y h:i:s',strtotime($detail_info['end_date']))?>"/>
@@ -145,7 +145,7 @@
                 </div>
                 <div class="row row_border">
                     <div class="col-3">
-                        <label class="form-label"><strong>Etc</strong></label>
+                        <label class="form-label"><strong><?=$this->lang->line('etc')?></strong></label>
                     </div>
                     <div class="col-9">
                         <textarea class="form-control" id="remark" name="remark">
@@ -180,13 +180,13 @@
                 <div class="row" style="padding-top:30px;">
                     <div class="col-2"></div>
                     <div class="col-3 text-center">
-                        <button type="button" id="btn_modfiy" class="btn btn-success">SUBMIT</button>
+                        <button type="button" id="btn_modfiy" class="btn btn-success"><?=$this->lang->line('save')?></button>
                     </div>
                     <div class="col-3 text-center">
-                        <button type="button" onclick="form_reset()" class="btn btn-warning">RESET</button>
+                        <button type="button" onclick="form_reset()" class="btn btn-warning"><?=$this->lang->line('reset')?></button>
                     </div>
                     <div class="col-2 text-center">
-                        <button type="button" onclick="go_return()" class="btn btn-info">CANCEL</button>
+                        <button type="button" onclick="go_return()" class="btn btn-info"><?=$this->lang->line('cancacel')?></button>
                     </div>
                 </div>
                 <?php } ?>
@@ -222,7 +222,7 @@
             
             <?php }else{ ?>
                 
-                alert("this not permmited");
+                alert("<?=$this->lang->line('permiterror')?>");
                 
             <?php } ?>
         }
@@ -277,7 +277,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
@@ -294,7 +294,7 @@
             data: data,
             success:function(data){
                 if(data.result == 200){
-                    alert('modify complete');
+                    alert('<?=$this->lang->line('completemodify')?>');
                     go_return();
                 }else{
 
@@ -304,7 +304,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
