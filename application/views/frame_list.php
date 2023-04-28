@@ -12,12 +12,12 @@
                 <div class="col-12">
                     <table class="table table-striped">
                         <tr>
-                            <th>Country</th>
-                            <th>City</th>
-                            <th>Location</th>
-                            <th>Orgernizer</th>
-                            <th>START_DATE</th>
-                            <th>END_DATE</th>
+                            <th><?=$this->lang->line('country')?></th>
+                            <th><?=$this->lang->line('country')?></th>
+                            <th><?=$this->lang->line('location')?></th>
+                            <th><?=$this->lang->line('orgernizer')?></th>
+                            <th><?=$this->lang->line('startdate')?></th>
+                            <th><?=$this->lang->line('enddate')?></th>
                         </tr>
                         <?php 
                             $i=1;
@@ -47,7 +47,7 @@
             <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
                 <div class="modal-content" style="height:600px">
                     <div class="modal-header">
-                        <h5 class="modal-title">detail</h5>
+                        <h5 class="modal-title"><?=$this->lang->line('detail')?></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -56,8 +56,8 @@
                         <iframe src="" id="detail_frame" style="width:100%; height:100%">etc</iframe>  
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
-                        <button type="button" class="btn btn-secondary list" aria-label="List">List</button>
+                        <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close"><?=$this->lang->line('close')?></button>
+                        <button type="button" class="btn btn-secondary list" aria-label="List"><?=$this->lang->line('list')?></button>
                     </div>
                 </div>
             </div>
