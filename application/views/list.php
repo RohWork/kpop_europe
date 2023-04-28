@@ -34,7 +34,7 @@
                                 <?php } ?>
                             </select>
                             <label class="form-label col-1">
-                                COUNTRY
+                                <?=$this->lang->line('country')?>
                             </label>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                 <?php } ?>
                             </select>
                             <label class="form-label col-1">
-                                CITY
+                                <?=$this->lang->line('city')?>
                             </label>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                                 <?php } ?>
                             </select>
                             <label for="organization">
-                                ORGERNIZER
+                                <?=$this->lang->line('orgernizer')?>
                             </label>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                         <div class="form-floating">
                             <input type="text" id="date" name="date" class="form-control" value="<?=$search['date']?>"/>
                             <label for="date">
-                                SEARCH DATE
+                                <?=$this->lang->line('searchdate')?>
                             </label>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                     
                     <div class="col-1">
                         
-                        <input type="submit" value="SEARCH" class="btn btn-success"/>
+                        <input type="submit" value="<?=$this->lang->line('search')?>" class="btn btn-success"/>
                     </div>
                 
                 </div>
@@ -105,9 +105,9 @@
                     <table class="table table-striped" style="font-size:0.8rem">
                         <tr>
                             <th>Type</th>
-                            <th>START_DATE</th>
-                            <th>Country</th>
-                            <th>City</th>
+                            <th><?=$this->lang->line('startdate')?></th>
+                            <th><?=$this->lang->line('country')?></th>
+                            <th><?=$this->lang->line('city')?></th>
                             <th>Location</th>
                         </tr>
                         <?php 
@@ -182,7 +182,7 @@
             },
             error: function(xhr,status,error) {
                 console.log(xhr,status,error);
-                alert("Network Error!! take support to web manager!!");
+                alert("<?=$this->lang->line('neterror')?>");
                 return false;
             }	 
         });
