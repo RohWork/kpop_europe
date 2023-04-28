@@ -15,7 +15,7 @@
         <div class="container" style="font-size: 12px;padding-top: 15px;padding-left: 15px">
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Event</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('event')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['name']?></p>
@@ -23,7 +23,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Country</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('country')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['country_name']?></p>
@@ -31,7 +31,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>City</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('city')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['city_name']?></p>
@@ -39,7 +39,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Organizer</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('orgernizer')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['orgernizer']?></p>
@@ -47,7 +47,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Hompage</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('homepage')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><a href="<?=$detail_info['homepage']?>?>"><?=$detail_info['homepage']?></a></p>
@@ -55,7 +55,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Location</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('location')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['space']?></p>
@@ -63,7 +63,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Address</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('address')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=$detail_info['addr']?></p>
@@ -95,7 +95,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Date</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('date')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=date('d-m-Y H:00:00',strtotime($detail_info['start_date']))?> ~ <?=date('d-m-Y H:00:00',strtotime($detail_info['end_date']))?></p>
@@ -103,7 +103,7 @@
             </div>
             <div class="row row_border">
                 <div class="col-3">
-                    <label class="form-label"><strong>Etc</strong></label>
+                    <label class="form-label"><strong><?=$this->lang->line('etc')?></strong></label>
                 </div>
                 <div class="col-9">
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
@@ -130,11 +130,11 @@
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                        <span class="visually-hidden"><?=$this->lang->line('previus')?></span>
                       </button>
                       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                        <span class="visually-hidden"><?=$this->lang->line('next')?></span>
                       </button>
                   </div>
 
@@ -144,13 +144,13 @@
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
             <div class="row" style="padding-top: 15px">
                 <div class="col-4 text-end">
-                    <button type="button" class="btn btn-warning" onclick="set_modify()">MODIFY</button>
+                    <button type="button" class="btn btn-warning" onclick="set_modify()"><?=$this->lang->line('modify')?></button>
                 </div>
                 <div class="col-4 text-center">
-                    <button type="button" class="btn btn-danger" onclick="set_delete()">DELETE</button>
+                    <button type="button" class="btn btn-danger" onclick="set_delete()"><?=$this->lang->line('delete')?></button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-info" onclick="self.close();">CANCEL</button>
+                    <button type="button" class="btn btn-info" onclick="self.close();"><?=$this->lang->line('cancel')?></button>
                 </div>
             </div>
             <?php } ?>
@@ -171,7 +171,7 @@
                                 data:data,
                                 success:function(data){
                                     if(data.result == 200){
-                                        alert('complete to delete');
+                                        alert('<?=$this->lang->line('completedelete')?>');
                                         window.opener.location.reload();
                                         self.close();
                                     }else{
@@ -182,7 +182,7 @@
                                 },
                                 error: function(xhr,status,error) {
                                     console.log(xhr,status,error);
-                                    alert("Network error!! Confirm to Manager!!");
+                                    alert("<?=$this->lang->line('neterror')?>");
                                     return false;
                                 }	 
                             });
@@ -190,7 +190,7 @@
                     }
             <?php }else{ ?>
                 
-                alert("this not permmited");
+                alert("<?=$this->lang->line('permiterror')?>");
                 
             <?php } ?>
         }
