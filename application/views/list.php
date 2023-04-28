@@ -1,4 +1,8 @@
+<?php
+    $lang = $this->session->userdata('lang');
+    $this->lang->load('calendar', $lang);
 
+?>
 
 
         <div class="container" style="font-size: 12px;">
