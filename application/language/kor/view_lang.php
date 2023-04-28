@@ -65,6 +65,7 @@
     $lang['countryinsert'] = "국가 데이터 입력";
     $lang['cityinsert'] = "도시 데이터 입력";
     $lang['orgernizationinsert'] = "주최사 데이터 입력";    
+    $lang['scheduleinsert'] = "일정데이터 입력";
     
     $lang['neterror'] = '네트워크 에러!! 웹관리자에게 문의 하세요!!';
     $lang['countryerror'] = "국가 데이터를 입력하세요.";
@@ -98,5 +99,7 @@
     $lang['checkemail'] = "이메일을 확인하세요!";
     
     $lang['require'] = "입력을 요구함";
+    
+    
     
 ?>
