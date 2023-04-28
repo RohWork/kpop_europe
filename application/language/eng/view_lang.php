@@ -39,6 +39,7 @@
     $lang['save'] = "SAVE";
     $lang['close'] = "CLOSE";
     $lang['reset'] = "RESET";
+    $lang['searchdate'] = "SEARCH DATE";
     
     $lang['home'] = "HOME";
     $lang['event'] = "Event";
@@ -50,7 +51,7 @@
     $lang['password'] = "Password";
     $lang['gname'] = "Given Name";
     $lang['fname'] = "Family Name";
-    
+    $lang['confirm'] = "Confirm";
     
     $lang['order'] = "Order";
     $lang['name'] = "Name";
@@ -58,8 +59,8 @@
     $lang['registdate'] = "Regist date";
     $lang['orgernizationname'] = "Organization name";
     $lang['orgernizationorder'] = "Organization Order";
-    $lang['orgernizationinert'] = "Organization Insert";
-    
+    $lang['orgernizationinsert'] = "Organization Insert";
+    $lang['excelupload'] = "Excel Upload";
     
     $lang['neterror'] = 'Network Error!! take support to web manager!!';
     $lang['countryerror'] = "insert to country data";
@@ -69,21 +70,29 @@
     $lang['confirmemail'] = "Take Confirm to your Email address.";
     $lang['confirmpassword'] = "check to your Password";
     $lang['loginfail'] = "login fail, retry to login";
+    $lang['errorinsertcity'] = "insert to city data";
+    $lang['errorinsertcountry'] = "insert to country data";
+    $lang['titleerror'] = "Custom required, Please enter a title.";
     
-     
     $lang['eventtype'] = "Event Type";
+    $lang['contactus'] = "Contact us";
+    
     
     $lang['cityname'] = "CITY NAME";
     $lang['cityorder'] = "City Order";
     $lang['countryname'] = "Country name";
+    
+    
     $lang['completemodify'] = "Complete to modify";
     $lang['completeinsert'] = "Complete to insert";
     $lang['completedelete'] = "Complete to delete";
     $lang['completeemail'] = "Complete to Confirm E-mail";
     
-    $lang['checktodata.'] = "input fail. check to data.";
+    $lang['checktodata'] = "input fail. check to data.";
     $lang['deletecity'] = "do you want to delete city?";
+    $lang['deletecountry'] = "do you want to delete country?";
     $lang['deleteorganization'] = "do you want to delete organization?";
+    $lang['deleteschedule'] = "do you want to delete to the schedule?";
     $lang['completedelete'] = "complete to delete";
     $lang['checkemail'] = "Check to Your E-mail!";
     
