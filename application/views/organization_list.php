@@ -50,7 +50,7 @@
         </div>
         <div class="row">
             <div class="col-5 col-offset-7 text-end">
-                <button type="button" class="btn btn-primary" id="insert_button"><?=$this->lang->line('insert')?><</button>
+                <button type="button" class="btn btn-primary" id="insert_button"><?=$this->lang->line('insert')?></button>
             </div>
         </div>         
     </div>
