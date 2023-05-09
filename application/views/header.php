@@ -31,7 +31,7 @@
         </script>
     </head>
     <?php
-        $lang = $this->session->usedata('lang');
+        $lang = $this->session->userdata('lang');
     ?>
     <body>
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container-fluid">
