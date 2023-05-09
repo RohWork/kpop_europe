@@ -43,7 +43,7 @@
                     </a>
 
                     <span class="text-end" style="font-size: 8px;">
-                        <select class="form-select" style="width:100px;float: right" onchange="go_href(this.value)">
+                        <select class="form-select" style="width:100px;float: right;font-size: 8px;" onchange="go_href(this.value)">
                             <option value="1" <?=$lang=='kor' ? "selected" : ""?>>
                                 한국어
                             </option>
