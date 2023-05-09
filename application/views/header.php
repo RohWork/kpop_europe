@@ -29,10 +29,10 @@
 
                     <span class="text-end">
                         <select class="form-select">
-                            <option value="1" onselect="location.href=/?lang=kor">
+                            <option value="1" onselect="location.href='/?lang=kor'">
                                 한국어
                             </option>
-                            <option value="1" onselect="location.href=/?lang=eng">
+                            <option value="1" onselect="location.href='/?lang=eng'">
                                 English
                             </option>
                         </select>
