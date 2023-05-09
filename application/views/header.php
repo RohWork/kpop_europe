@@ -47,7 +47,7 @@
                             <option value="1" <?=$lang=='kor' ? "selectd" : ""?>>
                                 한국어
                             </option>
-                            <option value="2" <?=$lang=='eng' ? "selectd" : ""?>">
+                            <option value="2" <?=$lang=='eng' ? "selectd" : ""?>>
                                 English
                             </option>
                         </select>
