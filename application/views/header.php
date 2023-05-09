@@ -30,7 +30,9 @@
             
         </script>
     </head>
-    
+    <?php
+        $lang = $this->session->usedata('lang');
+    ?>
     <body>
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container-fluid">
             <div class="container">
@@ -42,10 +44,10 @@
 
                     <span class="text-end">
                         <select class="form-select" onchange="go_href(this.value)">
-                            <option value="1">
+                            <option value="1" <?=$lang=='kor' ? "selectd" : ""?>>
                                 한국어
                             </option>
-                            <option value="2">
+                            <option value="2" <?=$lang=='eng' ? "selectd" : ""?>">
                                 English
                             </option>
                         </select>
