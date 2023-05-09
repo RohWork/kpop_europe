@@ -47,7 +47,7 @@
                     </a>
 
                     <span class="text-end">
-                        <select class="form-select" onchange="go_href(this.val)">
+                        <select class="form-select" onchange="go_href(this.value)">
                             <option value="1">
                                 한국어
                             </option>
