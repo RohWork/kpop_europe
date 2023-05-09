@@ -42,7 +42,7 @@
                       <span class="fs-4">Kpop In Europe</span>
                     </a>
 
-                    <span class="text-end">
+                    <span class="text-end" style="text-align: right">
                         <select class="form-select" style="font-size: 8px;width:100px;" onchange="go_href(this.value)">
                             <option value="1" <?=$lang=='kor' ? "selected" : ""?>>
                                 한국어
