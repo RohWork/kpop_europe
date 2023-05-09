@@ -21,14 +21,10 @@
         <script>
             function go_href(val){
                                 
-                switch(val){
-                    case 1:
-                        location.href='/?lang=kor';
-                        break;
-                    case 2:
-                        location.href='/?lang=eng';
-                        break;
-                    
+                if(val == 1){
+                    location.href='/?lang=kor';
+                }else if(val == 2){
+                    location.href='/?lang=kor';
                 }
             }
             
