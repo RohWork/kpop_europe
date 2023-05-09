@@ -23,11 +23,13 @@ class Main extends CI_Controller {
         $lang = $this->input->get_post("lang");
         $slang = $this->session->userdata('lang');
         
-        if(empty($lang) ){
+
+        
+        if(empty($lang) && empty($slang)){
             $lang = "eng"; 
         }
         
-        if(empty($slang)){
+        if(!empty($lang)){
             $this->session->set_userdata('lang',$lang);
             session_commit();
             session_write_close();
