@@ -17,7 +17,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script>
+            function go_href(val){
+                switch(val){
+                    case 1:
+                        location.href='/?lang=kor';
+                        break;
+                    case 2:
+                        location.href='/?lang=eng';
+                        break;
+                    
+                }
+            }
+            
+        </script>
     </head>
+    
     <body>
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container-fluid">
             <div class="container">
@@ -28,11 +44,11 @@
                     </a>
 
                     <span class="text-end">
-                        <select class="form-select">
-                            <option value="1" onselect="location.href='/?lang=kor'">
+                        <select class="form-select" onchange="go_href(this.val)">
+                            <option value="1">
                                 한국어
                             </option>
-                            <option value="1" onselect="location.href='/?lang=eng'">
+                            <option value="2">
                                 English
                             </option>
                         </select>
