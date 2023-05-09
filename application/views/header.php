@@ -44,10 +44,10 @@
 
                     <span class="text-end">
                         <select class="form-select" onchange="go_href(this.value)">
-                            <option value="1" <?=$lang=='kor' ? "selectd" : ""?>>
+                            <option value="1" <?=$lang=='kor' ? "selected" : ""?>>
                                 한국어
                             </option>
-                            <option value="2" <?=$lang=='eng' ? "selectd" : ""?>>
+                            <option value="2" <?=$lang=='eng' ? "selected" : ""?>>
                                 English
                             </option>
                         </select>
