@@ -50,7 +50,7 @@
                             <option value="2" <?=$lang=='eng' ? "selected" : ""?>>
                                 English
                             </option>
-                        </select>
+                        </select><br/>
                         <?=$this->lang->line('toadd')?><br/>
                         <?=$this->lang->line('contact')?>
                     </span>
