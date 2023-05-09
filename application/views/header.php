@@ -27,7 +27,15 @@
                       <span class="fs-4">Kpop In Europe</span>
                     </a>
 
-                    <div class="text-end">
+                    <span class="text-end">
+                        <select class="form-select">
+                            <option value="1" onselect="location.href=/?lang=kor">
+                                한국어
+                            </option>
+                            <option value="1" onselect="location.href=/?lang=eng">
+                                English
+                            </option>
+                        </select>
                         <?=$this->lang->line('toadd')?><br/>
                         <?=$this->lang->line('contact')?>
                     </span>
