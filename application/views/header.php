@@ -20,9 +20,7 @@
         
         <script>
             function go_href(val){
-                
-                console.log(val);
-                
+                                
                 switch(val){
                     case 1:
                         location.href='/?lang=kor';
