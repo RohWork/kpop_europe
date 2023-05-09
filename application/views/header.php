@@ -19,14 +19,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <script>
-            function go_href(sel){
+            function go_href(val){
                                 
-                var val = sel.value;
-                
                 if(val == 1){
                     location.href='/?lang=kor';
                 }else if(val == 2){
-                    location.href='/?lang=kor';
+                    location.href='/?lang=eng';
                 }
             }
             
@@ -43,7 +41,7 @@
                     </a>
 
                     <span class="text-end">
-                        <select class="form-select" onchange="go_href(this)">
+                        <select class="form-select" onchange="go_href(this.value)">
                             <option value="1">
                                 한국어
                             </option>
