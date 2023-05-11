@@ -10,7 +10,7 @@ class Community extends CI_Controller {
 
     }
 
-    function list(){
+    function list($page =0){
         
         $search = array();
         $search['country'] = $this->input->post("country");
