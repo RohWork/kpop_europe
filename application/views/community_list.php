@@ -55,7 +55,24 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <input type="text" id="date" name="language" class="form-control" value="<?=$search['language']?>"/>
+                            <select id="check_langueage" name="langueage" class="form-select">
+                                <?php 
+                                    $lang_array = get_langueage_list();
+                                    
+                                    for($i=0;$i<count($lang_array);$i++){
+                                    
+                                        $search_lang = "";
+                                        if($search['langueage'] == $lang_array[$i]){
+                                            $search_lang = "selected";
+                                        }
+                                     ?>
+                                
+                                        <option value="<?=$lang_array[$i]?>" <?=$search_lang?>><?=$lang_array[$i]?></option>
+                                <?php
+                                    }
+                                ?>
+                                
+                            </select>
                             <label for="date">
                                 <?=$this->lang->line('language')?>
                             </label>
