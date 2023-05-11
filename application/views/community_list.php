@@ -136,7 +136,7 @@
     }
     function go_write(){
         
-        location.href="/community/insert";
+        location.href="/community/write";
         
     }
     function get_country_data(){
