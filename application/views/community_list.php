@@ -24,7 +24,7 @@
 
                                 <?php } ?>
                             </select>
-                            <label class="form-label col-1"><?=$this->lang->line('country')?></label>
+                            <label class="form-label "><?=$this->lang->line('country')?></label>
                         </div>
                     </div>
                     
@@ -44,7 +44,7 @@
 
                                 <?php } ?>
                             </select>
-                            <label class="form-label col-1"><?=$this->lang->line('city')?></label>
+                            <label class="form-label "><?=$this->lang->line('city')?></label>
                         </div>
                     </div>
                     
@@ -69,7 +69,7 @@
                                 ?>
                                 
                             </select>
-                            <label for="date">
+                            <label for="language" lass="form-label >
                                 <?=$this->lang->line('language')?>
                             </label>
                         </div>
