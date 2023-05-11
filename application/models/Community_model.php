@@ -8,7 +8,7 @@ class Community_model extends CI_Model {
         parent::__construct();
     }
     
-    public function get_list($search, $paging){
+    function get_list($search, $paging=""){
         
         if(!empty($search['country'])){
             $where .= " AND country_idx ='".$search['country']."'";
