@@ -28,7 +28,7 @@ class Community_model extends CI_Model {
         
         $sSql = "select kc.* , 
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
-                from kpop_community as kc where 1=1 and $where $limit";
+                from kpop_community as kc where 1=1 $where $limit";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
