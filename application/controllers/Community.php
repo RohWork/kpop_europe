@@ -17,7 +17,6 @@ class Community extends CI_Controller {
         $search['city'] = $this->input->get("city");
         $search['language'] = $this->input->get("language");
         
-        var_dump($search);
         if(empty($search['language'])){
             $search['language'] = $this->session->userdata('lang');
         }
