@@ -62,12 +62,6 @@
                                     }
                                 ?>
                             
-                            <option value="1" <?=$lang=='kor' ? "selected" : ""?>>
-                                한국어
-                            </option>
-                            <option value="2" <?=$lang=='eng' ? "selected" : ""?>>
-                                English
-                            </option>
                         </select><br/><br/>
                         <?=$this->lang->line('toadd')?><br/>
                         <?=$this->lang->line('contact')?>
