@@ -121,7 +121,11 @@
         window.open(url, 'detail', "width=500, height=700" );
         
     }
-    
+    function go_write(){
+        
+        location.href="/community/insert";
+        
+    }
     function get_country_data(){
         
         var j = $("#check_country option:selected").val();
