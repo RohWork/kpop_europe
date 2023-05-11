@@ -13,9 +13,9 @@ class Community extends CI_Controller {
     function list($page =0){
         
         $search = array();
-        $search['country'] = $this->input->post("country");
-        $search['city'] = $this->input->post("city");
-        $search['language'] = $this->input->post("language");
+        $search['country'] = $this->input->get("country");
+        $search['city'] = $this->input->get("city");
+        $search['language'] = $this->input->get("language");
         
         var_dump($search);
         if(empty($search['language'])){
