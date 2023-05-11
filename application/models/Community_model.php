@@ -23,11 +23,11 @@ class Community_model extends CI_Model {
             $where .= " AND language ='".$search['language']."'";
         }
         if(!empty($paging)){
-            $limit = "limit ".$paging['start'].",".$paging['end'];
+            $limit = " limit ".$paging['start'].",".$paging['end'];
         }
         
         $sSql = "select kc.* , 
-                (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_idx 
+                (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
                 from kpop_community as kc where 1=1 and $where $limit";
         
         $query = $this->db->query($sSql);
