@@ -10,7 +10,47 @@ class Community extends CI_Controller {
 
     }
 
+    function list(){
+        
+        $search = array();
+        $search['country'] = $this->input->post("country");
+        $search['city'] = $this->input->post("city");
+        $search['language'] = $this->session->userdata('lang');
+        
+        $data = $this->com_md->get_list($search);
+        
+        $this->load->library('pagination');
     
-
+        $config['base_url'] = '/schedule/list';
+        $config['reuse_query_string'] = true;
+        $config['total_rows'] = count($data);
+        $config['per_page'] = 10;
+        $config['attributes'] = array('class' => 'page-link');
+        $this->pagination->initialize($config);
+        $data['paging'] = $this->pagination->create_links();
+        
+        $paging = array(
+            "start" => $page,
+            "end"   => $config['per_page']
+        );
+        
+        $data['list'] = $this->com_md->get_list($search, $paging);
+        
+        
+        $data['search'] = $search;
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('community_list',$data);
+        $this->load->view('footer');
+        
+    }
+    
+    function write(){
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('community_write');
+        $this->load->view('footer');
+    }
 }
 ?>
