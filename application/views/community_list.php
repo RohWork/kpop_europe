@@ -69,7 +69,7 @@
                                 ?>
                                 
                             </select>
-                            <label for="language" lass="form-label >
+                            <label for="language" lass="form-labe" >
                                 <?=$this->lang->line('language')?>
                             </label>
                         </div>
