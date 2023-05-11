@@ -3,6 +3,10 @@
     $this->lang->load('view', $lang);
 
 ?>
+<style>
+      .ck-editor__editable { height: 400px; }
+      .ck-content { font-size: 12px; }
+</style>
 
     <div class="container">
         <form id="city_insert">
