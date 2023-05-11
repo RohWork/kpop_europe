@@ -101,4 +101,6 @@
     $lang['checkemail'] = "Check to Your E-mail!";
     
     $lang['require'] = "Required input";
+    
+    $lang['language'] = "Language";
 ?>
