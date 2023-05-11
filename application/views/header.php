@@ -25,8 +25,8 @@
                     location.href='/?lang=kor';
                 }else if(val == "eng"){
                     location.href='/?lang=eng';
-                }else if(val == "dus"){
-                    location.href='/?lang=dus';
+                }else if(val == "deu"){
+                    location.href='/?lang=deu';
                 }
             }
             
