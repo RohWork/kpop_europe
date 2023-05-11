@@ -100,6 +100,6 @@
     
     $lang['require'] = "입력을 요구함";
     
-    
+    $lang['language'] = "언어셋";
     
 ?>
