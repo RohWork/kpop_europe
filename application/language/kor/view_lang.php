@@ -101,6 +101,8 @@
     
     $lang['require'] = "입력을 요구함";
     
+    $lang['empty'] = "게시글 없음";
+    
     $lang['language'] = "언어셋";
     
 ?>
