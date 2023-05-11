@@ -34,7 +34,9 @@
                     <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('cityname')?></strong></label>
 
                     <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                        <input type="text" class="form-control" id="input_city" name="input_city"/>
+                        <textarea id="editor" name="content">
+                            
+                        </textarea>
                     </div>
                 </div>
             </div>
@@ -51,6 +53,14 @@
     </div>
 
 </main>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script>
+  ClassicEditor.create( document.querySelector( '#editor' ),{
+      language : "<?=$lang?>"
+  });
+</script>
+
 <script>
     $("#btn_insert").on('click', function(){
         var city = $("#input_city").val();
