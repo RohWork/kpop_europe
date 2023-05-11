@@ -57,6 +57,7 @@
     $lang['order'] = "Order";
     $lang['name'] = "Name";
     $lang['writer'] = "Writer";
+    $lang['write'] = "Write";
     $lang['registdate'] = "Regist date";
     $lang['orgernizationname'] = "Organization name";
     $lang['orgernizationorder'] = "Organization Order";
