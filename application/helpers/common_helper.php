@@ -20,15 +20,15 @@ function get_langueage_list(){
     
     $lang_array = array(
         array(
-            "id"    =>  "eng",
+            "id"    =>  "en",
             "val"   =>  "English"
         ),
         array(
-            "id"    =>  "kor",
+            "id"    =>  "ko",
             "val"   =>  "한국어",
         ),
         array(
-            "id"    => "deu",
+            "id"    => "de",
             "val"   => "Deutsch"
         )
         
