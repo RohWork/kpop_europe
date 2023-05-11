@@ -21,9 +21,9 @@
         <script>
             function go_href(val){
                                 
-                if(val == 1){
+                if(val == "kor"){
                     location.href='/?lang=kor';
-                }else if(val == 2){
+                }else if(val == "eng"){
                     location.href='/?lang=eng';
                 }
             }
