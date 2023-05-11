@@ -57,6 +57,7 @@
     $lang['order'] = "순서";
     $lang['name'] = "이름";
     $lang['writer'] = "작성자";
+    $lang['write'] = "글쓰기";
     $lang['registdate'] = "등록일";
     $lang['orgernizationname'] = "주최사 명";
     $lang['orgernizationorder'] = "주최사 순서";
