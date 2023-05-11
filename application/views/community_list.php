@@ -52,27 +52,6 @@
                         </div>
                     </div>
                     
-                    <div class="col-2">
-                        <div class="form-floating">
-                            <select id="organization" name="organization" class="form-select">
-                                <option value=""></option>
-                                <?php foreach($organization_list as $org){ 
-                                    
-                                    $search_org = "";
-                                    if($search['organizer'] == $org['idx']){
-                                        $search_org = "selected";
-                                    }
-                                    
-                                ?>
-                                    <option value="<?=$org['idx']?>" <?=$search_org?>><?=$org['name']?></option>
-
-                                <?php } ?>
-                            </select>
-                            <label for="organization">
-                                <?=$this->lang->line('orgernizer')?>
-                            </label>
-                        </div>
-                    </div>
                     
                     <div class="col-2">
                         <div class="form-floating">
@@ -124,7 +103,7 @@
     
     function go_detail(idx){
 
-        var url="/schedule/detail/"+idx;
+        var url="/community/detail/"+idx;
         
         window.open(url, 'detail', "width=500, height=700" );
         
