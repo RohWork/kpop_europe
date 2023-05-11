@@ -11,6 +11,8 @@ class Community_model extends CI_Model {
     function get_list($search, $paging=""){
         
         $where = "";
+        $limit = "";
+        
         if(!empty($search['country'])){
             $where .= " AND country_idx ='".$search['country']."'";
         }
