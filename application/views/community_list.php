@@ -62,12 +62,12 @@
                                     for($i=0;$i<count($lang_array);$i++){
                                     
                                         $search_lang = "";
-                                        if($search['langueage'] == $lang_array[$i]){
+                                        if($search['langueage'] == $lang_array[$i]['val']){
                                             $search_lang = "selected";
                                         }
                                      ?>
                                 
-                                        <option value="<?=$lang_array[$i]?>" <?=$search_lang?>><?=$lang_array[$i]?></option>
+                                        <option value="<?=$lang_array[$i]['id']?>" <?=$search_lang?>><?=$lang_array[$i]['val']?></option>
                                 <?php
                                     }
                                 ?>
