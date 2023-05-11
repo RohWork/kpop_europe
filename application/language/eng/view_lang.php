@@ -103,5 +103,7 @@
     
     $lang['require'] = "Required input";
     
+    $lang['empty'] = "empty value";
+    
     $lang['language'] = "Language";
 ?>
