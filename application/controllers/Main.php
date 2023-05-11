@@ -26,7 +26,7 @@ class Main extends CI_Controller {
 
         
         if(empty($lang) && empty($slang)){
-            $lang = "eng"; 
+            $lang = "en"; 
         }
         
         if(!empty($lang)){
