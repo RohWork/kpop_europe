@@ -116,7 +116,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-end">
-                    <button type="button" onclick="go_write" class="btn btn-primary"><?=$this->lang->line('write')?></button>
+                    <button type="button" onclick="go_write()" class="btn btn-primary"><?=$this->lang->line('write')?></button>
                 </div>
                 
             </div>
