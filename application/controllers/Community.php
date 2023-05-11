@@ -51,6 +51,11 @@ class Community extends CI_Controller {
     }
     
     function write(){
+        
+        if(empty($this->session->userdata('name') )){
+            header('Location: /member/login');
+        }
+        
         $this->load->view('header');
         $this->load->view('sidebar');
         $this->load->view('community_write');
