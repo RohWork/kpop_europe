@@ -44,6 +44,24 @@
 
                     <span class="text-end" style="font-size: 11px;">
                         <select class="form-select" style="width:100px;float: right;font-size: 8px;" onchange="go_href(this.value)">
+                            
+                            
+                                <?php 
+                                    $lang_array = get_langueage_list();
+                                    
+                                    for($i=0;$i<count($lang_array);$i++){
+                                    
+                                        $search_lang = "";
+                                        if($lang == $lang_array[$i]['id']){
+                                            $search_lang = "selected";
+                                        }
+                                     ?>
+                                
+                                        <option value="<?=$lang_array[$i]['id']?>" <?=$search_lang?>><?=$lang_array[$i]['val']?></option>
+                                <?php
+                                    }
+                                ?>
+                            
                             <option value="1" <?=$lang=='kor' ? "selected" : ""?>>
                                 한국어
                             </option>
