@@ -55,7 +55,7 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <select id="check_langueage" name="langueage" class="form-select">
+                            <select id="check_langueage" name="language" class="form-select">
                                 <?php 
                                     $lang_array = get_langueage_list();
                                     
