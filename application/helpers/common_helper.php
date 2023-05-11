@@ -19,9 +19,19 @@ function confirm_mobile(){
 function get_langueage_list(){
     
     $lang_array = array(
-        "English",
-        "한국어",
-        "Deutsch"
+        array(
+            "id"    =>  "eng",
+            "val"   =>  "English"
+        ),
+        array(
+            "id"    =>  "kor",
+            "val"   =>  "한국어",
+        ),
+        array(
+            "id"    => "deu",
+            "val"   => "Deutsch"
+        )
+        
     );
     
     return $lang_array;
