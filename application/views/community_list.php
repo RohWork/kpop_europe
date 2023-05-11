@@ -55,7 +55,7 @@
                     
                     <div class="col-2">
                         <div class="form-floating">
-                            <input type="text" id="date" name="language" class="form-control" value="<?=$search['langueage']?>"/>
+                            <input type="text" id="date" name="language" class="form-control" value="<?=$search['language']?>"/>
                             <label for="date">
                                 <?=$this->lang->line('language')?>
                             </label>
