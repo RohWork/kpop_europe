@@ -54,7 +54,7 @@
 
 </main>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script src="/asset/ck_edit/build/ckeditor.js"></script>
 <script>
   ClassicEditor.create( document.querySelector( '#editor' ),{
       language : "<?=$lang?>"
