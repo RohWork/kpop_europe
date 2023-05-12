@@ -127,6 +127,7 @@
                 'X-CSRF-TOKEN': 'CSRF-Token',
                 Authorization: 'Bearer <JSON Web Token>'
             }
+        }
   });
 </script>
 
