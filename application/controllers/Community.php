@@ -14,6 +14,8 @@ class Community extends CI_Controller {
     function list($page =0){
         
         $search = array();
+        $data = array();
+        
         $search['country'] = $this->input->get_post("country");
         $search['city'] = $this->input->get_post("city");
         $search['language'] = $this->input->get_post("language");
@@ -30,13 +32,13 @@ class Community extends CI_Controller {
             $data['city_list'] = "";
         }
         
-        $data = $this->com_md->get_list($search);
+        $result = $this->com_md->get_list($search);
         
         $this->load->library('pagination');
     
         $config['base_url'] = '/schedule/list';
         $config['reuse_query_string'] = true;
-        $config['total_rows'] = count($data);
+        $config['total_rows'] = count($result);
         $config['per_page'] = 10;
         $config['attributes'] = array('class' => 'page-link');
         $this->pagination->initialize($config);
