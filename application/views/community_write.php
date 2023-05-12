@@ -12,24 +12,44 @@
         <form id="city_insert">
             <div class="form-group">
                 <div class="row mt-1">
-                    <label class="form-label col-md-2 col-xs-2">
-                        <strong><?=$this->lang->line('countryname')?></strong>
-                    </label>
-                    <div class="col-md-2 col-xs-2">
-                        <select id="check_country" name="check_country" class="form-select">
-                            <?php 
-                                foreach($country_list as $cnt){ 
-                                    $selected = "";
-                                    if($cnt['idx'] == $select_country){
-                                        $selected = "selected";
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
+                                <option value=""></option>
+                                <?php foreach($country_list as $cnt){ 
+                                    $search_cnt = "";
+                                    if($search['country'] == $cnt['idx']){
+                                        $search_cnt = "selected";
                                     }
-                                    ?>
-                                
-                                <option value="<?=$cnt['idx']?>" <?=$selected?>><?=$cnt['name']?></option>
+                                ?>
+                                    <option value="<?=$cnt['idx']?>" <?=$search_cnt?>><?=$cnt['name']?></option>
 
-                            <?php } ?>
-                        </select>
+                                <?php } ?>
+                            </select>
+                            <label class="form-label "><?=$this->lang->line('country')?></label>
+                        </div>
                     </div>
+                    
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <select id="check_city" name="city" class="form-select">
+                                <option value=""></option>
+                                <?php foreach($city_list as $cty){ 
+                                    
+                                    $search_cty = "";
+                                    if($search['city'] == $cty['idx']){
+                                        $search_cty = "selected";
+                                    }
+                                    
+                                ?>
+                                    <option value="<?=$cty['idx']?>" <?=$search_cty?>><?=$cty['name']?></option>
+
+                                <?php } ?>
+                            </select>
+                            <label class="form-label "><?=$this->lang->line('city')?></label>
+                        </div>
+                    </div>
+                    
                 </div>
 
                 <div class="row mt-1">
