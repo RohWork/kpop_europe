@@ -67,6 +67,7 @@ class Community extends CI_Controller {
             header('Location: /member/login');
         }
         
+        echo SET_IMAGE_PATH;
         $data = array();
         
         $data['country_list'] = $this->cont_md->get_country();
