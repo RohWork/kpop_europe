@@ -15,7 +15,7 @@
                     <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                         <select id="check_country" name="check_country" class="form-select">
                             <?php 
-                                foreach($country as $cnt){ 
+                                foreach($country_list as $cnt){ 
                                     $selected = "";
                                     if($cnt['idx'] == $select_country){
                                         $selected = "selected";
