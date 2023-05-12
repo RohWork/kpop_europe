@@ -12,7 +12,10 @@
         <form id="city_insert">
             <div class="form-group">
                 <div class="row mt-1">
-                    <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
+                    <label class="form-label col-md-2 col-xs-2">
+                        <strong><?=$this->lang->line('countryname')?></strong>
+                    </label>
+                    <div class="col-md-2 col-xs-2">
                         <select id="check_country" name="check_country" class="form-select">
                             <?php 
                                 foreach($country_list as $cnt){ 
