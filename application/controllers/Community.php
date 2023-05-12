@@ -95,7 +95,8 @@ class Community extends CI_Controller {
         $data['result'] = 200;
         $data['message'] = "";
         
-        $config['upload_path']          = SET_IMAGE_PATH.'community';
+        //$config['upload_path']          = SET_IMAGE_PATH.'community';
+        $config['upload_path']          = './asset/image/community';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 100;
         $config['max_width']            = 1024;
