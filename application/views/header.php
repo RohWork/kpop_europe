@@ -21,12 +21,12 @@
         <script>
             function go_href(val){
                                 
-                if(val == "kor"){
-                    location.href='/?lang=kor';
-                }else if(val == "eng"){
-                    location.href='/?lang=eng';
-                }else if(val == "deu"){
-                    location.href='/?lang=deu';
+                if(val == "ko"){
+                    location.href='/?lang=ko';
+                }else if(val == "en"){
+                    location.href='/?lang=en';
+                }else if(val == "de"){
+                    location.href='/?lang=de';
                 }
             }
             
