@@ -109,18 +109,10 @@
 </main>
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
-<?php
-    if($lang != "ko"){
-?>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
-<?php
-    }
-?>
-<script src="/asset/script/ck_edit/adapter/UploadAdapter.js"></script>
-
-
 
 <script>
+    npm install --save @ckeditor/ckeditor5-upload
   import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter'  
     
   ClassicEditor.create( document.querySelector( '#editor' ), {
