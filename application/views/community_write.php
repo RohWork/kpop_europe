@@ -122,7 +122,7 @@
     $("#btn_insert").on('click', function(){
         var city = $("#input_city").val();
         if(city == ""){
-            alert("<?=$this->lang->line('errorinsertcity')?>");
+            alert("<?=$this->lang->line('errordata')?>");
             return;
         }else{
             
