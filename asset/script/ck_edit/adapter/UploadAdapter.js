@@ -1,4 +1,4 @@
-export default class UploadAdapter {
+class UploadAdapter {
         
     constructor(loader) {
         this.loader = loader;
