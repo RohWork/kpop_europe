@@ -11,12 +11,7 @@
     <div class="container">
         <form id="city_insert">
             <div class="form-group">
-                <div class="row">
-                    <label class="form-label"><h3><?=$this->lang->line('cityinsert')?></h3></label>
-                </div>
                 <div class="row mt-1">
-                    <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('country')?></strong></label>
-
                     <div class="col-md-4 col-xs-4 col-offset-6 col-xs-offset-4">
                         <select id="check_country" name="check_country" class="form-select">
                             <?php 
