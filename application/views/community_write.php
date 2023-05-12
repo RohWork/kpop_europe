@@ -114,7 +114,7 @@
 <script>
   ClassicEditor.create( document.querySelector( '#editor' ), {
       language : "<?=$lang?>",
-      extraPlugins: [MyCustomUploadAdapterPlugin],
+      extraPlugins: [MyCustomUploadAdapterPlugin]
   });
 </script>
 
