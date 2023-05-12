@@ -7,7 +7,8 @@ class Community extends CI_Controller {
         parent ::__construct();
         
         $this->load->model('Community_model', 'com_md', TRUE);
-
+        $this->load->model('Country_model', 'cont_md', TRUE);
+        $this->load->model('City_model', 'city_md', TRUE);
     }
 
     function list($page =0){
@@ -19,6 +20,13 @@ class Community extends CI_Controller {
         
         if(empty($search['language'])){
             $search['language'] = $this->session->userdata('lang');
+        }
+        
+        $data['country_list'] = $this->cont_md->get_country();
+        if(!empty($search['country'])){
+            $data['city_list'] = $this->city_md->get_city($search['country']);
+        }else{
+            $data['city_list'] = "";
         }
         
         $data = $this->com_md->get_list($search);
