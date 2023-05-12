@@ -9,7 +9,7 @@
 </style>
 
     <div class="container">
-        <form id="city_insert">
+        <form id="community_write">
             <div class="form-group">
                 <div class="row mt-1">
                     <div class="col-2">
@@ -127,13 +127,13 @@
         }else{
             
             $.ajax({
-                url:'/city/insert_ajax',
+                url:'/community/write',
                 type:'post',
-                data:$("#city_insert").serialize(),
+                data:$("#community_write").serialize(),
                 success:function(data){
                     if(data.result == 200){
                         alert('complete to insert');
-                        location.href = "/city?country=<?=$select_country?>";
+                        location.href = "/community/list";
                     }else{
                         alert('<?=$this->lang->line('checktodata')?>');
                         console.log(data);
