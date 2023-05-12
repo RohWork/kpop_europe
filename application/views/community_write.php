@@ -112,7 +112,8 @@
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
 <script>
   ClassicEditor.create( document.querySelector( '#editor' ), {
-      language : "<?=$lang?>"
+      language : "<?=$lang?>",
+      extraPlugins: [MyCustomUploadAdapterPlugin],
   });
 </script>
 
@@ -147,4 +148,10 @@
         }
     });
     
+    
+    function MyCustomUploadAdapterPlugin(editor) {
+        editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+        return new UploadAdapter(loader)
+    }
+}
 </script>
