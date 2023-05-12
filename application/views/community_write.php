@@ -81,7 +81,7 @@
                         <div class="form-floating">
                             <input type="text" id="title" name="title" class="form-control"/>
                         </div>
-                        <label for="title" lass="form-labe" >
+                        <label for="title" class="form-label" >
                                 <?=$this->lang->line('language')?>
                         </label>
                     </div>
