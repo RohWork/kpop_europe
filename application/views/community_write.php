@@ -128,7 +128,13 @@
                 Authorization: 'Bearer <JSON Web Token>'
             }
         }
-  });
+  })
+  .then(newEditor => {
+        editor = newEditor;
+    })
+    .catch(error => {
+        console.error(error);
+    });
 </script>
 
 <script>
