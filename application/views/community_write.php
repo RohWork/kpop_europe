@@ -80,10 +80,11 @@
                     <div class="col-md-6 col-xs-6">
                         <div class="form-floating">
                             <input type="text" id="title" name="title" class="form-control"/>
+                        
+                            <label for="title" class="form-label" >
+                                    <?=$this->lang->line('language')?>
+                            </label>
                         </div>
-                        <label for="title" class="form-label" >
-                                <?=$this->lang->line('language')?>
-                        </label>
                     </div>
                 </div>
                 <div class="row mt-1">
