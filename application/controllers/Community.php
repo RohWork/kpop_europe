@@ -84,5 +84,35 @@ class Community extends CI_Controller {
         $this->load->view('community_write', $data);
         $this->load->view('footer');
     }
+    
+    function image_upload(){
+        
+        $this->load->helper(array('form', 'url'));
+        
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $config['upload_path']          = '/asset/image/community';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 100;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+        
+        if ( ! $this->upload->do_upload()){
+            
+            $data['message'] =  array('error' => $this->upload->display_errors());
+        }else{
+            
+            $data = array('upload_data' => $this->upload->data());
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
 }
 ?>
