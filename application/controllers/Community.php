@@ -67,9 +67,21 @@ class Community extends CI_Controller {
             header('Location: /member/login');
         }
         
+        $data = array();
+        
+        $data['country_list'] = $this->cont_md->get_country();
+        
+        if(!empty($search['country'])){
+            $data['city_list'] = $this->city_md->get_city($search['country']);
+        }else{
+            $data['city_list'] = "";
+        }
+        
+        $data['language'] = $this->session->userdata('lang');
+        
         $this->load->view('header');
         $this->load->view('sidebar');
-        $this->load->view('community_write');
+        $this->load->view('community_write', $data);
         $this->load->view('footer');
     }
 }
