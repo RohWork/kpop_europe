@@ -70,7 +70,7 @@
                                 ?>
                                 
                             </select>
-                            <label for="language" lass="form-labe" >
+                            <label for="language" class="form-label" >
                                 <?=$this->lang->line('language')?>
                             </label>
                         </div>
@@ -78,7 +78,12 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-md-6 col-xs-6">
-                    <input type="text" id="title" name="title" class="form-control"/>
+                        <div class="form-floating">
+                            <input type="text" id="title" name="title" class="form-control"/>
+                        </div>
+                        <label for="title" lass="form-labe" >
+                                <?=$this->lang->line('language')?>
+                        </label>
                     </div>
                 </div>
                 <div class="row mt-1">
