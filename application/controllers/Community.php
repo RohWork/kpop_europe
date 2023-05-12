@@ -105,10 +105,15 @@ class Community extends CI_Controller {
         
         if ( ! $this->upload->do_upload()){
             
-            $data['message'] =  array('error' => $this->upload->display_errors());
+            $data = array('error' => $this->upload->display_errors());
         }else{
             
-            $data = array('upload_data' => $this->upload->data());
+            $file = $this->upload->data();
+            $filename = $file['file_name'];
+            
+            $url = "/asset/image/community/".$filename;
+            
+            $data = array("url"=>$url);
         }
         
         header("Content-Type: application/json;");
