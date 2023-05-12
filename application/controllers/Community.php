@@ -105,8 +105,8 @@ class Community extends CI_Controller {
         $this->load->library('upload', $config);
         
         if ( ! $this->upload->do_upload()){
-            $this->upload->display_errors()
-            //$data = array('error' => $config['upload_path']);
+            //$this->upload->display_errors();
+            $data = array('error' => $this->upload->display_errors());
         }else{
             
             $file = $this->upload->data();
