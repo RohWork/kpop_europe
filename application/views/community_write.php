@@ -117,9 +117,26 @@
     }
 ?>
 <script src="/asset/script/ck_edit/adapter/UploadAdapter.js"></script>
+
+
+
 <script>
+  import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter'  
+    
   ClassicEditor.create( document.querySelector( '#editor' ), {
       language : "<?=$lang?>",
+      simpleUpload: {
+            // The URL that the images are uploaded to.
+            uploadUrl: 'https://www.kpopineu.com/community/image_upload',
+
+            // Enable the XMLHttpRequest.withCredentials property.
+            withCredentials: true,
+
+            // Headers sent along with the XMLHttpRequest to the upload server.
+            headers: {
+                'X-CSRF-TOKEN': 'CSRF-Token',
+                Authorization: 'Bearer <JSON Web Token>'
+            }
   });
 </script>
 
