@@ -110,6 +110,7 @@
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
+<script src="/asset/script/ck_edit/adapter/UploadAdapter.js"></script>
 <script>
   ClassicEditor.create( document.querySelector( '#editor' ), {
       language : "<?=$lang?>",
