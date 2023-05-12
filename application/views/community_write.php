@@ -50,6 +50,31 @@
                         </div>
                     </div>
                     
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <select id="check_langueage" name="language" class="form-select">
+                                <?php 
+                                    $lang_array = get_langueage_list();
+                                    
+                                    for($i=0;$i<count($lang_array);$i++){
+                                    
+                                        $search_lang = "";
+                                        if($language == $lang_array[$i]['id']){
+                                            $search_lang = "selected";
+                                        }
+                                     ?>
+                                
+                                        <option value="<?=$lang_array[$i]['id']?>" <?=$search_lang?>><?=$lang_array[$i]['val']?></option>
+                                <?php
+                                    }
+                                ?>
+                                
+                            </select>
+                            <label for="language" lass="form-labe" >
+                                <?=$this->lang->line('language')?>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <div class="row mt-1">
                     <div class="col-md-6 col-xs-6">
