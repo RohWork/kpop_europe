@@ -109,7 +109,13 @@
 </main>
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
+<?php
+    if($lang != "ko"){
+?>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
+<?php
+    }
+?>
 <script src="/asset/script/ck_edit/adapter/UploadAdapter.js"></script>
 <script>
   ClassicEditor.create( document.querySelector( '#editor' ), {
