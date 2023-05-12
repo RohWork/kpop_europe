@@ -120,33 +120,29 @@
 
 <script>
     $("#btn_insert").on('click', function(){
-        var city = $("#input_city").val();
-        if(city == ""){
-            alert("<?=$this->lang->line('errordata')?>");
-            return;
-        }else{
+
             
-            $.ajax({
-                url:'/community/write',
-                type:'post',
-                data:$("#community_write").serialize(),
-                success:function(data){
-                    if(data.result == 200){
-                        alert('complete to insert');
-                        location.href = "/community/list";
-                    }else{
-                        alert('<?=$this->lang->line('checktodata')?>');
-                        console.log(data);
-                    }
-                },
-                error: function(xhr,status,error) {
-                    console.log(xhr,status,error);
-                    alert("<?=$this->lang->line('neterror')?>");
-                    return false;
-                }	 
-            });
+        $.ajax({
+            url:'/community/write',
+            type:'post',
+            data:$("#community_write").serialize(),
+            success:function(data){
+                if(data.result == 200){
+                    alert('complete to insert');
+                    location.href = "/community/list";
+                }else{
+                    alert('<?=$this->lang->line('checktodata')?>');
+                    console.log(data);
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
             
-        }
+        
     });
     
     function MyCustomUploadAdapterPlugin(editor) {
