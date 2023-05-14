@@ -85,6 +85,34 @@ class Community extends CI_Controller {
         $this->load->view('footer');
     }
     
+    function write_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $params = array();
+        $params['country_idx'] = $this->input->post("country");
+        $params['city_idx'] = $this->input->post("city");
+        $params['langueage'] = $this->input->post("language");
+        $params['title'] = $this->input->post("title");
+        $params['content'] = $this->input->post("content");
+        
+
+        $result = $this->com_md->insert_community($params);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+        
+    }
+    
     function image_upload(){
         
         $this->load->helper(array('form', 'url'));
