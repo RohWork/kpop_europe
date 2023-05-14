@@ -47,7 +47,7 @@
                 data:$("#organization_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
-                        alert('<?=$this->lang->line('completeinsert')?><');
+                        alert('<?=$this->lang->line('completeinsert')?>');
                         location.href = "/organization";
                     }else{
                         alert('<?=$this->lang->line('checktodata')?><');
