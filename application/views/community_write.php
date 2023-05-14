@@ -185,7 +185,7 @@
 
             
         $.ajax({
-            url:'/community/write',
+            url:'/community/write_ajax',
             type:'post',
             data:$("#community_write").serialize(),
             success:function(data){
