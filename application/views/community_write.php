@@ -147,7 +147,7 @@
             data:$("#community_write").serialize(),
             success:function(data){
                 if(data.result == 200){
-                    alert('complete to insert');
+                    alert('<?=$this->lang->line('completeinsert')?>');
                     location.href = "/community/list";
                 }else{
                     alert('<?=$this->lang->line('checktodata')?>');
