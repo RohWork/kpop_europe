@@ -68,6 +68,7 @@ class Community extends CI_Controller {
         }
         
         $data = array();
+        $search = array();
         
         $data['country_list'] = $this->cont_md->get_country();
         
@@ -78,6 +79,7 @@ class Community extends CI_Controller {
         }
         
         $data['language'] = $this->session->userdata('lang');
+        $data['search'] = $search;
         
         $this->load->view('header');
         $this->load->view('sidebar');
