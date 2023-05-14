@@ -97,7 +97,7 @@ class Community extends CI_Controller {
         $params = array();
         $params['country_idx'] = $this->input->post("country");
         $params['city_idx'] = $this->input->post("city");
-        $params['langueage'] = $this->input->post("language");
+        $params['language'] = $this->input->post("language");
         $params['title'] = $this->input->post("title");
         $params['content'] = $this->input->post("content");
         
