@@ -33,4 +33,15 @@ class Community_model extends CI_Model {
         $query = $this->db->query($sSql);
         return $query->result_array();
     }
+    
+    function insert_community($params){
+        
+        
+        $params['writer'] = $this->session->userdata('name');
+        $params['regi_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->insert('kpop_community', $params);
+        
+        return $this->db->insert_id();
+    }
 }
