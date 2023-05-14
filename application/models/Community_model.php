@@ -38,7 +38,7 @@ class Community_model extends CI_Model {
         
         
         $params['writer'] = $this->session->userdata('name');
-        $params['regi_date'] = date('Y-m-d h:i:s');
+        $params['reg_date'] = date('Y-m-d h:i:s');
         
         $this->db->insert('kpop_community', $params);
         
