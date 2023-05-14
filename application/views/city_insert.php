@@ -65,7 +65,7 @@
                 data:$("#city_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
-                        alert('complete to insert');
+                        alert('<?=$this->lang->line('completeinsert')?>');
                         location.href = "/city?country=<?=$select_country?>";
                     }else{
                         alert('<?=$this->lang->line('checktodata')?>');
