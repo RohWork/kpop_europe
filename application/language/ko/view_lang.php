@@ -23,6 +23,7 @@
     $lang['fri'] = '금';
     $lang['sat'] = '토';
     $lang['count'] = '갯수';
+    $lang['title'] = "제목";
     
     $lang['startdate'] = "시작일";
     $lang['enddate'] = "종료일";
