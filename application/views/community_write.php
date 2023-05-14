@@ -82,7 +82,7 @@
                             <input type="text" id="title" name="title" class="form-control"/>
                         
                             <label for="title" class="form-label" >
-                                    <?=$this->lang->line('language')?>
+                                    <?=$this->lang->line('title')?>
                             </label>
                         </div>
                     </div>
