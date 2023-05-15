@@ -59,8 +59,8 @@
     $lang['name'] = "이름";
     $lang['writer'] = "작성자";
     $lang['write'] = "글쓰기";
-    $lang['likecnt'] = "좋아요수";
-    $lang['viewcnt'] = "조회수";
+    $lang['likecnt'] = "좋아요 수";
+    $lang['viewcnt'] = "조회 수";
     $lang['like'] = "좋아요";
     
     $lang['registdate'] = "등록일";
