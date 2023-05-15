@@ -59,6 +59,10 @@
     $lang['name'] = "이름";
     $lang['writer'] = "작성자";
     $lang['write'] = "글쓰기";
+    $lang['likecnt'] = "좋아요수";
+    $lang['viewcnt'] = "조회수";
+    $lang['like'] = "좋아요";
+    
     $lang['registdate'] = "등록일";
     $lang['orgernizationname'] = "주최사 명";
     $lang['orgernizationorder'] = "주최사 순서";
