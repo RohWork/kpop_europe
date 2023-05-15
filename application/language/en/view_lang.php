@@ -60,7 +60,7 @@
     $lang['writer'] = "Writer";
     $lang['like'] = "Like count";
     $lang['viewcnt'] = "View count";
-    $lang['like'] = "Like that";
+    $lang['like'] = "Great";
     
     $lang['write'] = "Write";
     $lang['registdate'] = "Regist date";
