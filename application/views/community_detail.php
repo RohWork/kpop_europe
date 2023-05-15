@@ -56,7 +56,10 @@
                 
                 <div class="row" style="padding-top: 5px">
                     <div class="col-10">
-                        <textarea id="comment" name="comment"></textarea>
+                        <form id="comment_write">
+                            <textarea id="comment" name="comment"></textarea>
+                            <input type="hidden" id="community_idx" name="community_idx" value="<?=$idx?>"/>
+                        </form>
                     </div>
                     <div class="col-2">
                         <button type="button" id="comment_write" name="comment_write">
@@ -86,14 +89,37 @@
     <script>
         function modify_community(){
             
-
+            location.href="/community/modify/"+<?=$idx?>
             
+        }
+        
+        function comment_write(){
+            
+        $.ajax({
+            url:'/community/comment_ajax',
+            type:'post',
+            data:$("#comment_write").serialize(),
+            success:function(data){
+                if(data.result == 200){
+                    alert('<?=$this->lang->line('completeinsert')?>');
+                    location.reload();
+                }else{
+                    alert('<?=$this->lang->line('checktodata')?>');
+                    console.log(data);
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
         }
         function delete_community(){
             
             
             if(confirm("<?=$this->lang->line('deletepost')?>")){
-                var data = {idx : <?=$detail_info['idx']?>};
+                var data = {idx : <?=$idx?>};
 
                 $.ajax({
                     url:'/community/delete_ajax',
