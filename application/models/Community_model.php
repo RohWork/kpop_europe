@@ -44,4 +44,21 @@ class Community_model extends CI_Model {
         
         return $this->db->insert_id();
     }
+    
+    function detail_community($idx){
+        
+        $sSql = "select * from kpop_community where idx = $idx";
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
+        
+    }
+    
+    function comment_community($idx){
+        
+        $sSql = "select * from kpop_comment where community_idx = $idx";
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
+    }
 }
