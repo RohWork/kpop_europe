@@ -54,7 +54,7 @@ class Community_model extends CI_Model {
                 where idx = $idx";
         
         $query = $this->db->query($sSql);
-        return $query->result_array();
+        return $query->row_array();
         
     }
     
