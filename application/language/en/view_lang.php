@@ -99,6 +99,7 @@
     $lang['deletecountry'] = "do you want to delete country?";
     $lang['deleteorganization'] = "do you want to delete organization?";
     $lang['deleteschedule'] = "do you want to delete to the schedule?";
+    $lang['deletepost'] = "do you want to delete to the post?";
     $lang['completedelete'] = "complete to delete";
     $lang['checkemail'] = "Check to Your E-mail!";
     
