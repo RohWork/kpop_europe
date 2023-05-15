@@ -3,106 +3,207 @@
     $this->lang->load('view', $lang);
 
 ?>
+<style>
+      .ck-editor__editable { height: 400px; }
+      .ck-content { font-size: 12px; }
+</style>
 
-<html>
-    <head>
-        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div class="container" style="font-size: 15px">
-            <form id="form_modify">
-                <div class="row">
-                    <div class="col-4">
-                        <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
-                    </div>
-                    <div class="col-8">
-                        <select id="country_idx" name="country_idx"  class="form-select">
-                            <?php foreach($country as $cont){
-                                    $selected = "";
-                                    if($cont['idx'] == $detail_info['country_idx']){
-                                        $selected = "selected";
+    <div class="container">
+        <form id="community_write">
+            <div class="form-group">
+                <div class="row mt-1">
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
+                                <option value=""></option>
+                                <?php foreach($country_list as $cnt){ 
+                                    $search_cnt = "";
+                                    if($search['country'] == $cnt['idx']){
+                                        $search_cnt = "selected";
                                     }
-                            ?>
-                                
-                                <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="row" style="padding-top: 5px">
-                    <div class="col-4">
-                        <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
-                    </div>
-                    <div class="col-8">
-                        <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
-                        <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
-                    </div>
-                </div>
-                <div class="row" style="padding-top: 5px">
-                    <div class="col-4">
-                        <label class="form-label bold"><strong><?=$this->lang->line('cityorder')?></strong></label>
-                    </div>
-                    <div class="col-8">
-                        <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </body>
-    <script>
-        function modify_community(){
-            
-            $.ajax({
-                url:'/community/modify_ajax',
-                type:'post',
-                data:$("#form_modify").serialize(),
-                success:function(data){
-                    if(data.result == 200){
-                        alert('<?=$this->lang->line('completemodify')?>');
-                        window.parent.location.reload();
-                        window.parent.modal_close();
-                    }else{
-                        alert('<?=$this->lang->line('checktodata')?>');
-                    }
-                },
-                error: function(xhr,status,error) {
-                    console.log(xhr,status,error);
-                    alert("<?=$this->lang->line('neterror')?>");
-                    return false;
-                }	 
-            });
-            
-        }
-        function delete_community(){
-            
-            
-            if(confirm("<?=$this->lang->line('deletepost')?>")){
-                var data = {idx : <?=$detail_info['idx']?>};
+                                ?>
+                                    <option value="<?=$cnt['idx']?>" <?=$search_cnt?>><?=$cnt['name']?></option>
 
-                $.ajax({
-                    url:'/community/delete_ajax',
-                    type:'post',
-                    data:data,
-                    success:function(data){
-                        if(data.result == 200){
-                            alert('<?=$this->lang->line('completedelete')?>');
-                            window.parent.location.reload();
-                            window.parent.modal_close();
-                        }else{
-                            alert('<?=$this->lang->line('checktodata')?>');
-                        }
-                    },
-                    error: function(xhr,status,error) {
-                        console.log(xhr,status,error);
-                        alert("<?=$this->lang->line('neterror')?>");
-                        return false;
-                    }	 
-                });
+                                <?php } ?>
+                            </select>
+                            <label class="form-label "><?=$this->lang->line('country')?></label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <select id="check_city" name="city" class="form-select">
+                                <option value=""></option>
+                                <?php foreach($city_list as $cty){ 
+                                    
+                                    $search_cty = "";
+                                    if($search['city'] == $cty['idx']){
+                                        $search_cty = "selected";
+                                    }
+                                    
+                                ?>
+                                    <option value="<?=$cty['idx']?>" <?=$search_cty?>><?=$cty['name']?></option>
+
+                                <?php } ?>
+                            </select>
+                            <label class="form-label "><?=$this->lang->line('city')?></label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <select id="check_langueage" name="language" class="form-select">
+                                <?php 
+                                    $lang_array = get_langueage_list();
+                                    
+                                    for($i=0;$i<count($lang_array);$i++){
+                                    
+                                        $search_lang = "";
+                                        if($language == $lang_array[$i]['id']){
+                                            $search_lang = "selected";
+                                        }
+                                     ?>
+                                
+                                        <option value="<?=$lang_array[$i]['id']?>" <?=$search_lang?>><?=$lang_array[$i]['val']?></option>
+                                <?php
+                                    }
+                                ?>
+                                
+                            </select>
+                            <label for="language" class="form-label" >
+                                <?=$this->lang->line('language')?>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="form-floating">
+                            <input type="text" id="title" name="title" class="form-control" value="<?=$detail['title']?>"/>
+                        
+                            <label for="title" class="form-label" >
+                                    <?=$this->lang->line('title')?>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-6 col-xs-6">
+                        <textarea id="editor" name="content">
+                            <?=$detail['content']?>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1" style="padding-top:50px">
+                
+                <div class="col-md-6 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
+                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+
+</main>
+
+<script src="/asset/script/ck_edit/build/ckeditor.js"></script>
+<script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
+
+<script>
+
+  ClassicEditor.create( document.querySelector( '#editor' ), {
+      language : "<?=$lang?>",
+      simpleUpload: {
+            // The URL that the images are uploaded to.
+            uploadUrl: 'https://www.kpopineu.com/community/image_upload',
+
+            // Enable the XMLHttpRequest.withCredentials property.
+            withCredentials: true,
+
+            // Headers sent along with the XMLHttpRequest to the upload server.
+            headers: {
+                'X-CSRF-TOKEN': 'CSRF-Token',
+                Authorization: 'Bearer <JSON Web Token>'
             }
         }
-    </script>
-</html>
+  })
+  .then(newEditor => {
+        editor = newEditor;
+    })
+    .catch(error => {
+        console.error(error);
+    });
+</script>
+
+<script>
+    
+    function get_country_data(){
+        
+        var j = $("#check_country option:selected").val();
+        var data = { country_idx : j };
+
+       $('#check_city').empty();
+        
+        $.ajax({
+            url:'/city/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+
+                    $('#check_city').append("<option value=''></option>");
+                    for(var i =0; i<data_array.length;i++){
+                        
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        $('#check_city').append(option)
+                        
+                    }
+                    
+                    
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+        
+    }
+    
+    
+    $("#btn_insert").on('click', function(){
+
+            
+        $.ajax({
+            url:'/community/modify_ajax',
+            type:'post',
+            data:$("#community_write").serialize(),
+            success:function(data){
+                if(data.result == 200){
+                    alert('<?=$this->lang->line('completemodify')?>');
+                    location.href = "/community/list";
+                }else{
+                    alert('<?=$this->lang->line('checktodata')?>');
+                    console.log(data);
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+            
+        
+    });
+</script>
