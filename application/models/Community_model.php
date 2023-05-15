@@ -44,7 +44,15 @@ class Community_model extends CI_Model {
         
         return $this->db->insert_id();
     }
-    
+    function modify_community($params, $idx){
+        
+        $params['mod_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_community', $params);
+        
+        return $this->db->affected_rows();
+    }
     function detail_community($idx){
         
         $sSql = "select kc.*, co.name as country_name, ci.name as city_name 
