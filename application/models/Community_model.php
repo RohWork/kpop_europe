@@ -80,4 +80,16 @@ class Community_model extends CI_Model {
         return $this->db->affected_rows();
         
     }
+    
+    
+    function insert_comment($params){
+        
+        
+        $params['writer'] = $this->session->userdata('name');
+        $params['reg_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->insert('kpop_comment', $params);
+        
+        return $this->db->insert_id();
+    }
 }
