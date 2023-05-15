@@ -67,7 +67,7 @@ class Community_model extends CI_Model {
             $sSql = "select * from kpop_comment where community_idx = $idx and parent_idx is not null order by reg_date";
         }
         $query = $this->db->query($sSql);
-        return $query->result_array();
+        return $query->result();
     }
     
     function count_community($idx){
