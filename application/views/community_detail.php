@@ -2,6 +2,14 @@
     $lang = $this->session->userdata('lang');
     $this->lang->load('view', $lang);
 
+    $lang_array = get_langueage_list();
+    $search_lang = "";
+    for($i=0;$i<count($lang_array);$i++){
+                                    
+        if($detail['language'] == $lang_array[$i]['id']){
+            $search_lang = $lang_array[$i]['val'];
+        }
+    }
 ?>
 
 <html>
@@ -15,41 +23,44 @@
     <body>
         <div class="container" style="font-size: 15px">
             <form id="form_modify">
+                
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-10"><?=$detail['title']?></div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
                     </div>
-                    <div class="col-8">
-                        <select id="country_idx" name="country_idx"  class="form-select">
-                            <?php foreach($country as $cont){
-                                    $selected = "";
-                                    if($cont['idx'] == $detail_info['country_idx']){
-                                        $selected = "selected";
-                                    }
-                            ?>
-                                
-                                <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
-                            <?php } ?>
-                        </select>
+                    <div class="col-2">
+                        <?=$detail['country_name']?>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label bold"><strong><?=$this->lang->line('city_name')?></strong></label>
+                    </div>
+                    <div class="col-2">
+                        <?=$detail['city_name']?>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label bold"><strong><?=$this->lang->line('language')?></strong></label>
+                    </div>
+                    <div class="col-2">
+                        <?=$search_lang?>
                     </div>
                 </div>
+
                 <div class="row" style="padding-top: 5px">
-                    <div class="col-4">
-                        <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
-                    </div>
-                    <div class="col-8">
-                        <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
-                        <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
-                    </div>
+                    
+                    <div class="col-10"><?=$detail['content']?></div>
                 </div>
-                <div class="row" style="padding-top: 5px">
-                    <div class="col-4">
-                        <label class="form-label bold"><strong><?=$this->lang->line('cityorder')?></strong></label>
+                
+                <div class="row" style="paddng-top: 5px">
+                    <div class="col-10">
+                        
                     </div>
-                    <div class="col-8">
-                        <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
-                    </div>
+                    
                 </div>
+                
             </form>
         </div>
     </body>
