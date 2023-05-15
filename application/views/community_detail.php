@@ -54,9 +54,28 @@
                     <div class="col-10"><?=$detail['content']?></div>
                 </div>
                 
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-10">
+                        <textarea id="comment" name="comment"></textarea>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" id="comment_write" name="comment_write">
+                            <?=$this->lang->line('save')?>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="row" style="paddng-top: 5px">
                     <div class="col-10">
-                        
+                        <table class="table">
+                            <?php 
+                            foreach($comment as $cmt){
+                            ?>
+                                <div><?=$cmt->content?></div>
+                            <?php
+                            }
+                            ?>
+                        </table>
                     </div>
                     
                 </div>
