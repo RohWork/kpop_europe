@@ -134,6 +134,47 @@ class Community extends CI_Controller {
         
     }
     
+    function modify($idx){
+        
+        $data['detail'] = $this->com_md->detail_community($idx);
+        $data['idx'] = $idx;
+        
+        $cnt = $this->com_md->count_community($idx);
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('community_modify', $data);
+        $this->load->view('footer');
+    }
+    
+    function modify_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $params = array();
+        $params['country_idx'] = $this->input->post("country");
+        $params['city_idx'] = $this->input->post("city");
+        $params['language'] = $this->input->post("language");
+        $params['title'] = $this->input->post("title");
+        $params['content'] = $this->input->post("content");
+        $idx = $this->input->post("idx");
+
+        $result = $this->com_md->modify_community($params, $idx);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+        
+    }
+    
     function comment_ajax(){
         
         $data = array();
