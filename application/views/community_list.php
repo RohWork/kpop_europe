@@ -85,7 +85,13 @@
             </form>
             <div class="row" style="padding-top: 20px">
                 <div class="col-12">
-                    <table class="table table-striped" style="font-size:0.8rem">
+                    <table class="table table-striped table-hover text-center" style="font-size:0.8rem">
+                        <th>
+                            <td><?=$this->lang->line('title')?></td>
+                            <td><?=$this->lang->line('writer')?></td>
+                            <td><?=$this->lang->line('likecnt')?></td>
+                            <td><?=$this->lang->line('viewcnt')?></td>
+                        </th>
                         <?php 
                             foreach($list as $li){
                         ?>        
@@ -93,6 +99,7 @@
                             <td><?=$li['title']?></td>
                             <td><?=$li['writer']?></td>
                             <td><?=$li['like']?></td>
+                            <td><?=$li['cnt']?></td>
                         </tr>   
                         <?php 
                             }
