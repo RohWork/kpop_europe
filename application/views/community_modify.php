@@ -80,7 +80,7 @@
                     <div class="col-md-6 col-xs-6">
                         <div class="form-floating">
                             <input type="text" id="title" name="title" class="form-control" value="<?=$detail['title']?>"/>
-                        
+                            <input type="hidden" id="idx" name="idx" class="form-control" value="<?=$idx?>"/>
                             <label for="title" class="form-label" >
                                     <?=$this->lang->line('title')?>
                             </label>
@@ -98,8 +98,9 @@
             <div class="row mt-1" style="padding-top:50px">
                 
                 <div class="col-md-6 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
-                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('modifiy')?></button>
                     <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
+                    <button type="button" class="btn btn-disabled" id="btn_home" onclick="location.href='/community/detail/<?=$idx?>';"><?=$this->lang->line('detail')?></button>
                 </div>
             </div>
         </form>
