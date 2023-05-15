@@ -122,6 +122,8 @@ class Community extends CI_Controller {
         $data['detail'] = $this->com_md->detail_community($idx);
         $data['comment'] = $this->com_md->comment_community($idx, 1);
         $data['sub_comment'] = $this->com_md->comment_community($idx, 1);
+        $data['idx'] = $idx;
+        
         $cnt = $this->com_md->count_community($idx);
         
         $this->load->view('header');
