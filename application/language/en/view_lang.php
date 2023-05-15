@@ -58,6 +58,10 @@
     $lang['order'] = "Order";
     $lang['name'] = "Name";
     $lang['writer'] = "Writer";
+    $lang['like'] = "Like count";
+    $lang['viewcnt'] = "View count";
+    $lang['like'] = "Like that";
+    
     $lang['write'] = "Write";
     $lang['registdate'] = "Regist date";
     $lang['orgernizationname'] = "Organization name";
