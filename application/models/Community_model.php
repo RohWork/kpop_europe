@@ -47,7 +47,11 @@ class Community_model extends CI_Model {
     
     function detail_community($idx){
         
-        $sSql = "select * from kpop_community where idx = $idx";
+        $sSql = "select kc.*, co.name as country_name, ci.name as city_name 
+                from kpop_community as kc
+                left join kpop_country as co on kc.country_idx = co.idx
+                left join kpop_city as ci on kc.city_idx = ci.idx
+                where idx = $idx";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
@@ -60,5 +64,16 @@ class Community_model extends CI_Model {
         
         $query = $this->db->query($sSql);
         return $query->result_array();
+    }
+    
+    function count_community($idx){
+        
+        $this->db->set('count', 'count + 1', false);
+        
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_community', $params);
+        
+        return $this->db->affected_rows();
+        
     }
 }
