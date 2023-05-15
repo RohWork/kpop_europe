@@ -98,6 +98,7 @@
     $lang['deletecountry'] = "국가 데이터를 삭제하시겠습니까?";
     $lang['deleteorganization'] = "주최사 데이터를 삭제 하시겠습니까?";
     $lang['deleteschedule'] = "스케줄을 삭제 하시겠습니까?";
+    $lang['deletepost'] = "해당글을 삭제 하시겠습니까?";
     $lang['checkemail'] = "이메일을 확인하세요!";
     
     $lang['require'] = "입력을 요구함";
