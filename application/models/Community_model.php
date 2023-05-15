@@ -51,17 +51,21 @@ class Community_model extends CI_Model {
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
-                where idx = $idx";
+                where idx = $idx order by kc.reg_date desc";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
         
     }
     
-    function comment_community($idx){
+    function comment_community($idx, $level){
         
-        $sSql = "select * from kpop_comment where community_idx = $idx";
+        if($level == 1){
         
+            $sSql = "select * from kpop_comment where community_idx = $idx order by reg_date";
+        }else{
+            $sSql = "select * from kpop_comment where community_idx = $idx and parent_idx is not null order by reg_date";
+        }
         $query = $this->db->query($sSql);
         return $query->result_array();
     }
