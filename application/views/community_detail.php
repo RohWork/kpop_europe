@@ -54,37 +54,19 @@
         </div>
     </body>
     <script>
-        function modify_city(){
+        function modify_community(){
             
-            $.ajax({
-                url:'/city/modify_ajax',
-                type:'post',
-                data:$("#form_modify").serialize(),
-                success:function(data){
-                    if(data.result == 200){
-                        alert('<?=$this->lang->line('completemodify')?>');
-                        window.parent.location.reload();
-                        window.parent.modal_close();
-                    }else{
-                        alert('<?=$this->lang->line('checktodata')?>');
-                    }
-                },
-                error: function(xhr,status,error) {
-                    console.log(xhr,status,error);
-                    alert("<?=$this->lang->line('neterror')?>");
-                    return false;
-                }	 
-            });
+
             
         }
-        function delete_city(){
+        function delete_community(){
             
             
-            if(confirm("<?=$this->lang->line('deletecountry')?>")){
+            if(confirm("<?=$this->lang->line('deletepost')?>")){
                 var data = {idx : <?=$detail_info['idx']?>};
 
                 $.ajax({
-                    url:'/city/delete_ajax',
+                    url:'/community/delete_ajax',
                     type:'post',
                     data:data,
                     success:function(data){
