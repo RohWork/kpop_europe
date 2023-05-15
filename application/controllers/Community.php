@@ -115,6 +115,24 @@ class Community extends CI_Controller {
         
     }
     
+    function detail(){
+        
+        $data = array();
+        
+        $idx = $this->input->post("idx");
+        
+        $data['detail'] = $this->com_md->detail_community($idx);
+        $data['comment'] = $this->com_md->comment_community($idx);
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('community_detail', $data);
+        $this->load->view('footer');
+        
+        
+    }
+    
+    
     function image_upload(){
         
         $this->load->helper(array('form', 'url'));
