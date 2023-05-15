@@ -115,11 +115,9 @@ class Community extends CI_Controller {
         
     }
     
-    function detail(){
+    function detail($idx){
         
         $data = array();
-        
-        $idx = $this->input->post("idx");
         
         $data['detail'] = $this->com_md->detail_community($idx);
         $data['comment'] = $this->com_md->comment_community($idx);
