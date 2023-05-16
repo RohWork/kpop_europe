@@ -83,7 +83,7 @@ class Community_model extends CI_Model {
         $this->db->set('count', 'count + 1', false);
         
         $this->db->where("idx", $idx);
-        $this->db->update('kpop_community', $params);
+        $this->db->update('kpop_community');
         
         return $this->db->affected_rows();
         
