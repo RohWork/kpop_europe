@@ -80,7 +80,7 @@ class Community_model extends CI_Model {
     
     function count_community($idx){
         
-        $this->db->set('count', 'count + 1', false);
+        $this->db->set('cnt', 'cnt + 1', false);
         
         $this->db->where("idx", $idx);
         $this->db->update('kpop_community');
