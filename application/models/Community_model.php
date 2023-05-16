@@ -59,7 +59,7 @@ class Community_model extends CI_Model {
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
-                where idx = $idx order by kc.reg_date desc";
+                where kc.idx = $idx order by kc.reg_date desc";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
