@@ -140,7 +140,7 @@
 
         var url="/community/detail/"+idx;
         
-        window.open(url, 'detail', "width=500, height=700" );
+        location.href=url;
         
     }
     function go_write(){
