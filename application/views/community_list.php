@@ -86,12 +86,14 @@
             <div class="row" style="padding-top: 20px">
                 <div class="col-12">
                     <table class="table table-striped table-hover text-center" style="font-size:0.8rem">
-                        <th>
-                            <td><?=$this->lang->line('title')?></td>
-                            <td><?=$this->lang->line('writer')?></td>
-                            <td><?=$this->lang->line('likecnt')?></td>
-                            <td><?=$this->lang->line('viewcnt')?></td>
-                        </th>
+                        <tr>
+                       
+                            <th><?=$this->lang->line('title')?></th>
+                            <th><?=$this->lang->line('writer')?></th>
+                            <th><?=$this->lang->line('likecnt')?></th>
+                            <th><?=$this->lang->line('viewcnt')?></th>
+                        
+                        </tr>
                         <?php 
                             foreach($list as $li){
                         ?>        
