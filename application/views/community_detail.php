@@ -61,7 +61,7 @@
                 </div>
                 
                 
-                <div class="row" style="padding-top: 5px;margin-top: 5px">
+                <div class="row" style="padding-top: 5px;margin-top: 20px">
                     <div class="col-8">
                         <form id="comment_write">
                             <textarea id="comment" name="comment" class="form-control"></textarea>
