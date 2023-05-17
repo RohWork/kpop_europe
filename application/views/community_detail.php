@@ -24,9 +24,7 @@
         <div class="container" style="font-size: 15px">
             <form id="form_modify">
                 
-                <div class="row">
-                    <div class="col-10"><?=$detail['title']?></div>
-                </div>
+                
                 
                 <div class="row">
                     <div class="col-2">
@@ -48,7 +46,13 @@
                         <?=$search_lang?>
                     </div>
                 </div>
-
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-10">
+                        <div class="border">
+                            <?=$detail['title']?>
+                        </div>
+                    </div>
+                </div>
                 <div class="row" style="padding-top: 5px">
                     
                     <div class="col-10" >
