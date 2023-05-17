@@ -51,7 +51,9 @@
 
                 <div class="row" style="padding-top: 5px">
                     
-                    <div class="col-10"><?=$detail['content']?></div>
+                    <div class="col-10">
+                        <?=$detail['content']?>
+                    </div>
                 </div>
                 
                 <div class="row" style="padding-top: 5px">
