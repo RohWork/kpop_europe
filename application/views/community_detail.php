@@ -51,7 +51,7 @@
 
                 <div class="row" style="padding-top: 5px">
                     
-                    <div class="col-10">
+                    <div class="col-10 border" style="height:50px;">
                         <?=html_entity_decode($detail['content'])?>
                     </div>
                 </div>
