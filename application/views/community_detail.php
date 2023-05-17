@@ -52,13 +52,13 @@
                 </div>
                 
                 <div class="row" style="padding-top: 5px;margin-top: 5px">
-                    <div class="col-10">
+                    <div class="col-8">
                         <form id="comment_write">
                             <textarea id="comment" name="comment" class="form-control"></textarea>
                             <input type="hidden" id="community_idx" name="community_idx" value="<?=$idx?>"/>
                         </form>
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         <button type="button" id="comment_write" name="comment_write" class="btn btn-primary">
                             <?=$this->lang->line('save')?>
                         </button>
