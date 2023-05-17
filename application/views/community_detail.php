@@ -20,16 +20,19 @@
                 <div class="row">
                     <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
+                        &nbsp;
                         <?=$detail['country_name']?>
                     </div>
 
                     <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
+                        &nbsp;
                         <?=$detail['city_name']?>
                     </div>
 
                     <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('language')?></strong></label>
+                        &nbsp;
                         <?=$search_lang?>
                     </div>
                 </div>
