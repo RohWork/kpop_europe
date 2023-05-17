@@ -59,7 +59,7 @@
                 <div class="row" style="padding-top: 5px">
                     <div class="col-10">
                         <form id="comment_write">
-                            <textarea id="comment" name="comment"></textarea>
+                            <textarea id="comment" name="comment" class="form-control"></textarea>
                             <input type="hidden" id="community_idx" name="community_idx" value="<?=$idx?>"/>
                         </form>
                     </div>
