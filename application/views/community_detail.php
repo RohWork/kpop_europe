@@ -51,8 +51,10 @@
 
                 <div class="row" style="padding-top: 5px">
                     
-                    <div class="col-12 border" style="height:50vh;">
-                        <?=html_entity_decode($detail['content'])?>
+                    <div class="col-12 border" >
+                        <div style="height:50vh;">
+                            <?=html_entity_decode($detail['content'])?>
+                        </div>
                     </div>
                 </div>
                 
