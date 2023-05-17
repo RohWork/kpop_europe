@@ -185,8 +185,8 @@
         
         var post_params = $("#community_write").serialize();
         var content = editor.getData();
-        console.log(content);
-        return;
+        post_params += "&content="+content;
+
         
         $.ajax({
             url:'/community/write_ajax',
