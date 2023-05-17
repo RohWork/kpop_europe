@@ -64,7 +64,7 @@
                         </form>
                     </div>
                     <div class="col-2">
-                        <button type="button" id="comment_write" name="comment_write">
+                        <button type="button" id="comment_write" name="comment_write" class="btn btn-primary">
                             <?=$this->lang->line('save')?>
                         </button>
                     </div>
