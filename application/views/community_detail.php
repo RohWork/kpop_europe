@@ -37,7 +37,7 @@
                         <?=$search_lang?>
                     </div>
                 </div>
-                <div class="row" style="padding-top: 5px">
+                <div class="row" style="padding-top: 10px">
                     <div class="col-12">
                             <h4><?=$detail['title']?></h3>   
                     </div>
