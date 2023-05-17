@@ -50,6 +50,16 @@
                     </div>
                 </div>
                 
+                <div class="row">
+                    <div class="col-offset-6">
+                        <button type="button" class="btn btn-primary"><?=$this->lang->line('modify')?></button>
+                        <button type="button" class="btn btn-danger"><?=$this->lang->line('delete')?></button>
+                        <button type="button" class="btn btn-secondary"><?=$this->lang->line('list')?></button>
+                    </div>
+                    
+                </div>
+                
+                
                 <div class="row" style="padding-top: 5px;margin-top: 5px">
                     <div class="col-8">
                         <form id="comment_write">
