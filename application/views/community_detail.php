@@ -51,7 +51,8 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-offset-6 col-3">
+                    <div class="col-6"></div>
+                    <div class="col-3">
                         <button type="button" class="btn btn-primary"><?=$this->lang->line('modify')?></button>
                         <button type="button" class="btn btn-danger"><?=$this->lang->line('delete')?></button>
                         <button type="button" class="btn btn-secondary"><?=$this->lang->line('list')?></button>
