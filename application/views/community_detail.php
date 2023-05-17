@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="border">
                             <?=$detail['title']?>
                         </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="row" style="padding-top: 5px">
                     
-                    <div class="col-10" >
+                    <div class="col-12" >
                         <div style="height:50vh" class="border">
                             <?=html_entity_decode($detail['content'])?>
                         </div>
