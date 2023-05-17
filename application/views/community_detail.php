@@ -39,9 +39,7 @@
                 </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-12">
-                        <div class="border">
-                            <h3><?=$detail['title']?></h3>
-                        </div>
+                            <h4><?=$detail['title']?></h3>   
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
