@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 
-                <div class="row">
+                <div class="row" style="padding-top: 5px">
                     <div class="col-6"></div>
                     <div class="col-3">
                         <button type="button" class="btn btn-primary"><?=$this->lang->line('modify')?></button>
