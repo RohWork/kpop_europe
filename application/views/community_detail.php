@@ -18,10 +18,10 @@
                 
                 
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
                     </div>
-                    <div class="col-2">
+                    <div class="col-1">
                         <?=$detail['country_name']?>
                     </div>
                     <div class="col-1">
