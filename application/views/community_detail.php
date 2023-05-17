@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 
-                <div class="row border-top" style="padding-top: 5px">
+                <div class="row" style="padding-top: 5px;margin-top: 5px">
                     <div class="col-10">
                         <form id="comment_write">
                             <textarea id="comment" name="comment" class="form-control"></textarea>
