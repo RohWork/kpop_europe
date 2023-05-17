@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
-                    <div class="col-12">
+                    <div class="col-9">
                             <h4><?=$detail['title']?></h3>   
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
                     
-                    <div class="col-12" >
+                    <div class="col-9" >
                         <div style="height:50vh" class="border">
                             <?=html_entity_decode($detail['content'])?>
                         </div>
