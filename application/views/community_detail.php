@@ -40,7 +40,7 @@
                 <div class="row" style="padding-top: 5px">
                     <div class="col-12">
                         <div class="border">
-                            <?=$detail['title']?>
+                            <h3><?=$detail['title']?></h3>
                         </div>
                     </div>
                 </div>
