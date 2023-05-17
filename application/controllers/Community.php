@@ -101,6 +101,8 @@ class Community extends CI_Controller {
         $params['title'] = $this->input->post("title");
         $params['content'] = htmlentities($this->input->post("content"));
         
+        echo $params['content'];
+        exit;
 
         $result = $this->com_md->insert_community($params);
         
