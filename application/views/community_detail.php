@@ -55,7 +55,7 @@
                     <div class="col-3 text-end">
                         <button type="button" class="btn btn-primary"><?=$this->lang->line('modify')?></button>
                         <button type="button" class="btn btn-danger"><?=$this->lang->line('delete')?></button>
-                        <button type="button" class="btn btn-secondary"><?=$this->lang->line('list')?></button>
+                        <button type="button" class="btn btn-secondary" onclick="/community/list"><?=$this->lang->line('list')?></button>
                     </div>
                     
                 </div>
