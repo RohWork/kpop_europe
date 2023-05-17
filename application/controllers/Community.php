@@ -99,7 +99,7 @@ class Community extends CI_Controller {
         $params['city_idx'] = $this->input->post("city");
         $params['language'] = $this->input->post("language");
         $params['title'] = $this->input->post("title");
-        $params['content'] = htmlentities($this->input->post("content"));
+        $params['content'] = $this->input->post("content");
        
 
         $result = $this->com_md->insert_community($params);
