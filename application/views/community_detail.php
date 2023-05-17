@@ -25,7 +25,7 @@
                         <?=$detail['country_name']?>
                     </div>
                     <div class="col-2">
-                        <label class="form-label bold"><strong><?=$this->lang->line('city_name')?></strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
                     </div>
                     <div class="col-2">
                         <?=$detail['city_name']?>
