@@ -74,6 +74,9 @@
                 <div class="row" style="paddng-top: 5px">
                     <div class="col-9">
                         <table class="table">
+                            <tr>
+                                <th width="90%"></th><th width="10%"></th>
+                            </tr>
                             <?php 
 
                             foreach($comment as $cmt){
