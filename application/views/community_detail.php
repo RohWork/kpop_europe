@@ -78,7 +78,10 @@
 
                             foreach($comment as $cmt){
                             ?>
-                            <tr><td><?=$cmt->content?></td></td>
+                            <tr>
+                                <td><?=$cmt->content?></td>
+                                <td><?=$cmt->writer?></td>
+                            </tr>
                             <?php
                             }
                             ?>
