@@ -12,7 +12,7 @@
     }
 ?>
 
-        <div class="container" style="font-size: 15px"> 
+        <div class="container" style="font-size: 15px; overflow-y: auto"> 
                 <div class="row">
                     <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
