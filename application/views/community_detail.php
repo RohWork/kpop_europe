@@ -103,7 +103,7 @@
         function comment_write(){
             
         $.ajax({
-            url:'/community/comment_ajax',
+            url:'/community/comment_write_ajax',
             type:'post',
             data:$("#comment_write").serialize(),
             success:function(data){
