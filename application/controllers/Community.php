@@ -278,10 +278,10 @@ class Community extends CI_Controller {
         $data['message'] = "";
         
         $params = array();
-        $params['community_idx'] = $this->input->post("idx");
-        $params['content'] = $this->input->post("comment");
+        $idx = $this->input->post("idx");
+        $params['state'] = 2;
         
-        $result = $this->com_md->modify_comment($params);
+        $result = $this->com_md->modify_comment($params, $idx);
         
         if(!$result){
             $data['result'] = 400;
@@ -303,7 +303,7 @@ class Community extends CI_Controller {
         $mode = "like";
         $idx = $this->input->post("idx");
         
-        $result = $this->com_md->like_community($idx, $mode);
+        $result = $this->com_md->like_comment($idx, $mode);
     }
     function comment_hate_ajax(){
         
@@ -315,7 +315,7 @@ class Community extends CI_Controller {
         $mode = "hate";
         $idx = $this->input->post("idx");
         
-        $result = $this->com_md->like_community($idx, $mode);
+        $result = $this->com_md->like_comment($idx, $mode);
     }
     
     
