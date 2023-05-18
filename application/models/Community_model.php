@@ -70,7 +70,7 @@ class Community_model extends CI_Model {
         
         if($level == 1){
         
-            $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 order by reg_date";
+            $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 and parent_idx is null order by reg_date";
         }else{
             $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 and parent_idx is not null order by reg_date";
         }
