@@ -175,7 +175,57 @@ class Community extends CI_Controller {
         
     }
     
-    function comment_ajax(){
+    function like_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $mode = "like";
+        $idx = $this->input->post("idx");
+        
+        $result = $this->com_md->like_community($idx, $mode);
+    }
+    function hate_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $mode = "hate";
+        $idx = $this->input->post("idx");
+        
+        $result = $this->com_md->like_community($idx, $mode);
+    }
+    
+    function delete_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $params = array();
+        $params['state'] = 2;
+
+        $idx = $this->input->post("idx");
+
+        $result = $this->com_md->modify_community($params, $idx);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+        
+    }
+    
+    function comment_write_ajax(){
         
         $data = array();
         
@@ -196,6 +246,76 @@ class Community extends CI_Controller {
         header("Content-Type: application/json;");
         echo json_encode($data);
         
+    }
+    
+    function comment_modify_ajax(){
+        
+         $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $params = array();
+        $params['content'] = $this->input->post("content");
+        $idx = $this->input->post("idx");
+
+        $result = $this->com_md->modify_comment($params, $idx);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
+    
+    function comment_delete_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $params = array();
+        $params['community_idx'] = $this->input->post("idx");
+        $params['content'] = $this->input->post("comment");
+        
+        $result = $this->com_md->modify_comment($params);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
+    
+    function comment_like_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $mode = "like";
+        $idx = $this->input->post("idx");
+        
+        $result = $this->com_md->like_community($idx, $mode);
+    }
+    function comment_hate_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $mode = "hate";
+        $idx = $this->input->post("idx");
+        
+        $result = $this->com_md->like_community($idx, $mode);
     }
     
     
