@@ -89,7 +89,7 @@ class Community_model extends CI_Model {
         
     }
     
-    function like_community($idx){
+    function like_community($idx, $mode){
         
         if($mode == "like"){
             $this->db->set('like', 'like + 1', false);
