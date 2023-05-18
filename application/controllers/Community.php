@@ -233,7 +233,7 @@ class Community extends CI_Controller {
         $data['message'] = "";
         
         $params = array();
-        $params['community_idx'] = $this->input->post("idx");
+        $params['community_idx'] = $this->input->post("community_idx");
         $params['content'] = $this->input->post("comment");
         
         $result = $this->com_md->insert_comment($params);
