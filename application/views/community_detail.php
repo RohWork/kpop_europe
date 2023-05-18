@@ -69,7 +69,7 @@
                         </form>
                     </div>
                     <div class="col-1">
-                        <button type="button" id="comment_write" name="comment_write" class="btn btn-primary" onclick="comment_write()">
+                        <button type="button" id="write_btn" name="write_btn" class="btn btn-primary" onclick="comment_write()">
                             <?=$this->lang->line('save')?>
                         </button>
                     </div>
@@ -102,25 +102,25 @@
         
         function comment_write(){
             
-        $.ajax({
-            url:'/community/comment_write_ajax',
-            type:'post',
-            data:$("#comment_write").serialize(),
-            success:function(data){
-                if(data.result == 200){
-                    alert('<?=$this->lang->line('completeinsert')?>');
-                    location.reload();
-                }else{
-                    alert('<?=$this->lang->line('checktodata')?>');
-                    console.log(data);
-                }
-            },
-            error: function(xhr,status,error) {
-                console.log(xhr,status,error);
-                alert("<?=$this->lang->line('neterror')?>");
-                return false;
-            }	 
-        });
+            $.ajax({
+                url:'/community/comment_write_ajax',
+                type:'post',
+                data:$("#comment_write").serialize(),
+                success:function(data){
+                    if(data.result == 200){
+                        alert('<?=$this->lang->line('completeinsert')?>');
+                        location.reload();
+                    }else{
+                        alert('<?=$this->lang->line('checktodata')?>');
+                        console.log(data);
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("<?=$this->lang->line('neterror')?>");
+                    return false;
+                }	 
+            });
         }
         function delete_community(){
             
