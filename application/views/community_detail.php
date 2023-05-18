@@ -12,11 +12,7 @@
     }
 ?>
 
-        <div class="container" style="font-size: 15px">
-            <form id="form_modify">
-                
-                
-                
+        <div class="container" style="font-size: 15px"> 
                 <div class="row">
                     <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
@@ -90,7 +86,6 @@
                     
                 </div>
                 
-            </form>
         </div>
     </main>
     <script>
