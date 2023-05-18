@@ -28,7 +28,7 @@ class Community_model extends CI_Model {
         
         $sSql = "select kc.* , 
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
-                from kpop_community as kc where 1=1 $where $limit";
+                from kpop_community as kc where state = 1 $where $limit";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
@@ -70,9 +70,9 @@ class Community_model extends CI_Model {
         
         if($level == 1){
         
-            $sSql = "select * from kpop_comment where community_idx = $idx order by reg_date";
+            $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 order by reg_date";
         }else{
-            $sSql = "select * from kpop_comment where community_idx = $idx and parent_idx is not null order by reg_date";
+            $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 and parent_idx is not null order by reg_date";
         }
         $query = $this->db->query($sSql);
         return $query->result();
@@ -89,6 +89,20 @@ class Community_model extends CI_Model {
         
     }
     
+    function like_community($idx){
+        
+        if($mode == "like"){
+            $this->db->set('like', 'like + 1', false);
+        }else{
+            $this->db->set('hate', 'hate + 1', false);
+        }
+        
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_community');
+        
+        return $this->db->affected_rows();
+        
+    }
     
     function insert_comment($params){
         
@@ -99,5 +113,30 @@ class Community_model extends CI_Model {
         $this->db->insert('kpop_comment', $params);
         
         return $this->db->insert_id();
+    }
+    
+    function modify_comment($params, $idx){
+        
+        
+        $params['mod_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_comment', $params);
+        
+        return $this->db->affected_rows();
+    }
+    
+    function like_comment($idx, $mode){
+        
+        if($mode == "like"){
+            $this->db->set('like', 'like + 1', false);
+        }else{
+            $this->db->set('hate', 'hate + 1', false);
+        }
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_comment');
+        
+        return $this->db->affected_rows();
+        
     }
 }
