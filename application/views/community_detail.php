@@ -75,6 +75,7 @@
                     <div class="col-10">
                         <table class="table">
                             <?php 
+                            var_dump($comment);
                             foreach($comment as $cmt){
                             ?>
                                 <div><?=$cmt->content?></div>
