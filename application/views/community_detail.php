@@ -72,7 +72,7 @@
                 </div>
                 
                 <div class="row" style="paddng-top: 5px">
-                    <div class="col-10">
+                    <div class="col-9">
                         <table class="table">
                             <?php 
 
