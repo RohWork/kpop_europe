@@ -136,7 +136,7 @@ class Community extends CI_Controller {
     
     function modify($idx){
         
-        $data['detail'] = $this->com_md->detail_community($idx);
+        $data['detail'] = $detail =  $this->com_md->detail_community($idx);
         $data['idx'] = $idx;
         
         $data['country_list'] = $this->cont_md->get_country();
