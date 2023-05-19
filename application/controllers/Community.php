@@ -72,6 +72,11 @@ class Community extends CI_Controller {
         
         $data['country_list'] = $this->cont_md->get_country();
         
+        $search['country'] = $this->input->get_post("country");
+        $search['city'] = $this->input->get_post("city");
+        $search['language'] = $this->input->get_post("language");
+        
+        
         if(!empty($search['country'])){
             $data['city_list'] = $this->city_md->get_city($search['country']);
         }else{
