@@ -40,6 +40,7 @@
     $lang['save'] = "저장";
     $lang['close'] = "닫기";
     $lang['reset'] = "초기화";
+    $lang['return'] = "돌아가기";
     $lang['searchdate'] = "검색일자";
     
     $lang['home'] = "HOME";
