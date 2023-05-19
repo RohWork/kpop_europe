@@ -39,6 +39,7 @@
     $lang['save'] = "SAVE";
     $lang['close'] = "CLOSE";
     $lang['reset'] = "RESET";
+    $lang['return'] = "RETURN";
     $lang['searchdate'] = "SEARCH DATE";
     
     $lang['home'] = "HOME";
@@ -54,6 +55,7 @@
     $lang['confirm'] = "Confirm";
     $lang['homepage'] = "Homepage";
     $lang['title'] = "Title";
+    
     
     $lang['order'] = "Order";
     $lang['name'] = "Name";
