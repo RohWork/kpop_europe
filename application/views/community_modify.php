@@ -183,12 +183,16 @@
     
     
     $("#btn_insert").on('click', function(){
-
+    
+        var post_params = $("#community_write").serialize();
+        var content = editor.getData();
+        post_params += "&content="+content;
+    
             
         $.ajax({
             url:'/community/modify_ajax',
             type:'post',
-            data:$("#community_write").serialize(),
+            data:post_params,
             success:function(data){
                 if(data.result == 200){
                     alert('<?=$this->lang->line('completemodify')?>');
