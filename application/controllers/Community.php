@@ -170,8 +170,6 @@ class Community extends CI_Controller {
         $params['content'] = $this->input->post("content");
         $idx = $this->input->post("idx");
         
-        var_dump($params);
-        exit;
         $result = $this->com_md->modify_community($params, $idx);
         
         if(!$result){
