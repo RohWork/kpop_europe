@@ -26,9 +26,11 @@ class Community_model extends CI_Model {
             $limit = " limit ".$paging['start'].",".$paging['end'];
         }
         
-        $sSql = "select kc.* , 
+        $sSql = "select kc.* , m.nick as writer,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
-                from kpop_community as kc where state = 1 $where $limit";
+                from kpop_community as kc 
+                left join member as m on kc.writer = m.id
+                where kc.state = 1 $where $limit";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
@@ -55,10 +57,11 @@ class Community_model extends CI_Model {
     }
     function detail_community($idx){
         
-        $sSql = "select kc.*, co.name as country_name, ci.name as city_name 
+        $sSql = "select kc.*, co.name as country_name, ci.name as city_name, m.nick as writer 
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
+                left join member as m on m.idx = kc.writer
                 where kc.idx = $idx order by kc.reg_date desc";
         
         $query = $this->db->query($sSql);
