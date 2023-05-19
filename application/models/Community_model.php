@@ -37,7 +37,7 @@ class Community_model extends CI_Model {
     function insert_community($params){
         
         
-        $params['writer'] = $this->session->userdata('name');
+        $params['writer'] = $this->session->userdata('id');
         $params['reg_date'] = date('Y-m-d h:i:s');
         
         $this->db->insert('kpop_community', $params);
@@ -107,7 +107,7 @@ class Community_model extends CI_Model {
     function insert_comment($params){
         
         
-        $params['writer'] = $this->session->userdata('name');
+        $params['writer'] = $this->session->userdata('id');
         $params['reg_date'] = date('Y-m-d h:i:s');
         
         $this->db->insert('kpop_comment', $params);
