@@ -29,7 +29,7 @@ class Community_model extends CI_Model {
         $sSql = "select kc.* , m.nick as mnick,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
                 from kpop_community as kc 
-                left join member as m on kc.writer = m.id
+                left join kpop_member as m on kc.writer = m.id
                 where kc.state = 1 $where $limit";
         
         $query = $this->db->query($sSql);
@@ -61,7 +61,7 @@ class Community_model extends CI_Model {
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
-                left join member as m on m.idx = kc.writer
+                left join kpop_member as m on m.idx = kc.writer
                 where kc.idx = $idx order by kc.reg_date desc";
         
         $query = $this->db->query($sSql);
@@ -79,7 +79,7 @@ class Community_model extends CI_Model {
         }
         
         $sSql = "select km.* from kpop_comment as km 
-                left join member as m on km.writer = m.id
+                left join kpop_member as m on km.writer = m.id
                 where km.community_idx = $idx and km.state = 1 $where order by km.reg_date";
         
         $query = $this->db->query($sSql);
