@@ -100,7 +100,7 @@
                 <div class="col-md-6 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
                     <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('modify')?></button>
                     <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
-                    <button type="button" class="btn btn-secondary" id="btn_home" onclick="location.href='/community/detail/<?=$idx?>';"><?=$this->lang->line('detail')?></button>
+                    <button type="button" class="btn btn-secondary" id="btn_home" onclick="location.href='/community/detail/<?=$idx?>';"><?=$this->lang->line('list')?></button>
                 </div>
             </div>
         </form>
