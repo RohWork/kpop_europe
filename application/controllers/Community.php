@@ -141,7 +141,7 @@ class Community extends CI_Controller {
         
         $data['country_list'] = $this->cont_md->get_country();
         
-        if(!empty($search['country'])){
+        if(!empty($detail['country_idx'])){
             $data['city_list'] = $this->city_md->get_city($detail['country_idx']);
         }else{
             $data['city_list'] = "";
