@@ -26,7 +26,7 @@ class Community_model extends CI_Model {
             $limit = " limit ".$paging['start'].",".$paging['end'];
         }
         
-        $sSql = "select kc.* , m.nick as writer,
+        $sSql = "select kc.* , m.nick as mnick,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
                 from kpop_community as kc 
                 left join member as m on kc.writer = m.id
@@ -57,7 +57,7 @@ class Community_model extends CI_Model {
     }
     function detail_community($idx){
         
-        $sSql = "select kc.*, co.name as country_name, ci.name as city_name, m.nick as writer 
+        $sSql = "select kc.*, co.name as country_name, ci.name as city_name, m.nick as mnick
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
@@ -72,11 +72,16 @@ class Community_model extends CI_Model {
     function comment_community($idx, $level){
         
         if($level == 1){
-        
-            $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 and parent_idx = 0 order by reg_date";
+            $where = "and km.parent_idx = 0";
         }else{
-            $sSql = "select * from kpop_comment where community_idx = $idx and state = 1 and parent_idx is not null order by reg_date";
+            $where = "and km.parent_idx != 0";
+            
         }
+        
+        $sSql = "select km.* from kpop_comment as km 
+                left join member as m on km.writer = m.id
+                where km.community_idx = $idx and km.state = 1 $where order by km.reg_date";
+        
         $query = $this->db->query($sSql);
         return $query->result();
     }
