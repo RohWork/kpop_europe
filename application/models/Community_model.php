@@ -14,13 +14,13 @@ class Community_model extends CI_Model {
         $limit = "";
         
         if(!empty($search['country'])){
-            $where .= " AND country_idx ='".$search['country']."'";
+            $where .= " AND kc.country_idx ='".$search['country']."'";
         }
         if(!empty($search['city'])){
-            $where .= " AND city_idx ='".$search['city']."'";
+            $where .= " AND kc.city_idx ='".$search['city']."'";
         }
         if(!empty($search['language'])){
-            $where .= " AND language ='".$search['language']."'";
+            $where .= " AND kc.language ='".$search['language']."'";
         }
         if(!empty($paging)){
             $limit = " limit ".$paging['start'].",".$paging['end'];
