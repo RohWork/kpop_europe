@@ -145,7 +145,7 @@
     }
     function go_write(){
         
-        location.href="/community/write";
+        location.href="/community/write?country=<?=$search['country']?>&city=<?=$search['city']?>&language=<?=$search['language']?>";
         
     }
     function get_country_data(){
