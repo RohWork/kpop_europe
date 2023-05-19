@@ -83,7 +83,7 @@
                             ?>
                             <tr>
                                 <td><?=$cmt->content?></td>
-                                <td><?=$cmt->writer?></td>
+                                <td><?=$cmt->mnick?></td>
                             </tr>
                             <?php
                             }
