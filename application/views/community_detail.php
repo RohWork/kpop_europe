@@ -49,8 +49,10 @@
                 <div class="row" style="padding-top: 5px">
                     <div class="col-6"></div>
                     <div class="col-3 text-end">
+                        <?php if($this->session->userdata('id') == $detail['writer']){ ?>
                         <button type="button" class="btn btn-primary" onclick="modify_community()"><?=$this->lang->line('modify')?></button>
                         <button type="button" class="btn btn-danger" onclick="delete_community()"><?=$this->lang->line('delete')?></button>
+                        <?php } ?>
                         <button type="button" class="btn btn-secondary" onclick="location.href='/community/list'"><?=$this->lang->line('list')?></button>
                     </div>
                     
