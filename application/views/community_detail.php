@@ -137,8 +137,8 @@
                     success:function(data){
                         if(data.result == 200){
                             alert('<?=$this->lang->line('completedelete')?>');
-                            window.parent.location.reload();
-                            window.parent.modal_close();
+                            location.href='/community/list';
+                            
                         }else{
                             alert('<?=$this->lang->line('checktodata')?>');
                         }
