@@ -38,6 +38,9 @@
                         <li>
                             <a href="/schedule/calendar?country=1"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('calendar')?></span></a> 
                         </li>
+                        <li>
+                             <a href="/schedule/list"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('list')?></span></a>
+                        </li>
                     </ul>
                 </div>     
             </li>
@@ -69,7 +72,7 @@
             <li class="mb-1">
                 <a href="/community/list" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('community')?></a>
             </li>
-            <li class="border-top my-3"></li>
+            <!--<li class="border-top my-3"></li>
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
                     <?=$this->lang->line('schedule')?>
@@ -82,7 +85,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li>-->
             
             <?php if($this->session->userdata('level') > 2){ ?>
             <li class="border-top my-3"></li>
