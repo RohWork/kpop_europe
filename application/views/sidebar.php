@@ -80,16 +80,6 @@
                         <li>
                              <a href="/schedule/list"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('list')?></span></a>
                         </li>
-                        <?php if($this->session->userdata('level') > 1){ ?>
-                        <li>
-                            <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('data_insert')?></span></a>
-                        </li>
-                        <?php }?>
-                        <?php if($this->session->userdata('level') > 2){ ?>
-                        <li>
-                            <a href="/schedule/excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('excel_upload')?></span></a>
-                        </li>
-                        <?php }?>
                     </ul>
                 </div>
             </li>
@@ -108,6 +98,14 @@
                             <a href="/city"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('City')?></span></a>
                             <a href="/organization"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('Organizer')?></span></a>
                         </li>
+                        <?php if($this->session->userdata('level') > 1){ ?>
+                        <li>
+                            <a href="/schedule/insert"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('data_insert')?></span></a>
+                        </li>
+                        <?php }?>
+                        <li>
+                            <a href="/schedule/excel"><span class="btn-toggle-nav list-unstyled fw-normal pb-1 small link-dark"><?=$this->lang->line('excel_upload')?></span></a>
+                        </li>                  
                     </ul>
                 </div>
                 
