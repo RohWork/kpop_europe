@@ -29,7 +29,7 @@
             <?php } ?>
         </div>
         <ul class="list-unstyled ps-0">
-            <li class="mb-1">
+            <!--<li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#party-collapse" aria-expanded="false">
                     Kpop Schedule
                 </button>
@@ -44,6 +44,18 @@
                     </ul>
                 </div>     
             </li>
+            -->
+            
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <a href="/schedule/calendar?country=1" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('kpop_schedule')?></a>
+            </li>
+            
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <a href="/schedule/list" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('kpop_list')?></a>
+            </li>
+            
             <!--
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#concert-collapse" aria-expanded="false">
