@@ -79,6 +79,7 @@
     $lang['confirmemail'] = "Take Confirm to your Email address.";
     $lang['confirmpassword'] = "check to your Password";
     $lang['loginfail'] = "login fail, retry to login";
+    $lang['loginerror'] = "This service requires login. Proceed to login.";
     $lang['errorinsertcity'] = "insert to city data";
     $lang['errorinsertcountry'] = "insert to country data";
     $lang['titleerror'] = "Custom required, Please enter a title.";
