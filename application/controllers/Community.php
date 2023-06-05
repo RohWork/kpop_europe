@@ -245,6 +245,10 @@ class Community extends CI_Controller {
         $data['result'] = 200;
         $data['message'] = "";
         
+        if(empty($search['language'])){
+            $search['language'] = $this->session->userdata('lang');
+        }
+        
         $params = array();
         $params['community_idx'] = $this->input->post("community_idx");
         $params['content'] = $this->input->post("comment");
