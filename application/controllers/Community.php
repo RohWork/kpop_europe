@@ -9,6 +9,11 @@ class Community extends CI_Controller {
         $this->load->model('Community_model', 'com_md', TRUE);
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
+        
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('controller', $lang);
+
+        $lang_array = get_langueage_list();
     }
 
     function list($page =0){
