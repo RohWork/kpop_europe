@@ -29,7 +29,7 @@
     $lang['orgerror'] = "Not found Organizer.";
     $lang['countryerror'] = "Not found Country.";
     $lang['cityerror'] = "Not found City.";
-    
+    $lang['loginerror'] = "This service requires login. Proceed to login.";
     
     $lang['checkdate'] = "Check To you're name or start_date or end_date"; 
     $lang['checkid'] = "Check To you're ID or PASSWORD";
