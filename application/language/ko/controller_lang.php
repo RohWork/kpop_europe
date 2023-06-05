@@ -29,7 +29,7 @@
     $lang['orgerror'] = "사업자가 존재하지 않습니다.";
     $lang['countryerror'] = "국가데이터가 존재하지 않습니다.";
     $lang['cityerror'] = "도시 데이터가 존재하지 않습니다.";
-    
+    $lang['loginerror'] = "로그인이 필요한 서비스입니다. 로그인을 진행하세요.";
     
     $lang['checkdate'] = "이름, 시작일과 종료일 데이터를 확인하세요."; 
     $lang['checkid'] = "아이디와 패스워드를 확인하시오";
