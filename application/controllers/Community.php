@@ -249,11 +249,18 @@ class Community extends CI_Controller {
         $params['community_idx'] = $this->input->post("community_idx");
         $params['content'] = $this->input->post("comment");
         
-        $result = $this->com_md->insert_comment($params);
+        if(empty($this->session->userdata('name') )){
+            $data['result'] = 401;
+            $data['message'] = $this->lang->line('loginerror');
+        }else{
         
-        if(!$result){
-            $data['result'] = 400;
-            $data['message'] = $this->lang->line('dataerror');
+        
+            $result = $this->com_md->insert_comment($params);
+
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
         }
 
         header("Content-Type: application/json;");
