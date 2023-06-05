@@ -115,7 +115,7 @@
                         alert('<?=$this->lang->line('completeinsert')?>');
                         location.reload();
                     }else{
-                        alert('<?=$this->lang->line('checktodata')?>');
+                        alert(data.message);
                         console.log(data);
                     }
                 },
