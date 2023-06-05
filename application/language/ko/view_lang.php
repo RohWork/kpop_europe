@@ -85,6 +85,7 @@
     $lang['confirmemail'] = "이메일주소를 확인하세요.";
     $lang['confirmpassword'] = "비밀번호를 확인하세요.";
     $lang['loginfail'] = "로그인실패, 다시 로그인을 진행하세요.";
+    $lang['loginerror'] = "로그인이 필요한 서비스입니다. 로그인을 진행하세요.";
     $lang['titleerror'] = "타이틀 정보를 입력하세요.";
      
     $lang['eventtype'] = "이벤트 타입";
