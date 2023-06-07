@@ -20,22 +20,22 @@
                         <?=$detail['country_name']?>
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
                         &nbsp;
                         <?=$detail['city_name']?>
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('language')?></strong></label>
                         &nbsp;
                         <?=$search_lang?>
                     </div>
                     
-                    <div class="col-3">
+                    <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('like')?></strong></label>
                         &nbsp;
-                        <?=$detail['llike']?>
+                        <?=$detail['like']?>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
