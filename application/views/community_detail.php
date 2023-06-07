@@ -131,7 +131,7 @@
                         if(data.result == 200){
                             location.reload();
                         }else{
-                            alert('<?=$this->lang->line('checktodata')?>');
+                            alert(data.message);
                         }
                     },
                     error: function(xhr,status,error) {
@@ -153,7 +153,7 @@
                         if(data.result == 200){
                             location.reload();
                         }else{
-                            alert('<?=$this->lang->line('checktodata')?>');
+                            alert(data.message);
                         }
                     },
                     error: function(xhr,status,error) {
