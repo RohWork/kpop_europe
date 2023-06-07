@@ -152,7 +152,7 @@ class Community_model extends CI_Model {
         
         $params['id'] = $this->session->userdata('id');
         $params['mode'] = $mode; //1:좋아요, 2:싫어요 중 하나
-        $params['type'] = $mode; //comment, community 중 하나
+        $params['board_type'] = $type; //comment, community 중 하나
         $params['board_idx'] = $idx;        
         $params['reg_date'] = date('Y-m-d h:i:s');
         
