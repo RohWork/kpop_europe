@@ -47,7 +47,10 @@
                 </div>
                 
                 <div class="row" style="padding-top: 5px">
-                    <div class="col-6"></div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-primary" onclick="like_community(1)"><?=$this->lang->line('like')?></button>
+                        <button type="button" class="btn btn-primary" onclick="like_community(2)"><?=$this->lang->line('dislike')?></button>
+                    </div>
                     <div class="col-3 text-end">
                         <?php if($this->session->userdata('id') == $detail['writer']){ ?>
                         <button type="button" class="btn btn-primary" onclick="modify_community()"><?=$this->lang->line('modify')?></button>
@@ -101,6 +104,10 @@
         function modify_community(){
             
             location.href="/community/modify/"+<?=$idx?>
+            
+        }
+        
+        function like_community(mode){
             
         }
         
