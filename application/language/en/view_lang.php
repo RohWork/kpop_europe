@@ -84,6 +84,7 @@
     $lang['errorinsertcity'] = "insert to city data";
     $lang['errorinsertcountry'] = "insert to country data";
     $lang['titleerror'] = "Custom required, Please enter a title.";
+    $lang['likeerror'] = "You can do it only once." ;
     
     $lang['eventtype'] = "Event Type";
     $lang['contactus'] = "Contact us";
