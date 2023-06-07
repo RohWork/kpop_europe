@@ -31,6 +31,12 @@
                         &nbsp;
                         <?=$search_lang?>
                     </div>
+                    
+                    <div class="col-3">
+                        <label class="form-label bold"><strong><?=$this->lang->line('like')?></strong></label>
+                        &nbsp;
+                        <?=$detail['llike']?>
+                    </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
                     <div class="col-9">
