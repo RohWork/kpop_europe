@@ -210,7 +210,7 @@ class Community extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($idx, "comment", $mode) )> 0){
+        }else if(count($this->com_md->get_like_history($idx, "community", $mode) )> 0){
             $data['result'] = 402;
             $data['message'] = $this->lang->line('likeerror');
         }else{
