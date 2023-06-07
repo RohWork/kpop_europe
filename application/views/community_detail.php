@@ -20,23 +20,18 @@
                         <?=$detail['country_name']?>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
                         &nbsp;
                         <?=$detail['city_name']?>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('language')?></strong></label>
                         &nbsp;
                         <?=$search_lang?>
                     </div>
-                    
-                    <div class="col-2">
-                        <label class="form-label bold"><strong><?=$this->lang->line('likecnt')?></strong></label>
-                        &nbsp;
-                        <?=$detail['great']?>
-                    </div>
+
                 </div>
                 <div class="row" style="padding-top: 10px">
                     <div class="col-9">
@@ -54,7 +49,7 @@
                 
                 <div class="row" style="padding-top: 5px">
                     <div class="col-6">
-                        <button type="button" class="btn btn-success" onclick="like_community(1, <?=$idx?>)"><?=$this->lang->line('like')?></button>
+                        <button type="button" class="btn btn-success" onclick="like_community(1, <?=$idx?>)"><?=$this->lang->line('like')?> - <?=$detail['great']?></button>
                         <button type="button" class="btn btn-secondary" onclick="like_community(2, <?=$idx?>)"><?=$this->lang->line('dislike')?></button>
                     </div>
                     <div class="col-3 text-end">
