@@ -102,7 +102,7 @@
                                 <td><?=$cmt->content?></td>
                                 
                                 <td>
-                                    <button type="button" style="font-size: 10px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?>( <?=$cmt->great?> ) </button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?>( <?=$cmt->great?> ) </button>
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
