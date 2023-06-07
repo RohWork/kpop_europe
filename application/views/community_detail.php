@@ -86,7 +86,10 @@
                     <div class="col-9">
                         <table class="table">
                             <tr>
-                                <th width="90%"></th><th width="10%"></th>
+                                <th width="10%"></th>
+                                <th width="70%"></th>
+                                <th width="10%"></th>
+                                <th width="10%"></th>
                             </tr>
                             <?php 
 
