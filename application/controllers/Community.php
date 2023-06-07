@@ -203,13 +203,22 @@ class Community extends CI_Controller {
         $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
         
-        $result = $this->com_md->like_community($idx, $mode);
-        
-        if(!$result){
-            $data['result'] = 400;
-            $data['message'] = $this->lang->line('dataerror');
+        if(empty($this->session->userdata('name') )){
+            $data['result'] = 401;
+            $data['message'] = $this->lang->line('loginerror');
+        }else if(($this->com_md->get_like_history($idx, "comment", $mode) > 0 )){
+            $data['result'] = 402;
+            $data['message'] = $this->lang->line('likeerror');
+        }else{
+            
+            $this->com_md->set_like_history($idx, $mode, "community");
+            $result = $this->com_md->like_community($idx, $mode);
+            
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
         }
-        
         header("Content-Type: application/json;");
         echo json_encode($data);
         
@@ -327,13 +336,24 @@ class Community extends CI_Controller {
         $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
         
-        $result = $this->com_md->like_comment($idx, $mode);
         
-        if(!$result){
-            $data['result'] = 400;
-            $data['message'] = $this->lang->line('dataerror');
+        
+        if(empty($this->session->userdata('name') )){
+            $data['result'] = 401;
+            $data['message'] = $this->lang->line('loginerror');
+        }else if(($this->com_md->get_like_history($idx, "comment", $mode) > 0 )){
+            $data['result'] = 402;
+            $data['message'] = $this->lang->line('likeerror');
+        }else{
+        
+            $this->com_md->set_like_history($idx, $mode, "comment");
+            $result = $this->com_md->like_comment($idx, $mode);
+        
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
         }
-        
         header("Content-Type: application/json;");
         echo json_encode($data);
         
