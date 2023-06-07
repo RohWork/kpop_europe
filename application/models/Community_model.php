@@ -147,4 +147,27 @@ class Community_model extends CI_Model {
         return $this->db->affected_rows();
         
     }
+    
+    function set_like_history($idx, $mode, $type){
+        
+        $params['id'] = $this->session->userdata('id');
+        $params['mode'] = $mode; //comment, community 중 하나
+        $params['board_idx'] = $idx;        
+        $params['reg_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->insert('kpop_like_history', $params);
+        
+        return $this->db->insert_id();
+    }
+    
+    function get_like_history($idx, $type, $mode){
+        
+        
+        $id = $this->session->userdata('id');
+        
+        $sSql = "select * from kpop_like_history where board_idx = $idx and board_type = '$type' and id = '$id'";
+        
+        $query = $this->db->query($sSql);
+        return $query->result();
+    }
 }
