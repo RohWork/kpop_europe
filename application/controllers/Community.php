@@ -200,6 +200,19 @@ class Community extends CI_Controller {
         $data['result'] = 200;
         $data['message'] = "";
         
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('view', $lang);
+
+        $lang_array = get_langueage_list();
+        $search_lang = "";
+        for($i=0;$i<count($lang_array);$i++){
+
+            if($detail['language'] == $lang_array[$i]['id']){
+                $search_lang = $lang_array[$i]['val'];
+            }
+        }
+        
+        
         $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
         
@@ -332,6 +345,18 @@ class Community extends CI_Controller {
         
         $data['result'] = 200;
         $data['message'] = "";
+        
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('view', $lang);
+
+        $lang_array = get_langueage_list();
+        $search_lang = "";
+        for($i=0;$i<count($lang_array);$i++){
+
+            if($detail['language'] == $lang_array[$i]['id']){
+                $search_lang = $lang_array[$i]['val'];
+            }
+        }
         
         $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
