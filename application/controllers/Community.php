@@ -200,7 +200,7 @@ class Community extends CI_Controller {
         $data['result'] = 200;
         $data['message'] = "";
         
-        $mode = $this->input-post("mode");
+        $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
         
         $result = $this->com_md->like_community($idx, $mode);
