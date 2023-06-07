@@ -96,8 +96,8 @@
                                 <td><?=$cmt->content?></td>
                                 <td>
                                     <?=$cmt->mnick?>
-                                    <button type="button" class="btn btn-success" onclick="like_community(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?></button>
-                                    <button type="button" class="btn btn-secondary" onclick="like_community(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
+                                    <button type="button" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?></button>
+                                    <button type="button" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
                                 </td>
                             </tr>
                             <?php
@@ -122,6 +122,28 @@
             
             $.ajax({
                     url:'/community/like_ajax',
+                    type:'post',
+                    data:data,
+                    success:function(data){
+                        if(data.result == 200){
+                            location.reload();
+                        }else{
+                            alert('<?=$this->lang->line('checktodata')?>');
+                        }
+                    },
+                    error: function(xhr,status,error) {
+                        console.log(xhr,status,error);
+                        alert("<?=$this->lang->line('neterror')?>");
+                        return false;
+                    }	 
+                });
+        }
+        
+        function like_comment(mode, idx){
+            var data = {mode: mode ,idx : idx};
+            
+            $.ajax({
+                    url:'/community/like_comment_ajax',
                     type:'post',
                     data:data,
                     success:function(data){
