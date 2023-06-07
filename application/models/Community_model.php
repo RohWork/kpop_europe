@@ -168,7 +168,6 @@ class Community_model extends CI_Model {
         
         $sSql = "select * from kpop_like_history where board_idx = $idx and board_type = '$type' and id = '$id' and state = 1";
         
-        echo $sSql;
         $query = $this->db->query($sSql);
         return $query->result_array();
     }
