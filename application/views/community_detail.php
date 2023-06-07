@@ -96,7 +96,11 @@
                                 <td><?=$cmt->content?></td>
                                 <td>
                                     <?=$cmt->mnick?>
+                                </td>
+                                <td>
                                     <button type="button" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?></button>
+                                </td>
+                                <td>
                                     <button type="button" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
                                 </td>
                             </tr>
