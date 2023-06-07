@@ -107,8 +107,26 @@
             
         }
         
-        function like_community(mode){
+        function like_community(mode, idx){
+            var data = {mode: mode ,idx : idx};
             
+            $.ajax({
+                    url:'/community/like_ajax',
+                    type:'post',
+                    data:data,
+                    success:function(data){
+                        if(data.result == 200){
+                            location.reload();
+                        }else{
+                            alert('<?=$this->lang->line('checktodata')?>');
+                        }
+                    },
+                    error: function(xhr,status,error) {
+                        console.log(xhr,status,error);
+                        alert("<?=$this->lang->line('neterror')?>");
+                        return false;
+                    }	 
+                });
         }
         
         function comment_write(){
