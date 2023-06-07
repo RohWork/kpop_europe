@@ -193,30 +193,19 @@ class Community extends CI_Controller {
         
     }
     
-    function like_ajax(){
+    function like_community_ajax(){
         
         $data = array();
         
         $data['result'] = 200;
         $data['message'] = "";
         
-        $mode = "like";
+        $mode = $this->input-post("mode");
         $idx = $this->input->post("idx");
         
         $result = $this->com_md->like_community($idx, $mode);
     }
-    function hate_ajax(){
-        
-        $data = array();
-        
-        $data['result'] = 200;
-        $data['message'] = "";
-        
-        $mode = "hate";
-        $idx = $this->input->post("idx");
-        
-        $result = $this->com_md->like_community($idx, $mode);
-    }
+
     
     function delete_ajax(){
         
@@ -319,30 +308,19 @@ class Community extends CI_Controller {
         
     }
     
-    function comment_like_ajax(){
+    function like_comment_ajax(){
         
         $data = array();
         
         $data['result'] = 200;
         $data['message'] = "";
         
-        $mode = "like";
+        $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
         
         $result = $this->com_md->like_comment($idx, $mode);
     }
-    function comment_hate_ajax(){
-        
-        $data = array();
-        
-        $data['result'] = 200;
-        $data['message'] = "";
-        
-        $mode = "hate";
-        $idx = $this->input->post("idx");
-        
-        $result = $this->com_md->like_comment($idx, $mode);
-    }
+
     
     
     function image_upload(){
