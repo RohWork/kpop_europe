@@ -87,9 +87,9 @@
                         <table class="table">
                             <tr>
                                 <th width="10%"></th>
-                                <th width="70%"></th>
-                                <th width="10%"></th>
-                                <th width="10%"></th>
+                                <th width="80%"></th>
+                                <th width="5%"></th>
+                                <th width="5%"></th>
                             </tr>
                             <?php 
 
