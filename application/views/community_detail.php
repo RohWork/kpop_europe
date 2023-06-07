@@ -121,7 +121,7 @@
             var data = {mode: mode ,idx : idx};
             
             $.ajax({
-                    url:'/community/like_ajax',
+                    url:'/community/like_community_ajax',
                     type:'post',
                     data:data,
                     success:function(data){
