@@ -40,6 +40,8 @@
     $lang['close'] = "CLOSE";
     $lang['reset'] = "RESET";
     $lang['return'] = "RETURN";
+    $lang['like'] = "LIKE";
+    $lang['dislike'] = "DISLIKE";
     $lang['searchdate'] = "SEARCH DATE";
     
     $lang['home'] = "HOME";
