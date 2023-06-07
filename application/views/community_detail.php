@@ -35,7 +35,7 @@
                     <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('likecnt')?></strong></label>
                         &nbsp;
-                        <?=$detail['like']?>
+                        <?=$detail['great']?>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
