@@ -33,7 +33,7 @@
                     </div>
                     
                     <div class="col-2">
-                        <label class="form-label bold"><strong><?=$this->lang->line('like')?></strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('likecnt')?></strong></label>
                         &nbsp;
                         <?=$detail['like']?>
                     </div>
