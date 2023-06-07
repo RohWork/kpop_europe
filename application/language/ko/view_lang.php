@@ -41,6 +41,8 @@
     $lang['close'] = "닫기";
     $lang['reset'] = "초기화";
     $lang['return'] = "돌아가기";
+    $lang['like'] = "좋아요";
+    $lang['dislike'] = "싫어요";
     $lang['searchdate'] = "검색일자";
     
     $lang['home'] = "HOME";
