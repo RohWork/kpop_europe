@@ -40,8 +40,6 @@
     $lang['close'] = "CLOSE";
     $lang['reset'] = "RESET";
     $lang['return'] = "RETURN";
-    $lang['like'] = "LIKE";
-    $lang['dislike'] = "DISLIKE";
     $lang['searchdate'] = "SEARCH DATE";
     
     $lang['home'] = "HOME";
@@ -64,7 +62,8 @@
     $lang['writer'] = "Writer";
     $lang['likecnt'] = "Great count";
     $lang['viewcnt'] = "View count";
-    $lang['like'] = "Great";
+    $lang['like'] = "LIKE";
+    $lang['dislike'] = "DISLIKE";
     
     $lang['write'] = "Write";
     $lang['registdate'] = "Regist date";
