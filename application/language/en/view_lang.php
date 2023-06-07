@@ -60,7 +60,7 @@
     $lang['order'] = "Order";
     $lang['name'] = "Name";
     $lang['writer'] = "Writer";
-    $lang['likecnt'] = "Great count";
+    $lang['likecnt'] = "LIKE count";
     $lang['viewcnt'] = "View count";
     $lang['like'] = "LIKE";
     $lang['dislike'] = "DISLIKE";
