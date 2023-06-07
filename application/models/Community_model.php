@@ -99,7 +99,7 @@ class Community_model extends CI_Model {
     
     function like_community($idx, $mode){
         
-        if($mode == "like"){
+        if($mode == "1"){
             $this->db->set('like', 'like + 1', false);
         }else{
             $this->db->set('hate', 'hate + 1', false);
@@ -136,7 +136,7 @@ class Community_model extends CI_Model {
     
     function like_comment($idx, $mode){
         
-        if($mode == "like"){
+        if($mode == "1"){
             $this->db->set('like', 'like + 1', false);
         }else{
             $this->db->set('hate', 'hate + 1', false);
