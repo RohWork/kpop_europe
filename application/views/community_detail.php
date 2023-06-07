@@ -93,10 +93,11 @@
                             foreach($comment as $cmt){
                             ?>
                             <tr>
-                                <td><?=$cmt->content?></td>
                                 <td>
                                     <?=$cmt->mnick?>
                                 </td>
+                                <td><?=$cmt->content?></td>
+                                
                                 <td>
                                     <button type="button" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?></button>
                                 </td>
