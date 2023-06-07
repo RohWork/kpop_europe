@@ -41,8 +41,7 @@
     $lang['close'] = "닫기";
     $lang['reset'] = "초기화";
     $lang['return'] = "돌아가기";
-    $lang['like'] = "좋아요";
-    $lang['dislike'] = "싫어요";
+
     $lang['searchdate'] = "검색일자";
     
     $lang['home'] = "HOME";
@@ -65,6 +64,7 @@
     $lang['likecnt'] = "좋아요 수";
     $lang['viewcnt'] = "조회 수";
     $lang['like'] = "좋아요";
+    $lang['dislike'] = "싫어요";
     
     $lang['registdate'] = "등록일";
     $lang['orgernizationname'] = "주최사 명";
