@@ -204,6 +204,15 @@ class Community extends CI_Controller {
         $idx = $this->input->post("idx");
         
         $result = $this->com_md->like_community($idx, $mode);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
     }
 
     
@@ -319,6 +328,15 @@ class Community extends CI_Controller {
         $idx = $this->input->post("idx");
         
         $result = $this->com_md->like_comment($idx, $mode);
+        
+        if(!$result){
+            $data['result'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
     }
 
     
