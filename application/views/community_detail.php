@@ -54,8 +54,8 @@
                 
                 <div class="row" style="padding-top: 5px">
                     <div class="col-6">
-                        <button type="button" class="btn btn-primary" onclick="like_community(1)"><?=$this->lang->line('like')?></button>
-                        <button type="button" class="btn btn-primary" onclick="like_community(2)"><?=$this->lang->line('dislike')?></button>
+                        <button type="button" class="btn btn-success" onclick="like_community(1)"><?=$this->lang->line('like')?></button>
+                        <button type="button" class="btn btn-secondary" onclick="like_community(2)"><?=$this->lang->line('dislike')?></button>
                     </div>
                     <div class="col-3 text-end">
                         <?php if($this->session->userdata('id') == $detail['writer']){ ?>
