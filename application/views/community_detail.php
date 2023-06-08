@@ -97,8 +97,10 @@
                                 </td>
                                 <td>
                                     <p><?=$cmt->content?></p>
-                                    <input type="text" id="re_comment_<?=$cmt->idx?>" class="form-control d-none" />
-                                    <button type="button" id="re_save_<?=$cmt->idx?>" class="d-none btn btn-primary"><?=$this->lang->line('save')?></button>
+                                    <div class="btn_group">
+                                        <input type="text" id="re_comment_<?=$cmt->idx?>" class="form-control d-none" />
+                                        <button type="button" id="re_save_<?=$cmt->idx?>" class="d-none btn btn-primary"><?=$this->lang->line('save')?></button>
+                                    </div>
                                 </td>
                                 
                                 <td>
