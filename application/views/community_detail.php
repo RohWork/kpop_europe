@@ -225,5 +225,10 @@
             $("#re_comment_"+idx).show();
             $("#re_save_"+idx).show();
         }
+        
+        function re_comment_save(idx){
+            
+            
+        }
     </script>
 </html>
