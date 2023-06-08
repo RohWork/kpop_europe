@@ -82,8 +82,9 @@
                         <table class="table">
                             <tr>
                                 <th width="10%"></th>
-                                <th width="75%"></th>
+                                <th width="70%"></th>
                                 <th width="10%"></th>
+                                <th width="5%"></th>
                                 <th width="5%"></th>
                             </tr>
                             <?php 
@@ -101,6 +102,9 @@
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
+                                </td>
+                                <td>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
                                 </td>
                             </tr>
                             <?php
