@@ -366,7 +366,37 @@ class Community extends CI_Controller {
         
     }
 
-    
+    function re_comment_write_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        
+        $params = array();
+        $params['community_idx'] = $this->input->post("community_idx");
+        $params['content'] = $this->input->post("comment");
+        $params['parent_idx'] = $this->input->post("parent_idx");
+        
+        if(empty($this->session->userdata('name') )){
+            $data['result'] = 401;
+            $data['message'] = $this->lang->line('loginerror');
+        }else{
+        
+        
+            $result = $this->com_md->insert_comment($params);
+
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
+        }
+
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
     
     function image_upload(){
         
