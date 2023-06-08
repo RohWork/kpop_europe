@@ -95,7 +95,10 @@
                                 <td>
                                     <?=$cmt->mnick?>
                                 </td>
-                                <td><?=$cmt->content?></td>
+                                <td>
+                                    <p><?=$cmt->content?></p>
+                                    <text id="re_comment_<?=$cmt->idx?>" class="form-control d-none" />
+                                </td>
                                 
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?> -  <?=$cmt->great?> </button>
