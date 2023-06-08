@@ -98,8 +98,8 @@
                                 <td>
                                     <p><?=$cmt->content?></p>
                                     <div class="btn_group">
-                                        <input type="text" id="re_comment_<?=$cmt->idx?>" class="form-control d-none" />
-                                        <button type="button" id="re_save_<?=$cmt->idx?>" class="d-none btn btn-primary"><?=$this->lang->line('save')?></button>
+                                        <input type="text" id="re_comment_<?=$cmt->idx?>" style="display: none" class="form-control" />
+                                        <button type="button" id="re_save_<?=$cmt->idx?>" style="display: none" class=" btn btn-primary"><?=$this->lang->line('save')?></button>
                                     </div>
                                 </td>
                                 
