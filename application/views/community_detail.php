@@ -232,7 +232,7 @@
             
             var comment = $("#re_comment_"+idx).val();
             
-            var data = {community_idx : idx, comment : comment, parent_idx : <?=$idx?>};
+            var data = {community_idx : <?=$idx?>, comment : comment, parent_idx : idx};
             
             $.ajax({
                 url:'/community/re_comment_write_ajax',
