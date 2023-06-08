@@ -98,7 +98,7 @@
                                 <td>
                                     <p><?=$cmt->content?></p>
                                     <text id="re_comment_<?=$cmt->idx?>" class="form-control d-none" />
-                                    <button type="button" class="d-none btn btn-primary"><?=$this->lang->line('save')?></button>
+                                    <button type="button" id="re_save_<?=$cmt->idx?>" class="d-none btn btn-primary"><?=$this->lang->line('save')?></button>
                                 </td>
                                 
                                 <td>
@@ -219,6 +219,11 @@
                     }	 
                 });
             }
+        }
+        
+        function re_comment(idx){
+            $("#re_comment_"+idx).show();
+            $("#re_save_"+idx).show();
         }
     </script>
 </html>
