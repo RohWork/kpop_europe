@@ -55,7 +55,7 @@
     $lang['confirm'] = "Confirm";
     $lang['homepage'] = "Homepage";
     $lang['title'] = "Title";
-    
+    $lang['comment'] = "Comment";
     
     $lang['order'] = "Order";
     $lang['name'] = "Name";
