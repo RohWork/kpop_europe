@@ -100,7 +100,7 @@
                         <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
                             <td><?=$li['title']?></td>
                             <td><?=$li['mnick']?></td>
-                            <td><?=$li['like']?></td>
+                            <td><?=$li['great']?></td>
                             <td><?=$li['cnt']?></td>
                         </tr>   
                         <?php 
