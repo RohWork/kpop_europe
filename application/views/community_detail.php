@@ -99,7 +99,7 @@
                                     <p><?=$cmt->content?></p>
                                     <div class="btn-group" style="width:100%">
                                         <input type="text" id="re_comment_<?=$cmt->idx?>" style="display: none" class="form-control" />
-                                        <button type="button" id="re_save_<?=$cmt->idx?>" style="display: none" class="btn btn-primary"><?=$this->lang->line('save')?></button>
+                                        <button type="button" id="re_save_<?=$cmt->idx?>" onclick="re_comment_save(<?=$cmt->idx?>)" style="display: none" class="btn btn-primary"><?=$this->lang->line('save')?></button>
                                     </div>
                                 </td>
                                 
@@ -230,7 +230,29 @@
         
         function re_comment_save(idx){
             
+            var comment = $("#re_comment_"+idx).val();
             
+            var data = {community_idx : idx, comment : comment, parent_idx : <?=$idx?>};
+            
+            $.ajax({
+                url:'/community/re_comment_write_ajax',
+                type:'post',
+                data:data,
+                success:function(data){
+                    if(data.result == 200){
+                        alert('<?=$this->lang->line('completeinsert')?>');
+                        location.reload();
+                    }else{
+                        alert(data.message);
+                        console.log(data);
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("<?=$this->lang->line('neterror')?>");
+                    return false;
+                }	 
+            });
         }
     </script>
 </html>
