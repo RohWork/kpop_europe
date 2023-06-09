@@ -128,7 +128,8 @@ class Community_model extends CI_Model {
         
         $params['mod_date'] = date('Y-m-d H:i:s');
         
-        $this->db->where("idx", $idx);
+        $this->db->or_where("idx", $idx);
+        $this->db->or_where("parent_idx", $idx);
         $this->db->update('kpop_comment', $params);
         
         return $this->db->affected_rows();
