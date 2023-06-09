@@ -104,13 +104,13 @@
                                 </td>
                                 
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$scmt->idx?>)"><?=$this->lang->line('like')?> -  <?=$scmt->great?> </button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?> -  <?=$cmt->great?> </button>
                                 </td>
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$scmt->idx?>)"><?=$this->lang->line('dislike')?></button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
                                 </td>
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$scmt->idx?>)"><?=$this->lang->line('comment')?></button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
                                 </td>
                             </tr>
                             <?php
