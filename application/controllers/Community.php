@@ -210,12 +210,12 @@ class Community extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($idx, "community", $mode) )> 0){
+        }else if(count($this->com_md->get_like_history($idx, "community", $mode, 0) )> 0){
             $data['result'] = 402;
             $data['message'] = $this->lang->line('likeerror');
         }else{
             
-            $this->com_md->set_like_history($idx, $mode, "community");
+            $this->com_md->set_like_history($idx, $mode, "community", 0);
             $result = $this->com_md->like_community($idx, $mode);
             
             if($mode == 2){
@@ -350,18 +350,18 @@ class Community extends CI_Controller {
 
         $mode = $this->input->post("mode");
         $idx = $this->input->post("idx");
-        
+        $board_idx = $this->input->post("board_idx");
         
         
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($idx, "comment", $mode)) > 0){
+        }else if(count($this->com_md->get_like_history($board_idx, "comment", $mode, $idx)) > 0){
             $data['result'] = 402;
             $data['message'] = $this->lang->line('likeerror');
         }else{
         
-            $this->com_md->set_like_history($idx, $mode, "comment");
+            $this->com_md->set_like_history($board_idx, $mode, "comment", $idx);
             $result = $this->com_md->like_comment($idx, $mode);
             
             if($mode == 2){
