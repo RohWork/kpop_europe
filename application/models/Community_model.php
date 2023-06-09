@@ -171,4 +171,15 @@ class Community_model extends CI_Model {
         $query = $this->db->query($sSql);
         return $query->result_array();
     }
+    
+    function get_comment_info($idx){
+        
+        $sSql = "select * from kpop_comment where idx = $idx"; 
+        
+        $query = $this->db->query($sSql);
+        return $query->row();
+    }
+    
+    
+    
 }
