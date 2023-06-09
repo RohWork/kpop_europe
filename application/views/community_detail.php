@@ -180,7 +180,7 @@
         }
         
         function like_comment(mode, idx){
-            var data = {mode: mode ,idx : idx};
+            var data = {mode: mode ,idx : idx, board_idx:<?=$idx?>};
             
             $.ajax({
                     url:'/community/like_comment_ajax',
