@@ -119,6 +119,9 @@
                             ?>
                             <tr>
                                 <td>
+                                    ┖
+                                </td>
+                                <td>
                                     <?=$scmt->mnick?>
                                 </td>
                                 <td>
