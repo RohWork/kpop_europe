@@ -119,13 +119,13 @@
                             ?>
                             <tr>
                                 <td>
-                                    
-                                </td>
-                                <td>
                                     ┖ <?=$scmt->mnick?>
                                 </td>
                                 <td>
                                     <p><?=$scmt->content?></p>
+                                </td>
+                                <td>
+                                    
                                 </td>
                                 
                                 <td>
