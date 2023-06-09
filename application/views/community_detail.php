@@ -117,6 +117,7 @@
                                 foreach($sub_comment as $scmt){
                                     if($scmt->parent_idx == $cmt->idx){
                             ?>
+                            <tr>
                                 <td>
                                     <?=$scmt->mnick?>
                                 </td>
@@ -130,7 +131,7 @@
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$scmt->idx?>)"><?=$this->lang->line('dislike')?></button>
                                 </td>
-
+                            </tr>
                             
                             <?php
                                     }
