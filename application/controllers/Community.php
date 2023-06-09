@@ -218,6 +218,14 @@ class Community extends CI_Controller {
             $this->com_md->set_like_history($idx, $mode, "community");
             $result = $this->com_md->like_community($idx, $mode);
             
+            if($mode == 2){
+                $dis_info = $this->com_md->detail_community($idx);
+                if($dis_info->hate > 10){
+                    $params = array("state" => "2");
+                    $this->com_md->modify_community($params, $idx);
+                }
+            }
+            
             if(!$result){
                 $data['result'] = 400;
                 $data['message'] = $this->lang->line('dataerror');
@@ -355,7 +363,15 @@ class Community extends CI_Controller {
         
             $this->com_md->set_like_history($idx, $mode, "comment");
             $result = $this->com_md->like_comment($idx, $mode);
-        
+            
+            if($mode == 2){
+                $dis_info = $this->com_md->get_comment_info($idx);
+                if($dis_info->hate > 10){
+                    $params = array("state" => "2");
+                    $this->com_md->modify_comment($params, $idx);
+                }
+            }
+            
             if(!$result){
                 $data['result'] = 400;
                 $data['message'] = $this->lang->line('dataerror');
