@@ -40,7 +40,7 @@ class Community_model extends CI_Model {
         
         
         $params['writer'] = $this->session->userdata('id');
-        $params['reg_date'] = date('Y-m-d h:i:s');
+        $params['reg_date'] = date('Y-m-d H:i:s');
         
         $this->db->insert('kpop_community', $params);
         
@@ -48,7 +48,7 @@ class Community_model extends CI_Model {
     }
     function modify_community($params, $idx){
         
-        $params['mod_date'] = date('Y-m-d h:i:s');
+        $params['mod_date'] = date('Y-m-d H:i:s');
         
         $this->db->where("idx", $idx);
         $this->db->update('kpop_community', $params);
@@ -116,7 +116,7 @@ class Community_model extends CI_Model {
         
         
         $params['writer'] = $this->session->userdata('id');
-        $params['reg_date'] = date('Y-m-d h:i:s');
+        $params['reg_date'] = date('Y-m-d H:i:s');
         
         $this->db->insert('kpop_comment', $params);
         
@@ -126,7 +126,7 @@ class Community_model extends CI_Model {
     function modify_comment($params, $idx){
         
         
-        $params['mod_date'] = date('Y-m-d h:i:s');
+        $params['mod_date'] = date('Y-m-d H:i:s');
         
         $this->db->where("idx", $idx);
         $this->db->update('kpop_comment', $params);
@@ -155,7 +155,7 @@ class Community_model extends CI_Model {
         $params['board_type'] = $type; //comment, community 중 하나
         $params['board_idx'] = $idx;  
         $params['comment_idx'] = $comment_idx;  
-        $params['reg_date'] = date('Y-m-d h:i:s');
+        $params['reg_date'] = date('Y-m-d H:i:s');
         
         $this->db->insert('kpop_like_history', $params);
         
