@@ -72,9 +72,9 @@ class Community_model extends CI_Model {
     function comment_community($idx, $level){
         
         if($level == 1){
-            $where = "and km.parent_idx = 0";
+            $where = " and km.parent_idx = 0";
         }else{
-            $where = "and km.parent_idx != 0";
+            $where = " and km.parent_idx != 0";
             
         }
         
