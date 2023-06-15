@@ -41,16 +41,12 @@ function get_state($state, $content){
     switch($state){
         case 1:
             return $content;
-            break;
         case 2 :
             return $this->lang->line('blind1');
-            break;
         case 3 :
             return $this->lang->line('blind2');
-            break;
         case 4 :
             return $this->lang->line('blind4');
-            break;
     }
     
     
