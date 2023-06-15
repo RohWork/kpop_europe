@@ -51,13 +51,13 @@ function get_state($state, $content){
             $result= $content;
             break;
         case 2 :
-            $result = $ci->lang->line('blind1');
+            $result = "<b>".$ci->lang->line('blind1')."</b>";
             break;
         case 3 :
-            $result = $ci->lang->line('blind2');
+            $result = "<b>".$ci->lang->line('blind2')."</b>";
             break;
         case 4 :
-            $result = $ci->lang->line('blind3');
+            $result = "<b>".$ci->lang->line('blind3')."</b>";
             break;
     }
     
