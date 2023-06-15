@@ -117,7 +117,7 @@
                                 </td>
                                 
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
@@ -143,7 +143,7 @@
                                     </button>
                                 </td>
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                 </td>
                                 <td>
                                 </td>
