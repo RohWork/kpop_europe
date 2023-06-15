@@ -106,12 +106,11 @@
                                         <button type="button" id="re_save_<?=$cmt->idx?>" onclick="re_comment_save(<?=$cmt->idx?>)" style="display: none" class="btn btn-primary"><?=$this->lang->line('save')?></button>
                                     </div>
                                 </td>
-                                
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)">
                                         <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?> 
                                     </button>
-                                    &nbsp;
+                                    
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)">
                                         <span class="fa-regular fa-thumbs-down"></span> - <?=$cmt->hate?>
                                     </button>
@@ -138,7 +137,6 @@
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$scmt->idx?>)">
                                         <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?>  
                                     </button>
-                                    &nbsp;
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$scmt->idx?>)">
                                         <span class="fa-regular fa-thumbs-down"></span> - <?=$cmt->hate?>
                                     </button>
