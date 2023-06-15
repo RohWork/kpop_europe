@@ -108,10 +108,15 @@
                                 </td>
                                 
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)"><?=$this->lang->line('like')?> -  <?=$cmt->great?> </button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)">
+                                    <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?> 
+                                    
+                                    </button>
                                 </td>
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)"><?=$this->lang->line('dislike')?></button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)">
+                                        <span class="fa-regular fa-thumbs-down"></span> - <?=$cmt->hate?>
+                                    </button>
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
