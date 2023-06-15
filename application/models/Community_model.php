@@ -80,7 +80,7 @@ class Community_model extends CI_Model {
         
         $sSql = "select km.*, m.nick as mnick from kpop_comment as km 
                 left join kpop_member as m on km.writer = m.id
-                where km.community_idx = $idx and km.state = 1 $where order by km.reg_date";
+                where km.community_idx = $idx $where order by km.reg_date";
         
         $query = $this->db->query($sSql);
         return $query->result();
