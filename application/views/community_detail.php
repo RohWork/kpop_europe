@@ -115,11 +115,12 @@
                                         <span class="fa-regular fa-thumbs-down"></span> - <?=$cmt->hate?>
                                     </button>
                                 </td>
-                                <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
-                                </td>
+                                
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                </td>
+                                <td>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
                                 </td>
                             </tr>
                             <?php
