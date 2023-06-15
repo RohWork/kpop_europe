@@ -266,6 +266,34 @@
             }
         }
         
+        
+        function delete_comment(idx){
+            
+            
+            if(confirm("<?=$this->lang->line('deletepost')?>")){
+                var data = {idx : idx};
+
+                $.ajax({
+                    url:'/community/comment_delete_ajax',
+                    type:'post',
+                    data:data,
+                    success:function(data){
+                        if(data.result == 200){
+                            alert('<?=$this->lang->line('completedelete')?>');
+                            location.href='/community/list';         
+                        }else{
+                            alert('<?=$this->lang->line('checktodata')?>');
+                        }
+                    },
+                    error: function(xhr,status,error) {
+                        console.log(xhr,status,error);
+                        alert("<?=$this->lang->line('neterror')?>");
+                        return false;
+                    }	 
+                });
+            }
+        }
+        
         function re_comment(idx){
             $("#re_comment_"+idx).show();
             $("#re_save_"+idx).show();
