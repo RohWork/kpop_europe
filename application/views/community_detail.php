@@ -49,7 +49,9 @@
                 
                 <div class="row" style="padding-top: 5px">
                     <div class="col-6">
-                        <button type="button" class="btn btn-success" onclick="like_community(1, <?=$idx?>)"><?=$this->lang->line('like')?> - <?=$detail['great']?></button>
+                        <button type="button" class="btn btn-success" onclick="like_community(1, <?=$idx?>)">
+                                <i class="fa-light fa-thumbs-up"></i> - <?=$detail['great']?>
+                        </button>
                         <button type="button" class="btn btn-secondary" onclick="like_community(2, <?=$idx?>)"><?=$this->lang->line('dislike')?></button>
                     </div>
                     <div class="col-3 text-end">
