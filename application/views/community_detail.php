@@ -87,8 +87,7 @@
                             <tr>
                                 <th width="10%"></th>
                                 <th width="64%"></th>
-                                <th width="9%"></th>
-                                <th width="9%"></th>
+                                <th width="18%"></th>
                                 <th width="9%"></th>
                             </tr>
                             <?php 
@@ -109,11 +108,9 @@
                                 
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$cmt->idx?>)">
-                                    <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?> 
-                                    
+                                        <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?> 
                                     </button>
-                                </td>
-                                <td>
+                                    &nbsp;
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$cmt->idx?>)">
                                         <span class="fa-regular fa-thumbs-down"></span> - <?=$cmt->hate?>
                                     </button>
