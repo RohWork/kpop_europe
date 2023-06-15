@@ -39,8 +39,8 @@ function get_langueage_list(){
 
 function get_state($state, $content){
     
-    $lang = $this->session->userdata('lang');
-    $this->lang->load('view', $lang);
+    $lang = $session->userdata('lang');
+    $lang->load('view', $lang);
     
     $result;
     
@@ -49,13 +49,13 @@ function get_state($state, $content){
             $result= $content;
             break;
         case 2 :
-            $result = $this->lang->line('blind1');
+            $result = $lang->line('blind1');
             break;
         case 3 :
-            $result = $this->lang->line('blind2');
+            $result = $lang->line('blind2');
             break;
         case 4 :
-            $result =  $this->lang->line('blind4');
+            $result = $lang->line('blind4');
             break;
     }
     
