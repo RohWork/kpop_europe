@@ -142,10 +142,11 @@
                                     </button>
                                 </td>
                                 <td>
-                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                 </td>
                                 <td>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                 </td>
+                                
                             </tr>
                             
                             <?php
