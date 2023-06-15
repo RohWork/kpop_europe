@@ -39,7 +39,7 @@ function get_langueage_list(){
 
 function get_state($state, $content){
     
-    $lang = $session->userdata('lang');
+    $lang = session()->userdata('lang');
     $lang->load('view', $lang);
     
     $result;
