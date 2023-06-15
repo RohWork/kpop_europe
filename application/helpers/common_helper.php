@@ -38,19 +38,26 @@ function get_langueage_list(){
 }
 
 function get_state($state, $content){
+    
+    $result;
+    
     switch($state){
         case 1:
-            return $content;
+            $result= $content;
+            break;
         case 2 :
-            return $this->lang->line('blind1');
+            $result = $this->lang->line('blind1');
+            break;
         case 3 :
-            return $this->lang->line('blind2');
+            $result =  $this->lang->line('blind2');
+            break;
         case 4 :
-            return $this->lang->line('blind4');
+            $result =  $this->lang->line('blind4');
+            break;
     }
     
-    
-    
+    return $result;
+
 }
 
 ?>
