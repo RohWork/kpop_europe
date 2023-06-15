@@ -53,7 +53,7 @@
                                 <span class="fa-regular fa-thumbs-up"></span> - <?=$detail['great']?>
                         </button>
                         <button type="button" class="btn btn-secondary" onclick="like_community(2, <?=$idx?>)">
-                                <span class="fa-regular fa-thumbs-down"></span>
+                                <span class="fa-regular fa-thumbs-down"></span> - <?=$detail['hate']?>
                         </button>
                     </div>
                     <div class="col-3 text-end">
