@@ -87,9 +87,9 @@
                             <tr>
                                 <th width="9%"></th>
                                 <th width="60%"></th>
-                                <th width="17%"></th>
+                                <th width="18%"></th>
                                 <th width="7%"></th>
-                                <th width="7%"></th>
+                                <th width="6%"></th>
                             </tr>
                             <?php 
 
