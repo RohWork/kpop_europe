@@ -92,6 +92,10 @@
     $lang['titleerror'] = "타이틀 정보를 입력하세요.";
     $lang['likeerror'] = "한번만 가능합니다." ;
     
+    $lang['masked1'] = "비추천으로 블라인드 처리된 글입니다.";
+    $lang['masked2'] = "작성자가 삭제 한 글입니다.";
+    $lang['masked3'] = "운영자에 의해 블라인드 처리 되었습니다.";
+    
     $lang['eventtype'] = "이벤트 타입";
     $lang['contactus'] = "상담하기";
     
