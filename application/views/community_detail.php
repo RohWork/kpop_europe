@@ -86,10 +86,10 @@
                         <table class="table">
                             <tr>
                                 <th width="10%"></th>
-                                <th width="70%"></th>
-                                <th width="7%"></th>
-                                <th width="7%"></th>
-                                <th width="7%"></th>
+                                <th width="67%"></th>
+                                <th width="8%"></th>
+                                <th width="8%"></th>
+                                <th width="8%"></th>
                             </tr>
                             <?php 
 
