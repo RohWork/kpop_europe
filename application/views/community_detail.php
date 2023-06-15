@@ -100,7 +100,9 @@
                                     <?=$cmt->mnick?>
                                 </td>
                                 <td>
-                                    <p><?=$cmt->content?></p>
+                                    <p>
+                                        <?=get_state($cmt->state, $cmt->content)?>
+                                    </p>
                                     <div class="btn-group" style="width:100%">
                                         <input type="text" id="re_comment_<?=$cmt->idx?>" style="display: none" class="form-control" />
                                         <button type="button" id="re_save_<?=$cmt->idx?>" onclick="re_comment_save(<?=$cmt->idx?>)" style="display: none" class="btn btn-primary"><?=$this->lang->line('save')?></button>
