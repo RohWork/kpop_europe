@@ -86,6 +86,11 @@
     $lang['titleerror'] = "Custom required, Please enter a title.";
     $lang['likeerror'] = "You can do it only once." ;
     
+    
+    $lang['masked1'] = "This is a post that has been blinded by deprecation.";
+    $lang['masked2'] = "The article has been deleted by the author.";
+    $lang['masked3'] = "This is a post that has been blinded by the operator.";
+    
     $lang['eventtype'] = "Event Type";
     $lang['contactus'] = "Contact us";
     
