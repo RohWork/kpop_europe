@@ -85,9 +85,10 @@
                     <div class="col-9">
                         <table class="table">
                             <tr>
-                                <th width="10%"></th>
-                                <th width="64%"></th>
-                                <th width="18%"></th>
+                                <th width="7%"></th>
+                                <th width="60%"></th>
+                                <th width="15%"></th>
+                                <th width="9%"></th>
                                 <th width="9%"></th>
                             </tr>
                             <?php 
@@ -117,6 +118,9 @@
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
+                                </td>
+                                <td>
+                                    <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                 </td>
                             </tr>
                             <?php
