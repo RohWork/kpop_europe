@@ -134,8 +134,6 @@
                                 <td>
                                     <p><?=$scmt->content?></p>
                                 </td>
-                                
-                                
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$scmt->idx?>)">
                                         <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?>  
@@ -147,6 +145,8 @@
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                </td>
+                                <td>
                                 </td>
                             </tr>
                             
