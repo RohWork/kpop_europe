@@ -132,7 +132,9 @@
                                     ┖ <?=$scmt->mnick?>
                                 </td>
                                 <td>
-                                    <p><?=$scmt->content?></p>
+                                    <p>
+                                        <?=get_state($scmt->state, $scmt->content)?>
+                                    </p>
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$scmt->idx?>)">
