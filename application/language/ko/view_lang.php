@@ -87,6 +87,8 @@
     $lang['confirmdata'] = "입력된 데이터를 확인하세요.";
     $lang['confirmemail'] = "이메일주소를 확인하세요.";
     $lang['confirmpassword'] = "비밀번호를 확인하세요.";
+    $lang['confirmsee'] = "해당글은 과반수의 반대로 차단된 글입니다. 글을 보시겠습니까?";
+    
     $lang['loginfail'] = "로그인실패, 다시 로그인을 진행하세요.";
     $lang['loginerror'] = "로그인이 필요한 서비스입니다. 로그인을 진행하세요.";
     $lang['titleerror'] = "타이틀 정보를 입력하세요.";
