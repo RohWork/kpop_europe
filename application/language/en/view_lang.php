@@ -80,7 +80,7 @@
     $lang['confirmemail'] = "Take Confirm to your Email address.";
     $lang['confirmpassword'] = "check to your Password";
     
-    $lang['confirmsee'] = "This post has been blocked by the opposition of the majority.\n Would you like to see the article?";
+    $lang['confirmsee'] = "This post has been blocked by the opposition of the majority. \n Would you like to see the article?";
     
     $lang['loginfail'] = "login fail, retry to login";
     $lang['loginerror'] = "This service requires login. Proceed to login.";
