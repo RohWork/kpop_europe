@@ -101,7 +101,8 @@
                                 </td>
                                 <td>
                                     <p>
-                                        <?=get_state($cmt->state, $cmt->content)?>
+                                        <?=get_state($cmt->state, $cmt->content, $cmt->idx)?>
+                                        
                                     </p>
                                     <div class="btn-group" style="width:100%">
                                         <input type="text" id="re_comment_<?=$cmt->idx?>" style="display: none" class="form-control" />
@@ -135,7 +136,7 @@
                                 </td>
                                 <td>
                                     <p>
-                                        <?=get_state($scmt->state, $scmt->content)?>
+                                        <?=get_state($scmt->state, $scmt->content, $scmt->idx)?>
                                     </p>
                                 </td>
                                 <td>
@@ -172,6 +173,11 @@
         function modify_community(){
             
             location.href="/community/modify/"+<?=$idx?>
+            
+        }
+        
+        function check_confirm(){
+            
             
         }
         
