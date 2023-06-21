@@ -213,7 +213,7 @@ class Community extends CI_Controller {
         }else if(count($this->com_md->get_like_history($idx, "community", $mode, 0) )> 0){
             
             $this->com_md->modify_like_history($idx, "community", "");
-            $result = $this->com_md->cancel_like_comment($idx, $mode);
+            $result = $this->com_md->cancel_like_community($idx, $mode);
             
             if(!$result){
                 $data['result'] = 400;
