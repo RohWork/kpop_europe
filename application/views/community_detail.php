@@ -100,7 +100,7 @@
                                     <?=$cmt->mnick?>
                                 </td>
                                 <td>
-                                    <p>
+                                    <p id="p_<?=$cmt->idx?>">
                                         <?=get_state($cmt->state, $cmt->content, $cmt->idx)?>
                                         
                                     </p>
@@ -135,7 +135,7 @@
                                     ┖ <?=$scmt->mnick?>
                                 </td>
                                 <td>
-                                    <p>
+                                    <p id="p_<?=$scmt->idx?>">
                                         <?=get_state($scmt->state, $scmt->content, $scmt->idx)?>
                                     </p>
                                 </td>
@@ -176,8 +176,11 @@
             
         }
         
-        function check_confirm(){
+        function check_confirm(idx){
             
+            if(confirm(<?=$this->lang->line('comfirmsee')?>){
+                $("#p_"+idx).text($("#hc_"+idx).val());
+            }
             
         }
         
