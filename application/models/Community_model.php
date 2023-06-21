@@ -192,16 +192,16 @@ class Community_model extends CI_Model {
         return $this->db->insert_id();
     }
     
-    function modify_like_history($idx, $mode, $type,  $comment_idx = ""){
+    function modify_like_history($idx, $mode, $type,  $comment_idx){
         
         $this->db->set('state', '2' );
         
         $this->db->where("board_idx", $idx);
         $this->db->where("board_type", $type);
         $this->db->where("mode", $mode);
-        if($comment_idx != ""){
-            $this->db->where("comment_idx", $comment_idx);
-        }
+        
+        $this->db->where("comment_idx", $comment_idx);
+        
         $this->db->update('kpop_like_history');
         
        return $this->db->affected_rows();         
