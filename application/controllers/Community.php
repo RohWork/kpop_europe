@@ -211,8 +211,6 @@ class Community extends CI_Controller {
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
         }else if(count($this->com_md->get_like_history($idx, "community", $mode, 0) )> 0){
-            $data['result'] = 402;
-            $data['message'] = $this->lang->line('likeerror');
             
             $this->com_md->modify_like_history($idx, "community", "");
             $result = $this->com_md->cancel_like_comment($idx, $mode);
