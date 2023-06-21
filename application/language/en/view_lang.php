@@ -79,6 +79,9 @@
     $lang['confirmdata'] = "Take Confirm to your data.";
     $lang['confirmemail'] = "Take Confirm to your Email address.";
     $lang['confirmpassword'] = "check to your Password";
+    
+    $lang['confirmsee'] = "This post has been blocked by the opposition of the majority. Would you like to see the article?";
+    
     $lang['loginfail'] = "login fail, retry to login";
     $lang['loginerror'] = "This service requires login. Proceed to login.";
     $lang['errorinsertcity'] = "insert to city data";
