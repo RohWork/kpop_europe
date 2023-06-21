@@ -178,7 +178,7 @@
         
         function check_confirm(idx){
             
-            if(confirm('<?=$this->lang->line('confirmsee')?>'){
+            if(confirm('<?=$this->lang->line('confirmsee')?>')){
                 $("#p_"+idx).text($("#hc_"+idx).val());
             }
             
