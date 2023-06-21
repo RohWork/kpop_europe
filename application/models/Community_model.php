@@ -183,7 +183,7 @@ class Community_model extends CI_Model {
         
         $this->db->where("idx", $idx);
         $this->db->where("comment_idx", $comment_idx);
-        $this->db->update('kpop_like_history', $params);
+        $this->db->update('kpop_like_history');
         
        return $this->db->affected_rows();         
     }
