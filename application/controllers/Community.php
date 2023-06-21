@@ -214,7 +214,7 @@ class Community extends CI_Controller {
             $data['result'] = 402;
             $data['message'] = $this->lang->line('likeerror');
             
-            $this->com_md->modify_like_history($idx,"community", "");
+            $this->com_md->modify_like_history($idx, "community", "");
             $result = $this->com_md->cancel_like_comment($idx, $mode);
             
             if(!$result){
