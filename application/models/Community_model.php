@@ -198,7 +198,9 @@ class Community_model extends CI_Model {
         
         $this->db->where("board_idx", $idx);
         $this->db->where("board_type", $type);
-        $this->db->where("comment_idx", $comment_idx);
+        if($comment_idx != ""){
+            $this->db->where("comment_idx", $comment_idx);
+        }
         $this->db->update('kpop_like_history');
         
        return $this->db->affected_rows();         
