@@ -181,7 +181,7 @@ class Community_model extends CI_Model {
         
         $this->db->set('state', '2' );
         
-        $this->db->where("idx", $idx);
+        $this->db->where("board_idx", $idx);
         $this->db->where("comment_idx", $comment_idx);
         $this->db->update('kpop_like_history');
         
