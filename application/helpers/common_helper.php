@@ -37,7 +37,7 @@ function get_langueage_list(){
     return $lang_array;
 }
 
-function get_state($state, $content){
+function get_state($state, $content, $idx){
     
     $ci = get_instance();
     
@@ -51,7 +51,7 @@ function get_state($state, $content){
             $result= $content;
             break;
         case 2 :
-            $result = "<b onclick='check_confirm()' style='cursor:pointer'>".$ci->lang->line('blind1')."</b>";
+            $result = "<b onclick='check_confirm($idx)' style='cursor:pointer'>".$ci->lang->line('blind1')."</b><input type='hidden' id='hc_$idx' value='$content' />";
             break;
         case 3 :
             $result = "<b>".$ci->lang->line('blind2')."</b>";
