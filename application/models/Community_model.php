@@ -149,6 +149,20 @@ class Community_model extends CI_Model {
         
     }
     
+    function cancel_like_comment($idx, $mode){
+        
+        if($mode == "1"){
+            $this->db->set('great', 'great - 1', false);
+        }else{
+            $this->db->set('hate', 'hate - 1', false);
+        }
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_comment');
+        
+        return $this->db->affected_rows();
+        
+    }
+    
     function set_like_history($idx, $mode, $type, $comment_idx){
         
         $params['id'] = $this->session->userdata('id');
@@ -161,6 +175,17 @@ class Community_model extends CI_Model {
         $this->db->insert('kpop_like_history', $params);
         
         return $this->db->insert_id();
+    }
+    
+    function modify_like_history($idx,  $comment_idx){
+        
+        $this->db->set('state', '2' );
+        
+        $this->db->where("idx", $idx);
+        $this->db->where("comment_idx", $comment_idx);
+        $this->db->update('kpop_like_history', $params);
+        
+       return $this->db->affected_rows();         
     }
     
     function get_like_history($idx, $type, $mode, $comment_idx){
