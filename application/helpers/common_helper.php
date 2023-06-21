@@ -51,7 +51,7 @@ function get_state($state, $content){
             $result= $content;
             break;
         case 2 :
-            $result = "<b>".$ci->lang->line('blind1')."</b>";
+            $result = "<b onclick='check_confirm()' style='cursor:pointer'>".$ci->lang->line('blind1')."</b>";
             break;
         case 3 :
             $result = "<b>".$ci->lang->line('blind2')."</b>";
