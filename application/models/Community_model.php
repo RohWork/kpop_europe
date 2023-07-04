@@ -192,13 +192,12 @@ class Community_model extends CI_Model {
         return $this->db->insert_id();
     }
     
-    function modify_like_history($idx, $mode, $type, $comment_idx){
+    function modify_like_history($idx,  $type, $comment_idx){
         
         $this->db->set('state', '2' );
         
         $this->db->where("board_idx", $idx);
         $this->db->where("board_type", $type);
-        $this->db->where("mode", $mode);
         
         $this->db->where("comment_idx", $comment_idx);
         
