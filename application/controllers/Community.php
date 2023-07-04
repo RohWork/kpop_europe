@@ -227,10 +227,10 @@ class Community extends CI_Controller {
             
             if($mode == 2){
                 $dis_info = $this->com_md->detail_community($idx);
-                /*if($dis_info['hate'] >= 10){
+                if($dis_info['hate'] >= 10){
                     $params = array("state" => "2");
                     $this->com_md->modify_community($params, $idx);
-                }*/
+                }
             }
             
             if(!$result){
