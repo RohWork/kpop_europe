@@ -210,7 +210,7 @@ class Community extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($idx, "community", $mode, 0) )> 0){
+        }else if(count($this->com_md->get_like_history($idx, "community",  0) )> 0){
             
             $this->com_md->modify_like_history($idx, $mode, "community", 0);
             $result = $this->com_md->cancel_like_community($idx, $mode);
@@ -371,7 +371,7 @@ class Community extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($board_idx, "comment", $mode, $idx)) > 0){
+        }else if(count($this->com_md->get_like_history($board_idx, "comment", $idx)) > 0){
             
             
             
