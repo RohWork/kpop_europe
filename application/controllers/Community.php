@@ -210,21 +210,17 @@ class Community extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($idx, "community",  0) )> 0){
-            
-            $this->com_md->modify_like_history($idx, $mode, "community", 0);
-            $result = $this->com_md->cancel_like_community($idx, $mode);
-            
-            if(!$result){
-                $data['result'] = 400;
-                $data['message'] = $this->lang->line('dataerror');
-            }
-            
         }else{
             
+            if(count($this->com_md->get_like_history($idx, "community",  0) )> 0){
+            
+                $this->com_md->modify_like_history($idx, $mode, "community", 0);
+                $result = $this->com_md->cancel_like_community($idx, $mode);
+            }
+
             $this->com_md->set_like_history($idx, $mode, "community", 0);
             $result = $this->com_md->like_community($idx, $mode);
-            
+
             if($mode == 2){
                 $dis_info = $this->com_md->detail_community($idx);
                 if($dis_info['hate'] >= 10){
@@ -232,11 +228,12 @@ class Community extends CI_Controller {
                     $this->com_md->modify_community($params, $idx);
                 }
             }
-            
+
             if(!$result){
                 $data['result'] = 400;
                 $data['message'] = $this->lang->line('dataerror');
             }
+            
         }
         header("Content-Type: application/json;");
         echo json_encode($data);
