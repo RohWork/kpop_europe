@@ -192,12 +192,13 @@ class Community_model extends CI_Model {
         return $this->db->insert_id();
     }
     
-    function modify_like_history($idx,  $type, $comment_idx){
+    function modify_like_history($idx, $mode, $type, $comment_idx){
         
         $this->db->set('state', '2' );
         
         $this->db->where("board_idx", $idx);
         $this->db->where("board_type", $type);
+        $this->db->where("mode", $mode);
         
         $this->db->where("comment_idx", $comment_idx);
         
@@ -206,12 +207,12 @@ class Community_model extends CI_Model {
        return $this->db->affected_rows();         
     }
     
-    function get_like_history($idx, $type,  $comment_idx){
+    function get_like_history($idx, $type, $mode, $comment_idx){
         
         
         $id = $this->session->userdata('id');
         
-        $sSql = "select * from kpop_like_history where board_idx = $idx and comment_idx = $comment_idx and board_type = '$type'  and id = '$id' and state = 1";
+        $sSql = "select * from kpop_like_history where board_idx = $idx and comment_idx = $comment_idx and board_type = '$type' and mode = $mode and id = '$id' and state = 1";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
