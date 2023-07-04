@@ -171,6 +171,14 @@
     </main>
     <script>
         
+        $(document).ready(function(){
+
+            if ( $.cookie("scroll") !== null) {
+
+                $(document).scrollTop( $.cookie("scroll") );
+            }
+
+        });
         
         function modify_community(){
             
@@ -195,7 +203,8 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
-                            location.reload(true);
+                            $.cookie("scroll", $(document).scrollTop() );
+                            location.reload();
                             return false;
                         }else{
                             alert(data.message);
@@ -218,8 +227,8 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
-
-                            location.reload(true);
+                            $.cookie("scroll", $(document).scrollTop() );
+                            location.reload();
                             return false;
                         }else{
                             alert(data.message);
