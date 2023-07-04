@@ -194,6 +194,7 @@
                     success:function(data){
                         if(data.result == 200){
                             location.reload();
+                            $("#p_"+idx).focus();
                         }else{
                             alert(data.message);
                         }
@@ -216,6 +217,7 @@
                     success:function(data){
                         if(data.result == 200){
                             location.reload();
+                            $("#p_"+idx).focus();
                         }else{
                             alert(data.message);
                         }
