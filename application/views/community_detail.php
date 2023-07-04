@@ -217,7 +217,7 @@
                     success:function(data){
                         if(data.result == 200){
                             location.reload();
-                            $("#p_"+idx).focus();
+                            return false;
                         }else{
                             alert(data.message);
                         }
