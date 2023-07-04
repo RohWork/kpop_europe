@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
         <script src="https://kit.fontawesome.com/89b002c3b7.js" crossorigin="anonymous"></script>
+        <script src="/asset/js/jquery.cookie-1.4.1.min.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <script>
