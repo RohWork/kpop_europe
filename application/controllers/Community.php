@@ -252,7 +252,7 @@ class Community extends CI_Controller {
         $data['message'] = "";
         
         $params = array();
-        $params['state'] = 2;
+        $params['state'] = 3;
 
         $idx = $this->input->post("idx");
 
