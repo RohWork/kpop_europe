@@ -222,6 +222,9 @@ class Community extends CI_Controller {
             
         }else{
             
+            $this->com_md->modify_like_history($idx, $mode, "community", 0);
+            $result = $this->com_md->cancel_like_community($idx, $mode);
+            
             $this->com_md->set_like_history($idx, $mode, "community", 0);
             $result = $this->com_md->like_community($idx, $mode);
             
@@ -371,19 +374,22 @@ class Community extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($board_idx, "comment", $mode, $idx)) > 0){
-            
-            
+        }else if(count($this->com_md->get_like_history($board_idx, "comment", $mode, $idx)) > 0){   //중복된 추천,비추천인경우 이전의 추천,비추천 취소
             
             $this->com_md->modify_like_history($board_idx,$mode,"comment", $idx);
             $result = $this->com_md->cancel_like_comment($idx, $mode);
+            
+            
             
             if(!$result){
                 $data['result'] = 400;
                 $data['message'] = $this->lang->line('dataerror');
             }
-        }else{
-        
+        }else{  //중복되지 않은 추천인경우 이전의 추천, 비추천 제거후 추천, 비추천  
+            
+            $this->com_md->modify_like_history($board_idx,$mode,"comment", $idx);
+            $result = $this->com_md->cancel_like_comment($idx, $mode);
+            
             $this->com_md->set_like_history($board_idx, $mode, "comment", $idx);
             $result = $this->com_md->like_comment($idx, $mode);
             
