@@ -175,7 +175,7 @@
 
             if ( $.cookie("scroll") !== null) {
 
-                $(document).scrollTop( $.cookie("scroll") );
+                $(".container").scrollTop( $.cookie("scroll") );
             }
 
         });
@@ -203,7 +203,7 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
-                            $.cookie("scroll", $(document).scrollTop() );
+                            $.cookie("scroll", $(".container").scrollTop() );
                             location.reload();
                             return false;
                         }else{
@@ -227,7 +227,7 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
-                            $.cookie("scroll", $(document).scrollTop() );
+                            $.cookie("scroll", $(".container").scrollTop() );
                             location.reload();
                             return false;
                         }else{
