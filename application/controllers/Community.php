@@ -252,7 +252,11 @@ class Community extends CI_Controller {
         $data['message'] = "";
         
         $params = array();
-        $params['state'] = 3;
+        if($this->session->userdata('level') > 2){
+            $params['state'] = 4;
+        }else{
+            $params['state'] = 3;
+        }
 
         $idx = $this->input->post("idx");
 
@@ -331,7 +335,11 @@ class Community extends CI_Controller {
         
         $params = array();
         $idx = $this->input->post("idx");
-        $params['state'] = 2;
+        if($this->session->userdata('level') > 2){
+            $params['state'] = 4;
+        }else{
+            $params['state'] = 3;
+        }
         
         $result = $this->com_md->modify_comment($params, $idx);
         
