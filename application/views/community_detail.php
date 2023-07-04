@@ -170,6 +170,16 @@
         </div>
     </main>
     <script>
+        
+        $(document).ready(function(){
+
+            if ( $.cookie("scroll") !== null) {
+
+                $(document).scrollTop( $.cookie("scroll") );
+            }
+
+        });
+        
         function modify_community(){
             
             location.href="/community/modify/"+<?=$idx?>
@@ -193,6 +203,7 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
+                            $.cookie("scroll", $(document).scrollTop() );
                             location.reload();
                             return false;
                         }else{
@@ -216,6 +227,7 @@
                     data:data,
                     success:function(data){
                         if(data.result == 200){
+                            $.cookie("scroll", $(document).scrollTop() );
                             location.reload();
                             return false;
                         }else{
