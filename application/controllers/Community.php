@@ -392,8 +392,8 @@ class Community extends CI_Controller {
                 }
                 
                 if(count($this->com_md->get_like_history($board_idx, "comment", $switch_mode, $idx)) > 0){ //반대의 추천, 비추천이 있을경우 해당 반대도 취소처리후 처리
-                    $this->com_md->modify_like_history($board_idx,$mode,"comment", $idx);
-                    $result = $this->com_md->cancel_like_comment($idx, $mode);
+                    $this->com_md->modify_like_history($board_idx,$switch_mode,"comment", $idx);
+                    $result = $this->com_md->cancel_like_comment($idx, $switch_mode);
                 }
                 
 
