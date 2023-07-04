@@ -176,6 +176,8 @@
             if ( $.cookie("scroll") !== null) {
 
                 $("#detail_container").scrollTop( $.cookie("scroll") );
+                
+                $.cookie('scroll', null);
             }
 
         });
