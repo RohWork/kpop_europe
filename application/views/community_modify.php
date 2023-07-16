@@ -109,6 +109,9 @@
 
 </main>
 
+<style>
+  .ck-editor__editable { height: 100%; }
+</style>
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
 
