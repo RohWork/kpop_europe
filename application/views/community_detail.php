@@ -307,7 +307,8 @@
                     success:function(data){
                         if(data.result == 200){
                             alert('<?=$this->lang->line('completedelete')?>');
-                            location.reload();         
+                            $.cookie("scroll", $("#detail_container").scrollTop() );
+                            location.reload();        
                         }else{
                             alert('<?=$this->lang->line('checktodata')?>');
                         }
