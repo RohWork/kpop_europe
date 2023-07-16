@@ -279,7 +279,7 @@
                     success:function(data){
                         if(data.result == 200){
                             alert('<?=$this->lang->line('completedelete')?>');
-                            location.reload();      
+                            location.href='/community/list';       
                         }else{
                             alert('<?=$this->lang->line('checktodata')?>');
                         }
@@ -307,7 +307,7 @@
                     success:function(data){
                         if(data.result == 200){
                             alert('<?=$this->lang->line('completedelete')?>');
-                            location.href='/community/list';         
+                            location.realod();         
                         }else{
                             alert('<?=$this->lang->line('checktodata')?>');
                         }
