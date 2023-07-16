@@ -8,7 +8,7 @@
       .ck-content { font-size: 12px; }
 </style>
 
-    <div class="container">
+<div class="container" style="overflow-y: auto">
         <form id="community_write">
             <div class="form-group">
                 <div class="row mt-1">
