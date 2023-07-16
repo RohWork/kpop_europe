@@ -111,6 +111,9 @@
 
 <style>
     .ck-editor__editable { height: 100%; }
+    .ck-editor__editable_inline {
+        min-height: 400px;
+    }
 </style>
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
