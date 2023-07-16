@@ -4,7 +4,7 @@
 
 ?>
 <style>
-      .ck-editor__editable { height: 400px; }
+      .ck-editor__editable { height: 100%; }
       .ck-content { font-size: 12px; }
 </style>
 
