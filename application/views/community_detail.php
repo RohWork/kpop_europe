@@ -307,7 +307,7 @@
                     success:function(data){
                         if(data.result == 200){
                             alert('<?=$this->lang->line('completedelete')?>');
-                            location.realod();         
+                            location.reload();         
                         }else{
                             alert('<?=$this->lang->line('checktodata')?>');
                         }
