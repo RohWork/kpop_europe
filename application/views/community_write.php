@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="row mt-1">
-                    <div class="col-md-6 col-xs-6">
+                    <div class="col-md-6 col-xs-6" style="height:auto">
                         <textarea id="editor" name="content">
                             
                         </textarea>
