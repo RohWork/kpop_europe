@@ -4,8 +4,7 @@
 
 ?>
 <style>
-        .ck-editor__editable { height: 400px; }
-      .ck-editor__editable { height: 100%; }
+      .ck-editor__editable { height: 400px; }
       .ck-content { font-size: 12px; }
 </style>
 
@@ -109,6 +108,10 @@
     </div>
 
 </main>
+
+<style>
+    .ck-editor__editable { height: 100%; }
+</style>
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
