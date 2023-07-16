@@ -256,6 +256,7 @@ class Community extends CI_Controller {
         if($this->session->userdata('level') > 2){
             $params['state'] = 4;
         }else{
+            
             $params['state'] = 3;
         }
 
