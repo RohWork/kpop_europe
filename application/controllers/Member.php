@@ -160,7 +160,7 @@ class Member extends CI_Controller {
 	'charset' => "utf-8",
 	'mailtype' => "html",
 	'smtp_timeout' => 10,
-        'send_multipart' => FALSE, 
+        'send_multipart' => true, 
         'smtp_crypto' => 'ssl'
 );
 
