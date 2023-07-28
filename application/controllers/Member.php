@@ -154,12 +154,13 @@ class Member extends CI_Controller {
         $config = array(
 	'protocol' => "smtp",
 	'smtp_host' => "smtp.kakao.com",
-	'smtp_port' => "465",//"587", // 465 나 587 중 하나를 사용
+	'smtp_port' => "587",//"587", // 465 나 587 중 하나를 사용
 	'smtp_user' => "roh",
 	'smtp_pass' => "s3628742",
 	'charset' => "utf-8",
 	'mailtype' => "html",
 	'smtp_timeout' => 10,
+        'smtp_crypto' => 'tls',
 );
 
         // gmail smtp 메일 발송
