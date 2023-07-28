@@ -141,10 +141,10 @@
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-success" onclick="like_comment(1, <?=$scmt->idx?>)">
-                                        <span class="fa-regular fa-thumbs-up"></span> -  <?=$cmt->great?>  
+                                        <span class="fa-regular fa-thumbs-up"></span> -  <?=$scmt->great?>  
                                     </button>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="like_comment(2, <?=$scmt->idx?>)">
-                                        <span class="fa-regular fa-thumbs-down"></span> - <?=$cmt->hate?>
+                                        <span class="fa-regular fa-thumbs-down"></span> - <?=$scmt->hate?>
                                     </button>
                                 </td>
                                 <td>
