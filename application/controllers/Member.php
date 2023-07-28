@@ -153,9 +153,9 @@ class Member extends CI_Controller {
         
         $config = array(
 	'protocol' => "smtp",
-	'smtp_host' => "smtp.kakao.com",
+	'smtp_host' => "smtp.daum.net",
 	'smtp_port' => "465",//"587", // 465 나 587 중 하나를 사용
-	'smtp_user' => "roh",
+	'smtp_user' => "nocy12",
 	'smtp_pass' => "dhxacdtntjgjflxc",
 	'charset' => "utf-8",
 	'mailtype' => "html",
@@ -168,7 +168,7 @@ class Member extends CI_Controller {
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
         $this->email->clear();
-        $this->email->from("roh@kakao.com", "kpopineu");
+        $this->email->from("admin@kpopineu.com", "kpopineu");
         $this->email->to($mail);
         $this->email->subject($this->lang->line('confirm'));
         $this->email->message($this->lang->line('visit').'<a href=https://www.kpopineu.com/member/confirm_email?id='.$result['id'].'>'.$this->lang->line('url').'</a>');
