@@ -11,7 +11,6 @@ class Member extends CI_Controller {
         $lang = $this->session->userdata('lang');
         $this->lang->load('controller', $lang);
 
-        $lang_array = get_langueage_list();
     }
     function login(){
         
