@@ -81,6 +81,7 @@
     $lang['confirmpassword'] = "check to your Password";
     
     $lang['confirmsee'] = "Would you like to check the post?";
+    $lang['checkmail'] = "Check the email sent.";
     
     $lang['loginfail'] = "login fail, retry to login";
     $lang['loginerror'] = "This service requires login. Proceed to login.";
