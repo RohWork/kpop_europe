@@ -121,7 +121,7 @@
                                 
                                 <td>
                                     <?php
-                                        if($this->session->userdata('id') == $cmt->writer){
+                                        if($this->session->userdata('id') == $cmt->writer || $this->session->userdata('level') == 3){
                                     ?>
                                     <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                     <?php
@@ -155,7 +155,7 @@
                                 </td>
                                 <td>
                                     <?php
-                                        if($this->session->userdata('id') == $scmt->writer){
+                                        if($this->session->userdata('id') == $scmt->writer || $this->session->userdata('level') == 3){
                                     ?>
                                     <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$scmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                     <?php
