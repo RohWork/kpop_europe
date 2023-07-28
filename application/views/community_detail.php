@@ -120,7 +120,13 @@
                                 </td>
                                 
                                 <td>
+                                    <?php
+                                        if($this->session->userdata('id') == $cmt->writer){
+                                    ?>
                                     <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                    <?php
+                                        }
+                                    ?>
                                 </td>
                                 <td>
                                     <button type="button" style="font-size: 12px" class="btn btn-secondary" onclick="re_comment(<?=$cmt->idx?>)"><?=$this->lang->line('comment')?></button>
@@ -149,9 +155,9 @@
                                 </td>
                                 <td>
                                     <?php
-                                        if($this->session->userdata('id') == $cmt->writer){
+                                        if($this->session->userdata('id') == $scmt->writer){
                                     ?>
-                                    <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                    <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$scmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                     <?php
                                         }
                                     ?>
