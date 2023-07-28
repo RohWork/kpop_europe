@@ -164,8 +164,8 @@ class Member extends CI_Controller {
 
         // gmail smtp 메일 발송
         $this->load->library('email', $config);
-        $this->email->set_newline("\r\n");
-        $this->email->clear();
+        //$this->email->set_newline("\r\n");
+        //$this->email->clear();
         $this->email->from("admin@kpopineu.com", "kpopineu");
         $this->email->to($mail);
         $this->email->subject($this->lang->line('confirm'));
