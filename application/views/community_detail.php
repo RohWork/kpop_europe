@@ -148,7 +148,13 @@
                                     </button>
                                 </td>
                                 <td>
+                                    <?php
+                                        if($this->session->userdata('id') == $scmt['writer']){
+                                    ?>
                                     <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
+                                    <?php
+                                        }
+                                    ?>
                                 </td>
                                 <td>
                                 </td>
