@@ -156,7 +156,7 @@ class Member extends CI_Controller {
 	'smtp_host' => "smtp.kakao.com",
 	'smtp_port' => "465",//"587", // 465 나 587 중 하나를 사용
 	'smtp_user' => "roh",
-	'smtp_pass' => "s3628742",
+	'smtp_pass' => "dhxacdtntjgjflxc",
 	'charset' => "utf-8",
 	'mailtype' => "html",
 	'smtp_timeout' => 10,
