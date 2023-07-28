@@ -122,7 +122,7 @@
                                 <td>
                                     <?php
                                     echo $this->session->userdata('id')."==".$cmt->writer; 
-                                        if($this->session->userdata('id') == $cmt->writer || $this->session->userdata('level') == 3){
+                                        if($this->session->userdata('id') == $cmt->writer ){
                                     ?>
                                     <button type="button" style="font-size: 12px" class="btn btn-danger" onclick="delete_comment(<?=$cmt->idx?>)"><?=$this->lang->line('delete')?></button>
                                     <?php
