@@ -160,7 +160,6 @@ class Member extends CI_Controller {
 	'charset' => "utf-8",
 	'mailtype' => "html",
 	'smtp_timeout' => 10,
-        'smtp_crypto' => 'tls',
 );
 
         // gmail smtp 메일 발송
