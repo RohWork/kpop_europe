@@ -7,6 +7,11 @@ class Member extends CI_Controller {
         parent ::__construct();
         
         $this->load->model('Member_model', 'mem_md', TRUE);
+        
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('controller', $lang);
+
+        $lang_array = get_langueage_list();
     }
     function login(){
         
