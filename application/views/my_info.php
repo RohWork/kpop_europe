@@ -82,8 +82,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-2">
+            
+            <div class="col-4" style="text-align: right">
                 <input type="submit" class="btn btn-primary" />
             </div>
         </div>
