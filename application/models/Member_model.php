@@ -48,6 +48,14 @@ class Member_model extends CI_Model {
         
     }
     
+    function modify_member($params, $id){
+        
+        $this->db->where('id', $id);
+        $this->db->update('kpop_member', $params);
+        
+        return $this->db->affected_rows();
+        
+    }
     
 }
 
