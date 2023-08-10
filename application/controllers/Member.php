@@ -259,4 +259,17 @@ class Member extends CI_Controller {
         echo json_encode($data);
         
     }
+    
+    function my_info(){
+        
+        $data = array();
+        
+        $user_mail = $this->session->userdata('email');
+        
+        $data['user_info'] = $this->mem_md->get_member($user_mail);
+        
+        $this->load->view('my_info',$data);
+
+        
+    }
 }
