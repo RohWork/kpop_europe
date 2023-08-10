@@ -95,6 +95,11 @@
 
 <script>
     
+    $(document).ready(function(){
+       get_country_data(); 
+    });
+    
+    
     function get_country_data(){
         
         var j = $("#check_country option:selected").val();
