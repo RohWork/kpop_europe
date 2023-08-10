@@ -20,6 +20,7 @@
     $lang['neterror'] = 'Network Error!! take support to web manager!!';
     $lang['dataerror'] = 'data process error';
     $lang['dataerror2'] = "Data processing failure";
+    $lang['procok'] = "Data processing complete.";
     $lang['idxerror'] = "Check To you're idx";
     $lang['mailerror'] = "Duplicate email. Check to your email adress.";
     $lang['mailerror2'] = "this E-mail is not confirmed. Take to E-mail confirm";
