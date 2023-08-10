@@ -21,7 +21,7 @@
                         <option value=""></option>
                         <?php foreach($country_list as $cnt){ 
                             $search_cnt = "";
-                            if($user_info['country'] == $cnt['idx']){
+                            if($user_info['country_idx'] == $cnt['idx']){
                                 $search_cnt = "selected";
                             }
                         ?>
@@ -45,7 +45,7 @@
                         <?php foreach($city_list as $cty){ 
 
                             $search_cty = "";
-                            if($user_info['city'] == $cty['idx']){
+                            if($user_info['city_idx'] == $cty['idx']){
                                 $search_cty = "selected";
                             }
 
