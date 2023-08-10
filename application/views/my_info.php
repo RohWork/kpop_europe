@@ -92,3 +92,48 @@
         </div>
     </form>
 </div>
+
+<script>
+    
+    function get_country_data(){
+        
+        var j = $("#check_country option:selected").val();
+        var data = { country_idx : j };
+
+       $('#check_city').empty();
+        
+        $.ajax({
+            url:'/city/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+
+                    $('#check_city').append("<option value=''></option>");
+                    for(var i =0; i<data_array.length;i++){
+                        
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        $('#check_city').append(option)
+                        
+                    }
+                    
+                    
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+        
+    }
+    
+</script>
