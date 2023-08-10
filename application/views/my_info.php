@@ -120,7 +120,7 @@
                     for(var i =0; i<data_array.length;i++){
                         
                         if(j == <?=$user_info['country_idx']?>){
-                            if(i == <?=$user_info['city_idx']?>){
+                            if(data.result[i]['idx'] == <?=$user_info['city_idx']?>){
                                 var selected = "selected";
                             }else{
                                 var selected = "";
