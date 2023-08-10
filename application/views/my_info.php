@@ -26,7 +26,8 @@
                             <label class="form-label "><?=$this->lang->line('country')?></label>
                         </div>
                     </div>
-                    
+                </div>
+                <div class="row">
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="check_city" name="city" class="form-select">
@@ -46,7 +47,8 @@
                             <label class="form-label "><?=$this->lang->line('city')?></label>
                         </div>
                     </div>
-                    
+                </div>
+                <div class="row">
                     
                     <div class="col-2">
                         <div class="form-floating">
