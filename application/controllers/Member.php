@@ -311,12 +311,14 @@ class Member extends CI_Controller {
         
         
         
+        $this->session->set_userdata(array("lang" => $params['language']));
+        
         
         if(empty($this->session->userdata('id'))){
             alert_move($this->lang->line('dataerror2'), '/member/my_info');
         }else{
         
-            alert_move($this->lang->line('procok'), '/member/my_info');
+            alert_move($this->lang->line('procok'), '/member/main');
         }
     }
 }
