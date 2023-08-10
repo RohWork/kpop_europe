@@ -20,6 +20,8 @@
     $lang['neterror'] = '네트워크 에러!! 웹관리자에게 문의 하세요!!';
     $lang['dataerror'] = '데이터 처리 오류';
     $lang['dataerror2'] = "데이터 처리가 실패했습니다.";
+    $lang['procok'] = "데이터 처리가 완료되었습니다.";
+    
     $lang['idxerror'] = "인덱스 번호를 확인하세요.";
     $lang['mailerror'] = "중복된 이메일. 이메일 주소를 확인하시오.";
     $lang['mailerror2'] = "이메일이 확인되지 않았습니다. 이메일 확인을 실행하세요.";
