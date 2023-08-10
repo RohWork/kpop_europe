@@ -8,7 +8,7 @@
             <form method="get">
                 <div class="row">
                     
-                    <label class="col-2 form-label">
+                    <label class="form-label col-2">
                         <?=$this->lang->line('country')?>
                     </label>
                     <div class="col-2">
