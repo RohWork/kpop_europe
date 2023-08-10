@@ -318,7 +318,7 @@ class Member extends CI_Controller {
             alert_move($this->lang->line('dataerror2'), '/member/my_info');
         }else{
         
-            alert_move($this->lang->line('procok'), '/member/main');
+            alert_move($this->lang->line('procok'), '/main');
         }
     }
 }
