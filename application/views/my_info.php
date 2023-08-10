@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="row">
-                     <div class="col-2">
+                    <div class="col-2">
                         <label class="form-label">
                             <strong><?=$this->lang->line('city')?></strong>
                         </label>
@@ -54,31 +54,31 @@
                     </div>
                 </div>
                 <div class="row">
-                    
                     <div class="col-2">
-                        <div class="form-floating">
-                            <select id="check_langueage" name="language" class="form-select">
-                                <?php 
-                                    $lang_array = get_langueage_list();
-                                    
-                                    for($i=0;$i<count($lang_array);$i++){
-                                    
-                                        $search_lang = "";
-                                        if($search['language'] == $lang_array[$i]['id']){
-                                            $search_lang = "selected";
-                                        }
-                                     ?>
-                                
-                                        <option value="<?=$lang_array[$i]['id']?>" <?=$search_lang?>><?=$lang_array[$i]['val']?></option>
-                                <?php
+                        <label class="form-label">
+                            <strong><?=$this->lang->line('language')?></strong>
+                        </label>
+                    </div>
+                    <div class="col-2">
+                        <select id="check_langueage" name="language" class="form-select">
+                            <?php 
+                                $lang_array = get_langueage_list();
+
+                                for($i=0;$i<count($lang_array);$i++){
+
+                                    $search_lang = "";
+                                    if($search['language'] == $lang_array[$i]['id']){
+                                        $search_lang = "selected";
                                     }
-                                ?>
-                                
-                            </select>
-                            <label for="language" lass="form-labe" >
-                                <?=$this->lang->line('language')?>
-                            </label>
-                        </div>
+                                 ?>
+
+                                    <option value="<?=$lang_array[$i]['id']?>" <?=$search_lang?>><?=$lang_array[$i]['val']?></option>
+                            <?php
+                                }
+                            ?>
+
+                        </select>
+
                     </div>
                 </div>
             </form>
