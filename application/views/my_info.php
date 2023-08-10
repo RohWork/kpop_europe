@@ -7,6 +7,9 @@
 <div class="container">
     <form method="post" id="info_form">
         <div class="row">
+                    <label class="form-label"><h3><?=$this->lang->line('myinfomodify')?></h3></label>
+                </div>
+        <div class="row">
             <div class="col-2">
                 <label class="form-label">
                     <strong><?=$this->lang->line('country')?></strong>
@@ -81,7 +84,7 @@
 
             </div>
         </div>
-        <div class="row" style="margin-top: 15px">
+        <div class="row" style="margin-top: 15px;">
             
             <div class="col-4" style="text-align: right">
                 <input type="submit" class="btn btn-primary" />
