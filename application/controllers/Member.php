@@ -278,8 +278,10 @@ class Member extends CI_Controller {
             $data['city_list'] = "";
         }
         
+        $this->load->view('header');
+        $this->load->view('sidebar');
         $this->load->view('my_info',$data);
-
+        $this->load->view('footer');
         
     }
 }
