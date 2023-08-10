@@ -266,6 +266,12 @@ class Member extends CI_Controller {
         
         $data = array();
         
+        $this->load->helper('alert');
+        
+        if(empty($this->session->userdata('email'))){
+            alert_move($this->lang->line('loginerror'), '/member/login');
+        }
+        
         $user_mail = $this->session->userdata('email');
         
         $data['user_info'] = $this->mem_md->get_member($user_mail);
