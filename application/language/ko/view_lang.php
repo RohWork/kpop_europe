@@ -56,6 +56,7 @@
     $lang['gname'] = "이름";
     $lang['fname'] = "성";
     $lang['confirm'] = "확인";
+    $lang['myinfomodify'] = "내정보 수정";
     $lang['homepage'] = "홈페이지";
    
     $lang['order'] = "순서";
