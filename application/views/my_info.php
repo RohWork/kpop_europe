@@ -30,6 +30,11 @@
                     </div>
                 </div>
                 <div class="row">
+                     <div class="col-2">
+                        <label class="form-label">
+                            <strong><?=$this->lang->line('city')?></strong>
+                        </label>
+                    </div>
                     <div class="col-2">
                         
                             <select id="check_city" name="city" class="form-select">
