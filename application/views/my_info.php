@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="container" style="font-size: 12px;">
+<div class="container">
             <form method="get">
                 <div class="row">
                     <div class="col-2">
