@@ -87,7 +87,7 @@
         <div class="row" style="margin-top: 15px;">
             
             <div class="col-4" style="text-align: right">
-                <input type="submit" class="btn btn-primary" value="submit"/>
+                <input type="submit" class="btn btn-primary" value="<?=$this->lang->line('confirm')?>"/>
             </div>
         </div>
     </form>
