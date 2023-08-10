@@ -104,7 +104,7 @@
         
         var j = $("#check_country option:selected").val();
         var data = { country_idx : j };
-
+        
        $('#check_city').empty();
         
         $.ajax({
@@ -119,7 +119,15 @@
                     $('#check_city').append("<option value=''></option>");
                     for(var i =0; i<data_array.length;i++){
                         
-                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        if(j == <?=$user_info['country_idx']?>){
+                            if(i == <?=$user_info['city_idx']?>){
+                                var selected = "selected";
+                            }else{
+                                var selected = "";
+                            }
+                        }
+                        
+                        var option = $("<option value="+data.result[i]['idx']+" "+selected+">"+data.result[i]['name']+"</option>");
                         $('#check_city').append(option)
                         
                     }
