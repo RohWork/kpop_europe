@@ -53,6 +53,7 @@
     $lang['gname'] = "Given Name";
     $lang['fname'] = "Family Name";
     $lang['confirm'] = "Confirm";
+    $lang['myinfomodify'] = "My info Modify";
     $lang['homepage'] = "Homepage";
     $lang['title'] = "Title";
     $lang['comment'] = "Comment";
