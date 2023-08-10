@@ -82,7 +82,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-2 col-offset-2">
+            <div class="col-2"></div>
+            <div class="col-2">
                 <input type="submit" class="btn btn-primary" />
             </div>
         </div>
