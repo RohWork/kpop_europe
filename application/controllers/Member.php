@@ -310,10 +310,10 @@ class Member extends CI_Controller {
         $result = $this->mem_md->modify_member($params, $id);
         
         if(empty($this->session->userdata('id'))){
-            alert_move($this->lang->line('dataerror2'), '/member/login');
+            alert_move($this->lang->line('dataerror2'), '/member/my_info');
         }else{
         
-            alert_move($this->lang->line('procok'), '/member/login');
+            alert_move($this->lang->line('procok'), '/member/my_info');
         }
     }
 }
