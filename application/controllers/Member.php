@@ -287,7 +287,7 @@ class Member extends CI_Controller {
         $this->load->view('header');
         $this->load->view('sidebar');
         $this->load->view('my_info',$data);
-        $this->load->view('footer');
+        
         
     }
     
