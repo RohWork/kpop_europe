@@ -7,6 +7,8 @@ class Member extends CI_Controller {
         parent ::__construct();
         
         $this->load->model('Member_model', 'mem_md', TRUE);
+        $this->load->model('Country_model', 'cont_md', TRUE);
+        $this->load->model('City_model', 'city_md', TRUE);
         
         $lang = $this->session->userdata('lang');
         $this->lang->load('controller', $lang);
@@ -267,6 +269,14 @@ class Member extends CI_Controller {
         $user_mail = $this->session->userdata('email');
         
         $data['user_info'] = $this->mem_md->get_member($user_mail);
+        
+        $data['country_list'] = $this->cont_md->get_country();
+        
+        if(!empty($search['country'])){
+            $data['city_list'] = $this->city_md->get_city($search['country']);
+        }else{
+            $data['city_list'] = "";
+        }
         
         $this->load->view('my_info',$data);
 
