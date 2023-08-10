@@ -7,10 +7,11 @@
 <div class="container" style="font-size: 12px;">
             <form method="get">
                 <div class="row">
-                    
-                    <label class="form-label col-2">
-                        <?=$this->lang->line('country')?>
-                    </label>
+                    <div class="col-2">
+                        <label class="form-label">
+                            <?=$this->lang->line('country')?>
+                        </label>
+                    </div>
                     <div class="col-2">
                         
                             <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
