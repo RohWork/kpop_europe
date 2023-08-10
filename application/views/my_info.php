@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-2">
                         <label class="form-label">
-                            <?=$this->lang->line('country')?>
+                            <strong><?=$this->lang->line('country')?></strong>
                         </label>
                     </div>
                     <div class="col-2">
