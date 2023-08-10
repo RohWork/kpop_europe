@@ -290,4 +290,30 @@ class Member extends CI_Controller {
         $this->load->view('footer');
         
     }
+    
+    public function my_info_set(){
+        
+        $this->load->helper('alert');
+        
+        if(empty($this->session->userdata('id'))){
+            alert_move($this->lang->line('loginerror'), '/member/login');
+        }
+        
+        $params = array();
+        
+        $id = $this->session->userdata('id');
+        
+        $params['country_idx'] = $this->input->post("country");
+        $params['city_idx'] = $this->input->post("city");
+        $params['language'] = $this->input->post("language");
+        
+        $result = $this->mem_md->modify_member($params, $id);
+        
+        if(empty($this->session->userdata('id'))){
+            alert_move($this->lang->line('dataerror2'), '/member/login');
+        }else{
+        
+            alert_move($this->lang->line('procok'), '/member/login');
+        }
+    }
 }
