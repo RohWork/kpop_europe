@@ -122,7 +122,7 @@
         max-height: 400px;
         height:400px;
     }
-    .tagfy{
+    .tagify{
         width:100%;
         
     }
