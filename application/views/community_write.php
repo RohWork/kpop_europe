@@ -94,6 +94,11 @@
                         </textarea>
                     </div>
                 </div>
+                <div class="row mt-1">
+                    <div  class="col-md-6 col-xs-6">
+                        <input name='basic'>
+                    </div>
+                </div>
             </div>
             <div class="row mt-1" style="padding-top:50px">
                 
@@ -118,6 +123,10 @@
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
 
 <script>
 
@@ -143,6 +152,15 @@
     .catch(error => {
         console.error(error);
     });
+    
+    
+    const input = document.querySelector('input[name=basic]');
+    let tagify = new Tagify(input); // initialize Tagify
+    
+    // 태그가 추가되면 이벤트 발생
+    tagify.on('add', function() {
+      console.log(tagify.value); // 입력된 태그 정보 객체
+    })
 </script>
 
 <script>
