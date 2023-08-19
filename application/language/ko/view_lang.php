@@ -88,7 +88,7 @@
     $lang['confirmdata'] = "입력된 데이터를 확인하세요.";
     $lang['confirmemail'] = "이메일주소를 확인하세요.";
     $lang['confirmpassword'] = "비밀번호를 확인하세요.";
-    $lang['confirmsee'] = "해당글은 과반수의 반대로 차단된 글입니다.\n 글을 보시겠습니까?";
+    $lang['confirmsee'] = "해당글은 과반수의 반대로 차단된 글입니다. 글을 보시겠습니까?";
     $lang['checkmail'] = "전송된 이메일을 확인하세요.";
     
     
