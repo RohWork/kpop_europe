@@ -183,6 +183,7 @@
     // 태그가 추가되면 이벤트 발생
     var tagify = new Tagify(input, {
       //whitelist: ["foo", "bar", "baz"],
+      maxTags: 10,
       dropdown: {
         position: "input",
         enabled : 0 // always opens dropdown when input gets focus
