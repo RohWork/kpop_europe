@@ -30,7 +30,6 @@ class Member extends CI_Controller {
         $result = $this->mem_md->login_check_member($email, $pass);
         
         var_dump($result);
-        exit;
         
         if($result){
             
