@@ -98,7 +98,7 @@
             
             <div class="row mt-1">
                 <div  class="col-md-6 col-xs-6">
-                    <input name='basic'  style="width:100%">
+                    <input name='tags-outside' class='tagify--outside' placeholder='write tags to add below'>
                 </div>
             </div>
             
@@ -124,7 +124,23 @@
     }
     .tagify{
         width:100%;
-        
+    }
+    .tagify--outside{
+        border: 0;
+    }
+
+    .tagify--outside .tagify__input{
+      order: -1;
+      flex: 100%;
+      border: 1px solid var(--tags-border-color);
+      margin-bottom: 1em;
+      transition: .1s;
+    }
+
+    .tagify--outside .tagify__input:hover{ border-color:var(--tags-hover-border-color); }
+    .tagify--outside.tagify--focus .tagify__input{
+      transition:0s;
+      border-color: var(--tags-focus-border-color);
     }
 </style>
 
@@ -161,12 +177,15 @@
     });
     
     
-    const input = document.querySelector('input[name=basic]');
-    let tagify = new Tagify(input); // initialize Tagify
-    
+    var input = document.querySelector('input[name=tags-outside]');
+
     // 태그가 추가되면 이벤트 발생
-    tagify.on('add', function() {
-      console.log(tagify.value); // 입력된 태그 정보 객체
+    var tagify = new Tagify(input, {
+      //whitelist: ["foo", "bar", "baz"],
+      dropdown: {
+        position: "input",
+        enabled : 0 // always opens dropdown when input gets focus
+      }
     })
 </script>
 
