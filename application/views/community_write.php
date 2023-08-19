@@ -127,6 +127,7 @@
     }
     .tagify--outside{
         border: 0;
+        min-height: 90px;
     }
 
     .tagify--outside .tagify__input{
