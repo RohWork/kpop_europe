@@ -122,6 +122,10 @@
         max-height: 400px;
         height:400px;
     }
+    .tagfy{
+        width:100%;
+        
+    }
 </style>
 
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
