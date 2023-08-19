@@ -98,7 +98,7 @@
             
             <div class="row mt-1">
                 <div  class="col-md-6 col-xs-6">
-                    <input name='basic'>
+                    <input name='basic'  style="width:100%">
                 </div>
             </div>
             
