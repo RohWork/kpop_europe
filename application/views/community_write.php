@@ -94,12 +94,14 @@
                         </textarea>
                     </div>
                 </div>
-                <div class="row mt-1">
-                    <div  class="col-md-6 col-xs-6">
-                        <input name='basic'>
-                    </div>
+            </div>
+            
+            <div class="row mt-1">
+                <div  class="col-md-6 col-xs-6">
+                    <input name='basic'>
                 </div>
             </div>
+            
             <div class="row mt-1" style="padding-top:50px">
                 
                 <div class="col-md-6 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
