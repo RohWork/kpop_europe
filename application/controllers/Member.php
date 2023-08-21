@@ -11,6 +11,10 @@ class Member extends CI_Controller {
         $this->load->model('City_model', 'city_md', TRUE);
         
         $lang = $this->session->userdata('lang');
+        
+        if(empty($lang)){
+            $lang = "en"; 
+        }
         $this->lang->load('controller', $lang);
 
     }
