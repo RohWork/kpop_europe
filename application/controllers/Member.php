@@ -41,7 +41,7 @@ class Member extends CI_Controller {
                 session_commit();
                 session_write_close();
 
-                $data['message'] = $this->lang->line('hi')." ".$result['nick'];
+                $data['message'] = $this->lang->line('hi').", ".$result['nick'];
 
                 $data['result'] = 200;
             }else{
