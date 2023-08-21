@@ -282,8 +282,8 @@ class Member extends CI_Controller {
         
         $data['country_list'] = $this->cont_md->get_country();
         
-        if(!empty($search['country'])){
-            $data['city_list'] = $this->city_md->get_city($search['country']);
+        if(!empty($data['user_info']['country'])){
+            $data['city_list'] = $this->city_md->get_city($data['user_info']['country']);
         }else{
             $data['city_list'] = "";
         }
