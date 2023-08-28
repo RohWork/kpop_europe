@@ -24,7 +24,7 @@
             <?php if(empty($this->session->userdata('name') )){ ?>
             <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/login'">LOGIN</button>
             <?php }else{ ?>
-            <p class="text-center" style="width:100%;cursor: pointer" onclick="locaiton.href='/member/my_info'">hi! <b><?=$this->session->userdata('nick')?></b></p>
+            <p class="text-center" style="width:100%;cursor: pointer" onclick="location.href='/member/my_info'">hi! <b><?=$this->session->userdata('nick')?></b></p>
             <button class="btn btn-success text-center" style="width:100%" onclick="location.href='/member/logout'">LOGOUT</button>
             <?php } ?>
         </div>
