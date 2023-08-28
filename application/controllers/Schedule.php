@@ -21,8 +21,16 @@ class Schedule extends CI_Controller {
         if(!empty($this->input->get_post("date"))){
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
         }
-        $search['country'] = $this->input->get_post("country");
-        $search['city'] = $this->input->get_post("city");
+        
+        $search['country'] = $this->session->userdata('country_idx');
+        $search['city'] = $this->session->userdata('city_idx');
+        
+        if(!empty($this->input->get_post("country"))){
+            $search['country'] = $this->input->get_post("country");
+        }
+        if(!empty($this->input->get_post("city"))){
+            $search['city'] = $this->input->get_post("city");
+        }
         $search['organizer'] = $this->input->get_post("organization");
         $search['type'] = $this->input->get_post("type");
         
