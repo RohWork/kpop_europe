@@ -24,6 +24,7 @@ class Community extends CI_Controller {
         
         $search['country'] = $this->session->userdata('country_idx');
         $search['city'] = $this->session->userdata('city_idx');
+        $search['language'] = $this->session->userdata('lang');
         
         if(!empty($this->input->get_post("country"))){
             $search['country'] = $this->input->get_post("country");
@@ -32,10 +33,10 @@ class Community extends CI_Controller {
             $search['city'] = $this->input->get_post("city");
         }
         
-        $search['language'] = $this->input->get_post("language");
         
-        if(empty($search['language'])){
-            $search['language'] = $this->session->userdata('lang');
+        
+        if(!empty($this->input->get_post("language"))){
+            $search['language'] = $this->input->get_post("language");
         }
         
         $data['country_list'] = $this->cont_md->get_country();
