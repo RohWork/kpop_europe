@@ -315,7 +315,7 @@ class Member extends CI_Controller {
         
         
         
-        $this->session->set_userdata(array("lang" => $params['language']));
+        $this->session->set_userdata(array("language" => $params['language']));
         
         
         if(empty($this->session->userdata('id'))){
