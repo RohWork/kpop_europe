@@ -27,10 +27,11 @@ function get_langueage_list(){
             "id"    =>  "ko",
             "val"   =>  "한국어",
         ),
+        /*
         array(
             "id"    => "de",
             "val"   => "Deutsch"
-        )
+        )*/
         
     );
     
