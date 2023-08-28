@@ -319,11 +319,8 @@ class Member extends CI_Controller {
         $this->session->set_userdata($params);
         
         
-        $lang = $this->session->userdata('lang');
+        $lang = $params['lang'];
         
-        if(empty($lang)){
-            $lang = "en"; 
-        }
         $this->lang->load('controller', $lang);
         
         if(empty($this->session->userdata('id'))){
