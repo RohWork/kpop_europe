@@ -119,7 +119,7 @@
                     $('#check_city').append("<option value=''></option>");
                     for(var i =0; i<data_array.length;i++){
                         
-                        if(j == <?=$user_info['country_idx']?>){
+                        if(j == '<?=$user_info['country_idx']?>'){
                             if(data.result[i]['idx'] == <?=$user_info['city_idx']?>){
                                 var selected = "selected";
                             }else{
