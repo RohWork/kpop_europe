@@ -37,6 +37,7 @@
                         <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
                             <option value=""></option>
                             <?php foreach($country_list as $cnt){ 
+                                echo $search['country'];
                                 $search_cnt = "";
                                 if($search['country'] == $cnt['idx']){
                                     $search_cnt = "selected";
