@@ -310,11 +310,12 @@ class Member extends CI_Controller {
         $params['country_idx'] = $this->input->post("country");
         $params['city_idx'] = $this->input->post("city");
         $params['language'] = $this->input->post("language");
-        $params['lang'] = $this->input->post("language");
+        
         
         $result = $this->mem_md->modify_member($params, $id);
         
         
+        $params['lang'] = $this->input->post("language");
         
         $this->session->set_userdata($params);
         
