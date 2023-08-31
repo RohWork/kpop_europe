@@ -98,7 +98,7 @@
             
             <div class="row mt-1">
                 <div  class="col-md-6 col-xs-6">
-                    <input name='tags-outside' class='tagify--outside' placeholder='write tags to add below'>
+                    
                     <input name='postTag' placeholder="#해시태그" type="hidden">
                 </div>
             </div>
@@ -179,7 +179,7 @@
     });
     
     
-    var input = document.querySelector('input[name=tags-outside]');
+    var input = document.querySelector('input[name=postTag]');
 
     // 태그가 추가되면 이벤트 발생
     var tagify = new Tagify(input, {
