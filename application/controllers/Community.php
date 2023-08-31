@@ -32,9 +32,6 @@ class Community extends CI_Controller {
         if(!empty($this->input->get_post("city"))){
             $search['city'] = $this->input->get_post("city");
         }
-        
-        
-        
         if(!empty($this->input->get_post("language"))){
             $search['language'] = $this->input->get_post("language");
         }
@@ -120,7 +117,17 @@ class Community extends CI_Controller {
         $params['language'] = $this->input->post("language");
         $params['title'] = $this->input->post("title");
         $params['content'] = $this->input->post("content");
-       
+        $hash_tag_array = $this->input->post("postTag");
+        $params['hashtag'] = "";
+        
+        for($i=0;$i<count($post_tag_array);$i++){
+            if($i==0){
+                $params['hashtag'] .= $post_tag_array[$i];
+            }else{
+                $params['hashtag'] .= "/".$post_tag_array[$i];
+            }
+        }
+        
 
         $result = $this->com_md->insert_community($params);
         
