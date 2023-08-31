@@ -197,6 +197,17 @@ class Community extends CI_Controller {
         $params['content'] = $this->input->post("content");
         $idx = $this->input->post("idx");
         
+        $hash_tag_array = $this->input->post("postTag");
+        $params['hashtag'] = "";
+        
+        for($i=0;$i<count($post_tag_array);$i++){
+            if($i==0){
+                $params['hashtag'] .= $post_tag_array[$i];
+            }else{
+                $params['hashtag'] .= "/".$post_tag_array[$i];
+            }
+        }
+        
         $result = $this->com_md->modify_community($params, $idx);
         
         if(!$result){
