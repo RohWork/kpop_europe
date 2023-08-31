@@ -255,7 +255,7 @@
             console.log(hash_tag_string);
         }
        
-        post_params += "&hash_tag="+hash_tag_string;
+        post_params += "&hashtag="+hash_tag_string;
         
         $.ajax({
             url:'/community/write_ajax',
