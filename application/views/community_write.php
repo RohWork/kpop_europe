@@ -254,7 +254,6 @@
             }
             console.log(hash_tag_string);
         }
-        return;
        
         post_params += "&hash_tag="+hash_tag_string;
         
