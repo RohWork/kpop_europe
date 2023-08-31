@@ -188,6 +188,8 @@ class Community extends CI_Controller {
         $params['language'] = $this->input->post("language");
         $params['title'] = $this->input->post("title");
         $params['content'] = $this->input->post("content");
+        $params['hashtag'] = $this->input->post("hashtag");
+        
         $idx = $this->input->post("idx");
         
         $hash_tag_array = $this->input->post("postTag");
