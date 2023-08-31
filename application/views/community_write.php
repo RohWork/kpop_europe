@@ -98,8 +98,11 @@
             
             <div class="row mt-1">
                 <div  class="col-md-6 col-xs-6">
-                    
+                    <div class="form-floating">
                     <input name='postTag' placeholder="#write tags to add below" type="hidden">
+                    <label for="title" class="form-label" >
+                        <?=$this->lang->line('title')?>
+                    </label>
                 </div>
             </div>
             
