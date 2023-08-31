@@ -46,7 +46,20 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="row" style="padding-top: 5px">
+                    
+                    <div class="col-9" >
+                        <div style="height:50vh" class="border">
+                            <?php
+                                $hashtag = explode("/",$detail['hashtag']);
+                                foreach($hashtag as $h){
+                                    echo $h;
+                                }
+                            
+                            ?>
+                        </div>
+                    </div>
+                </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-6">
                         <button type="button" class="btn btn-success" onclick="like_community(1, <?=$idx?>)">
