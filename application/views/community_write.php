@@ -241,7 +241,9 @@
         var post_params = $("#community_write").serialize();
         var content = editor.getData();
         post_params += "&content="+content;
-
+        
+        var tag = tagify.value;
+        post_params += "&hash_tag="+tag;
         
         $.ajax({
             url:'/community/write_ajax',
