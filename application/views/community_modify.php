@@ -188,6 +188,18 @@
         enabled : 0 // always opens dropdown when input gets focus
       }
     })
+
+    <?php
+        $hashtag = explode("/",$detail['hashtag']);
+        foreach($hashtag as $h){
+    ?>
+            tagify.addTags("<?=$h?>");
+    <?php
+        }
+                            
+    ?>
+
+    
 </script>
 
 <script>
