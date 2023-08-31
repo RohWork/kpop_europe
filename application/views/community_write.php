@@ -103,6 +103,7 @@
                     <label for="title" class="form-label" >
                         <?=$this->lang->line('title')?>
                     </label>
+                    </div>
                 </div>
             </div>
             
