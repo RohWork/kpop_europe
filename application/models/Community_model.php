@@ -30,8 +30,8 @@ class Community_model extends CI_Model {
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
                 from kpop_community as kc 
                 left join kpop_member as m on kc.writer = m.id
-                where kc.state = 1 $where $limit
-                order by idx desc";
+                where kc.state = 1 $where 
+                order by idx desc $limit";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
