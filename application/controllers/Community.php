@@ -120,11 +120,11 @@ class Community extends CI_Controller {
         $hash_tag_array = $this->input->post("postTag");
         $params['hashtag'] = "";
         
-        for($i=0;$i<count($post_tag_array);$i++){
+        for($i=0;$i<count($hash_tag_array);$i++){
             if($i==0){
-                $params['hashtag'] .= $post_tag_array[$i];
+                $params['hashtag'] .= $hash_tag_array[$i];
             }else{
-                $params['hashtag'] .= "/".$post_tag_array[$i];
+                $params['hashtag'] .= "/".$hash_tag_array[$i];
             }
         }
         
@@ -200,11 +200,11 @@ class Community extends CI_Controller {
         $hash_tag_array = $this->input->post("postTag");
         $params['hashtag'] = "";
         
-        for($i=0;$i<count($post_tag_array);$i++){
+        for($i=0;$i<count($hash_tag_array);$i++){
             if($i==0){
-                $params['hashtag'] .= $post_tag_array[$i];
+                $params['hashtag'] .= $hash_tag_array[$i];
             }else{
-                $params['hashtag'] .= "/".$post_tag_array[$i];
+                $params['hashtag'] .= "/".$hash_tag_array[$i];
             }
         }
         
