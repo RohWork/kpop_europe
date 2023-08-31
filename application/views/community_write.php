@@ -243,7 +243,7 @@
         post_params += "&content="+content;
         
         var tag = JSON.parse(tagify.value);
-        console.log(tag);
+        console.log(tag.value);
         post_params += "&hash_tag="+tag;
         
         $.ajax({
