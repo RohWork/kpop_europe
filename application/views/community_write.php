@@ -242,7 +242,7 @@
         var content = editor.getData();
         post_params += "&content="+content;
         
-        var tag = json.parse(tagify.value);
+        var tag = JSON.parse(tagify.value);
         console.log(tag);
         post_params += "&hash_tag="+tag;
         
