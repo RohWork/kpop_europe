@@ -99,6 +99,7 @@
             <div class="row mt-1">
                 <div  class="col-md-6 col-xs-6">
                     <input name='tags-outside' class='tagify--outside' placeholder='write tags to add below'>
+                    <input name='postTag' placeholder="#해시태그" type="hidden">
                 </div>
             </div>
             
