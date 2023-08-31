@@ -245,7 +245,7 @@
         var tag = tagify.value;
         var hash_tag_string;
         
-        for(var i=0; i<tag.length; i++)){
+        for(var i=0; i<tag.length; i++){
             console.log(tag[i].value);
             if(i==0){
                 hash_tag_string = tag[i].value;
