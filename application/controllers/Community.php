@@ -122,9 +122,9 @@ class Community extends CI_Controller {
 
         foreach($hash_tag_array as $hash){
             if($i==0){
-                $params['hashtag'] .= $hash['value'];
+                $params['hashtag'] .= $hash->value;
             }else{
-                $params['hashtag'] .= "/".$hash['value'];
+                $params['hashtag'] .= "/".$hash->value;
             }
         }
         
