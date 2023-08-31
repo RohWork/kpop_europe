@@ -99,7 +99,7 @@
             <div class="row mt-1">
                 <div  class="col-md-6 col-xs-6">
                     
-                    <input name='postTag' placeholder="#해시태그" type="hidden">
+                    <input name='postTag' placeholder="#write tags to add below" type="hidden">
                 </div>
             </div>
             
