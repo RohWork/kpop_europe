@@ -243,6 +243,7 @@
         post_params += "&content="+content;
         
         var tag = tagify.value;
+        console.log(tag);
         post_params += "&hash_tag="+tag;
         
         $.ajax({
