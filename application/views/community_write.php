@@ -242,8 +242,18 @@
         var content = editor.getData();
         post_params += "&content="+content;
         
-        var tag = JSON.parse(tagify.value);
-        console.log(tag.value);
+        var tag = tagify.value;
+        var hash_tag_string;
+        
+        for(var i=0; i<tag.length; i++)){
+            console.log(tag[i].value);
+            if(i==0){
+                hash_tag_string = tag[i].value;
+            }else{
+                hash_tag_string = hash_tag_string+"/"+tag[i].value;
+            }
+        }
+       
         post_params += "&hash_tag="+tag;
         
         $.ajax({
