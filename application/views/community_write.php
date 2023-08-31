@@ -243,7 +243,7 @@
         post_params += "&content="+content;
         
         var tag = tagify.value;
-        var hash_tag_string;
+        var hash_tag_string = "";
         
         for(var i=0; i<tag.length; i++){
             console.log(hash_tag_string);
