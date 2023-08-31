@@ -254,7 +254,7 @@
             }
         }
        
-        post_params += "&hash_tag="+tag;
+        post_params += "&hash_tag="+hash_tag_string;
         
         $.ajax({
             url:'/community/write_ajax',
