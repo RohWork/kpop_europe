@@ -246,12 +246,13 @@
         var hash_tag_string = "";
         
         for(var i=0; i<tag.length; i++){
-            console.log(hash_tag_string);
+            
             if(i==0){
                 hash_tag_string = tag[i].value;
             }else{
                 hash_tag_string = hash_tag_string+"/"+tag[i].value;
             }
+            console.log(hash_tag_string);
         }
         return;
        
