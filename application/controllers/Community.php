@@ -200,11 +200,11 @@ class Community extends CI_Controller {
         $hash_tag_array = $this->input->post("postTag");
         $params['hashtag'] = "";
         
-        for($i=0;$i<count($hash_tag_array);$i++){
+        foreach($hash_tag_array as $hash)
             if($i==0){
-                $params['hashtag'] .= $hash_tag_array[$i]['value'];
+                $params['hashtag'] .= $hash['value'];
             }else{
-                $params['hashtag'] .= "/".$hash_tag_array[$i]['value'];
+                $params['hashtag'] .= "/".$hash['value'];
             }
         }
         
