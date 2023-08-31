@@ -121,12 +121,12 @@ class Community extends CI_Controller {
         $params['hashtag'] = "";
         
         $i =0;
-        foreach($hash_tag_array as $hash){
+        foreach($hash_tag_array as $hdata){
             
             if($i==0){
-                $params['hashtag'] .= $hash->value;
+                $params['hashtag'] .= $hdata->value;
             }else{
-                $params['hashtag'] .= "/".$hash->value;
+                $params['hashtag'] .= "/".$hdata->value;
             }
             $i++;
         }
