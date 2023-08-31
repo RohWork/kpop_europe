@@ -122,9 +122,9 @@ class Community extends CI_Controller {
         echo $hash_tag_array;
         for($i=0;$i<count($hash_tag_array);$i++){
             if($i==0){
-                $params['hashtag'] .= $hash_tag_array[$i];
+                $params['hashtag'] .= $hash_tag_array[$i]['value'];
             }else{
-                $params['hashtag'] .= "/".$hash_tag_array[$i];
+                $params['hashtag'] .= "/".$hash_tag_array[$i]['value'];
             }
         }
         
@@ -202,9 +202,9 @@ class Community extends CI_Controller {
         
         for($i=0;$i<count($hash_tag_array);$i++){
             if($i==0){
-                $params['hashtag'] .= $hash_tag_array[$i];
+                $params['hashtag'] .= $hash_tag_array[$i]['value'];
             }else{
-                $params['hashtag'] .= "/".$hash_tag_array[$i];
+                $params['hashtag'] .= "/".$hash_tag_array[$i]['value'];
             }
         }
         
