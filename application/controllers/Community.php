@@ -117,20 +117,9 @@ class Community extends CI_Controller {
         $params['language'] = $this->input->post("language");
         $params['title'] = $this->input->post("title");
         $params['content'] = $this->input->post("content");
-        $hash_tag_array = $this->input->post("hashtag");
-        $params['hashtag'] = "";
+        $params['hashtag'] = $this->input->post("hashtag");
         
-        $i =0;
-        echo $hash_tag_array;
-        foreach($hash_tag_array[0] as $hdata){
-            
-            if($i==0){
-                $params['hashtag'] .= $hdata->value;
-            }else{
-                $params['hashtag'] .= "/".$hdata->value;
-            }
-            $i++;
-        }
+
         
 
         $result = $this->com_md->insert_community($params);
