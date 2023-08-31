@@ -53,7 +53,7 @@
                             <?php
                                 $hashtag = explode("/",$detail['hashtag']);
                                 foreach($hashtag as $h){
-                                    echo $h;
+                                    echo "#".$h."\nbsp;";
                                 }
                             
                             ?>
