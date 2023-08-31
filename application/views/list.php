@@ -37,7 +37,7 @@
 
                                 <?php } ?>
                             </select>
-                            <label class="form-label col-1">
+                            <label class="form-label">
                                 <?=$this->lang->line('country')?>
                             </label>
                         </div>
@@ -59,7 +59,7 @@
 
                                 <?php } ?>
                             </select>
-                            <label class="form-label col-1">
+                            <label class="form-label">
                                 <?=$this->lang->line('city')?>
                             </label>
                         </div>
