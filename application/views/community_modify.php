@@ -94,6 +94,12 @@
                         </textarea>
                     </div>
                 </div>
+                <div class="row mt-1">
+                <div  class="col-md-6 col-xs-6">
+                    
+                    <input name='postTag' placeholder="#write tags to add below" type="hidden">
+                </div>
+            </div>
             </div>
             <div class="row mt-1" style="padding-top:50px">
                 
@@ -115,9 +121,35 @@
         max-height: 400px;
         height:400px;
     }
+    .tagify{
+        width:100%;
+    }
+    .tagify--outside{
+        border: 0;
+        min-height: 90px;
+    }
+
+    .tagify--outside .tagify__input{
+      order: -1;
+      flex: 100%;
+      border: 1px solid var(--tags-border-color);
+      margin-bottom: 1em;
+      transition: .1s;
+    }
+
+    .tagify--outside .tagify__input:hover{ border-color:var(--tags-hover-border-color); }
+    .tagify--outside.tagify--focus .tagify__input{
+      transition:0s;
+      border-color: var(--tags-focus-border-color);
+    }
 </style>
 <script src="/asset/script/ck_edit/build/ckeditor.js"></script>
 <script src="/asset/script/ck_edit/build/translations/<?=$lang?>.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
+
 
 <script>
 
@@ -143,6 +175,19 @@
     .catch(error => {
         console.error(error);
     });
+    
+    
+    var input = document.querySelector('input[name=postTag]');
+
+    // 태그가 추가되면 이벤트 발생
+    var tagify = new Tagify(input, {
+      //whitelist: ["foo", "bar", "baz"],
+      maxTags: 10,
+      dropdown: {
+        position: "input",
+        enabled : 0 // always opens dropdown when input gets focus
+      }
+    })
 </script>
 
 <script>
@@ -194,7 +239,23 @@
         var post_params = $("#community_write").serialize();
         var content = editor.getData();
         post_params += "&content="+content;
-    
+        
+        
+        var tag = tagify.value;
+        var hash_tag_string = "";
+        
+        for(var i=0; i<tag.length; i++){
+            
+            if(i==0){
+                hash_tag_string = tag[i].value;
+            }else{
+                hash_tag_string = hash_tag_string+"/"+tag[i].value;
+            }
+            console.log(hash_tag_string);
+        }
+       
+        post_params += "&hashtag="+hash_tag_string;
+        
             
         $.ajax({
             url:'/community/modify_ajax',
