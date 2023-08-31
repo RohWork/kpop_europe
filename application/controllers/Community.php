@@ -48,7 +48,7 @@ class Community extends CI_Controller {
         
         $this->load->library('pagination');
     
-        $config['base_url'] = '/schedule/list';
+        $config['base_url'] = '/community/list';
         $config['reuse_query_string'] = true;
         $config['total_rows'] = count($result);
         $config['per_page'] = 10;
