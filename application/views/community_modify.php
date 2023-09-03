@@ -59,7 +59,7 @@
                                     for($i=0;$i<count($lang_array);$i++){
                                     
                                         $search_lang = "";
-                                        if($language == $lang_array[$i]['id']){
+                                        if($lang == $lang_array[$i]['id']){
                                             $search_lang = "selected";
                                         }
                                      ?>
