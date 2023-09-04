@@ -41,6 +41,7 @@
     $lang['reset'] = "RESET";
     $lang['return'] = "RETURN";
     $lang['searchdate'] = "SEARCH DATE";
+    $lang['showall'] = "VIEW ALL";
     
     $lang['home'] = "HOME";
     $lang['event'] = "Event";
