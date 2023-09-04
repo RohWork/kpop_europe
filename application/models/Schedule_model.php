@@ -13,13 +13,19 @@ class Schedule_model extends CI_Model {
         $where = "";
         
         if(!empty($search['country'])){
-            $where .= " AND ki.country_idx ='".$search['country']."'";
+            if($search['country'] != 'all'){
+                $where .= " AND ki.country_idx ='".$search['country']."'";
+            }
         }
         if(!empty($search['city'])){
-            $where .= " AND ki.city_idx ='".$search['city']."'";
+            if($search['city'] != 'all'){
+                $where .= " AND ki.city_idx ='".$search['city']."'";
+            }
         }
         if(!empty($search['organizer'])){
-            $where .= " AND ki.organization_idx ='".$search['organizer']."'";
+            if($search['organizer'] != 'all'){
+                $where .= " AND ki.organization_idx ='".$search['organizer']."'";
+            }
         }
         
         if(!empty($search['type'])){
