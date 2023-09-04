@@ -16,7 +16,7 @@
                 <form action="/city" method="post">
                     <div class="form-floating">
                         <select name="country" id="country_list" onchange="this.form.submit();" class="form-select">
-                            <option value="">
+                            <option value="all"><?=$this->lang->line('viewall')?></option>
                             <?php
                                 foreach($country as $cnt){
                                     $selected = "";
