@@ -15,5 +15,5 @@
     $lang['count'] = 'COUNT';
     $lang['detail'] = 'DETAIL';
     $lang['neterror'] = 'Network Error!! take support to web manager!!';
-    
+    $lang['viewall'] = 'VIEW ALL';
 ?>
