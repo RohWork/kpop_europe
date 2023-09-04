@@ -164,7 +164,7 @@
                     
                     var data_array = data.result;
 
-                    $('#check_city').append("<option value=''></option>");
+                    $('#check_city').append("<option value='all'><?=$this->lang->line('viewall')?></option>");
                     for(var i =0; i<data_array.length;i++){
                         
                         var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
