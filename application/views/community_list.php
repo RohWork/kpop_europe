@@ -13,7 +13,7 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
-                                <option value=""></option>
+                                <option value="all"></option>
                                 <?php foreach($country_list as $cnt){ 
                                     $search_cnt = "";
                                     if($search['country'] == $cnt['idx']){
@@ -31,7 +31,7 @@
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="check_city" name="city" class="form-select">
-                                <option value=""></option>
+                                <option value="all"></option>
                                 <?php foreach($city_list as $cty){ 
                                     
                                     $search_cty = "";
