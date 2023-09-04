@@ -29,7 +29,9 @@ class Schedule_model extends CI_Model {
         }
         
         if(!empty($search['type'])){
-            $where .= " AND ki.type ='".$search['type']."'";
+            if($search['type'] != 'all'){
+                $where .= " AND ki.type ='".$search['type']."'";
+            }
         }
         
         $sSql = "SELECT count(*) as cnt,DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date,DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date FROM kpop_info AS ki 
