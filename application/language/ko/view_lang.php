@@ -41,7 +41,7 @@
     $lang['close'] = "닫기";
     $lang['reset'] = "초기화";
     $lang['return'] = "돌아가기";
-    $lang['showall'] = "전체보기";
+    $lang['viewall'] = "전체보기";
     
     $lang['comment'] = "댓글";
     $lang['searchdate'] = "검색일자";
