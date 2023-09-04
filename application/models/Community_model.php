@@ -13,17 +13,25 @@ class Community_model extends CI_Model {
         $where = "";
         $limit = "";
         
-        if(!empty($search['country'])){
-            $where .= " AND kc.country_idx ='".$search['country']."'";
+        if(!empty($search['country']) ){
+            if($country_idx != 'all'){
+                $where .= " AND kc.country_idx ='".$search['country']."'";
+            }
         }
         if(!empty($search['city'])){
-            $where .= " AND kc.city_idx ='".$search['city']."'";
+            if($country_idx != 'all'){
+                $where .= " AND kc.city_idx ='".$search['city']."'";
+            }
         }
         if(!empty($search['language'])){
-            $where .= " AND kc.language ='".$search['language']."'";
+            if($country_idx != 'all'){
+                $where .= " AND kc.language ='".$search['language']."'";
+            }
         }
         if(!empty($paging)){
-            $limit = " limit ".$paging['start'].",".$paging['end'];
+            if($country_idx != 'all'){
+                $limit = " limit ".$paging['start'].",".$paging['end'];
+            }
         }
         
         $sSql = "select kc.* , m.nick as mnick,
