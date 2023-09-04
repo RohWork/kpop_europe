@@ -23,8 +23,10 @@ class City_model extends CI_Model {
     function get_city( $country_idx = "" , $city_idx = "" ){
         
         $where = "";
-        if(!empty($country_idx) && $country_idx != 'all'){
-            $where = "and kc.country_idx = $country_idx";
+        if(!empty($country_idx)){
+            if($country_idx != 'all'){
+                $where = "and kc.country_idx = $country_idx";
+            }
         }
 
         $sSql = "SELECT kc.*, ko.name as country_name FROM `kpop_city` as kc "
