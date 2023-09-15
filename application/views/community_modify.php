@@ -276,7 +276,7 @@
             success:function(data){
                 if(data.result == 200){
                     alert('<?=$this->lang->line('completemodify')?>');
-                    location.href = "/community/list";
+                    location.href = "/community/detail/<?=$idx?>";
                 }else{
                     alert('<?=$this->lang->line('checktodata')?>');
                     console.log(data);
