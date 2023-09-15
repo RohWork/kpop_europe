@@ -126,9 +126,10 @@ class Community extends CI_Controller {
         
         if(!$result){
             $data['result'] = 400;
-            $data['idx'] = $result;
+            
             $data['message'] = $this->lang->line('dataerror');
         }
+        $data['idx'] = $result;
 
         header("Content-Type: application/json;");
         echo json_encode($data);
