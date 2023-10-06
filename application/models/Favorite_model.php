@@ -8,9 +8,12 @@ class Country_model extends CI_Model {
         parent::__construct();
     }
     
-    public function list($user_id){
+    public function list($user_id, $month){
         
-        $sSql = "SELECT * FROM `kpop_favorites` where state = '1' and user_id = '$user_id' order by ord asc, idx desc";
+        $sSql = "   SELECT ki.* 
+                    FROM `kpop_favorites` as kf 
+                    left join kpop_info as ki on kf.kpop_idx = ki.idx and ki.reg_date like '$month%'
+                    where state = '1' and user_id = '$user_id' and  order by ord asc, idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
