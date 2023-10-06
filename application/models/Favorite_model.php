@@ -10,7 +10,7 @@ class Country_model extends CI_Model {
     
     public function list($user_id, $month){
         
-        $sSql = "   SELECT ki.* ,kf.reg_date, kf.mod_date
+        $sSql = "   SELECT ki.* ,kf.reg_date
                     FROM `kpop_favorites` as kf 
                     left join kpop_info as ki on kf.kpop_idx = ki.idx and ki.reg_date like '$month%'
                     where state = '1' and user_id = '$user_id' and  order by ord asc, idx desc";
