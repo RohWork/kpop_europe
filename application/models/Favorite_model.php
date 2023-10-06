@@ -26,10 +26,22 @@ class Country_model extends CI_Model {
         $params['user_id'] = $this->session->userdata('id');
         $params['kpop_idx'] = $data['kpop_idx'];
         
-        $params['regi_date'] = date('Y-m-d h:i:s');
+        $params['reg_date'] = date('Y-m-d h:i:s');
         $this->db->insert('kpop_country', $params);
         
         return $this->db->insert_id();
+        
+    }
+    
+    public function modify($params, $favorite_idx){
+        
+        
+        $params['mod_date'] = date('Y-m-d h:i:s');
+        
+        $this->db->where("idx", $favorite_idx);
+        $this->db->update('kpop_country', $params);
+        
+        return $this->db->affected_rows();
         
     }
 }
