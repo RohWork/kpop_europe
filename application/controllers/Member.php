@@ -343,9 +343,13 @@ class Member extends CI_Controller {
             alert_move($this->lang->line('loginerror'), '/member/login');
         }
         
-        $user_mail = $this->session->userdata('email');
+        
+        $user_id = $this->session->userdata('id');
+        if(empty($this->input->post("month"))){
+            $month = date('m');
+        }
 
-        $data['bookmark_list'] = $this->mark_md->get_country();
+        $data['bookmark_list'] = $this->mark_md->list($user_id, $month);
         
 
         
