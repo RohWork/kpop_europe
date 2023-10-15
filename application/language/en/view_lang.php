@@ -122,6 +122,7 @@
     $lang['deleteschedule'] = "do you want to delete to the schedule?";
     $lang['deletepost'] = "do you want to delete to the post?";
     $lang['completedelete'] = "complete to delete";
+    $lang['completebookmark'] =  "complete to bookmark";
     $lang['checkemail'] = "Check to Your E-mail!";
     
     $lang['require'] = "Required input";
