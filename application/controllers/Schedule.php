@@ -175,6 +175,8 @@ class Schedule extends CI_Controller {
 
         $data = array();
         
+        $data['mode']= $this->input->get_post("mode");
+        
         $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
