@@ -11,7 +11,7 @@ class Favorite_model extends CI_Model {
     public function list($user_id, $month){
         
         $sSql = "   SELECT ki.* ,kf.reg_date
-                    FROM `kpop_favorites` as kf 
+                    FROM `kpop_bookmark` as kf 
                     left join kpop_info as ki on kf.kpop_idx = ki.idx and ki.reg_date like '$month%'
                     where state = '1' and user_id = '$user_id' and  order by ord asc, idx desc";
         
@@ -30,7 +30,7 @@ class Favorite_model extends CI_Model {
         $params['kpop_idx'] = $kpop_idx;
         
         $params['reg_date'] = date('Y-m-d h:i:s');
-        $this->db->insert('kpop_country', $params);
+        $this->db->insert('kpop_bookmark', $params);
         
         return $this->db->insert_id();
         
@@ -42,7 +42,7 @@ class Favorite_model extends CI_Model {
         $params['mod_date'] = date('Y-m-d h:i:s');
         
         $this->db->where("idx", $favorite_idx);
-        $this->db->update('kpop_country', $params);
+        $this->db->update('kpop_bookmark', $params);
         
         return $this->db->affected_rows();
         
