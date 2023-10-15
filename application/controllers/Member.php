@@ -341,7 +341,7 @@ class Member extends CI_Controller {
         
         $this->load->helper('alert');
         
-        if(empty($this->session->userdata('email'))){
+        if(empty($this->session->userdata('id'))){
             alert_move($this->lang->line('loginerror'), '/member/login');
         }
         
