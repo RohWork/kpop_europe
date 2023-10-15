@@ -55,7 +55,27 @@
     }
     
     function mark_delete(mark_idx){
-        
+        var data = { idx : mark_idx};
+                        
+        $.ajax({
+            url:'/member/delete_bookmark',
+            type:'post',
+            data:data,
+            success:function(data){
+                if(data.result == 200){
+                    alert('<?=$this->lang->line('completedelete')?>');
+                    window.parent.location.reload();
+                }else{
+                    alert('<?=$this->lang->line('checktodata')?>');
+                    console.log(data);
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
     }
     
 </script>
