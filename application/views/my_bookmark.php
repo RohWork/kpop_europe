@@ -24,12 +24,12 @@
                 <?php 
                     foreach($bookmark_list as $li){
                 ?>        
-                <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
-                    <td><?=$li['type']?></td>
-                    <td><?=$li['start_date']?></td>
-                    <td><?=$li['country_name']?></td>
-                    <td><?=$li['city_name']?></td>
-                    <td><?=$li['space']?></td>
+                <tr style="cursor: pointer">
+                    <td onclick="go_detail(<?=$li['idx']?>)"><?=$li['type']?></td>
+                    <td onclick="go_detail(<?=$li['idx']?>)"><?=$li['start_date']?></td>
+                    <td onclick="go_detail(<?=$li['idx']?>)"><?=$li['country_name']?></td>
+                    <td  onclick="go_detail(<?=$li['idx']?>)"><?=$li['city_name']?></td>
+                    <td  onclick="go_detail(<?=$li['idx']?>)"><?=$li['space']?></td>
                     <td><button type="button" class="btn btn-danger delete" onclick="mark_delete(<?=$li['mark_idx']?>)" aria-label="Delete"> <?=$this->lang->line('delete')?> </button></td>
                 </tr>   
                 <?php 
