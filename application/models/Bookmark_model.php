@@ -10,7 +10,7 @@ class Bookmark_model extends CI_Model {
     
     public function list($user_id, $month){
         
-        $sSql = "   SELECT ki.* ,kf.reg_date, kc.name AS country_name, kci.name AS city_name, ko.name AS organization_name
+        $sSql = "   SELECT ki.* ,kf.reg_date, kc.name AS country_name, kci.name AS city_name, ko.name AS organization_name, kf.idx AS mark_idx
                     FROM `kpop_bookmark` as kf 
                     left join kpop_info as ki on kf.kpop_idx = ki.idx and ( ki.start_date like '$month%' or ki.end_date like '$month%' ) 
                     LEFT JOIN kpop_country AS kc ON kc.idx = ki.country_idx
