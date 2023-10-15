@@ -153,14 +153,14 @@
             <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
             
                 
-                <button type="button" class="btn btn-warning" style="margin : 0 5vh;" onclick="set_modify()"><?=$this->lang->line('modify')?></button>
+                <button type="button" class="btn btn-warning" style="margin : 0 5vh 1vh 5vh;" onclick="set_modify()"><?=$this->lang->line('modify')?></button>
 
 
-                <button type="button" class="btn btn-danger" style="margin :0 5vh;" onclick="set_delete()"><?=$this->lang->line('delete')?></button>
+                <button type="button" class="btn btn-danger" style="margin :0 5vh 1vh 5vh;" onclick="set_delete()"><?=$this->lang->line('delete')?></button>
                 
             <?php } ?>
                 
-                <button type="button" class="btn btn-info" style="margin : 0 5vh;" onclick="self.close();"><?=$this->lang->line('close')?></button>
+                <button type="button" class="btn btn-info" style="margin : 0 5vh 1vh 5vh;" onclick="self.close();"><?=$this->lang->line('close')?></button>
                 
             </div>
         </div>
