@@ -5,6 +5,7 @@
     $lang['city'] = '도시';
     $lang['orgernizer'] = '주최사';
     
+    
     $lang['location'] = "위치";
     $lang['address'] = "주소";
     $lang['joinus'] = "회원가입";
@@ -29,6 +30,7 @@
     $lang['enddate'] = "종료일";
     $lang['searchdate'] = "검색 날짜";
     
+    $lang['bookmark'] = "즐겨찾기";
     $lang['detail'] = "상세보기";
     $lang['insert'] = "추가";
     $lang['delete'] = "삭제";
