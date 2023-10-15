@@ -19,6 +19,7 @@
                     <th><?=$this->lang->line('country')?></th>
                     <th><?=$this->lang->line('city')?></th>
                     <th>Location</th>
+                    <th></th>
                 </tr>
                 <?php 
                     foreach($bookmark_list as $li){
