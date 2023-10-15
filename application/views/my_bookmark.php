@@ -29,6 +29,7 @@
                     <td><?=$li['country_name']?></td>
                     <td><?=$li['city_name']?></td>
                     <td><?=$li['space']?></td>
+                    <td><button type="button" class="btn btn-danger delete" onclick="mark_delete(<?=$li['idx']?>)" aria-label="Delete"> <?=$this->lang->line('delete')?> </button></td>
                 </tr>   
                 <?php 
                     }
@@ -50,6 +51,10 @@
         var url="/schedule/detail/"+idx;
         
         window.open(url, 'detail', "width=500, height=700" );
+        
+    }
+    
+    function mark_delete(idx){
         
     }
     
