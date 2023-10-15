@@ -187,7 +187,7 @@
             var data = { idx : <?=$detail_info['idx']?>};
                         
             $.ajax({
-                url:'/schedule/set_mark',
+                url:'/schedule/mark_ajax',
                 type:'post',
                 data:data,
                 success:function(data){
