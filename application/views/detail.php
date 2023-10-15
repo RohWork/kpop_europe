@@ -158,7 +158,7 @@
                     <button type="button" class="btn btn-danger" onclick="set_delete()"><?=$this->lang->line('delete')?></button>
                 </div>
             <?php } ?>
-                <div class="col-4">
+                <div class="col-4 text-center">
                     <button type="button" class="btn btn-info" onclick="self.close();"><?=$this->lang->line('close')?></button>
                 </div>
             </div>
