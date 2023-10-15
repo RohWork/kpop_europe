@@ -28,6 +28,7 @@
     $lang['enddate'] = "END DATE";
     $lang['searchdate'] = "SEARCH DATE";
     
+    $lang['bookmark'] = "BOOKMARK";
     $lang['detail'] = "DETAIL";
     $lang['insert'] = "INSERT";
     $lang['delete'] = "DELETE";
