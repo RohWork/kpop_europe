@@ -49,7 +49,7 @@
     
     function go_detail(idx){
 
-        var url="/schedule/detail/"+idx;
+        var url="/schedule/detail/"+idx+"?mode=book_mark";
         
         window.open(url, 'detail', "width=500, height=700" );
         
