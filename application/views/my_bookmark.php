@@ -21,7 +21,7 @@
                     <th>Location</th>
                 </tr>
                 <?php 
-                    foreach($list as $li){
+                    foreach($bookmark_list as $li){
                 ?>        
                 <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
                     <td><?=$li['type']?></td>
