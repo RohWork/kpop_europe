@@ -148,20 +148,20 @@
 
                 </div>
             </div>
-            
-            <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
             <div class="row" style="padding-top: 15px">
+            <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
+            
                 <div class="col-4 text-end">
                     <button type="button" class="btn btn-warning" onclick="set_modify()"><?=$this->lang->line('modify')?></button>
                 </div>
                 <div class="col-4 text-center">
                     <button type="button" class="btn btn-danger" onclick="set_delete()"><?=$this->lang->line('delete')?></button>
                 </div>
+            <?php } ?>
                 <div class="col-4">
-                    <button type="button" class="btn btn-info" onclick="self.close();"><?=$this->lang->line('cancel')?></button>
+                    <button type="button" class="btn btn-info" onclick="self.close();"><?=$this->lang->line('close')?></button>
                 </div>
             </div>
-            <?php } ?>
         </div>
     </body>
     
