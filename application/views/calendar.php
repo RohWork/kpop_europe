@@ -212,9 +212,10 @@
                     <iframe src="" id="list_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> List </button>
+                    <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> Set Library </button>
+                    <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
                     <?php if($this->session->userdata('level') > 2){ ?>
-                    <button type="button" class="btn btn-danger delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> Delete </button>
+                    <button type="button" class="btn btn-danger delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> <?=$this->lang->line('delete')?> </button>
                     <?php } ?>
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
                     
