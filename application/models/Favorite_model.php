@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Country_model extends CI_Model {
+class Favorite_model extends CI_Model {
  
     public function __construct()
     {
