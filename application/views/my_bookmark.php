@@ -45,6 +45,12 @@
 <script>
     
     
+    function go_detail(idx){
 
+        var url="/schedule/detail/"+idx;
+        
+        window.open(url, 'detail', "width=500, height=700" );
+        
+    }
     
 </script>
