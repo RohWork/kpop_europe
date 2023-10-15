@@ -168,7 +168,7 @@
                                 },
                                 error: function(xhr,status,error) {
                                     console.log(xhr,status,error);
-                                    alert("'<?=$this->lang->line('neterror')?>'");
+                                    alert("<?=$this->lang->line('neterror')?>");
                                     return false;
                                 }	 
                             });
@@ -176,7 +176,7 @@
                     }
             <?php }else{ ?>
                 
-                alert("this not permmited");
+                alert("<?=$this->lang->line('permiterror')?>");
                 
             <?php } ?>
         }
