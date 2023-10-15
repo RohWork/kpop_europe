@@ -193,7 +193,7 @@
                     <div class="col-3 text-center">
                         <button type="button" onclick="form_reset()" class="btn btn-warning"><?=$this->lang->line('reset')?></button>
                     </div>
-                    <div class="col-2 text-center">
+                    <div class="col-3 text-center">
                         <button type="button" onclick="go_return()" class="btn btn-info"><?=$this->lang->line('cancel')?></button>
                     </div>
                 </div>
