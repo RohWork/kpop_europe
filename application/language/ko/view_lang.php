@@ -113,6 +113,7 @@
     $lang['completemodify'] = "수정 완료";
     $lang['completeinsert'] = "입력 완료";
     $lang['completedelete'] = "삭제 완료";
+    $lang['completebookmark'] = "즐겨찾기 완료";
     $lang['completeemail'] = "이메일 확인완료";
     
     $lang['checktodata'] = "입력된 데이터를 확인 하세요.";
