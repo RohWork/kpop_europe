@@ -56,6 +56,7 @@
     $lang['fname'] = "Family Name";
     $lang['confirm'] = "Confirm";
     $lang['myinfomodify'] = "My info Modify";
+    $lang['mybookmark'] = "My Bookmark";
     $lang['homepage'] = "Homepage";
     $lang['title'] = "Title";
     $lang['comment'] = "Comment";
