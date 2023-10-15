@@ -27,7 +27,7 @@ class Favorite_model extends CI_Model {
         $params = array();
         
         $params['user_id'] = $this->session->userdata('id');
-        $params['kpop_idx'] = $data['kpop_idx'];
+        $params['kpop_idx'] = $kpop_idx;
         
         $params['reg_date'] = date('Y-m-d h:i:s');
         $this->db->insert('kpop_country', $params);
