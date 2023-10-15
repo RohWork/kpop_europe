@@ -29,7 +29,7 @@
                     <td><?=$li['country_name']?></td>
                     <td><?=$li['city_name']?></td>
                     <td><?=$li['space']?></td>
-                    <td><button type="button" class="btn btn-danger delete" onclick="mark_delete(<?=$li['idx']?>)" aria-label="Delete"> <?=$this->lang->line('delete')?> </button></td>
+                    <td><button type="button" class="btn btn-danger delete" onclick="mark_delete(<?=$li['mark_idx']?>)" aria-label="Delete"> <?=$this->lang->line('delete')?> </button></td>
                 </tr>   
                 <?php 
                     }
@@ -54,7 +54,7 @@
         
     }
     
-    function mark_delete(idx){
+    function mark_delete(mark_idx){
         
     }
     
