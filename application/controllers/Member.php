@@ -345,7 +345,7 @@ class Member extends CI_Controller {
         
         $user_mail = $this->session->userdata('email');
 
-        $data['bookmark_list'] = $this->cont_md->get_country();
+        $data['bookmark_list'] = $this->mark_md->get_country();
         
 
         
