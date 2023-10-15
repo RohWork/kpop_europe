@@ -376,9 +376,9 @@ class Member extends CI_Controller {
         
         if(!empty($idx)){
             
-                $this->mark_md->modify($params, $idx);
+            $this->mark_md->modify($params, $idx);
 
-                $data['result'] = 200;
+            $data['result'] = 200;
             
         }else{
 
