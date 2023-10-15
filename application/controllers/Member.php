@@ -353,7 +353,6 @@ class Member extends CI_Controller {
             $month = date('m');
         }
         
-        echo $month;
         $data['bookmark_list'] = $this->mark_md->list($user_id, $month);
         
 
