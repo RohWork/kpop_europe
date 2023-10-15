@@ -92,7 +92,7 @@
         </div>
     </form>
 </div>
-
+</main>
 <script>
     
     $(document).ready(function(){
