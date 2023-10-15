@@ -9,6 +9,7 @@ class Member extends CI_Controller {
         $this->load->model('Member_model', 'mem_md', TRUE);
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
+        $this->load->model('Bookmark_model', 'mark_md', TRUE);
         
         $lang = $this->session->userdata('lang');
         
@@ -330,5 +331,28 @@ class Member extends CI_Controller {
         
             alert_move($this->lang->line('procok'), '/member/my_info');
         }
+    }
+    
+        function my_bookmark(){
+        
+        $data = array();
+        
+        $this->load->helper('alert');
+        
+        if(empty($this->session->userdata('email'))){
+            alert_move($this->lang->line('loginerror'), '/member/login');
+        }
+        
+        $user_mail = $this->session->userdata('email');
+
+        $data['bookmark_list'] = $this->cont_md->get_country();
+        
+
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('my_info',$data);
+        
+        
     }
 }
