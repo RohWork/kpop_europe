@@ -149,7 +149,7 @@
                 </div>
             </div>
             <div class="row" style="padding-top: 15px">
-            <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
+            <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx'])){ ?>
             
                 <div class="col-4 text-end">
                     <button type="button" class="btn btn-warning" onclick="set_modify()"><?=$this->lang->line('modify')?></button>
