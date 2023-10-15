@@ -335,7 +335,7 @@ class Member extends CI_Controller {
         }
     }
     
-        function my_bookmark(){
+    function my_bookmark(){
         
         $data = array();
         
@@ -365,4 +365,31 @@ class Member extends CI_Controller {
         
         
     }
+    
+    function delete_bookmark(){
+        
+        $data = array();
+        $params = array();
+        
+        $idx= $this->input->post("idx");
+        $params['state'] = 2;
+        
+        if(!empty($idx)){
+            
+                 $this->mark_md->modify($params, $idx);
+
+                $data['result'] = 200;
+            
+        }else{
+
+            $data['message'] = $this->lang->line('idxerror');
+
+            $data['result'] = 201;
+            
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+    }
+        
 }
