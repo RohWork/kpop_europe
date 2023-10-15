@@ -356,8 +356,9 @@ class Member extends CI_Controller {
 
         
         $this->load->view('header');
-        $this->load->view('my_bookmark',$data);
         $this->load->view('sidebar');
+        $this->load->view('my_bookmark',$data);
+        
         $this->load->view('footer');
         
         
