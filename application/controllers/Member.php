@@ -347,7 +347,7 @@ class Member extends CI_Controller {
         
         
         $user_id = $this->session->userdata('id');
-        if(empty($this->input->post("month"))){
+        if(empty($this->input->post_get("month"))){
             $month = date('m');
         }
 
