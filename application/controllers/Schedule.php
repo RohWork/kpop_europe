@@ -9,6 +9,7 @@ class Schedule extends CI_Controller {
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Organization_model', 'org_md', TRUE);
+        $this->load->model('Favorite_model', 'fa_md',  TRUE);
     }
     
     
@@ -576,6 +577,31 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
+    function mark_ajax(){
+        
+        $data = array();
+
+        $idx= $this->input->post("idx");
+        
+        if(!empty($idx)){
+                
+                $this->fa_md->insert($idx);
+
+                $data['result'] = 200;
+            
+        }else{
+            
+            $data['message'] = $this->lang->line('idxerror');
+
+            $data['result'] = 201;
+            
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+        
+    }
     
     
 }
