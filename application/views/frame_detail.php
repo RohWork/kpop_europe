@@ -149,7 +149,7 @@
         function set_delete(){
             
             <?php if($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']){ ?>
-                    if(confirm("do you want to delete to the schedule?")){
+                    if(confirm("<?=$this->lang->line('deleteschedule')?>")){
                         
                             var data = { idx : <?=$detail_info['idx']?>};
                         
@@ -159,16 +159,16 @@
                                 data:data,
                                 success:function(data){
                                     if(data.result == 200){
-                                        alert('complete to delete');
+                                        alert('<?=$this->lang->line('completedelete')?>');
                                         window.parent.location.reload();
                                     }else{
-                                        alert('input fail. check to data.');
+                                        alert('<?=$this->lang->line('checktodata')?>');
                                         console.log(data);
                                     }
                                 },
                                 error: function(xhr,status,error) {
                                     console.log(xhr,status,error);
-                                    alert("Network error!! Confirm to Manager!!");
+                                    alert("'<?=$this->lang->line('neterror')?>'");
                                     return false;
                                 }	 
                             });
@@ -181,5 +181,31 @@
             <?php } ?>
         }
         
+        
+        function set_mark(){
+            
+            var data = { idx : <?=$detail_info['idx']?>};
+                        
+            $.ajax({
+                url:'/schedule/delete_ajax',
+                type:'post',
+                data:data,
+                success:function(data){
+                    if(data.result == 200){
+                        alert('complete to delete');
+                        window.parent.location.reload();
+                    }else{
+                        alert('input fail. check to data.');
+                        console.log(data);
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("Network error!! Confirm to Manager!!");
+                    return false;
+                }	 
+            });
+        
+        }
     </script>
 </html>
