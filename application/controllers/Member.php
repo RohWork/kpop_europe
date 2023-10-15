@@ -347,10 +347,10 @@ class Member extends CI_Controller {
         
         
         $user_id = $this->session->userdata('id');
-        if(empty($this->input->post_get("month"))){
-            $month = date('m');
-        }else{
+        if(!empty($this->input->post_get("month"))){
             $month = $this->input->post_get("month");
+        }else{
+            $month = date('m');
         }
 
         $data['bookmark_list'] = $this->mark_md->list($user_id, $month);
