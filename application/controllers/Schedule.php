@@ -9,7 +9,7 @@ class Schedule extends CI_Controller {
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Organization_model', 'org_md', TRUE);
-        $this->load->model('Favorite_model', 'fa_md',  TRUE);
+        $this->load->model('Bookmark_model', 'mark_md',  TRUE);
     }
     
     
@@ -585,7 +585,7 @@ class Schedule extends CI_Controller {
         
         if(!empty($idx)){
                 
-                $this->fa_md->insert($idx);
+                $this->mark_md->insert($idx);
 
                 $data['result'] = 200;
             
