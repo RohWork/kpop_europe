@@ -15,8 +15,8 @@ class Bookmark_model extends CI_Model {
                     left join kpop_info as ki on kf.kpop_idx = ki.idx  
                     LEFT JOIN kpop_country AS kc ON kc.idx = ki.country_idx
                     LEFT JOIN kpop_city AS kci	ON kci.idx = ki.city_idx
-                    LEFT JOIN kpop_organization AS ko ON ko.idx = ki.organization_idx 
-                    where kf.state = '1' and user_id = '$user_id' and ki.start_date like '$month%' or ki.end_date like '$month%'  order by kf.idx desc";
+                    LEFT JOIN kpop_organization AS ko ON ko.idx = ki.organization_idx
+                    where kf.state = '1' and user_id = '$user_id' and ki.start_date like '$month%' order by kf.idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
