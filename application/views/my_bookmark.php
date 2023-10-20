@@ -189,7 +189,7 @@
         
         select_date = date;
         
-        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>&city=<?=$search['city']?>&organization=<?=$search['organizer']?>";
+        var url = "/member/schedule_list?date="+date;
         
         $('#list_frame').attr('src', url);
 
