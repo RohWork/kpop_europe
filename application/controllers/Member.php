@@ -418,6 +418,23 @@ class Member extends CI_Controller {
         
     }
     
+    function bookmark_frame_list(){
+        
+        $search = array();
+        
+        $search['date'] = $this->input->get_post("date");
+        $user_id = $this->session->userdata('id');
+        
+        $data = array();
+        $data['list'] = $this->mark_md->list($user_id,$search['date']);
+        
+        if(confirm_mobile()){ //MOBILE
+            $this->load->view('/mobile/frame_list',$data);
+        }else{
+            $this->load->view('frame_list',$data);
+        }
+    }
+    
     function delete_bookmark(){
         
         $data = array();
