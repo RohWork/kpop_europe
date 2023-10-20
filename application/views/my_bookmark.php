@@ -176,6 +176,13 @@
         });
     }
     
+    function date_move(year,month){
+        $("#year").val(year);
+        $("#month").val(month);
+        
+        $("#search_form").submit();
+    }
+    
     function go_list(date){
         
         select_date = date;
@@ -210,4 +217,5 @@
         $('#list_modal').modal("show");
         
     }
+    
 </script>
