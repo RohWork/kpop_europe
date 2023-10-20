@@ -249,8 +249,6 @@
         
         $('#list_frame').attr('src', url);
         $(".list").hide();
-        $(".modify").hide();
-        $(".delete").hide();
         
         $(".modal-title").text(date);
         
