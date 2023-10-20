@@ -176,4 +176,38 @@
         });
     }
     
+    function go_list(date){
+        
+        select_date = date;
+        
+        var url = "/schedule/frame_list?date="+date+"&country=<?=$search['country']?>&city=<?=$search['city']?>&organization=<?=$search['organizer']?>";
+        
+        $('#list_frame').attr('src', url);
+
+        $(".modal-title").text(date);
+        // 모달창 띄우기
+        $('#list_modal').modal("show");
+    }
+    
+    function go_detail(idx, name){
+        
+        detail_idx = idx;
+        
+        var url = "/schedule/frame_detail/"+idx;
+       
+        
+        $('#list_frame').attr('src', url);
+        
+        $(".modal-title").text(name);
+        $(".list").show();
+        $(".bookmark").show();
+        <?php if($this->session->userdata('level') > 2){ ?>
+                $(".delete").show();
+                $(".modify").show();
+        <?php }?>
+        
+        // 모달창 띄우기
+        $('#list_modal').modal("show");
+        
+    }
 </script>
