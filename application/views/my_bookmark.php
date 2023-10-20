@@ -140,7 +140,31 @@
     <div class="row" style="margin-top: 15px;">
 
     </div>
-
+    <div id="list_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+        
+        <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
+            <div class="modal-content" style="height:800px">
+                <div class="modal-header">
+                    <h5 class="modal-title"><?=$this->lang->line('detail')?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="" id="list_frame" style="width:100%; height:100%">etc</iframe>  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark" style="display: none"> <?=$this->lang->line('bookmark')?> </button>
+                    <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
+                    <?php if($this->session->userdata('level') > 2){ ?>
+                    <button type="button" class="btn btn-danger delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> <?=$this->lang->line('delete')?> </button>
+                    <?php } ?>
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal" aria-label="Close">Close</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </main>
 <script>
