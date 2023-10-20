@@ -58,11 +58,8 @@ class Schedule extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-        $data_calendar = $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
+        $data['calendar'] =  $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
 
-        $data['calendar'] = $data_calendar;
-        
-        
         $data['prev_month'] = $prev_month = $month - 1;
         $data['next_month'] = $next_month =  $month + 1;
         $data['prev_year'] = $data['next_year'] = $year;
