@@ -8,9 +8,11 @@
    
     <div class="row">
         <label class="form-label"><h3><?=$this->lang->line('mybookmark')?></h3></label>
-        <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
-        <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
-        <input type="hidden" id="day" name="day" value="1" />
+        <form method="get" id="search_form">
+            <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
+            <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
+            <input type="hidden" id="day" name="day" value="1" />
+        </form>
     </div>
     
      <div class="row">
