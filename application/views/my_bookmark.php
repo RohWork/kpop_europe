@@ -222,8 +222,9 @@
         $('#list_frame').attr('src', url);
         
         $(".modal-title").text(name);
-        $(".list").show();
-
+        if(mode == 0){
+            $(".list").show();
+        }
         // 모달창 띄우기
         $('#list_modal').modal("show");
         
