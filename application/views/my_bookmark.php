@@ -189,7 +189,7 @@
         
         select_date = date;
         
-        var url = "/member/schedule_list?date="+date;
+        var url = "/member/bookmark_frame_list?date="+date;
         
         $('#list_frame').attr('src', url);
 
