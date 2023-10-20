@@ -167,13 +167,6 @@
     
     var select_date;
     
-    function go_detail_open(idx){
-
-        var url="/schedule/detail/"+idx+"?mode=book_mark";
-        
-        window.open(url, 'detail', "width=500, height=700" );
-        
-    }
     
     function mark_delete(mark_idx){
         var data = { idx : mark_idx};
