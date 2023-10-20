@@ -255,5 +255,7 @@
         $(".modal-title").text(date);
         
     }
-    
+    $(".close").on('click', function(){    
+        $('#list_modal').modal('hide');
+    });
 </script>
