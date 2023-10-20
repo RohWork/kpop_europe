@@ -124,11 +124,11 @@
                     foreach($bookmark_list as $li){
                 ?>        
                 <tr style="cursor: pointer">
-                    <td onclick="go_detail(<?=$li['idx']?>)"><?=$li['type']?></td>
-                    <td onclick="go_detail(<?=$li['idx']?>)"><?=$li['start_date']?></td>
-                    <td onclick="go_detail(<?=$li['idx']?>)"><?=$li['country_name']?></td>
-                    <td  onclick="go_detail(<?=$li['idx']?>)"><?=$li['city_name']?></td>
-                    <td  onclick="go_detail(<?=$li['idx']?>)"><?=$li['space']?></td>
+                    <td onclick="go_detail(<?=$li['idx']?>,1)"><?=$li['type']?></td>
+                    <td onclick="go_detail(<?=$li['idx']?>,1)"><?=$li['start_date']?></td>
+                    <td onclick="go_detail(<?=$li['idx']?>,1)"><?=$li['country_name']?></td>
+                    <td  onclick="go_detail(<?=$li['idx']?>,1)"><?=$li['city_name']?></td>
+                    <td  onclick="go_detail(<?=$li['idx']?>,1)"><?=$li['space']?></td>
                     <td><button type="button" class="btn btn-danger delete" onclick="mark_delete(<?=$li['mark_idx']?>)" aria-label="Delete"> <?=$this->lang->line('delete')?> </button></td>
                 </tr>   
                 <?php 
@@ -212,7 +212,7 @@
         $('#list_modal').modal("show");
     }
     
-    function go_detail(idx, name){
+    function go_detail(idx, name, mode=0){
         
         detail_idx = idx;
         
