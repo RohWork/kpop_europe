@@ -17,7 +17,7 @@
     
      <div class="row">
             <div class="col-12">
-            <table class="table table-bordered table-responsive" style="width:700px;font-size: 0.8rem">
+            <table class="table table-bordered table-responsive" style="font-size: 0.8rem">
               <tr align="center" >
                 <td>
                     <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$month?>')">◀◀</a>
