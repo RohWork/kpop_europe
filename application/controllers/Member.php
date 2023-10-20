@@ -369,9 +369,6 @@ class Member extends CI_Controller {
         $data['month'] =$month =  $this->input->get('month') !== null ?$this->input->get('month') : $thismonth;
         $data['day'] = $day = $this->input->get('month') !== null ? $this->input->get('month') : $today;
         
-        $data_calendar = $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
-
-        $data['calendar'] = $data_calendar;
         
         
         $data['prev_month'] = $prev_month = $month - 1;
@@ -408,7 +405,10 @@ class Member extends CI_Controller {
         
         $data['bookmark_list'] = $this->mark_md->list($user_id, $year."-".$month);
         
+        $data_calendar = count($data['bookmark_list']);
 
+        $data['calendar'] = $data_calendar;
+        
         
         $this->load->view('header');
         $this->load->view('sidebar');
