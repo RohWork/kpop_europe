@@ -230,12 +230,7 @@
         
         $(".modal-title").text(name);
         $(".list").show();
-        $(".bookmark").show();
-        <?php if($this->session->userdata('level') > 2){ ?>
-                $(".delete").show();
-                $(".modify").show();
-        <?php }?>
-        
+
         // 모달창 띄우기
         $('#list_modal').modal("show");
         
