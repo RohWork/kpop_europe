@@ -405,7 +405,7 @@ class Member extends CI_Controller {
         
         $data['bookmark_list'] = $this->mark_md->list($user_id, $year."-".$month);
         
-        $data_calendar = count($data['bookmark_list']);
+        $data_calendar = $this->mark_md->get_schedule_cnt($user_id, $year."-".$month);
 
         $data['calendar'] = $data_calendar;
         
