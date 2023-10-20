@@ -169,6 +169,7 @@
 </main>
 <script>
     
+    var select_date;
     
     function go_detail(idx){
 
@@ -241,6 +242,21 @@
         
         // 모달창 띄우기
         $('#list_modal').modal("show");
+        
+    }
+    
+    function return_list(){
+        
+        var date = select_date;
+        
+        var url = "/member/bookmark_frame_list?date="+date;
+        
+        $('#list_frame').attr('src', url);
+        $(".list").hide();
+        $(".modify").hide();
+        $(".delete").hide();
+        
+        $(".modal-title").text(date);
         
     }
     
