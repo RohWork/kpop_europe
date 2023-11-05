@@ -228,7 +228,7 @@
                         alert('<?=$this->lang->line('completebookmark')?>');
                         window.parent.location.reload();
                     }else{
-                        alert('<?=$this->lang->line('checktodata')?>');
+                        alert(data.message);
                         console.log(data);
                     }
                 },
