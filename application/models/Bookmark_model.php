@@ -51,6 +51,21 @@ class Bookmark_model extends CI_Model {
         return $this->db->insert_id();
         
     }
+   
+    public function chk_cnt($kpop_idx){
+        
+        
+        $user_id = $this->session->userdata('id');
+    
+    
+        $sSql = "SELECT count(*) as cnt
+        FROM `kpop_bookmark` 
+        where kpop_idx = $kpop_idx and user_id = $user_id";
+                 
+        $query = $this->db->query($sSql);
+        return $query->row_array();
+        
+    }
     
     public function modify($params, $favorite_idx){
         
