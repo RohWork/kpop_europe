@@ -584,9 +584,19 @@ class Schedule extends CI_Controller {
         
         if(!empty($idx)){
                 
+            $result = $this->mark_md->chk_cnt($idx);
+            
+            if($result['cnt'] > 0){
+                
+                $data['message'] = $this->lang->line('dupleschedule');
+                $data['result'] = 202;
+                
+            }else{
+            
                 $this->mark_md->insert($idx);
 
                 $data['result'] = 200;
+            }
             
         }else{
             
