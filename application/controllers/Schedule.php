@@ -10,6 +10,12 @@ class Schedule extends CI_Controller {
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Organization_model', 'org_md', TRUE);
         $this->load->model('Bookmark_model', 'mark_md',  TRUE);
+        
+        $lang = $this->session->userdata('lang');
+        if(empty($lang)){
+            $lang = "en"; 
+        }
+        $this->lang->load('controller', $lang);
     }
     
     
