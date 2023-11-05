@@ -148,7 +148,7 @@
 
                 </div>
             </div>
-            <div class="row" style="padding-top: 15px">
+            <div class="row" style="padding-top: 15px;padding-bottom: 5px">
                 <div class="col-12 text-center">
             <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
             
