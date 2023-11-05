@@ -14,4 +14,5 @@
     $lang['Organizer'] = '사업자 관리';
     $lang['toadd'] = '이벤트 스케줄을 추가하고, 수정하세요.';
     $lang['contact'] = '문의하기';
+    $lang['mybookmark'] = "나의 즐겨찾기";
 ?>
