@@ -14,4 +14,5 @@
     $lang['Organizer'] = 'Organizer';
     $lang['toadd'] = 'to add,modify your schedule';
     $lang['contact'] = 'Contact us';
+    $lang['mybookmark'] = "My Bookmark";
 ?>
