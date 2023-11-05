@@ -60,7 +60,7 @@ class Bookmark_model extends CI_Model {
     
         $sSql = "SELECT count(*) as cnt
         FROM `kpop_bookmark` 
-        where kpop_idx = $kpop_idx and user_id = $user_id and state = 1";
+        where kpop_idx = $kpop_idx and user_id = $user_id and state = '1'";
                  
         $query = $this->db->query($sSql);
         return $query->row_array();
