@@ -159,7 +159,9 @@
                 <button type="button" class="btn btn-danger" style="margin :0 5vh 1vh 5vh;" onclick="set_delete()"><?=$this->lang->line('delete')?></button>
                 
             <?php } ?>
-                
+            <?php if(empty($this->session->userdata('name') )){ ?>
+                <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
+            <?php } ?>
                 <button type="button" class="btn btn-info" style="margin : 0 5vh 1vh 5vh;" onclick="self.close();"><?=$this->lang->line('close')?></button>
                 
             </div>
@@ -210,6 +212,30 @@
             
             
         }
+        function calendar_mark(){
+            
+            var data = { idx : <?=$detail_info['idx']?>};
+                        
+            $.ajax({
+                url:'/schedule/mark_ajax',
+                type:'post',
+                data:data,
+                success:function(data){
+                    if(data.result == 200){
+                        alert('<?=$this->lang->line('completebookmark')?>');
+                        window.parent.location.reload();
+                    }else{
+                        alert('<?=$this->lang->line('checktodata')?>');
+                        console.log(data);
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("<?=$this->lang->line('neterror')?>");
+                    return false;
+                }	 
+            });
         
+        }
     </script>
 </html>
