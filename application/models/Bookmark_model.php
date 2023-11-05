@@ -45,7 +45,7 @@ class Bookmark_model extends CI_Model {
         $params['user_id'] = $this->session->userdata('id');
         $params['kpop_idx'] = $kpop_idx;
         
-        $params['reg_date'] = date('Y-m-d h:i:s');
+        $params['reg_date'] = date('Y-m-d H:i:s');
         $this->db->insert('kpop_bookmark', $params);
         
         return $this->db->insert_id();
@@ -70,7 +70,7 @@ class Bookmark_model extends CI_Model {
     public function modify($params, $favorite_idx){
         
         
-        $params['mod_date'] = date('Y-m-d h:i:s');
+        $params['mod_date'] = date('Y-m-d H:i:s');
         
         $this->db->where("idx", $favorite_idx);
         $this->db->update('kpop_bookmark', $params);
