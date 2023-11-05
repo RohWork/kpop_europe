@@ -212,7 +212,7 @@
                     <iframe src="" id="list_frame" style="width:100%; height:100%">etc</iframe>  
                 </div>
                 <div class="modal-footer">
-                    <?php if(empty($this->session->userdata('name') )){ ?>
+                    <?php if(!empty($this->session->userdata('name') )){ ?>
                     <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark" style="display: none"> <?=$this->lang->line('bookmark')?> </button>
                     <?php } ?>
                     <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
