@@ -245,7 +245,7 @@
         
         function google_set(){
             var text = "kpop_<?=$detail_info['name']?>";
-            var dates = "<?=date('Ymd T H0000',strtotime($detail_info['start_date']))?>/<?=date('Ymd T H0000',strtotime($detail_info['end_date'])?>";
+            var dates = "<?=date('Ymd T H0000',strtotime($detail_info['start_date']))?>/<?=date('Ymd T H0000',strtotime($detail_info['end_date']))?>";
             var location = "<?=$detail_info['location']?>";
             var detail = "<?=$detail_info['space']?>";
             
