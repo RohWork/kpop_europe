@@ -246,8 +246,8 @@
         function google_set(){
             var text = "kpop_<?=$detail_info['name']?>";
             var dates = "<?=strtotime($detail_info['start_date'])?>/<?=strtotime($detail_info['end_date'])?>";
-            var location = "<?=$this->lang->line('location')?>";
-            var detail = "<?=$this->lang->line('homepage')?>";
+            var location = "<?=$detail_info['location']?>";
+            var detail = "<?=$detail_info['space']?>";
             
             window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&detail="+detail;
         }
