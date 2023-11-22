@@ -247,7 +247,11 @@
             var text = "kpop_<?=$detail_info['name']?>";
             var dates = "<?=date('Ymd H0000',strtotime($detail_info['start_date']))?>/<?=date('Ymd H0000',strtotime($detail_info['end_date']))?>";
             var location = "<?=$detail_info['addr']?>";
-            var detail = "<div><?=$detail_info['space']?></div><div><?=$detail_info['homepage']?></div><div><?=$detail_info['face']?></div><div><?=$detail_info['insta']?></div><div><?=$detail_info['yout']?>";
+            var detail = "<div><?=$detail_info['space']?></div>"
+                        +"<div>homepage : <?=$detail_info['homepage']?></div>"
+                        +"<div>facebook : <?=$detail_info['face']?></div>"
+                        +"<div>instagram : <?=$detail_info['insta']?></div>"
+                        +"<div><?=$detail_info['yout']?></div>";
             
             window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&details="+detail;
         }
