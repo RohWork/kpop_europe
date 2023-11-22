@@ -193,6 +193,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('<?=$this->lang->line('completebookmark')?>');
+                        google_set();
                         window.parent.location.reload();
                     }else{
                         alert(data.message);
@@ -206,6 +207,19 @@
                 }	 
             });
         
+        }
+        
+        function google_set(){
+            var text = "kpop_<?=$detail_info['name']?>";
+            var dates = "<?=date('Ymd H0000',strtotime($detail_info['start_date']))?>/<?=date('Ymd H0000',strtotime($detail_info['end_date']))?>";
+            var location = "<?=$detail_info['addr']?>";
+            var detail = "<div><?=$detail_info['space']?></div>"
+                        +"<div>homepage : <?=$detail_info['homepage']?></div>"
+                        +"<div>facebook : <?=$detail_info['face']?></div>"
+                        +"<div>instagram : <?=$detail_info['insta']?></div>"
+                        +"<div>youtube: <?=$detail_info['yout']?></div>";
+            
+            window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&details="+detail;
         }
     </script>
 </html>
