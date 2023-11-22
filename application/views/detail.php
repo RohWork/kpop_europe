@@ -251,7 +251,7 @@
                         +"<div>homepage : <?=$detail_info['homepage']?></div>"
                         +"<div>facebook : <?=$detail_info['face']?></div>"
                         +"<div>instagram : <?=$detail_info['insta']?></div>"
-                        +"<div><?=$detail_info['yout']?></div>";
+                        +"<div>youtube: <?=$detail_info['yout']?></div>";
             
             window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&details="+detail;
         }
