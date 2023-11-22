@@ -249,7 +249,7 @@
             var location = "<?=$detail_info['addr']?>";
             var detail = "<?=$detail_info['space']?>";
             
-            window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&detail="+detail;
+            window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&details="+detail;
         }
     </script>
 </html>
