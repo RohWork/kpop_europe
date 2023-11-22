@@ -244,7 +244,7 @@
         
         function google_set(){
             var text = "kpop_<?=$detail_info['name']?>";
-            var dates = strtotime(<?=$detail_info['start_date']?>)."/".strtotime(<?=$detail_info['end_date']?>);
+            var dates = <?=strtotime($detail_info['start_date'])?>."/".<?=strtotime($detail_info['end_date'])?>;
             var location = "<?=$this->lang->line('location')?>";
             var detail = "<?=$this->lang->line('homepage')?>";
             
