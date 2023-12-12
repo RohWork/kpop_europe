@@ -101,7 +101,7 @@
                         <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
                             <td><?=$li['title']?></td>
                             <td><?=$li['mnick']?></td>
-                            <td><?=substr(0,10,$li['reg_date']) == date('Y-m-d')? substr(10,5,$li['reg_date']) : substr(0,0,$li['reg_date']) ?></td>
+                            <td><?=substr($li['reg_date'],0,10) == date('Y-m-d')? substr($li['reg_date'],10,5) : substr(0,0,$li['reg_date']) ?></td>
                             <td><?=$li['great']?></td>
                             <td><?=$li['cnt']?></td>
                         </tr>   
