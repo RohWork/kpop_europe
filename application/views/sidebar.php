@@ -109,7 +109,7 @@
             <?php if($this->session->userdata('level') > 2){ ?>
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#management-collapse" aria-expanded="false">
+                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#management-collapse" aria-expanded="true">
                     <?=$this->lang->line('Management')?>
                 </button>
                 <div class="collapse" id="management-collapse">
