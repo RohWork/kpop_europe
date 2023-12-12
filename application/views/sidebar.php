@@ -4,14 +4,13 @@
     
     $url = $_SERVER[ "REQUEST_URI" ];
     $url_split = explode("/", $url);
-    echo $url;
     $url_show = array("country", "city", "organization");
     $url_show2 = array("insert", "excel");
     
     $col_show = "";
-    if(in_array($url_split[0],$url_show)){
+    if(in_array($url_split[1],$url_show)){
         $col_show = "show";
-    }else if($url_split[0] == "calendar" && in_array($url_split[0],$url_show)){
+    }else if($url_split[1] == "calendar" && in_array($url_split[2],$url_show)){
         $col_show = "show";
     }
 ?>
