@@ -71,7 +71,7 @@
     $lang['viewcnt'] = "조회 수";
     $lang['like'] = "좋아요";
     $lang['dislike'] = "싫어요";
-    
+    $lang['writedate'] = "작성일";
     $lang['registdate'] = "등록일";
     $lang['orgernizationname'] = "주최사 명";
     $lang['orgernizationorder'] = "주최사 순서";
