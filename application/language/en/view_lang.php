@@ -68,6 +68,8 @@
     $lang['viewcnt'] = "View count";
     $lang['like'] = "LIKE";
     $lang['dislike'] = "DISLIKE";
+    $lang['writedate'] = "WRITE DATE";
+    
     
     $lang['write'] = "Write";
     $lang['registdate'] = "Regist date";
