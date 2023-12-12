@@ -10,7 +10,7 @@
     $col_show = "";
     if(in_array($url_split[1],$url_show)){
         $col_show = "show";
-    }else if($url_split[1] == "calendar" && in_array($url_split[2],$url_show)){
+    }else if($url_split[1] == "schedule" && in_array($url_split[2],$url_show)){
         $col_show = "show";
     }
 ?>
