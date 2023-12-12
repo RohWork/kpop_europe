@@ -1,7 +1,10 @@
 <?php
     $lang = $this->session->userdata('lang');
     $this->lang->load('menu', $lang);
-
+    
+    $url = $_SERVER[ "REQUEST_URI" ];
+    $url_split = explode("/", $url);
+    if($url_split[0] == "")
 ?>
 
 
@@ -112,7 +115,7 @@
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#management-collapse" aria-expanded="true">
                     <?=$this->lang->line('Management')?>
                 </button>
-                <div class="collapse" id="management-collapse">
+                <div class="collapse show" id="management-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
                             
