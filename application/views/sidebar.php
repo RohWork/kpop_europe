@@ -4,7 +4,16 @@
     
     $url = $_SERVER[ "REQUEST_URI" ];
     $url_split = explode("/", $url);
-    if($url_split[0] == "")
+    
+    $url_show = array("country", "city", "organization");
+    $url_show2 = array("insert", "excel");
+    
+    $col_show = "";
+    if(in_array($url_split[0],$url_show)){
+        $col_show = "show";
+    }else if($url_split[0] == "calendar" && in_array($url_split[0],$url_show)){
+        $col_show = "show";
+    }
 ?>
 
 
@@ -115,7 +124,7 @@
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#management-collapse" aria-expanded="true">
                     <?=$this->lang->line('Management')?>
                 </button>
-                <div class="collapse show" id="management-collapse">
+                <div class="collapse <?=$col_show?>" id="management-collapse">
                     <ul class="btn-toggle-nav2 list-unstyled fw-normal pb-1 small">
                         <li>
                             
