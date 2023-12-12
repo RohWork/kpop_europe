@@ -4,7 +4,7 @@
     
     $url = $_SERVER[ "REQUEST_URI" ];
     $url_split = explode("/", $url);
-    echo $url_split[0];
+    echo $url[0];
     $url_show = array("country", "city", "organization");
     $url_show2 = array("insert", "excel");
     
