@@ -28,6 +28,9 @@
     $lang['enddate'] = "END DATE";
     $lang['searchdate'] = "SEARCH DATE";
     
+    $lang['before'] = "party planned";
+    $lang['after']  = "party history";
+    
     $lang['bookmark'] = "BOOKMARK";
     $lang['detail'] = "DETAIL";
     $lang['insert'] = "INSERT";
