@@ -14,7 +14,10 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <input id="autologin" type="checkbox" checked="checked" data-size="micro" data-on-color="success" data-off-color="danger" class="bs-switch">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn <?=$mode=="before"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href=/member/my_bookmark?mode=before"><?=$this->lang->line('before')?></button>
+                <button type="button" class="btn <?=$mode=="after"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href=/member/my_bookmark?mode=before"><?=$this->lang->line('after')?></button>
+            </div>
         </div>
     </div>
 
@@ -154,13 +157,4 @@
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
     });
-    
-    $("#autologin").on('switchChange.bootstrapSwitch',function(){
-    /*bs-switch is on ? */
-    if($('#autologin').bootstrapSwitch('state')){
-        alert("on");
-    }else{
-        alert("off");
-    }
-})
 </script>
