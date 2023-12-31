@@ -12,7 +12,11 @@
             <input type="hidden" id="day" name="day" value="1" />
         </form>
     </div>
-    
+    <div class="row">
+        <div class="col-12">
+            <input id="autologin" type="checkbox" checked="checked" data-size="micro" data-on-color="success" data-off-color="danger" class="bs-switch">
+        </div>
+    </div>
 
     <div class="row" style="padding-top: 20px">
         <div class="col-12">
@@ -150,4 +154,13 @@
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
     });
+    
+    $("#autologin").on('switchChange.bootstrapSwitch',function(){
+    /*bs-switch is on ? */
+    if($('#autologin').bootstrapSwitch('state')){
+        alert("on");
+    }else{
+        alert("off");
+    }
+})
 </script>
