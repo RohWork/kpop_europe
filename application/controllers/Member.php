@@ -351,7 +351,7 @@ class Member extends CI_Controller {
         $search = array();
         
 
-        $data['mode'] = $mode =  $this->input->post("mode");
+        $data['mode'] = $mode =  $this->input->get_post("mode");
 
         if($mode == "before"){
             $data['bookmark_list'] = $this->mark_md->get_history($user_id );
