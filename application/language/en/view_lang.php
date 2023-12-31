@@ -28,8 +28,8 @@
     $lang['enddate'] = "END DATE";
     $lang['searchdate'] = "SEARCH DATE";
     
-    $lang['before'] = "party planned";
-    $lang['after']  = "party history";
+    $lang['before'] = "party history";
+    $lang['after']  = "party planned";
     
     $lang['bookmark'] = "BOOKMARK";
     $lang['detail'] = "DETAIL";
