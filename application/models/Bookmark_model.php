@@ -8,7 +8,7 @@ class Bookmark_model extends CI_Model {
         parent::__construct();
     }
     
-    public function list($user_id, $month){
+    public function list($user_id ){
         
         $sSql = "   SELECT ki.* ,kf.reg_date, kc.name AS country_name, kci.name AS city_name, ko.name AS organization_name, kf.idx AS mark_idx
                     FROM `kpop_bookmark` as kf 
@@ -16,7 +16,24 @@ class Bookmark_model extends CI_Model {
                     LEFT JOIN kpop_country AS kc ON kc.idx = ki.country_idx
                     LEFT JOIN kpop_city AS kci	ON kci.idx = ki.city_idx
                     LEFT JOIN kpop_organization AS ko ON ko.idx = ki.organization_idx
-                    where kf.state = '1' and user_id = '$user_id' and (ki.start_date like '$month%' or ki.end_date like '$month%')  order by kf.idx desc";
+                    where kf.state = '1' and user_id = '$user_id' and ki.start_date >= now()  order by kf.idx desc";
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
+        
+        
+    }
+    
+    
+    public function get_history($user_id ){
+        
+        $sSql = "   SELECT ki.* ,kf.reg_date, kc.name AS country_name, kci.name AS city_name, ko.name AS organization_name, kf.idx AS mark_idx
+                    FROM `kpop_bookmark` as kf 
+                    left join kpop_info as ki on kf.kpop_idx = ki.idx  
+                    LEFT JOIN kpop_country AS kc ON kc.idx = ki.country_idx
+                    LEFT JOIN kpop_city AS kci	ON kci.idx = ki.city_idx
+                    LEFT JOIN kpop_organization AS ko ON ko.idx = ki.organization_idx
+                    where kf.state = '1' and user_id = '$user_id' and ki.start_date <= now()  order by kf.idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
