@@ -15,8 +15,8 @@
     <div class="row">
         <div class="col-12">
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn <?=$mode=="before"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href=/member/my_bookmark?mode=before"><?=$this->lang->line('before')?></button>
-                <button type="button" class="btn <?=$mode=="after"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href=/member/my_bookmark?mode=before"><?=$this->lang->line('after')?></button>
+                <button type="button" class="btn <?=$mode=="before"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/member/my_bookmark?mode=before'"><?=$this->lang->line('before')?></button>
+                <button type="button" class="btn <?=$mode=="after"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/member/my_bookmark?mode=before'"><?=$this->lang->line('after')?></button>
             </div>
         </div>
     </div>
