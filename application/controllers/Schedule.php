@@ -475,48 +475,46 @@ class Schedule extends CI_Controller {
                 // 한줄읽기
                 for($row = 2; $row <= $highestRow; $row++) {
                     
-                    $params['type'] = $a = $activesheet->getCell('A' . $row)->getValue(); // type
+                    //$params['type'] = $a = $activesheet->getCell('A' . $row)->getValue(); // type
                     
-                    if(empty($params['type']) || $params['type'] == ""){
-                        break;
-                    }
+                   // if(empty($params['type']) || $params['type'] == ""){
+                   //     break;
+                    //}
                     
                     $params = array();
                     
                     
-                    $params['name'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
+                    $params['type'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
 
                     $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
                     $organization = $this->org_md->get_organization_name($c);
 
-                    $e = $activesheet->getCell('D' . $row)->getValue();  // DOW 
-
-                    $f = $activesheet->getCell('E' . $row)->getValue(); // Country
+                    $d = $activesheet->getCell('D' . $row)->getValue(); // Country
                     $country = $this->cont_md->get_country_name($f);
 
-                    $g = $activesheet->getCell('F' . $row)->getValue(); // City 
-                    $city = $this->city_md->get_city_name($g);
+                    $e = $activesheet->getCell('E' . $row)->getValue(); // City 
+                    $city = $this->city_md->get_city_name($e);
 
-                    $params['space'] = $h = $activesheet->getCell('G' . $row)->getValue(); // Address
+                    $params['space'] = $f = $activesheet->getCell('F' . $row)->getValue(); // Address
 
                     
-                    $params['addr'] = $h = $activesheet->getCell('H' . $row)->getValue(); // Address
+                    $params['addr'] = $g = $activesheet->getCell('G' . $row)->getValue(); // Address
 
-                    $i = $activesheet->getCell('I' . $row)->getValue(); // Open
+                    $h = $activesheet->getCell('H' . $row)->getValue(); // Open
+                    $h = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:m');
+                    
+                    $i = $activesheet->getCell('I' . $row)->getValue(); // Close
                     $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:m');
                     
-                    $j = $activesheet->getCell('J' . $row)->getValue(); // Close
-                    $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY h:m');
-                    
-                    $date_start = DateTime::createFromFormat("d-m-Y H:i:s" , $i);
-                    $date_end = DateTime::createFromFormat("d-m-Y H:i:s" , $j);
+                    $date_start = DateTime::createFromFormat("d-m-Y H:i:s" , $h);
+                    $date_end = DateTime::createFromFormat("d-m-Y H:i:s" , $i);
                     $params['start_date'] = $date_start->format("Y-m-d H:i:s");
                     $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
 
                     
-                    $params['homepage']=  $k = $activesheet->getCell('K' . $row)->getValue(); // Hompage 
-                    $params['insta'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Insta
-                    $params['face'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Facebook
+                    $params['homepage']=  $k = $activesheet->getCell('J' . $row)->getValue(); // Hompage 
+                    $params['insta'] = $l = $activesheet->getCell('K' . $row)->getValue(); // Insta
+                    $params['face'] = $m = $activesheet->getCell('L' . $row)->getValue(); // Facebook
 
                     
                     if(!empty($organization) && !empty($country) && !empty($city)){
