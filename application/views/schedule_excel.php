@@ -13,31 +13,33 @@
                     <h3 style="font-size: bold">only excel file. <br/> ex) </h3>
                     <table class="table table-striped table-bordered">
                         <tr>
+                            <th>No</th>
                             <th>Type</th>
-                            <th>Party name</th>
                             <th>Company</th>
-                            <th>Date</th>
-                            <th>DOW</th>
-                            <th>Country</th>
-                            <th>City</th>
+                            <th>Country<th>
+                            <th>City<th>
+                            <th>Club Name</th>
                             <th>Address</th>
-                            <th>Open</th>
-                            <th>Close</th>
+                            <th>Open Date</th>
+                            <th>Open Time</th>
+                            <th>Close Date</th>
+                            <th>Close Time</th>
                             <th>Homepage</th>
                             <th>Instagram</th>
                             <th>FaceBook</th>
                         </tr>
                         <tr>
+                            <td>1</td>
                             <td>Party</td>
-                            <td>korean night in hanover</td>
                             <td>company name</td>
-                            <td><?=date('Y-m-d')?></td>
-                            <td>FR</td>
                             <td>Germany</td>
                             <td>Hannover</td>
-                            <td>Infinity Club, Marktstraße ...</td>
-                            <td><?=date('Y-m-d')?> 22:00</td>
-                            <td><?=date('Y-m-d', strtotime("+1 days"))?> 05:00</td>
+                            <td>Infinity Club</td>
+                            <td>Marktstraße ...</td>
+                            <td><?=date('Y-m-d')?></td>
+                            <td>22:00</td>
+                            <td><?=date('Y-m-d', strtotime("+1 days"))?></td>
+                            <td>05:00</td>
                             <td>http://google.com</td>
                             <td>https://www.instagram.com/test/</td>
                             <td>https://fb.me/e/fakePage</td>
