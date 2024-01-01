@@ -501,20 +501,25 @@ class Schedule extends CI_Controller {
                     $params['addr'] = $g = $activesheet->getCell('G' . $row)->getValue(); // Address
 
                     $h = $activesheet->getCell('H' . $row)->getValue(); // Open
-                    $h = PHPExcel_Style_NumberFormat::toFormattedString($h, 'DD-MM-YYYY h:m');
+                    $h = PHPExcel_Style_NumberFormat::toFormattedString($h, 'DD-MM-YYYY');
                     
-                    $i = $activesheet->getCell('I' . $row)->getValue(); // Close
-                    $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:m');
+                    $i = $activesheet->getCell('I' . $row)->getValue(); // Open Time 
                     
-                    $date_start = DateTime::createFromFormat("d-m-Y H:i", $h);
-                    $date_end = DateTime::createFromFormat("d-m-Y H:i", $i);
-                    $params['start_date'] = $date_start->format("Y-m-d H:i");
-                    $params['end_date'] =  $date_end->format("Y-m-d H:i");
+                    $j = $activesheet->getCell('J' . $row)->getValue(); // Close
+                    $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY');
+                    
+                    $k = $activesheet->getCell('K' . $row)->getValue(); // Open Time 
+                    
+                    $date_start = DateTime::createFromFormat("d-m-Y", $h);
+                    $date_end = DateTime::createFromFormat("d-m-Y", $j);
+                    
+                    $params['start_date'] = $date_start->format("Y-m-d")." ".$i;
+                    $params['end_date'] =  $date_end->format("Y-m-d")." ".$k;
 
                     
-                    $params['homepage']=  $j = $activesheet->getCell('J' . $row)->getValue(); // Hompage 
-                    $params['insta'] = $k = $activesheet->getCell('K' . $row)->getValue(); // Insta
-                    $params['face'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Facebook
+                    $params['homepage']=  $l = $activesheet->getCell('L' . $row)->getValue(); // Hompage 
+                    $params['insta'] = $m = $activesheet->getCell('M' . $row)->getValue(); // Insta
+                    $params['face'] = $n = $activesheet->getCell('N' . $row)->getValue(); // Facebook
 
                     
                     if(!empty($organization) && !empty($country) && !empty($city)){
@@ -525,7 +530,6 @@ class Schedule extends CI_Controller {
                             $params['organization_idx'] = $organization['idx'];
                             $params['country_idx'] = $country['idx'];
                             $params['city_idx'] = $city['idx'];
-
 
                             $result = $this->sch_md->insert_schedule($params);
                             $result_code = "1";
@@ -555,10 +559,12 @@ class Schedule extends CI_Controller {
                         "club name" => $f,
                         "address" => $g,
                         "open" => $h,
-                        "close" => $i,
-                        "homepage" => $j,
-                        "insta" => $k,
-                        "facebook" => $l,
+                        "open time" => $i,
+                        "close" => $j,
+                        "close time" => $k,
+                        "homepage" => $l,
+                        "insta" => $m,
+                        "facebook" => $n,
                     );
                     
                     
