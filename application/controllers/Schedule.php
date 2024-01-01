@@ -490,7 +490,7 @@ class Schedule extends CI_Controller {
                     $organization = $this->org_md->get_organization_name($c);
 
                     $d = $activesheet->getCell('D' . $row)->getValue(); // Country
-                    $country = $this->cont_md->get_country_name($f);
+                    $country = $this->cont_md->get_country_name($d);
 
                     $e = $activesheet->getCell('E' . $row)->getValue(); // City 
                     $city = $this->city_md->get_city_name($e);
@@ -501,15 +501,15 @@ class Schedule extends CI_Controller {
                     $params['addr'] = $g = $activesheet->getCell('G' . $row)->getValue(); // Address
 
                     $h = $activesheet->getCell('H' . $row)->getValue(); // Open
-                    $h = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:m');
+                    $h = PHPExcel_Style_NumberFormat::toFormattedString($h, 'DD-MM-YYYY h:m');
                     
                     $i = $activesheet->getCell('I' . $row)->getValue(); // Close
                     $i = PHPExcel_Style_NumberFormat::toFormattedString($i, 'DD-MM-YYYY h:m');
                     
                     $date_start = DateTime::createFromFormat("d-m-Y H:i:s" , $h);
                     $date_end = DateTime::createFromFormat("d-m-Y H:i:s" , $i);
-                    $params['start_date'] = $date_start->format("Y-m-d H:i:s");
-                    $params['end_date'] =  $date_end->format("Y-m-d H:i:s");
+                    $params['start_date'] = $date_start->format("Y-m-d h:i:s");
+                    $params['end_date'] =  $date_end->format("Y-m-d h:i:s");
 
                     
                     $params['homepage']=  $k = $activesheet->getCell('J' . $row)->getValue(); // Hompage 
