@@ -508,7 +508,7 @@ class Schedule extends CI_Controller {
                     $j = $activesheet->getCell('J' . $row)->getValue(); // Close
                     $j = PHPExcel_Style_NumberFormat::toFormattedString($j, 'DD-MM-YYYY');
                     
-                    $k = $activesheet->getCell('K' . $row)->getValue(); // Open Time 
+                    $k = $activesheet->getCell('K' . $row)->getValue(); // Close Time 
                     
                     $date_start = DateTime::createFromFormat("d-m-Y", $h);
                     $date_end = DateTime::createFromFormat("d-m-Y", $j);
