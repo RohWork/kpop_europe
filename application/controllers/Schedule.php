@@ -512,9 +512,9 @@ class Schedule extends CI_Controller {
                     $params['end_date'] =  $date_end->format("Y-m-d h:i:s");
 
                     
-                    $params['homepage']=  $k = $activesheet->getCell('J' . $row)->getValue(); // Hompage 
-                    $params['insta'] = $l = $activesheet->getCell('K' . $row)->getValue(); // Insta
-                    $params['face'] = $m = $activesheet->getCell('L' . $row)->getValue(); // Facebook
+                    $params['homepage']=  $j = $activesheet->getCell('J' . $row)->getValue(); // Hompage 
+                    $params['insta'] = $k = $activesheet->getCell('K' . $row)->getValue(); // Insta
+                    $params['face'] = $l = $activesheet->getCell('L' . $row)->getValue(); // Facebook
 
                     
                     if(!empty($organization) && !empty($country) && !empty($city)){
@@ -548,19 +548,17 @@ class Schedule extends CI_Controller {
                     $excel_data[$row] = array(
                         "code" => $result_code,
                         "result" => $result,
-                        "type" => $a,
-                        "party_name" => $b,
-                        "orgnizer" => $c,
-                        "date" => $d,
-                        "dow" => $e,
-                        "country" => $f,
-                        "city" => $g,
-                        "address" => $h,
-                        "open" => $i,
-                        "close" => $j,
-                        "homepage" => $k,
-                        "insta" => $l,
-                        "facebook" => $m,
+                        "type" => $b,
+                        "company" => $c,
+                        "country" => $d,
+                        "city" => $e,
+                        "club name" => $f,
+                        "address" => $g,
+                        "open" => $h,
+                        "close" => $i,
+                        "homepage" => $j,
+                        "insta" => $k,
+                        "facebook" => $l,
                     );
                     
                     
