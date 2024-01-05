@@ -25,7 +25,7 @@ class Bookmark_model extends CI_Model {
     }
     
     
-    public function get_history($user_id ){
+    public function get_history($user_id, $year ){
         
         $sSql = "   SELECT ki.* ,kf.reg_date, kc.name AS country_name, kci.name AS city_name, ko.name AS organization_name, kf.idx AS mark_idx
                     FROM `kpop_bookmark` as kf 
@@ -33,7 +33,7 @@ class Bookmark_model extends CI_Model {
                     LEFT JOIN kpop_country AS kc ON kc.idx = ki.country_idx
                     LEFT JOIN kpop_city AS kci	ON kci.idx = ki.city_idx
                     LEFT JOIN kpop_organization AS ko ON ko.idx = ki.organization_idx
-                    where kf.state = '1' and user_id = '$user_id' and ki.start_date <= now()  order by kf.idx desc";
+                    where kf.state = '1' and user_id = '$user_id' and ki.start_date <= now() and ki.start_date like '$year%'  order by kf.idx desc";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
