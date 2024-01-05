@@ -25,13 +25,13 @@
             
         </div>
         <div class="col-4">
-            <button class="btn btn-secondary" type="button"> 
+            
                 <i class="bi bi-caret-left-fill"></i>    
-            </button>
+            
              <?=$year?> 
-            <button class="btn btn-secondary" type="button"> 
+            
                 <i class="bi bi-caret-right-fill"></i>       
-            </button>
+           
         </div>
         <div class="col-4">
             
