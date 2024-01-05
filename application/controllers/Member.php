@@ -354,7 +354,14 @@ class Member extends CI_Controller {
         $data['mode'] = $mode =  $this->input->get_post("mode");
 
         if($mode == "before"){
-            $data['bookmark_list'] = $this->mark_md->get_history($user_id );
+            
+            $year = $this->input->get_post("year");
+            if(empty($year)){
+                $year = date('Y');
+            }
+            
+            
+            $data['bookmark_list'] = $this->mark_md->get_history($user_id , $year);
         }else{
             $data['bookmark_list'] = $this->mark_md->list($user_id );
         }
