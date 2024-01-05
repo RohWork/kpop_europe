@@ -20,15 +20,15 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-top: 20px;">
         <div class="col-4">
-            <
+            
         </div>
         <div class="col-4">
-            <?=$year?>
+           < <?=$year?> >
         </div>
         <div class="col-4">
-            >
+            
         </div>
     </div>
     <div class="row" style="padding-top: 20px">
