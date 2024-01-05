@@ -355,9 +355,9 @@ class Member extends CI_Controller {
 
         if($mode == "before"){
             
-            $year = $this->input->get_post("year");
+            $year = $data['year'] =  $this->input->get_post("year");
             if(empty($year)){
-                $year = date('Y');
+                $year = $data['year'] = date('Y');
             }
             
             
