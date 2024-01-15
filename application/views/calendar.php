@@ -14,7 +14,7 @@
     }
 </style>
 
-    <div class="container" style="font-size: 1vh;">
+    <div class="container"">
         
         <form method="get" id="search_form">
             <div class="row">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top:15px">
+            <div class="row" style="margin-top:1vh">
                 <div class="col-2">
                     <div class="form-floating">
                         <select id="check_type" name="type" class="form-select">
