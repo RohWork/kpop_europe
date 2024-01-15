@@ -54,7 +54,7 @@ class Schedule extends CI_Controller {
         
         $data['mode'] = "calendar";
         
-        $data['calendar'] =  $this->sch_md->get_schedule_cnt($search, $year);
+        $data['calendar'] =  $this->sch_md->get_schedule_calendar($search, $year);
         $data['year'] = $year;
         $data['search'] = $search;
         
