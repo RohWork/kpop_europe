@@ -14,7 +14,7 @@
     }
 </style>
 
-    <div class="container" style="font-size: 12px;">
+    <div class="container" style="font-size: 1vh;">
         
         <form method="get" id="search_form">
             <div class="row">
