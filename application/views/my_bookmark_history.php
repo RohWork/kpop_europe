@@ -47,7 +47,7 @@
                 <?php 
                     for($i=1;$i<13;$i++){
                 ?>
-    <div class="row" style="padding-top: 20px;border-top:1px solid gray">
+    <div class="row" style="padding-top: 20px;">
         <div class="col-12">        
              <label class="form-label" style="font-weight: bold"><?=date("F",strtotime($year."-".$i))?></label>
                 
