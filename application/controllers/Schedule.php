@@ -54,7 +54,7 @@ class Schedule extends CI_Controller {
         
         $data['mode'] = "calendar";
         
-        $data['calendar'] =  $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
+        $data['calendar'] =  $this->sch_md->get_schedule_cnt($search, $year);
         $data['year'] = $year;
         
         if(confirm_mobile()){ //MOBILE
