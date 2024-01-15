@@ -127,9 +127,8 @@
 
                     <input type="submit" value="<?=$this->lang->line('search')?>" class="btn btn-success"/>
                 </div>
-                <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
-                <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
-                <input type="hidden" id="day" name="day" value="1" />
+                <input type="hidden" id="year" name="year" value="<?=$year?>"/>
+
             </div>
         </form>
         
