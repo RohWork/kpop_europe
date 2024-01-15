@@ -36,7 +36,10 @@ class Schedule_model extends CI_Model {
         
         $sSql = "SELECT ki.space, kc.name as country_name, ky.name as city_name, kz.name as organization_name , ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx, ki.type as type
                  FROM kpop_info AS ki 
-                 WHERE ki.start_date LIKE '$year-%'".$where."GROUP BY ki.start_date,ki.end_date";
+                left join kpop_country as kc on ki.country_idx = kc.idx
+                    left join kpop_city as ky on ki.city_idx = ky.idx
+                    left join kpop_organization as kz on ki.organization_idx = kz.idx
+                 WHERE  1=1 ".$where." order by ki.end_date desc";
         
         
         $query = $this->db->query($sSql);
