@@ -62,6 +62,7 @@
                 
                     <?php 
                         foreach($bookmark_list as $li){
+                            echo $year."-".sprintf("%02d",$i)."==".substr($li['start_date'],10);
                             if($year."-".sprintf("%02d",$i) == substr($li['start_date'],10)){
                     ?>        
                     <tr style="cursor: pointer">
