@@ -24,9 +24,10 @@ class Schedule extends CI_Controller {
         
         
         $search = array();
+        $data = array();
         
         if(!empty($this->input->get_post("year"))){
-            $daya['year'] = $search['date'] =  date("Y");
+            $data['year'] = $search['date'] =  date("Y");
         }
         
         $search['country'] = $this->session->userdata('country_idx');
