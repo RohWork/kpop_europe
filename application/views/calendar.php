@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top:15px">
                 <div class="col-2">
                     <div class="form-floating">
                         <select id="check_type" name="type" class="form-select">
