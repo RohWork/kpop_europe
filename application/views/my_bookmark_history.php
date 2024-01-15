@@ -57,7 +57,7 @@
                     for($i=1;$i<13;$i++){
                 ?>
                 <tr>
-                    <td colspan="5"><?=date("f",$i)?></td>
+                    <td colspan="5"><?=date("F",$i)?></td>
                 </tr>
                 
                     <?php 
