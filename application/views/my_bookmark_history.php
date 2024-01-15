@@ -41,7 +41,7 @@
             
         </div>
     </div>
-    <div class="row" style="padding-top: 20px">
+    <div class="row" style="padding-top: 20px;overflow-y: auto">
         <div class="col-12">
  
             
