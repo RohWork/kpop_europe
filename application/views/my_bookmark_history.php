@@ -53,8 +53,8 @@
                 
              <table class="table table-striped" style="font-size:0.8rem">
                 <tr>
-                    <th width="5%">Type</th>
-                    <th width="35%"><?=$this->lang->line('startdate')?></th>
+                    <th width="10%">Type</th>
+                    <th width="30%"><?=$this->lang->line('startdate')?></th>
                     <th width="20%"><?=$this->lang->line('country')?></th>
                     <th width="20%"><?=$this->lang->line('city')?></th>
                     <th width="20%">Location</th>
