@@ -49,7 +49,7 @@
                     for($i=1;$i<13;$i++){
                 ?>
                 
-            <label class="form-label bold"><?=date("F",strtotime($year."-".$i))?></label>
+            <label class="form-label" style="font-weight: bold"><?=date("F",strtotime($year."-".$i))?></label>
                 
              <table class="table table-striped" style="font-size:0.8rem">
                 <tr>
