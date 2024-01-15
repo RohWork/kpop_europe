@@ -8,7 +8,7 @@ class Schedule_model extends CI_Model {
         parent::__construct();
     }
     
-    public function get_schedule_cnt($search, $year , $month){
+    public function get_schedule_cnt($search, $year ){
        
         $where = "";
         
@@ -35,7 +35,7 @@ class Schedule_model extends CI_Model {
         }
         
         $sSql = "SELECT count(*) as cnt,DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date,DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date FROM kpop_info AS ki 
-                 WHERE ki.start_date LIKE '$year-$month%'".$where."GROUP BY ki.start_date,ki.end_date";
+                 WHERE ki.start_date LIKE '$year-%'".$where."GROUP BY ki.start_date,ki.end_date";
         
         
         $query = $this->db->query($sSql);
