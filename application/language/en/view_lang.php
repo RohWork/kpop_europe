@@ -64,6 +64,9 @@
     $lang['title'] = "Title";
     $lang['comment'] = "Comment";
     
+$lang['calendar'] = "Calendar";
+    $lang['list'] = "List";
+    
     $lang['order'] = "Order";
     $lang['name'] = "Name";
     $lang['writer'] = "Writer";
