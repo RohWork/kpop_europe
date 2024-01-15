@@ -27,7 +27,7 @@ class Schedule extends CI_Controller {
         $data = array();
         
         if(!empty($this->input->get_post("year"))){
-            $data['year'] = $search['date'] =  date("Y");
+            $year  = $search['date'] =  date("Y");
         }
         
         $search['country'] = $this->session->userdata('country_idx');
@@ -53,7 +53,8 @@ class Schedule extends CI_Controller {
         $data['mode'] = "calendar";
         
         $data['calendar'] =  $this->sch_md->get_schedule_cnt($search, $year , sprintf("%02d",$month));
-
+        $data['year'] = $year;
+        
         if(confirm_mobile()){ //MOBILE
             $this->load->view('/mobile/header');
             $this->load->view('/mobile/calendar',$data);
