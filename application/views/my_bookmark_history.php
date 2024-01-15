@@ -62,7 +62,7 @@
                 
                     <?php 
                         foreach($bookmark_list as $li){
-                            if($year."-".sprintf("%02d",$i) == $li['start_date']){
+                            if($year."-".sprintf("%02d",$i) == substr($li['start_date'],10)){
                     ?>        
                     <tr style="cursor: pointer">
                         <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['type']?></td>
