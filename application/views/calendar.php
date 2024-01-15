@@ -131,8 +131,51 @@
 
             </div>
         </div>
-    </div>
+        
+                  
+        <?php 
+            for($i=1;$i<13;$i++){
+        ?>
+            <div class="row" style="padding-top: 35px;">
+                <div class="col-12">        
+                     <label class="form-label" style="font-weight: bold"><?=date("F",strtotime($year."-".$i))?></label>
 
+                     <table class="table table-striped" style="font-size:0.8rem">
+                        <tr>
+                            <th width="10%">Type</th>
+                            <th width="30%"><?=$this->lang->line('startdate')?></th>
+                            <th width="20%"><?=$this->lang->line('country')?></th>
+                            <th width="20%"><?=$this->lang->line('city')?></th>
+                            <th width="20%">Location</th>
+                        </tr>   
+                            <?php 
+                                foreach($bookmark_list as $li){
+                                    if($year."-".sprintf("%02d",$i) == substr($li['start_date'],0,7)){
+                            ?>        
+                            <tr style="cursor: pointer">
+                                <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['type']?></td>
+                                <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['start_date']?></td>
+                                <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['country_name']?></td>
+                                <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['city_name']?></td>
+                                <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['space']?></td>
+
+                            </tr>   
+                            <?php
+                                    }
+                                    ?>
+
+                         <?php
+                                }
+                            ?>
+                        </table>
+
+                    </div>
+            </div>
+        <?php
+            }
+        ?>
+    </div>
+    
     <div id="list_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
         
         <div class="modal-dialog modal-lg" style="max-height:85%;" role="document">
