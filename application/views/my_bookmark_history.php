@@ -57,13 +57,12 @@
                     for($i=1;$i<13;$i++){
                 ?>
                 <tr>
-                    <td colspan="5"><?=date("F",$i)?></td>
+                    <td colspan="5"><?=date("F",$year."-".sprintf("%02d",$i))?></td>
                 </tr>
                 
                     <?php 
-                    echo $year."".sprintf("%02d",$i);
                         foreach($bookmark_list as $li){
-                            if($year."".sprintf("%02d",$i) == $li['start_date']){
+                            if($year."-".sprintf("%02d",$i) == $li['start_date']){
                     ?>        
                     <tr style="cursor: pointer">
                         <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['type']?></td>
