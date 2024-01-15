@@ -26,7 +26,9 @@ class Schedule extends CI_Controller {
         $search = array();
         $data = array();
         
-        if(!empty($this->input->get_post("year"))){
+        $year = $this->input->get_post("year");
+        
+        if(empty($year)){
             $year  = $search['date'] =  date("Y");
         }
         
