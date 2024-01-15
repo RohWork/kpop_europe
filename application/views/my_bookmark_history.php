@@ -44,7 +44,14 @@
     <div class="row" style="padding-top: 20px">
         <div class="col-12">
  
-            <table class="table table-striped" style="font-size:0.8rem">
+            
+                <?php 
+                    for($i=1;$i<13;$i++){
+                ?>
+                
+            <label class="form-label"><?=date("F",strtotime($year."-".$i))?></label>
+                
+             <table class="table table-striped" style="font-size:0.8rem">
                 <tr>
                     <th>Type</th>
                     <th><?=$this->lang->line('startdate')?></th>
@@ -52,14 +59,7 @@
                     <th><?=$this->lang->line('city')?></th>
                     <th>Location</th>
                     <th></th>
-                </tr>
-                <?php 
-                    for($i=1;$i<13;$i++){
-                ?>
-                <tr>
-                    <td colspan="5"><?=date("F",strtotime($year."-".$i))?></td>
-                </tr>
-                
+                </tr>   
                     <?php 
                         foreach($bookmark_list as $li){
                             if($year."-".sprintf("%02d",$i) == substr($li['start_date'],0,7)){
@@ -76,11 +76,11 @@
                             }
                         }
                     ?>
-                
+                </table>
                 <?php
                     }
                 ?>
-            </table>
+            
         </div>
     </div>
     <div class="row" style="margin-top: 15px;">
