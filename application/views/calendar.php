@@ -115,13 +115,13 @@
 
             </div>
             <div class="col-4">
-                <button class="btn btn-secondary" type="button" onclick="location.href='/member/calendar?year=<?=$year-1?>'"> 
+                <button class="btn btn-secondary" type="button" onclick="year_set(<?=$year-1?>)"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                       </svg>          
                 </button>
                  <?=$year?> 
-                <button class="btn btn-secondary" type="button" onclick="location.href='/member/calendar?year=<?=$year+1?>'"> 
+                <button class="btn btn-secondary" type="button" onclick="year_set(<?=$year+1?>)"> 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg>       
@@ -235,12 +235,7 @@
         
     }
     
-    function date_move(year,month){
-        $("#year").val(year);
-        $("#month").val(month);
-        
-        $("#search_form").submit();
-    }
+
     
     function get_country_data(){
         
@@ -283,6 +278,13 @@
         
     }
     
+    function year_set(year){
+    
+        $("#year").val(year);
+
+        $("#search_form").submit();
+    }
+    
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
     });
@@ -296,6 +298,7 @@
                   'max-height':'100%'
            });
     });
+   
    
     
     
