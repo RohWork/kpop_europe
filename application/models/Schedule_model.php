@@ -10,7 +10,7 @@ class Schedule_model extends CI_Model {
     
     public function get_schedule_calendar($search, $year ){
        
-        $where = " ki.start_date like '$year%' ";
+        $where = "AND ki.start_date like '$year%'";
         
         if(!empty($search['country'])){
             if($search['country'] != 'all'){
