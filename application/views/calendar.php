@@ -14,7 +14,7 @@
     }
 </style>
 
-    <div class="container"">
+<div class="container" style="overflow-y: auto">
         
         <form method="get" id="search_form">
             <div class="row">
