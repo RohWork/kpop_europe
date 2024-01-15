@@ -53,11 +53,11 @@
                 
              <table class="table table-striped" style="font-size:0.8rem">
                 <tr>
-                    <th>Type</th>
-                    <th><?=$this->lang->line('startdate')?></th>
-                    <th><?=$this->lang->line('country')?></th>
-                    <th><?=$this->lang->line('city')?></th>
-                    <th>Location</th>
+                    <th width="5%">Type</th>
+                    <th width="35%"><?=$this->lang->line('startdate')?></th>
+                    <th width="20%"><?=$this->lang->line('country')?></th>
+                    <th width="20%"><?=$this->lang->line('city')?></th>
+                    <th width="20%">Location</th>
                 </tr>   
                     <?php 
                         foreach($bookmark_list as $li){
