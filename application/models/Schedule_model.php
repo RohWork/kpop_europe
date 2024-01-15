@@ -10,7 +10,7 @@ class Schedule_model extends CI_Model {
     
     public function get_schedule_calendar($search, $year ){
        
-        $where = "";
+        $where .= " ki.start_date like '$year%' ";
         
         if(!empty($search['country'])){
             if($search['country'] != 'all'){
@@ -33,6 +33,10 @@ class Schedule_model extends CI_Model {
                 $where .= " AND ki.type ='".$search['type']."'";
             }
         }
+        
+
+        
+        
         
         $sSql = "SELECT ki.space, kc.name as country_name, ky.name as city_name, kz.name as organization_name , ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx, ki.type as type
                  FROM kpop_info AS ki 
