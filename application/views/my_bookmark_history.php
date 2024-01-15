@@ -57,7 +57,7 @@
                     for($i=1;$i<13;$i++){
                 ?>
                 <tr>
-                    <td colspan="5"><?=date("F",$year."-".sprintf("%02d",$i))?></td>
+                    <td colspan="5"><?=date("F",strtotime($year."-".$i))?></td>
                 </tr>
                 
                     <?php 
