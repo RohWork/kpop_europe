@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="container">
+<div class="container" style="overflow-y: auto">
    
     <div class="row">
         <label class="form-label"><h3><?=$this->lang->line('mybookmark')?></h3></label>
@@ -41,7 +41,7 @@
             
         </div>
     </div>
-    <div class="row" style="padding-top: 20px;overflow-y: auto">
+    <div class="row" style="padding-top: 20px;">
         <div class="col-12">
  
             
