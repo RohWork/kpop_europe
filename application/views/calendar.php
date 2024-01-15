@@ -149,7 +149,7 @@
                             <th width="20%">Location</th>
                         </tr>   
                             <?php 
-                                foreach($bookmark_list as $li){
+                                foreach$calendar as $li){
                                     if($year."-".sprintf("%02d",$i) == substr($li['start_date'],0,7)){
                             ?>        
                             <tr style="cursor: pointer">
