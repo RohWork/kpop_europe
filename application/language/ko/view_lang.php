@@ -66,6 +66,10 @@
     $lang['mybookmark'] = "나의 즐겨찾기";
     $lang['homepage'] = "홈페이지";
    
+    $lang['calendar'] = "일정 달력";
+    $lang['list'] = "일정 목록";
+   
+    
     $lang['order'] = "순서";
     $lang['name'] = "이름";
     $lang['writer'] = "작성자";
