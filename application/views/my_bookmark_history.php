@@ -58,7 +58,6 @@
                     <th><?=$this->lang->line('country')?></th>
                     <th><?=$this->lang->line('city')?></th>
                     <th>Location</th>
-                    <th></th>
                 </tr>   
                     <?php 
                         foreach($bookmark_list as $li){
@@ -70,7 +69,7 @@
                         <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['country_name']?></td>
                         <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['city_name']?></td>
                         <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['space']?></td>
-                        <td><button type="button" class="btn btn-danger delete" onclick="mark_delete(<?=$li['mark_idx']?>)" aria-label="Delete"> <?=$this->lang->line('delete')?> </button></td>
+                        
                     </tr>   
                     <?php
                             }
