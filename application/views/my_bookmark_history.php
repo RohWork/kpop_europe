@@ -75,11 +75,11 @@
                     <?php
                             }
                             ?>
-                </table>
+                
                  <?php
                         }
                     ?>
-                
+                </table>
              
             </div>
     </div>
