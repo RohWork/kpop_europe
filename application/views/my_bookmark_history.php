@@ -41,15 +41,15 @@
             
         </div>
     </div>
-    <div class="row" style="padding-top: 20px;">
-        <div class="col-12">
+
  
             
                 <?php 
                     for($i=1;$i<13;$i++){
                 ?>
-                
-            <label class="form-label" style="font-weight: bold"><?=date("F",strtotime($year."-".$i))?></label>
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-12">        
+             <label class="form-label" style="font-weight: bold"><?=date("F",strtotime($year."-".$i))?></label>
                 
              <table class="table table-striped" style="font-size:0.8rem">
                 <tr>
@@ -74,15 +74,20 @@
                     </tr>   
                     <?php
                             }
+                            ?>
+                </table>
+                 <?php
                         }
                     ?>
-                </table>
+                
+             
+            </div>
+    </div>
                 <?php
                     }
                 ?>
             
-        </div>
-    </div>
+
     <div class="row" style="margin-top: 15px;">
 
     </div>
