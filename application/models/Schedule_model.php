@@ -51,6 +51,41 @@ class Schedule_model extends CI_Model {
         
     }
     
+        public function get_schedule_cnt($search, $year , $month){
+       
+        $where = "";
+        
+        if(!empty($search['country'])){
+            if($search['country'] != 'all'){
+                $where .= " AND ki.country_idx ='".$search['country']."'";
+            }
+        }
+        if(!empty($search['city'])){
+            if($search['city'] != 'all'){
+                $where .= " AND ki.city_idx ='".$search['city']."'";
+            }
+        }
+        if(!empty($search['organizer'])){
+            if($search['organizer'] != 'all'){
+                $where .= " AND ki.organization_idx ='".$search['organizer']."'";
+            }
+        }
+        
+        if(!empty($search['type'])){
+            if($search['type'] != 'all'){
+                $where .= " AND ki.type ='".$search['type']."'";
+            }
+        }
+        
+        $sSql = "SELECT count(*) as cnt,DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date,DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date FROM kpop_info AS ki 
+                 WHERE ki.start_date LIKE '$year-$month%'".$where."GROUP BY ki.start_date,ki.end_date";
+        
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
+        
+    }
+    
     public function get_duple_schedule_cnt($city, $space, $start){
         
         $sSql = "select count(*) as cnt from kpop_info where city_idx =  $city and space = '$space' and start_date >= '$start'";
