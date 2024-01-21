@@ -350,9 +350,13 @@ class Member extends CI_Controller {
 
         $search = array();
         
-
+        
         $data['mode'] = $mode =  $this->input->get_post("mode");
-
+        
+        if(empty($mode)){
+            $mode = "after";
+        }
+        
         if($mode == "before"){
             
             $year = $data['year'] =  $this->input->get_post("year");
