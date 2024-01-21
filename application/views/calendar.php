@@ -14,19 +14,40 @@
     }
 </style>
 
-<div class="container" style="overflow-y: auto">
+    <div class="container" style="font-size: 12px;">
         
         <form method="get" id="search_form">
             <div class="row">
+                    <div class="row">
                 <div class="col-12">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn <?=$mode=="calendar"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/schedule/calendar'"><?=$this->lang->line('calendar')?></button>
-                        <button type="button" class="btn <?=$mode=="list"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/schedule/list'"><?=$this->lang->line('list')?></button>
+                        <button type="button" class="btn <?=$mode=="after"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/member/my_bookmark?mode=after'"><?=$this->lang->line('after')?></button>
+                        <button type="button" class="btn <?=$mode=="before"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/member/my_bookmark?mode=before'"><?=$this->lang->line('before')?></button>
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top:1vh">
-                <div class="col-2">
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-4">
+
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-secondary" type="button" onclick="location.href='/member/my_bookmark?mode=before&year=<?=$year-1?>'"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                          </svg>          
+                    </button>
+                     <?=$year?> 
+                    <button class="btn btn-secondary" type="button" onclick="location.href='/member/my_bookmark?mode=before&year=<?=$year+1?>'"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>       
+                    </button>
+                </div>
+                <div class="col-4">
+
+                </div>
+            </div>
+                    <div class="col-2">
                     <div class="form-floating">
                         <select id="check_type" name="type" class="form-select">
                             <option value="all"><?=$this->lang->line('viewall')?></option>
@@ -106,74 +127,103 @@
 
                     <input type="submit" value="<?=$this->lang->line('search')?>" class="btn btn-success"/>
                 </div>
-                <input type="hidden" id="year" name="year" value="<?=$year?>"/>
-
+                <input type="hidden" id="year" name="year" value="<?=$thisyear?>"/>
+                <input type="hidden" id="month" name="month" value="<?=$thismonth?>"/>
+                <input type="hidden" id="day" name="day" value="1" />
             </div>
         </form>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-4">
-
-            </div>
-            <div class="col-4">
-                <button class="btn btn-secondary" type="button" onclick="year_set(<?=$year-1?>)"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-                      </svg>          
-                </button>
-                 <?=$year?> 
-                <button class="btn btn-secondary" type="button" onclick="year_set(<?=$year+1?>)"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg>       
-                </button>
-            </div>
-            <div class="col-4">
-
-            </div>
-        </div>
         
-                  
-        <?php 
-            for($i=1;$i<13;$i++){
-        ?>
-            <div class="row" style="padding-top: 35px;">
-                <div class="col-12">        
-                     <label class="form-label" style="font-weight: bold"><?=date("F",strtotime($year."-".$i))?></label>
+        <div class="row">
+            <div class="col-12">
+            <table class="table table-bordered table-responsive" style="width:700px;font-size: 0.8rem">
+              <tr align="center" >
+                <td>
+                    <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$month?>')">◀◀</a>
+                </td>
+                <td>
+                    <a class="a_border" href="#" onclick="date_move('<?=$prev_year?>','<?=$prev_month?>')">◀</a>
+                </td>
+                <td height="50" bgcolor="#FFFFFF" colspan="3">
+                    <a class="a_border" href="#" onclick="date_move('<?=$thisyear?>','<?=$thismonth?>')">
+                    <?php echo "&nbsp;&nbsp;" . $month . ' - ' . $year  . "&nbsp;&nbsp;"; ?></a>
+                </td>
+                <td>
+                    <a class="a_border" href="#" onclick="date_move('<?=$next_year?>','<?=$next_month?>')">▶</a>
+                </td>
+                <td>
+                    <a class="a_border" href="#" onclick="date_move('<?=$next_year?>','<?=$month?>')">▶▶</a>
+                </td>
+              </tr>
+              <tr class="info">
+                <th hight="30" width="100"><?=$this->lang->line('sun')?></td>
+                <th width="100"><?=$this->lang->line('mon')?></th>
+                <th width="100"><?=$this->lang->line('tue')?></th>
+                <th width="100"><?=$this->lang->line('wed')?></th>
+                <th width="100"><?=$this->lang->line('thu')?></th>
+                <th width="100"><?=$this->lang->line('fri')?></th>
+                <th width="100"><?=$this->lang->line('sat')?></th>
+              </tr>
 
-                     <table class="table table-striped" style="font-size:0.8rem">
-                        <tr>
-                            <th width="10%">Type</th>
-                            <th width="30%"><?=$this->lang->line('startdate')?></th>
-                            <th width="20%"><?=$this->lang->line('country')?></th>
-                            <th width="20%"><?=$this->lang->line('city')?></th>
-                            <th width="20%">Location</th>
-                        </tr>   
-                            <?php 
-                                foreach($calendar as $li){
-                                    if($year."-".sprintf("%02d",$i) == substr($li['start_date'],0,7)){
-                            ?>        
-                            <tr style="cursor: pointer">
-                                <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['type']?></td>
-                                <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['start_date']?></td>
-                                <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['country_name']?></td>
-                                <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['city_name']?></td>
-                                <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['space']?></td>
+              <?php
+                // 5. 화면에 표시할 화면의 초기값을 1로 설정
+                $day=1;
 
-                            </tr>   
-                            <?php
-                                    }
-                                    ?>
+                // 6. 총 주 수에 맞춰서 세로줄 만들기
+                for($i=1; $i <= $total_week; $i++){?>
+              <tr>
+                <?php
+                // 7. 총 가로칸 만들기
+                for ($j = 0; $j < 7; $j++) {
+                    // 8. 첫번째 주이고 시작요일보다 $j가 작거나 마지막주이고 $j가 마지막 요일보다 크면 표시하지 않음
+                    echo '<td height="50" valign="top">';
+                    if (!(($i == 1 && $j < $start_week) || ($i == $total_week && $j > $last_week))) {
+                        
+                        $cnt = 0;
+                        if ($j == 0) {
+                            // 9. $j가 0이면 일요일이므로 빨간색
+                            $style = "holy";
+                        } else if ($j == 6) {
+                            // 10. $j가 0이면 토요일이므로 파란색
+                            $style = "blue";
+                        } else {
+                            // 11. 그외는 평일이므로 검정색
+                            $style = "black";
+                        }
 
-                         <?php
-                                }
-                            ?>
-                        </table>
-
-                    </div>
-            </div>
-        <?php
-            }
-        ?>
+                        // 12. 오늘 날짜면 굵은 글씨
+                        if ($year == $thisyear && $month == $thismonth && $day == date("j")) {
+                            // 13. 날짜 출력
+                            echo '<font class='.$style.'>';
+                            echo $day;
+                            echo '</font>';
+                        } else {
+                            echo '<font class='.$style.'>';
+                            echo $day;
+                            echo '</font>';
+                        }
+                        for($s =0; $s<count($calendar); $s++){
+                            $date = $year."-".sprintf('%02d',$month)."-".sprintf('%02d',$day);
+                            if( $calendar[$s]['start_date'] == $date ){   
+                                $cnt += $calendar[$s]['cnt'];
+                            }
+                        }
+                        if($cnt > 0){ ?>
+                        
+                        <br/>
+                        <div style="text-align: right"><font style='font-size:0.8rem;font-weight: 600;cursor:pointer' onclick="go_list('<?=$date?>')"><?=$this->lang->line('count')?> : <?=$cnt?></font></div>
+                        
+                        <?php
+                        }
+                        // 14. 날짜 증가
+                        $day++;
+                    }
+                    echo '</td>';
+                }
+             ?>
+              </tr>
+              <?php } ?>
+            </table>
+        </div>
     </div>
     
     <div id="list_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
@@ -278,7 +328,12 @@
         
     }
     
-
+    function date_move(year,month){
+        $("#year").val(year);
+        $("#month").val(month);
+        
+        $("#search_form").submit();
+    }
     
     function get_country_data(){
         
@@ -321,13 +376,6 @@
         
     }
     
-    function year_set(year){
-    
-        $("#year").val(year);
-
-        $("#search_form").submit();
-    }
-    
     $(".close").on('click', function(){    
         $('#list_modal').modal('hide');
     });
@@ -341,7 +389,6 @@
                   'max-height':'100%'
            });
     });
-   
    
     
     
