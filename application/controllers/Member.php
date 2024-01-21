@@ -354,7 +354,7 @@ class Member extends CI_Controller {
         $data['mode'] = $mode =  $this->input->get_post("mode");
         
         if(empty($mode)){
-            $mode = "after";
+            $data['mode'] = $mode = "after";
         }
         
         if($mode == "before"){
