@@ -21,7 +21,7 @@ class Schedule extends CI_Controller {
     
     function calendar(){
         
-        
+        $data['mode'] = "calendar";
         
         $search = array();
         
