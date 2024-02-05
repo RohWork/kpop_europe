@@ -104,7 +104,7 @@
                 
                 </div>
             </form>
-            <div class="row" style="margin-top:20px">
+            <div class="row" id="info_div" style="margin-top:20px;display: none">
                 <div class="col-12">
                     <iframe id="detail_info" style="width: 100%;height: auto">
                         
@@ -155,7 +155,9 @@
     });
     
     function go_detail(idx){
-
+        
+        $("#info_div").show();
+        
         var url="/schedule/detail/"+idx;
         
         $('#detail_info').attr('src', url);
