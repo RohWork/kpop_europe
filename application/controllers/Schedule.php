@@ -111,9 +111,10 @@ class Schedule extends CI_Controller {
     
     function list($page=0){
         
-        $data['mode'] = "list";
-        
+        $data = array();
         $search = array();
+        
+        $data['mode'] = "list";
         
         if(!empty($this->input->get_post("date"))){
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
@@ -139,7 +140,7 @@ class Schedule extends CI_Controller {
         
         
         
-        $data = array();
+        
         $total = $this->sch_md->get_schedule($search);
         
         $this->load->library('pagination');
