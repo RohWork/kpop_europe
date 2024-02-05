@@ -57,6 +57,7 @@
                     <th width="30%"><?=$this->lang->line('startdate')?></th>
                     <th width="20%"><?=$this->lang->line('country')?></th>
                     <th width="20%"><?=$this->lang->line('city')?></th>
+                    <th width="20%"><?=$this->lang->line('orgernizer')?></th>
                     <th width="20%">Location</th>
                 </tr>   
                     <?php 
@@ -68,6 +69,7 @@
                         <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['start_date']?></td>
                         <td onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['country_name']?></td>
                         <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['city_name']?></td>
+                        <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['organization_name']?></td>
                         <td  onclick="go_detail(<?=$li['idx']?>,'<?=$li['start_date']?>',1)"><?=$li['space']?></td>
                         
                     </tr>   
