@@ -55,10 +55,10 @@
                 <tr>
                     <th width="10%">Type</th>
                     <th width="15%"><?=$this->lang->line('startdate')?></th>
-                    <th width="25%"><?=$this->lang->line('country')?></th>
-                    <th width="25%"><?=$this->lang->line('city')?></th>
+                    <th width="20%"><?=$this->lang->line('country')?></th>
+                    <th width="20%"><?=$this->lang->line('city')?></th>
                     <th width="20%"><?=$this->lang->line('orgernizer')?></th>
-                    <th width="20%">Location</th>
+                    <th width="30%">Location</th>
                 </tr>   
                     <?php 
                         foreach($bookmark_list as $li){
