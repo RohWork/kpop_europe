@@ -128,10 +128,15 @@ class Schedule extends CI_Controller {
         if(!empty($this->input->get_post("city"))){
             $search['city'] = $this->input->get_post("city");
         }
+        if(!empty($this->input->get_post("detail"))){
+            $search['detail'] = $this->input->get_post("detail");
+        }
+        
         
         $search['organizer'] = $this->input->get_post("organization");
         $search['type'] = $this->input->get_post("type");
-
+        
+        
         
         $data = array();
         $total = $this->sch_md->get_schedule($search);
@@ -145,6 +150,7 @@ class Schedule extends CI_Controller {
         $config['attributes'] = array('class' => 'page-link');
         $this->pagination->initialize($config);
         $data['paging'] = $this->pagination->create_links();
+        
         
         
         
