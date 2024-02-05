@@ -156,7 +156,7 @@
     
     $(document).ready(function(){
 	if('<?=$search['detail']?>' != ''){
-            go_detail($search['detail');
+            go_detail(<?=$search['detail']?>);
         }
     });
 
