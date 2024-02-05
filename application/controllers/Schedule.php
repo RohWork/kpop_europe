@@ -111,6 +111,7 @@ class Schedule extends CI_Controller {
     
     function list($page=0){
         
+        $data['mode'] = "list";
         
         $search = array();
         
