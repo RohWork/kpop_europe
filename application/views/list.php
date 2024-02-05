@@ -154,6 +154,14 @@
         dateFormat: "dd-mm-yy"
     });
     
+    $(document).ready(function(){
+	if('<?=$search['detail']?>' != ''){
+            go_detail($search['detail');
+        }
+    });
+
+    
+    
     function go_detail(idx){
         
         $("#info_div").show();
