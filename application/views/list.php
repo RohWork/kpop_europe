@@ -158,7 +158,7 @@
 
         var url="/schedule/detail/"+idx;
         
-        window.open(url, 'detail', "width=500, height=700" );
+        $('#detail_info').attr('src', url);
         
     }
     
