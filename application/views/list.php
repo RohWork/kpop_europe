@@ -158,7 +158,7 @@
         
         $("#info_div").show();
         
-        var url="/schedule/detail/"+idx;
+        var url="/schedule/frame_detail/"+idx;
         
         $('#detail_info').attr('src', url);
         
