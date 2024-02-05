@@ -146,7 +146,7 @@ class Schedule extends CI_Controller {
         $config['base_url'] = '/schedule/list';
         $config['reuse_query_string'] = true;
         $config['total_rows'] = count($total);
-        $config['per_page'] = 10;
+        $config['per_page'] = 5;
         $config['attributes'] = array('class' => 'page-link');
         $this->pagination->initialize($config);
         $data['paging'] = $this->pagination->create_links();
