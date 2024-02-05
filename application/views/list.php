@@ -112,6 +112,7 @@
                             <th><?=$this->lang->line('startdate')?></th>
                             <th><?=$this->lang->line('country')?></th>
                             <th><?=$this->lang->line('city')?></th>
+                            <th><?=$this->lang->line('orgernizer')?></th>
                             <th>Location</th>
                         </tr>
                         <?php 
