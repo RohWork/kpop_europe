@@ -156,9 +156,9 @@
                 for ($j = 0; $j < 7; $j++) {
                     // 8. 첫번째 주이고 시작요일보다 $j가 작거나 마지막주이고 $j가 마지막 요일보다 크면 표시하지 않음
                     if ($year == $thisyear && $month == $thismonth && $day == date("j")) {
-                        $td_style = "bgcolor:'#E6E6FA'";
+                        $td_style = "background-color:#E6E6FA";
                     }else{
-                        $td_style = "bgcolor:'#FFFFFF'";
+                        $td_style = "";
                     }
                     echo '<td height="50" valign="top" style='.$td_style.'>';
                     if (!(($i == 1 && $j < $start_week) || ($i == $total_week && $j > $last_week))) {
