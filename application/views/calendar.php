@@ -173,9 +173,9 @@
                         // 12. 오늘 날짜면 굵은 글씨
                         if ($year == $thisyear && $month == $thismonth && $day == date("j")) {
                             // 13. 날짜 출력
-                            echo '<font class='.$style.'>';
+                            echo '<font class='.$style.'><b>';
                             echo $day;
-                            echo '</font>';
+                            echo '</b></font>';
                         } else {
                             echo '<font class='.$style.'>';
                             echo $day;
