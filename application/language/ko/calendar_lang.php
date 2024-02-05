@@ -23,7 +23,7 @@
     $lang['delete'] = "삭제";
     $lang['modify'] = "수정";
     $lang['cancel'] = "취소";
-    $lang['list'] = "목록";
+    $lang['list'] = "일정목록";
     $lang['search'] = "검색";
     $lang['login'] = "로그인";
     $lang['save'] = "저장";
