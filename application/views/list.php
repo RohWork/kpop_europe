@@ -123,7 +123,7 @@
                             <td><?=$li['start_date']?></td>
                             <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
-                            <td><?=$li['orgernizer']?></td>
+                            <td><?=$li['organization_name']?></td>
                             <td><?=$li['space']?></td>
                         </tr>   
                         <?php 
