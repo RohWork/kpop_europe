@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top: 30px">
                     
                     <div class="col-2">
                         <div class="form-floating">
