@@ -45,7 +45,7 @@
  
             
                 <?php 
-                    for($i=1;$i<13;$i++){
+                    for($i=12;$i>0;$i--){
                 ?>
     <div class="row" style="padding-top: 35px;">
         <div class="col-12">        
