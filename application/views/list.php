@@ -106,7 +106,7 @@
             </form>
             <div class="row" style="margin-top:20px">
                 <div class="col-12">
-                    <iframe id="detail_info">
+                    <iframe id="detail_info" style="width: 100%;height: auto">
                         
                     </iframe>
                 </div>
