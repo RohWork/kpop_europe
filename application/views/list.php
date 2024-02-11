@@ -163,9 +163,9 @@
     });
     
     $(document).ready(function(){
-	if('<?=$search['detail']?>' != ''){
+	<?php if(!empty($search['detail'])){ ?>
             go_detail(<?=$search['detail']?>);
-        }
+        <?php } ?>
     });
 
     
