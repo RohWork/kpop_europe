@@ -33,6 +33,7 @@
     
     $lang['bookmark'] = "BOOKMARK";
     $lang['google'] = "Google Calendar";
+    $lang['link'] = "Link Copy";
     
     $lang['detail'] = "DETAIL";
     $lang['insert'] = "INSERT";
