@@ -308,19 +308,12 @@
     }
     
     function link_set(){
-        copyToClipboard("test!!!!");
+        const frame = $('#list_frame').get(0).contentWindow;
         
-        alert('복사 되었습니다.');
+        frame.link_set();
     }
     
-    function copyToClipboard(val) {
-        const t = document.createElement("textarea");
-        document.body.appendChild(t);
-        t.value = val;
-        t.select();
-        document.execCommand('copy');
-        document.body.removeChild(t);
-    }
+
     
     function return_list(){
         
