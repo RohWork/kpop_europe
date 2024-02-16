@@ -12,11 +12,9 @@ class Schedule extends CI_Controller {
         $this->load->model('Bookmark_model', 'mark_md',  TRUE);
         
         $lang = $this->session->userdata('lang');
-        echo $lang;
         if(empty($lang)){
             $lang = "en"; 
         }
-        echo $lang;
         $this->lang->load('controller', $lang);
     }
     
