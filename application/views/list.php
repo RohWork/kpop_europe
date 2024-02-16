@@ -1,5 +1,8 @@
 <?php
     $lang = $this->session->userdata('lang');
+    if(empty($lang)){
+            $lang = "en"; 
+    }
     $this->lang->load('view', $lang);
 
 ?>
