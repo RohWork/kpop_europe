@@ -33,7 +33,10 @@
     $lang['enddate'] = "종료일";
     $lang['searchdate'] = "검색 날짜";
     
+    $lang['google'] = "구글 등록";
     $lang['bookmark'] = "즐겨찾기";
+    $lang['link'] = "링크 복사";
+    
     $lang['detail'] = "상세보기";
     $lang['insert'] = "추가";
     $lang['delete'] = "삭제";
