@@ -220,5 +220,24 @@
             
             window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&details="+detail;
         }
+        
+        function link_set(){
+            
+            
+            copyToClipboard("kpopineu.com/schedule/list?detail=<?=$detail_info['idx']?>");
+            alert("<?=$this->lang->line('completeinsert')?>");
+            
+        }
+        
+        
+        function copyToClipboard(val) {
+            const t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+        }
+        
     </script>
 </html>
