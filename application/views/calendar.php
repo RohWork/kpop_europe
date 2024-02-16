@@ -307,6 +307,12 @@
         frame.google_set();
     }
     
+    function copy_set(){
+        window.clipboardData.setData('Text', "Leejunsik");
+        
+        alert('복사 되었습니다.');
+    }
+    
     function return_list(){
         
         var date = select_date;
