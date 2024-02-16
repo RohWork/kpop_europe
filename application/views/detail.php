@@ -113,7 +113,7 @@
                     <p><?=str_replace("\r\n", "<br>",$detail_info['remark'])?></p>
                 </div>
             </div>
-            <div class="row row_border" style="min-height: 100px">
+            <div class="row row_border">
                 <div class="col-3">
                     <label class="form-label"><strong>Image</strong></label>
                 </div>
@@ -144,7 +144,7 @@
 
                 </div>
             </div>
-            <div class="row" style="padding-top: 15px;padding-bottom: 5px">
+            <div class="row">
                 
                 <div class="col-9 text-center">
             <?php if(!empty($this->session->userdata('name') )){ ?>
