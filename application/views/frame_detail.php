@@ -193,7 +193,6 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('<?=$this->lang->line('completebookmark')?>');
-                        google_set();
                         window.parent.location.reload();
                     }else{
                         alert(data.message);
