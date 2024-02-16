@@ -1,6 +1,5 @@
 <?php
     $lang = $this->session->userdata('lang');
-    echo $lang;
     $this->lang->load('view', $lang);
 
 ?>
