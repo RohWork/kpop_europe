@@ -154,6 +154,8 @@
             <?php if(!empty($this->session->userdata('name') )){ ?>
                
                     <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="google_set()" aria-label="Google" style="display: none"> <?=$this->lang->line('google')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="link_set()" aria-label="Google" style="display: none"> <?=$this->lang->line('link')?> </button>
 
             <?php } if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
 
@@ -223,7 +225,7 @@
                 success:function(data){
                     if(data.result == 200){
                         alert('<?=$this->lang->line('completebookmark')?>');
-                        google_set();
+
                         window.parent.location.reload();
                         
                     }else{
@@ -251,6 +253,26 @@
                         +"<div>youtube: <?=$detail_info['yout']?></div>";
             
             window.open('about:blank').location.href = "https://calendar.google.com/calendar/r/eventedit?text="+text+"&dates="+dates+"&location="+location+"&details="+detail;
+        }
+        
+
+        
+        function link_set(){
+            
+            
+            copyToClipboard("kpopineu.com/schedule/list?detail=<?=$detail_info['idx']?>");
+            alert("<?=$this->lang->line('completeinsert')?>");
+            
+        }
+        
+        
+        function copyToClipboard(val) {
+            const t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
         }
     </script>
 </html>
