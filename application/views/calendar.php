@@ -308,7 +308,7 @@
     }
     
     function link_set(){
-        copyToClipboard('test');
+        copyToClipboard("test!!!!");
         
         alert('복사 되었습니다.');
     }
