@@ -17,7 +17,10 @@
     $lang['neterror'] = '네트워크 오류!! 관리자에게 문의 주세요!!';
     $lang['viewall'] = '전체보기';
     
+    $lang['google'] = "구글 등록";
     $lang['bookmark'] = "즐겨찾기";
+    $lang['link'] = "링크 복사";
+    
     $lang['detail'] = "상세보기";
     $lang['insert'] = "추가";
     $lang['delete'] = "삭제";
