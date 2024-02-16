@@ -15,6 +15,8 @@ class Schedule extends CI_Controller {
         if(empty($lang)){
             $lang = "en"; 
         }
+        $this->session->set_userdata('lang',$lang);
+        
         $this->lang->load('controller', $lang);
     }
     
