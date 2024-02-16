@@ -153,7 +153,7 @@
             
             <?php if(!empty($this->session->userdata('name') )){ ?>
                 <div class="col-3 text-center">
-                    <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
                 </div>
             <?php } if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
             <div class="col-3 text-center">
