@@ -154,8 +154,8 @@
             <?php if(!empty($this->session->userdata('name') )){ ?>
                
                     <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
-                    <button type="button" class="btn btn-outline-success bookmark" onclick="google_set()" aria-label="Google" style="display: none"> <?=$this->lang->line('google')?> </button>
-                    <button type="button" class="btn btn-outline-success bookmark" onclick="link_set()" aria-label="Google" style="display: none"> <?=$this->lang->line('link')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="google_set()" aria-label="Google" > <?=$this->lang->line('google')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="link_set()" aria-label="Link" > <?=$this->lang->line('link')?> </button>
 
             <?php } if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
 
