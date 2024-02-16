@@ -308,9 +308,18 @@
     }
     
     function link_set(){
-        window.clipboardData.setData('Text', "Leejunsik");
+        copyToClipboard('test');
         
         alert('복사 되었습니다.');
+    }
+    
+    function copyToClipboard(val) {
+        const t = document.createElement("textarea");
+        document.body.appendChild(t);
+        t.value = val;
+        t.select();
+        document.execCommand('copy');
+        document.body.removeChild(t);
     }
     
     function return_list(){
