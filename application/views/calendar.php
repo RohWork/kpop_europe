@@ -226,8 +226,8 @@
                 </div>
                 <div class="modal-footer">
                     <?php if(!empty($this->session->userdata('name') )){ ?>
-                    <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark" style="display: none"> <?=$this->lang->line('bookmark')?> </button>
-                    <button type="button" class="btn btn-warning list" onclick="google_set()" aria-label="List" style="display: none"> <?=$this->lang->line('google')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark" style="display: none"> <?=$this->lang->line('bookmark')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="google_set()" aria-label="Google" style="display: none"> <?=$this->lang->line('google')?> </button>
                     <?php } ?>
                     <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
                     
