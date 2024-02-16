@@ -150,19 +150,16 @@
             </div>
             <div class="row" style="padding-top: 15px;padding-bottom: 5px">
                 
-            <?php if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
             
-                <div class="col-3 text-center">
-                    <button type="button" class="btn btn-warning"  onclick="set_modify()"><?=$this->lang->line('modify')?></button>
-                </div>
-                <div class="col-3 text-center">
-                    <button type="button" class="btn btn-danger"  onclick="set_delete()"><?=$this->lang->line('delete')?></button>
-                </div>
-            <?php } ?>
             <?php if(!empty($this->session->userdata('name') )){ ?>
                 <div class="col-3 text-center">
                     <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
                 </div>
+            <?php } if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
+            <div class="col-3 text-center">
+                <button type="button" class="btn btn-warning"  onclick="set_modify()"><?=$this->lang->line('modify')?></button>
+                <button type="button" class="btn btn-danger"  onclick="set_delete()"><?=$this->lang->line('delete')?></button>
+            </div>
             <?php } ?>
                 <div class="col-3 text-center">
                     <button type="button" class="btn btn-info"  onclick="self.close();"><?=$this->lang->line('close')?></button>
