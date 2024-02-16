@@ -227,9 +227,10 @@
                 <div class="modal-footer">
                     <?php if(!empty($this->session->userdata('name') )){ ?>
                     <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark" style="display: none"> <?=$this->lang->line('bookmark')?> </button>
+                    <button type="button" class="btn btn-primary list" onclick="google_set()" aria-label="List" style="display: none"> <?=$this->lang->line('google')?> </button>
                     <?php } ?>
                     <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
-                    <button type="button" class="btn btn-primary list" onclick="google_set()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
+                    
                     <?php if($this->session->userdata('level') > 2){ ?>
                     <button type="button" class="btn btn-danger delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> <?=$this->lang->line('delete')?> </button>
                     <?php } ?>
