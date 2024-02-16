@@ -3,6 +3,7 @@
     if(empty($lang)){
             $lang = "en"; 
     }
+    echo $lang;
     $this->lang->load('view', $lang);
 
 ?>
