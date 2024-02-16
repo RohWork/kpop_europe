@@ -229,6 +229,7 @@
                     <button type="button" class="btn btn-success bookmark" onclick="calendar_mark()" aria-label="Bookmark" style="display: none"> <?=$this->lang->line('bookmark')?> </button>
                     <?php } ?>
                     <button type="button" class="btn btn-primary list" onclick="return_list()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
+                    <button type="button" class="btn btn-primary list" onclick="google_set()" aria-label="List" style="display: none"> <?=$this->lang->line('list')?> </button>
                     <?php if($this->session->userdata('level') > 2){ ?>
                     <button type="button" class="btn btn-danger delete" onclick="calendar_delete()" aria-label="Delete" style="display: none"> <?=$this->lang->line('delete')?> </button>
                     <?php } ?>
@@ -296,6 +297,12 @@
         const frame = $('#list_frame').get(0).contentWindow;
         
         frame.set_mark();
+    }
+    
+    function google_set(){
+        const frame = $('#list_frame').get(0).contentWindow;
+        
+        frame.google_set();
     }
     
     function return_list(){
