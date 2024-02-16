@@ -150,7 +150,7 @@
             </div>
             <div class="row" style="padding-top: 15px;padding-bottom: 5px">
                 
-                <div class="col-3 text-center">
+                <div class="col-5 text-center">
             <?php if(!empty($this->session->userdata('name') )){ ?>
                
                     <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
