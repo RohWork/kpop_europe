@@ -32,6 +32,8 @@
     $lang['after']  = "party planned";
     
     $lang['bookmark'] = "BOOKMARK";
+    $lang['google'] = "Google Calendar";
+    
     $lang['detail'] = "DETAIL";
     $lang['insert'] = "INSERT";
     $lang['delete'] = "DELETE";
