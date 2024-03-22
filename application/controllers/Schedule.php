@@ -6,6 +6,7 @@ class Schedule extends CI_Controller {
         parent ::__construct();
         
         $this->load->model('Schedule_model', 'sch_md', TRUE);
+        $this->load->model('Community_model', 'com_md', TRUE);
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Organization_model', 'org_md', TRUE);
@@ -442,6 +443,51 @@ class Schedule extends CI_Controller {
         echo json_encode($data);
         
     }
+    
+        function like_ajax(){
+        
+        $data = array();
+        
+        $data['result'] = 200;
+        $data['message'] = "";
+        
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('view', $lang);
+
+        
+        $mode = "schedule";
+        $idx = $this->input->post("idx");
+        
+        if(empty($this->session->userdata('name') )){
+            $data['result'] = 401;
+            $data['message'] = $this->lang->line('loginerror');
+        }else if(count($this->com_md->get_like_history($idx, "schedule", $mode, 0) )> 0){
+            
+            $this->com_md->modify_like_history($idx, $mode, "schedule", 0);
+            $result = $this->sch_md->set_like($idx, $mode);
+            
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
+            
+        }else{
+            
+            
+            $this->com_md->set_like_history($idx, $mode, "schedule", 0);
+            $result = $this->sch_md->set_like($idx, $mode);
+            
+            
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
+        }
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
+
     
     function excel(){
         
