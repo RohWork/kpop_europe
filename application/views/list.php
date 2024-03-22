@@ -130,7 +130,7 @@
                             <th><?=$this->lang->line('country')?></th>
                             <th><?=$this->lang->line('city')?></th>
                             <th><?=$this->lang->line('orgernizer')?></th>
-                            <th><?=$this->lang->line('likecnt')?></th>
+                            <th align="center"><?=$this->lang->line('likecnt')?></th>
                             <th>Location</th>
                         </tr>
                         <?php 
