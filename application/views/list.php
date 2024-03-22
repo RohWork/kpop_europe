@@ -130,6 +130,7 @@
                             <th><?=$this->lang->line('country')?></th>
                             <th><?=$this->lang->line('city')?></th>
                             <th><?=$this->lang->line('orgernizer')?></th>
+                            <th><?=$this->lang->line('likecnt')?></th>
                             <th>Location</th>
                         </tr>
                         <?php 
@@ -141,6 +142,7 @@
                             <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
                             <td><?=$li['organization_name']?></td>
+                            <th><?=$this->lang->line('like')?></th>
                             <td><?=$li['space']?></td>
                         </tr>   
                         <?php 
