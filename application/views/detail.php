@@ -160,7 +160,7 @@
 
             <?php } ?>
 
-                    <button type="button" class="btn btn-info"  onclick="self.close();"><?=$this->lang->line('close')?></button>
+                    <button type="button" class="btn btn-info"  onclick="self.close();parentClose();"><?=$this->lang->line('close')?></button>
                 </div>
             </div>
         </div>
@@ -269,6 +269,10 @@
             t.select();
             document.execCommand('copy');
             document.body.removeChild(t);
+        }
+        
+        function parentClose(){
+            window.parent.frameClose();
         }
     </script>
 </html>
