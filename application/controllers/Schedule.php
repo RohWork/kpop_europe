@@ -454,8 +454,8 @@ class Schedule extends CI_Controller {
         $lang = $this->session->userdata('lang');
         $this->lang->load('view', $lang);
 
+        $mode =  $this->input->post("mode");
         
-        $mode = "schedule";
         $idx = $this->input->post("idx");
         
         if(empty($this->session->userdata('name') )){
