@@ -216,9 +216,9 @@ class Schedule_model extends CI_Model {
     function set_like($idx, $mode){
         
         if($mode == "1"){
-            $this->db->set('like', 'like + 1', false);
+            $this->db->set('great', 'great + 1', false);
         }else{
-            $this->db->set('like', 'like - 1', false);
+            $this->db->set('great', 'great - 1', false);
         }
         
         $this->db->where("idx", $idx);
