@@ -222,5 +222,9 @@
         
     }
     
+    function frameClose(){
+        $("#info_div").hide();
+    }
+    
     </script>
 </main>
