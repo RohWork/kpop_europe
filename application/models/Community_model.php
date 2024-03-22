@@ -217,6 +217,7 @@ class Community_model extends CI_Model {
     
     function get_like_history($idx, $type, $mode= "", $comment_idx){
         
+        $mode_where = "";
         if(!empty($mode)){
             $mode_where = " and mode = $mode";
         }
