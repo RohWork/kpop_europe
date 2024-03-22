@@ -463,7 +463,6 @@ class Schedule extends CI_Controller {
             $data['message'] = $this->lang->line('loginerror');
         }else if(count($this->com_md->get_like_history($idx, "schedule", $mode, 0) )> 0){
             $this->com_md->modify_like_history($idx, $mode, "schedule", 0);    
-            
             $mode = 2;  
             
         }
