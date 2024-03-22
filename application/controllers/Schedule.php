@@ -193,6 +193,7 @@ class Schedule extends CI_Controller {
         
         $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
+        $data['like'] = count($this->com_md->get_like_history($idx, "schedule", 1, 0));
         
         $this->load->view('detail',$data);
 
