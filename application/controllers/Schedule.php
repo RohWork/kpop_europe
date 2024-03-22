@@ -461,28 +461,17 @@ class Schedule extends CI_Controller {
         if(empty($this->session->userdata('name') )){
             $data['result'] = 401;
             $data['message'] = $this->lang->line('loginerror');
-        }else if(count($this->com_md->get_like_history($idx, "schedule", $mode, 0) )> 0){
-            
-            $this->com_md->modify_like_history($idx, $mode, "schedule", 0);
-            $result = $this->sch_md->set_like($idx, $mode);
-            
-            if(!$result){
-                $data['result'] = 400;
-                $data['message'] = $this->lang->line('dataerror');
-            }
-            
-        }else{
-            
-            
-            $this->com_md->set_like_history($idx, $mode, "schedule", 0);
-            $result = $this->sch_md->set_like($idx, $mode);
-            
-            
-            if(!$result){
-                $data['result'] = 400;
-                $data['message'] = $this->lang->line('dataerror');
-            }
+        }else if(count($this->com_md->get_like_history($idx, "schedule", $mode, 0) )> 0){            
+            $mode = 2;  
         }
+        
+        $this->com_md->set_like_history($idx, $mode, "schedule", 0);
+            $result = $this->sch_md->set_like($idx, $mode);
+
+            if(!$result){
+                $data['result'] = 400;
+                $data['message'] = $this->lang->line('dataerror');
+            }
         header("Content-Type: application/json;");
         echo json_encode($data);
         
