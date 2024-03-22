@@ -152,7 +152,8 @@
                     <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
                     <button type="button" class="btn btn-outline-success bookmark" onclick="google_set()" aria-label="Google" > <?=$this->lang->line('google')?> </button>
                     <button type="button" class="btn btn-outline-success bookmark" onclick="link_set()" aria-label="Link" > <?=$this->lang->line('link')?> </button>
-                    <button type="button" class="btn btn-outline-success bookmark" onclick="like_set()" aria-label="Like" > <?=$this->lang->line('like')?> </button>
+                    
+                    <button type="button" class="btn <?=$like>0 ? "btn-success":"btn-outline-success"?> bookmark" onclick="like_set()" aria-label="Like" > <?=$this->lang->line('like')?> </button>
 
             <?php } if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
 
