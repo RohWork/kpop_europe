@@ -142,7 +142,7 @@
                             <td><?=$li['country_name']?></td>
                             <td><?=$li['city_name']?></td>
                             <td><?=$li['organization_name']?></td>
-                            <th><?=$li['like']?></th>
+                            <td align="center"><?=$li['like']?></td>
                             <td><?=$li['space']?></td>
                         </tr>   
                         <?php 
