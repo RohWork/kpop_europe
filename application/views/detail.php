@@ -262,10 +262,11 @@
             
         }
         
-        function like_set(){
+        function like_set(mode){
             
-            var data = { idx : <?=$detail_info['idx']?>};
-                        
+            var data = { idx : <?=$detail_info['idx']?>, mode: mode};
+            
+            
             $.ajax({
                 url:'/schedule/like_ajax',
                 type:'post',
