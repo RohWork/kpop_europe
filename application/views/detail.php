@@ -152,6 +152,7 @@
                     <button type="button" class="btn btn-outline-success bookmark" onclick="calendar_mark()" aria-label="Bookmark"> <?=$this->lang->line('bookmark')?> </button>
                     <button type="button" class="btn btn-outline-success bookmark" onclick="google_set()" aria-label="Google" > <?=$this->lang->line('google')?> </button>
                     <button type="button" class="btn btn-outline-success bookmark" onclick="link_set()" aria-label="Link" > <?=$this->lang->line('link')?> </button>
+                    <button type="button" class="btn btn-outline-success bookmark" onclick="like_set()" aria-label="Like" > <?=$this->lang->line('like')?> </button>
 
             <?php } if(($this->session->userdata('level') > 2 || $this->session->userdata('org_idx') == $detail_info['organization_idx']) && empty($mode)){ ?>
 
@@ -261,6 +262,32 @@
             
         }
         
+        function like_set(){
+            
+            var data = { idx : <?=$detail_info['idx']?>};
+                        
+            $.ajax({
+                url:'/schedule/like_ajax',
+                type:'post',
+                data:data,
+                success:function(data){
+                    if(data.result == 200){
+                        
+                        window.parent.location.reload();
+                        
+                    }else{
+                        alert(data.message);
+                        console.log(data);
+                    }
+                },
+                error: function(xhr,status,error) {
+                    console.log(xhr,status,error);
+                    alert("<?=$this->lang->line('neterror')?>");
+                    return false;
+                }	 
+            });
+            
+        }
         
         function copyToClipboard(val) {
             const t = document.createElement("textarea");
