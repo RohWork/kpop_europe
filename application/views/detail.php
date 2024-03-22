@@ -262,8 +262,9 @@
             
         }
         
-        function like_set(mode){
+        function like_set(){
             
+            var mode = 1;
             var data = { idx : <?=$detail_info['idx']?>, mode: mode};
             
             
