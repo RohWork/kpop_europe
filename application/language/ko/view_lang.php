@@ -51,6 +51,7 @@
     $lang['return'] = "돌아가기";
     $lang['viewall'] = "전체보기";
     
+    
     $lang['comment'] = "댓글";
     $lang['searchdate'] = "검색일자";
     
