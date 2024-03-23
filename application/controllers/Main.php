@@ -21,6 +21,8 @@ class Main extends CI_Controller {
         }
         
         $lang = $this->input->get_post("lang");
+        $return_url = $this->input->get_post("return_url");
+        
         $slang = $this->session->userdata('language');
         
         if(empty($lang)){
@@ -35,6 +37,11 @@ class Main extends CI_Controller {
             $this->session->set_userdata('lang',$lang);
             session_commit();
             session_write_close();
+            
+            if(!empty($return_url)){
+                
+                header('Location: '.$return_url);
+            }
         }
 
 
