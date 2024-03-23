@@ -22,13 +22,14 @@
         <script>
             function go_href(val){
                                 
+                var url =  "<?=$_SERVER[ "REQUEST_URI" ]?>".replace('&','_'); 
+                        
                 if(val == "ko"){
-                    location.href='/?lang=ko&return_url=<?=$_SERVER[ "REQUEST_URI" ]?>';
-
+                    location.href='/?lang=ko&return_url='+url;
                 }else if(val == "en"){
-                    location.href='/?lang=en&return_url=<?=$_SERVER[ "REQUEST_URI" ]?>';
+                    location.href='/?lang=en&return_url='+url;
                 }else if(val == "de"){
-                    location.href='/?lang=de&return_url=<?=$_SERVER[ "REQUEST_URI" ]?>';
+                    location.href='/?lang=de&return_url='+url;
                 }
             }
             
