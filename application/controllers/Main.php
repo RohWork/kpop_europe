@@ -22,8 +22,7 @@ class Main extends CI_Controller {
         
         $lang = $this->input->get_post("lang");
         $return_url = $this->input->get_post("return_url");
-        echo $return_url;
-        exit;
+        
         
         $slang = $this->session->userdata('language');
         
@@ -43,7 +42,8 @@ class Main extends CI_Controller {
             if(!empty($return_url)){
                 
                 $return_url = str_replace("_", "&", $return_url); 
-
+                echo $return_url;
+                exit;
                 header('Location: '.$return_url);
             }
         }
