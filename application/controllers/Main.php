@@ -42,8 +42,6 @@ class Main extends CI_Controller {
             if(!empty($return_url)){
                 
                 $return_url = str_replace('_','&',$return_url);
-                echo $return_url;
-                exit;
                 header('Location: '.$return_url);
             }
         }
