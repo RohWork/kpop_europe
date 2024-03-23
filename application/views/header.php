@@ -22,7 +22,7 @@
         <script>
             function go_href(val){
                                 
-                var url =  "<?=$_SERVER[ "REQUEST_URI" ]?>".replace('&','_'); 
+                var url =  "<?=$_SERVER[ "REQUEST_URI" ]?>".replaceAll('&','_'); 
                         
                 if(val == "ko"){
                     location.href='/?lang=ko&return_url='+url;
