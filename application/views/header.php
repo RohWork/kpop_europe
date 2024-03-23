@@ -23,11 +23,12 @@
             function go_href(val){
                                 
                 if(val == "ko"){
-                    location.href='/?lang=ko&return_url=<?=$_SERVER[ "REQUEST_URI" ]?>';
+                    location.href='/?lang=ko&return_url=<?=$_SERVER[ "REQUEST_URI" ]."?".$_SERVER["QUERY_STRING"]?>';
+
                 }else if(val == "en"){
-                    location.href='/?lang=en&return_url=<?=$_SERVER[ "REQUEST_URI" ]?>';
+                    location.href='/?lang=en&return_url=<?=$_SERVER[ "REQUEST_URI" ]."?".$_SERVER["QUERY_STRING"]?>';
                 }else if(val == "de"){
-                    location.href='/?lang=de&return_url=<?=$_SERVER[ "REQUEST_URI" ]?>';
+                    location.href='/?lang=de&return_url=<?=$_SERVER[ "REQUEST_URI" ]."?".$_SERVER["QUERY_STRING"]?>';
                 }
             }
             
