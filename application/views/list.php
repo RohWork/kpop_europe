@@ -11,8 +11,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn <?=$mode=="calendar"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/schedule/calendar'"><?=$this->lang->line('calendar')?></button>
                             <button type="button" class="btn <?=$mode=="list"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/schedule/list'"><?=$this->lang->line('list')?></button>
+                            <button type="button" class="btn <?=$mode=="calendar"? "btn-primary" :"btn-outline-primary" ?>" onclick="location.href='/schedule/calendar'"><?=$this->lang->line('calendar')?></button>    
                         </div>
                     </div>
                 </div>
