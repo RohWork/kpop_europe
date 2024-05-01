@@ -213,7 +213,7 @@
         var j = $("#check_country option:selected").val();
 
 
-        locaion.href="/community/write?country="+j+"language=<?=$language?>&community_type=2";
+        locaion.href="/community/write?country="+j+"language=<?=$search['language']?>&community_type=2";
         
     }
     
@@ -221,7 +221,7 @@
         var j = $("#check_city option:selected").val();
 
 
-        locaion.href="/community/write?country=<?=$country?>&city="+j+"language=<?=$language?>&community_type=2";
+        locaion.href="/community/write?country=<?=$search['country']?>&city="+j+"language=<?=$search['language']?>&community_type=2";
     }
     
     
