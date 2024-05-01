@@ -38,7 +38,7 @@ class Community_model extends CI_Model {
                 }
         }
         
-        if(empty($search['community_type'])){
+        if(!empty($search['community_type'])){
             $where .= " AND kc.type ='".$search['community_type']."'";
         }
         
