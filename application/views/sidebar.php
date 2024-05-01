@@ -107,6 +107,10 @@
             <li class="mb-1">
                 <a href="/community/list" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('community')?></a>
             </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <a href="/community/list?community_type=2" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('getparty')?></a>
+            </li>
             <!--<li class="border-top my-3"></li>
             <li class="mb-1">
                 <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#input-collapse" aria-expanded="false">
