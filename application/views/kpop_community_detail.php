@@ -37,7 +37,7 @@
                     <div class="col-4">
                         <label class="form-label bold"><strong><?=$this->lang->line('kpopinfo')?></strong></label>
                         &nbsp;
-                        <?="[".$detail['start_date']."~".$li['end_date']."]".$detail['space']?>
+                        <?="[".$detail['start_date']."~".$detail['end_date']."]".$detail['space']?>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
