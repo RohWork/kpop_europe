@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     
-                    <?php if($search['type'] == 2){ ?>
+
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="check_schedule" name="kpop_idx" class="form-select">
@@ -94,11 +94,11 @@
                                 
                             </select>
                             <label for="language" lass="form-labe" >
-                                <?=$this->lang->line('language')?>
+                                <?=$this->lang->line('list')?>
                             </label>
                         </div>
                     </div>
-                    <?php } ?>
+
                     
                     <div class="col-1">
                         
