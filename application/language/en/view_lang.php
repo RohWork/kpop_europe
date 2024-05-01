@@ -69,6 +69,7 @@
     
 $lang['calendar'] = "Calendar";
     $lang['list'] = "List";
+    $lang['kpopinfo'] = "Kpop Informaition";
     
     $lang['order'] = "Order";
     $lang['name'] = "Name";
