@@ -1,6 +1,6 @@
 <?php
 
-    $lang['kpop_schedule'] = 'Kpop Calendar';
+    $lang['kpop_schedule'] = 'Kpop Schedule';
     $lang['kpop_list'] = 'Kpop List';
     $lang['calendar'] = 'Calendar';
     $lang['schedule'] = 'Schedule';
