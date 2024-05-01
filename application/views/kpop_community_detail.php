@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
-                    <div class="col-5">
+                    <div class="col-9">
                         <h4><?=$detail['title']?></h3>   
                     </div>
                 </div>
