@@ -9,6 +9,7 @@ class Community extends CI_Controller {
         $this->load->model('Community_model', 'com_md', TRUE);
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
+        $this->load->model('Schedule_model', 'sch_md', TRUE);
         
         $lang = $this->session->userdata('lang');
         $this->lang->load('controller', $lang);
@@ -38,6 +39,9 @@ class Community extends CI_Controller {
         if(!empty($this->input->get_post("language"))){
             $search['language'] = $this->input->get_post("language");
         }
+        if(!empty($this->input->get_post("language"))){
+            $search['kpop_idx'] = $this->input->get_post("kpop_idx");
+        }
         
         $data['country_list'] = $this->cont_md->get_country();
         
@@ -46,6 +50,9 @@ class Community extends CI_Controller {
         }else{
             $data['city_list'] = "";
         }
+        
+        $data['schedule_list'] = $this->scm_md->get_schedule($search);
+        
         
         $result = $this->com_md->get_list($search);
         
