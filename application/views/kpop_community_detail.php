@@ -34,8 +34,13 @@
 
                 </div>
                 <div class="row" style="padding-top: 10px">
-                    <div class="col-9">
-                            <h4><?=$detail['title']?></h3>   
+                    <div class="col-3">
+                        <label class="form-label bold"><strong><?=$this->lang->line('language')?></strong></label>
+                        &nbsp;
+                        <?="[".$sch['start_date']."]".$sch['space']?>
+                    </div>
+                    <div class="col-6">
+                            <h4><?=$detail['list']?></h3>   
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
