@@ -221,7 +221,7 @@
         var j = $("#check_city option:selected").val();
 
 
-        location.href="/community/write?country=<?=$search['country']?>&city="+j+"language=<?=$search['language']?>&community_type=2";
+        location.href="/community/write?country=<?=$search['country']?>&city="+j+"&language=<?=$search['language']?>&community_type=2";
     }
     
     
