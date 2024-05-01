@@ -39,7 +39,7 @@ class Community_model extends CI_Model {
         
         $sSql = "select kc.* , m.nick as mnick,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt,
-                ki.start_date, ki.space
+                ki.start_date, ki.space, ki.idx AS kpop_idx
                 from kpop_community as kc 
                 left join kpop_member as m on kc.writer = m.id
                 LEFT JOIN kpop_info AS ki ON kc.kpop_idx = ki.idx
