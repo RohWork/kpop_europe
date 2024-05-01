@@ -30,6 +30,7 @@ class Community extends CI_Controller {
         $search['country'] = $this->session->userdata('country_idx');
         $search['city'] = $this->session->userdata('city_idx');
         $search['language'] = $this->session->userdata('lang');
+        $search['kpop_idx'] = "";
         
         if(!empty($this->input->get_post("country"))){
             $search['country'] = $this->input->get_post("country");
