@@ -114,6 +114,7 @@
                        
                             <th><?=$this->lang->line('title')?></th>
                             <th><?=$this->lang->line('writer')?></th>
+                            <th><?=$this->lang->line('kpopinfo')?></th>
                             <th><?=$this->lang->line('writedate')?></th>
                             <th><?=$this->lang->line('likecnt')?></th>
                             <th><?=$this->lang->line('viewcnt')?></th>
@@ -125,6 +126,7 @@
                         <tr onclick="go_detail(<?=$li['idx']?>)" style="cursor: pointer">
                             <td><?=$li['title']?></td>
                             <td><?=$li['mnick']?></td>
+                            <td><?="[".$li['start_date']."]".$li['space']?></td>
                             <td><?=substr($li['reg_date'],0,10) == date('Y-m-d')? substr($li['reg_date'],10,9) : substr($li['reg_date'],0,10) ?></td>
                             <td><?=$li['great']?></td>
                             <td><?=$li['cnt']?></td>
