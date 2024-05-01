@@ -32,11 +32,17 @@ class Community_model extends CI_Model {
             $limit = " limit ".$paging['start'].",".$paging['end'];
 
         }
+        if($search['type'] == 2 && $search['kpop_idx'] != 'all'){
+
+                $where .= " AND ki.idx ='".$search['kpop_idx']."'";
+        }
         
         $sSql = "select kc.* , m.nick as mnick,
-                (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt 
+                (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt,
+                ki.start_date, ki.space
                 from kpop_community as kc 
                 left join kpop_member as m on kc.writer = m.id
+                LEFT JOIN kpop_info AS ki ON kc.kpop_idx = ki.idx
                 where kc.state = 1 $where 
                 order by idx desc $limit";
         
