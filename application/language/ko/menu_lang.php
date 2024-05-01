@@ -1,7 +1,7 @@
 <?php
 
     $lang['kpop_schedule'] = 'kpop 일정달력';
-    $lang['kpop_list'] = 'kpop 일정목록';
+    $lang['kpop_list'] = 'kpop 일정';
     $lang['calendar'] = '달력보기';
     $lang['schedule'] = '일정';
     $lang['community'] = '커뮤니티';
