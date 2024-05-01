@@ -149,8 +149,8 @@ class Community extends CI_Controller {
         $params['title'] = $this->input->post("title");
         $params['content'] = $this->input->post("content");
         $params['hashtag'] = $this->input->post("hashtag");
-        
-
+        $params['type'] = $this->input->post("community_type");
+        $params['kpop_idx'] = $this->input->post("kpop_idx");
         
 
         $result = $this->com_md->insert_community($params);
