@@ -105,7 +105,7 @@
             -->
             <li class="border-top my-3"></li>
             <li class="mb-1">
-                <a href="/community/list" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('community')?></a>
+                <a href="/community/list?community_type=1" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('community')?></a>
             </li>
             <li class="border-top my-3"></li>
             <li class="mb-1">
