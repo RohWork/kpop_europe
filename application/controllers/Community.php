@@ -23,7 +23,7 @@ class Community extends CI_Controller {
         $data = array();
         
         $search['type'] = $this->input->get_post("type");
-        if(empty($type)){
+        if(empty($search['type'])){
              $search['type'] = 1;
         }
         $search['country'] = $this->session->userdata('country_idx');
