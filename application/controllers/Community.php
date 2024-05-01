@@ -97,6 +97,12 @@ class Community extends CI_Controller {
         $data = array();
         $search = array();
         
+        $search['community_type'] = $this->input->get_post("community_type");
+        
+        if(empty($search['community_type'])){
+             $search['community_type'] = 1;
+        }
+        
         $data['country_list'] = $this->cont_md->get_country();
         
         $search['country'] = $this->input->get_post("country");
@@ -109,13 +115,18 @@ class Community extends CI_Controller {
         }else{
             $data['city_list'] = "";
         }
+        $data['schedule_list'] = $this->sch_md->get_schedule($search);
         
         $data['language'] = $this->session->userdata('lang');
         $data['search'] = $search;
         
         $this->load->view('header');
         $this->load->view('sidebar');
-        $this->load->view('community_write', $data);
+        if($search['community_type'] == 2){
+            $this->load->view('kpop_community_write',$data);
+        }else{
+            $this->load->view('community_write', $data);
+        }
         $this->load->view('footer');
     }
     
