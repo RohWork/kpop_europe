@@ -77,7 +77,7 @@ class Community_model extends CI_Model {
     function detail_community($idx){
         
         $sSql = "select kc.*, co.name as country_name, ci.name as city_name, m.nick as mnick,
-                ki.start_date, ki.space, ki.idx as kpop_idx
+                ki.start_date, ki.space
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
