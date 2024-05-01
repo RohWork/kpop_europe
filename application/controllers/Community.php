@@ -78,7 +78,11 @@ class Community extends CI_Controller {
         
         $this->load->view('header');
         $this->load->view('sidebar');
-        $this->load->view('community_list',$data);
+        if($search['type'] == 2){
+            $this->load->view('kpop_community_list',$data);
+        }else{
+            $this->load->view('community_list',$data);
+        }
         $this->load->view('footer');
         
     }
