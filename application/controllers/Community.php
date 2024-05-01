@@ -204,6 +204,7 @@ class Community extends CI_Controller {
         }else{
             $data['city_list'] = "";
         }
+        $data['schedule_list'] = $this->sch_md->get_schedule($data);
         
         $cnt = $this->com_md->count_community($idx);
         
