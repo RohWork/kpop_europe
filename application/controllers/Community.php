@@ -40,7 +40,7 @@ class Community extends CI_Controller {
         if(!empty($this->input->get_post("language"))){
             $search['language'] = $this->input->get_post("language");
         }
-        if(!empty($this->input->get_post("language"))){
+        if(!empty($this->input->get_post("kpop_idx"))){
             $search['kpop_idx'] = $this->input->get_post("kpop_idx");
         }
         
@@ -122,6 +122,7 @@ class Community extends CI_Controller {
         
         $this->load->view('header');
         $this->load->view('sidebar');
+        
         if($search['community_type'] == 2){
             $this->load->view('kpop_community_write',$data);
         }else{
