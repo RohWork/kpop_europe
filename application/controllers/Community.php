@@ -194,6 +194,8 @@ class Community extends CI_Controller {
     
     function modify($idx){
         
+        $search = array();
+        
         $data['detail'] = $detail =  $this->com_md->detail_community($idx);
         $data['idx'] = $idx;
         
@@ -204,7 +206,11 @@ class Community extends CI_Controller {
         }else{
             $data['city_list'] = "";
         }
-        $data['schedule_list'] = $this->sch_md->get_schedule($data);
+        
+        $search['country'] = $detail["country_idx"];
+        $search['city'] = $detail["city_idx"];
+        
+        $data['schedule_list'] = $this->sch_md->get_schedule($search);
         
         $cnt = $this->com_md->count_community($idx);
         
