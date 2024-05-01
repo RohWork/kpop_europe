@@ -10,6 +10,7 @@
 
 <div class="container" style="overflow-y: auto">
         <form id="community_write">
+            <input type="hidden" name="community_type" id="community_type" value="<?=$search['community_type']?>"/>
             <div class="form-group">
                 <div class="row mt-1">
                     <div class="col-2">
