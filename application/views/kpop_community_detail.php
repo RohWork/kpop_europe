@@ -34,12 +34,12 @@
 
                 </div>
                 <div class="row" style="padding-top: 10px">
-                    <div class="col-3">
-                        <label class="form-label bold"><strong><?=$this->lang->line('list')?></strong></label>
+                    <div class="col-4">
+                        <label class="form-label bold"><strong><?=$this->lang->line('kpopinfo')?></strong></label>
                         &nbsp;
                         <?="[".$detail['start_date']."]".$detail['space']?>
                     </div>
-                    <div class="col-6">
+                    <div class="col-5">
                             <h4><?=$detail['title']?></h3>   
                     </div>
                 </div>
