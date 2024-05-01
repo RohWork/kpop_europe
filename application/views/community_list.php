@@ -75,7 +75,6 @@
                         </div>
                     </div>
                     
-                    
                     <div class="col-1">
                         
                         <input type="submit" value="<?=$this->lang->line('search')?>" class="btn btn-success"/>
