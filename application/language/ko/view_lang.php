@@ -72,7 +72,7 @@
    
     $lang['calendar'] = "일정 달력";
     $lang['list'] = "일정 목록";
-   
+    $lang['kpopinfo'] = "일정 정보";
     
     $lang['order'] = "순서";
     $lang['name'] = "이름";
