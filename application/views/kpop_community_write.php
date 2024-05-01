@@ -122,7 +122,7 @@
                 <div class="col-md-6 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
                     <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
                     <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
-                    <button type="button" class="btn btn-secondary" onclick="location.href='/community/list'"><?=$this->lang->line('list')?></button>
+                    <button type="button" class="btn btn-secondary" onclick="location.href='/community/list?community_type=2'"><?=$this->lang->line('list')?></button>
                 </div>
             </div>
         </form>
