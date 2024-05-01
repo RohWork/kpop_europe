@@ -32,9 +32,10 @@ class Community_model extends CI_Model {
             $limit = " limit ".$paging['start'].",".$paging['end'];
 
         }
-        if($search['community_type'] == 2 && ($search['kpop_idx'] != 'all' && !empty($search['kpop_idx']))){
-
-                $where .= " AND ki.idx ='".$search['kpop_idx']."'";
+        if($search['community_type'] == 2 &&  !empty($search['kpop_idx'])){
+                if($search['kpop_idx'] != 'all'){
+                    $where .= " AND ki.idx ='".$search['kpop_idx']."'";
+                }
         }
         
         $sSql = "select kc.* , m.nick as mnick,
