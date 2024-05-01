@@ -22,7 +22,7 @@ class Community extends CI_Controller {
         $search = array();
         $data = array();
         
-        $search['community_type'] = $this->input->get_post("type");
+        $search['community_type'] = $this->input->get_post("community_type");
         
         if(empty($search['community_type'])){
              $search['community_type'] = 1;
