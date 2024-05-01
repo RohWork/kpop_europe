@@ -23,6 +23,7 @@ class Community extends CI_Controller {
         $data = array();
         
         $search['type'] = $this->input->get_post("type");
+        echo $search['type'];
         if(empty($search['type'])){
              $search['type'] = 1;
         }
