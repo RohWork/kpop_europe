@@ -77,10 +77,11 @@ class Community_model extends CI_Model {
     function detail_community($idx){
         
         $sSql = "select kc.*, co.name as country_name, ci.name as city_name, m.nick as mnick
-                from kpop_community as kc
+                from kpop_community as kc, ki.start_date, ki.space, ki.idx as kpop_idx
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
                 left join kpop_member as m on m.idx = kc.writer
+                LEFT JOIN kpop_info AS ki ON kc.kpop_idx = ki.idx
                 where kc.idx = $idx order by kc.reg_date desc";
         
         $query = $this->db->query($sSql);
