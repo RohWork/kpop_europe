@@ -51,7 +51,7 @@ class Community extends CI_Controller {
             $data['city_list'] = "";
         }
         
-        $data['schedule_list'] = $this->scm_md->get_schedule($search);
+        $data['schedule_list'] = $this->sch_md->get_schedule($search);
         
         
         $result = $this->com_md->get_list($search);
