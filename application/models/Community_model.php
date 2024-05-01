@@ -38,6 +38,10 @@ class Community_model extends CI_Model {
                 }
         }
         
+        if(empty($search['community_type'])){
+            $where .= " AND kc.type ='".$search['community_type']."'";
+        }
+        
         $sSql = "select kc.* , m.nick as mnick,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt,
                 ki.start_date, ki.space, ki.idx AS kpop_idx
