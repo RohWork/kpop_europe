@@ -209,7 +209,11 @@ class Community extends CI_Controller {
         
         $this->load->view('header');
         $this->load->view('sidebar');
-        $this->load->view('community_modify', $data);
+        if($data['detail']['type'] == 1){
+            $this->load->view('community_modify', $data);
+        }else{
+            $this->load->view('kpop_community_modify', $data);
+        }
         $this->load->view('footer');
     }
     
