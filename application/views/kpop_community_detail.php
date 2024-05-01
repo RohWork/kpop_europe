@@ -311,7 +311,7 @@
                     success:function(data){
                         if(data.result == 200){
                             alert('<?=$this->lang->line('completedelete')?>');
-                            location.href='/community/list';       
+                            location.href='/community/list?community_type=2';       
                         }else{
                             alert('<?=$this->lang->line('checktodata')?>');
                         }
