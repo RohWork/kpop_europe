@@ -213,7 +213,7 @@
         var j = $("#check_country option:selected").val();
 
 
-        location.href="/community/write?country="+j+"language=<?=$search['language']?>&community_type=2";
+        location.href="/community/write?country="+j+"&language=<?=$search['language']?>&community_type=2";
         
     }
     
