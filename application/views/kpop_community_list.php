@@ -134,7 +134,7 @@
                             if(empty($list)){
                         ?>
                         <tr>
-                            <td colspan="4" style="text-align: center"><?=$this->lang->line('empty')?></td>
+                            <td colspan="5" style="text-align: center"><?=$this->lang->line('empty')?></td>
                         </tr>
                         <?php
                             }
