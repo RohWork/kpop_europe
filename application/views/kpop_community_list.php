@@ -171,7 +171,7 @@
     }
     function go_write(){
         
-        location.href="/community/write?country=<?=$search['country']?>&city=<?=$search['city']?>&language=<?=$search['language']?>";
+        location.href="/community/write?country=<?=$search['country']?>&city=<?=$search['city']?>&language=<?=$search['language']?>&kpop_idx=<?=$search['kpop_idx']?>";
         
     }
     function get_country_data(){
