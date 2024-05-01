@@ -44,7 +44,7 @@ class Community_model extends CI_Model {
         
         $sSql = "select kc.* , m.nick as mnick,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt,
-                ki.start_date, ki.space, ki.idx AS kpop_idx
+                ki.start_date, ki.space, ki.idx AS kpop_idx, ki.end_date
                 from kpop_community as kc 
                 left join kpop_member as m on kc.writer = m.id
                 LEFT JOIN kpop_info AS ki ON kc.kpop_idx = ki.idx
@@ -77,7 +77,7 @@ class Community_model extends CI_Model {
     function detail_community($idx){
         
         $sSql = "select kc.*, co.name as country_name, ci.name as city_name, m.nick as mnick,
-                ki.start_date, ki.space
+                ki.start_date, ki.space, ki.end_date
                 from kpop_community as kc
                 left join kpop_country as co on kc.country_idx = co.idx
                 left join kpop_city as ci on kc.city_idx = ci.idx
