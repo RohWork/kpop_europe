@@ -108,7 +108,7 @@ class Community extends CI_Controller {
         $search['country'] = $this->input->get_post("country");
         $search['city'] = $this->input->get_post("city");
         $search['language'] = $this->input->get_post("language");
-        
+        $search['kpop_idx'] = "";
         if(!empty($this->input->get_post("kpop_idx"))){
             $search['kpop_idx'] = $this->input->get_post("kpop_idx");
         }
