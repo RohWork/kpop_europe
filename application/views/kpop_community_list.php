@@ -82,7 +82,7 @@
                                 <option value="all"><?=$this->lang->line('viewall')?></option>
                                 <?php foreach($schedule_list as $sch){ 
                                     
-                                    $search_cty = "";
+                                    $search_kpop = "";
                                     if($search['kpop_idx'] == $sch['idx']){
                                         $search_kpop = "selected";
                                     }
