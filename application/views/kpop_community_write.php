@@ -76,13 +76,27 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="row mt-1">
                     <div class="col-md-6 col-xs-6">
                         <div class="form-floating">
-                            <input type="text" id="title" name="title" class="form-control"/>
-                        
-                            <label for="title" class="form-label" >
-                                    <?=$this->lang->line('title')?>
+                            <select id="check_schedule" name="kpop_idx" class="form-select">
+                                <option value="all"><?=$this->lang->line('viewall')?></option>
+                                <?php foreach($schedule_list as $sch){ 
+                                    
+                                    $search_kpop = "";
+                                    if($search['kpop_idx'] == $sch['idx']){
+                                        $search_kpop = "selected";
+                                    }
+                                    
+                                ?>
+                                    <option value="<?=$sch['idx']?>" <?=$search_kpop?>><?="[".$sch['start_date']."]".$sch['space']?></option>
+
+                                <?php } ?>
+                                
+                            </select>
+                            <label for="language" lass="form-labe" >
+                                <?=$this->lang->line('list')?>
                             </label>
                         </div>
                     </div>
