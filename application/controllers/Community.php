@@ -238,7 +238,9 @@ class Community extends CI_Controller {
         $params['title'] = $this->input->post("title");
         $params['content'] = $this->input->post("content");
         $params['hashtag'] = $this->input->post("hashtag");
-        
+        if(!empty($this->input->post("kpop_idx"))){
+            $params['kpop_idx'] = $this->input->post("kpop_idx");
+        }
         $idx = $this->input->post("idx");
         
 
