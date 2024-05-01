@@ -39,8 +39,10 @@
                         &nbsp;
                         <?="[".$detail['start_date']."]".$detail['space']?>
                     </div>
+                </div>
+                <div class="row" style="padding-top: 10px">
                     <div class="col-5">
-                            <h4><?=$detail['title']?></h3>   
+                        <h4><?=$detail['title']?></h3>   
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
