@@ -32,7 +32,7 @@ class Community_model extends CI_Model {
             $limit = " limit ".$paging['start'].",".$paging['end'];
 
         }
-        if($search['community_type'] == 2 && $search['kpop_idx'] != 'all'){
+        if($search['community_type'] == 2 && ($search['kpop_idx'] != 'all' && !empty($search['kpop_idx']))){
 
                 $where .= " AND ki.idx ='".$search['kpop_idx']."'";
         }
