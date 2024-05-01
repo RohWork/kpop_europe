@@ -9,7 +9,7 @@
             <form method="get">
                 <div class="row">
                     
-                    
+                    <input type="hidden" name="community_type" id="community_type" value="<?=$search['community_type']?>"/>
                     <div class="col-2">
                         <div class="form-floating">
                             <select id="check_country" name="country" class="form-select" onchange="get_country_data()">
