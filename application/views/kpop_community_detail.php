@@ -37,7 +37,7 @@
                     <div class="col-3">
                         <label class="form-label bold"><strong><?=$this->lang->line('list')?></strong></label>
                         &nbsp;
-                        <?="[".$sch['start_date']."]".$sch['space']?>
+                        <?="[".$detail['start_date']."]".$detail['space']?>
                     </div>
                     <div class="col-6">
                             <h4><?=$detail['title']?></h3>   
