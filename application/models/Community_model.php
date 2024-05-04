@@ -42,6 +42,12 @@ class Community_model extends CI_Model {
             $where .= " AND kc.type ='".$search['community_type']."'";
         }
         
+        if(!empty($search['order'])){
+            $order = " order by ".$search['order']." desc";
+        }else{
+            $order = " order by idx desc";
+        }
+        
         $sSql = "select kc.* , m.nick as mnick,
                 (select count(*) from kpop_comment as kt where kt.community_idx = kc.idx ) as comment_cnt,
                 ki.start_date, ki.space, ki.idx AS kpop_idx, ki.end_date
@@ -49,7 +55,7 @@ class Community_model extends CI_Model {
                 left join kpop_member as m on kc.writer = m.id
                 LEFT JOIN kpop_info AS ki ON kc.kpop_idx = ki.idx
                 where kc.state = 1 $where 
-                order by idx desc $limit";
+                $order $limit";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
