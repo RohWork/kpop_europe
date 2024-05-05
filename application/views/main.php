@@ -44,7 +44,7 @@
                         foreach($community_idx as $community){
                 ?>
                     <tr>
-                        <td><?=$community['title']?></td><td><?=$schedule['reg_date']?></td>
+                        <td><?=$community['title']?></td><td><?=$community['reg_date']?></td>
                     </tr>
                 <?php
                             
@@ -69,7 +69,7 @@
                         foreach($community_great as $community){
                 ?>
                     <tr>
-                        <td><?=$community['title']?></td><td><?=$schedule['reg_date']?></td>
+                        <td><?=$community['title']?></td><td><?=$community['reg_date']?></td>
                     </tr>
                 <?php
                             
