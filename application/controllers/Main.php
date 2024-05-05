@@ -59,10 +59,10 @@ class Main extends CI_Controller {
         
         if(!confirm_mobile()){
             
-            if(empty($search['country'])){
+            if(!empty($this->session->userdata['country_idx'])){
                 $search['country'] = $this->session->userdata['country_idx'];
             }
-            if(empty($search['city'])){
+            if(!empty($this->session->userdata['city_idx'])){
                 $search['city'] = $this->session->userdata['city_idx'];
             }
             $page = array (
