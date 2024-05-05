@@ -32,24 +32,20 @@ class Main extends CI_Controller {
         }
         
         if(empty($lang) && empty($slang)){
-            $lang = "en"; 
+            $lang = "eng"; 
         }
-        echo $lang;
-        echo $return_url;
-        exit;
         
         if(!empty($lang)){
             $this->session->set_userdata('lang',$lang);
             session_commit();
             session_write_close();
             
-            if(!empty($return_url)){
-                
-                $return_url = str_replace('_','&',$return_url);
-                header('Location: '.$return_url);
-            }
         }
+        if(!empty($return_url)){
 
+            $return_url = str_replace('_','&',$return_url);
+            header('Location: '.$return_url);
+        }
 
         
         
