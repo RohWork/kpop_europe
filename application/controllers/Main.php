@@ -141,7 +141,7 @@ class Main extends CI_Controller {
         }else{                                                      //PC
             $this->load->view('header');
             $this->load->view('sidebar');
-            $this->load->view('main');
+            $this->load->view('main', $data);
             $this->load->view('footer');
         }
 
