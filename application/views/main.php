@@ -37,6 +37,7 @@
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
                     <th><?=$this->lang->line('date')?></th>
+                    <th><?=$this->lang->line('likecnt')?></th>
                     
                 </tr>
                 <?php 
@@ -44,13 +45,15 @@
                         foreach($community_idx as $community){
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
-                        <td><?=$community['title']?></td><td><?=$community['reg_date']?></td>
+                        <td><?=$community['title']?></td>
+                        <td><?=$community['reg_date']?></td>
+                        <td><?=$community['great']?></td>
                     </tr>
                 <?php
                             
                         }
                     }else{
-                        echo "<tr><td colspan='2' align='center'>".$this->lang->line('empty')."</td></tr>";
+                        echo "<tr><td colspan='3' align='center'>".$this->lang->line('empty')."</td></tr>";
                         
                     }
                 ?>          
@@ -61,6 +64,7 @@
             <table class="table">
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
+                    <th><?=$this->lang->line('likecnt')?></th>
                     <th><?=$this->lang->line('date')?></th>
                     
                 </tr>
@@ -69,13 +73,15 @@
                         foreach($community_great as $community){
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
-                        <td><?=$community['title']?></td><td><?=$community['reg_date']?></td>
+                        <td><?=$community['title']?></td>
+                        <td><?=$community['great']?></td>
+                        <td><?=$community['reg_date']?></td>
                     </tr>
                 <?php
                             
                         }
                     }else{
-                        echo "<tr><td colspan='2' align='center'>".$this->lang->line('empty')."</td></tr>";
+                        echo "<tr><td colspan='3' align='center'>".$this->lang->line('empty')."</td></tr>";
                         
                     }
                 ?>          
