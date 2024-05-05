@@ -36,6 +36,7 @@ class Main extends CI_Controller {
         }
         echo $lang;
         echo $return_url;
+        exit;
         
         if(!empty($lang)){
             $this->session->set_userdata('lang',$lang);
