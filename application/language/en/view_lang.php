@@ -143,4 +143,8 @@ $lang['calendar'] = "Calendar";
     $lang['empty'] = "empty value";
     
     $lang['language'] = "Language";
+    
+    $lang['great_community'] = "Popular Posts";
+    $lang['fast_community'] = "Latest post";
+    $lang['fast_schedule'] = "Latest schedule";
 ?>
