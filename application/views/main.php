@@ -36,8 +36,9 @@
             <table class="table">
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
-                    <th><?=$this->lang->line('date')?></th>
                     <th><?=$this->lang->line('likecnt')?></th>
+                    <th><?=$this->lang->line('date')?></th>
+                    
                     
                 </tr>
                 <?php 
@@ -46,8 +47,8 @@
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
                         <td><?=$community['title']?></td>
-                        <td><?=$community['reg_date']?></td>
                         <td><?=$community['great']?></td>
+                        <td><?=$community['reg_date']?></td>
                     </tr>
                 <?php
                             
