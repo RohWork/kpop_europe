@@ -10,8 +10,9 @@
             <h4><?=$this->lang->line('fast_schedule')?></h4>
             <table class="table">
                 <tr>
-                    <th><?=$this->lang->line('date')?></th>
                     <th><?=$this->lang->line('location')?></th>
+                    <th><?=$this->lang->line('date')?></th>
+                    
                 </tr>
                 <?php 
                     if(!empty($schedule_list)){
@@ -23,6 +24,9 @@
                 <?php
                             
                         }
+                    }else{
+                        echo "<tr><td colspan='2'>".$this->lang->line('empty')."</td></tr>";
+                        
                     }
                 ?>
                 <tr>
