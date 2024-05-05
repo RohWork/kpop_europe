@@ -36,7 +36,7 @@ class Main extends CI_Controller {
         }
         
         if(!empty($plang)){
-            $this->session->set_userdata('lang',$lang);
+            $this->session->set_userdata('lang',$plang);
             session_commit();
             session_write_close();
         }
