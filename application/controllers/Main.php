@@ -32,7 +32,7 @@ class Main extends CI_Controller {
         }
         
         if(empty($lang) && empty($slang)){
-            $lang = "en"; 
+            $lang = "eng"; 
         }
         
         if(!empty($lang)){
