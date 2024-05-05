@@ -98,6 +98,7 @@ class Schedule_model extends CI_Model {
        
         $where = "";
         $limit = "";
+        $order = " order by ki.end_date desc ";
         
         if(!empty($search['country'])){
             if($search['country'] != 'all'){
@@ -120,16 +121,24 @@ class Schedule_model extends CI_Model {
         if(!empty($search['type'])){
             $where .= " AND ki.type ='".$search['type']."'";
         }
+        if(!empty($search['future'])){
+            $where .= " AND start_date > now()";
+            $order = " order by days asc ";
+        }
+        
+        
         if(!empty($paging)){
             $limit = "limit ".$paging['start'].",".$paging['end'];
         }
         
-        $sSql = "SELECT ki.space, kc.name as country_name, ky.name as city_name, kz.name as organization_name , ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, ki.idx, ki.type as type, ki.great as like_cnt FROM 
-                    kpop_info AS ki 
+        $sSql = "SELECT ki.space, kc.name as country_name, ky.name as city_name, kz.name as organization_name , 
+                        ki.name, DATE_FORMAT(ki.start_date,'%Y-%m-%d') AS start_date, DATE_FORMAT(ki.end_date,'%Y-%m-%d') AS end_date, 
+                        ki.idx, ki.type as type, ki.great as like_cnt, DATEDIFF(ki.start_date, NOW()) AS days 
+                        FROM kpop_info AS ki 
                     left join kpop_country as kc on ki.country_idx = kc.idx
                     left join kpop_city as ky on ki.city_idx = ky.idx
                     left join kpop_organization as kz on ki.organization_idx = kz.idx
-                 WHERE  1=1 ".$where." order by ki.end_date desc $limit";
+                 WHERE  1=1 ".$where." $order $limit";
         
         $query = $this->db->query($sSql);
         return $query->result_array();
