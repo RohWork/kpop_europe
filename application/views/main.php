@@ -36,7 +36,7 @@
             <table class="table">
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
-                    <th><?=$this->lang->line('likecnt')?></th>
+                    <th><?=$this->lang->line('like')?></th>
                     <th><?=$this->lang->line('date')?></th>
                     
                     
@@ -65,7 +65,7 @@
             <table class="table">
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
-                    <th><?=$this->lang->line('likecnt')?></th>
+                    <th><?=$this->lang->line('like')?></th>
                     <th><?=$this->lang->line('date')?></th>
                     
                 </tr>
