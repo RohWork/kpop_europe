@@ -142,4 +142,7 @@
     
     $lang['language'] = "언어셋";
     
+    $lang['great_community'] = "인기글";
+    $lang['fast_community'] = "최근글";
+    $lang['fast_schedule'] = "최신일정";
 ?>
