@@ -32,14 +32,16 @@ class Community_model extends CI_Model {
             $limit = " limit ".$paging['start'].",".$paging['end'];
 
         }
-        if($search['community_type'] == 2 &&  !empty($search['kpop_idx'])){
-                if($search['kpop_idx'] != 'all'){
-                    $where .= " AND ki.idx ='".$search['kpop_idx']."'";
-                }
-        }
+        
         
         if(!empty($search['community_type'])){
             $where .= " AND kc.type ='".$search['community_type']."'";
+            
+            if($search['community_type'] == 2 &&  !empty($search['kpop_idx'])){
+                if($search['kpop_idx'] != 'all'){
+                    $where .= " AND ki.idx ='".$search['kpop_idx']."'";
+                }
+            }
         }
         
         if(!empty($search['order'])){
