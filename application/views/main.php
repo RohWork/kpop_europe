@@ -18,7 +18,7 @@
                     if(!empty($schedule_list)){
                         foreach($schedule_list as $schedule){
                 ?>
-                    <tr>
+                    <tr onclick="go_schedule(<?=$schedule['idx']?>)">
                         <td><?=$schedule['start_date']?></td><td><?=$schedule['space']?></td>
                     </tr>
                 <?php
@@ -43,7 +43,7 @@
                     if(!empty($community_idx)){
                         foreach($community_idx as $community){
                 ?>
-                    <tr>
+                    <tr onclick="go_community(<?=$community['idx']?>)">
                         <td><?=$community['title']?></td><td><?=$community['reg_date']?></td>
                     </tr>
                 <?php
@@ -68,7 +68,7 @@
                     if(!empty($community_great)){
                         foreach($community_great as $community){
                 ?>
-                    <tr>
+                    <tr onclick="go_community(<?=$community['idx']?>)">
                         <td><?=$community['title']?></td><td><?=$community['reg_date']?></td>
                     </tr>
                 <?php
@@ -83,4 +83,15 @@
         </div>
     </div>
 </div>
+<script>
+    function go_community(idx){
+        var url="/community/detail/"+idx;
+        location.href= url;
+    }
+    
+    function go_schedule(idx){
+        var url="/schedule/list?detail="+idx;
+        location.href=url;
+    }
+</script>
 </main>
