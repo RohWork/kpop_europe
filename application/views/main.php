@@ -18,7 +18,7 @@
                         foreach($schedule_list as $schedule){
                 ?>
                     <tr>
-                        <td><?=$schedule['start_date']?></td><td><?=$schedule['location']?></td>
+                        <td><?=$schedule['start_date']?></td><td><?=$schedule['space']?></td>
                     </tr>
                 <?php
                             
