@@ -10,6 +10,7 @@ class Main extends CI_Controller {
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Organization_model', 'org_md', TRUE);
+        $this->load->model('Community_model', 'com_md', TRUE);
     }
     function index(){
         
@@ -54,6 +55,28 @@ class Main extends CI_Controller {
         $search['city'] = $this->input->get_post("city");
         $search['organizer'] = $this->input->get_post("organization");
         
+        
+        
+        if(!confirm_mobile()){
+            
+            if(empty($search['country'])){
+                $search['country'] = $this->session->userdata['country_idx'];
+            }
+            if(empty($search['city'])){
+                $search['city'] = $this->session->userdata['city_idx'];
+            }
+            $page = array (
+                "start" => 0,
+                "end" => 5
+            );
+            
+            $data['community_idx'] = $this->com_md->get_list($search, $page);
+            
+            $search['order'] = "great";
+            $data['community_great'] = $this->com_md->get_list($search, $page);
+            
+            $data['schedule_list'] = $this->sch_md->get_list($search, $page);
+        }
         
         $data['country_list'] = $this->cont_md->get_country();
         if(!empty($search['country'])){
