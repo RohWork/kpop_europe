@@ -75,7 +75,7 @@ class Main extends CI_Controller {
             $search['order'] = "great";
             $data['community_great'] = $this->com_md->get_list($search, $page);
             
-            $data['schedule_list'] = $this->sch_md->get_list($search, $page);
+            $data['schedule_list'] = $this->sch_md->get_schedule($search, $page);
         }
         
         $data['country_list'] = $this->cont_md->get_country();
