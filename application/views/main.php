@@ -25,7 +25,7 @@
                             
                         }
                     }else{
-                        echo "<tr><td colspan='2'>".$this->lang->line('empty')."</td></tr>";
+                        echo "<tr><td colspan='2' align='center'>".$this->lang->line('empty')."</td></tr>";
                         
                     }
                 ?>          
@@ -50,7 +50,7 @@
                             
                         }
                     }else{
-                        echo "<tr><td colspan='2'>".$this->lang->line('empty')."</td></tr>";
+                        echo "<tr><td colspan='2' align='center'>".$this->lang->line('empty')."</td></tr>";
                         
                     }
                 ?>          
@@ -75,7 +75,7 @@
                             
                         }
                     }else{
-                        echo "<tr><td colspan='2'>".$this->lang->line('empty')."</td></tr>";
+                        echo "<tr><td colspan='2' align='center'>".$this->lang->line('empty')."</td></tr>";
                         
                     }
                 ?>          
