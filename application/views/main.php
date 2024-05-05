@@ -32,7 +32,7 @@
             </table>
         </div>
         <div class="col-4">
-            <h4>2</h4>
+            <h4><?=$this->lang->line('fast_community')?></h4>
             <table class="table">
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
@@ -57,7 +57,7 @@
             </table>
         </div>
         <div class="col-4">
-            <h4>3</h4>
+            <h4><?=$this->lang->line('great_community')?></h4>
             <table class="table">
                 <tr>
                     <th><?=$this->lang->line('title')?></th>
