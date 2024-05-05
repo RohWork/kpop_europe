@@ -59,6 +59,8 @@ class Community_model extends CI_Model {
                 where kc.state = 1 $where 
                 $order $limit";
         
+        echo $sSql;
+        
         $query = $this->db->query($sSql);
         return $query->result_array();
     }
