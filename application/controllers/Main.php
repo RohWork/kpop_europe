@@ -21,17 +21,17 @@ class Main extends CI_Controller {
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
         }
         
-        $lang = $this->input->get_post("lang");
+        $plang = $this->input->get_post("lang");
         $return_url = $this->input->get_post("return_url");
         
         
         $slang = $this->session->userdata('language');
         
-        if(empty($lang)){
+        if(empty($plang)){
             $lang = $slang;
         }
         
-        if(empty($lang) && empty($slang)){
+        if(empty($slang)){
             $lang = "eng"; 
         }
         
@@ -39,7 +39,6 @@ class Main extends CI_Controller {
             $this->session->set_userdata('lang',$lang);
             session_commit();
             session_write_close();
-            
         }
         if(!empty($return_url)){
 
