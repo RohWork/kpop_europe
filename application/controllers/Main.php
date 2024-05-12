@@ -25,7 +25,7 @@ class Main extends CI_Controller {
         $return_url = $this->input->get_post("return_url");
         
         
-        $slang = $this->session->userdata('language');
+        $slang = $this->session->userdata('lang');
         
         if(empty($plang)){
             $lang = $slang;
