@@ -6,7 +6,7 @@
     $lang['orgernizer'] = '주최사';
     
     
-    $lang['location'] = "위치";
+    $lang['location'] = "장소";
     $lang['address'] = "주소";
     $lang['joinus'] = "회원가입";
     $lang['gojoin'] = "가입";
