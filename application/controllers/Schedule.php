@@ -123,8 +123,7 @@ class Schedule extends CI_Controller {
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
         }
         
-        echo "Test";
-        exit;
+
         
         $search['country'] = $this->session->userdata('country_idx');
         $search['city'] = $this->session->userdata('city_idx');
@@ -156,6 +155,8 @@ class Schedule extends CI_Controller {
         $config['per_page'] = 10;
         $config['attributes'] = array('class' => 'page-link');
         $this->pagination->initialize($config);
+                echo "Test";
+        exit;
         $data['paging'] = $this->pagination->create_links();
         
         
