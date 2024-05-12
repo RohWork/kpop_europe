@@ -123,6 +123,8 @@ class Schedule extends CI_Controller {
             $search['date'] =  date("Y-m-d", strtotime($this->input->get_post("date")));
         }
         
+        echo "Test";
+        exit;
         
         $search['country'] = $this->session->userdata('country_idx');
         $search['city'] = $this->session->userdata('city_idx');
