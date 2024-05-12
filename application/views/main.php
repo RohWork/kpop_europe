@@ -10,8 +10,9 @@
             <h4><?=$this->lang->line('fast_schedule')?></h4>
             <table class="table">
                 <tr>
-                    <th><?=$this->lang->line('location')?></th>
                     <th><?=$this->lang->line('date')?></th>
+                    <th><?=$this->lang->line('location')?></th>
+                    
                     
                 </tr>
                 <?php 
@@ -35,9 +36,10 @@
             <h4><?=$this->lang->line('fast_community')?></h4>
             <table class="table">
                 <tr>
+                    <th><?=$this->lang->line('date')?></th>
                     <th><?=$this->lang->line('title')?></th>
                     <th><?=$this->lang->line('like')?></th>
-                    <th><?=$this->lang->line('date')?></th>
+                    
                     
                     
                 </tr>
@@ -46,9 +48,10 @@
                         foreach($community_idx as $community){
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
+                        <td><?=$community['reg_date']?></td>
                         <td><?=$community['title']?></td>
                         <td><?=$community['great']?></td>
-                        <td><?=$community['reg_date']?></td>
+                        
                     </tr>
                 <?php
                             
@@ -64,9 +67,11 @@
             <h4><?=$this->lang->line('great_community')?></h4>
             <table class="table">
                 <tr>
-                    <th><?=$this->lang->line('title')?></th>
-                    <th><?=$this->lang->line('like')?></th>
                     <th><?=$this->lang->line('date')?></th>
+                    <th><?=$this->lang->line('title')?></th>
+                    
+                    <th><?=$this->lang->line('like')?></th>
+                    
                     
                 </tr>
                 <?php 
@@ -74,9 +79,10 @@
                         foreach($community_great as $community){
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
+                        <td><?=$community['reg_date']?></td>
                         <td><?=$community['title']?></td>
                         <td><?=$community['great']?></td>
-                        <td><?=$community['reg_date']?></td>
+                        
                     </tr>
                 <?php
                             
