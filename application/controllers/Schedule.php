@@ -146,8 +146,7 @@ class Schedule extends CI_Controller {
         
         
         $total = $this->sch_md->get_schedule($search);
-                echo "Test";
-        exit;
+        
         $this->load->library('pagination');
         
         $config['base_url'] = '/schedule/list';
