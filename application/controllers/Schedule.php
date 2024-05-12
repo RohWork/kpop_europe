@@ -154,9 +154,10 @@ class Schedule extends CI_Controller {
         $config['total_rows'] = count($total);
         $config['per_page'] = 10;
         $config['attributes'] = array('class' => 'page-link');
-        $this->pagination->initialize($config);
                 echo "Test";
         exit;
+        $this->pagination->initialize($config);
+        
         $data['paging'] = $this->pagination->create_links();
         
         
