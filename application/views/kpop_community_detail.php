@@ -37,9 +37,9 @@
                     <div class="col-9">
                         <label class="form-label bold"><strong><?=$this->lang->line('kpopinfo')?></strong></label>
                         &nbsp;
-                        <a href="#" onclick="go_schedule(<?=$detail['idx']?>)">
+                        <span style="cursor:point" onclick="go_schedule(<?=$detail['idx']?>)">
                         <?="[".$detail['start_date']."~".$detail['end_date']."] ".$detail['space']?>
-                        </a>
+                        </span>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
