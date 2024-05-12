@@ -48,7 +48,7 @@
                         foreach($community_idx as $community){
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
-                        <td><?=$community['reg_date']?></td>
+                        <td><?=substr($community['reg_date'],0,10)?></td>
                         <td><?=$community['title']?></td>
                         <td><?=$community['great']?></td>
                         
@@ -79,7 +79,7 @@
                         foreach($community_great as $community){
                 ?>
                     <tr onclick="go_community(<?=$community['idx']?>)">
-                        <td><?=$community['reg_date']?></td>
+                        <td><?=substr($community['reg_date'],0,10)?></td>
                         <td><?=$community['title']?></td>
                         <td><?=$community['great']?></td>
                         
