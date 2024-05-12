@@ -37,7 +37,9 @@
                     <div class="col-9">
                         <label class="form-label bold"><strong><?=$this->lang->line('kpopinfo')?></strong></label>
                         &nbsp;
+                        <a href="#" onclick="go_schedule(<?=$detail['idx']?>)">
                         <?="[".$detail['start_date']."~".$detail['end_date']."] ".$detail['space']?>
+                        </a>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 10px">
@@ -385,5 +387,10 @@
                 }	 
             });
         }
+        
+    function go_schedule(idx){
+        var url="/schedule/list?detail="+idx;
+        location.href=url;
+    }
     </script>
 </html>
