@@ -16,6 +16,15 @@
               disableDefaultUI: true,
         });
         
+        if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }else{
+                console.log("지원안함");
+        }
+        setTimeout(function() {   
+            window.initMap = initMap;
+        },2000);
+        
         
         function showPosition(position){
             console.log("내 위치 위도 = " + position.coords.latitude
@@ -75,14 +84,7 @@
     
       <script>
         
-        if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(showPosition);
-            }else{
-                console.log("지원안함");
-        }
-        setTimeout(function() {   
-            window.initMap = initMap;
-        },2000);
+        
       </script>
 
     
