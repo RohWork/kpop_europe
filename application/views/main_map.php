@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
         var lat, lng;
+        const map;
+        
         
         
         function showPosition(position){
@@ -16,19 +18,22 @@
 			+" 내 위치 경도 = " + position.coords.longitude);
             lat = position.coords.latitude;
             lng = position.coords.longitude;
-            $("#i_lat").val(lat);
-            $("#i_lng").val(lng);
+
             
+            map.setCenter({lat:lat, lng:lng});
         }
         
         function initMap() {
+            
             var lat_map =  $("#i_lat").val();
-            var lng_map =  $("#i_lng").val();       
+            var lng_map =  $("#i_lng").val();
+            
             if(lat_map == ""){
                 lat_map = 33;
                 lng_map = 151;
             }
-            const map = new google.maps.Map(document.getElementById("map"), {
+            
+            map = new google.maps.Map(document.getElementById("map"), {
               zoom: 4,
               center: { lat: lat_map, lng: lng_map },
               disableDefaultUI: true,
@@ -58,8 +63,7 @@
         Kpop In Europe
     </div>
       <div id="map" style="height:100%"></div>
-      <input type="hidden" id="i_lat"/>
-      <input type="hidden" id="i_lng"/>
+
       
     <!--<gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
       <gmp-advanced-marker position="50.11061096191406, 8.682072639465332" title="My location"></gmp-advanced-marker>
