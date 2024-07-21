@@ -72,8 +72,9 @@
             }else{
                 console.log("지원안함");
         }
-          
-        window.initMap = initMap;
+        setTimeout(function() {   
+            window.initMap = initMap;
+        },200);
       </script>
 
     
