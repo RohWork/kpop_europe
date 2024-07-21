@@ -47,7 +47,7 @@
     <div style="height:5%">
         Kpop In Europe
     </div>
-      <div id="map"></div>
+      <div id="map" style="height:100%"></div>
     <!--<gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
       <gmp-advanced-marker position="50.11061096191406, 8.682072639465332" title="My location"></gmp-advanced-marker>
       
