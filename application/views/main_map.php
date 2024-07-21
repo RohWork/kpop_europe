@@ -17,6 +17,8 @@
             }else{
                 console.log("지원안함");
             }
+            
+            window.initMap = initMap;
         });
         
         function showPosition(position){
@@ -25,8 +27,6 @@
             lat = position.coords.latitude;
             lng = position.coords.longitude;
             
-            console.log(lat);
-            console.log(lng);
         }
         
         function initMap() {
@@ -71,7 +71,7 @@
     <script>
     
 
-      window.initMap = initMap;
+      
     </script>
     
        <!-- The callback parameter is required, so we use console.debug as a noop -->
