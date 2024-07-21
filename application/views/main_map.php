@@ -10,7 +10,11 @@
     <script>
         var lat, lng;
         
-        
+        const map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 4,
+              center: { lat: lat_map, lng: lng_map },
+              disableDefaultUI: true,
+        });
         
         
         function showPosition(position){
@@ -18,7 +22,7 @@
 			+" 내 위치 경도 = " + position.coords.longitude);
             lat = position.coords.latitude;
             lng = position.coords.longitude;
-
+            
             
             map.setCenter({lat:lat, lng:lng});
         }
@@ -33,11 +37,7 @@
                 lng_map = 151;
             }
             
-            const map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 4,
-              center: { lat: lat_map, lng: lng_map },
-              disableDefaultUI: true,
-            });
+            
       }
       
       
