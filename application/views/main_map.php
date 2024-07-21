@@ -74,7 +74,7 @@
         }
         setTimeout(function() {   
             window.initMap = initMap;
-        },200);
+        },2000);
       </script>
 
     
