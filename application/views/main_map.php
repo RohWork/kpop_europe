@@ -24,6 +24,9 @@
 			+" 내 위치 경도 = " + position.coords.longitude);
             lat = position.coords.latitude;
             lng = position.coords.longitude;
+            
+            console.log(lat);
+            console.log(lng);
         }
         
         function initMap() {
