@@ -31,7 +31,7 @@
             lng = position.coords.longitude;
             
             
-            map.setCenter({lat:lat, lng:lng});
+            //map.setCenter({lat:lat, lng:lng});
         }
         
         function initMap() {
