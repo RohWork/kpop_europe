@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
         var lat, lng;
-        const map;
+        
         
         
         
@@ -33,12 +33,14 @@
                 lng_map = 151;
             }
             
-            map = new google.maps.Map(document.getElementById("map"), {
+            const map = new google.maps.Map(document.getElementById("map"), {
               zoom: 4,
               center: { lat: lat_map, lng: lng_map },
               disableDefaultUI: true,
             });
       }
+      
+      
     </script>
     <style>
       /* Always set the map height explicitly to define the size of the div
