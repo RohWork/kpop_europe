@@ -10,16 +10,6 @@
     <script>
         var lat, lng;
         
-        $(document).ready(function(){
- 
-            if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(showPosition);
-            }else{
-                console.log("지원안함");
-            }
-            
-            
-        });
         
         function showPosition(position){
             console.log("내 위치 위도 = " + position.coords.latitude
@@ -76,6 +66,13 @@
     </gmp-map>-->
     
       <script>
+        
+        if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }else{
+                console.log("지원안함");
+        }
+          
         window.initMap = initMap;
       </script>
 
