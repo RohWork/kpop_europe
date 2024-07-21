@@ -10,7 +10,7 @@
     <script>
         var lat, lng;
         let map;
-        
+        let marker;
         
         if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(showPosition);
@@ -28,6 +28,10 @@
             
             
             map.setCenter({lat:lat, lng:lng});
+            marker = new AdvancedMarkerElement({
+                        map,
+                        position: { lat: lat, lng: lng },
+                    });
         }
         
         function initMap() {
