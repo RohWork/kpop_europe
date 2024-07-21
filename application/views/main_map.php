@@ -50,11 +50,11 @@
         Kpop In Europe
     </div>
       <div id="map"></div>
-    <gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
+    <!--<gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
       <gmp-advanced-marker position="50.11061096191406, 8.682072639465332" title="My location"></gmp-advanced-marker>
       
       <gmp-advanced-marker position="50.11026112441478, 8.682188131938588" title="My location2"></gmp-advanced-marker>
-    </gmp-map>
+    </gmp-map>-->
     
   
 
