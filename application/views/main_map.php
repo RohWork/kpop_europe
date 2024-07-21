@@ -27,6 +27,8 @@
         }
         
         function initMap() {
+            console.log(lat);
+            console.log(lng);
             const map = new google.maps.Map(document.getElementById("map"), {
               zoom: 4,
               center: { lat: lat, lng: lng },
