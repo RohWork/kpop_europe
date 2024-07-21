@@ -26,23 +26,34 @@
             lat = position.coords.latitude;
             lng = position.coords.longitude;
             
+            var move_position = {lat:lat, lng:lng};
             
-            map.setCenter({lat:lat, lng:lng});
-            marker = new AdvancedMarkerElement({
-                        map,
-                        position: { lat: lat, lng: lng },
-                    });
+            map.setCenter(move_position);
+            
+            
+            marker = new google.maps.Marker({
+                position: move_position,
+                map,
+                title: "Hello World!",
+              });
         }
         
         function initMap() {
-
+            
+            const myLatLng = { lat: 33, lng: 151 };
             
              map = new google.maps.Map(document.getElementById("map"), {
               zoom: 4,
-              center: { lat: 33, lng: 151 },
+              center: myLatLng,
               disableDefaultUI: true,
             });
             
+            
+            marker = new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "Hello World!",
+              });
       }
       
       window.initMap = initMap;
