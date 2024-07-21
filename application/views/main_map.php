@@ -24,8 +24,10 @@
         function initMap() {
             var lat_map =  $("#i_lat").val();
             var lng_map =  $("#i_lng").val();       
-            console.log(lat_map);
-            console.log(lng_map);
+            if(lat_map == ""){
+                lat_map = 33;
+                lng_map = 151;
+            }
             const map = new google.maps.Map(document.getElementById("map"), {
               zoom: 4,
               center: { lat: lat_map, lng: lng_map },
