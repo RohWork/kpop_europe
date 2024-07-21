@@ -69,7 +69,7 @@
     </script>
     
        <!-- The callback parameter is required, so we use console.debug as a noop -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo&callback=console.debug&libraries=maps,marker&v=beta">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo&callback=initMap&v=weekly">
     </script>
   </body>
 </html>
