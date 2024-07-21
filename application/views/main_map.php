@@ -25,7 +25,14 @@
             lat = position.coords.latitude;
             lng = position.coords.longitude;
         }
-
+        
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 4,
+              center: { lat: lat, lng: lng },
+              disableDefaultUI: true,
+            });
+      }
     </script>
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -57,13 +64,7 @@
   
 
     <script>
-    function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: { lat: lat, lng: lng },
-          disableDefaultUI: true,
-        });
-      }
+    
 
       window.initMap = initMap;
     </script>
