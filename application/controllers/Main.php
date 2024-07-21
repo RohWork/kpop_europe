@@ -146,4 +146,11 @@ class Main extends CI_Controller {
         
     }
     
+    function index_map_test(){
+        
+        $this->load->view('main_map');
+
+        
+    }
+    
 }
