@@ -14,11 +14,7 @@
     <script>
         var lat, lng;
         
-        const map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 4,
-              center: { lat: lat_map, lng: lng_map },
-              disableDefaultUI: true,
-        });
+        
         
         if(navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(showPosition);
@@ -50,6 +46,11 @@
                 lng_map = 151;
             }
             
+            const map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 4,
+              center: { lat: lat_map, lng: lng_map },
+              disableDefaultUI: true,
+            });
             
       }
       
