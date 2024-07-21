@@ -4,11 +4,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi" />  
     <title>kpopineu</title>
     
-    <!-- The callback parameter is required, so we use console.debug as a noop -->
+      <!-- The callback parameter is required, so we use console.debug as a noop -->
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo&callback=console.debug&libraries=maps,marker&v=beta">
     </script>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
+        var lat, lng;
+        
         $(document).ready(function(){
  
             if(navigator.geolocation){
@@ -21,6 +24,8 @@
         function showPosition(position){
             console.log("내 위치 위도 = " + position.coords.latitude
 			+" 내 위치 경도 = " + position.coords.longitude);
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
         }
 
     </script>
@@ -43,11 +48,26 @@
   <body>
     <div style="height:5%">
         Kpop In Europe
-    </div>  
+    </div>
+      <div id="map"></div>
     <gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
       <gmp-advanced-marker position="50.11061096191406, 8.682072639465332" title="My location"></gmp-advanced-marker>
       
       <gmp-advanced-marker position="50.11026112441478, 8.682188131938588" title="My location2"></gmp-advanced-marker>
     </gmp-map>
+    
+  
+
+    <script>
+        function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: { lat: -33, lng: 151 },
+          disableDefaultUI: true,
+        });
+      }
+
+      window.initMap = initMap;
+    </script>
   </body>
 </html>
