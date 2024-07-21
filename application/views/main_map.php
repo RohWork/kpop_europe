@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
         var lat, lng;
-        
+        let map;
         
         
         if(navigator.geolocation){
@@ -21,9 +21,7 @@
             }else{
                 console.log("지원안함");
         }
-        setTimeout(function() {   
-            window.initMap = initMap;
-        },2000);
+
         
         
         function showPosition(position){
@@ -54,6 +52,7 @@
             
       }
       
+      window.initMap = initMap;
       
     </script>
     <style>
