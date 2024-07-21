@@ -24,11 +24,11 @@
         function initMap() {
             var lat_map =  $("#i_lat").val();
             var lng_map =  $("#i_lng").val();       
-            console.log(lat);
-            console.log(lng);
+            console.log(lat_map);
+            console.log(lng_map);
             const map = new google.maps.Map(document.getElementById("map"), {
               zoom: 4,
-              center: { lat: lat, lng: lng },
+              center: { lat: lat_map, lng: lng_map },
               disableDefaultUI: true,
             });
       }
