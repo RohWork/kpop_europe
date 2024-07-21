@@ -26,10 +26,14 @@
 			+" 내 위치 경도 = " + position.coords.longitude);
             lat = position.coords.latitude;
             lng = position.coords.longitude;
+            $("#i_lat").val(lat);
+            $("#i_lng").val(lng);
             
         }
         
         function initMap() {
+            var lat_map =  $("#i_lat").val();
+            var lng_map =  $("#i_lng").val();       
             console.log(lat);
             console.log(lng);
             const map = new google.maps.Map(document.getElementById("map"), {
@@ -55,11 +59,16 @@
       }
     </style>
   </head>
+  
+  
   <body>
     <div style="height:5%">
         Kpop In Europe
     </div>
       <div id="map" style="height:100%"></div>
+      <input type="hidden" id="i_lat"/>
+      <input type="hidden" id="i_lng"/>
+      
     <!--<gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
       <gmp-advanced-marker position="50.11061096191406, 8.682072639465332" title="My location"></gmp-advanced-marker>
       
