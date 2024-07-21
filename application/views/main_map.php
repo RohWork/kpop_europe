@@ -18,7 +18,7 @@
                 console.log("지원안함");
             }
             
-            window.initMap = initMap;
+            
         });
         
         function showPosition(position){
@@ -75,7 +75,9 @@
       <gmp-advanced-marker position="50.11026112441478, 8.682188131938588" title="My location2"></gmp-advanced-marker>
     </gmp-map>-->
     
-  
+      <script>
+        window.initMap = initMap;
+      </script>
 
     
        <!-- The callback parameter is required, so we use console.debug as a noop -->
