@@ -71,7 +71,7 @@
                         <?php
                             $i =1;
                             foreach($list as $con){
-                                $idx_space = $con['space_name'];
+                                $idx_space = $con['idx']."_".str_replace(" ", "", $con['space_name']);
                         ?>
                                 
                                 
