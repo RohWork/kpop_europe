@@ -61,21 +61,22 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th><?=$this->lang->line('order')?></th>
                         <th><?=$this->lang->line('countryname')?></th>
                         <th><?=$this->lang->line('cityname')?></th>
                         <th><?=$this->lang->line('name')?></th>
+                        <th><?=$this->lang->line('address')?></th>
                     </tr>
                     </thead>
                     <tbody>
                         <?php
                             $i =1;
                             foreach($list as $con){
-                                echo "<tr onclick=view_info('".$con['idx']."_".$con['name']."') class='onpointer'>";
+                                echo "<tr onclick=view_info('".$con['idx']."_".$con['space_name']."') class='onpointer'>";
                                 echo "<td>".$i."</td>";
-                                echo "<td>".$con['ord']."</td>";
                                 echo "<td>".$con['country_name']."</td>";
-                                echo "<td>".$con['name']."</td>";
+                                echo "<td>".$con['city_name']."</td>";
+                                echo "<td>".$con['space_name']."</td>";
+                                echo "<td>".$con['space_lication']."</td>";
                                 echo "</tr>";
                                 $i++;
                             }
