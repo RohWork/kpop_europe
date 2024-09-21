@@ -17,10 +17,10 @@
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th><?=$this->lang->line('order')?><</th>
-                    <th><?=$this->lang->line('name')?><</th>
-                    <th><?=$this->lang->line('writer')?><</th>
-                    <th><?=$this->lang->line('registdate')?><</th>
+                    <th><?=$this->lang->line('order')?></th>
+                    <th><?=$this->lang->line('name')?></th>
+                    <th><?=$this->lang->line('writer')?></th>
+                    <th><?=$this->lang->line('registdate')?></th>
                 </tr>
                 </thead>
                 <tbody>
