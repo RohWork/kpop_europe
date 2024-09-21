@@ -17,6 +17,9 @@ class Space extends CI_Controller {
     
     public function index(){
         
+        $data = array();
+        $search = array();
+        
         $search['country'] = $this->session->userdata('country_idx');
         $search['city'] = $this->session->userdata('city_idx');
         
