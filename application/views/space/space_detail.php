@@ -136,12 +136,31 @@
         let map;
 
         async function initMap() {
-          const { Map } = await google.maps.importLibrary("maps");
+            
+            const { Map, InfoWindow } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
 
-          map = new Map(document.getElementById("map"), {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 8,
-          });
+            map = new Map(document.getElementById("map"), {
+              center: { lat: -50.11622249575195, lng: 8.701279227923976 },
+              zoom: 14,
+              mapId: '4504f8b37365c3d0',
+            });
+          
+            const infoWindow = new InfoWindow();
+          
+            const draggableMarker = new AdvancedMarkerElement({
+                map,
+                position: {lat: 37.39094933041195, lng: -122.02503913145092},
+                gmpDraggable: true,
+                title: "This marker is draggable.",
+            });
+            
+            draggableMarker.addListener('dragend', (event) => {
+                const position = draggableMarker.position as google.maps.LatLng;
+                infoWindow.close();
+                infoWindow.setContent(`Pin dropped at: ${position.lat}, ${position.lng}`);
+                infoWindow.open(draggableMarker.map, draggableMarker);
+            });
         }
 
         initMap();  
