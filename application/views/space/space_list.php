@@ -116,9 +116,10 @@
     
     <script>
         $("#insert_button").on("click",function(){
-            var country_idx = $("#country_list option:selected").val(); 
+            var country_idx = $("#check_country option:selected").val(); 
+            var city_idx = $("#check_city option:selected").val(); 
             
-            location.href= "/city/insert?country_idx="+country_idx;
+            location.href= "/space/insert?country_idx="+country_idx+"&city_idx="+city_idx;
         })
         
         function view_info(idx_name){
