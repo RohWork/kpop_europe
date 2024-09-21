@@ -20,8 +20,6 @@ class Space extends CI_Controller {
         $data = array();
         $search = array();
         
-         echo "test";
-        exit;
         
         $search['country'] = $this->session->userdata('country_idx');
         $search['city'] = $this->session->userdata('city_idx');
@@ -40,6 +38,9 @@ class Space extends CI_Controller {
         }else{
             $data['city_list'] = "";
         }
+        
+         echo "test";
+        exit;
         
         $data['list'] = $this->sp_md->get_list($search);
 
