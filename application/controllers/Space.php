@@ -21,15 +21,11 @@ class Space extends CI_Controller {
         $search = array();
         
         
-        $search['country'] = $this->session->userdata('country_idx');
-        $search['city'] = $this->session->userdata('city_idx');
-        
-        if(!empty($this->input->get_post("country"))){
-            $search['country'] = $this->input->get_post("country");
-        }
-        if(!empty($this->input->get_post("city"))){
-            $search['city'] = $this->input->get_post("city");
-        }
+
+        $search['country'] = $this->input->get_post("country");
+
+        $search['city'] = $this->input->get_post("city");
+
         
         $data['country_list'] = $this->cont_md->get_country();
         
