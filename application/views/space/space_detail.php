@@ -56,7 +56,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="number" id="order" name="order" value="<?=$detail_info['space_location']?>" class="form-control"/>
+                        <input type="text" id="space_location" name="space_location" value="<?=$detail_info['space_location']?>" class="form-control"/>
                     </div>
                 </div>
             </form>
