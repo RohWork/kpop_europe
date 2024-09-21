@@ -8,7 +8,7 @@ class Space extends CI_Controller {
         
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
-        $this->load->model('space_model', 'sp_md', TRUE);
+        $this->load->model('Space_model', 'sp_md', TRUE);
         
         $lang = $this->session->userdata('lang');
         $this->lang->load('controller', $lang);
