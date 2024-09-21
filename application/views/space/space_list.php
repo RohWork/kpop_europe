@@ -76,7 +76,7 @@
                                 echo "<td>".$con['country_name']."</td>";
                                 echo "<td>".$con['city_name']."</td>";
                                 echo "<td>".$con['space_name']."</td>";
-                                echo "<td>".$con['space_lication']."</td>";
+                                echo "<td>".$con['space_location']."</td>";
                                 echo "</tr>";
                                 $i++;
                             }
