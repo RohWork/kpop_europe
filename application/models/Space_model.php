@@ -31,5 +31,3 @@ class Space_model extends CI_Model {
     }
     
 }
-
-?>
