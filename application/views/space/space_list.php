@@ -72,14 +72,17 @@
                             $i =1;
                             foreach($list as $con){
                                 $idx_space = $con['idx']."_".$con['space_name'];
+                        ?>
                                 
-                                echo '<tr onclick=view_info("'.$idx_space.'") class="onpointer">';
-                                echo "<td>".$i."</td>";
-                                echo "<td>".$con['country_name']."</td>";
-                                echo "<td>".$con['city_name']."</td>";
-                                echo "<td>".$con['space_name']."</td>";
-                                echo "<td>".$con['space_location']."</td>";
-                                echo "</tr>";
+                                
+                                <tr onclick=view_info("<?=$idx_space?>") class="onpointer">;
+                                    <td><?=$i?></td>
+                                    <td><?=$con['country_name']?></td>
+                                    <td><?=$con['city_name']?></td>
+                                    <td><?=$con['space_name']?></td>
+                                    <td><?=$con['space_location']?></td>
+                                </tr>
+                        <?php
                                 $i++;
                             }
                         ?>
