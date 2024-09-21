@@ -103,7 +103,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <iframe src="" id="detail_frame" style="width:100%; height:100%"><?=$this->lang->line('etc')?></iframe>  
+                    <iframe src="" id="detail_frame" style="width:100%; height:60vh"><?=$this->lang->line('etc')?></iframe>  
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" onclick="modal_delete();"><?=$this->lang->line('delete')?></button>
