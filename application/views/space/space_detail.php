@@ -65,8 +65,8 @@
                     <div id="map" style="position: relative; overflow: hidden;height:70vh">
                         
                     </div>
-                    <input type="hidden" id="space_x" value="<?=$detail_info['space_x']?>"/>
-                    <input type="hidden" id="space_y" value="<?=$detail_info['space_y']?>"/>
+                    <input type="hidden" id="space_x" name="space_x" value="<?=$detail_info['space_x']?>"/>
+                    <input type="hidden" id="space_y" name="space_y" value="<?=$detail_info['space_y']?>"/>
                 </div>
             </form>
         </div>
@@ -162,6 +162,10 @@
                 infoWindow.close();
                 infoWindow.setContent(`Pin dropped at: ${position.lat}, ${position.lng}`);
                 infoWindow.open(draggableMarker.map, draggableMarker);
+                
+                $("#space_x").val(${position.lat});
+                $("#space_y").val(${position.lng});
+                
             });
         }
 
