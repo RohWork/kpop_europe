@@ -122,10 +122,12 @@
         })
         
         function view_info(idx_name){
+            
+            console.log(idx_name);
             var idxurl = idx_name.split("_");
 
 
-            var url = "/city/detail/"+idxurl[0];
+            var url = "/space/detail/"+idxurl[0];
 
             $('#detail_frame').attr('src', url);
 
@@ -137,13 +139,13 @@
         function modal_submit(){
             const frame =  document.getElementById("detail_frame").contentWindow;
             
-            frame.modify_city();
+            frame.modify_space();
         }
         
         function modal_delete(){
             const frame =  document.getElementById("detail_frame").contentWindow;
             
-            frame.delete_city();
+            frame.delete_space();
         }
         
         function modal_close(){
