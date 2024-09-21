@@ -150,7 +150,7 @@
           
             const draggableMarker = new AdvancedMarkerElement({
                 map,
-                position: {lat: -50.11622249575195, lng: 8.701279227923976},
+                position: {lat:50.11622249575195, lng: 8.701279227923976},
                 gmpDraggable: true,
                 title: "This marker is draggable.",
             });
