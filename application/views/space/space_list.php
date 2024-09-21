@@ -65,8 +65,6 @@
                         <th><?=$this->lang->line('countryname')?></th>
                         <th><?=$this->lang->line('cityname')?></th>
                         <th><?=$this->lang->line('name')?></th>
-                        <th><?=$this->lang->line('writer')?></th>
-                        <th><?=$this->lang->line('registdate')?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -78,8 +76,6 @@
                                 echo "<td>".$con['ord']."</td>";
                                 echo "<td>".$con['country_name']."</td>";
                                 echo "<td>".$con['name']."</td>";
-                                echo "<td>".$con['writer']."</td>";
-                                echo "<td>".substr($con['regi_date'],0,10)."</td>";
                                 echo "</tr>";
                                 $i++;
                             }
