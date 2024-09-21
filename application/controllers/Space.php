@@ -59,7 +59,7 @@ class Space extends CI_Controller {
 
         $data['country_list'] = $this->cont_md->get_country();
         
-        $data['city_list'] = $this->city_md->get_city($detail['city_idx']);
+        $data['city_list'] = $this->city_md->get_city($detail['country_idx']);
         $data['space_idx'] = $idx;
   
         $this->load->view('space/space_detail',$data);
