@@ -55,9 +55,9 @@ class Space extends CI_Controller {
         
         $data = array();
         
-        $data['detail_info'] = $this->org_md->get_organization_idx($idx);
+        $data['detail_info'] = $this->space_md->get_space_idx($idx);
   
-        $this->load->view('organization_detail',$data);
+        $this->load->view('space/space_detail',$data);
     }
     
     public function insert(){
