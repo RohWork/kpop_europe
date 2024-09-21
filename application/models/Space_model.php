@@ -35,4 +35,23 @@ class Space_model extends CI_Model {
         
     }
     
+    
+    function get_space_idx($idx){
+        
+        $where = "";
+        
+        if(!empty($city_idx)){
+            $where = "and kc.idx = $city_idx";
+        }
+        $sSql = "SELECT kp.*, kc.name as country_name, kc.name as city_name FROM kpop_space as kp "
+                . "left join kpop_country as ko on kp.country_idx = ko.idx "
+                ."left join kpop_city as kc on kp.city_idx = kc.idx "
+                . "where 1=1 $where";
+        
+        $query = $this->db->query($sSql);
+        return $query->row_array();
+        
+        
+    }
+    
 }
