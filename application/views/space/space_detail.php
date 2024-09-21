@@ -58,8 +58,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <textarea id="space_location" name="space_location"  class="form-control">
-                                <?=$detail_info['space_location']?>
+                        <textarea id="space_location" name="space_location"  class="form-control"><?=$detail_info['space_location']?>
                         </textarea>
                     </div>
                 </div>
