@@ -38,16 +38,25 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('cityname')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
-                        <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
+                        <select id="city_idx" name="city_idx"  class="form-select">
+                            <?php foreach($city_list as $city){
+                                    $selected = "";
+                                    if($city['idx'] == $detail_info['city_idx']){
+                                        $selected = "selected";
+                                    }
+                            ?>
+                                
+                                <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
                     <div class="col-4">
-                        <label class="form-label bold"><strong><?=$this->lang->line('cityorder')?></strong></label>
+                        <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="number" id="order" name="order" value="<?=$detail_info['ord']?>" class="form-control"/>
+                        <input type="number" id="order" name="order" value="<?=$detail_info['space_location']?>" class="form-control"/>
                     </div>
                 </div>
             </form>
