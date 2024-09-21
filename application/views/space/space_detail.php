@@ -137,7 +137,7 @@
         
             var country_idx  = $("#country_idx option:selected").val();
 
-            location.href="?country_idx="+country.val();
+            location.href="?country_idx="+country_idx;
         }
     </script>
    
