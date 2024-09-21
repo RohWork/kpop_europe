@@ -41,9 +41,7 @@ class Space extends CI_Controller {
         
         
         
-        $data['list'] = $this->sp_md->get_space($search);
-        
-        
+        //$data['list'] = $this->sp_md->get_space($search);
 
         $data['search'] = $search;
        
