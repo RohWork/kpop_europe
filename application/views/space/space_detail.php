@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
-                    <div id="map" style="position: relative; overflow: hidden;">
+                    <div id="map" style="position: relative; overflow: hidden;height:100%">
                         
                     </div>
                 </div>
