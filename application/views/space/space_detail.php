@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-8">
                         <select id="country_idx" name="country_idx"  class="form-select">
-                            <?php foreach($country as $cont){
+                            <?php foreach($country_list as $cont){
                                     $selected = "";
                                     if($cont['idx'] == $detail_info['country_idx']){
                                         $selected = "selected";
