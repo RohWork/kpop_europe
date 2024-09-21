@@ -76,6 +76,7 @@
                     </div>
                     <input type="hidden" id="space_x" name="space_x" value="<?=$detail_info['space_x']?>"/>
                     <input type="hidden" id="space_y" name="space_y" value="<?=$detail_info['space_y']?>"/>
+                    <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
                 </div>
             </form>
         </div>
