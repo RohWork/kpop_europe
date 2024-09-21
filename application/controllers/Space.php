@@ -38,8 +38,7 @@ class Space extends CI_Controller {
         }else{
             $data['city_list'] = "";
         }
-         echo "test";
-        exit;
+        
         
         
         $data['list'] = $this->sp_md->get_list($search);
