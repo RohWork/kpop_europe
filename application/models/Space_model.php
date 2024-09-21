@@ -8,7 +8,7 @@ class Space_model extends CI_Model {
         parent::__construct();
     }
     
-    function get_space($search = ""){
+    function get_space($search){
         
         $where = "";
         
