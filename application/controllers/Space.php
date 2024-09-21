@@ -55,6 +55,20 @@ class Space extends CI_Controller {
         
         $data = array();
         
+        $search['country'] = $this->input->get_post("country");
+
+        $search['city'] = $this->input->get_post("city");
+
+        
+        $data['country_list'] = $this->cont_md->get_country();
+        
+        if(!empty($search['country'])){
+            $data['city_list'] = $this->city_md->get_city($search['country']);
+        }else{
+            $data['city_list'] = "";
+        }
+        
+        
         $data['detail_info'] = $this->space_md->get_space_idx($idx);
   
         $this->load->view('space/space_detail',$data);
