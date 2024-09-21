@@ -65,6 +65,8 @@
                     <div id="map" style="position: relative; overflow: hidden;height:70vh">
                         
                     </div>
+                    <input type="hidden" id="space_x" value="<?=$detail_info['space_x']?>"/>
+                    <input type="hidden" id="space_y" value="<?=$detail_info['space_y']?>"/>
                 </div>
             </form>
         </div>
@@ -141,7 +143,7 @@
             const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
             map = new Map(document.getElementById("map"), {
-              center: { lat: 50.11622249575195, lng: 8.701279227923976 },
+              center: { lat: <?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?> },
               zoom: 14,
               mapId: '4504f8b37365c3d0',
             });
@@ -150,7 +152,7 @@
           
             const draggableMarker = new AdvancedMarkerElement({
                 map,
-                position: {lat:50.11622249575195, lng: 8.701279227923976},
+                position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
                 gmpDraggable: true,
                 title: "This marker is draggable.",
             });
