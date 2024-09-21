@@ -26,6 +26,8 @@ class Space_model extends CI_Model {
         $sSql = "SELECT * FROM kpop_space WHERE 1=1 $where";
 
         $query = $this->db->query($sSql);
+        echo "test";
+        exit;
         return $query->result_array();
         
     }
