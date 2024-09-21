@@ -163,8 +163,8 @@
                 infoWindow.setContent(`Pin dropped at: ${position.lat}, ${position.lng}`);
                 infoWindow.open(draggableMarker.map, draggableMarker);
                 
-                $("#space_x").val(${position.lat});
-                $("#space_y").val(${position.lng});
+                $("#space_x").val(position.lat);
+                $("#space_y").val(position.lng);
                 
             });
         }
