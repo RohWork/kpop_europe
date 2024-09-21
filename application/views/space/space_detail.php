@@ -81,7 +81,7 @@
         </div>
     </body>
     <script>
-        function modify_city(){
+        function modify_space(){
             
             $.ajax({
                 url:'/space/modify_ajax',
@@ -104,7 +104,7 @@
             });
             
         }
-        function delete_city(){
+        function delete_space(){
             
             
             if(confirm("<?=$this->lang->line('deletecountry')?>")){
