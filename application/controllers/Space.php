@@ -55,15 +55,17 @@ class Space extends CI_Controller {
         
         $data = array();
         
-        $data['detail_info'] = $detail = $this->space_md->get_space_idx($idx);
+         $detail = $this->space_md->get_space_idx($idx);
 
         $data['country_list'] = $this->cont_md->get_country();
        
         $get_country = $this->input->get('country_idx');
         if(!empty($get_country)){
             $detail['country_idx'] = $get_country;
+            
         }
         
+        $data['detail_info'] = $detail;
         $data['city_list'] = $this->city_md->get_city($detail['country_idx']);
         $data['space_idx'] = $idx;
   
