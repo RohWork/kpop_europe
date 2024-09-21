@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-8">
                         <input type="text" id="city" name="city" value="<?=$detail_info['name']?>" class="form-control"/>
-                        <input type="hidden" id="space_idx" name="space_idx" value="<?=$detail_info['idx']?>"/>
+                        <input type="hidden" id="city_idx" name="city_idx" value="<?=$detail_info['idx']?>"/>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
