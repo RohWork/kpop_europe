@@ -14,18 +14,17 @@ class Space_model extends CI_Model {
         
         if(!empty($search['country'])){
             if($search['country'] != 'all'){
-                $where .= " AND ki.country_idx ='".$search['country']."'";
+                $where .= " AND country_idx ='".$search['country']."'";
             }
         }
         if(!empty($search['city'])){
             if($search['city'] != 'all'){
-                $where .= " AND ki.city_idx ='".$search['city']."'";
+                $where .= " AND .city_idx ='".$search['city']."'";
             }
         }
         
         $sSql = "SELECT * FROM kpop_space WHERE 1=1 $where";
-        echo $sSql;
-        exit;
+
         $query = $this->db->query($sSql);
         return $query->result_array();
         
