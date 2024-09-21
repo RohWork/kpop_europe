@@ -46,7 +46,7 @@
                                     }
                             ?>
                                 
-                                <option value="<?=$cont['idx']?>" <?=$selected?>><?=$cont['name']?></option>
+                                <option value="<?=$city['idx']?>" <?=$selected?>><?=$city['name']?></option>
                             <?php } ?>
                         </select>
                     </div>
