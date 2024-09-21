@@ -20,7 +20,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <select id="country_idx" name="country_idx"  class="form-select" onchange="go_country(this)">
+                        <select id="country_idx" name="country_idx"  class="form-select" onchange="go_country()">
                             <?php foreach($country_list as $cont){
                                     $selected = "";
                                     if($cont['idx'] == $detail_info['country_idx']){
@@ -133,7 +133,10 @@
             }
         }
         
-        function go_country(country){
+        function go_country(){
+        
+            var country_idx  = $("#country_idx option:selected").val();
+
             location.href="?country_idx="+country.val();
         }
     </script>
