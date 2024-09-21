@@ -75,7 +75,7 @@
                         ?>
                                 
                                 
-                                <tr onclick=view_info("<?=$idx_space?>") class="onpointer">
+                                <tr onclick=view_info('<?=$idx_space?>') class="onpointer">
                                     <td><?=$i?></td>
                                     <td><?=$con['country_name']?></td>
                                     <td><?=$con['city_name']?></td>
