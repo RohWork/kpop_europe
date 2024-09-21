@@ -54,7 +54,7 @@ class Space extends CI_Controller {
     function detail($idx){
         
         $data = array();
-        
+        echo $idx;
         $data['detail_info'] = $detail = $this->space_md->get_space_idx($idx);
 
         
