@@ -24,8 +24,8 @@ class Space_model extends CI_Model {
         }
         
         $sSql = "SELECT * FROM kpop_space as kp "
-                . "left join kpop_country as ko on kc.country_idx = ko.idx "
-                ."left join kpop_city as kc on kc.country_idx = ko.idx "
+                . "left join kpop_country as ko on kp.country_idx = ko.idx "
+                ."left join kpop_city as kc on kp.city_idx = kc.idx "
                 . "where 1=1 $where";
         
 
