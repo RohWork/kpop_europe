@@ -70,64 +70,13 @@
         </div>
     </body>
     <script>
-        function modify_city(){
-            
-            $.ajax({
-                url:'/space/modify_ajax',
-                type:'post',
-                data:$("#form_modify").serialize(),
-                success:function(data){
-                    if(data.result == 200){
-                        alert('<?=$this->lang->line('completemodify')?>');
-                        window.parent.location.reload();
-                        window.parent.modal_close();
-                    }else{
-                        alert('<?=$this->lang->line('checktodata')?>');
-                    }
-                },
-                error: function(xhr,status,error) {
-                    console.log(xhr,status,error);
-                    alert("<?=$this->lang->line('neterror')?>");
-                    return false;
-                }	 
-            });
-            
-        }
-        function delete_city(){
-            
-            
-            if(confirm("<?=$this->lang->line('deletecountry')?>")){
-                var data = {idx : <?=$detail_info['idx']?>};
 
-                $.ajax({
-                    url:'/space/delete_ajax',
-                    type:'post',
-                    data:data,
-                    success:function(data){
-                        if(data.result == 200){
-                            alert('<?=$this->lang->line('completedelete')?>');
-                            window.parent.location.reload();
-                            window.parent.modal_close();
-                        }else{
-                            alert('<?=$this->lang->line('checktodata')?>');
-                        }
-                    },
-                    error: function(xhr,status,error) {
-                        console.log(xhr,status,error);
-                        alert("<?=$this->lang->line('neterror')?>");
-                        return false;
-                    }	 
-                });
-            }
-        }
-    </script>
-    
    
     
     <script>
         (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
           key: "AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo",
-          v: "weekly"
+          v: "weekly",
           // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
           // Add other bootstrap parameters as needed, using camel case.
         });
