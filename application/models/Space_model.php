@@ -56,7 +56,7 @@ class Space_model extends CI_Model {
         
         $this->db->where("idx", $idx);
         $this->db->update('kpop_space', $params);
-        var_dump($params);
+        echo $idx;
         return $this->db->affected_rows();
     }
     
