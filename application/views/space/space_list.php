@@ -57,7 +57,7 @@
             
         <div class="row">
             <div class="col">
-                <table class="table table-striped" style="width:30vw">
+                <table class="table table-striped" style="width:60vw">
                     <thead>
                     <tr>
                         <th>No</th>
