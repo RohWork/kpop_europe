@@ -41,6 +41,8 @@ class Space extends CI_Controller {
         $data['list'] = $this->sp_md->get_list($search);
 
         $data['search'] = $search;
+        echo "test";
+        exit;
         
         $this->load->view('header');
         $this->load->view('sidebar');
