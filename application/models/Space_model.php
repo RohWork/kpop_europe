@@ -26,7 +26,7 @@ class Space_model extends CI_Model {
         $sSql = "SELECT kp.*, kc.name as country_name, kc.name as city_name FROM kpop_space as kp "
                 . "left join kpop_country as ko on kp.country_idx = ko.idx "
                 ."left join kpop_city as kc on kp.city_idx = kc.idx "
-                . "where 1=1 $where";
+                . "where kp.state = 'Y' $where";
         
 
         $query = $this->db->query($sSql);
@@ -44,12 +44,20 @@ class Space_model extends CI_Model {
         $sSql = "SELECT kp.*, kc.name as country_name, kc.name as city_name FROM kpop_space as kp "
                 . "left join kpop_country as ko on kp.country_idx = ko.idx "
                 ."left join kpop_city as kc on kp.city_idx = kc.idx "
-                . "where kp.idx = $idx";
+                . "where kp.state = 'Y' and kp.idx = $idx";
         
         $query = $this->db->query($sSql);
         return $query->row_array();
         
         
+    }
+    
+    function modify_space($params, $idx){
+        
+        $this->db->where("idx", $idx);
+        $this->db->update('kpop_space', $params);
+        
+        return $this->db->affected_rows();
     }
     
 }
