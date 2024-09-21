@@ -6,7 +6,9 @@ class Space extends CI_Controller {
     function __construct() {
         parent ::__construct();
         
-
+        $lang = $this->session->userdata('lang');
+        $this->lang->load('controller', $lang);
+        
         $this->load->model('Country_model', 'cont_md', TRUE);
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Space_model', 'sp_md', TRUE);
