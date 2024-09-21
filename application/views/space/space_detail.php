@@ -69,7 +69,7 @@
             </form>
         </div>
     </body>
-    <script>
+
 
    
     
