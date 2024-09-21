@@ -58,7 +58,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('name')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <text id="space_name" name="space_name"  class="form-control" value="<?=$detail_info['space_name']?>" />
+                        <input type="text" id="space_name" name="space_name"  class="form-control" value="<?=$detail_info['space_name']?>" />
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
