@@ -59,6 +59,9 @@
                         <input type="text" id="space_location" name="space_location" value="<?=$detail_info['space_location']?>" class="form-control"/>
                     </div>
                 </div>
+                <div class="row" style="padding-top: 5px">
+                    
+                </div>
             </form>
         </div>
     </body>
