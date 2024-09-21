@@ -71,7 +71,7 @@
                         <?php
                             $i =1;
                             foreach($list as $con){
-                                $idx_space = $con['idx']."_".addslashes($con['space_name']);
+                                $idx_space = $con['idx']."_".stripslashes($con['space_name']);
                         ?>
                                 
                                 
