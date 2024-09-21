@@ -8,9 +8,11 @@ class Space_model extends CI_Model {
         parent::__construct();
     }
     
-    function get_list(){
+    function get_list($search){
         
-         if(!empty($search['country'])){
+        $where = "";
+        
+        if(!empty($search['country'])){
             if($search['country'] != 'all'){
                 $where .= " AND ki.country_idx ='".$search['country']."'";
             }
