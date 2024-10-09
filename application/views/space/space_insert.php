@@ -53,7 +53,7 @@
                                         
                                         $space_x = $city['space_x'];
                                         $space_y = $city['space_y'];
-                                        $zoom = "18";
+                                        $zoom = "13";
                                     }
                             ?>
                                 
