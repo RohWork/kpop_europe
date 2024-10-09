@@ -108,7 +108,7 @@
         function delete_space(){
             
             
-            if(confirm("<?=$this->lang->line('deletecountry')?>")){
+            if(confirm("<?=$this->lang->line('deletespace')?>")){
                 var data = {idx : <?=$detail_info['idx']?>};
 
                 $.ajax({
