@@ -110,7 +110,8 @@ class Space extends CI_Controller {
 
     
     public function delete_ajax(){
-                $data = array();
+        
+        $data = array();
         $image_data = array();
         
         $idx= $this->input->post("idx");
