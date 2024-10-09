@@ -110,7 +110,32 @@ class Space extends CI_Controller {
 
     
     public function delete_ajax(){
+                $data = array();
+        $image_data = array();
         
+        $idx= $this->input->post("idx");
+
+       
+        
+        if(!empty($idx)){
+            
+            $params = array(
+                        "state" => "N"
+                      );
+            
+            $this->space_md->modify_space($params,$idx);
+            
+            $data['result'] = 200;
+
+            
+        }else{
+            $data['message'] = $this->lang->line('idxerror');
+
+            $data['result'] = 201;
+        }
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
     }
     
     public function insert(){
