@@ -62,7 +62,6 @@ class Space_model extends CI_Model {
     
     function insert_space($params){
         
-        $params['regi_date'] = date('Y-m-d h:i:s');
         $this->db->insert('kpop_space', $params);
         
         return $this->db->insert_id();
