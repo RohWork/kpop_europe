@@ -178,4 +178,3 @@
 
         initMap();  
     </script>
-</html>
