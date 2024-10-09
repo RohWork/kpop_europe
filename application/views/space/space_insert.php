@@ -151,7 +151,7 @@
 
             map = new Map(document.getElementById("map"), {
               center: { lat: <?=$space_x?>, lng: <?=$space_y?> },
-              zoom: 14,
+              zoom: <?=$zoom?>,
               mapId: '4504f8b37365c3d0',
             });
           
