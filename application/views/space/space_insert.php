@@ -4,7 +4,7 @@
     
     $space_x = "";
     $space_y = "";
-
+    $zoom = "";
 ?>
 
 <html>
@@ -31,7 +31,7 @@
                                         
                                         $space_x = $cont['space_x'];
                                         $space_y = $cont['space_y'];
-                                        
+                                        $zoom = "14";
                                     }
                             ?>
                                 
@@ -53,7 +53,7 @@
                                         
                                         $space_x = $city['space_x'];
                                         $space_y = $city['space_y'];
-                                        
+                                        $zoom = "18";
                                     }
                             ?>
                                 
