@@ -34,8 +34,13 @@ class Space extends CI_Controller {
         
         if(!empty($search['country'])){
             $data['city_list'] = $this->city_md->get_city($search['country']);
+            
+            if(empty($search['city'])){
+                $search['city'] = $data['city_list'][0]['idx'];
+            }
         }else{
             $data['city_list'] = "";
+            
         }
         
         
