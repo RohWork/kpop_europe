@@ -23,7 +23,10 @@ class Space extends CI_Controller {
         
 
         $search['country'] = $this->input->get_post("country");
-
+        
+        if(empty($search['country'])){
+            $search['country'] = 1;
+        }
         $search['city'] = $this->input->get_post("city");
 
         
