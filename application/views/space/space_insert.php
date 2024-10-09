@@ -1,6 +1,9 @@
 <?php
     $lang = $this->session->userdata('lang');
     $this->lang->load('view', $lang);
+    
+    $space_x = "";
+    $space_y = "";
 
 ?>
 
@@ -25,6 +28,10 @@
                                     $selected = "";
                                     if($cont['idx'] == $search['country']){
                                         $selected = "selected";
+                                        
+                                        $space_x = $cont['space_x'];
+                                        $space_y = $cont['space_y'];
+                                        
                                     }
                             ?>
                                 
@@ -43,6 +50,10 @@
                                     $selected = "";
                                     if($city['idx'] == $search['city']){
                                         $selected = "selected";
+                                        
+                                        $space_x = $city['space_x'];
+                                        $space_y = $city['space_y'];
+                                        
                                     }
                             ?>
                                 
@@ -139,7 +150,7 @@
             const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
             map = new Map(document.getElementById("map"), {
-              center: { lat: <?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?> },
+              center: { lat: <?=$space_x?>, lng: <?=$space_y?> },
               zoom: 14,
               mapId: '4504f8b37365c3d0',
             });
@@ -148,7 +159,7 @@
           
             const draggableMarker = new AdvancedMarkerElement({
                 map,
-                position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
+                position: {lat:<?=$space_x?>, lng: <?=$space_y?>},
                 gmpDraggable: true,
                 title: "This marker is draggable.",
             });
