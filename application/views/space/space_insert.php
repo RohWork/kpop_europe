@@ -31,7 +31,7 @@
                                         
                                         $space_x = $cont['space_x'];
                                         $space_y = $cont['space_y'];
-                                        $zoom = "14";
+                                        $zoom = "20";
                                     }
                             ?>
                                 
