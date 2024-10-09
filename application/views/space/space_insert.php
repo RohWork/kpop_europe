@@ -84,7 +84,7 @@
                         
                     </div>
                     <input type="hidden" id="space_x" name="space_x" value="<?=$space_x?>"/>
-                    <input type="hidden" id="space_y" name="space_y" value="<?=$space_x?>"/>
+                    <input type="hidden" id="space_y" name="space_y" value="<?=$space_y?>"/>
                 </div>
                 
                 <div class="row mt-1" style="padding-top:10px">
