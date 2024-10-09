@@ -7,17 +7,15 @@
     $zoom = "";
 ?>
 
-<html>
-    <head>
+
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
+
+
         <div class="container" style="font-size: 15px">
-            <form id="form_modify">
+            <form id="form_insert">
                 <div class="row">
                     <div class="col-4">
                         <label class="form-label bold"><strong><?=$this->lang->line('countryname')?></strong></label>
@@ -90,19 +88,25 @@
                 </div>
             </form>
         </div>
+        <div class="row mt-1" style="padding-top:50px">
+                <div class="col-md-2 col-xs-2 "></div>
+                <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
+                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
+                </div>
+        </div>
     </body>
     <script>
-        function modify_space(){
+        function insert_space(){
             
             $.ajax({
                 url:'/space/insert_ajax',
                 type:'post',
-                data:$("#form_modify").serialize(),
+                data:$("#form_insert").serialize(),
                 success:function(data){
                     if(data.result == 200){
                         alert('<?=$this->lang->line('completeinsert')?>');
-                        window.parent.location.reload();
-                        window.parent.modal_close();
+                        window.location.href="/space/";
                     }else{
                         alert('<?=$this->lang->line('checktodata')?>');
                     }
@@ -178,4 +182,4 @@
 
         initMap();  
     </script>
-</html>
+</main>
