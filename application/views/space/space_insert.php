@@ -87,15 +87,17 @@
                     <input type="hidden" id="space_x" name="space_x" value=""/>
                     <input type="hidden" id="space_y" name="space_y" value=""/>
                 </div>
+                
+                <div class="row mt-1" style="padding-top:50px">
+                    <div class="col-md-2 col-xs-2 "></div>
+                    <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
+                        <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                        <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
+                    </div>
+                </div>
             </form>
         </div>
-        <div class="row mt-1" style="padding-top:50px">
-                <div class="col-md-2 col-xs-2 "></div>
-                <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
-                    <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
-                    <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
-                </div>
-        </div>
+        
     <script>
         function insert_space(){
             
