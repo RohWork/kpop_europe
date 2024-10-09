@@ -23,7 +23,7 @@
                         <select id="country_idx" name="country_idx"  class="form-select" onchange="go_country()">
                             <?php foreach($country_list as $cont){
                                     $selected = "";
-                                    if($cont['idx'] == $detail_info['country_idx']){
+                                    if($cont['idx'] == $search['country']){
                                         $selected = "selected";
                                     }
                             ?>
@@ -41,7 +41,7 @@
                         <select id="city_idx" name="city_idx"  class="form-select" onchange="go_city()">
                             <?php foreach($city_list as $city){
                                     $selected = "";
-                                    if($city['idx'] == $detail_info['city_idx']){
+                                    if($city['idx'] == $search['city']){
                                         $selected = "selected";
                                     }
                             ?>
@@ -58,7 +58,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('name')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="space_name" name="space_name"  class="form-control" value="<?=$detail_info['space_name']?>" />
+                        <input type="text" id="space_name" name="space_name"  class="form-control"/>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
@@ -66,7 +66,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <textarea id="space_location" name="space_location"  class="form-control"><?=$detail_info['space_location']?>
+                        <textarea id="space_location" name="space_location"  class="form-control">
                         </textarea>
                     </div>
                 </div>
@@ -74,9 +74,8 @@
                     <div id="map" style="position: relative; overflow: hidden;height:70vh">
                         
                     </div>
-                    <input type="hidden" id="space_x" name="space_x" value="<?=$detail_info['space_x']?>"/>
-                    <input type="hidden" id="space_y" name="space_y" value="<?=$detail_info['space_y']?>"/>
-                    <input type="hidden" id="space_idx" name="space_idx" value="<?=$detail_info['idx']?>"/>
+                    <input type="hidden" id="space_x" name="space_x" value=""/>
+                    <input type="hidden" id="space_y" name="space_y" value=""/>
                 </div>
             </form>
         </div>
@@ -85,12 +84,12 @@
         function modify_space(){
             
             $.ajax({
-                url:'/space/modify_ajax',
+                url:'/space/insert_ajax',
                 type:'post',
                 data:$("#form_modify").serialize(),
                 success:function(data){
                     if(data.result == 200){
-                        alert('<?=$this->lang->line('completemodify')?>');
+                        alert('<?=$this->lang->line('completeinsert')?>');
                         window.parent.location.reload();
                         window.parent.modal_close();
                     }else{
@@ -105,39 +104,19 @@
             });
             
         }
-        function delete_space(){
-            
-            
-            if(confirm("<?=$this->lang->line('deletecountry')?>")){
-                var data = {idx : <?=$detail_info['idx']?>};
-
-                $.ajax({
-                    url:'/space/delete_ajax',
-                    type:'post',
-                    data:data,
-                    success:function(data){
-                        if(data.result == 200){
-                            alert('<?=$this->lang->line('completedelete')?>');
-                            window.parent.location.reload();
-                            window.parent.modal_close();
-                        }else{
-                            alert('<?=$this->lang->line('checktodata')?>');
-                        }
-                    },
-                    error: function(xhr,status,error) {
-                        console.log(xhr,status,error);
-                        alert("<?=$this->lang->line('neterror')?>");
-                        return false;
-                    }	 
-                });
-            }
-        }
         
         function go_country(){
         
             var country_idx  = $("#country_idx option:selected").val();
 
             location.href="?country_idx="+country_idx;
+        }
+        function go_city(){
+        
+            var country_idx  = $("#country_idx option:selected").val();
+            var city_idx  = $("#city_idx option:selected").val();
+            
+            location.href="?country_idx="+country_idx+"city_idx="+city_idx;
         }
     </script>
    
