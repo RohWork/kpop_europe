@@ -44,6 +44,7 @@
                     </div>
                     <div class="col-8">
                         <select id="city_idx" name="city_idx"  class="form-select" onchange="go_city()">
+                            
                             <?php foreach($city_list as $city){
                                     $selected = "";
                                     if($city['idx'] == $search['city']){
