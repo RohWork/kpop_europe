@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
-                    <div id="map" style="position: relative; overflow: hidden;height:70vh">
+                    <div id="map" style="position: relative; overflow: hidden;height:40vh">
                         
                     </div>
                     <input type="hidden" id="space_x" name="space_x" value=""/>
