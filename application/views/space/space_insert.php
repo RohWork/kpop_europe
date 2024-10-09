@@ -96,7 +96,6 @@
                     <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
                 </div>
         </div>
-    </body>
     <script>
         function insert_space(){
             
