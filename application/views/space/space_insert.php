@@ -76,8 +76,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <textarea id="space_location" name="space_location"  class="form-control">
-                        </textarea>
+                        <textarea id="space_location" name="space_location"  class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
@@ -91,7 +90,7 @@
                 <div class="row mt-1" style="padding-top:10px">
                     <div class="col-md-4 col-xs-4 "></div>
                     <div class="col-md-4 col-xs-6 col-offset-6 col-xs-offset-4 text-center">
-                        <button type="button" class="btn btn-success" id="btn_insert"><?=$this->lang->line('insert')?></button>
+                        <button type="button" class="btn btn-success" id="btn_insert" onclick="insert_space()"><?=$this->lang->line('insert')?></button>
                         <button type="button" class="btn btn-danger" id="btn_reset" onclick="form.reset();"><?=$this->lang->line('reset')?></button>
                     </div>
                 </div>
