@@ -263,7 +263,7 @@
         var co = $("#check_country option:selected").val();
         var ci = $("#check_city option:selected").val();
         
-        var data = { country_idx : co, country_idx : ci };
+        var data = { country_idx : co, city_idx : ci };
         
         $.ajax({
             url:'/city/get_ajax',
