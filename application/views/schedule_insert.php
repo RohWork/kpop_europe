@@ -48,7 +48,8 @@
                         <option value=""></option>
                     </select>
                 </div>
-            </div>    
+            </div>
+            
             <div class="row mt-1">
 
                 <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('orgernization')?></strong></label>
@@ -68,7 +69,9 @@
                 <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('location')?></strong></label>
 
                 <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                    <input type="text" class="form-control" id="input_space" name="input_space" required/>
+                    <select class="form-select" id="input_space" name="input_space">
+                        <option value=""></option>
+                    </select>
                 </div>
             </div>
             <div class="row mt-1">
@@ -230,7 +233,7 @@
                     $('#check_city').empty();
                     for(var i =0; i<data_array.length;i++){
                         var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
-                        $('#check_city').append(option)
+                        $('#check_city').append(option);
                         
                     }
                     
@@ -250,6 +253,48 @@
         });
         
     }
+    function get_space_data(){
+        
+        var co = $("#check_country option:selected").val();
+        var ci = $("#check_city option:selected").val();
+        
+        var data = { country_idx : co, country_idx : ci };
+        
+        $.ajax({
+            url:'/city/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+                    console.log(data_array);
+                    
+                    $('#input_space').empty();
+                    for(var i =0; i<data_array.length;i++){
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        $('#input_space').append(option);
+                        
+                    }
+                    
+                    
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+    
+    
+    }
+    
         $('#input_start_date').datetimepicker({
             format: 'd/m/Y H:00:00'
         });
