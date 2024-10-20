@@ -94,7 +94,7 @@
                             <option value=""></option>
                         </select>
 
-                        <input type="hidden" id="input_space_name" name="input_space_name"/>
+                        <input type="hidden" id="space_name" name="space_name"/>
                     </div>
                 </div>
                 
@@ -360,8 +360,8 @@
                     
                     var loc_data = data.result;
 
-                    $('#input_addr').val(loc_data['space_location']);
-                    $('#input_space_name').val(loc_data['space_name']);
+                    $('#addr').val(loc_data['space_location']);
+                    $('#space_name').val(loc_data['space_name']);
 
                     
                 }else{
