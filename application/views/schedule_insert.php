@@ -234,7 +234,6 @@
                 if(data.code == 200){
                     
                     var data_array = data.result;
-                    console.log(data_array);
                     
                     $('#check_city').empty();
                     for(var i =0; i<data_array.length;i++){
