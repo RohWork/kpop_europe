@@ -11,6 +11,7 @@ class Schedule extends CI_Controller {
         $this->load->model('City_model', 'city_md', TRUE);
         $this->load->model('Organization_model', 'org_md', TRUE);
         $this->load->model('Bookmark_model', 'mark_md',  TRUE);
+        $this->load->model('Space_model', 'space_md',  TRUE);
         
         $lang = $this->session->userdata('lang');
         if(empty($lang)){
@@ -362,6 +363,7 @@ class Schedule extends CI_Controller {
         $data['country'] = $this->cont_md->get_country();
         $data['city'] = $this->city_md->get_city();
         $data['organization'] = $this->org_md->get_organization();
+        $data['organization'] = $this->space_md->get_space($data);
         
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
