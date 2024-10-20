@@ -241,6 +241,7 @@ class Schedule extends CI_Controller {
         $data['country'] = $this->cont_md->get_country();
         $data['city'] = $this->city_md->get_city();
         $data['organization'] = $this->org_md->get_organization();
+        $data['space'] = $this->space_md->get_space($data);
         
         $this->load->view('header');
         $this->load->view('sidebar');
@@ -363,7 +364,7 @@ class Schedule extends CI_Controller {
         $data['country'] = $this->cont_md->get_country();
         $data['city'] = $this->city_md->get_city();
         $data['organization'] = $this->org_md->get_organization();
-        $data['organization'] = $this->space_md->get_space($data);
+        $data['space'] = $this->space_md->get_space($data);
         
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
