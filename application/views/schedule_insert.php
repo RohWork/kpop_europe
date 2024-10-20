@@ -72,6 +72,8 @@
                     <select class="form-select" id="input_space" name="input_space">
                         <option value=""></option>
                     </select>
+                    
+                    <input type="hidden" id="input_space_name" name="input_space_name"/>
                 </div>
             </div>
             <div class="row mt-1">
@@ -321,7 +323,7 @@
                     var loc_data = data.result;
 
                     $('#input_addr').val(loc_data['space_location']);
-                    
+                    $('#input_space_name').val(loc_data['space_name']);
 
                     
                 }else{
