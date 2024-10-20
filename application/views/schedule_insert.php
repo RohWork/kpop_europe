@@ -184,7 +184,7 @@
         get_space_data();
     });
     
-    $("#inpu_space").cange(function(){
+    $("#inpu_space").change(function(){
         get_space_addr();
     });
     
