@@ -90,7 +90,7 @@
                         <label class="form-label"><strong><?=$this->lang->line('location')?></strong></label>
                     </div>
                     <div class="col-9">
-                        <select class="form-select" id="space" name="space" onchange="get_space_addr()">
+                        <select class="form-select" id="space_idx" name="space_idx" onchange="get_space_addr()">
                             <option value=""></option>
                         </select>
 
@@ -312,7 +312,7 @@
                     var data_array = data.result;
 
                     
-                    $('#space').empty();
+                    $('#space_idx').empty();
                     for(var i =0; i<data_array.length;i++){
                         
                         var selected = "";
@@ -322,7 +322,7 @@
                         }
                         
                         var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['space_name']+"</option>");
-                        $('#space').append(option);
+                        $('#space_idx').append(option);
                         
                     }
                     
