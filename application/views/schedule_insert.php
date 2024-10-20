@@ -177,6 +177,12 @@
     
     $("#check_country").change(function(){
         get_country_data();
+        get_space_data();
+    });
+    
+    $("#check_country").change(function(){
+        get_country_data();
+        get_space_data();
     });
     
     $(function(){
