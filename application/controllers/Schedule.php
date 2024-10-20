@@ -380,6 +380,7 @@ class Schedule extends CI_Controller {
         
         $params['homepage'] = $this->input->post("homepage");
         $params['space'] = $this->input->post("space");
+        $params['space_name'] = $this->input->post("space_name");
         $params['addr'] = $this->input->post("addr");
         $params['face'] = $this->input->post("face");
         $params['insta'] = $this->input->post("insta");
