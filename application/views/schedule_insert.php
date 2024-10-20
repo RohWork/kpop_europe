@@ -180,7 +180,7 @@
         get_space_data();
     });
     
-    $("#check_country").change(function(){
+    $("#check_city").change(function(){
         get_country_data();
         get_space_data();
     });
