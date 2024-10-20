@@ -215,7 +215,7 @@ class Space extends CI_Controller {
         $search['country'] = $this->input->post("country_idx");
         $search['city'] = $this->input->post("city_idx");
         
-        $result = $this->city_md->get_space($country_idx);
+        $result = $this->city_md->get_space($search);
         
         if(!$result){
             $data['code'] = 400;
