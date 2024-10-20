@@ -230,7 +230,30 @@ class Space extends CI_Controller {
         
     }
     
+    function get_addr_ajax(){
+                
+        $data = array();
+        
+        $data['code'] = 200;
+        $data['message'] = "";
+        
+        $idx = $this->input->post("space_idx");
 
+        
+        $result = $this->space_md->get_space_idx($idx);
+        
+        if(!$result){
+            $data['code'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }else{
+            $data['result'] = $result;
+        }
+        
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
     
     
     
