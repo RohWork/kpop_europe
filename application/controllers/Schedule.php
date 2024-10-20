@@ -379,7 +379,7 @@ class Schedule extends CI_Controller {
         $params['name']= $this->input->post("name");
         
         $params['homepage'] = $this->input->post("homepage");
-        $params['space_idx'] = $this->input->post("space");
+        $params['space_idx'] = $this->input->post("space_idx");
         $params['space'] = $this->input->post("space_name");
         $params['addr'] = $this->input->post("addr");
         $params['face'] = $this->input->post("face");
