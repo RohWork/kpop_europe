@@ -297,8 +297,8 @@
     }
     function get_space_data(){
         
-        var co = $("#check_country option:selected").val();
-        var ci = $("#check_city option:selected").val();
+        var co = $("#country option:selected").val();
+        var ci = $("#city option:selected").val();
         
         var data = { country_idx : co, city_idx : ci };
         
