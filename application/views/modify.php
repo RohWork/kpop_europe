@@ -85,14 +85,18 @@
                 </div>
                 
                 
-                <div class="row row_border">
-                    <div class="col-3">
-                        <label class="form-label"><strong><?=$this->lang->line('location')?></strong></label>
-                    </div>
-                    <div class="col-9">
-                        <input type="text" id="space" name="space" class="form-control" value="<?=$detail_info['space']?>"/>
-                    </div>
+                <div class="row mt-1">
+
+                <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('location')?></strong></label>
+
+                <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
+                    <select class="form-select" id="input_space" name="input_space">
+                        <option value=""></option>
+                    </select>
+                    
+                    <input type="hidden" id="input_space_name" name="input_space_name"/>
                 </div>
+            </div>
                 
                 <div class="row row_border">
                     <div class="col-3">
