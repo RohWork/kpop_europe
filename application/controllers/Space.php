@@ -204,7 +204,31 @@ class Space extends CI_Controller {
         echo json_encode($data);
     }
     
-
+    function get_ajax(){
+                
+        $data = array();
+        
+        $data['code'] = 200;
+        $data['message'] = "";
+        
+        $search = array();
+        $search['country'] = $this->input->post("country_idx");
+        $search['city'] = $this->input->post("city_idx");
+        
+        $result = $this->city_md->get_space($country_idx);
+        
+        if(!$result){
+            $data['code'] = 400;
+            $data['message'] = $this->lang->line('dataerror');
+        }else{
+            $data['result'] = $result;
+        }
+        
+        
+        header("Content-Type: application/json;");
+        echo json_encode($data);
+        
+    }
     
 
     
