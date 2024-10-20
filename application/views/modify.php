@@ -269,7 +269,7 @@
                         
                         var selected = "";
                         
-                        if(data.result[i]['idx'] == <?=$detail_info['city_idx']?>){
+                        if(data.result[i]['idx'] == "<?=$detail_info['city_idx']?>"){
                             selected = "selected";
                         }
                         
@@ -317,7 +317,7 @@
                         
                         var selected = "";
                         
-                        if(data.result[i]['idx'] == <?=$detail_info['space_idx']?>){
+                        if(data.result[i]['idx'] == "<?=$detail_info['space_idx']?>"){
                             selected = "selected";
                         }
                         
