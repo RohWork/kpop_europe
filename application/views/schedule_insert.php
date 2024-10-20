@@ -277,7 +277,7 @@
                     
                     $('#input_space').empty();
                     for(var i =0; i<data_array.length;i++){
-                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['name']+"</option>");
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['space_name']+"</option>");
                         $('#input_space').append(option);
                         
                     }
