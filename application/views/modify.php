@@ -274,7 +274,7 @@
                         $('#city').append(option)
                         
                     }
-                    
+                get_space_data();    
                     
                     
                 }else{
@@ -290,6 +290,90 @@
             }	 
         });
         
+    }
+    function get_space_data(){
+        
+        var co = $("#check_country option:selected").val();
+        var ci = $("#check_city option:selected").val();
+        
+        var data = { country_idx : co, city_idx : ci };
+        
+        $.ajax({
+            url:'/space/get_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var data_array = data.result;
+
+                    
+                    $('#input_space').empty();
+                    for(var i =0; i<data_array.length;i++){
+                        
+                        var selected = "";
+                        
+                        if(data.result[i]['idx'] == <?=$detail_info['space_idx']?>){
+                            selected = "selected";
+                        }
+                        
+                        var option = $("<option value="+data.result[i]['idx']+">"+data.result[i]['space_name']+"</option>");
+                        $('#input_space').append(option);
+                        
+                    }
+                    
+                    get_space_addr();
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+    
+    
+    }
+    
+    function get_space_addr(){
+        
+        var space = $("#input_space option:selected").val();
+
+        
+        var data = { space_idx : space  };
+        
+        $.ajax({
+            url:'/space/get_addr_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var loc_data = data.result;
+
+                    $('#input_addr').val(loc_data['space_location']);
+                    $('#input_space_name').val(loc_data['space_name']);
+
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+    
+    
     }
     
     $("#btn_modfiy").on("click", function(){
