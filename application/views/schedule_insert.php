@@ -266,7 +266,7 @@
         var data = { country_idx : co, city_idx : ci };
         
         $.ajax({
-            url:'/city/get_ajax',
+            url:'/space/get_ajax',
             type:'post',
             data: data,
             success:function(data){
