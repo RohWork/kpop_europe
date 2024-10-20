@@ -184,6 +184,10 @@
         get_space_data();
     });
     
+    $("#inpu_space").cange(function(){
+        get_space_addr();
+    });
+    
     $(function(){
         $("#calendar_insert").validate({
             messages:{
@@ -272,7 +276,7 @@
                 if(data.code == 200){
                     
                     var data_array = data.result;
-                    console.log(data_array);
+
                     
                     $('#input_space').empty();
                     for(var i =0; i<data_array.length;i++){
@@ -282,6 +286,42 @@
                     }
                     
                     
+                    
+                }else{
+
+                    //alert(data.message);
+                    return false;
+                }
+            },
+            error: function(xhr,status,error) {
+                console.log(xhr,status,error);
+                alert("<?=$this->lang->line('neterror')?>");
+                return false;
+            }	 
+        });
+    
+    
+    }
+    
+    function get_space_addr(){
+        
+        var space = $("#input_space option:selected").val();
+
+        
+        var data = { space_idx : space  };
+        
+        $.ajax({
+            url:'/space/get_addr_ajax',
+            type:'post',
+            data: data,
+            success:function(data){
+                if(data.code == 200){
+                    
+                    var loc_data = data.result;
+
+                    $('#input_addr').val(loc_data['space_location']);
+                    
+
                     
                 }else{
 
