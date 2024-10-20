@@ -57,7 +57,7 @@
                         <label class="form-label"><strong><?=$this->lang->line('city')?></strong></label>
                     </div>
                     <div class="col-9">
-                        <select id="city" name="city" class="form-select" onchange="get_space_data()>
+                        <select id="city" name="city" class="form-select" onchange="get_space_data()">
                             
                         </select>
                     </div>
