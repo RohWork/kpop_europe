@@ -246,7 +246,7 @@
                         
                     }
                     
-                    
+                    get_space_data();
                     
                 }else{
 
@@ -286,7 +286,7 @@
                         
                     }
                     
-                    
+                    get_space_addr();
                     
                 }else{
 
