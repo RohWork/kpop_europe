@@ -346,7 +346,7 @@
     
     function get_space_addr(){
         
-        var space = $("#input_space option:selected").val();
+        var space = $("#space option:selected").val();
 
         
         var data = { space_idx : space  };
