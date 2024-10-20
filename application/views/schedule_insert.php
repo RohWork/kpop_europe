@@ -181,7 +181,6 @@
     });
     
     $("#check_city").change(function(){
-        get_country_data();
         get_space_data();
     });
     
