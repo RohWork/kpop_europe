@@ -162,6 +162,7 @@
     <script>
     
     get_country_data();
+    get_space_data();
     
     $("#input_url").click(function() {
         $("#image_group").append(
