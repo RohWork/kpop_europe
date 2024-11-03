@@ -185,7 +185,7 @@
         }
         
          function go_search_map() {
-            const address = $("#search_map").val();
+            const address = $("#space_location").val();
             const geocoder = new google.maps.Geocoder();
 
             geocoder.geocode({ address: address }, (results, status) => {
