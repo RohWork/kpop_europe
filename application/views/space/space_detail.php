@@ -204,7 +204,7 @@
                     map.setCenter(location);
 
                     // 마커 위치 업데이트
-                    draggableMarker.setPosition(location);
+                    draggableMarker.position =location ;
                     
                     $("#space_x").val(location.lat());
                     $("#space_y").val(location.lng());
