@@ -12,6 +12,7 @@
     $lang['Country'] = 'Country';
     $lang['City'] = 'City';
     $lang['Organizer'] = 'Organizer';
+    $lang['Club'] = 'Club';
     $lang['toadd'] = 'to add,modify your schedule';
     $lang['contact'] = 'Contact us';
     $lang['mybookmark'] = "My Bookmark";
