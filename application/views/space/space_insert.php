@@ -202,7 +202,7 @@
                     $("#space_x").val(location.lat());
                     $("#space_y").val(location.lng());
               } else {
-                    alert('검색실패');
+                    alert(status);
                     return;
               }
             });
