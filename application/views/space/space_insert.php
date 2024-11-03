@@ -151,7 +151,8 @@
     
     <script>
         let map;
-
+        let draggableMarker;
+        
         async function initMap() {
             
             const { Map, InfoWindow } = await google.maps.importLibrary("maps") ;
@@ -165,7 +166,7 @@
           
             const infoWindow = new InfoWindow();
           
-            const draggableMarker = new AdvancedMarkerElement({
+            draggableMarker = new AdvancedMarkerElement({
                 map,
                 position: {lat:<?=$space_x?>, lng: <?=$space_y?>},
                 gmpDraggable: true,
@@ -197,7 +198,7 @@
                     map.setCenter(location);
 
                     // 마커 위치 업데이트
-                    marker.setPosition(location);
+                    draggableMarker.position = location;
                     
                     $("#space_x").val(location.lat());
                     $("#space_y").val(location.lng());
