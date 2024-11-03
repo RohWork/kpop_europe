@@ -211,7 +211,8 @@
                     alert(status);
                     return;
               }
-        });
+            });
+        }
         
         initMap();  
     </script>
