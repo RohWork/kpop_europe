@@ -183,6 +183,30 @@
                 
             });
         }
+        
+         function search_map() {
+            const address = $("#search_map").val();
+            const geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ address: address }, (results, status) => {
+              if (status === "OK") {
+
+                    const location = results[0].geometry.location;
+
+                    // 지도 중심을 새 좌표로 이동
+                    map.setCenter(location);
+
+                    // 마커 위치 업데이트
+                    marker.setPosition(location);
+                    
+                    $("#space_x").val(location.lat());
+                    $("#space_y").val(location.lng());
+              } else {
+                    alert('검색실패');
+                    return;
+              }
+            });
+          }
 
         initMap();  
     </script>
