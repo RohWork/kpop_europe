@@ -157,7 +157,8 @@
     
     <script>
         let map;
-
+        let draggableMarker;
+        
         async function initMap() {
             
             const { Map, InfoWindow } = await google.maps.importLibrary("maps") ;
@@ -171,7 +172,7 @@
           
             const infoWindow = new InfoWindow();
           
-            const draggableMarker = new AdvancedMarkerElement({
+            draggableMarker = new AdvancedMarkerElement({
                 map,
                 position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
                 gmpDraggable: true,
