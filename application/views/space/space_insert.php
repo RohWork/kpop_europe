@@ -76,8 +76,10 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <textarea id="space_location" name="space_location"  class="form-control"></textarea>
-                        <input type="button" class="btn btn-secondary" id="search_map" name="search_map" onclick="search_map();" value="<?=$this->lang->line('search')?>">
+                        <div class="d-flex">
+                            <textarea id="space_location" name="space_location"  class="form-control"></textarea>
+                            <input type="button" class="btn btn-secondary" id="search_map" name="search_map" onclick="search_map();" value="<?=$this->lang->line('search')?>">
+                        </div>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
