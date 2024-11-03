@@ -66,8 +66,10 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <textarea id="space_location" name="space_location"  class="form-control"><?=$detail_info['space_location']?>
-                        </textarea>
+                        <div class="d-flex">
+                            <textarea id="space_location" name="space_location"  class="form-control"><?=$detail_info['space_location']?></textarea>
+                            <input type="button" class="btn btn-secondary" id="search_map" name="search_map" onclick="go_search_map();" value="<?=$this->lang->line('search')?>">
+                        </div>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
@@ -139,6 +141,8 @@
 
             location.href="?country_idx="+country_idx;
         }
+        
+        
     </script>
    
     
@@ -185,7 +189,30 @@
                 
             });
         }
+        
+        function go_search_map() {
+            const address = $("#space_location").val();
+            const geocoder = new google.maps.Geocoder();
 
+            geocoder.geocode({ address: address }, (results, status) => {
+              if (status === "OK") {
+
+                    const location = results[0].geometry.location;
+
+                    // 지도 중심을 새 좌표로 이동
+                    map.setCenter(location);
+
+                    // 마커 위치 업데이트
+                    marker.setPosition(location);
+                    
+                    $("#space_x").val(location.lat());
+                    $("#space_y").val(location.lng());
+              } else {
+                    alert(status);
+                    return;
+              }
+        });
+        
         initMap();  
     </script>
 </html>
