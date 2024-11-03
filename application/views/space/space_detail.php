@@ -203,7 +203,7 @@
                     map.setCenter(location);
 
                     // 마커 위치 업데이트
-                    marker.setPosition(location);
+                    draggableMarker.setPosition(location);
                     
                     $("#space_x").val(location.lat());
                     $("#space_y").val(location.lng());
