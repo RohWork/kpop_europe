@@ -9,7 +9,7 @@
     
     $url = $_SERVER[ "REQUEST_URI" ];
     $url_split = explode("/", $url);
-    $url_show = array("country", "city", "organization");
+    $url_show = array("country", "city", "organization","space");
     $url_show2 = array("insert", "excel");
     
     $col_show = "";
