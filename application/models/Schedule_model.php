@@ -150,7 +150,7 @@ class Schedule_model extends CI_Model {
                     LEFT JOIN kpop_country AS kc ON kc.`idx` = ki.`country_idx`
                     LEFT JOIN `kpop_city` AS kci ON kci.`idx` = ki.`city_idx`
                     LEFT JOIN `kpop_organization` AS ko ON ko.idx = ki.`organization_idx`
-                    LEFT jOIN `kpop_space` as ks ON ks.country_idx = kc.idx and ks.city_idx = kci.idx
+                    LEFT jOIN `kpop_space` as ks ON ks.idx = ki.space_idx
                     WHERE ki.idx = $idx ";
         
         $query = $this->db->query($sSql);
