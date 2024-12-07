@@ -337,12 +337,23 @@
           
             const infoWindow = new InfoWindow();
           
-            marker = new AdvancedMarkerElement({
+            /*marker = new AdvancedMarkerElement({
                 map,
                 position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
                 title: "<?=$detail_info['space']?>",
                 gmpClickable: true
-            });
+            });*/
+            
+            const label = new google.maps.Marker({
+                                position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
+                                map: map,
+                                label: {
+                                  text: "<?=$detail_info['space']?>",  // 표시할 텍스트
+                                  color: "red",  // 텍스트 색상
+                                  fontSize: "24px", // 글자 크기
+                                  fontWeight: "bold", // 글자 두께
+                                },
+                              });
             
         }
         
