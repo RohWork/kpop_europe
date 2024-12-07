@@ -352,7 +352,7 @@
                                         <!-- 길쭉한 사각형 부분 -->
                                         <rect width="100" height="40" fill="red" rx="5"/>
                                         <!-- 아래 뾰족한 삼각형 부분 -->
-                                        <polygon points="50,50 60,80 35,40" fill="red"/>
+                                        <polygon points="50,50 65,80 35,80" fill="red"/>
                                         <!-- 텍스트 -->
                                         <text x="50" y="30" font-size="14" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
                                       </svg>
