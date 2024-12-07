@@ -146,10 +146,11 @@ class Schedule_model extends CI_Model {
     }
     public function get_detail_schedule($idx){
         
-        $sSql = "SELECT ki.*, kc.name AS country_name, kci.name AS city_name, ko.name AS orgernizer FROM kpop_info AS ki 
+        $sSql = "SELECT ki.*, kc.name AS country_name, kci.name AS city_name, ko.name AS orgernizer FROM kpop_info AS ki, ks.space_x, ks.space_y
                     LEFT JOIN kpop_country AS kc ON kc.`idx` = ki.`country_idx`
                     LEFT JOIN `kpop_city` AS kci ON kci.`idx` = ki.`city_idx`
                     LEFT JOIN `kpop_organization` AS ko ON ko.idx = ki.`organization_idx`
+                    LEFT jOIN `kpop_space` as ks ON ks.country_idx = kc.idx and ks.city_idx = kci.idx
                     WHERE ki.idx = $idx ";
         
         $query = $this->db->query($sSql);
