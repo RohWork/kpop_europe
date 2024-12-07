@@ -344,6 +344,7 @@
             });
             
         }
-
+        
+        initMap();  
 </script>
 </html>
