@@ -172,19 +172,6 @@
             </div>
         </div>
     </body>
-    <style>
-        .custom-marker {
-          width: 100px; /* 가로 크기 */
-          height: 30px; /* 세로 크기 */
-          background-color: red; /* 배경 색 */
-          color: white;
-          font-size: 14px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 5px; /* 둥근 모서리 */
-        }
-    </style>
     <script>
         function set_delete(){
             
@@ -361,9 +348,13 @@
                                 map: map,
                                 icon: {
                                     url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30">
-                                        <rect width="100" height="30" fill="red" rx="5"/>
-                                        <text x="50" y="20" font-size="14" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="60">
+                                        <!-- 길쭉한 사각형 부분 -->
+                                        <rect width="100" height="40" fill="red" rx="5"/>
+                                        <!-- 아래 뾰족한 삼각형 부분 -->
+                                        <polygon points="50,40 60,60 40,60" fill="red"/>
+                                        <!-- 텍스트 -->
+                                        <text x="50" y="30" font-size="14" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
                                       </svg>
                                     `),
                                     scaledSize: new google.maps.Size(100, 30),  // 아이콘 크기 조정
