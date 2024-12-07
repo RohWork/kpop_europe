@@ -340,7 +340,8 @@
             marker = new AdvancedMarkerElement({
                 map,
                 position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
-                title: "<?=$detail_info['space']?>"
+                title: "<?=$detail_info['space']?>",
+                gmpClickable: true,
             });
             
         }
