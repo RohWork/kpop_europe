@@ -357,7 +357,7 @@
                                         <text x="50" y="25" font-size="14" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
                                       </svg>
                                     `),
-                                    scaledSize: new google.maps.Size(100, 30),  // 아이콘 크기 조정
+                                    scaledSize: new google.maps.Size(100, 60),  // 아이콘 크기 조정
                                   }
                               });
             
