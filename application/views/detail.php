@@ -354,7 +354,7 @@
                                         <!-- 아래 뾰족한 삼각형 부분 -->
                                         <polygon points="50,50 65,80 35,80" fill="red"/>
                                         <!-- 텍스트 -->
-                                        <text x="50" y="20" font-size="11" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
+                                        <text x="50" y="25" font-size="11" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
                                       </svg>
                                     `),
                                     scaledSize: new google.maps.Size(100, 60),  // 아이콘 크기 조정
