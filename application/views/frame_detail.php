@@ -56,6 +56,11 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col">
+                    <div id="map" style="position: relative; overflow: hidden;height:70vh"></div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-2">
                     <label class="form-label"><strong><?=$this->lang->line('address')?></strong></label>
                 </div>
@@ -238,6 +243,61 @@
             document.execCommand('copy');
             document.body.removeChild(t);
         }
+        
+        <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+          key: "AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo",
+          v: "weekly",
+          // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+          // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script>
+    
+    <script>
+        let map;
+        let marker;
+        
+        async function initMap() {
+            
+            const { Map, InfoWindow } = await google.maps.importLibrary("maps") ;
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+            map = new Map(document.getElementById("map"), {
+              center: { lat: <?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?> },
+              zoom: 14,
+              mapId: '4504f8b37365c3d0',
+            });
+          
+            const infoWindow = new InfoWindow();
+          
+            /*marker = new AdvancedMarkerElement({
+                map,
+                position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
+                title: "<?=$detail_info['space']?>",
+                gmpClickable: true
+            });*/
+            
+            const label = new google.maps.Marker({
+                                position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
+                                map: map,
+                                icon: {
+                                    url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="60">
+                                        <!-- 길쭉한 사각형 부분 -->
+                                        <rect width="100" height="40" fill="red" rx="5"/>
+                                        <!-- 아래 뾰족한 삼각형 부분 -->
+                                        <polygon points="50,50 65,80 35,80" fill="red"/>
+                                        <!-- 텍스트 -->
+                                        <text x="50" y="25" font-size="11" text-anchor="middle" fill="white"><?=$detail_info['space']?></text>
+                                      </svg>
+                                    `),
+                                    scaledSize: new google.maps.Size(100, 60),  // 아이콘 크기 조정
+                                  }
+                              });
+            
+        }
+        
+        initMap();  
         
     </script>
 </html>
