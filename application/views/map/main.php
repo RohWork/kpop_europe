@@ -124,7 +124,7 @@
                 });
                 map.fitBounds(bounds);
                 
-                let maxZoom = 13; // 원하는 최대 줌 레벨
+                let maxZoom = 15; // 원하는 최대 줌 레벨
                 google.maps.event.addListenerOnce(map, "bounds_changed", function () {
                   if (map.getZoom() > maxZoom) {
                     map.setZoom(maxZoom);
