@@ -78,7 +78,7 @@
             InfoWindowArray.push(infoWindow);
             
             map.setCenter(move_position);
-            map.setZoom(18);
+            map.setZoom(11);
             
            
         }
@@ -93,7 +93,7 @@
             
             
              map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 9,
+              zoom: 8,
               center: myLatLng,
               disableDefaultUI: true,
             });
