@@ -7,7 +7,40 @@ class Schedule_model extends CI_Model {
     {
         parent::__construct();
     }
-    
+    public function get_space_info($search=''){
+       
+        $where = "";
+        if(!empty($search['country'])){
+            if($search['country'] != 'all'){
+                $where .= " AND ki.country_idx ='".$search['country']."'";
+            }
+        }
+        if(!empty($search['city'])){
+            if($search['city'] != 'all'){
+                $where .= " AND ki.city_idx ='".$search['city']."'";
+            }
+        }
+
+
+        
+        $sSql = "SELECT 
+                    ks.space_name, ks.space_x, ks.space_y, ks.idx as sp_idx, ki.*
+                 FROM kpop_info AS ki
+                JOIN kpop_space AS ks  ON ks.idx = ki.space_idx 
+                JOIN (
+			SELECT MAX(idx) AS max_idx
+			FROM kpop_info
+			GROUP BY space_idx
+                ) AS ki2
+                ON  ki.idx = ki2.max_idx
+                
+                 WHERE  1=1 ".$where;
+        
+        
+        $query = $this->db->query($sSql);
+        return $query->result_array();
+        
+    }
     public function get_schedule_calendar($search, $year ){
        
         $where = "AND ki.start_date like '$year%'";
