@@ -52,7 +52,7 @@
             
             var move_position = {lat:lat, lng:lng};
             
-            map.setCenter(move_position);
+            //map.setCenter(move_position);
             
             
             marker = new google.maps.Marker({
