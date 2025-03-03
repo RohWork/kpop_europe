@@ -24,7 +24,7 @@ class Schedule_model extends CI_Model {
 
         
         $sSql = "SELECT 
-                    ks.space_name, ks.space_x, ks.space_y, ks.idx as sp_idx, ki.*
+                    ks.space_name, ks.space_x, ks.space_y, ks.idx AS sp_idx, ki.*
                  FROM kpop_info AS ki
                 JOIN kpop_space AS ks  ON ks.idx = ki.space_idx 
                 JOIN (
@@ -34,7 +34,7 @@ class Schedule_model extends CI_Model {
                 ) AS ki2
                 ON  ki.idx = ki2.max_idx
                 
-                 WHERE  1=1 ".$where;
+                 WHERE  start_date >= NOW() ".$where;
         
         
         $query = $this->db->query($sSql);
