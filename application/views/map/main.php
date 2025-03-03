@@ -122,7 +122,7 @@
                         InfoWindowArray.push(infoWindow);
                     });
                 });
-                //map.fitBounds(bounds);
+                map.fitBounds(bounds);
             }
       }
       
