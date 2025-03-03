@@ -78,7 +78,7 @@
             InfoWindowArray.push(infoWindow);
             
             map.setCenter(move_position);
-            map.setZoom(11);
+            map.setZoom(4);
             
            
         }
