@@ -102,14 +102,14 @@ class Schedule extends CI_Controller {
 
         
         if(confirm_mobile()){ //MOBILE
-            $this->load->view('/mobile/header');
-            $this->load->view('/mobile/calendar',$data);
-            $this->load->view('footer');
+            $this->load->view('/mobile/schedule/header');
+            $this->load->view('/mobile/schedule/calendar',$data);
+            $this->load->view('schedule/footer');
         }else{   
-            $this->load->view('header');
-            $this->load->view('sidebar');
-            $this->load->view('calendar',$data);
-            $this->load->view('footer');
+            $this->load->view('schedule/header');
+            $this->load->view('schedule/sidebar');
+            $this->load->view('schedule/calendar',$data);
+            $this->load->view('schedule/footer');
         }
     }
     
@@ -181,10 +181,10 @@ class Schedule extends CI_Controller {
         $search['date'] = $this->input->get_post("date");
         $data['search'] = $search;
         
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        $this->load->view('list',$data);
-        $this->load->view('footer');
+        $this->load->view('schedule/header');
+        $this->load->view('schedule/sidebar');
+        $this->load->view('schedule/list',$data);
+        $this->load->view('schedule/footer');
         
     }
     
@@ -199,7 +199,7 @@ class Schedule extends CI_Controller {
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         $data['like'] = count($this->com_md->get_like_history($idx, "schedule", 1, 0));
         
-        $this->load->view('detail',$data);
+        $this->load->view('schedule/detail',$data);
 
         
     }
@@ -217,9 +217,9 @@ class Schedule extends CI_Controller {
         $data['list'] = $this->sch_md->get_schedule($search);
         
         if(confirm_mobile()){ //MOBILE
-            $this->load->view('/mobile/frame_list',$data);
+            $this->load->view('/mobile/schedule/frame_list',$data);
         }else{
-            $this->load->view('frame_list',$data);
+            $this->load->view('schedule/frame_list',$data);
         }
     }
     
@@ -229,7 +229,7 @@ class Schedule extends CI_Controller {
         $data['detail_info'] = $this->sch_md->get_detail_schedule($idx);
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
-        $this->load->view('frame_detail',$data);
+        $this->load->view('schedule/frame_detail',$data);
         
         
     }
@@ -243,10 +243,10 @@ class Schedule extends CI_Controller {
         $data['organization'] = $this->org_md->get_organization();
         $data['space'] = $this->space_md->get_space();
         
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        $this->load->view('schedule_insert',$data);
-        $this->load->view('footer');
+        $this->load->view('schedule/header');
+        $this->load->view('schedule/sidebar');
+        $this->load->view('schedule/schedule_insert',$data);
+        $this->load->view('schedule/footer');
     }
     
     function insert_ajax(){
@@ -369,7 +369,7 @@ class Schedule extends CI_Controller {
         
         $data['detail_img'] =  $this->sch_md->get_schedule_image($idx);
         
-        $this->load->view('modify',$data);
+        $this->load->view('schedule/modify',$data);
         
     }
     function modify_ajax(){
@@ -493,10 +493,10 @@ class Schedule extends CI_Controller {
         
         $data = array();
                 
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        $this->load->view('schedule_excel',$data);
-        $this->load->view('footer');
+        $this->load->view('schedule/header');
+        $this->load->view('schedule/sidebar');
+        $this->load->view('schedule/schedule_excel',$data);
+        $this->load->view('schedule/footer');
     }
     
     function excel_process(){
@@ -634,10 +634,10 @@ class Schedule extends CI_Controller {
 
         $data['excel'] = $excel_data;
         
-        $this->load->view('header');
-        $this->load->view('sidebar');
-        $this->load->view('excel_result',$data);
-        $this->load->view('footer');
+        $this->load->view('schedule/header');
+        $this->load->view('schedule/sidebar');
+        $this->load->view('schedule/excel_result',$data);
+        $this->load->view('schedule/footer');
     }
     
     function mark_ajax(){
