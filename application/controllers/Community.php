@@ -12,11 +12,6 @@ class Community extends CI_Controller {
         $this->load->model('Schedule_model', 'sch_md', TRUE);
         
         $lang = $this->session->userdata('lang');
-        
-        if(empty($slang)){
-            $lang = "eng"; 
-        }
-        
         $this->lang->load('controller', $lang);
 
         $lang_array = get_langueage_list();
