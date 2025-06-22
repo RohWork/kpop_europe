@@ -91,9 +91,7 @@
             </div>
         </div>
     </form>
-</div>
 
-<div class="container">
    
     <div class="row">
         <label class="form-label"><h3><?=$this->lang->line('mybookmark')?></h3></label>
