@@ -63,7 +63,7 @@
             -->
             <?php if(!empty($this->session->userdata('name') )){ ?>
             <li class="mb-1">
-                <a href="/member/my_bookmark" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('my_kpop')?></a>
+                <a href="/member/my_info" class="btn btn-toggle align-items-center rounded"><?=$this->lang->line('my_kpop')?></a>
             </li>
             <?php } ?>
 

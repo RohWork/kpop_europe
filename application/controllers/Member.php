@@ -279,9 +279,30 @@ class Member extends CI_Controller {
         
         $user_mail = $this->session->userdata('email');
         
+        $data['mode'] = $mode =  $this->input->get_post("mode");
+        
         $data['user_info'] = $this->mem_md->get_member($user_mail);
         
         $data['country_list'] = $this->cont_md->get_country();
+        
+        
+        
+        if(empty($mode)){
+            $data['mode'] = $mode = "after";
+        }
+        
+        if($mode == "before"){
+            
+            $year = $data['year'] =  $this->input->get_post("year");
+            if(empty($year)){
+                $year = $data['year'] = date('Y');
+            }
+            
+            
+            $data['bookmark_list'] = $this->mark_md->get_history($user_id , $year);
+        }else{
+            $data['bookmark_list'] = $this->mark_md->list($user_id );
+        }
         
         if(!empty($data['user_info']['country'])){
             $data['city_list'] = $this->city_md->get_city($data['user_info']['country']);
