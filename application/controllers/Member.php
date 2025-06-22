@@ -290,6 +290,8 @@ class Member extends CI_Controller {
         if(empty($mode)){
             $data['mode'] = $mode = "after";
         }
+        $user_id = $this->session->userdata('id');
+
         
         if($mode == "before"){
             
