@@ -15,6 +15,6 @@
     $lang['Club'] = 'Club';
     $lang['toadd'] = 'to add,modify your schedule';
     $lang['contact'] = 'Contact us';
-    $lang['mybookmark'] = "My Bookmark";
+    $lang['mybookmark'] = "My";
     $lang['getparty'] = "Party Recruit";
 ?>
