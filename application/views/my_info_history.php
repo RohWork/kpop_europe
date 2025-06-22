@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="container">
+<div class="container" style="overflow: auto">
     <form method="post" id="info_form" action="/member/my_info_set">
         <div class="row">
                     <label class="form-label"><h3><?=$this->lang->line('myinfomodify')?></h3></label>
