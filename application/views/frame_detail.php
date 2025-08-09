@@ -274,8 +274,6 @@
           }
         
         initMap(<?=$detail_info['space_y']?>, <?=$detail_info['space_x']?>, '<?=htmlspecialchars($detail_info['space'])?>');  
-        
-    </script>
-        
+      
     </script>
 </html>
