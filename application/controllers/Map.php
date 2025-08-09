@@ -40,11 +40,6 @@ class Map extends CI_Controller {
                 $data['mapdata'] = $country_data;
             }else if(!empty($search['city'])){
                 $data['mapdata'] = $city_data;
-            }else{
-                $data['mapdata'] = array(
-                   "space_x"    => "50.11061096191406",
-                   "space_y"   => "8.682072639465332",
-                ) ;
             }
             
             $slang = $this->session->userdata('lang');
