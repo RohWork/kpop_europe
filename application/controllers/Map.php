@@ -19,6 +19,10 @@ class Map extends CI_Controller {
             $search['country'] = $this->input->get_post("country");
             $search['city'] = $this->input->get_post("city");
             
+            if(empty($search['country'])){
+                $search['country'] = 1;
+            } 
+            
             $data['space_info'] = $this->sch_md->get_space_info($search);
             
             $plang = $this->input->get_post("lang");
@@ -31,13 +35,7 @@ class Map extends CI_Controller {
             
             $country_data = $this->cont_md->get_country_idx($search['country']);
             $city_data = $this->city_md->get_city_idx($search['city']);
-            
-            if(!empty($search['country'])){
-                $data['mapdata'] = $country_data;
-            }else if(!empty($search['city'])){
-                $data['mapdata'] = $city_data;
-            }
-            
+                        
             $slang = $this->session->userdata('lang');
         
             if(empty($plang)){
