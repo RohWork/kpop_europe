@@ -7,171 +7,30 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi" />  
-    <title>kpopineu</title>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script>
-        var lat, lng;
-        let map;
-        let marker;
-       
-        var PositionArray = new Array(
-                <?php
-                    foreach ($space_info as $space){
-                        $name = $space['space_name']."<br/>".$space['start_date']."<br/><button onclick='go_window(".$space['idx'].")'>info go</button>";
-                ?>
-                {label: "<?=substr($space['space_name'],0,1)?>", name:"<?=$name?>", lat: <?=$space['space_x']?>, lng: <?=$space['space_y']?> },
-                <?php
-                    }
-                ?>
-            );
-        
-        var InfoWindowArray = [];
-        
-        
-        
-        if(navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(showPosition);
-            }else{
-                console.log("지원안함");
-        }
 
-        
-        
-        function showPosition(position){
-            console.log("내 위치 위도 = " + position.coords.latitude
-			+" 내 위치 경도 = " + position.coords.longitude);
-            lat = position.coords.latitude;
-            lng = position.coords.longitude;
-            
-            var move_position = {lat:lat, lng:lng};
-            
-            //map.setCenter(move_position);
-            
-            
-            marker = new google.maps.Marker({
-                position: move_position,
-                map,
-                title: "Hello World!",
-              });
-        }
-        
-        function setPosition(lat, lng, name){
-            var move_position = {lat:lat, lng:lng};
-            var info_position = {lat:lat+0.00010, lng:lng};
-            
-            setInfoWindowClose();
-            
-            const infoWindow = new google.maps.InfoWindow();
-            infoWindow.setContent(name);
-            //infoWindow.setPosition(info_position);
-            infoWindow.open({
-                    map
-            });
-            
-            InfoWindowArray.push(infoWindow);
-            
-            map.setCenter(move_position);
-            map.setZoom(4);
-            
-           
-        }
-        
-        function initMap() {
-            
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { width: 100%; height: 75vh; }
+    #position_list { height:10vh; overflow:auto; border-top:1px solid #e5e5e5; }
+    .item { padding:10px 12px; border-bottom:1px solid #f0f0f0; cursor:pointer; }
+    .item:hover { background:#fafafa; }
+    .item.active { background:#eef6ff; }
+    .title { font-weight:600; }
+    .meta { font-size:12px; color:#666; margin-top:4px; }
+  </style>
 
-  
-            const myLatLng = { lat: <?=$mapdata['space_x']?>, lng: <?=$mapdata['space_y']?> };
-            const myLatLngArray = PositionArray;
-
-            
-            
-             map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 10,
-              center: myLatLng,
-              disableDefaultUI: true,
-            });
-            
-            const bounds = new google.maps.LatLngBounds();
-            const infoWindow = new google.maps.InfoWindow();
-            
-            if(PositionArray.length > 0){
-                PositionArray.forEach(({ label, name, lat, lng }) => {
-                    const marker = new google.maps.Marker({
-                            position: {lat, lng},
-                            label,
-                            map,
-                        });
-                    bounds.extend(marker.position);    
-
-                    marker.addListener("click", () => {
-                        setInfoWindowClose();
-
-                        map.panTo(marker.position);
-                        infoWindow.setContent(name);
-                        infoWindow.open({
-                            anchor: marker,
-                            map
-                        });
-                        InfoWindowArray.push(infoWindow);
-                    });
-                });
-                map.fitBounds(bounds);
-                
-                let maxZoom = 15; // 원하는 최대 줌 레벨
-                google.maps.event.addListenerOnce(map, "bounds_changed", function () {
-                  if (map.getZoom() > maxZoom) {
-                    map.setZoom(maxZoom);
-                  }
-                });
-            }
-      }
-      
-      window.initMap = initMap;
-      
-      
-      function setInfoWindowClose(){
-          for(var i=0;i<InfoWindowArray.length;i++){
-                        InfoWindowArray[i].close();
-        }
-      }
-      
-      function go_window(idx){
-          window.open("/main/detail/"+idx);
-      }
-    </script>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      gmp-map {
-        height: 100%;
-      }
-
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  
-  
   <body>
-    <div style="height:5%">
-        <div style="float:left;width:50%">
-            Kpop In Europe
+    <div style="height:3%">
+        <div style="float:left;width:40%">
+            &nbsp;
         </div>
-        <div style="float:left;width:25%">
+        <div style="float:left;width:30%;text-align:center">
             <select id="country" name="country" onchange="go_country(this)">
-                <option><?=$this->lang->line('country')?></option>
+                <option value=""><?=$this->lang->line('country')?></option>
                 <?php foreach($country_list as $coun){
                   if($coun['idx'] == $search['country']){
                       $selected = "selected";
@@ -183,9 +42,9 @@
                 ?>
             </select>
         </div>
-        <div style="float:left;width:25%" >
+        <div style="float:left;width:30%;text-align:center" >
             <select id="city" name="city" onchange="go_city(this)">
-                <option><?=$this->lang->line('city')?></option>
+                <option value=""><?=$this->lang->line('city')?></option>
                 <?php foreach($city_list as $city){
                   if($city['idx'] == $search['city']){
                       $selected = "selected";
@@ -198,55 +57,115 @@
             </select>
         </div>
     </div>
-    <div id="map" style="height:90%"></div>
+<div id="map"></div>
+
+<div id="position_list">
+
+    <?php
+                foreach ($space_info as $space){
+                     $name = $space['space_name']."<br/>".$space['start_date']."<br/><button onclick=go_window(".$space['idx'].")>info go</button>";
+            ?>
+             <span style="padding:0 4vh;cursor:pointer" onclick="setPosition(<?=$space['space_x']?>, <?=$space['space_y']?>,'<?=$name?>')">
+            <?=$space['space_name']?>
+            </span>
+            <?php
+                }
+    ?>
+
+</div>
+
+<script>
     
+  var map;  
     
-    <div id="position_list" style="height:5%;overflow-x: auto;width:100%;white-space:nowrap;">
-        
-        <?php
-                    foreach ($space_info as $space){
-                         $name = $space['space_name']."<br/>".$space['start_date']."<br/><button onclick=go_window(".$space['idx'].")>info go</button>";
-                ?>
-                 <span style="padding:0 4vh;cursor:pointer" onclick="setPosition(<?=$space['space_x']?>, <?=$space['space_y']?>,'<?=$name?>')">
-                <?=$space['space_name']?>
-                </span>
-                <?php
-                    }
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw'; // ← 여기에 본인의 Mapbox 토큰 입력
+  
+  
+  
+  function initMap(lng, lat, label = "위치") {
+    map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: 13
+    });
+
+    map.on('load', function () {
+      // 지도 로딩 완료 후 마커 추가
+      console.log("지도 로드 완료. 마커 추가 중...");
+
+      new mapboxgl.Marker({ color: 'red' })
+        .setLngLat([lng, lat])
+        .setPopup(new mapboxgl.Popup().setHTML(`<b>${label}</b>`))
+        .addTo(map);
+
+      <?php 
+        foreach($space_info as $space) { 
+          $name = $space['space_name']."<br/>".$space['start_date']."<br/><button onclick='go_window(".$space['idx'].")'>info go</button>";
         ?>
-       
-    </div>
-      
-    <!--<gmp-map center="50.11061096191406,8.682072639465332" zoom="14" map-id="DEMO_MAP_ID" style="height:95%">
-      <gmp-advanced-marker position="50.11061096191406, 8.682072639465332" title="My location"></gmp-advanced-marker>
-      
-      <gmp-advanced-marker position="50.11026112441478, 8.682188131938588" title="My location2"></gmp-advanced-marker>
-    </gmp-map>-->
-    
-           
-       <!-- The callback parameter is required, so we use console.debug as a noop -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo&callback=initMap&v=weekly">
-    </script>
-    
-    <script>
-        
-        var country = "<?=$search['country']?>";
-        var city = "<?=$search['city']?>";
-        
-        function go_country(selected){
-          country =  $(selected).val();
-          city = "";
-          go_url();
-        }
-        function go_city(selected){
-          city =  $(selected).val(); 
-          go_url();
-        }
-        
-        function go_url(){
-            location.href= "/?country="+country+"&city="+city;
-        }
-    </script>
+      // 예: 지도 로드 후 다른 위치에도 추가 마커
+        new mapboxgl.Marker({ color: 'green' })
+          .setLngLat([<?=$space['space_y']?>,<?=$space['space_x']?>])
+          .setPopup(new mapboxgl.Popup().setHTML("<?=$name?>"))
+          .addTo(map);
+      <?php } ?>
 
-  </body>
+    });
+  }
 
-</html>
+  $(document).ready(function () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var userLng = position.coords.longitude;
+          var userLat = position.coords.latitude;
+          
+        <?php if(!empty($mapdata)){ ?>
+             userLng = "<?=$mapdata['space_y']?>";
+             userLat = "<?=$mapdata['space_x']?>";       
+        <?php } ?>
+          
+          initMap(userLng, userLat, "내 위치");
+        },
+        function (error) {
+          // 권한 거부나 오류 발생 시 프랑크푸르트로 fallback
+          console.warn("위치 사용 불가, 프랑크푸르트로 이동: " + error.message);
+          initMap(8.6821, 50.1109, "프랑크푸르트"); // Frankfurt
+        },
+        { timeout: 5000 } // 위치 가져오기 제한 시간 설정 (선택)
+      );
+    } else {
+      // Geolocation 지원 안됨
+      console.warn("Geolocation 미지원, 프랑크푸르트로 이동");
+      initMap(8.6821, 50.1109, "프랑크푸르트");
+    }
+  });
+  
+    function go_window(idx){
+          window.open("/main/detail/"+idx);
+    }
+  
+    var country = "<?=$search['country']?>";
+    var city = "<?=$search['city']?>";
+
+    function go_country(selected){
+      country =  $(selected).val();
+      city = "";
+      go_url();
+    }
+    function go_city(selected){
+      city =  $(selected).val(); 
+      go_url();
+    }
+
+    function go_url(){
+        location.href= "/main/test?country="+country+"&city="+city;
+    }
+    
+    function setPosition(x, y, name){
+        map.flyTo({ center: [y,x], zoom: 12, essential: true });
+    }
+</script>
+
+</body>
+
