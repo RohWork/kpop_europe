@@ -159,7 +159,7 @@
     }
 
     function go_url(){
-        location.href= "/main/test?country="+country+"&city="+city;
+        location.href= "/map?country="+country+"&city="+city;
     }
     
     function setPosition(x, y, name){
