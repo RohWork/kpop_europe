@@ -19,10 +19,6 @@ class Map extends CI_Controller {
             $search['country'] = $this->input->get_post("country");
             $search['city'] = $this->input->get_post("city");
             
-            if(empty($search['country'])){
-                $search['country'] = 1;
-            } 
-            
             $data['space_info'] = $this->sch_md->get_space_info($search);
             
             $plang = $this->input->get_post("lang");
