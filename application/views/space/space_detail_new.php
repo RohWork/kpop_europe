@@ -71,8 +71,7 @@
                     </div>
                     <div class="col-8">
                         <div class="d-flex">
-                            <textarea id="space_location" name="space_location"  class="form-control"><?=$detail_info['space_location']?></textarea>
-                            <input type="button" class="btn btn-secondary" id="search_map" name="search_map" onclick="go_search_map();" value="<?=$this->lang->line('search')?>">
+                            <div class="geocoder-wrap" id="geocoder"></div>
                         </div>
                     </div>
                 </div>
