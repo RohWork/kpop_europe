@@ -99,6 +99,7 @@
                     </div>
                     <input type="hidden" id="space_x" name="space_x" value="<?=$space_x?>"/>
                     <input type="hidden" id="space_y" name="space_y" value="<?=$space_y?>"/>
+                    <input type="hidden" id="addrHidden" name="address">
                 </div>
                 
                 <div class="row mt-1" style="padding-top:10px">
@@ -174,7 +175,8 @@
 
   const latHidden = document.getElementById('space_x');
   const lngHidden = document.getElementById('space_y');
-
+   const addressEl = document.getElementById('address');
+  const addrHidden = document.getElementById('addrHidden');
   
   // 좌표 & 주소 UI 반영
   function setCoordsAndAddress({ lng, lat }, placeText) {
