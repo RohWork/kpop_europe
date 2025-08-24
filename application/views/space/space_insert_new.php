@@ -93,7 +93,7 @@
                     <div class="col-8">
                         <div class="d-flex">
                             <div class="geocoder-wrap" id="geocoder"></div>
-                            <input type="text" id="address" name="address" placeholder="검색 또는 핀 이동 시 자동 입력" readonly>
+                            <input type="hidden" id="address" name="address" placeholder="검색 또는 핀 이동 시 자동 입력" readonly>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                     </div>
                     <input type="hidden" id="space_x" name="space_x" value="<?=$space_x?>"/>
                     <input type="hidden" id="space_y" name="space_y" value="<?=$space_y?>"/>
-                    <input type="text" id="space_location" name="space_location">
+                    <input type="hidden" id="space_location" name="space_location">
                 </div>
                 
                 <div class="row mt-1" style="padding-top:10px">
