@@ -156,13 +156,14 @@
   // 1) 토큰 설정
   
   var token = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw';
+  const INITIAL = { lng: <?=$detail_info['space_y']?>, lat: <?=$detail_info['space_x']?> };
   
   mapboxgl.accessToken = token;
 
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [<?=$detail_info['space_y']?>, <?=$detail_info['space_x']?>],
+    center: [INITIAL.lng, INITIAL.lat],
     zoom: 11
   });
   map.addControl(new mapboxgl.NavigationControl(), 'top-right');
@@ -256,12 +257,8 @@
   });
 
     //(옵션) 초기 위치에 마커 하나 미리 놓고 싶다면 주석 해제:
-    map.addControl(new mapboxgl.GeolocateControl({
-        positionOptions: { enableHighAccuracy: true },
-          trackUserLocation: false
-        }), 'top-right');
-        map.once('load', () => {
-          // 필요 시 현재 위치 버튼을 눌러 사용자가 이동
-    });
+    map.on('load', () => {
+        upsertMarker(INITIAL);
+    }); 
     </script>
 </html>
