@@ -175,35 +175,72 @@
   const latHidden = document.getElementById('space_x');
   const lngHidden = document.getElementById('space_y');
 
-  // 4) 드래그 가능한 마커 준비 (처음엔 생성 안 함)
-  let marker = null;
+  
+  // 좌표 & 주소 UI 반영
+  function setCoordsAndAddress({ lng, lat }, placeText) {
+    latEl.value = lat.toFixed(6);
+    lngEl.value = lng.toFixed(6);
+    latHidden.value = latEl.value;
+    lngHidden.value = lngEl.value;
 
-  // 좌표를 UI에 세팅하는 함수
-  function setCoords(lngLat) {
-    const { lng, lat } = lngLat;
-    // 소수점 자릿수는 필요에 따라 조정
-    latHidden.value = lat.toFixed(6);
-    lngHidden.value = lng.toFixed(6);
+    if (placeText) {
+      addressEl.value = placeText;
+      addrHidden.value = placeText;
+    }
   }
 
-  // 5) 지도 클릭 시: 마커 없으면 만들고, 있으면 위치만 이동
-  map.on('click', (e) => {
-    const lngLat = e.lngLat;
+  // 역지오코딩 (lng,lat -> 주소 문자열)
+  async function reverseGeocode({ lng, lat }) {
+    try {
+      const url = new URL('https://api.mapbox.com/geocoding/v5/mapbox.places/' + lng + ',' + lat + '.json');
+      url.searchParams.set('access_token', token);
+      url.searchParams.set('language', 'ko');
+      url.searchParams.set('limit', '1');
+      const res = await fetch(url);
+      const data = await res.json();
+      const place = data?.features?.[0]?.place_name || '';
+      return place;
+    } catch (e) {
+      console.error(e);
+      return '';
+    }
+  }
 
+  // 마커 생성/이동 공통 함수
+  function upsertMarker(lngLat) {
     if (!marker) {
       marker = new mapboxgl.Marker({ draggable: true })
         .setLngLat(lngLat)
         .addTo(map);
 
-      // 마커 드래그로 좌표 갱신
-      marker.on('dragend', () => {
-        setCoords(marker.getLngLat());
+      marker.on('dragend', async () => {
+        const ll = marker.getLngLat();
+        const addr = await reverseGeocode(ll);
+        setCoordsAndAddress(ll, addr);
       });
     } else {
       marker.setLngLat(lngLat);
     }
+  }
 
-    setCoords(lngLat);
+  // 4-A) 지도를 클릭하면 해당 위치로 마커 & 좌표/주소 세팅
+  map.on('click', async (e) => {
+    const lngLat = e.lngLat;
+    upsertMarker(lngLat);
+    // 클릭도 역지오코딩해서 주소 표시
+    const addr = await reverseGeocode(lngLat);
+    setCoordsAndAddress(lngLat, addr);
+  });
+
+  // 4-B) Geocoder 결과 선택 시: 지도 이동, 마커 갱신, 좌표/주소 세팅
+  geocoder.on('result', (e) => {
+    const center = e.result.center; // [lng, lat]
+    const placeText = e.result.place_name; // 주소/장소명 전체 텍스트
+    const lngLat = { lng: center[0], lat: center[1] };
+
+    map.flyTo({ center, zoom: 16 });
+    upsertMarker(lngLat);
+    setCoordsAndAddress(lngLat, placeText);
   });
 
     //(옵션) 초기 위치에 마커 하나 미리 놓고 싶다면 주석 해제:
