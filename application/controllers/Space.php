@@ -77,7 +77,7 @@ class Space extends CI_Controller {
         $data['city_list'] = $this->city_md->get_city($detail['country_idx']);
         $data['space_idx'] = $idx;
   
-        $this->load->view('space/space_detail',$data);
+        $this->load->view('space/space_detail_new',$data);
     }
     
     public function modify_ajax(){
