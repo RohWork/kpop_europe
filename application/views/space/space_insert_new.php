@@ -169,7 +169,7 @@
 
   // 3) Geocoder(주소 검색) 컨트롤
   const geocoder = new MapboxGeocoder({
-    accessToken: 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw';
+    accessToken: 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw',
     mapboxgl: mapboxgl,
     marker: false,                 // 검색 시 자동 마커 생성 안 함(우리가 직접 관리)
     language: 'ko',                // 한국어 우선
