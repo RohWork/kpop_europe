@@ -211,6 +211,7 @@
       url.searchParams.set('limit', '1');
       const res = await fetch(url);
       const data = await res.json();
+      console.log(data);
       const place = data?.features?.[0]?.place_name || '';
       return place;
     } catch (e) {
