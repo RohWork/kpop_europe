@@ -182,8 +182,10 @@
 
   const latHidden = document.getElementById('space_x');
   const lngHidden = document.getElementById('space_y');
-   const addressEl = document.getElementById('address');
+  const addressEl = document.getElementById('address');
   const addrHidden = document.getElementById('space_location');
+  
+  let marker = null;
   
   // 좌표 & 주소 UI 반영
   function setCoordsAndAddress({ lng, lat }, placeText) {
