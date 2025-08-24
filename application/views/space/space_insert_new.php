@@ -159,7 +159,7 @@
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [126.9784, 37.5665], // [lng, lat]
+    center: [<?=$space_y?>, <?=$space_y?>], // [lng, lat]
     zoom: 11
   });
 
@@ -182,8 +182,6 @@
   function setCoords(lngLat) {
     const { lng, lat } = lngLat;
     // 소수점 자릿수는 필요에 따라 조정
-    latEl.value = lat.toFixed(6);
-    lngEl.value = lng.toFixed(6);
     latHidden.value = lat.toFixed(6);
     lngHidden.value = lng.toFixed(6);
   }
