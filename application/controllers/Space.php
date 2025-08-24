@@ -172,6 +172,45 @@ class Space extends CI_Controller {
         $this->load->view('header');
         $this->load->view('sidebar');
 
+        $this->load->view('space/space_insert_new',$data);
+        
+        $this->load->view('footer');
+    }
+    
+    
+        public function insert_old(){
+        
+        $data = array();
+        $search = array();
+        
+        
+
+        $search['country'] = $this->input->get_post("country_idx");
+
+        $search['city'] = $this->input->get_post("city_idx");
+        
+        if(empty($search['country'])){
+            $search['country'] = 1;
+        }
+        
+        $data['country_list'] = $this->cont_md->get_country();
+        
+        if(!empty($search['country'])){
+            $data['city_list'] = $this->city_md->get_city($search['country']);
+        }else{
+            $data['city_list'] = "";
+        }
+        
+        
+        
+        $data['list'] = $this->space_md->get_space($search);
+        
+        $data['search'] = $search;
+       
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+
         $this->load->view('space/space_insert',$data);
         
         $this->load->view('footer');
