@@ -252,13 +252,12 @@
   });
 
     //(옵션) 초기 위치에 마커 하나 미리 놓고 싶다면 주석 해제:
-    map.on('load', () => {
-        const initial = { lng: <?=$space_y?>, lat: <?=$space_x?> };
-        marker = new mapboxgl.Marker({ draggable: true })
-            .setLngLat(initial)
-            .addTo(map);
-        setCoords(initial);
-        marker.on('dragend', () => setCoords(marker.getLngLat()));
-     });
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: { enableHighAccuracy: true },
+          trackUserLocation: false
+        }), 'top-right');
+        map.once('load', () => {
+          // 필요 시 현재 위치 버튼을 눌러 사용자가 이동
+    });
     </script>
 </main>
