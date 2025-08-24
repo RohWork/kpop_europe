@@ -13,6 +13,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
           <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+          <link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.1/mapbox-gl-geocoder.css"
+        type="text/css"
+      />
+      <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.1/mapbox-gl-geocoder.min.js"></script>
+
         <style>
           body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif; }
           #map { width:100%; height: 70vh; }
@@ -88,7 +95,7 @@
                     </div>
                     <div class="col-8">
                         <div class="d-flex">
-                            <textarea id="space_location" name="space_location"  class="form-control"></textarea>
+                            <div class="geocoder-wrap" id="geocoder"></div>
                             <input type="button" class="btn btn-secondary" id="search_map" name="search_map" onclick="go_search_map();" value="<?=$this->lang->line('search')?>">
                         </div>
                     </div>
