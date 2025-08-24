@@ -195,6 +195,8 @@
 
     latHidden.value = lat.toFixed(6);
     lngHidden.value = lng.toFixed(6);
+    
+    cconsole.log(placeText);
 
     if (placeText) {
       addressEl.value = placeText;
@@ -212,8 +214,7 @@
       const res = await fetch(url);
       const data = await res.json();
       
-      const place = data?.features?.[0]?.place_name || '';
-      console.log(place);
+      const place = data?.features?.[0]?.place_name || ''
       return place;
     } catch (e) {
       console.error(e);
