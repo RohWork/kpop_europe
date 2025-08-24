@@ -11,7 +11,18 @@
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        
+          <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+        <style>
+          body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif; }
+          #map { width:100%; height: 70vh; }
+          .panel { padding: 12px 16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+          .field { display:flex; gap:8px; align-items:center; }
+          input[type="text"] { width:160px; padding:6px 8px; }
+          button { padding:8px 12px; border:0; border-radius:8px; background:#111827; color:white; cursor:pointer; }
+          button:hover { opacity:.9; }
+          .hint { color:#6b7280; font-size:12px; }
+        </style>
 
 
         <div class="container" style="font-size: 15px">
