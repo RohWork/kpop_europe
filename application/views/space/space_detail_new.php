@@ -9,6 +9,10 @@
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.min.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.css" type="text/css" />
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
@@ -79,6 +83,7 @@
                     <input type="hidden" id="space_x" name="space_x" value="<?=$detail_info['space_x']?>"/>
                     <input type="hidden" id="space_y" name="space_y" value="<?=$detail_info['space_y']?>"/>
                     <input type="hidden" id="space_idx" name="space_idx" value="<?=$detail_info['idx']?>"/>
+                    <input type="hidden" id="space_location" name="space_location" value="<?=$detail_info['space_location']?>">/>
                 </div>
             </form>
         </div>
@@ -145,76 +150,117 @@
         
     </script>
    
+      
+<script>
+  // 1) 토큰 설정
+  
+  var token = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw';
+  
+  mapboxgl.accessToken = token;
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [<?=$space_y?>, <?=$space_x?>],
+    zoom: 11
+  });
+  map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+  // 3) Geocoder(주소 검색) 컨트롤
+  const geocoder = new MapboxGeocoder({
+    accessToken: token,
+    mapboxgl: mapboxgl,
+    marker: false,                 // 검색 시 자동 마커 생성 안 함(우리가 직접 관리)
+    language: 'ko',                // 한국어 우선
+    placeholder: '주소/장소를 입력하세요'
+  });
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+  // 좌표 표시/전송 필드
+
+  const latHidden = document.getElementById('space_x');
+  const lngHidden = document.getElementById('space_y');
+  const addressEl = document.getElementById('address');
+  const addrHidden = document.getElementById('space_location');
+  
+  let marker = null;
+  
+  // 좌표 & 주소 UI 반영
+  function setCoordsAndAddress({ lng, lat }, placeText) {
+
+    latHidden.value = lat.toFixed(6);
+    lngHidden.value = lng.toFixed(6);
     
-    <script>
-        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-          key: "AIzaSyBu5yucZu09lR2UwMGYPFGu3V9FIQL2hYo",
-          v: "weekly",
-          // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-          // Add other bootstrap parameters as needed, using camel case.
-        });
-    </script>
-    
-    <script>
-        let map;
-        let draggableMarker;
-        
-        async function initMap() {
-            
-            const { Map, InfoWindow } = await google.maps.importLibrary("maps") ;
-            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    console.log(placeText);
 
-            map = new Map(document.getElementById("map"), {
-              center: { lat: <?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?> },
-              zoom: 14,
-              mapId: '4504f8b37365c3d0',
-            });
-          
-            const infoWindow = new InfoWindow();
-          
-            draggableMarker = new AdvancedMarkerElement({
-                map,
-                position: {lat:<?=$detail_info['space_x']?>, lng: <?=$detail_info['space_y']?>},
-                gmpDraggable: true,
-                title: "This marker is draggable.",
-            });
-            
-            draggableMarker.addListener('dragend', (event) => {
-                const position = draggableMarker.position;
-                infoWindow.close();
-                infoWindow.setContent(`Pin dropped at: ${position.lat}, ${position.lng}`);
-                infoWindow.open(draggableMarker.map, draggableMarker);
-                
-                $("#space_x").val(position.lat);
-                $("#space_y").val(position.lng);
-                
-            });
-        }
-        
-        function go_search_map() {
-            const address = $("#space_location").val();
-            const geocoder = new google.maps.Geocoder();
+    if (placeText) {
+      addressEl.value = placeText;
+      addrHidden.value = placeText;
+    }
+  }
 
-            geocoder.geocode({ address: address }, (results, status) => {
-              if (status === "OK") {
+  // 역지오코딩 (lng,lat -> 주소 문자열)
+  async function reverseGeocode({ lng, lat }) {
+    try {
+      const url = new URL('https://api.mapbox.com/geocoding/v5/mapbox.places/' + lng + ',' + lat + '.json');
+      url.searchParams.set('access_token', token);
+      url.searchParams.set('language', 'ko');
+      url.searchParams.set('limit', '1');
+      const res = await fetch(url);
+      const data = await res.json();
+      
+      const place = data?.features?.[0]?.place_name || ''
+      return place;
+    } catch (e) {
+      console.error(e);
+      return '';
+    }
+  }
 
-                    const location = results[0].geometry.location;
+  // 마커 생성/이동 공통 함수
+  function upsertMarker(lngLat) {
+    if (!marker) {
+      marker = new mapboxgl.Marker({ draggable: true })
+        .setLngLat(lngLat)
+        .addTo(map);
 
-                    // 지도 중심을 새 좌표로 이동
-                    map.setCenter(location);
+      marker.on('dragend', async () => {
+        const ll = marker.getLngLat();
+        const addr = await reverseGeocode(ll);
+        setCoordsAndAddress(ll, addr);
+      });
+    } else {
+      marker.setLngLat(lngLat);
+    }
+  }
 
-                    // 마커 위치 업데이트
-                    draggableMarker.position =location ;
-                    
-                    $("#space_x").val(location.lat());
-                    $("#space_y").val(location.lng());
-              } else {
-                    alert(status);
-                    return;
-              }
-            });
-        }
-        
-        initMap();  
+  // 4-A) 지도를 클릭하면 해당 위치로 마커 & 좌표/주소 세팅
+  map.on('click', async (e) => {
+    const lngLat = e.lngLat;
+    upsertMarker(lngLat);
+    // 클릭도 역지오코딩해서 주소 표시
+    const addr = await reverseGeocode(lngLat);
+    setCoordsAndAddress(lngLat, addr);
+  });
+
+  // 4-B) Geocoder 결과 선택 시: 지도 이동, 마커 갱신, 좌표/주소 세팅
+  geocoder.on('result', (e) => {
+    const center = e.result.center; // [lng, lat]
+    const placeText = e.result.place_name; // 주소/장소명 전체 텍스트
+    const lngLat = { lng: center[0], lat: center[1] };
+
+    map.flyTo({ center, zoom: 16 });
+    upsertMarker(lngLat);
+    setCoordsAndAddress(lngLat, placeText);
+  });
+
+    //(옵션) 초기 위치에 마커 하나 미리 놓고 싶다면 주석 해제:
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: { enableHighAccuracy: true },
+          trackUserLocation: false
+        }), 'top-right');
+        map.once('load', () => {
+          // 필요 시 현재 위치 버튼을 눌러 사용자가 이동
+    });
     </script>
 </html>
