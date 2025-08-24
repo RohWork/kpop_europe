@@ -149,66 +149,71 @@
         });
     </script>
     
-    <script>
-        let map;
-        let draggableMarker;
-        
-        async function initMap() {
-            
-            const { Map, InfoWindow } = await google.maps.importLibrary("maps") ;
-            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+<script>
+  // 1) 토큰 설정
+  mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
 
-            map = new Map(document.getElementById("map"), {
-              center: { lat: <?=$space_x?>, lng: <?=$space_y?> },
-              zoom: <?=$zoom?>,
-              mapId: '4504f8b37365c3d0',
-            });
-          
-            const infoWindow = new InfoWindow();
-          
-            draggableMarker = new AdvancedMarkerElement({
-                map,
-                position: {lat:<?=$space_x?>, lng: <?=$space_y?>},
-                gmpDraggable: true,
-                title: "This marker is draggable.",
-            });
-            
-            draggableMarker.addListener('dragend', (event) => {
-                const position = draggableMarker.position;
-                infoWindow.close();
-                infoWindow.setContent(`Pin dropped at: ${position.lat}, ${position.lng}`);
-                infoWindow.open(draggableMarker.map, draggableMarker);
-                
-                $("#space_x").val(position.lat);
-                $("#space_y").val(position.lng);
-                
-            });
-        }
-        
-         function go_search_map() {
-            const address = $("#space_location").val();
-            const geocoder = new google.maps.Geocoder();
+  // 2) 기본 지도 생성 (초기 중심: 서울 시청 근처)
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [126.9784, 37.5665], // [lng, lat]
+    zoom: 11
+  });
 
-            geocoder.geocode({ address: address }, (results, status) => {
-              if (status === "OK") {
+  // 3) 컨트롤(확대/축소, 현재위치) 추가
+  map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+  map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: { enableHighAccuracy: true },
+    trackUserLocation: false
+  }), 'top-right');
 
-                    const location = results[0].geometry.location;
+  // 좌표 표시/전송 필드
 
-                    // 지도 중심을 새 좌표로 이동
-                    map.setCenter(location);
+  const latHidden = document.getElementById('space_x');
+  const lngHidden = document.getElementById('space_y');
 
-                    // 마커 위치 업데이트
-                    draggableMarker.position = location;
-                    
-                    $("#space_x").val(location.lat());
-                    $("#space_y").val(location.lng());
-              } else {
-                    alert(status);
-                    return;
-              }
-            });
-          }
+  // 4) 드래그 가능한 마커 준비 (처음엔 생성 안 함)
+  let marker = null;
 
-        initMap();  
+  // 좌표를 UI에 세팅하는 함수
+  function setCoords(lngLat) {
+    const { lng, lat } = lngLat;
+    // 소수점 자릿수는 필요에 따라 조정
+    latEl.value = lat.toFixed(6);
+    lngEl.value = lng.toFixed(6);
+    latHidden.value = lat.toFixed(6);
+    lngHidden.value = lng.toFixed(6);
+  }
+
+  // 5) 지도 클릭 시: 마커 없으면 만들고, 있으면 위치만 이동
+  map.on('click', (e) => {
+    const lngLat = e.lngLat;
+
+    if (!marker) {
+      marker = new mapboxgl.Marker({ draggable: true })
+        .setLngLat(lngLat)
+        .addTo(map);
+
+      // 마커 드래그로 좌표 갱신
+      marker.on('dragend', () => {
+        setCoords(marker.getLngLat());
+      });
+    } else {
+      marker.setLngLat(lngLat);
+    }
+
+    setCoords(lngLat);
+  });
+
+    //(옵션) 초기 위치에 마커 하나 미리 놓고 싶다면 주석 해제:
+    map.on('load', () => {
+        const initial = { lng: <?=$space_y?>, lat: <?=$space_x?> };
+        marker = new mapboxgl.Marker({ draggable: true })
+            .setLngLat(initial)
+            .addTo(map);
+        setCoords(initial);
+        marker.on('dragend', () => setCoords(marker.getLngLat()));
+     });
     </script>
 </main>
