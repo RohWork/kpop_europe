@@ -93,7 +93,7 @@
                     <div class="col-8">
                         <div class="d-flex">
                             <div class="geocoder-wrap" id="geocoder"></div>
-                            
+                            <input type="text" id="address" name="address" placeholder="검색 또는 핀 이동 시 자동 입력" readonly>
                         </div>
                     </div>
                 </div>
