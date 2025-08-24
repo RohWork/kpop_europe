@@ -25,7 +25,7 @@
           button { padding:8px 12px; border:0; border-radius:8px; background:#111827; color:white; cursor:pointer; }
           button:hover { opacity:.9; }
           .hint { color:#6b7280; font-size:12px; }
-          .geocoder-wrap { position:absolute; z-index:2; width:min(520px, 92%); left:12px; top:12px; }
+          .geocoder-wrap{z-index:2; width:min(520px, 92%); left:12px; top:12px; }
     
         </style>
 
