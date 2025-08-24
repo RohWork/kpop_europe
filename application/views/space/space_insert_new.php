@@ -196,7 +196,7 @@
     latHidden.value = lat.toFixed(6);
     lngHidden.value = lng.toFixed(6);
     
-    cconsole.log(placeText);
+    console.log(placeText);
 
     if (placeText) {
       addressEl.value = placeText;
