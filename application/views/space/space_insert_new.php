@@ -180,10 +180,9 @@
   
   // 좌표 & 주소 UI 반영
   function setCoordsAndAddress({ lng, lat }, placeText) {
-    latEl.value = lat.toFixed(6);
-    lngEl.value = lng.toFixed(6);
-    latHidden.value = latEl.value;
-    lngHidden.value = lngEl.value;
+
+    latHidden.value = lat.toFixed(6);
+    lngHidden.value = lng.toFixed(6);
 
     if (placeText) {
       addressEl.value = placeText;
