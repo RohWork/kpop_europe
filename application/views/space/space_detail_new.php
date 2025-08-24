@@ -161,7 +161,7 @@
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [<?=$space_y?>, <?=$space_x?>],
+    center: [<?=$detail_info['space_y']?>, <?=$detail_info['space_x']?>],
     zoom: 11
   });
   map.addControl(new mapboxgl.NavigationControl(), 'top-right');
