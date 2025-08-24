@@ -92,7 +92,7 @@
                     </div>
                     <div class="col-8">
                         <div class="d-flex">
-                            <div class="geocoder-wrap" id="geocoder"></div>
+                            <div class="geocoder-wrap" id="space_location" name="space_location"></div>
                             
                         </div>
                     </div>
@@ -176,7 +176,7 @@
     language: 'ko',                // 한국어 우선
     placeholder: '주소/장소를 입력하세요'
   });
-  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+  document.getElementById('space_location').appendChild(geocoder.onAdd(map));
 
   // 좌표 표시/전송 필드
 
