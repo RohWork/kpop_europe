@@ -20,8 +20,7 @@
           body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif; }
           #map { width:100%; height: 70vh; }
           .panel { padding: 12px 16px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-          .field { display:flex; gap:8px; align-items:center; }
-          input[type="text"] { width:160px; padding:6px 8px; }
+          .field { display:flex; gap:8px; align-items:center; 
           button { padding:8px 12px; border:0; border-radius:8px; background:#111827; color:white; cursor:pointer; }
           button:hover { opacity:.9; }
           .hint { color:#6b7280; font-size:12px; }
