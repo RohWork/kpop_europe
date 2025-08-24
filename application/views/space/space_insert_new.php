@@ -166,7 +166,7 @@
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [126.9784, 37.5665], // 서울
+    center: [<?=$space_y?>, <?=$space_x?>]
     zoom: 11
   });
   map.addControl(new mapboxgl.NavigationControl(), 'top-right');
