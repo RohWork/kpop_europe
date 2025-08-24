@@ -163,20 +163,23 @@
   // 1) 토큰 설정
   mapboxgl.accessToken = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw';
 
-  // 2) 기본 지도 생성 (초기 중심: 서울 시청 근처)
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
-    center: [<?=$space_y?>, <?=$space_x?>], // [lng, lat]
+    center: [126.9784, 37.5665], // 서울
     zoom: 11
   });
-
-  // 3) 컨트롤(확대/축소, 현재위치) 추가
   map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-  map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: { enableHighAccuracy: true },
-    trackUserLocation: false
-  }), 'top-right');
+
+  // 3) Geocoder(주소 검색) 컨트롤
+  const geocoder = new MapboxGeocoder({
+    accessToken: token,
+    mapboxgl: mapboxgl,
+    marker: false,                 // 검색 시 자동 마커 생성 안 함(우리가 직접 관리)
+    language: 'ko',                // 한국어 우선
+    placeholder: '주소/장소를 입력하세요'
+  });
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
   // 좌표 표시/전송 필드
 
