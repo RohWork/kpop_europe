@@ -16,8 +16,8 @@
                             <th>No</th>
                             <th>Type</th>
                             <th>Company</th>
-                            <th>Country<th>
-                            <th>City<th>
+                            <th>Country</th>
+                            <th>City</th>
                             <th>Club Name</th>
                             <th>Address</th>
                             <th>Open Date</th>
