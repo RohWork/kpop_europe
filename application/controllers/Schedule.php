@@ -1,5 +1,9 @@
 <?php
 
+use PhpOffice\PhpSpreadsheet\IOFactory; // IOFactory 사용을 위해
+use PhpOffice\PhpSpreadsheet\Shared\Date; // 날짜 변환을 위해
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat; // 숫자 포맷을 위해
+
 class Schedule extends CI_Controller {
     
     function __construct() {
@@ -500,10 +504,6 @@ class Schedule extends CI_Controller {
         $this->load->view('schedule_excel',$data);
         $this->load->view('footer');
     }
-    
-    use PhpOffice\PhpSpreadsheet\IOFactory; // IOFactory 사용을 위해
-    use PhpOffice\PhpSpreadsheet\Shared\Date; // 날짜 변환을 위해
-    use PhpOffice\PhpSpreadsheet\Style\NumberFormat; // 숫자 포맷을 위해
     
     function excel_process(){
     
