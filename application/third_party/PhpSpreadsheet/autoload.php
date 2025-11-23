@@ -10,6 +10,7 @@ $requiredClasses = [
     
     'IOFactory.php',
     'Spreadsheet.php',
+    'Reader/IReadFilter.php', 
     'Shared/File.php',
     'Reader/ReadFilterInterface.php',
     'Reader/DefaultReadFilter.php',
@@ -20,7 +21,7 @@ $requiredClasses = [
     'Reader/Ods.php',
     'Reader/Xls.php',
     'Reader/Xml.php',
-    'Reader/IReadFilter.php', 
+    
     
 
     
