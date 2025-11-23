@@ -17,6 +17,13 @@ $requiredClasses = [
     'Reader/Ods.php',
     'Reader/Xls.php',
     'Reader/Xml.php',
+    'Reader/IReadFilter.php', 
+    
+    // 💡 IReadFilter를 상속받는 다른 클래스도 명시적으로 추가
+    'Reader/ReadFilterInterface.php', // (버전에 따라 이름이 다를 수 있음. IReadFilter와 함께 추가)
+    'Reader/DefaultReadFilter.php',
+    
+    'Reader/BaseReader.php',
     // 다른 Reader/Writer 클래스도 필요하면 추가합니다.
 ];
 
