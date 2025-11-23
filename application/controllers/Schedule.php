@@ -557,22 +557,27 @@ class Schedule extends CI_Controller {
 
                     // 5. **[변경]** 날짜/시간 포맷 처리
                     $h = $worksheet->getCell('H' . $row)->getValue(); // Open (날짜)
-                    $i = $worksheet->getCell('I' . $row)->getValue(); // Open Time 
-                    $j = $worksheet->getCell('J' . $row)->getValue(); // Close (날짜)
                     $k = $worksheet->getCell('K' . $row)->getValue(); // Close Time 
 
                     // 날짜 포맷 변환 (PHPExcel_Style_NumberFormat 대신 Shared\Date::excelToDateTimeObject 사용)
 
-                    // 엑셀 날짜 형식이 아닌 경우, 문자열로 처리
-                    if (NumberFormat::is='#,##0' || NumberFormat::isDateTime($h)) {
-                        $date_start_obj = Date::excelToDateTimeObject($h);
-                        $h = $date_start_obj->format("d-m-Y");
-                    }
+                    $h_val = $worksheet->getCell('H' . $row)->getValue(); 
+                    $j_val = $worksheet->getCell('J' . $row)->getValue(); 
 
-                    if (NumberFormat::is='#,##0' || NumberFormat::isDateTime($j)) {
-                        $date_end_obj = Date::excelToDateTimeObject($j);
-                        $j = $date_end_obj->format("d-m-Y");
-                    }
+                     if (is_numeric($h_val) && \PhpOffice\PhpSpreadsheet\Shared\Date::isExcelDate($h_val)) {
+                         // isExcelDate()를 사용하여 Excel 날짜 값인지 명확하게 확인하는 것이 더 안전합니다.
+                         $date_start_obj = Date::excelToDateTimeObject($h_val);
+                         $h = $date_start_obj->format("d-m-Y");
+                     } else {
+                         $h = $h_val; // 숫자가 아니거나 유효한 날짜 값이 아니면 그대로 사용
+                     }
+
+                     if (is_numeric($j_val) && \PhpOffice\PhpSpreadsheet\Shared\Date::isExcelDate($j_val)) {
+                         $date_end_obj = Date::excelToDateTimeObject($j_val);
+                         $j = $date_end_obj->format("d-m-Y");
+                     } else {
+                         $j = $j_val;
+}
 
                     $date_start = DateTime::createFromFormat("d-m-Y", $h);
                     $date_end = DateTime::createFromFormat("d-m-Y", $j);
