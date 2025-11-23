@@ -4,4 +4,13 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php/$1 [L]
+
+# https 강제이동.
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ 
+# www 강제로 붙이기.
+    RewriteCond %{HTTP_HOST} .
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]	
 </IfModule>
