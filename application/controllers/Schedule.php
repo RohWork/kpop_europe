@@ -640,6 +640,69 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
+    public function register_missing_data() {
+        $this->load->model(['cont_md', 'city_md', 'org_md']);
+
+        // register_data는 이제 폼에서 배열 형태로 전송됩니다.
+        $register_data_array = $this->input->post('register_data'); 
+        $results = [];
+
+        if (!empty($register_data_array)) {
+            foreach ($register_data_array as $index => $data) {
+
+                // 체크박스가 선택된 항목만 처리
+                if (!isset($data['register']) || $data['register'] != '1') {
+                    continue;
+                }
+
+                $country_name = $data['country'];
+                $city_name = $data['city'];
+                $company_name = $data['company'];
+                $latitude = $data['latitude']; // 새로 추가된 좌표
+                $longitude = $data['longitude']; // 새로 추가된 좌표
+
+                // 1. Country 확인 및 등록
+                $country = $this->cont_md->get_country_name($country_name);
+                $country_idx = empty($country) ? null : $country['idx'];
+                if (empty($country)) {
+                    $country_idx = $this->cont_md->insert_country($country_name, $latitude, $longitude); // 위도/경도를 Country 테이블에 저장한다고 가정
+                    $results[] = "Country '{$country_name}' 등록 시도 완료.";
+                }
+
+                // 2. City 확인 및 등록
+                $city = $this->city_md->get_city_name($city_name); // Country ID를 조건으로 사용하여 City 확인 필요
+                $city_idx = empty($city) ? null : $city['idx'];
+                if (empty($city)) {
+                     $city_idx = $this->city_md->insert_city($country_idx, $city_name, $latitude, $longitude); // 위도/경도를 City 테이블에 저장한다고 가정
+                    $results[] = "City '{$city_name}' 등록 시도 완료.";
+                }
+
+                // 3. Company 확인 및 등록 (Club Name)
+                $organization = $this->org_md->get_organization_name($company_name);
+                if (empty($organization)) {
+                     $org_idx = $this->org_md->insert_organization($company_name, $latitude, $longitude); // 위도/경도를 Organization 테이블에 저장한다고 가정
+                    $results[] = "Company '{$company_name}' 등록 시도 완료.";
+                }
+
+                // 중요: 위도/경도는 Country, City, Club 중 해당 데이터가 없는 곳에 저장해야 합니다.
+                // 예를 들어 Country는 있고 City가 없는 경우, City를 등록할 때 좌표를 함께 저장합니다.
+
+            }
+        }
+
+        $this->session->set_flashdata('registration_results', $results);
+        redirect('schedule/registration_success'); 
+    }
+    
+    function registration_success(){
+        $data = array();
+        
+        $this->load->view('header');
+        $this->load->view('sidebar');
+        $this->load->view('schedule_complete',$data);
+        $this->load->view('footer');
+    }
+    
     function mark_ajax(){
         
         $data = array();

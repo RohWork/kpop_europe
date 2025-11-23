@@ -141,15 +141,61 @@
 </div>
 
 <script>
-    // JavaScript (jQuery를 사용한다고 가정)
+    // Mapbox Access Token을 여기에 입력하세요.
+    const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw'; 
+
     $(document).ready(function() {
-        // 일괄 선택/해제 기능
+        // 일괄 선택/해제 기능 (기존 로직 유지)
         $('#check_all_register').change(function() {
             $('input[name="register_data[]"]').prop('checked', $(this).prop('checked'));
         });
         
-        // 여기에 AJAX로 일괄 등록을 처리하는 로직을 추가할 수 있습니다.
-        // 현재는 폼 제출(POST) 방식으로 구현되어 있습니다.
+        // Mapbox Geocoding API를 호출하는 함수
+        function geocodeAddress(address, rowIndex) {
+            if (!MAPBOX_ACCESS_TOKEN || MAPBOX_ACCESS_TOKEN === 'YOUR_MAPBOX_ACCESS_TOKEN') {
+                alert('Mapbox Access Token을 먼저 설정해주세요.');
+                return;
+            }
+            
+            // Mapbox Geocoding API 호출 URL
+            const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json?access_token=${MAPBOX_ACCESS_TOKEN}`;
+            
+            const $row = $('tr[data-index="' + rowIndex + '"]');
+
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.features && data.features.length > 0) {
+                        // Mapbox는 [경도, 위도] 순서로 좌표를 반환합니다.
+                        const longitude = data.features[0].center[0]; 
+                        const latitude = data.features[0].center[1];
+                        
+                        // 필드에 위도/경도 값 채우기
+                        $row.find('.lat-field').val(latitude);
+                        $row.find('.lon-field').val(longitude);
+
+                        alert(`좌표 검색 성공: 위도 ${latitude}, 경도 ${longitude}`);
+                    } else {
+                        alert('Mapbox에서 검색된 결과가 없습니다: ' + address);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('좌표 검색 실패: Mapbox API 호출 오류');
+                    console.error('Mapbox Geocode failed:', error);
+                }
+            });
+        }
+
+        // '좌표 검색' 버튼 클릭 이벤트 (기존 로직 유지)
+        $('.geocode-btn').on('click', function(e) {
+            e.preventDefault();
+            const address = $(this).data('address');
+            const rowIndex = $(this).data('index');
+            
+            geocodeAddress(address, rowIndex);
+        });
     });
 </script>
 </main>
