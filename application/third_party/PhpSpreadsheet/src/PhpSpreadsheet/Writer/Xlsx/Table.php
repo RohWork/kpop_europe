@@ -3,7 +3,6 @@
 namespace PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
-use PhpOffice\PhpSpreadsheet\Reader\Xlsx\Namespaces;
 use PhpOffice\PhpSpreadsheet\Shared\XMLWriter;
 use PhpOffice\PhpSpreadsheet\Worksheet\Table as WorksheetTable;
 
@@ -16,7 +15,7 @@ class Table extends WriterPart
      *
      * @return string XML Output
      */
-    public function writeTable(WorksheetTable $table, int $tableRef): string
+    public function writeTable(WorksheetTable $table, $tableRef): string
     {
         // Create XML writer
         $objWriter = null;
@@ -34,7 +33,8 @@ class Table extends WriterPart
         $range = $table->getRange();
 
         $objWriter->startElement('table');
-        $objWriter->writeAttribute('xmlns', Namespaces::MAIN);
+        $objWriter->writeAttribute('xml:space', 'preserve');
+        $objWriter->writeAttribute('xmlns', 'http://schemas.openxmlformats.org/spreadsheetml/2006/main');
         $objWriter->writeAttribute('id', (string) $tableRef);
         $objWriter->writeAttribute('name', $name);
         $objWriter->writeAttribute('displayName', $table->getName() ?: $name);
@@ -46,7 +46,7 @@ class Table extends WriterPart
         [$rangeStart, $rangeEnd] = Coordinate::rangeBoundaries($table->getRange());
 
         // Table Auto Filter
-        if ($table->getShowHeaderRow() && $table->getAllowFilter() === true) {
+        if ($table->getShowHeaderRow()) {
             $objWriter->startElement('autoFilter');
             $objWriter->writeAttribute('ref', $range);
             foreach (range($rangeStart[0], $rangeEnd[0]) as $offset => $columnIndex) {
@@ -57,12 +57,9 @@ class Table extends WriterPart
                     $objWriter->writeAttribute('colId', (string) $offset);
                     $objWriter->writeAttribute('hiddenButton', '1');
                     $objWriter->endElement();
-                } else {
-                    $column = $table->getAutoFilter()->getColumnByOffset($offset);
-                    AutoFilter::writeAutoFilterColumn($objWriter, $column, $offset);
                 }
             }
-            $objWriter->endElement(); // autoFilter
+            $objWriter->endElement();
         }
 
         // Table Columns
@@ -75,11 +72,11 @@ class Table extends WriterPart
             }
 
             $column = $table->getColumnByOffset($offset);
-            $cell = $worksheet->getCell([$columnIndex, $rangeStart[1]]);
+            $cell = $worksheet->getCellByColumnAndRow($columnIndex, $rangeStart[1]);
 
             $objWriter->startElement('tableColumn');
             $objWriter->writeAttribute('id', (string) ($offset + 1));
-            $objWriter->writeAttribute('name', $table->getShowHeaderRow() ? $cell->getValueString() : ('Column' . ($offset + 1)));
+            $objWriter->writeAttribute('name', $table->getShowHeaderRow() ? $cell->getValue() : 'Column' . ($offset + 1));
 
             if ($table->getShowTotalsRow()) {
                 if ($column->getTotalsRowLabel()) {

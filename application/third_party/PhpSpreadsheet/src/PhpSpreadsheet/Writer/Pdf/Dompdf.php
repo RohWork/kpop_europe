@@ -8,16 +8,11 @@ use PhpOffice\PhpSpreadsheet\Writer\Pdf;
 class Dompdf extends Pdf
 {
     /**
-     * embed images, or link to images.
-     */
-    protected bool $embedImages = true;
-
-    /**
      * Gets the implementation of external PDF library that should be used.
      *
      * @return \Dompdf\Dompdf implementation
      */
-    protected function createExternalWriterInstance(): \Dompdf\Dompdf
+    protected function createExternalWriterInstance()
     {
         return new \Dompdf\Dompdf();
     }
@@ -31,15 +26,15 @@ class Dompdf extends Pdf
     {
         $fileHandle = parent::prepareForSave($filename);
 
+        //  Default PDF paper size
+        $paperSize = 'LETTER'; //    Letter    (8.5 in. by 11 in.)
+
         //  Check for paper size and page orientation
         $setup = $this->spreadsheet->getSheet($this->getSheetIndex() ?? 0)->getPageSetup();
         $orientation = $this->getOrientation() ?? $setup->getOrientation();
         $orientation = ($orientation === PageSetup::ORIENTATION_LANDSCAPE) ? 'L' : 'P';
         $printPaperSize = $this->getPaperSize() ?? $setup->getPaperSize();
-        $paperSize = self::$paperSizes[$printPaperSize] ?? self::$paperSizes[PageSetup::getPaperSizeDefault()] ?? 'LETTER';
-        if (is_array($paperSize) && count($paperSize) === 2) {
-            $paperSize = [0.0, 0.0, $paperSize[0], $paperSize[1]];
-        }
+        $paperSize = self::$paperSizes[$printPaperSize] ?? PageSetup::getPaperSizeDefault();
 
         $orientation = ($orientation == 'L') ? 'landscape' : 'portrait';
 
@@ -51,7 +46,7 @@ class Dompdf extends Pdf
         $pdf->render();
 
         //  Write to file
-        fwrite($fileHandle, $pdf->output());
+        fwrite($fileHandle, $pdf->output() ?? '');
 
         parent::restoreStateAfterSave();
     }

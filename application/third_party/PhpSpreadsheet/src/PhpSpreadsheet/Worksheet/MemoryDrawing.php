@@ -4,7 +4,6 @@ namespace PhpOffice\PhpSpreadsheet\Worksheet;
 
 use GdImage;
 use PhpOffice\PhpSpreadsheet\Exception;
-use PhpOffice\PhpSpreadsheet\Shared\File;
 
 class MemoryDrawing extends BaseDrawing
 {
@@ -20,33 +19,36 @@ class MemoryDrawing extends BaseDrawing
     const MIMETYPE_GIF = 'image/gif';
     const MIMETYPE_JPEG = 'image/jpeg';
 
-    const SUPPORTED_MIME_TYPES = [
-        self::MIMETYPE_GIF,
-        self::MIMETYPE_JPEG,
-        self::MIMETYPE_PNG,
-    ];
-
     /**
      * Image resource.
+     *
+     * @var null|GdImage|resource
      */
-    private null|GdImage $imageResource = null;
+    private $imageResource;
 
     /**
      * Rendering function.
      *
-     * @var callable-string
+     * @var string
      */
-    private string $renderingFunction;
+    private $renderingFunction;
 
     /**
      * Mime type.
+     *
+     * @var string
      */
-    private string $mimeType;
+    private $mimeType;
 
     /**
      * Unique name.
+     *
+     * @var string
      */
-    private string $uniqueName;
+    private $uniqueName;
+
+    /** @var null|resource */
+    private $alwaysNull;
 
     /**
      * Create a new MemoryDrawing.
@@ -57,6 +59,7 @@ class MemoryDrawing extends BaseDrawing
         $this->renderingFunction = self::RENDERING_DEFAULT;
         $this->mimeType = self::MIMETYPE_DEFAULT;
         $this->uniqueName = md5(mt_rand(0, 9999) . time() . mt_rand(0, 9999));
+        $this->alwaysNull = null;
 
         // Initialize parent
         parent::__construct();
@@ -64,8 +67,11 @@ class MemoryDrawing extends BaseDrawing
 
     public function __destruct()
     {
-        $this->imageResource = null;
-        $this->worksheet = null;
+        if ($this->imageResource) {
+            $rslt = @imagedestroy($this->imageResource);
+            // "Fix" for Scrutinizer
+            $this->imageResource = $rslt ? null : $this->alwaysNull;
+        }
     }
 
     public function __clone()
@@ -100,8 +106,10 @@ class MemoryDrawing extends BaseDrawing
             // If the image has transparency...
             $transparent = imagecolortransparent($this->imageResource);
             if ($transparent >= 0) {
-                // Starting with Php8.0, next function throws rather than return false
                 $rgb = imagecolorsforindex($this->imageResource, $transparent);
+                if (empty($rgb)) {
+                    throw new Exception('Could not get image colors');
+                }
 
                 imagesavealpha($clone, true);
                 $color = imagecolorallocatealpha($clone, $rgb['red'], $rgb['green'], $rgb['blue'], $rgb['alpha']);
@@ -120,120 +128,11 @@ class MemoryDrawing extends BaseDrawing
     }
 
     /**
-     * @param resource $imageStream Stream data to be converted to a Memory Drawing
-     *
-     * @throws Exception
-     */
-    public static function fromStream($imageStream): self
-    {
-        $streamValue = stream_get_contents($imageStream);
-
-        return self::fromString($streamValue);
-    }
-
-    /**
-     * @param string $imageString String data to be converted to a Memory Drawing
-     *
-     * @throws Exception
-     */
-    public static function fromString(string $imageString): self
-    {
-        $gdImage = @imagecreatefromstring($imageString);
-        if ($gdImage === false) {
-            throw new Exception('Value cannot be converted to an image');
-        }
-
-        $mimeType = self::identifyMimeType($imageString);
-        if (imageistruecolor($gdImage) || imagecolortransparent($gdImage) >= 0) {
-            imagesavealpha($gdImage, true);
-        }
-        $renderingFunction = self::identifyRenderingFunction($mimeType);
-
-        $drawing = new self();
-        $drawing->setImageResource($gdImage);
-        $drawing->setRenderingFunction($renderingFunction);
-        $drawing->setMimeType($mimeType);
-
-        return $drawing;
-    }
-
-    /** @return callable-string */
-    private static function identifyRenderingFunction(string $mimeType): string
-    {
-        return match ($mimeType) {
-            self::MIMETYPE_PNG => self::RENDERING_PNG,
-            self::MIMETYPE_JPEG => self::RENDERING_JPEG,
-            self::MIMETYPE_GIF => self::RENDERING_GIF,
-            default => self::RENDERING_DEFAULT,
-        };
-    }
-
-    /**
-     * @throws Exception
-     */
-    private static function identifyMimeType(string $imageString): string
-    {
-        $temporaryFileName = File::temporaryFilename();
-        file_put_contents($temporaryFileName, $imageString);
-
-        $mimeType = self::identifyMimeTypeUsingExif($temporaryFileName);
-        if ($mimeType !== null) {
-            unlink($temporaryFileName);
-
-            return $mimeType;
-        }
-
-        $mimeType = self::identifyMimeTypeUsingGd($temporaryFileName);
-        if ($mimeType !== null) {
-            unlink($temporaryFileName);
-
-            return $mimeType;
-        }
-
-        unlink($temporaryFileName);
-
-        return self::MIMETYPE_DEFAULT;
-    }
-
-    private static function identifyMimeTypeUsingExif(string $temporaryFileName): ?string
-    {
-        if (function_exists('exif_imagetype')) {
-            $imageType = @exif_imagetype($temporaryFileName);
-            $mimeType = ($imageType) ? image_type_to_mime_type($imageType) : null;
-
-            return self::supportedMimeTypes($mimeType);
-        }
-
-        return null;
-    }
-
-    private static function identifyMimeTypeUsingGd(string $temporaryFileName): ?string
-    {
-        if (function_exists('getimagesize')) {
-            $imageSize = @getimagesize($temporaryFileName);
-            if (is_array($imageSize)) {
-                $mimeType = $imageSize['mime'];
-
-                return self::supportedMimeTypes($mimeType);
-            }
-        }
-
-        return null;
-    }
-
-    private static function supportedMimeTypes(?string $mimeType = null): ?string
-    {
-        if (in_array($mimeType, self::SUPPORTED_MIME_TYPES, true)) {
-            return $mimeType;
-        }
-
-        return null;
-    }
-
-    /**
      * Get image resource.
+     *
+     * @return null|GdImage|resource
      */
-    public function getImageResource(): ?GdImage
+    public function getImageResource()
     {
         return $this->imageResource;
     }
@@ -241,9 +140,11 @@ class MemoryDrawing extends BaseDrawing
     /**
      * Set image resource.
      *
+     * @param GdImage|resource $value
+     *
      * @return $this
      */
-    public function setImageResource(?GdImage $value): static
+    public function setImageResource($value)
     {
         $this->imageResource = $value;
 
@@ -259,9 +160,9 @@ class MemoryDrawing extends BaseDrawing
     /**
      * Get rendering function.
      *
-     * @return callable-string
+     * @return string
      */
-    public function getRenderingFunction(): string
+    public function getRenderingFunction()
     {
         return $this->renderingFunction;
     }
@@ -269,11 +170,11 @@ class MemoryDrawing extends BaseDrawing
     /**
      * Set rendering function.
      *
-     * @param callable-string $value see self::RENDERING_*
+     * @param string $value see self::RENDERING_*
      *
      * @return $this
      */
-    public function setRenderingFunction(string $value): static
+    public function setRenderingFunction($value)
     {
         $this->renderingFunction = $value;
 
@@ -282,8 +183,10 @@ class MemoryDrawing extends BaseDrawing
 
     /**
      * Get mime type.
+     *
+     * @return string
      */
-    public function getMimeType(): string
+    public function getMimeType()
     {
         return $this->mimeType;
     }
@@ -295,7 +198,7 @@ class MemoryDrawing extends BaseDrawing
      *
      * @return $this
      */
-    public function setMimeType(string $value): static
+    public function setMimeType($value)
     {
         $this->mimeType = $value;
 
@@ -319,14 +222,14 @@ class MemoryDrawing extends BaseDrawing
      *
      * @return string Hash code
      */
-    public function getHashCode(): string
+    public function getHashCode()
     {
         return md5(
-            $this->renderingFunction
-            . $this->mimeType
-            . $this->uniqueName
-            . parent::getHashCode()
-            . __CLASS__
+            $this->renderingFunction .
+            $this->mimeType .
+            $this->uniqueName .
+            parent::getHashCode() .
+            __CLASS__
         );
     }
 }

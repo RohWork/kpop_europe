@@ -9,8 +9,10 @@ class TimeZone
 {
     /**
      * Default Timezone used for date/time conversions.
+     *
+     * @var string
      */
-    protected static string $timezone = 'UTC';
+    protected static $timezone = 'UTC';
 
     /**
      * Validate a Timezone name.
@@ -33,7 +35,7 @@ class TimeZone
      */
     public static function setTimeZone(string $timezoneName): bool
     {
-        if (self::validateTimeZone($timezoneName)) {
+        if (self::validateTimezone($timezoneName)) {
             self::$timezone = $timezoneName;
 
             return true;
@@ -65,7 +67,7 @@ class TimeZone
     {
         $timezoneName = $timezoneName ?? self::$timezone;
         $dtobj = Date::dateTimeFromTimestamp("$timestamp");
-        if (!self::validateTimeZone($timezoneName)) {
+        if (!self::validateTimezone($timezoneName)) {
             throw new PhpSpreadsheetException("Invalid timezone $timezoneName");
         }
         $dtobj->setTimeZone(new DateTimeZone($timezoneName));

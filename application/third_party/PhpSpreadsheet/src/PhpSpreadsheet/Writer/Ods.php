@@ -12,28 +12,52 @@ use PhpOffice\PhpSpreadsheet\Writer\Ods\Settings;
 use PhpOffice\PhpSpreadsheet\Writer\Ods\Styles;
 use PhpOffice\PhpSpreadsheet\Writer\Ods\Thumbnails;
 use ZipStream\Exception\OverflowException;
+use ZipStream\Option\Archive;
 use ZipStream\ZipStream;
 
 class Ods extends BaseWriter
 {
     /**
      * Private PhpSpreadsheet.
+     *
+     * @var Spreadsheet
      */
-    private Spreadsheet $spreadSheet;
+    private $spreadSheet;
 
-    private Content $writerPartContent;
+    /**
+     * @var Content
+     */
+    private $writerPartContent;
 
-    private Meta $writerPartMeta;
+    /**
+     * @var Meta
+     */
+    private $writerPartMeta;
 
-    private MetaInf $writerPartMetaInf;
+    /**
+     * @var MetaInf
+     */
+    private $writerPartMetaInf;
 
-    private Mimetype $writerPartMimetype;
+    /**
+     * @var Mimetype
+     */
+    private $writerPartMimetype;
 
-    private Settings $writerPartSettings;
+    /**
+     * @var Settings
+     */
+    private $writerPartSettings;
 
-    private Styles $writerPartStyles;
+    /**
+     * @var Styles
+     */
+    private $writerPartStyles;
 
-    private Thumbnails $writerPartThumbnails;
+    /**
+     * @var Thumbnails
+     */
+    private $writerPartThumbnails;
 
     /**
      * Create a new Ods.
@@ -93,6 +117,10 @@ class Ods extends BaseWriter
      */
     public function save($filename, int $flags = 0): void
     {
+        if (!$this->spreadSheet) {
+            throw new WriterException('PhpSpreadsheet object unassigned.');
+        }
+
         $this->processFlags($flags);
 
         // garbage collect
@@ -114,7 +142,7 @@ class Ods extends BaseWriter
         // Close file
         try {
             $zip->finish();
-        } catch (OverflowException) {
+        } catch (OverflowException $e) {
             throw new WriterException('Could not close resource.');
         }
 
@@ -123,8 +151,10 @@ class Ods extends BaseWriter
 
     /**
      * Create zip object.
+     *
+     * @return ZipStream
      */
-    private function createZip(): ZipStream
+    private function createZip()
     {
         // Try opening the ZIP file
         if (!is_resource($this->fileHandle)) {
@@ -132,15 +162,25 @@ class Ods extends BaseWriter
         }
 
         // Create new ZIP stream
-        return ZipStream0::newZipStream($this->fileHandle);
+        $options = new Archive();
+        $options->setEnableZip64(false);
+        $options->setOutputStream($this->fileHandle);
+
+        return new ZipStream(null, $options);
     }
 
     /**
      * Get Spreadsheet object.
+     *
+     * @return Spreadsheet
      */
-    public function getSpreadsheet(): Spreadsheet
+    public function getSpreadsheet()
     {
-        return $this->spreadSheet;
+        if ($this->spreadSheet !== null) {
+            return $this->spreadSheet;
+        }
+
+        throw new WriterException('No PhpSpreadsheet assigned.');
     }
 
     /**
@@ -150,7 +190,7 @@ class Ods extends BaseWriter
      *
      * @return $this
      */
-    public function setSpreadsheet(Spreadsheet $spreadsheet): static
+    public function setSpreadsheet(Spreadsheet $spreadsheet)
     {
         $this->spreadSheet = $spreadsheet;
 

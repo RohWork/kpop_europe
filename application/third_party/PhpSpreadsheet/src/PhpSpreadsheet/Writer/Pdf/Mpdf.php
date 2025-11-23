@@ -3,21 +3,19 @@
 namespace PhpOffice\PhpSpreadsheet\Writer\Pdf;
 
 use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
+use PhpOffice\PhpSpreadsheet\Writer\Html;
 use PhpOffice\PhpSpreadsheet\Writer\Pdf;
 
 class Mpdf extends Pdf
 {
-    public const SIMULATED_BODY_START = '<!-- simulated body start -->';
-    private const BODY_TAG = '<body>';
-
     /**
      * Gets the implementation of external PDF library that should be used.
      *
-     * @param mixed[] $config Configuration array
+     * @param array $config Configuration array
      *
      * @return \Mpdf\Mpdf implementation
      */
-    protected function createExternalWriterInstance(array $config): \Mpdf\Mpdf
+    protected function createExternalWriterInstance($config)
     {
         return new \Mpdf\Mpdf($config);
     }
@@ -40,13 +38,6 @@ class Mpdf extends Pdf
 
         //  Create PDF
         $config = ['tempDir' => $this->tempDir . '/mpdf'];
-        $restoreHandler = false;
-        if (PHP_VERSION_ID >= self::$temporaryVersionCheck) {
-            // @codeCoverageIgnoreStart
-            set_error_handler(self::specialErrorHandler(...));
-            $restoreHandler = true;
-            // @codeCoverageIgnoreEnd
-        }
         $pdf = $this->createExternalWriterInstance($config);
         $ortmp = $orientation;
         $pdf->_setPageSize($paperSize, $ortmp);
@@ -67,57 +58,32 @@ class Mpdf extends Pdf
         $pdf->SetCreator($this->spreadsheet->getProperties()->getCreator());
 
         $html = $this->generateHTMLAll();
-        $bodyLocation = strpos($html, self::SIMULATED_BODY_START);
-        if ($bodyLocation === false) {
-            $bodyLocation = strpos($html, self::BODY_TAG);
-            if ($bodyLocation !== false) {
-                $bodyLocation += strlen(self::BODY_TAG);
-            }
-        }
+        $bodyLocation = strpos($html, Html::BODY_LINE);
         // Make sure first data presented to Mpdf includes body tag
-        //   (and any htmlpageheader/htmlpagefooter tags)
         //   so that Mpdf doesn't parse it as content. Issue 2432.
         if ($bodyLocation !== false) {
+            $bodyLocation += strlen(Html::BODY_LINE);
             $pdf->WriteHTML(substr($html, 0, $bodyLocation));
             $html = substr($html, $bodyLocation);
         }
-        foreach (explode("\n", $html) as $line) {
-            $pdf->WriteHTML("$line\n");
+        foreach (\array_chunk(\explode(PHP_EOL, $html), 1000) as $lines) {
+            $pdf->WriteHTML(\implode(PHP_EOL, $lines));
         }
 
         //  Write to file
-        /** @var string */
-        $str = $pdf->Output('', 'S');
-        fwrite($fileHandle, $str);
+        fwrite($fileHandle, $pdf->Output('', 'S'));
 
-        if ($restoreHandler) {
-            restore_error_handler(); // @codeCoverageIgnore
-        }
         parent::restoreStateAfterSave();
-    }
-
-    protected static int $temporaryVersionCheck = 80500;
-
-    /**
-     * Temporary handler for Php8.5 waiting for Dompdf release.
-     *
-     * @codeCoverageIgnore
-     */
-    public function specialErrorHandler(int $errno, string $errstr, string $filename, int $lineno): bool
-    {
-        if ($errno === E_DEPRECATED) {
-            if (preg_match('/Providing an empty string is deprecated/', $errstr) === 1) {
-                return true;
-            }
-        }
-
-        return false; // continue error handling
     }
 
     /**
      * Convert inches to mm.
+     *
+     * @param float $inches
+     *
+     * @return float
      */
-    private function inchesToMm(float $inches): float
+    private function inchesToMm($inches)
     {
         return $inches * 25.4;
     }

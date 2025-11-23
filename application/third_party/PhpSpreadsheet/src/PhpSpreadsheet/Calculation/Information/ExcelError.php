@@ -13,7 +13,7 @@ class ExcelError
      *
      * @var array<string, string>
      */
-    public const ERROR_CODES = [
+    public static $errorCodes = [
         'null' => '#NULL!', // 1
         'divisionbyzero' => '#DIV/0!', // 2
         'value' => '#VALUE!', // 3
@@ -30,9 +30,12 @@ class ExcelError
         'calculation' => '#CALC!', //14
     ];
 
-    public static function throwError(mixed $value): string
+    /**
+     * @param mixed $value
+     */
+    public static function throwError($value): string
     {
-        return in_array($value, self::ERROR_CODES, true) ? $value : self::ERROR_CODES['value'];
+        return in_array($value, self::$errorCodes, true) ? $value : self::$errorCodes['value'];
     }
 
     /**
@@ -40,16 +43,16 @@ class ExcelError
      *
      * @param mixed $value Value to check
      *
-     * @return array<mixed>|int|string
+     * @return array|int|string
      */
-    public static function type(mixed $value = ''): array|int|string
+    public static function type($value = '')
     {
         if (is_array($value)) {
             return self::evaluateSingleArgumentArray([self::class, __FUNCTION__], $value);
         }
 
         $i = 1;
-        foreach (self::ERROR_CODES as $errorCode) {
+        foreach (self::$errorCodes as $errorCode) {
             if ($value === $errorCode) {
                 return $i;
             }
@@ -68,7 +71,7 @@ class ExcelError
      */
     public static function null(): string
     {
-        return self::ERROR_CODES['null'];
+        return self::$errorCodes['null'];
     }
 
     /**
@@ -80,7 +83,7 @@ class ExcelError
      */
     public static function NAN(): string
     {
-        return self::ERROR_CODES['num'];
+        return self::$errorCodes['num'];
     }
 
     /**
@@ -92,7 +95,7 @@ class ExcelError
      */
     public static function REF(): string
     {
-        return self::ERROR_CODES['reference'];
+        return self::$errorCodes['reference'];
     }
 
     /**
@@ -108,7 +111,7 @@ class ExcelError
      */
     public static function NA(): string
     {
-        return self::ERROR_CODES['na'];
+        return self::$errorCodes['na'];
     }
 
     /**
@@ -120,7 +123,7 @@ class ExcelError
      */
     public static function VALUE(): string
     {
-        return self::ERROR_CODES['value'];
+        return self::$errorCodes['value'];
     }
 
     /**
@@ -132,7 +135,7 @@ class ExcelError
      */
     public static function NAME(): string
     {
-        return self::ERROR_CODES['name'];
+        return self::$errorCodes['name'];
     }
 
     /**
@@ -142,7 +145,7 @@ class ExcelError
      */
     public static function DIV0(): string
     {
-        return self::ERROR_CODES['divisionbyzero'];
+        return self::$errorCodes['divisionbyzero'];
     }
 
     /**
@@ -152,16 +155,6 @@ class ExcelError
      */
     public static function CALC(): string
     {
-        return self::ERROR_CODES['calculation'];
-    }
-
-    /**
-     * SPILL.
-     *
-     * @return string #SPILL!
-     */
-    public static function SPILL(): string
-    {
-        return self::ERROR_CODES['spill'];
+        return self::$errorCodes['calculation'];
     }
 }

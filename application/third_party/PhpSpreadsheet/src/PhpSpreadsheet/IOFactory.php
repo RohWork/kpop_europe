@@ -30,8 +30,7 @@ abstract class IOFactory
     public const WRITER_CSV = 'Csv';
     public const WRITER_HTML = 'Html';
 
-    /** @var array<string, class-string<IReader>> */
-    private static array $readers = [
+    private static $readers = [
         self::READER_XLSX => Reader\Xlsx::class,
         self::READER_XLS => Reader\Xls::class,
         self::READER_XML => Reader\Xml::class,
@@ -42,8 +41,7 @@ abstract class IOFactory
         self::READER_CSV => Reader\Csv::class,
     ];
 
-    /** @var array<string, class-string<IWriter>> */
-    private static array $writers = [
+    private static $writers = [
         self::WRITER_XLS => Writer\Xls::class,
         self::WRITER_XLSX => Writer\Xlsx::class,
         self::WRITER_ODS => Writer\Ods::class,
@@ -59,16 +57,12 @@ abstract class IOFactory
      */
     public static function createWriter(Spreadsheet $spreadsheet, string $writerType): IWriter
     {
-        /** @var class-string<IWriter> */
-        $className = $writerType;
-        if (!in_array($writerType, self::$writers, true)) {
-            if (!isset(self::$writers[$writerType])) {
-                throw new Writer\Exception("No writer found for type $writerType");
-            }
-
-            // Instantiate writer
-            $className = self::$writers[$writerType];
+        if (!isset(self::$writers[$writerType])) {
+            throw new Writer\Exception("No writer found for type $writerType");
         }
+
+        // Instantiate writer
+        $className = self::$writers[$writerType];
 
         return new $className($spreadsheet);
     }
@@ -78,16 +72,12 @@ abstract class IOFactory
      */
     public static function createReader(string $readerType): IReader
     {
-        /** @var class-string<IReader> */
-        $className = $readerType;
-        if (!in_array($readerType, self::$readers, true)) {
-            if (!isset(self::$readers[$readerType])) {
-                throw new Reader\Exception("No reader found for type $readerType");
-            }
-
-            // Instantiate reader
-            $className = self::$readers[$readerType];
+        if (!isset(self::$readers[$readerType])) {
+            throw new Reader\Exception("No reader found for type $readerType");
         }
+
+        // Instantiate reader
+        $className = self::$readers[$readerType];
 
         return new $className();
     }
@@ -98,9 +88,7 @@ abstract class IOFactory
      * @param string $filename The name of the spreadsheet file
      * @param int $flags the optional second parameter flags may be used to identify specific elements
      *                       that should be loaded, but which won't be loaded by default, using these values:
-     *                            IReader::LOAD_WITH_CHARTS - Include any charts that are defined in the loaded file.
-     *                            IReader::READ_DATA_ONLY - Read cell values only, not formatting or merge structure.
-     *                            IReader::IGNORE_EMPTY_CELLS - Don't load empty cells into the model.
+     *                            IReader::LOAD_WITH_CHARTS - Include any charts that are defined in the loaded file
      * @param string[] $readers An array of Readers to use to identify the file type. By default, load() will try
      *                             all possible Readers until it finds a match; but this allows you to pass in a
      *                             list of Readers so it will only try the subset that you specify here.
@@ -116,17 +104,13 @@ abstract class IOFactory
 
     /**
      * Identify file type using automatic IReader resolution.
-     *
-     * @param string[] $readers
      */
-    public static function identify(string $filename, ?array $readers = null, bool $fullClassName = false): string
+    public static function identify(string $filename, ?array $readers = null): string
     {
         $reader = self::createReaderForFile($filename, $readers);
-        $className = $reader::class;
-        if ($fullClassName) {
-            return $className;
-        }
+        $className = get_class($reader);
         $classType = explode('\\', $className);
+        unset($reader);
 
         return array_pop($classType);
     }
@@ -149,7 +133,9 @@ abstract class IOFactory
             $readers = array_map('strtoupper', $readers);
             $testReaders = array_filter(
                 self::$readers,
-                fn (string $readerType): bool => in_array(strtoupper($readerType), $readers, true),
+                function (string $readerType) use ($readers) {
+                    return in_array(strtoupper($readerType), $readers, true);
+                },
                 ARRAY_FILTER_USE_KEY
             );
         }
@@ -190,45 +176,43 @@ abstract class IOFactory
             return null;
         }
 
-        return match (strtolower($pathinfo['extension'])) {
-            // Excel (OfficeOpenXML) Spreadsheet
-            'xlsx',
-            // Excel (OfficeOpenXML) Macro Spreadsheet (macros will be discarded)
-            'xlsm',
-            // Excel (OfficeOpenXML) Template
-            'xltx',
-            // Excel (OfficeOpenXML) Macro Template (macros will be discarded)
-            'xltm' => 'Xlsx',
-            // Excel (BIFF) Spreadsheet
-            'xls',
-            // Excel (BIFF) Template
-            'xlt' => 'Xls',
-            // Open/Libre Offic Calc
-            'ods',
-            // Open/Libre Offic Calc Template
-            'ots' => 'Ods',
-            'slk' => 'Slk',
-            // Excel 2003 SpreadSheetML
-            'xml' => 'Xml',
-            'gnumeric' => 'Gnumeric',
-            'htm', 'html' => 'Html',
-            // Do nothing
-            // We must not try to use CSV reader since it loads
-            // all files including Excel files etc.
-            'csv' => null,
-            default => null,
-        };
+        switch (strtolower($pathinfo['extension'])) {
+            case 'xlsx': // Excel (OfficeOpenXML) Spreadsheet
+            case 'xlsm': // Excel (OfficeOpenXML) Macro Spreadsheet (macros will be discarded)
+            case 'xltx': // Excel (OfficeOpenXML) Template
+            case 'xltm': // Excel (OfficeOpenXML) Macro Template (macros will be discarded)
+                return 'Xlsx';
+            case 'xls': // Excel (BIFF) Spreadsheet
+            case 'xlt': // Excel (BIFF) Template
+                return 'Xls';
+            case 'ods': // Open/Libre Offic Calc
+            case 'ots': // Open/Libre Offic Calc Template
+                return 'Ods';
+            case 'slk':
+                return 'Slk';
+            case 'xml': // Excel 2003 SpreadSheetML
+                return 'Xml';
+            case 'gnumeric':
+                return 'Gnumeric';
+            case 'htm':
+            case 'html':
+                return 'Html';
+            case 'csv':
+                // Do nothing
+                // We must not try to use CSV reader since it loads
+                // all files including Excel files etc.
+                return null;
+            default:
+                return null;
+        }
     }
 
     /**
      * Register a writer with its type and class name.
-     *
-     * @param class-string<IWriter> $writerClass
      */
     public static function registerWriter(string $writerType, string $writerClass): void
     {
-        // We want phpstan to validate caller, but still need this test
-        if (!is_a($writerClass, IWriter::class, true)) { //* @phpstan-ignore-line
+        if (!is_a($writerClass, IWriter::class, true)) {
             throw new Writer\Exception('Registered writers must implement ' . IWriter::class);
         }
 
@@ -237,13 +221,10 @@ abstract class IOFactory
 
     /**
      * Register a reader with its type and class name.
-     *
-     * @param class-string<IReader> $readerClass
      */
     public static function registerReader(string $readerType, string $readerClass): void
     {
-        // We want phpstan to validate caller, but still need this test
-        if (!is_a($readerClass, IReader::class, true)) { //* @phpstan-ignore-line
+        if (!is_a($readerClass, IReader::class, true)) {
             throw new Reader\Exception('Registered readers must implement ' . IReader::class);
         }
 

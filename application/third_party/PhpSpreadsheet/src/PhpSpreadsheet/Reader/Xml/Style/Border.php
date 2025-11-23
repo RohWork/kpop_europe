@@ -15,20 +15,11 @@ class Border extends StyleBase
         'right',
     ];
 
+    /**
+     * @var array
+     */
     public const BORDER_MAPPINGS = [
         'borderStyle' => [
-            'continuous' => BorderStyle::BORDER_HAIR,
-            'dash' => BorderStyle::BORDER_DASHED,
-            'dashdot' => BorderStyle::BORDER_DASHDOT,
-            'dashdotdot' => BorderStyle::BORDER_DASHDOTDOT,
-            'dot' => BorderStyle::BORDER_DOTTED,
-            'double' => BorderStyle::BORDER_DOUBLE,
-            '0continuous' => BorderStyle::BORDER_HAIR,
-            '0dash' => BorderStyle::BORDER_DASHED,
-            '0dashdot' => BorderStyle::BORDER_DASHDOT,
-            '0dashdotdot' => BorderStyle::BORDER_DASHDOTDOT,
-            '0dot' => BorderStyle::BORDER_DOTTED,
-            '0double' => BorderStyle::BORDER_DOUBLE,
             '1continuous' => BorderStyle::BORDER_THIN,
             '1dash' => BorderStyle::BORDER_DASHED,
             '1dashdot' => BorderStyle::BORDER_DASHDOT,
@@ -50,11 +41,6 @@ class Border extends StyleBase
         ],
     ];
 
-    /**
-     * @param string[] $namespaces
-     *
-     * @return mixed[]
-     */
     public function parseStyle(SimpleXMLElement $styleData, array $namespaces): array
     {
         $style = [];
@@ -72,9 +58,8 @@ class Border extends StyleBase
                 $borderStyleValue = (string) $borderStyleValuex;
                 switch ($borderStyleKey) {
                     case 'Position':
-                        /** @var string $diagonalDirection */
-                        [$borderPosition, $diagonalDirection]
-                            = $this->parsePosition($borderStyleValue, $diagonalDirection);
+                        [$borderPosition, $diagonalDirection] =
+                            $this->parsePosition($borderStyleValue, $diagonalDirection);
 
                         break;
                     case 'Color':
@@ -85,7 +70,6 @@ class Border extends StyleBase
                 }
             }
 
-            /** @var int|string $borderPosition */
             if ($borderPosition) {
                 $style['borders'][$borderPosition] = $thisBorder;
             } elseif ($diagonalDirection) {
@@ -97,10 +81,8 @@ class Border extends StyleBase
         return $style;
     }
 
-    /** @return mixed[] */
     protected function parsePosition(string $borderStyleValue, string $diagonalDirection): array
     {
-        // TODO diagonalDirection seems to return int not string
         $borderStyleValue = strtolower($borderStyleValue);
 
         if (in_array($borderStyleValue, self::BORDER_POSITIONS)) {

@@ -11,7 +11,10 @@ use PhpOffice\PhpSpreadsheet\Style\ConditionalFormatting\Wizard;
  */
 class Expression extends WizardAbstract implements WizardInterface
 {
-    protected string $expression;
+    /**
+     * @var string
+     */
+    protected $expression;
 
     public function __construct(string $cellRange)
     {
@@ -28,7 +31,6 @@ class Expression extends WizardAbstract implements WizardInterface
 
     public function getConditional(): Conditional
     {
-        /** @var string[] */
         $expression = $this->adjustConditionsForCellReferences([$this->expression]);
 
         $conditional = new Conditional();
@@ -55,9 +57,10 @@ class Expression extends WizardAbstract implements WizardInterface
     }
 
     /**
-     * @param string[] $arguments
+     * @param string $methodName
+     * @param mixed[] $arguments
      */
-    public function __call(string $methodName, array $arguments): self
+    public function __call($methodName, $arguments): self
     {
         if ($methodName !== 'formula') {
             throw new Exception('Invalid Operation for Expression CF Rule Wizard');

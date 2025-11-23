@@ -28,17 +28,16 @@ class Periodic
      *                                Values must contain at least one positive value and one negative value to
      *                                    calculate the internal rate of return.
      * @param mixed $guess A number that you guess is close to the result of IRR
+     *
+     * @return float|string
      */
-    public static function rate(mixed $values, mixed $guess = 0.1): string|float
+    public static function rate($values, $guess = 0.1)
     {
         if (!is_array($values)) {
             return ExcelError::VALUE();
         }
         $values = Functions::flattenArray($values);
         $guess = Functions::flattenSingleValue($guess);
-        if (!is_numeric($guess)) {
-            return ExcelError::VALUE();
-        }
 
         // create an initial range, with a root somewhere between 0 and guess
         $x1 = 0.0;
@@ -100,15 +99,13 @@ class Periodic
      *
      * @return float|string Result, or a string containing an error
      */
-    public static function modifiedRate(mixed $values, mixed $financeRate, mixed $reinvestmentRate): string|float
+    public static function modifiedRate($values, $financeRate, $reinvestmentRate)
     {
         if (!is_array($values)) {
-            return ExcelError::DIV0();
+            return ExcelError::VALUE();
         }
         $values = Functions::flattenArray($values);
-        /** @var float */
         $financeRate = Functions::flattenSingleValue($financeRate);
-        /** @var float */
         $reinvestmentRate = Functions::flattenSingleValue($reinvestmentRate);
         $n = count($values);
 
@@ -117,7 +114,6 @@ class Periodic
 
         $npvPos = $npvNeg = 0.0;
         foreach ($values as $i => $v) {
-            /** @var float $v */
             if ($v >= 0) {
                 $npvPos += $v / $rr ** $i;
             } else {
@@ -125,14 +121,14 @@ class Periodic
             }
         }
 
-        if ($npvNeg === 0.0 || $npvPos === 0.0) {
-            return ExcelError::DIV0();
+        if (($npvNeg === 0.0) || ($npvPos === 0.0) || ($reinvestmentRate <= -1.0)) {
+            return ExcelError::VALUE();
         }
 
         $mirr = ((-$npvPos * $rr ** $n)
                 / ($npvNeg * ($rr))) ** (1.0 / ($n - 1)) - 1.0;
 
-        return is_finite($mirr) ? $mirr : ExcelError::NAN();
+        return is_finite($mirr) ? $mirr : ExcelError::VALUE();
     }
 
     /**
@@ -140,13 +136,14 @@ class Periodic
      *
      * Returns the Net Present Value of a cash flow series given a discount rate.
      *
-     * @param array<mixed> $args
+     * @param mixed $rate
+     *
+     * @return float
      */
-    public static function presentValue(mixed $rate, ...$args): int|float
+    public static function presentValue($rate, ...$args)
     {
         $returnValue = 0;
 
-        /** @var float */
         $rate = Functions::flattenSingleValue($rate);
         $aArgs = Functions::flattenArray($args);
 

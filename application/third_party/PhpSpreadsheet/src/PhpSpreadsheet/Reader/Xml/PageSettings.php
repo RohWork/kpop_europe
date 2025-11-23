@@ -2,7 +2,6 @@
 
 namespace PhpOffice\PhpSpreadsheet\Reader\Xml;
 
-use PhpOffice\PhpSpreadsheet\Reader\Xlsx\Namespaces;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 use SimpleXMLElement;
@@ -10,16 +9,15 @@ use stdClass;
 
 class PageSettings
 {
-    /** @var (object{orientation: string, scale: ?int, printOrder: ?string,
-     * paperSize: int,
-     * horizontalCentered: bool, verticalCentered: bool, leftMargin: float, rightMargin: float, topMargin: float,
-     * bottomMargin: float, headerMargin: float, footerMargin: float}&stdClass) */
-    private stdClass $printSettings;
+    /**
+     * @var stdClass
+     */
+    private $printSettings;
 
-    public function __construct(SimpleXMLElement $xmlX)
+    public function __construct(SimpleXMLElement $xmlX, array $namespaces)
     {
-        $printSettings = $this->pageSetup($xmlX, $this->getPrintDefaults());
-        $this->printSettings = $this->printSetup($xmlX, $printSettings); //* @phpstan-ignore-line
+        $printSettings = $this->pageSetup($xmlX, $namespaces, $this->getPrintDefaults());
+        $this->printSettings = $this->printSetup($xmlX, $printSettings);
     }
 
     public function loadPageSettings(Spreadsheet $spreadsheet): void
@@ -58,31 +56,33 @@ class PageSettings
         ];
     }
 
-    private function pageSetup(SimpleXMLElement $xmlX, stdClass $printDefaults): stdClass
+    private function pageSetup(SimpleXMLElement $xmlX, array $namespaces, stdClass $printDefaults): stdClass
     {
         if (isset($xmlX->WorksheetOptions->PageSetup)) {
             foreach ($xmlX->WorksheetOptions->PageSetup as $pageSetupData) {
                 foreach ($pageSetupData as $pageSetupKey => $pageSetupValue) {
-                    $pageSetupAttributes = $pageSetupValue->attributes(Namespaces::URN_EXCEL);
-                    if ($pageSetupAttributes !== null) {
-                        switch ($pageSetupKey) {
-                            case 'Layout':
-                                $this->setLayout($printDefaults, $pageSetupAttributes);
+                    $pageSetupAttributes = $pageSetupValue->attributes($namespaces['x']);
+                    if (!$pageSetupAttributes) {
+                        continue;
+                    }
 
-                                break;
-                            case 'Header':
-                                $printDefaults->headerMargin = (float) $pageSetupAttributes->Margin ?: 1.0;
+                    switch ($pageSetupKey) {
+                        case 'Layout':
+                            $this->setLayout($printDefaults, $pageSetupAttributes);
 
-                                break;
-                            case 'Footer':
-                                $printDefaults->footerMargin = (float) $pageSetupAttributes->Margin ?: 1.0;
+                            break;
+                        case 'Header':
+                            $printDefaults->headerMargin = (float) $pageSetupAttributes->Margin ?: 1.0;
 
-                                break;
-                            case 'PageMargins':
-                                $this->setMargins($printDefaults, $pageSetupAttributes);
+                            break;
+                        case 'Footer':
+                            $printDefaults->footerMargin = (float) $pageSetupAttributes->Margin ?: 1.0;
 
-                                break;
-                        }
+                            break;
+                        case 'PageMargins':
+                            $this->setMargins($printDefaults, $pageSetupAttributes);
+
+                            break;
                     }
                 }
             }

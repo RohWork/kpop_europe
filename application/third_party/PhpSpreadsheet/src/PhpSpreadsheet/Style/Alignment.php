@@ -15,27 +15,6 @@ class Alignment extends Supervisor
     const HORIZONTAL_JUSTIFY = 'justify';
     const HORIZONTAL_FILL = 'fill';
     const HORIZONTAL_DISTRIBUTED = 'distributed'; // Excel2007 only
-    private const HORIZONTAL_CENTER_CONTINUOUS_LC = 'centercontinuous';
-    // Mapping for horizontal alignment
-    const HORIZONTAL_ALIGNMENT_FOR_XLSX = [
-        self::HORIZONTAL_LEFT => self::HORIZONTAL_LEFT,
-        self::HORIZONTAL_RIGHT => self::HORIZONTAL_RIGHT,
-        self::HORIZONTAL_CENTER => self::HORIZONTAL_CENTER,
-        self::HORIZONTAL_CENTER_CONTINUOUS => self::HORIZONTAL_CENTER_CONTINUOUS,
-        self::HORIZONTAL_JUSTIFY => self::HORIZONTAL_JUSTIFY,
-        self::HORIZONTAL_FILL => self::HORIZONTAL_FILL,
-        self::HORIZONTAL_DISTRIBUTED => self::HORIZONTAL_DISTRIBUTED,
-    ];
-    // Mapping for horizontal alignment CSS
-    const HORIZONTAL_ALIGNMENT_FOR_HTML = [
-        self::HORIZONTAL_LEFT => self::HORIZONTAL_LEFT,
-        self::HORIZONTAL_RIGHT => self::HORIZONTAL_RIGHT,
-        self::HORIZONTAL_CENTER => self::HORIZONTAL_CENTER,
-        self::HORIZONTAL_CENTER_CONTINUOUS => self::HORIZONTAL_CENTER,
-        self::HORIZONTAL_JUSTIFY => self::HORIZONTAL_JUSTIFY,
-        //self::HORIZONTAL_FILL => self::HORIZONTAL_FILL, // no reasonable equivalent for fill
-        self::HORIZONTAL_DISTRIBUTED => self::HORIZONTAL_JUSTIFY,
-    ];
 
     // Vertical alignment styles
     const VERTICAL_BOTTOM = 'bottom';
@@ -43,45 +22,6 @@ class Alignment extends Supervisor
     const VERTICAL_CENTER = 'center';
     const VERTICAL_JUSTIFY = 'justify';
     const VERTICAL_DISTRIBUTED = 'distributed'; // Excel2007 only
-    // Vertical alignment CSS
-    private const VERTICAL_BASELINE = 'baseline';
-    private const VERTICAL_MIDDLE = 'middle';
-    private const VERTICAL_SUB = 'sub';
-    private const VERTICAL_SUPER = 'super';
-    private const VERTICAL_TEXT_BOTTOM = 'text-bottom';
-    private const VERTICAL_TEXT_TOP = 'text-top';
-
-    // Mapping for vertical alignment
-    const VERTICAL_ALIGNMENT_FOR_XLSX = [
-        self::VERTICAL_BOTTOM => self::VERTICAL_BOTTOM,
-        self::VERTICAL_TOP => self::VERTICAL_TOP,
-        self::VERTICAL_CENTER => self::VERTICAL_CENTER,
-        self::VERTICAL_JUSTIFY => self::VERTICAL_JUSTIFY,
-        self::VERTICAL_DISTRIBUTED => self::VERTICAL_DISTRIBUTED,
-        // css settings that arent't in sync with Excel
-        self::VERTICAL_BASELINE => self::VERTICAL_BOTTOM,
-        self::VERTICAL_MIDDLE => self::VERTICAL_CENTER,
-        self::VERTICAL_SUB => self::VERTICAL_BOTTOM,
-        self::VERTICAL_SUPER => self::VERTICAL_TOP,
-        self::VERTICAL_TEXT_BOTTOM => self::VERTICAL_BOTTOM,
-        self::VERTICAL_TEXT_TOP => self::VERTICAL_TOP,
-    ];
-
-    // Mapping for vertical alignment for Html
-    const VERTICAL_ALIGNMENT_FOR_HTML = [
-        self::VERTICAL_BOTTOM => self::VERTICAL_BOTTOM,
-        self::VERTICAL_TOP => self::VERTICAL_TOP,
-        self::VERTICAL_CENTER => self::VERTICAL_MIDDLE,
-        self::VERTICAL_JUSTIFY => self::VERTICAL_MIDDLE,
-        self::VERTICAL_DISTRIBUTED => self::VERTICAL_MIDDLE,
-        // css settings that arent't in sync with Excel
-        self::VERTICAL_BASELINE => self::VERTICAL_BASELINE,
-        self::VERTICAL_MIDDLE => self::VERTICAL_MIDDLE,
-        self::VERTICAL_SUB => self::VERTICAL_SUB,
-        self::VERTICAL_SUPER => self::VERTICAL_SUPER,
-        self::VERTICAL_TEXT_BOTTOM => self::VERTICAL_TEXT_BOTTOM,
-        self::VERTICAL_TEXT_TOP => self::VERTICAL_TEXT_TOP,
-    ];
 
     // Read order
     const READORDER_CONTEXT = 0;
@@ -92,47 +32,54 @@ class Alignment extends Supervisor
     const TEXTROTATION_STACK_EXCEL = 255;
     const TEXTROTATION_STACK_PHPSPREADSHEET = -165; // 90 - 255
 
-    public const INDENT_UNITS_TO_PIXELS = 9;
-
     /**
      * Horizontal alignment.
+     *
+     * @var null|string
      */
-    protected ?string $horizontal = self::HORIZONTAL_GENERAL;
-
-    /**
-     * Justify Last Line alignment.
-     */
-    protected ?bool $justifyLastLine = null;
+    protected $horizontal = self::HORIZONTAL_GENERAL;
 
     /**
      * Vertical alignment.
+     *
+     * @var null|string
      */
-    protected ?string $vertical = self::VERTICAL_BOTTOM;
+    protected $vertical = self::VERTICAL_BOTTOM;
 
     /**
      * Text rotation.
+     *
+     * @var null|int
      */
-    protected ?int $textRotation = 0;
+    protected $textRotation = 0;
 
     /**
      * Wrap text.
+     *
+     * @var bool
      */
-    protected bool $wrapText = false;
+    protected $wrapText = false;
 
     /**
      * Shrink to fit.
+     *
+     * @var bool
      */
-    protected bool $shrinkToFit = false;
+    protected $shrinkToFit = false;
 
     /**
      * Indent - only possible with horizontal alignment left and right.
+     *
+     * @var int
      */
-    protected int $indent = 0;
+    protected $indent = 0;
 
     /**
      * Read order.
+     *
+     * @var int
      */
-    protected int $readOrder = 0;
+    protected $readOrder = 0;
 
     /**
      * Create a new Alignment.
@@ -144,7 +91,7 @@ class Alignment extends Supervisor
      *                                       Leave this value at default unless you understand exactly what
      *                                          its ramifications are
      */
-    public function __construct(bool $isSupervisor = false, bool $isConditional = false)
+    public function __construct($isSupervisor = false, $isConditional = false)
     {
         // Supervisor?
         parent::__construct($isSupervisor);
@@ -159,10 +106,12 @@ class Alignment extends Supervisor
     /**
      * Get the shared style component for the currently active cell in currently active sheet.
      * Only used for style supervisor.
+     *
+     * @return Alignment
      */
-    public function getSharedComponent(): self
+    public function getSharedComponent()
     {
-        /** @var Style $parent */
+        /** @var Style */
         $parent = $this->parent;
 
         return $parent->getSharedComponent()->getAlignment();
@@ -171,11 +120,11 @@ class Alignment extends Supervisor
     /**
      * Build style array from subcomponents.
      *
-     * @param mixed[] $array
+     * @param array $array
      *
-     * @return array{alignment: mixed[]}
+     * @return array
      */
-    public function getStyleArray(array $array): array
+    public function getStyleArray($array)
     {
         return ['alignment' => $array];
     }
@@ -194,22 +143,18 @@ class Alignment extends Supervisor
      * );
      * </code>
      *
-     * @param mixed[] $styleArray Array containing style information
+     * @param array $styleArray Array containing style information
      *
      * @return $this
      */
-    public function applyFromArray(array $styleArray): static
+    public function applyFromArray(array $styleArray)
     {
         if ($this->isSupervisor) {
             $this->getActiveSheet()->getStyle($this->getSelectedCells())
                 ->applyFromArray($this->getStyleArray($styleArray));
         } else {
-            /** @var array{horizontal?: string, vertical?: string, justifyLastLine?: bool, textRotation?: int, wrapText?: bool, shrinkToFit?: bool, readOrder?: int, indent?: int} $styleArray */
             if (isset($styleArray['horizontal'])) {
                 $this->setHorizontal($styleArray['horizontal']);
-            }
-            if (isset($styleArray['justifyLastLine'])) {
-                $this->setJustifyLastLine($styleArray['justifyLastLine']);
             }
             if (isset($styleArray['vertical'])) {
                 $this->setVertical($styleArray['vertical']);
@@ -236,8 +181,10 @@ class Alignment extends Supervisor
 
     /**
      * Get Horizontal.
+     *
+     * @return null|string
      */
-    public function getHorizontal(): null|string
+    public function getHorizontal()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getHorizontal();
@@ -253,11 +200,10 @@ class Alignment extends Supervisor
      *
      * @return $this
      */
-    public function setHorizontal(string $horizontalAlignment): static
+    public function setHorizontal(string $horizontalAlignment)
     {
-        $horizontalAlignment = strtolower($horizontalAlignment);
-        if ($horizontalAlignment === self::HORIZONTAL_CENTER_CONTINUOUS_LC) {
-            $horizontalAlignment = self::HORIZONTAL_CENTER_CONTINUOUS;
+        if ($horizontalAlignment == '') {
+            $horizontalAlignment = self::HORIZONTAL_GENERAL;
         }
 
         if ($this->isSupervisor) {
@@ -271,38 +217,11 @@ class Alignment extends Supervisor
     }
 
     /**
-     * Get Justify Last Line.
-     */
-    public function getJustifyLastLine(): ?bool
-    {
-        if ($this->isSupervisor) {
-            return $this->getSharedComponent()->getJustifyLastLine();
-        }
-
-        return $this->justifyLastLine;
-    }
-
-    /**
-     * Set Justify Last Line.
-     *
-     * @return $this
-     */
-    public function setJustifyLastLine(bool $justifyLastLine): static
-    {
-        if ($this->isSupervisor) {
-            $styleArray = $this->getStyleArray(['justifyLastLine' => $justifyLastLine]);
-            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
-        } else {
-            $this->justifyLastLine = $justifyLastLine;
-        }
-
-        return $this;
-    }
-
-    /**
      * Get Vertical.
+     *
+     * @return null|string
      */
-    public function getVertical(): null|string
+    public function getVertical()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getVertical();
@@ -318,9 +237,11 @@ class Alignment extends Supervisor
      *
      * @return $this
      */
-    public function setVertical(string $verticalAlignment): static
+    public function setVertical($verticalAlignment)
     {
-        $verticalAlignment = strtolower($verticalAlignment);
+        if ($verticalAlignment == '') {
+            $verticalAlignment = self::VERTICAL_BOTTOM;
+        }
 
         if ($this->isSupervisor) {
             $styleArray = $this->getStyleArray(['vertical' => $verticalAlignment]);
@@ -334,8 +255,10 @@ class Alignment extends Supervisor
 
     /**
      * Get TextRotation.
+     *
+     * @return null|int
      */
-    public function getTextRotation(): null|int
+    public function getTextRotation()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getTextRotation();
@@ -347,9 +270,11 @@ class Alignment extends Supervisor
     /**
      * Set TextRotation.
      *
+     * @param int $angleInDegrees
+     *
      * @return $this
      */
-    public function setTextRotation(int $angleInDegrees): static
+    public function setTextRotation($angleInDegrees)
     {
         // Excel2007 value 255 => PhpSpreadsheet value -165
         if ($angleInDegrees == self::TEXTROTATION_STACK_EXCEL) {
@@ -373,8 +298,10 @@ class Alignment extends Supervisor
 
     /**
      * Get Wrap Text.
+     *
+     * @return bool
      */
-    public function getWrapText(): bool
+    public function getWrapText()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getWrapText();
@@ -386,9 +313,11 @@ class Alignment extends Supervisor
     /**
      * Set Wrap Text.
      *
+     * @param bool $wrapped
+     *
      * @return $this
      */
-    public function setWrapText(bool $wrapped): static
+    public function setWrapText($wrapped)
     {
         if ($wrapped == '') {
             $wrapped = false;
@@ -405,8 +334,10 @@ class Alignment extends Supervisor
 
     /**
      * Get Shrink to fit.
+     *
+     * @return bool
      */
-    public function getShrinkToFit(): bool
+    public function getShrinkToFit()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getShrinkToFit();
@@ -418,9 +349,11 @@ class Alignment extends Supervisor
     /**
      * Set Shrink to fit.
      *
+     * @param bool $shrink
+     *
      * @return $this
      */
-    public function setShrinkToFit(bool $shrink): static
+    public function setShrinkToFit($shrink)
     {
         if ($shrink == '') {
             $shrink = false;
@@ -437,8 +370,10 @@ class Alignment extends Supervisor
 
     /**
      * Get indent.
+     *
+     * @return int
      */
-    public function getIndent(): int
+    public function getIndent()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getIndent();
@@ -450,16 +385,18 @@ class Alignment extends Supervisor
     /**
      * Set indent.
      *
+     * @param int $indent
+     *
      * @return $this
      */
-    public function setIndent(int $indent): static
+    public function setIndent($indent)
     {
         if ($indent > 0) {
             if (
-                $this->getHorizontal() != self::HORIZONTAL_GENERAL
-                && $this->getHorizontal() != self::HORIZONTAL_LEFT
-                && $this->getHorizontal() != self::HORIZONTAL_RIGHT
-                && $this->getHorizontal() != self::HORIZONTAL_DISTRIBUTED
+                $this->getHorizontal() != self::HORIZONTAL_GENERAL &&
+                $this->getHorizontal() != self::HORIZONTAL_LEFT &&
+                $this->getHorizontal() != self::HORIZONTAL_RIGHT &&
+                $this->getHorizontal() != self::HORIZONTAL_DISTRIBUTED
             ) {
                 $indent = 0; // indent not supported
             }
@@ -476,8 +413,10 @@ class Alignment extends Supervisor
 
     /**
      * Get read order.
+     *
+     * @return int
      */
-    public function getReadOrder(): int
+    public function getReadOrder()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getReadOrder();
@@ -489,9 +428,11 @@ class Alignment extends Supervisor
     /**
      * Set read order.
      *
+     * @param int $readOrder
+     *
      * @return $this
      */
-    public function setReadOrder(int $readOrder): static
+    public function setReadOrder($readOrder)
     {
         if ($readOrder < 0 || $readOrder > 2) {
             $readOrder = 0;
@@ -511,31 +452,28 @@ class Alignment extends Supervisor
      *
      * @return string Hash code
      */
-    public function getHashCode(): string
+    public function getHashCode()
     {
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getHashCode();
         }
 
         return md5(
-            $this->horizontal
-            . (($this->justifyLastLine === null) ? 'null' : ($this->justifyLastLine ? 't' : 'f'))
-            . $this->vertical
-            . $this->textRotation
-            . ($this->wrapText ? 't' : 'f')
-            . ($this->shrinkToFit ? 't' : 'f')
-            . $this->indent
-            . $this->readOrder
-            . __CLASS__
+            $this->horizontal .
+            $this->vertical .
+            $this->textRotation .
+            ($this->wrapText ? 't' : 'f') .
+            ($this->shrinkToFit ? 't' : 'f') .
+            $this->indent .
+            $this->readOrder .
+            __CLASS__
         );
     }
 
-    /** @return mixed[] */
     protected function exportArray1(): array
     {
         $exportedArray = [];
         $this->exportArray2($exportedArray, 'horizontal', $this->getHorizontal());
-        $this->exportArray2($exportedArray, 'justifyLastLine', $this->getJustifyLastLine());
         $this->exportArray2($exportedArray, 'indent', $this->getIndent());
         $this->exportArray2($exportedArray, 'readOrder', $this->getReadOrder());
         $this->exportArray2($exportedArray, 'shrinkToFit', $this->getShrinkToFit());

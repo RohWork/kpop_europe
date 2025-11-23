@@ -22,13 +22,14 @@ class Difference
      * @param mixed $endDate Excel date serial value, PHP date/time stamp, PHP DateTime object
      *                                    or a standard date string
      *                         Or can be an array of date values
-     * @param array<mixed>|string $unit Or can be an array of unit values
+     * @param array|string $unit
+     *                         Or can be an array of unit values
      *
-     * @return array<mixed>|int|string Interval between the dates
+     * @return array|int|string Interval between the dates
      *         If an array of values is passed for the $startDate or $endDays,arguments, then the returned result
      *            will also be an array with matching dimensions
      */
-    public static function interval(mixed $startDate, mixed $endDate, array|string $unit = 'D')
+    public static function interval($startDate, $endDate, $unit = 'D')
     {
         if (is_array($startDate) || is_array($endDate) || is_array($unit)) {
             return self::evaluateArrayArguments([self::class, __FUNCTION__], $startDate, $endDate, $unit);
@@ -46,12 +47,12 @@ class Difference
         // Execute function
         $PHPStartDateObject = SharedDateHelper::excelToDateTimeObject($startDate);
         $startDays = (int) $PHPStartDateObject->format('j');
-        //$startMonths = (int) $PHPStartDateObject->format('n');
+        $startMonths = (int) $PHPStartDateObject->format('n');
         $startYears = (int) $PHPStartDateObject->format('Y');
 
         $PHPEndDateObject = SharedDateHelper::excelToDateTimeObject($endDate);
         $endDays = (int) $PHPEndDateObject->format('j');
-        //$endMonths = (int) $PHPEndDateObject->format('n');
+        $endMonths = (int) $PHPEndDateObject->format('n');
         $endYears = (int) $PHPEndDateObject->format('Y');
 
         $PHPDiffDateObject = $PHPEndDateObject->diff($PHPStartDateObject);
@@ -79,8 +80,12 @@ class Difference
 
     /**
      * Decide whether it's time to set retVal.
+     *
+     * @param bool|int $retVal
+     *
+     * @return null|bool|int
      */
-    private static function replaceRetValue(bool|int $retVal, string $unit, string $compare): null|bool|int
+    private static function replaceRetValue($retVal, string $unit, string $compare)
     {
         if ($retVal !== false || $unit !== $compare) {
             return $retVal;
@@ -128,12 +133,12 @@ class Difference
             // Adjust end year to be as close as possible as start year
             while ($PHPEndDateObject >= $PHPStartDateObject) {
                 $PHPEndDateObject->modify('-1 year');
-                //$endYears = $PHPEndDateObject->format('Y');
+                $endYears = $PHPEndDateObject->format('Y');
             }
             $PHPEndDateObject->modify('+1 year');
 
             // Get the result
-            $retVal = (int) $PHPEndDateObject->diff($PHPStartDateObject)->days;
+            $retVal = $PHPEndDateObject->diff($PHPStartDateObject)->days;
 
             // Adjust for leap years cases
             $isLeapEndYear = $PHPEndDateObject->format('L');

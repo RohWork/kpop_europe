@@ -18,104 +18,144 @@ class Protection
     const ALGORITHM_WHIRLPOOL = 'WHIRLPOOL';
 
     /**
-     * Autofilters are locked when sheet is protected, default true.
+     * Sheet.
+     *
+     * @var bool
      */
-    private ?bool $autoFilter = null;
+    private $sheet = false;
 
     /**
-     * Deleting columns is locked when sheet is protected, default true.
+     * Objects.
+     *
+     * @var bool
      */
-    private ?bool $deleteColumns = null;
+    private $objects = false;
 
     /**
-     * Deleting rows is locked when sheet is protected, default true.
+     * Scenarios.
+     *
+     * @var bool
      */
-    private ?bool $deleteRows = null;
+    private $scenarios = false;
 
     /**
-     * Formatting cells is locked when sheet is protected, default true.
+     * Format cells.
+     *
+     * @var bool
      */
-    private ?bool $formatCells = null;
+    private $formatCells = false;
 
     /**
-     * Formatting columns is locked when sheet is protected, default true.
+     * Format columns.
+     *
+     * @var bool
      */
-    private ?bool $formatColumns = null;
+    private $formatColumns = false;
 
     /**
-     * Formatting rows is locked when sheet is protected, default true.
+     * Format rows.
+     *
+     * @var bool
      */
-    private ?bool $formatRows = null;
+    private $formatRows = false;
 
     /**
-     * Inserting columns is locked when sheet is protected, default true.
+     * Insert columns.
+     *
+     * @var bool
      */
-    private ?bool $insertColumns = null;
+    private $insertColumns = false;
 
     /**
-     * Inserting hyperlinks is locked when sheet is protected, default true.
+     * Insert rows.
+     *
+     * @var bool
      */
-    private ?bool $insertHyperlinks = null;
+    private $insertRows = false;
 
     /**
-     * Inserting rows is locked when sheet is protected, default true.
+     * Insert hyperlinks.
+     *
+     * @var bool
      */
-    private ?bool $insertRows = null;
+    private $insertHyperlinks = false;
 
     /**
-     * Objects are locked when sheet is protected, default false.
+     * Delete columns.
+     *
+     * @var bool
      */
-    private ?bool $objects = null;
+    private $deleteColumns = false;
 
     /**
-     * Pivot tables are locked when the sheet is protected, default true.
+     * Delete rows.
+     *
+     * @var bool
      */
-    private ?bool $pivotTables = null;
+    private $deleteRows = false;
 
     /**
-     * Scenarios are locked when sheet is protected, default false.
+     * Select locked cells.
+     *
+     * @var bool
      */
-    private ?bool $scenarios = null;
+    private $selectLockedCells = false;
 
     /**
-     * Selection of locked cells is locked when sheet is protected, default false.
+     * Sort.
+     *
+     * @var bool
      */
-    private ?bool $selectLockedCells = null;
+    private $sort = false;
 
     /**
-     * Selection of unlocked cells is locked when sheet is protected, default false.
+     * AutoFilter.
+     *
+     * @var bool
      */
-    private ?bool $selectUnlockedCells = null;
+    private $autoFilter = false;
 
     /**
-     * Sheet is locked when sheet is protected, default false.
+     * Pivot tables.
+     *
+     * @var bool
      */
-    private ?bool $sheet = null;
+    private $pivotTables = false;
 
     /**
-     * Sorting is locked when sheet is protected, default true.
+     * Select unlocked cells.
+     *
+     * @var bool
      */
-    private ?bool $sort = null;
+    private $selectUnlockedCells = false;
 
     /**
      * Hashed password.
+     *
+     * @var string
      */
-    private string $password = '';
+    private $password = '';
 
     /**
      * Algorithm name.
+     *
+     * @var string
      */
-    private string $algorithm = '';
+    private $algorithm = '';
 
     /**
      * Salt value.
+     *
+     * @var string
      */
-    private string $salt = '';
+    private $salt = '';
 
     /**
      * Spin count.
+     *
+     * @var int
      */
-    private int $spinCount = 10000;
+    private $spinCount = 10000;
 
     /**
      * Create a new Protection.
@@ -126,215 +166,407 @@ class Protection
 
     /**
      * Is some sort of protection enabled?
+     *
+     * @return bool
      */
-    public function isProtectionEnabled(): bool
+    public function isProtectionEnabled()
     {
-        return
-            $this->password !== ''
-            || isset($this->sheet)
-            || isset($this->objects)
-            || isset($this->scenarios)
-            || isset($this->formatCells)
-            || isset($this->formatColumns)
-            || isset($this->formatRows)
-            || isset($this->insertColumns)
-            || isset($this->insertRows)
-            || isset($this->insertHyperlinks)
-            || isset($this->deleteColumns)
-            || isset($this->deleteRows)
-            || isset($this->selectLockedCells)
-            || isset($this->sort)
-            || isset($this->autoFilter)
-            || isset($this->pivotTables)
-            || isset($this->selectUnlockedCells);
+        return $this->sheet ||
+            $this->objects ||
+            $this->scenarios ||
+            $this->formatCells ||
+            $this->formatColumns ||
+            $this->formatRows ||
+            $this->insertColumns ||
+            $this->insertRows ||
+            $this->insertHyperlinks ||
+            $this->deleteColumns ||
+            $this->deleteRows ||
+            $this->selectLockedCells ||
+            $this->sort ||
+            $this->autoFilter ||
+            $this->pivotTables ||
+            $this->selectUnlockedCells;
     }
 
-    public function getSheet(): ?bool
+    /**
+     * Get Sheet.
+     *
+     * @return bool
+     */
+    public function getSheet()
     {
         return $this->sheet;
     }
 
-    public function setSheet(?bool $sheet): self
+    /**
+     * Set Sheet.
+     *
+     * @param bool $sheet
+     *
+     * @return $this
+     */
+    public function setSheet($sheet)
     {
         $this->sheet = $sheet;
 
         return $this;
     }
 
-    public function getObjects(): ?bool
+    /**
+     * Get Objects.
+     *
+     * @return bool
+     */
+    public function getObjects()
     {
         return $this->objects;
     }
 
-    public function setObjects(?bool $objects): self
+    /**
+     * Set Objects.
+     *
+     * @param bool $objects
+     *
+     * @return $this
+     */
+    public function setObjects($objects)
     {
         $this->objects = $objects;
 
         return $this;
     }
 
-    public function getScenarios(): ?bool
+    /**
+     * Get Scenarios.
+     *
+     * @return bool
+     */
+    public function getScenarios()
     {
         return $this->scenarios;
     }
 
-    public function setScenarios(?bool $scenarios): self
+    /**
+     * Set Scenarios.
+     *
+     * @param bool $scenarios
+     *
+     * @return $this
+     */
+    public function setScenarios($scenarios)
     {
         $this->scenarios = $scenarios;
 
         return $this;
     }
 
-    public function getFormatCells(): ?bool
+    /**
+     * Get FormatCells.
+     *
+     * @return bool
+     */
+    public function getFormatCells()
     {
         return $this->formatCells;
     }
 
-    public function setFormatCells(?bool $formatCells): self
+    /**
+     * Set FormatCells.
+     *
+     * @param bool $formatCells
+     *
+     * @return $this
+     */
+    public function setFormatCells($formatCells)
     {
         $this->formatCells = $formatCells;
 
         return $this;
     }
 
-    public function getFormatColumns(): ?bool
+    /**
+     * Get FormatColumns.
+     *
+     * @return bool
+     */
+    public function getFormatColumns()
     {
         return $this->formatColumns;
     }
 
-    public function setFormatColumns(?bool $formatColumns): self
+    /**
+     * Set FormatColumns.
+     *
+     * @param bool $formatColumns
+     *
+     * @return $this
+     */
+    public function setFormatColumns($formatColumns)
     {
         $this->formatColumns = $formatColumns;
 
         return $this;
     }
 
-    public function getFormatRows(): ?bool
+    /**
+     * Get FormatRows.
+     *
+     * @return bool
+     */
+    public function getFormatRows()
     {
         return $this->formatRows;
     }
 
-    public function setFormatRows(?bool $formatRows): self
+    /**
+     * Set FormatRows.
+     *
+     * @param bool $formatRows
+     *
+     * @return $this
+     */
+    public function setFormatRows($formatRows)
     {
         $this->formatRows = $formatRows;
 
         return $this;
     }
 
-    public function getInsertColumns(): ?bool
+    /**
+     * Get InsertColumns.
+     *
+     * @return bool
+     */
+    public function getInsertColumns()
     {
         return $this->insertColumns;
     }
 
-    public function setInsertColumns(?bool $insertColumns): self
+    /**
+     * Set InsertColumns.
+     *
+     * @param bool $insertColumns
+     *
+     * @return $this
+     */
+    public function setInsertColumns($insertColumns)
     {
         $this->insertColumns = $insertColumns;
 
         return $this;
     }
 
-    public function getInsertRows(): ?bool
+    /**
+     * Get InsertRows.
+     *
+     * @return bool
+     */
+    public function getInsertRows()
     {
         return $this->insertRows;
     }
 
-    public function setInsertRows(?bool $insertRows): self
+    /**
+     * Set InsertRows.
+     *
+     * @param bool $insertRows
+     *
+     * @return $this
+     */
+    public function setInsertRows($insertRows)
     {
         $this->insertRows = $insertRows;
 
         return $this;
     }
 
-    public function getInsertHyperlinks(): ?bool
+    /**
+     * Get InsertHyperlinks.
+     *
+     * @return bool
+     */
+    public function getInsertHyperlinks()
     {
         return $this->insertHyperlinks;
     }
 
-    public function setInsertHyperlinks(?bool $insertHyperLinks): self
+    /**
+     * Set InsertHyperlinks.
+     *
+     * @param bool $insertHyperLinks
+     *
+     * @return $this
+     */
+    public function setInsertHyperlinks($insertHyperLinks)
     {
         $this->insertHyperlinks = $insertHyperLinks;
 
         return $this;
     }
 
-    public function getDeleteColumns(): ?bool
+    /**
+     * Get DeleteColumns.
+     *
+     * @return bool
+     */
+    public function getDeleteColumns()
     {
         return $this->deleteColumns;
     }
 
-    public function setDeleteColumns(?bool $deleteColumns): self
+    /**
+     * Set DeleteColumns.
+     *
+     * @param bool $deleteColumns
+     *
+     * @return $this
+     */
+    public function setDeleteColumns($deleteColumns)
     {
         $this->deleteColumns = $deleteColumns;
 
         return $this;
     }
 
-    public function getDeleteRows(): ?bool
+    /**
+     * Get DeleteRows.
+     *
+     * @return bool
+     */
+    public function getDeleteRows()
     {
         return $this->deleteRows;
     }
 
-    public function setDeleteRows(?bool $deleteRows): self
+    /**
+     * Set DeleteRows.
+     *
+     * @param bool $deleteRows
+     *
+     * @return $this
+     */
+    public function setDeleteRows($deleteRows)
     {
         $this->deleteRows = $deleteRows;
 
         return $this;
     }
 
-    public function getSelectLockedCells(): ?bool
+    /**
+     * Get SelectLockedCells.
+     *
+     * @return bool
+     */
+    public function getSelectLockedCells()
     {
         return $this->selectLockedCells;
     }
 
-    public function setSelectLockedCells(?bool $selectLockedCells): self
+    /**
+     * Set SelectLockedCells.
+     *
+     * @param bool $selectLockedCells
+     *
+     * @return $this
+     */
+    public function setSelectLockedCells($selectLockedCells)
     {
         $this->selectLockedCells = $selectLockedCells;
 
         return $this;
     }
 
-    public function getSort(): ?bool
+    /**
+     * Get Sort.
+     *
+     * @return bool
+     */
+    public function getSort()
     {
         return $this->sort;
     }
 
-    public function setSort(?bool $sort): self
+    /**
+     * Set Sort.
+     *
+     * @param bool $sort
+     *
+     * @return $this
+     */
+    public function setSort($sort)
     {
         $this->sort = $sort;
 
         return $this;
     }
 
-    public function getAutoFilter(): ?bool
+    /**
+     * Get AutoFilter.
+     *
+     * @return bool
+     */
+    public function getAutoFilter()
     {
         return $this->autoFilter;
     }
 
-    public function setAutoFilter(?bool $autoFilter): self
+    /**
+     * Set AutoFilter.
+     *
+     * @param bool $autoFilter
+     *
+     * @return $this
+     */
+    public function setAutoFilter($autoFilter)
     {
         $this->autoFilter = $autoFilter;
 
         return $this;
     }
 
-    public function getPivotTables(): ?bool
+    /**
+     * Get PivotTables.
+     *
+     * @return bool
+     */
+    public function getPivotTables()
     {
         return $this->pivotTables;
     }
 
-    public function setPivotTables(?bool $pivotTables): self
+    /**
+     * Set PivotTables.
+     *
+     * @param bool $pivotTables
+     *
+     * @return $this
+     */
+    public function setPivotTables($pivotTables)
     {
         $this->pivotTables = $pivotTables;
 
         return $this;
     }
 
-    public function getSelectUnlockedCells(): ?bool
+    /**
+     * Get SelectUnlockedCells.
+     *
+     * @return bool
+     */
+    public function getSelectUnlockedCells()
     {
         return $this->selectUnlockedCells;
     }
 
-    public function setSelectUnlockedCells(?bool $selectUnlockedCells): self
+    /**
+     * Set SelectUnlockedCells.
+     *
+     * @param bool $selectUnlockedCells
+     *
+     * @return $this
+     */
+    public function setSelectUnlockedCells($selectUnlockedCells)
     {
         $this->selectUnlockedCells = $selectUnlockedCells;
 
@@ -343,8 +575,10 @@ class Protection
 
     /**
      * Get hashed password.
+     *
+     * @return string
      */
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->password;
     }
@@ -352,11 +586,12 @@ class Protection
     /**
      * Set Password.
      *
+     * @param string $password
      * @param bool $alreadyHashed If the password has already been hashed, set this to true
      *
      * @return $this
      */
-    public function setPassword(string $password, bool $alreadyHashed = false): static
+    public function setPassword($password, $alreadyHashed = false)
     {
         if (!$alreadyHashed) {
             $salt = $this->generateSalt();
@@ -367,11 +602,6 @@ class Protection
         $this->password = $password;
 
         return $this;
-    }
-
-    public function setHashValue(string $password): self
-    {
-        return $this->setPassword($password, true);
     }
 
     /**
@@ -393,36 +623,25 @@ class Protection
     /**
      * Set algorithm name.
      */
-    public function setAlgorithm(string $algorithm): self
+    public function setAlgorithm(string $algorithm): void
     {
-        return $this->setAlgorithmName($algorithm);
+        $this->algorithm = $algorithm;
     }
 
     /**
-     * Set algorithm name.
+     * Get salt value.
      */
-    public function setAlgorithmName(string $algorithm): self
-    {
-        $this->algorithm = $algorithm;
-
-        return $this;
-    }
-
     public function getSalt(): string
     {
         return $this->salt;
     }
 
-    public function setSalt(string $salt): self
-    {
-        return $this->setSaltValue($salt);
-    }
-
-    public function setSaltValue(string $salt): self
+    /**
+     * Set salt value.
+     */
+    public function setSalt(string $salt): void
     {
         $this->salt = $salt;
-
-        return $this;
     }
 
     /**
@@ -436,11 +655,9 @@ class Protection
     /**
      * Set spin count.
      */
-    public function setSpinCount(int $spinCount): self
+    public function setSpinCount(int $spinCount): void
     {
         $this->spinCount = $spinCount;
-
-        return $this;
     }
 
     /**
@@ -448,7 +665,7 @@ class Protection
      */
     public function verify(string $password): bool
     {
-        if ($this->password === '') {
+        if (!$this->isProtectionEnabled()) {
             return true;
         }
 
