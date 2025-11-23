@@ -542,8 +542,8 @@ class Schedule extends CI_Controller {
                     
                     $params['type'] = $b= $activesheet->getCell('B' . $row)->getValue(); // type
 
-                    $c =  $activesheet->getCell('C' . $row)->getValue(); // Company 
-                    $organization = $this->org_md->get_organization_name($c);
+                    $organization =  $activesheet->getCell('C' . $row)->getValue(); // Company 
+                    //$organization = $this->org_md->get_organization_name($c);
 
                     $d = $activesheet->getCell('D' . $row)->getValue(); // Country
                     $country = $this->cont_md->get_country_name($d);
