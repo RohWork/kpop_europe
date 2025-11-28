@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            등록 처리 완료 🎉
+            등록 처리 완료
             <small>미등록 항목 등록 결과</small>
         </h1>
         <ol class="breadcrumb">
