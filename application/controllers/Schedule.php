@@ -2,6 +2,9 @@
 
 require_once APPPATH . 'third_party/PhpSpreadsheet/autoload.php';
 
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
+
 class Schedule extends CI_Controller {
     
     function __construct() {
