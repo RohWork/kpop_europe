@@ -749,5 +749,13 @@ class Schedule extends CI_Controller {
         
     }
     
+    public function test_excel()
+    {
+        require_once APPPATH.'third_party/PhpSpreadsheet/autoload.php';
+
+        $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
+        echo "OK! PhpSpreadsheet loaded";
+    }
+    
     
 }
