@@ -1,8 +1,6 @@
 <?php
 
-use PhpOffice\PhpSpreadsheet\IOFactory; // IOFactory 사용을 위해
-use PhpOffice\PhpSpreadsheet\Shared\Date; // 날짜 변환을 위해
-use PhpOffice\PhpSpreadsheet\Style\NumberFormat; // 숫자 포맷을 위해
+require_once APPPATH . 'third_party/PhpSpreadsheet/autoload.php';
 
 class Schedule extends CI_Controller {
     
