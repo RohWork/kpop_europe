@@ -69,7 +69,7 @@
                             <p>
                                 해당 항목들을 확인하고 일괄 등록하시겠습니까?
                             </p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#notFoundModal">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notFoundModal">
                                 미등록 항목 등록/확인 (<?php echo count($not_found_data); ?> 건)
                             </button>
                         <?php else: ?>
@@ -133,7 +133,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal">닫기</button>
                 <button type="submit" form="register_not_found_form" class="btn btn-success">선택 항목 일괄 등록</button>
             </div>
         </div>
