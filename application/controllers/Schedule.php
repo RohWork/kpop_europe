@@ -1,6 +1,6 @@
 <?php
 
-require_once APPPATH . 'third_party/PhpSpreadsheet/autoload.php';
+require_once APPPATH . 'third_party/PhpSpreadsheet/vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
