@@ -506,148 +506,143 @@ class Schedule extends CI_Controller {
         $this->load->view('footer');
     }
     
-    function excel_process(){
-    
-        $data = array();
-        $excel_data = array();
-
-        // 1. **[변경]** PHPExcel 라이브러리 대신 PhpSpreadsheet 라이브러리 로드
-        // 위에서 생성한 래퍼 라이브러리를 로드합니다.
-        $this->load->library('spreadsheet_lib');
+    public function excel_process()
+    {
+        $data = [];
+        $excel_data = [];
 
         $filename = $_FILES['upload_excel']['tmp_name'];
 
-        try{
-            // 2. **[변경]** PHPExcel_IOFactory::load() 대신 IOFactory::load() 사용
-            // IOFactory를 사용하여 엑셀 파일 읽기
-            // 파일 확장자를 자동으로 감지합니다.
+        try {
             $spreadsheet = IOFactory::load($filename);
-
             $sheetsCount = $spreadsheet->getSheetCount();
 
-            // 시트Sheet별로 읽기
-            for($sheet = 0; $sheet < $sheetsCount; $sheet++) {
+            for ($sheet = 0; $sheet < $sheetsCount; $sheet++) {
 
-                // 3. **[변경]** getActiveSheet() 대신 getSheet() 사용
                 $worksheet = $spreadsheet->getSheet($sheet);
+                $highestRow = $worksheet->getHighestRow();
 
-                $highestRow = $worksheet->getHighestRow();        // 마지막 행
-                $highestColumn = $worksheet->getHighestColumn();  // 마지막 컬럼
+                for ($row = 2; $row <= $highestRow; $row++) {
 
-                // 한줄읽기
-                for($row = 2; $row <= $highestRow; $row++) {
+                    // 셀 객체 미리 캐싱하여 성능 향상
+                    $b_cell = $worksheet->getCell("B{$row}");
+                    $c_cell = $worksheet->getCell("C{$row}");
+                    $d_cell = $worksheet->getCell("D{$row}");
+                    $e_cell = $worksheet->getCell("E{$row}");
+                    $f_cell = $worksheet->getCell("F{$row}");
+                    $g_cell = $worksheet->getCell("G{$row}");
+                    $h_cell = $worksheet->getCell("H{$row}"); // Open date
+                    $i_cell = $worksheet->getCell("I{$row}"); // Open time
+                    $j_cell = $worksheet->getCell("J{$row}"); // Close date
+                    $k_cell = $worksheet->getCell("K{$row}"); // Close time
+                    $l_cell = $worksheet->getCell("L{$row}");
+                    $m_cell = $worksheet->getCell("M{$row}");
+                    $n_cell = $worksheet->getCell("N{$row}");
 
-                    $params = array();
+                    $params = [];
 
-                    // 4. **[변경]** 셀 값 읽기: getValue()는 동일, getCell()은 객체 메소드
+                    // 기본 값 매핑
+                    $params['type'] = $b_cell->getValue();
+                    $companyName = $c_cell->getValue();
+                    $countryName = $d_cell->getValue();
+                    $cityName    = $e_cell->getValue();
+                    $params['space'] = $f_cell->getValue();
+                    $params['addr']  = $g_cell->getValue();
 
-                    $params['type'] = $b = $worksheet->getCell('B' . $row)->getValue(); // type
+                    // DB 매핑
+                    $organization = $this->org_md->get_organization_name($companyName);
+                    $country      = $this->cont_md->get_country_name($countryName);
+                    $city         = $this->city_md->get_city_name($cityName);
 
-                    $c = $worksheet->getCell('C' . $row)->getValue(); // Company 
-                    $organization = $this->org_md->get_organization_name($c);
+                    // 날짜 처리 (통합 함수 사용)
+                    $start_date = $this->parseExcelDate($h_cell);
+                    $end_date   = $this->parseExcelDate($j_cell);
 
-                    $d = $worksheet->getCell('D' . $row)->getValue(); // Country
-                    $country = $this->cont_md->get_country_name($d);
+                    // 시간 문자 그대로 사용
+                    $start_time = $i_cell->getValue();
+                    $end_time   = $k_cell->getValue();
 
-                    $e = $worksheet->getCell('E' . $row)->getValue(); // City 
-                    $city = $this->city_md->get_city_name($e);
-
-                    $params['space'] = $f = $worksheet->getCell('F' . $row)->getValue(); // Address (Club Name)
-
-                    $params['addr'] = $g = $worksheet->getCell('G' . $row)->getValue(); // Address
-
-                    // 5. **[변경]** 날짜/시간 포맷 처리
-                    $h = $worksheet->getCell('H' . $row)->getValue(); // Open (날짜)
-                    $k = $worksheet->getCell('K' . $row)->getValue(); // Close Time 
-
-                    // 날짜 포맷 변환 (PHPExcel_Style_NumberFormat 대신 Shared\Date::excelToDateTimeObject 사용)
-
-                    $h_val = $worksheet->getCell('H' . $row)->getValue(); 
-                    $j_val = $worksheet->getCell('J' . $row)->getValue(); 
-
-                     if (is_numeric($h_val) && \PhpOffice\PhpSpreadsheet\Shared\Date::isExcelDate($h_val)) {
-                         // isExcelDate()를 사용하여 Excel 날짜 값인지 명확하게 확인하는 것이 더 안전합니다.
-                         $date_start_obj = Date::excelToDateTimeObject($h_val);
-                         $h = $date_start_obj->format("d-m-Y");
-                     } else {
-                         $h = $h_val; // 숫자가 아니거나 유효한 날짜 값이 아니면 그대로 사용
-                     }
-
-                     if (is_numeric($j_val) && \PhpOffice\PhpSpreadsheet\Shared\Date::isExcelDate($j_val)) {
-                         $date_end_obj = Date::excelToDateTimeObject($j_val);
-                         $j = $date_end_obj->format("d-m-Y");
-                     } else {
-                         $j = $j_val;
-}
-
-                    $date_start = DateTime::createFromFormat("d-m-Y", $h);
-                    $date_end = DateTime::createFromFormat("d-m-Y", $j);
-
-                    if ($date_start && $date_end) {
-                        $params['start_date'] = $date_start->format("Y-m-d")." ".$i;
-                        $params['end_date'] = $date_end->format("Y-m-d")." ".$k;
+                    if ($start_date && $start_time) {
+                        $params['start_date'] = "{$start_date} {$start_time}";
                     } else {
-                        // 날짜 변환 실패 처리 (필요하다면)
                         $params['start_date'] = null;
+                    }
+
+                    if ($end_date && $end_time) {
+                        $params['end_date'] = "{$end_date} {$end_time}";
+                    } else {
                         $params['end_date'] = null;
                     }
 
-                    $params['homepage']= $l = $worksheet->getCell('L' . $row)->getValue(); // Hompage 
-                    $params['insta'] = $m = $worksheet->getCell('M' . $row)->getValue(); // Insta
-                    $params['face'] = $n = $worksheet->getCell('N' . $row)->getValue(); // Facebook
+                    // SNS
+                    $params['homepage'] = $l_cell->getValue();
+                    $params['insta']    = $m_cell->getValue();
+                    $params['face']     = $n_cell->getValue();
 
-                    // ... (이후 DB 처리 로직은 동일) ...
-
-                    if(!empty($organization) && !empty($country) && !empty($city)){
-                        // ... 성공 로직 ...
+                    // 성공 / 실패 체크
+                    if (!empty($organization) && !empty($country) && !empty($city)) {
                         $result_code = "1";
-                        $result = "성공"; // 실제 언어 파일($this->lang->line) 사용 권장
-                    }else{
-                        // ... 실패 로직 (미등록 항목) ...
-                        if(empty($organization)){
-                            $result = "Not found Organizer.";
-                        }else if(empty($country)){
-                            $result = "Not found Country.";
-                        }else{
-                            $result = "Not found City.";
-                        }
+                        $result_msg  = "성공";
+                    } else {
+                        if (empty($organization)) $result_msg = "Not found Organizer.";
+                        else if (empty($country)) $result_msg = "Not found Country.";
+                        else $result_msg = "Not found City.";
+
                         $result_code = "0";
                     }
 
-                    $excel_data[$row] = array(
-                        "code" => $result_code,
-                        "result" => $result,
-                        "type" => $b,
-                        "company" => $c,
-                        "country" => $d,
-                        "city" => $e,
-                        "club name" => $f,
-                        "address" => $g,
-                        "open" => $h,
-                        "open time" => $i,
-                        "close" => $j,
-                        "close time" => $k,
-                        "homepage" => $l,
-                        "insta" => $m,
-                        "facebook" => $n,
-                    );
+                    $excel_data[$row] = [
+                        "code"      => $result_code,
+                        "result"    => $result_msg,
+                        "type"      => $params['type'],
+                        "company"   => $companyName,
+                        "country"   => $countryName,
+                        "city"      => $cityName,
+                        "club name" => $params['space'],
+                        "address"   => $params['addr'],
+                        "open"      => $start_date,
+                        "open time" => $start_time,
+                        "close"     => $end_date,
+                        "close time"=> $end_time,
+                        "homepage"  => $params['homepage'],
+                        "insta"     => $params['insta'],
+                        "facebook"  => $params['face'],
+                    ];
                 }
             }
-        } catch(\PhpOffice\PhpSpreadsheet\Reader\Exception $exception) { // 6. **[변경]** 예외 클래스 변경
-            // 엑셀 리더 예외 처리
+
+        } catch (\PhpOffice\PhpSpreadsheet\Reader\Exception $exception) {
             echo "엑셀 파일 읽기 오류: " . $exception->getMessage();
-            return;
-        } catch(Exception $exception) {
-            echo $exception->getMessage();
             return;
         }
 
         $data['excel'] = $excel_data;
-        
+
         $this->load->view('header');
         $this->load->view('sidebar');
-        $this->load->view('excel_result',$data);
+        $this->load->view('excel_result', $data);
         $this->load->view('footer');
+}
+
+    
+    private function parseExcelDate($cell)
+    {
+        // PhpSpreadsheet 1.24 버전에서 Excel 날짜 여부를 판별하는 공식 함수
+        if (\PhpOffice\PhpSpreadsheet\Shared\Date::isDateTime($cell)) {
+            $value = $cell->getValue();
+            // 숫자형 Excel 날짜 → DateTime 변환
+            $dt = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($value);
+            return $dt->format("Y-m-d");
+        }
+
+        // 문자열 날짜라면 그대로 DateTime 처리
+        $value = $cell->getValue();
+        $dt = \DateTime::createFromFormat("d-m-Y", $value);
+        if ($dt) {
+            return $dt->format("Y-m-d");
+        }
+
+        return null; // 변환 불가 시
     }
     
     public function register_missing_data() {
@@ -748,14 +743,7 @@ class Schedule extends CI_Controller {
         
         
     }
-    
-    public function test_excel()
-    {
-        require_once APPPATH.'third_party/PhpSpreadsheet/vendor/autoload.php';
-
-        $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
-        echo "OK! PhpSpreadsheet loaded"; 
-    }
+   
     
     
 }
