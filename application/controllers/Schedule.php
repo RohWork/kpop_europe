@@ -646,7 +646,7 @@ class Schedule extends CI_Controller {
     }
     
     public function register_missing_data() {
-        $this->load->model(['cont_md', 'city_md', 'org_md']);
+        $this->load->model(['cont_md', 'city_md', 'space_md']);
 
         // register_data는 이제 폼에서 배열 형태로 전송됩니다.
         $register_data_array = $this->input->post('register_data'); 
@@ -683,7 +683,7 @@ class Schedule extends CI_Controller {
                 }
 
                 // 3. Company 확인 및 등록 (Club Name)
-                $organization = $this->org_md->get_organization_name($company_name);
+                $organization = $this->space_md->get_space_name($company_name);
                 if (empty($organization)) {
                      $org_idx = $this->org_md->insert_organization($company_name, $latitude, $longitude); // 위도/경도를 Organization 테이블에 저장한다고 가정
                     $results[] = "Company '{$company_name}' 등록 시도 완료.";
