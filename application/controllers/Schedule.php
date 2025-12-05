@@ -550,7 +550,7 @@ class Schedule extends CI_Controller {
                     $params['addr']  = $g_cell->getValue();
 
                     // DB 매핑
-                    $organization = $this->org_md->get_organization_name($companyName);
+                    $space = $this->space_md->get_space_name($params['space']);
                     $country      = $this->cont_md->get_country_name($countryName);
                     $city         = $this->city_md->get_city_name($cityName);
 
@@ -584,7 +584,7 @@ class Schedule extends CI_Controller {
                         $result_code = "1";
                         $result_msg  = "성공";
                     } else {
-                        if (empty($organization)) $result_msg = "Not found Organizer.";
+                        if (empty($space)) $result_msg = "Not found Space.";
                         else if (empty($country)) $result_msg = "Not found Country.";
                         else $result_msg = "Not found City.";
 
