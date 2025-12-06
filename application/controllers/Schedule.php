@@ -580,7 +580,7 @@ class Schedule extends CI_Controller {
                     $params['face']     = $n_cell->getValue();
 
                     // 성공 / 실패 체크
-                    if (!empty($organization) && !empty($country) && !empty($city)) {
+                    if (!empty($space) && !empty($country) && !empty($city)) {
                         $result_code = "1";
                         $result_msg  = "성공";
                     } else {
