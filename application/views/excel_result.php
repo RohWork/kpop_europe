@@ -123,14 +123,14 @@
                                     <td><span class="text-danger"><?php echo $data['reason']; ?></span></td>
                                     <td><?php echo $data['country']; ?></td>
                                     <td><?php echo $data['city']; ?></td>
-                                    <td><?php echo $data['space']; ?></td>
-                                    <input type="hidden" class="lat-field" name="lat[]">
+                                    <td><?php echo $data['space']; ?> <input type="hidden" class="lat-field" name="lat[]">
                                     <input type="hidden" class="lon-field" name="lon[]">
                                     <button type="button" class="btn btn-xs btn-info geocode-btn" 
                                             data-address="<?php echo $data['country'] . ' ' . $data['city'] . ' ' . $data['space']; ?>"
                                             data-index="<?php echo $key; ?>">
                                         좌표검색
-                                    </button>
+                                    </button></td>
+                                    
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
