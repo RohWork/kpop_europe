@@ -45,7 +45,7 @@
                                         <td><?php echo $item['company']; ?></td>
                                         <td><?php echo $item['country']; ?></td>
                                         <td><?php echo $item['city']; ?></td>
-                                        <td><?php echo $item['club name']; ?></td>
+                                        <td><?php echo $item['space']; ?></td>
                                         <td><?php echo $item['open']; ?> <?php echo $item['open time']; ?></td>
                                         <td><?php echo $item['close']; ?> <?php echo $item['close time']; ?></td>
                                     </tr>
@@ -108,11 +108,11 @@
                             $unique_not_found = [];
                             foreach ($not_found_data as $data) {
                                 // 실패 사유에 따라 고유 키 생성
-                                $key = $data['result'] . '|' . $data['country'] . '|' . $data['city'] . '|' . $data['club name'];
+                                $key = $data['result'] . '|' . $data['country'] . '|' . $data['city'] . '|' . $data['space'];
                                 $unique_not_found[$key] = [
                                     'country' => $data['country'],
                                     'city' => $data['city'],
-                                    'space' => $data['club name'],
+                                    'space' => $data['space'],
                                     'reason' => $data['result']
                                 ];
                             }
@@ -186,7 +186,7 @@
                         $row.find('.lat-field').val(latitude);
                         $row.find('.lon-field').val(longitude);
 
-                        alert(`좌표 검색 성공: 위도 ${latitude}, 경도 ${longitude}`);
+                        //alert(`좌표 검색 성공: 위도 ${latitude}, 경도 ${longitude}`);
                     } else {
                         alert('Mapbox에서 검색된 결과가 없습니다: ' + address);
                     }

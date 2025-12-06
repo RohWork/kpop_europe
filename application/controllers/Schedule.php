@@ -598,7 +598,7 @@ class Schedule extends CI_Controller {
                         "company"   => $companyName,
                         "country"   => $countryName,
                         "city"      => $cityName,
-                        "club name" => $params['space'],
+                        "space" => $params['space'],
                         "address"   => $params['addr'],
                         "open"      => $start_date,
                         "open time" => $start_time,
