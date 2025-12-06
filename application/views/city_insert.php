@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
-                    <div class="col-4">
+                    <div class="col-2">
                         <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
                     </div>
                     <div class="col-8">
