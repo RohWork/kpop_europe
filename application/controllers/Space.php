@@ -232,7 +232,7 @@ class Space extends CI_Controller {
         //$this->load->view('header');
         //$this->load->view('sidebar');
 
-        $this->load->view('space/space_insert',$data);
+        $this->load->view('space/space_insert_new',$data);
         
         //$this->load->view('footer');
     }
