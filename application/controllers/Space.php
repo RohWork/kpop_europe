@@ -188,6 +188,21 @@ class Space extends CI_Controller {
         $search['country'] = $this->input->get_post("country_idx");
         $search['city'] = $this->input->get_post("city_idx");
         
+        
+        if(!empty($this->input->get('country_name'))){
+            $cont_name = $this->input->get('country_name');
+            $cont_arr = $this->cont_md->get_country_name($cont_name);
+            
+            $search['country'] = $cont_arr['idx'];
+        }
+        
+        if(!empty($this->input->get('city_name'))){
+            $city_name = $this->input->get('city_name');
+            $city_arr = $this->city_md->get_city_name($city_name);
+            
+            $search['city'] = $city_arr['idx'];
+        }
+        
         if(empty($search['country'])){
             $search['country'] = 1;
         }
@@ -198,6 +213,13 @@ class Space extends CI_Controller {
             $data['city_list'] = $this->city_md->get_city($search['country']);
         }else{
             $data['city_list'] = "";
+        }
+        
+        
+        
+        if(!empty($this->input->get('space_name'))){
+            $data['space_name'] = $this->input->get('space_name');
+            
         }
         
         
