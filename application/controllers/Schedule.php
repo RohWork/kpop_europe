@@ -662,7 +662,7 @@ class Schedule extends CI_Controller {
 
                 $country_name = $data['country'];
                 $city_name = $data['city'];
-                $company_name = $data['company'];
+                $space_name = $data['space'];
                 $latitude = $data['latitude']; // 새로 추가된 좌표
                 $longitude = $data['longitude']; // 새로 추가된 좌표
 
@@ -683,10 +683,10 @@ class Schedule extends CI_Controller {
                 }
 
                 // 3. Company 확인 및 등록 (Club Name)
-                $organization = $this->space_md->get_space_name($company_name);
-                if (empty($organization)) {
-                     $org_idx = $this->org_md->insert_organization($company_name, $latitude, $longitude); // 위도/경도를 Organization 테이블에 저장한다고 가정
-                    $results[] = "Company '{$company_name}' 등록 시도 완료.";
+                $space = $this->space_md->get_space_name($space_name);
+                if (empty($space)) {
+                    $space_idx = $this->space_md->insert_space($space_name, $latitude, $longitude); // 위도/경도를 Organization 테이블에 저장한다고 가정
+                    $results[] = "Company '{$space_name}' 등록 시도 완료.";
                 }
 
                 // 중요: 위도/경도는 Country, City, Club 중 해당 데이터가 없는 곳에 저장해야 합니다.
