@@ -240,11 +240,9 @@
         $('#registrationIframe').attr('src', '');
         
         // 항목 등록 후 목록을 새로고침하려면 여기에 location.reload() 추가 가능
-        // location.reload(); 
+         location.reload(); 
     });
 });
-
-    });
 
     function go_home(){
         location.href="/main";
