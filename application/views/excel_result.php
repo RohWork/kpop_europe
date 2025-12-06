@@ -41,7 +41,7 @@
                                                 <?php $not_found_data[] = $item; // 실패한 데이터를 별도로 모음 ?>
                                             <?php endif; ?>
                                         </td>
-                                        <td><?php echo $item['result']; ?></td>
+                                        <td><span class="text-danger"><?php echo $item['result']; ?></span></td>
                                         <td><?php echo $item['company']; ?></td>
                                         <td><?php echo $item['country']; ?></td>
                                         <td><?php echo $item['city']; ?></td>
