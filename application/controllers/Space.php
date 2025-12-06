@@ -208,12 +208,12 @@ class Space extends CI_Controller {
         $data['search'] = $search;
        
         
-        $this->load->view('header');
-        $this->load->view('sidebar');
+        //$this->load->view('header');
+        //$this->load->view('sidebar');
 
         $this->load->view('space/space_insert',$data);
         
-        $this->load->view('footer');
+        //$this->load->view('footer');
     }
     
     public function insert_ajax(){
