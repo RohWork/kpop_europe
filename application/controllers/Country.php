@@ -42,6 +42,14 @@ class Country extends CI_Controller {
         
     }
     
+    function insert_old(){
+        
+        $data = array();
+        
+        $this->load->view('country_insert',$data);
+        
+    }
+    
     function insert_ajax(){
         
         $data = array();

@@ -78,6 +78,18 @@ class City extends CI_Controller {
         $this->load->view('footer');
     }
     
+    function insert_old(){
+        
+        $data = array();
+        
+        
+        $data['select_country'] = $this->input->get("country_idx");
+        
+        $data['country'] = $this->cont_md->get_country();
+        
+        $this->load->view('city_insert',$data);
+    }
+    
     function insert_ajax(){
         
         $data = array();
