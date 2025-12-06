@@ -175,6 +175,16 @@
         loadIframeModal('Space 등록', targetUrl);
     });
     
+    
+    $('#genericIframeModal').on('click', '.close, [data-dismiss="modal"]', function() {
+            $('#genericIframeModal').modal('hide');
+    });
+
+    // 모달이 닫힐 때 iframe src를 초기화 (필수)
+    $('#genericIframeModal').on('hidden.bs.modal', function () {
+        $('#registrationIframe').attr('src', '');
+    });
+    
     // 범용 Iframe 모달 로드 함수
     function loadIframeModal(title, url) {
         $('#genericModalLabel').text(title);
