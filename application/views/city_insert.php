@@ -67,6 +67,17 @@
                     </div>
                 </div>
             </div>
+            <div class="row" style="padding-top: 5px">
+                    <div class="col-4">
+                        <label class="form-label bold"><strong><?=$this->lang->line('address')?></strong></label>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex">
+                            <div class="geocoder-wrap" id="geocoder"></div>
+                            <input type="hidden" id="address" name="address" placeholder="검색 또는 핀 이동 시 자동 입력" readonly>
+                        </div>
+                    </div>
+                </div>
             
             <div class="row" style="padding-top: 5px">
                     <div id="map" style="position: relative; overflow: hidden;height:45vh">
