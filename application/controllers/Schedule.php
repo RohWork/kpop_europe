@@ -627,6 +627,9 @@ class Schedule extends CI_Controller {
                         "homepage"  => $params['homepage'],
                         "insta"     => $params['insta'],
                         "facebook"  => $params['face'],
+                        'country_result' => $country['idx'],
+                        'city_result' => $city['idx'],
+                        'space_result' => $space['idx']
                     ];
                 }
             }

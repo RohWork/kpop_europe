@@ -41,7 +41,37 @@
                                                 <?php $not_found_data[] = $item; // 실패한 데이터를 별도로 모음 ?>
                                             <?php endif; ?>
                                         </td>
-                                        <td><span class="text-danger"><?php echo $item['result']; ?></span></td>
+                                        <td>
+                                            <span class="text-danger"><?php echo $item['result']; ?></span>
+                                             <?php if ($item['code'] != '1'): ?>
+                                                <?php 
+                                                    // 에러 메시지에 포함된 단어로 어떤 버튼을 띄울지 결정
+                                                    $result_msg = strtolower($item['result']); 
+                                                ?>
+
+                                                <?php if (strpos($result_msg, 'country') !== false): ?>
+                                                    <button type="button" class="btn btn-xs btn-primary btn-register-country"
+                                                        data-country="<?php echo htmlspecialchars($item['country']); ?>">
+                                                        <i class="fa fa-plus"></i> Country 등록
+                                                    </button>
+                                                
+                                                <?php elseif (strpos($result_msg, 'city') !== false): ?>
+                                                    <button type="button" class="btn btn-xs btn-warning btn-register-city"
+                                                        data-country="<?php echo htmlspecialchars($item['country']); ?>"
+                                                        data-city="<?php echo htmlspecialchars($item['city']); ?>">
+                                                        <i class="fa fa-plus"></i> City 등록
+                                                    </button>
+
+                                                <?php elseif (strpos($result_msg, 'space') !== false || strpos($result_msg, 'club') !== false): ?>
+                                                    <button type="button" class="btn btn-xs btn-info btn-register-space"
+                                                        data-country="<?php echo htmlspecialchars($item['country']); ?>"
+                                                        data-city="<?php echo htmlspecialchars($item['city']); ?>"
+                                                        data-space="<?php echo htmlspecialchars($item['space']); ?>" data-company="<?php echo htmlspecialchars($item['company']); ?>">
+                                                        <i class="fa fa-plus"></i> Space 등록
+                                                    </button>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                        </td>
                                         <td><?php echo $item['company']; ?></td>
                                         <td><?php echo $item['country']; ?></td>
                                         <td><?php echo $item['city']; ?></td>
