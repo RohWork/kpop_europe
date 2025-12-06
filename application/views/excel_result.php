@@ -108,7 +108,139 @@
 
 </main>
 
+
+<div class="modal fade" id="modalRegisterCountry" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Country 등록</h4>
+            </div>
+            <form action="<?php echo site_url('country/insert'); ?>" method="POST">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Country Name</label>
+                        <input type="text" class="form-control" name="country_name" id="modal_country_name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">저장</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalRegisterCity" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">City 등록</h4>
+            </div>
+            <form action="<?php echo site_url('city/insert'); ?>" method="POST">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" class="form-control" name="country_name" id="modal_city_country" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>City Name</label>
+                        <input type="text" class="form-control" name="city_name" id="modal_city_name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">저장</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalRegisterSpace" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Space (Club) 등록</h4>
+            </div>
+            <form action="<?php echo site_url('space/insert'); ?>" method="POST">
+                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" class="form-control" name="company_name" id="modal_space_company" readonly>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" class="form-control" name="country_name" id="modal_space_country" readonly>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-control" name="city_name" id="modal_space_city" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Space Name</label>
+                        <input type="text" class="form-control" name="space_name" id="modal_space_name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info">저장</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script>
+    $(document).ready(function() {
+        
+        // 1. Country 등록 버튼 클릭
+        $('.btn-register-country').on('click', function() {
+            var country = $(this).data('country');
+            $('#modal_country_name').val(country);
+            $('#modalRegisterCountry').modal('show');
+        });
+
+        // 2. City 등록 버튼 클릭
+        $('.btn-register-city').on('click', function() {
+            var country = $(this).data('country');
+            var city = $(this).data('city');
+            
+            $('#modal_city_country').val(country);
+            $('#modal_city_name').val(city);
+            
+            $('#modalRegisterCity').modal('show');
+        });
+
+        // 3. Space 등록 버튼 클릭
+        $('.btn-register-space').on('click', function() {
+            var country = $(this).data('country');
+            var city = $(this).data('city');
+            var space = $(this).data('space');
+            var company = $(this).data('company');
+            
+            $('#modal_space_country').val(country);
+            $('#modal_space_city').val(city);
+            $('#modal_space_name').val(space);
+            $('#modal_space_company').val(company);
+
+            $('#modalRegisterSpace').modal('show');
+        });
+
+    });
+
     function go_home(){
         location.href="/main";
     }
