@@ -90,7 +90,7 @@
                 <h4 class="modal-title" id="notFoundModalLabel">미등록 Country, City, Company 정보</h4>
             </div>
             <div class="modal-body">
-                <p>아래 목록은 DB에 존재하지 않아 등록이 실패한 항목들입니다. 등록할 데이터를 선택하고 **일괄 등록**을 진행하세요.</p>
+                <p>아래 목록은 DB에 존재하지 않아 등록이 실패한 항목들입니다. 등록할 데이터를 선택하고 일괄 등록을 진행하세요.</p>
                 <form id="register_not_found_form" method="POST" action="<?php echo site_url('Schedule/register_missing_data'); ?>">
                     <table class="table table-striped">
                         <thead>
