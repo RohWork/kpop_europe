@@ -66,12 +66,6 @@
                                 DB에 존재하지 않는 **Country**, **City**, 또는 **Company** 정보로 인해 총
                                 **<?php echo count($not_found_data); ?>** 건의 데이터 처리가 실패했습니다.
                             </p>
-                            <p>
-                                해당 항목들을 확인하고 일괄 등록하시겠습니까?
-                            </p>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notFoundModal">
-                                미등록 항목 등록/확인 (<?php echo count($not_found_data); ?> 건)
-                            </button>
                         <?php else: ?>
                             <p class="text-success">모든 엑셀 데이터가 성공적으로 처리되었거나, 미등록 항목이 없습니다.</p>
                         <?php endif; ?>
