@@ -132,6 +132,13 @@
   // 1) 토큰 설정
   
   var token = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw';
+  <?php
+    if(empty($detail_info['space_x'])){
+        $detail_info['space_x'] = '51.070699905862554';
+        $detail_info['space_y'] = '10.054721036684562';
+    }
+  }
+  ?>
   const INITIAL = { lng: <?=$detail_info['space_y']?>, lat: <?=$detail_info['space_x']?> };
   
   mapboxgl.accessToken = token;
