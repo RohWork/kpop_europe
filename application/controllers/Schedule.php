@@ -584,7 +584,7 @@ class Schedule extends CI_Controller {
                         
                         $params['city_idx'] = $city['idx'];
                         $params['space_idx'] = $space['idx'];
-                        $params['space_name'] = $space['space_name'];
+                        $params['space'] = $space['space_name'];
                         
                         $cnt = $this->sch_md->get_duple_schedule_cnt($params['city_idx'], $params['space_idx'], $start_date);
                         
