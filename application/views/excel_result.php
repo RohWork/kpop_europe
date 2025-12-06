@@ -99,7 +99,7 @@
                                 <th>실패 사유</th>
                                 <th>Country</th>
                                 <th>City</th>
-                                <th>Company</th>
+                                <th>Space</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -124,6 +124,13 @@
                                     <td><?php echo $data['country']; ?></td>
                                     <td><?php echo $data['city']; ?></td>
                                     <td><?php echo $data['space']; ?></td>
+                                    <input type="hidden" class="lat-field" name="lat[]">
+                                    <input type="hidden" class="lon-field" name="lon[]">
+                                    <button type="button" class="btn btn-xs btn-info geocode-btn" 
+                                            data-address="<?php echo $data['country'] . ' ' . $data['city'] . ' ' . $data['space']; ?>"
+                                            data-index="<?php echo $key; ?>">
+                                        좌표검색
+                                    </button>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -142,7 +149,7 @@
 
 <script>
     // Mapbox Access Token을 여기에 입력하세요.
-    const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoic2h4b2R3ayIsImEiOiJjbWRheXdjOWQwbnZhMmpwa3EyenB6Z2RsIn0.jYcv95SmixAIKIdT4Te6uw'; 
+    const MAPBOX_ACCESS_TOKEN = <?=MAPBOX_ACCESS_TOKEN?>; 
 
     $(document).ready(function() {
         // 일괄 선택/해제 기능 (기존 로직 유지)
