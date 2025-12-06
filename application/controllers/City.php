@@ -110,7 +110,8 @@ class City extends CI_Controller {
         $params['ord'] = $city_order+1;
         
         $params['name'] = $this->input->post("input_city");
-       
+        $params['space_x'] = $this->input->post("space_x");
+        $params['space_y'] = $this->input->post("space_y");
         
         $result = $this->city_md->insert_city($params);
         
