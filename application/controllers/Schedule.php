@@ -626,10 +626,7 @@ class Schedule extends CI_Controller {
                         "close time"=> $end_time,
                         "homepage"  => $params['homepage'],
                         "insta"     => $params['insta'],
-                        "facebook"  => $params['face'],
-                        'country_result' => $country['idx'],
-                        'city_result' => $city['idx'],
-                        'space_result' => $space['idx']
+                        "facebook"  => $params['face']
                     ];
                 }
             }
