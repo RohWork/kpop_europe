@@ -149,7 +149,7 @@
 
 <script>
     // Mapbox Access Token을 여기에 입력하세요.
-    const MAPBOX_ACCESS_TOKEN = <?=MAPBOX_ACCESS_TOKEN?>; 
+    const MAPBOX_ACCESS_TOKEN = "<?=MAPBOX_ACCESS_TOKEN?>"; 
 
     $(document).ready(function() {
         // 일괄 선택/해제 기능 (기존 로직 유지)
