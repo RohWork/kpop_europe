@@ -696,10 +696,10 @@ class Schedule extends CI_Controller {
         }
 
         $this->session->set_flashdata('registration_results', $results);
-        redirect('schedule/registration_success'); 
+        redirect('schedule/schedule_complete'); 
     }
     
-    function registration_success(){
+    function schedule_complete(){
         $data = array();
         
         $this->load->view('header');
