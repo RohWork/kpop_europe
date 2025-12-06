@@ -34,7 +34,7 @@
                     <label class="form-label col-md-2 col-xs-4"><strong><?=$this->lang->line('cityname')?></strong></label>
 
                     <div class="col-md-4 col-xs-4 col-md-offset-6 col-xs-offset-4">
-                        <input type="text" class="form-control" id="input_city" name="input_city" value="<?=$city_name?>"/>
+                        <input type="text" class="form-control" id="input_city" name="input_city" value="<?=!empty($city_name) ? $city_name : ""?>"/>
                     </div>
                 </div>
             </div>
