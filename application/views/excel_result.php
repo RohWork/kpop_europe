@@ -108,11 +108,11 @@
                             $unique_not_found = [];
                             foreach ($not_found_data as $data) {
                                 // 실패 사유에 따라 고유 키 생성
-                                $key = $data['result'] . '|' . $data['country'] . '|' . $data['city'] . '|' . $data['space'];
+                                $key = $data['result'] . '|' . $data['country'] . '|' . $data['city'] . '|' . $data['club name'];
                                 $unique_not_found[$key] = [
                                     'country' => $data['country'],
                                     'city' => $data['city'],
-                                    'space' => $data['space'],
+                                    'space' => $data['club name'],
                                     'reason' => $data['result']
                                 ];
                             }
