@@ -108,22 +108,22 @@
                             $unique_not_found = [];
                             foreach ($not_found_data as $data) {
                                 // 실패 사유에 따라 고유 키 생성
-                                $key = $data['result'] . '|' . $data['country'] . '|' . $data['city'] . '|' . $data['company'];
+                                $key = $data['result'] . '|' . $data['country'] . '|' . $data['city'] . '|' . $data['club name'];
                                 $unique_not_found[$key] = [
                                     'country' => $data['country'],
                                     'city' => $data['city'],
-                                    'company' => $data['company'],
+                                    'space' => $data['club name'],
                                     'reason' => $data['result']
                                 ];
                             }
                             ?>
                             <?php foreach ($unique_not_found as $key => $data): ?>
                                 <tr>
-                                    <td><input type="checkbox" name="register_data[]" value="<?php echo htmlspecialchars($data['country'] . '|' . $data['city'] . '|' . $data['company']); ?>" checked></td>
+                                    <td><input type="checkbox" name="register_data[]" value="<?php echo htmlspecialchars($data['country'] . '|' . $data['city'] . '|' . $data['space']); ?>" checked></td>
                                     <td><span class="text-danger"><?php echo $data['reason']; ?></span></td>
                                     <td><?php echo $data['country']; ?></td>
                                     <td><?php echo $data['city']; ?></td>
-                                    <td><?php echo $data['company']; ?></td>
+                                    <td><?php echo $data['club name']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
