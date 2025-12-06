@@ -108,59 +108,6 @@
 
 </main>
 
-
-<div class="modal fade" id="modalRegisterCountry" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Country 등록</h4>
-            </div>
-            <form action="<?php echo site_url('country/insert'); ?>" method="POST">
-                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Country Name</label>
-                        <input type="text" class="form-control" name="country_name" id="modal_country_name" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">저장</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalRegisterCity" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">City 등록</h4>
-            </div>
-            <form action="<?php echo site_url('city/insert'); ?>" method="POST">
-                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" class="form-control" name="country_name" id="modal_city_country" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>City Name</label>
-                        <input type="text" class="form-control" name="city_name" id="modal_city_name" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning">저장</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="genericIframeModal" tabindex="-1" role="dialog" aria-labelledby="genericModalLabel">
     <div class="modal-dialog modal-lg" role="document"> <div class="modal-content">
             <div class="modal-header">
