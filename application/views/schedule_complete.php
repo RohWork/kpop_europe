@@ -56,10 +56,10 @@
                         
                     </div>
                     <div class="box-footer">
-                        <a href="<?php echo site_url('schedule/excel_upload_form'); ?>" class="btn btn-default">
+                        <a href="<?php echo site_url('schedule/excel'); ?>" class="btn btn-default">
                             <i class="fa fa-upload"></i> 다시 엑셀 업로드 하기
                         </a>
-                        <a href="<?php echo site_url('schedule/list_page'); ?>" class="btn btn-info pull-right">
+                        <a href="<?php echo site_url('schedule/list'); ?>" class="btn btn-info pull-right">
                             <i class="fa fa-list"></i> 등록된 데이터 목록 보기
                         </a>
                     </div>
