@@ -83,7 +83,7 @@
                         <label class="form-label bold"><strong><?=$this->lang->line('name')?></strong></label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="space_name" name="space_name"  class="form-control"/>
+                        <input type="text" id="space_name" name="space_name"  class="form-control" value="<?=$space_name?>"/>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 5px">
