@@ -137,7 +137,7 @@
         $detail_info['space_x'] = '51.070699905862554';
         $detail_info['space_y'] = '10.054721036684562';
     }
-  }
+  
   ?>
   const INITIAL = { lng: <?=$detail_info['space_y']?>, lat: <?=$detail_info['space_x']?> };
   
