@@ -190,6 +190,8 @@ class Schedule_model extends CI_Model {
         return $query->row_array();
     }
     
+    f
+    
     public function get_schedule_image($idx){
         
         $sSql = "SELECT * FROM kpop_gallery WHERE kpop_idx = $idx and state = 1";

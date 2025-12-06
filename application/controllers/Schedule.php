@@ -581,8 +581,28 @@ class Schedule extends CI_Controller {
 
                     // 성공 / 실패 체크
                     if (!empty($space) && !empty($country) && !empty($city)) {
-                        $result_code = "1";
-                        $result_msg  = "성공";
+                        
+                        
+                        $cnt = $this->sch_md->get_duple_schedule_cnt($city, $space, $start_date);
+                        
+                        if($cnt < 1){
+                            
+                            $params['city_idx'] = $city['idx'];
+                            $params['space_idx'] = $space['idx'];
+                            $params['space_name'] = $space['name'];
+                           
+                            $kpop_idx = $this->sch_md->insert_schedule($params);
+                            
+                            $result_msg = "SUCCESS INSERT DATA.";
+                            $result_code = "1";
+                            
+                        }else{
+                            $result_msg = "Duplicated DATA.";
+                            $result_code = "0";
+                        }
+                        
+                        
+                        
                     } else {
                         if (empty($space)) $result_msg = "Not found Space.";
                         else if (empty($country)) $result_msg = "Not found Country.";
