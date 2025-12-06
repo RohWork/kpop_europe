@@ -90,6 +90,7 @@ class City extends CI_Controller {
         }else{
             $data['select_country'] = $this->input->get("country_idx");
         }
+        $data['city_name'] =$this->input->get['city_name'];
         $data['country'] = $this->cont_md->get_country();
         
         $this->load->view('city_insert',$data);
