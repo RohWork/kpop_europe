@@ -161,44 +161,22 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalRegisterSpace" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+<div class="modal fade" id="genericIframeModal" tabindex="-1" role="dialog" aria-labelledby="genericModalLabel">
+    <div class="modal-dialog modal-lg" role="document"> <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Space (Club) 등록</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="genericModalLabel">항목 등록</h4>
             </div>
-            <form action="<?php echo site_url('space/insert'); ?>" method="POST">
-                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Company</label>
-                        <input type="text" class="form-control" name="company_name" id="modal_space_company" readonly>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label>Country</label>
-                                <input type="text" class="form-control" name="country_name" id="modal_space_country" readonly>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="form-group">
-                                <label>City</label>
-                                <input type="text" class="form-control" name="city_name" id="modal_space_city" readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Space Name</label>
-                        <input type="text" class="form-control" name="space_name" id="modal_space_name" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-info">저장</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-                </div>
-            </form>
+            <div class="modal-body" style="padding: 0;">
+                <iframe id="registrationIframe" 
+                        style="width: 100%; height: 500px; border: none;" 
+                        src="" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            </div>
         </div>
     </div>
 </div>
@@ -206,38 +184,65 @@
 <script>
     $(document).ready(function() {
         
-        // 1. Country 등록 버튼 클릭
-        $('.btn-register-country').on('click', function() {
-            var country = $(this).data('country');
-            $('#modal_country_name').val(country);
-            $('#modalRegisterCountry').modal('show');
-        });
+    
+    // 이전에 Mapbox 관련 코드가 있었다면 그대로 유지하거나 제거하세요.
+    // 기존 go_home() 함수도 그대로 유지합니다.
 
-        // 2. City 등록 버튼 클릭
-        $('.btn-register-city').on('click', function() {
-            var country = $(this).data('country');
-            var city = $(this).data('city');
-            
-            $('#modal_city_country').val(country);
-            $('#modal_city_name').val(city);
-            
-            $('#modalRegisterCity').modal('show');
-        });
+    const BASE_URL = "<?php echo site_url('/'); ?>"; // CodeIgniter 기본 URL
 
-        // 3. Space 등록 버튼 클릭
-        $('.btn-register-space').on('click', function() {
-            var country = $(this).data('country');
-            var city = $(this).data('city');
-            var space = $(this).data('space');
-            var company = $(this).data('company');
-            
-            $('#modal_space_country').val(country);
-            $('#modal_space_city').val(city);
-            $('#modal_space_name').val(space);
-            $('#modal_space_company').val(company);
+    // 1. Country 등록 버튼 클릭
+    $('.btn-register-country').on('click', function() {
+        var country = $(this).data('country');
+        
+        // URL과 쿼리 스트링 조합 (예: /country/insert?country_name=Korea)
+        var targetUrl = BASE_URL + 'country/insert?country_name=' + encodeURIComponent(country);
+        
+        loadIframeModal('Country 등록', targetUrl);
+    });
 
-            $('#modalRegisterSpace').modal('show');
-        });
+    // 2. City 등록 버튼 클릭
+    $('.btn-register-city').on('click', function() {
+        var country = $(this).data('country');
+        var city = $(this).data('city');
+        
+        // URL과 쿼리 스트링 조합 (예: /city/insert?country_name=Korea&city_name=Seoul)
+        var targetUrl = BASE_URL + 'city/insert?country_name=' + encodeURIComponent(country) + 
+                                          '&city_name=' + encodeURIComponent(city);
+        
+        loadIframeModal('City 등록', targetUrl);
+    });
+
+    // 3. Space 등록 버튼 클릭
+    $('.btn-register-space').on('click', function() {
+        var country = $(this).data('country');
+        var city = $(this).data('city');
+        var space = $(this).data('space');
+        var company = $(this).data('company');
+        
+        // URL과 쿼리 스트링 조합
+        var targetUrl = BASE_URL + 'space/insert?country_name=' + encodeURIComponent(country) + 
+                                         '&city_name=' + encodeURIComponent(city) +
+                                         '&space_name=' + encodeURIComponent(space) +
+                                         '&company_name=' + encodeURIComponent(company);
+        
+        loadIframeModal('Space 등록', targetUrl);
+    });
+    
+    // 범용 Iframe 모달 로드 함수
+    function loadIframeModal(title, url) {
+        $('#genericModalLabel').text(title);
+        $('#registrationIframe').attr('src', url);
+        $('#genericIframeModal').modal('show');
+    }
+
+    // 모달이 닫힐 때 iframe src를 초기화 (필수)
+    $('#genericIframeModal').on('hidden.bs.modal', function () {
+        $('#registrationIframe').attr('src', '');
+        
+        // 항목 등록 후 목록을 새로고침하려면 여기에 location.reload() 추가 가능
+        // location.reload(); 
+    });
+});
 
     });
 
