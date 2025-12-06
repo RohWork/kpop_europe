@@ -1,7 +1,7 @@
 <?php
     $lang = $this->session->userdata('lang');
     $this->lang->load('view', $lang);
-    if(!empty($city_name)){
+    if(!empty($city_name)){ //엑셀창에서 등록
 ?>
         <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
