@@ -604,9 +604,9 @@ class Schedule extends CI_Controller {
                         
                         
                     } else {
-                        if (empty($space)) $result_msg = "Not found Space.";
-                        else if (empty($country)) $result_msg = "Not found Country.";
-                        else $result_msg = "Not found City.";
+                        if (empty($country)) $result_msg = "Not found Country.";
+                        else if (empty($city)) $result_msg = "Not found City.";
+                        else $result_msg = "Not found Space.";
 
                         $result_code = "0";
                     }
