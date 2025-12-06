@@ -593,7 +593,7 @@ class Schedule extends CI_Controller {
                            
                             $kpop_idx = $this->sch_md->insert_schedule($params);
                             
-                            $result_msg = "SUCCESS INSERT DATA.";
+                            $result_msg = "Insert DATA Complete.";
                             $result_code = "1";
                             
                         }else{
