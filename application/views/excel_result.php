@@ -195,7 +195,7 @@
         var country = $(this).data('country');
         
         // URL과 쿼리 스트링 조합 (예: /country/insert?country_name=Korea)
-        var targetUrl = BASE_URL + 'country/insert?country_name=' + encodeURIComponent(country);
+        var targetUrl = BASE_URL + 'country/insert_old?country_name=' + encodeURIComponent(country);
         
         loadIframeModal('Country 등록', targetUrl);
     });
@@ -206,7 +206,7 @@
         var city = $(this).data('city');
         
         // URL과 쿼리 스트링 조합 (예: /city/insert?country_name=Korea&city_name=Seoul)
-        var targetUrl = BASE_URL + 'city/insert?country_name=' + encodeURIComponent(country) + 
+        var targetUrl = BASE_URL + 'city/insert_old?country_name=' + encodeURIComponent(country) + 
                                           '&city_name=' + encodeURIComponent(city);
         
         loadIframeModal('City 등록', targetUrl);
@@ -220,7 +220,7 @@
         var company = $(this).data('company');
         
         // URL과 쿼리 스트링 조합
-        var targetUrl = BASE_URL + 'space/insert?country_name=' + encodeURIComponent(country) + 
+        var targetUrl = BASE_URL + 'space/insert_old?country_name=' + encodeURIComponent(country) + 
                                          '&city_name=' + encodeURIComponent(city) +
                                          '&space_name=' + encodeURIComponent(space) +
                                          '&company_name=' + encodeURIComponent(company);
