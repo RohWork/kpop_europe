@@ -582,6 +582,7 @@ class Schedule extends CI_Controller {
                     // 성공 / 실패 체크
                     if (!empty($space) && !empty($country) && !empty($city)) {
                         
+                        $params['country_idx'] = $country['idx'];
                         $params['city_idx'] = $city['idx'];
                         $params['space_idx'] = $space['idx'];
                         $params['space'] = $space['space_name'];
