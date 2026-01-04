@@ -327,53 +327,66 @@ class DataApi extends CI_Controller {
      * 10. 장소 추가 API (kpop_space 구조 맞춤)
      * URL: /DataApi/add_space
      */
-    public function add_space() {
-        // 관련 모델 로드
+public function add_schedule() {
+        $this->load->model('country_model');
+        $this->load->model('city_model');
         $this->load->model('space_model');
 
-        // 1. 필수값 체크
+        $name = $this->input->post('name');
+        $start_date = $this->input->post('start_date');
+        $country_name = $this->input->post('country_name');
+        $city_name = $this->input->post('city_name');
         $space_name = $this->input->post('space_name');
-        $country_idx = $this->input->post('country_idx');
-        $city_idx = $this->input->post('city_idx');
 
-        if (empty($space_name) || empty($country_idx) || empty($city_idx)) {
+        // [CODE 400] 필수값 체크
+        if (empty($name) || empty($start_date) || empty($country_name) || empty($city_name) || empty($space_name)) {
             echo json_encode([
                 "status" => "error", 
-                "message" => "장소명(space_name), 국가번호(country_idx), 도시번호(city_idx)는 필수입니다."
+                "code"   => 400,
+                "message" => "필수 항목(행사명, 날짜, 국가, 도시, 장소)이 누락되었습니다."
             ]);
             return;
         }
 
-        // 2. 상위 데이터(국가/도시) 존재 여부 간이 체크 (생략 가능하나 권장)
-        $city_exists = $this->db->where('idx', $city_idx)->get('kpop_city')->row();
-        if (!$city_exists) {
-            echo json_encode(["status" => "error", "message" => "유효하지 않은 도시 번호입니다."]);
+        // [CODE 401] 국가 검증
+        $country_info = $this->country_model->get_country_name($country_name);
+        if (empty($country_info)) {
+            echo json_encode(["status" => "error", "code" => 401, "message" => "존재하지 않는 국가명입니다."]);
             return;
         }
 
-        // 3. 파라미터 구성 (kpop_space 컬럼 매칭)
+        // [CODE 402] 도시 검증
+        $city_info = $this->city_model->get_city_name($city_name);
+        if (empty($city_info)) {
+            echo json_encode(["status" => "error", "code" => 402, "message" => "존재하지 않는 도시명입니다."]);
+            return;
+        }
+
+        // [CODE 403] 장소 검증
+        $space_info = $this->space_model->get_space_name($space_name);
+        if (empty($space_info)) {
+            echo json_encode(["status" => "error", "code" => 403, "message" => "존재하지 않는 장소명입니다."]);
+            return;
+        }
+
+        // 데이터 구성
         $params = [
-            'country_idx'    => $country_idx,
-            'city_idx'       => $city_idx,
-            'space_name'     => $space_name,
-            'space_location' => $this->input->post('space_location'), // 클럽위치 설명
-            'space_x'        => $this->input->post('space_x'),        // 좌표X
-            'space_y'        => $this->input->post('space_y'),        // 좌표Y
-            'space_etc'      => $this->input->post('space_etc'),      // 클럽 상세설명
-            'state'          => $this->input->post('state') ?: 'Y'    // 사용여부 (Y/N)
+            'name'             => $name,
+            'start_date'       => $start_date,
+            'country_idx'      => $country_info['idx'],
+            'city_idx'         => $city_info['idx'],
+            'space_idx'        => $space_info['idx'],
+            'space'            => $space_name,
+            'type'             => $this->input->post('type') ?: 'party',
+            'reg_date'         => date('Y-m-d H:i:s')
         ];
 
-        // 4. 모델 호출 및 결과 반환
-        $new_idx = $this->space_model->insert_space($params);
-
+        // [CODE 500] 저장 실행
+        $new_idx = $this->Schedule_model->insert_schedule($params);
         if ($new_idx) {
-            echo json_encode([
-                "status" => "success", 
-                "idx" => $new_idx, 
-                "message" => "장소 정보가 성공적으로 등록되었습니다."
-            ]);
+            echo json_encode(["status" => "success", "idx" => $new_idx, "message" => "등록 성공"]);
         } else {
-            echo json_encode(["status" => "error", "message" => "데이터베이스 저장 중 오류가 발생했습니다."]);
+            echo json_encode(["status" => "error", "code" => 500, "message" => "서버 저장 오류가 발생했습니다."]);
         }
     }
 }
