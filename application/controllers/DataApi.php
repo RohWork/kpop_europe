@@ -213,4 +213,167 @@ class DataApi extends CI_Controller {
             echo json_encode(["status" => "error", "message" => "등록 중 DB 오류가 발생했습니다."]);
         }
     }
+    
+    /**
+     * 8. 국가 추가 API (kpop_country 구조 맞춤)
+     * URL: /DataApi/add_country
+     */
+    public function add_country() {
+        $this->load->model('country_model');
+        
+        // 1. 필수값 체크
+        $name = $this->input->post('name');
+        if (empty($name)) {
+            echo json_encode(["status" => "error", "message" => "국가명(name)은 필수입니다."]);
+            return;
+        }
+
+        // 2. 중복 체크
+        if ($this->country_model->get_country_name($name)) {
+            echo json_encode(["status" => "error", "message" => "이미 등록된 국가명입니다."]);
+            return;
+        }
+
+        // 3. 파라미터 구성 (테이블 컬럼명에 매칭)
+        $params = [
+            'name'      => $name,
+            'ord'       => $this->input->post('ord') ?: 99,        // 정렬순서 (기본값 99)
+            'space_x'   => $this->input->post('space_x'),         // decimal(65,15)
+            'space_y'   => $this->input->post('space_y'),         // decimal(65,15)
+            'writer'    => $this->input->post('writer') ?: 'admin', // 작성자
+            'state'     => $this->input->post('state') ?: '1',      // 상태 ('1':활성, '2':비활성)
+            'regi_date' => date('Y-m-d H:i:s'),
+            'modi_date' => date('Y-m-d H:i:s')
+        ];
+
+        // 4. 모델 호출 및 결과 반환
+        $new_idx = $this->country_model->insert_country($params);
+
+        if ($new_idx) {
+            echo json_encode([
+                "status" => "success", 
+                "idx" => $new_idx, 
+                "message" => "국가 정보가 성공적으로 등록되었습니다."
+            ]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "데이터베이스 저장 중 오류가 발생했습니다."]);
+        }
+    }
+    
+    /**
+     * 9. 도시 추가 API (kpop_city 구조 맞춤)
+     * URL: /DataApi/add_city
+     */
+    public function add_city() {
+        // 관련 모델 로드
+        $this->load->model('city_model');
+        $this->load->model('country_model');
+        
+        // 1. 필수값 체크
+        $name = $this->input->post('name');
+        $country_idx = $this->input->post('country_idx');
+
+        if (empty($name) || empty($country_idx)) {
+            echo json_encode([
+                "status" => "error", 
+                "message" => "도시명(name)과 소속 국가 번호(country_idx)는 필수입니다."
+            ]);
+            return;
+        }
+
+        // 2. 상위 국가 존재 여부 확인 (데이터 무결성 검사)
+        // country_model에 해당 idx로 조회하는 함수가 있다고 가정 (없으면 기본 DB조회 사용)
+        $country_exists = $this->db->where('idx', $country_idx)->get('kpop_country')->row();
+        if (!$country_exists) {
+            echo json_encode(["status" => "error", "message" => "유효하지 않은 국가 번호입니다."]);
+            return;
+        }
+
+        // 3. 동일 국가 내 도시명 중복 체크 (선택 사항)
+        $city_exists = $this->city_model->get_city_name($name);
+        if ($city_exists && $city_exists['country_idx'] == $country_idx) {
+            echo json_encode(["status" => "error", "message" => "해당 국가에 이미 등록된 도시명입니다."]);
+            return;
+        }
+
+        // 4. 파라미터 구성 (kpop_city 컬럼 매칭)
+        $params = [
+            'country_idx' => $country_idx,
+            'name'        => $name,
+            'ord'         => $this->input->post('ord') ?: 99,
+            'space_x'     => $this->input->post('space_x'),
+            'space_y'     => $this->input->post('space_y'),
+            'writer'      => $this->input->post('writer') ?: 'admin',
+            'state'       => $this->input->post('state') ?: '1',
+            'regi_date'   => date('Y-m-d H:i:s'),
+            'modi_date'   => date('Y-m-d H:i:s')
+        ];
+
+        // 5. 모델 호출 및 결과 반환
+        $new_idx = $this->city_model->insert_city($params);
+
+        if ($new_idx) {
+            echo json_encode([
+                "status" => "success", 
+                "idx" => $new_idx, 
+                "message" => "도시 정보가 성공적으로 등록되었습니다."
+            ]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "데이터베이스 저장 중 오류가 발생했습니다."]);
+        }
+    }
+    
+    /**
+     * 10. 장소 추가 API (kpop_space 구조 맞춤)
+     * URL: /DataApi/add_space
+     */
+    public function add_space() {
+        // 관련 모델 로드
+        $this->load->model('space_model');
+
+        // 1. 필수값 체크
+        $space_name = $this->input->post('space_name');
+        $country_idx = $this->input->post('country_idx');
+        $city_idx = $this->input->post('city_idx');
+
+        if (empty($space_name) || empty($country_idx) || empty($city_idx)) {
+            echo json_encode([
+                "status" => "error", 
+                "message" => "장소명(space_name), 국가번호(country_idx), 도시번호(city_idx)는 필수입니다."
+            ]);
+            return;
+        }
+
+        // 2. 상위 데이터(국가/도시) 존재 여부 간이 체크 (생략 가능하나 권장)
+        $city_exists = $this->db->where('idx', $city_idx)->get('kpop_city')->row();
+        if (!$city_exists) {
+            echo json_encode(["status" => "error", "message" => "유효하지 않은 도시 번호입니다."]);
+            return;
+        }
+
+        // 3. 파라미터 구성 (kpop_space 컬럼 매칭)
+        $params = [
+            'country_idx'    => $country_idx,
+            'city_idx'       => $city_idx,
+            'space_name'     => $space_name,
+            'space_location' => $this->input->post('space_location'), // 클럽위치 설명
+            'space_x'        => $this->input->post('space_x'),        // 좌표X
+            'space_y'        => $this->input->post('space_y'),        // 좌표Y
+            'space_etc'      => $this->input->post('space_etc'),      // 클럽 상세설명
+            'state'          => $this->input->post('state') ?: 'Y'    // 사용여부 (Y/N)
+        ];
+
+        // 4. 모델 호출 및 결과 반환
+        $new_idx = $this->space_model->insert_space($params);
+
+        if ($new_idx) {
+            echo json_encode([
+                "status" => "success", 
+                "idx" => $new_idx, 
+                "message" => "장소 정보가 성공적으로 등록되었습니다."
+            ]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "데이터베이스 저장 중 오류가 발생했습니다."]);
+        }
+    }
 }
