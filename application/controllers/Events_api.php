@@ -47,15 +47,19 @@ class Events_api extends CI_Controller {
         $city_idx = null;
 
         if ($country_name) {
-            $country_idx = $this->Country_model->get_country_name($country_name);
-            if (!$country_idx) {
+            $country_row = $this->Country_model->get_country_name($country_name);
+            if (!empty($country_row) && isset($country_row['idx'])) {
+                $country_idx = $country_row['idx'];
+            } else {
                 echo json_encode(['status' => 'error', 'error_code' => 'ERR_COUNTRY_NOT_FOUND', 'message' => "등록되지 않은 국가명입니다: " . $country_name]);
                 return;
             }
         }
         if ($city_name) {
-            $city_idx = $this->City_model->get_city_name($city_name);
-            if (!$city_idx) {
+            $city_row = $this->City_model->get_city_name($city_name);
+            if (!empty($city_row) && isset($city_row['idx'])) {
+                $city_idx = $city_row['idx'];
+            } else {
                 echo json_encode(['status' => 'error', 'error_code' => 'ERR_CITY_NOT_FOUND', 'message' => "등록되지 않은 도시명입니다: " . $city_name]);
                 return;
             }
