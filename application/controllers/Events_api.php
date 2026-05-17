@@ -24,7 +24,7 @@ class Events_api extends CI_Controller {
         $data = json_decode($json_data, true);
 
         if (empty($data)) {
-            echo json_encode(['status' => 'error', 'message' => '입력된 데이터가 없습니다.']);
+            echo json_encode(['status' => 'error', 'error_code' => 'ERR_EMPTY_DATA', 'message' => '입력된 데이터가 없습니다.']);
             return;
         }
 
@@ -34,7 +34,7 @@ class Events_api extends CI_Controller {
             // 모델에서 행사명이 이미 존재하는지 확인 (존재하면 true 반환)
             $is_duplicate = $this->Schedule_model->check_event_exists($event_name);
             if ($is_duplicate) {
-                echo json_encode(['status' => 'duplicate', 'message' => '이미 존재하는 행사명입니다.']);
+                echo json_encode(['status' => 'duplicate', 'error_code' => 'ERR_DUPLICATE_NAME', 'message' => '이미 존재하는 행사명입니다.']);
                 return;
             }
         }
@@ -49,14 +49,14 @@ class Events_api extends CI_Controller {
         if ($country_name) {
             $country_idx = $this->Country_model->get_country_name($country_name);
             if (!$country_idx) {
-                echo json_encode(['status' => 'error', 'message' => "등록되지 않은 국가명입니다: " . $country_name]);
+                echo json_encode(['status' => 'error', 'error_code' => 'ERR_COUNTRY_NOT_FOUND', 'message' => "등록되지 않은 국가명입니다: " . $country_name]);
                 return;
             }
         }
         if ($city_name) {
             $city_idx = $this->City_model->get_city_name($city_name);
             if (!$city_idx) {
-                echo json_encode(['status' => 'error', 'message' => "등록되지 않은 도시명입니다: " . $city_name]);
+                echo json_encode(['status' => 'error', 'error_code' => 'ERR_CITY_NOT_FOUND', 'message' => "등록되지 않은 도시명입니다: " . $city_name]);
                 return;
             }
         }
@@ -99,6 +99,7 @@ class Events_api extends CI_Controller {
         } else {
             echo json_encode([
                 'status' => 'error',
+                'error_code' => 'ERR_DB_INSERT_FAIL',
                 'message' => '데이터베이스 삽입에 실패했습니다.'
             ]);
         }
