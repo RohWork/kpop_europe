@@ -67,6 +67,22 @@ class Space_model extends CI_Model {
         
         
     }
+
+        function get_space_xy($space_x, $space_y){
+        
+        $where = "";
+        
+
+        $sSql = "SELECT kp.*, ko.name as country_name, kc.name as city_name FROM kpop_space as kp "
+                . "left join kpop_country as ko on kp.country_idx = ko.idx "
+                ."left join kpop_city as kc on kp.city_idx = kc.idx "
+                . "where kp.state = 'Y' and kp.space_x= $space_x and kp.space_y = $space_x";
+        
+        $query = $this->db->query($sSql);
+        return $query->row_array();
+        
+        
+    }
     
     function modify_space($params, $idx){
         
