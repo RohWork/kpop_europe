@@ -9,6 +9,7 @@ class Events_api extends CI_Controller {
         $this->load->model('Schedule_model');
         $this->load->model('Country_model');
         $this->load->model('City_model');
+        $this->load->model('Space_model');
     }
 
     /**
@@ -65,6 +66,36 @@ class Events_api extends CI_Controller {
             }
         }
 
+        $space_x = isset($data['space_x']) ? $data['space_x'] : null;
+        $space_y = isset($data['space_y']) ? $data['space_y'] : null;
+        $space_idx = isset($data['space_idx']) ? (int)$data['space_idx'] : null;
+
+        if ($space_x && $space_y) {
+            // 좌표로 기존 공간 검색
+            $space_row = $this->Space_model->get_space_xy($space_x, $space_y);
+            
+            if (!empty($space_row) && isset($space_row['idx'])) {
+                $space_idx = $space_row['idx'];
+            } else {
+                // 존재하지 않으면 새로 인서트
+                $space_params = array(
+                    'country_idx'    => $country_idx,
+                    'city_idx'       => $city_idx,
+                    'space_name'     => isset($data['space']) ? $data['space'] : null,
+                    'space_location' => isset($data['addr']) ? $data['addr'] : null,
+                    'space_x'        => $space_x,
+                    'space_y'        => $space_y,
+                    'space_etc'      => null,
+                    'state'          => 'Y'
+                );
+                
+                $new_space_idx = $this->Space_model->insert_space($space_params);
+                if ($new_space_idx) {
+                    $space_idx = $new_space_idx;
+                }
+            }
+        }
+
         // DB에 입력할 배열 구성 (타입 변환 및 기본값 null 처리 포함)
         $insert_data = array(
             'name'             => isset($data['name']) ? $data['name'] : null,
@@ -73,7 +104,9 @@ class Events_api extends CI_Controller {
             'city_idx'         => $city_idx,
             'organization_idx' => isset($data['organization_idx']) ? (int)$data['organization_idx'] : null,
             'space'            => isset($data['space']) ? $data['space'] : null,
-            'space_idx'        => isset($data['space_idx']) ? (int)$data['space_idx'] : null,
+            'space_idx'        => $space_idx,
+            'space_x'          => $space_x,
+            'space_y'          => $space_y,
             'homepage'         => isset($data['homepage']) ? $data['homepage'] : null,
             'addr'             => isset($data['addr']) ? $data['addr'] : null,
             'face'             => isset($data['face']) ? $data['face'] : null,
