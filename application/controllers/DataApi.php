@@ -129,93 +129,7 @@ class DataApi extends CI_Controller {
     }
     
     /**
-     * 7. 일정 신규 등록
-     * URL: /DataApi/add_schedule
-     * Method: POST
-     */
-    public function add_schedule() {
-        // 1. 관련 모델 로드
-        $this->load->model('country_model');
-        $this->load->model('city_model');
-        $this->load->model('space_model');
-
-        // 2. 필수 입력값 수신
-        $name = $this->input->post('name');
-        $start_date = $this->input->post('start_date');
-        
-        // 검증 대상 명칭 수신
-        $country_name = $this->input->post('country_name');
-        $city_name = $this->input->post('city_name');
-        $space_name = $this->input->post('space_name');
-
-        if (empty($name) || empty($start_date) || empty($country_name) || empty($city_name) || empty($space_name)) {
-            echo json_encode([
-                "status" => "error", 
-                "message" => "행사명, 시작일시, 국가명, 도시명, 장소명은 필수 항목입니다."
-            ]);
-            return;
-        }
-
-        // 3. 국가 검증 (country_model)
-        $country_info = $this->country_model->get_country_name($country_name);
-        if (empty($country_info)) {
-            echo json_encode(["status" => "error", "message" => "존재하지 않는 국가명입니다."]);
-            return;
-        }
-        $country_idx = $country_info['idx'];
-
-        // 4. 도시 검증 (city_model)
-        $city_info = $this->city_model->get_city_name($city_name);
-        if (empty($city_info)) {
-            echo json_encode(["status" => "error", "message" => "존재하지 않는 도시명입니다."]);
-            return;
-        }
-        $city_idx = $city_info['idx'];
-
-        // 5. 장소 검증 (space_model)
-        $space_info = $this->space_model->get_space_name($space_name);
-        if (empty($space_info)) {
-            echo json_encode(["status" => "error", "message" => "존재하지 않는 장소명입니다."]);
-            return;
-        }
-        $space_idx = $space_info['idx'];
-
-        // 6. 파라미터 구성 (검증된 idx 사용)
-        $params = [
-            'name'             => $name,
-            'company'          => $this->input->post('company'),
-            'country_idx'      => $country_idx,
-            'city_idx'         => $city_idx,
-            'space_idx'        => $space_idx,
-            'organization_idx' => $this->input->post('organization_idx'),
-            'space'            => $space_name, // 문자열 장소명 저장
-            'homepage'         => $this->input->post('homepage'),
-            'addr'             => $this->input->post('addr'),
-            'remark'           => $this->input->post('remark'),
-            'start_date'       => $start_date,
-            'end_date'         => $this->input->post('end_date') ?: $start_date,
-            'face'             => $this->input->post('face'),
-            'insta'            => $this->input->post('insta'),
-            'yout'             => $this->input->post('yout'),
-            'type'             => $this->input->post('type') ?: 'party'
-        ];
-
-        // 7. 일정 등록 실행
-        $new_idx = $this->Schedule_model->insert_schedule($params);
-        
-        if ($new_idx) {
-            echo json_encode([
-                "status" => "success",
-                "message" => "일정이 성공적으로 등록되었습니다.",
-                "idx" => $new_idx
-            ]);
-        } else {
-            echo json_encode(["status" => "error", "message" => "등록 중 DB 오류가 발생했습니다."]);
-        }
-    }
-    
-    /**
-     * 8. 국가 추가 API (kpop_country 구조 맞춤)
+     * 7. 국가 추가 API (kpop_country 구조 맞춤)
      * URL: /DataApi/add_country
      */
     public function add_country() {
@@ -223,16 +137,15 @@ class DataApi extends CI_Controller {
         
         // 1. 필수값 체크
         $name = $this->input->post('name');
-        if (empty($name)) {
-            echo json_encode(["status" => "error", "message" => "국가명(name)은 필수입니다."]);
+    if (empty($name)) {
+            echo json_encode(["status" => "error", "code" => 410, "message" => "국가명(name)은 필수입니다."]);
             return;
-        }
+    }
 
-        // 2. 중복 체크
-        if ($this->country_model->get_country_name($name)) {
-            echo json_encode(["status" => "error", "message" => "이미 등록된 국가명입니다."]);
-            return;
-        }
+    if ($this->country_model->get_country_name($name)) {
+        echo json_encode(["status" => "error", "code" => 411, "message" => "이미 등록된 국가명입니다."]);
+        return;
+    }
 
         // 3. 파라미터 구성 (테이블 컬럼명에 매칭)
         $params = [
@@ -256,12 +169,12 @@ class DataApi extends CI_Controller {
                 "message" => "국가 정보가 성공적으로 등록되었습니다."
             ]);
         } else {
-            echo json_encode(["status" => "error", "message" => "데이터베이스 저장 중 오류가 발생했습니다."]);
+            echo json_encode(["status" => "error", "code" => 500, "message" => "서버 저장 오류"]);
         }
     }
     
     /**
-     * 9. 도시 추가 API (kpop_city 구조 맞춤)
+     * 8. 도시 추가 API (kpop_city 구조 맞춤)
      * URL: /DataApi/add_city
      */
     public function add_city() {
@@ -269,30 +182,38 @@ class DataApi extends CI_Controller {
         $this->load->model('city_model');
         $this->load->model('country_model');
         
-        // 1. 필수값 체크
+       // 1. 필수값 체크 [CODE 420]
         $name = $this->input->post('name');
         $country_idx = $this->input->post('country_idx');
 
         if (empty($name) || empty($country_idx)) {
             echo json_encode([
                 "status" => "error", 
+                "code"   => 420,
                 "message" => "도시명(name)과 소속 국가 번호(country_idx)는 필수입니다."
             ]);
             return;
         }
 
-        // 2. 상위 국가 존재 여부 확인 (데이터 무결성 검사)
-        // country_model에 해당 idx로 조회하는 함수가 있다고 가정 (없으면 기본 DB조회 사용)
+        // 2. 상위 국가 존재 여부 확인 [CODE 421]
         $country_exists = $this->db->where('idx', $country_idx)->get('kpop_country')->row();
         if (!$country_exists) {
-            echo json_encode(["status" => "error", "message" => "유효하지 않은 국가 번호입니다."]);
+            echo json_encode([
+                "status" => "error", 
+                "code"   => 421,
+                "message" => "유효하지 않은 국가 번호입니다."
+            ]);
             return;
         }
 
-        // 3. 동일 국가 내 도시명 중복 체크 (선택 사항)
+        // 3. 동일 국가 내 도시명 중복 체크 [CODE 422]
         $city_exists = $this->city_model->get_city_name($name);
         if ($city_exists && $city_exists['country_idx'] == $country_idx) {
-            echo json_encode(["status" => "error", "message" => "해당 국가에 이미 등록된 도시명입니다."]);
+            echo json_encode([
+                "status" => "error", 
+                "code"   => 422,
+                "message" => "해당 국가에 이미 등록된 도시명입니다."
+            ]);
             return;
         }
 
@@ -314,20 +235,24 @@ class DataApi extends CI_Controller {
 
         if ($new_idx) {
             echo json_encode([
-                "status" => "success", 
-                "idx" => $new_idx, 
+                "status"  => "success", 
+                "idx"     => $new_idx, 
                 "message" => "도시 정보가 성공적으로 등록되었습니다."
             ]);
         } else {
-            echo json_encode(["status" => "error", "message" => "데이터베이스 저장 중 오류가 발생했습니다."]);
+            echo json_encode([
+                "status"  => "error", 
+                "code"    => 500,
+                "message" => "데이터베이스 저장 중 오류가 발생했습니다."
+            ]);
         }
     }
     
     /**
-     * 10. 장소 추가 API (kpop_space 구조 맞춤)
+     * 9. 장소 추가 API (kpop_space 구조 맞춤)
      * URL: /DataApi/add_space
      */
-public function add_schedule() {
+    public function add_schedule() {
         $this->load->model('country_model');
         $this->load->model('city_model');
         $this->load->model('space_model');
