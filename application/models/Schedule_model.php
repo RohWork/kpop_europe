@@ -273,7 +273,7 @@ class Schedule_model extends CI_Model {
     
     public function insert_event_data($data) {
         // 실제 데이터베이스의 테이블명으로 변경해주세요
-        $table_name = 'events_table_name'; 
+        $table_name = 'kpop_info'; 
 
         // CodeIgniter의 Query Builder 클래스를 사용하여 데이터 삽입
         // $this->db->insert()는 내부적으로 escape 처리를 하므로 SQL Injection에 안전합니다.
@@ -293,7 +293,7 @@ class Schedule_model extends CI_Model {
      * @return bool 존재하면 true, 존재하지 않으면 false
      */
     public function check_event_exists($name) {
-        $table_name = 'events_table_name'; // 실제 테이블명으로 변경
+        $table_name = 'kpop_info'; // 실제 테이블명으로 변경
 
         $this->db->where('name', $name);
         $query = $this->db->get($table_name);
