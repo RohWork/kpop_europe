@@ -270,4 +270,38 @@ class Schedule_model extends CI_Model {
         return $this->db->affected_rows();
         
     }
+    
+    public function insert_event_data($data) {
+        // 실제 데이터베이스의 테이블명으로 변경해주세요
+        $table_name = 'events_table_name'; 
+
+        // CodeIgniter의 Query Builder 클래스를 사용하여 데이터 삽입
+        // $this->db->insert()는 내부적으로 escape 처리를 하므로 SQL Injection에 안전합니다.
+        $this->db->insert($table_name, $data);
+
+        // 정상적으로 삽입된 행이 있는지 확인
+        if ($this->db->affected_rows() > 0) {
+            return $this->db->insert_id(); // 새로 생성된 기본 키(idx) 반환
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 행사명(name)이 이미 존재하는지 확인하는 함수
+     * @param string $name 확인할 행사명
+     * @return bool 존재하면 true, 존재하지 않으면 false
+     */
+    public function check_event_exists($name) {
+        $table_name = 'events_table_name'; // 실제 테이블명으로 변경
+
+        $this->db->where('name', $name);
+        $query = $this->db->get($table_name);
+
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

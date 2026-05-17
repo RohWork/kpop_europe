@@ -5,8 +5,8 @@ class Events_api extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        // 사용하는 모델을 로드합니다 (실제 모델 파일명에 맞게 변경)
-        $this->load->model('Event_model');
+        // 사용하는 모델을 로드합니다
+        $this->load->model('Schedule_model');
         $this->load->model('Country_model');
         $this->load->model('City_model');
     }
@@ -28,6 +28,17 @@ class Events_api extends CI_Controller {
             return;
         }
 
+        // 행사명(name) 중복 체크
+        $event_name = isset($data['name']) ? $data['name'] : null;
+        if ($event_name) {
+            // 모델에서 행사명이 이미 존재하는지 확인 (존재하면 true 반환)
+            $is_duplicate = $this->Schedule_model->check_event_exists($event_name);
+            if ($is_duplicate) {
+                echo json_encode(['status' => 'duplicate', 'message' => '이미 존재하는 행사명입니다.']);
+                return;
+            }
+        }
+
         // 파이썬 크롤러에서 전달받은 국가명, 도시명을 이용하여 모델에서 idx 조회
         $country_name = isset($data['country_name']) ? $data['country_name'] : null;
         $city_name = isset($data['city_name']) ? $data['city_name'] : null;
@@ -37,9 +48,17 @@ class Events_api extends CI_Controller {
 
         if ($country_name) {
             $country_idx = $this->Country_model->get_country_name($country_name);
+            if (!$country_idx) {
+                echo json_encode(['status' => 'error', 'message' => "등록되지 않은 국가명입니다: " . $country_name]);
+                return;
+            }
         }
         if ($city_name) {
             $city_idx = $this->City_model->get_city_name($city_name);
+            if (!$city_idx) {
+                echo json_encode(['status' => 'error', 'message' => "등록되지 않은 도시명입니다: " . $city_name]);
+                return;
+            }
         }
 
         // DB에 입력할 배열 구성 (타입 변환 및 기본값 null 처리 포함)
@@ -69,7 +88,7 @@ class Events_api extends CI_Controller {
         );
 
         // 모델의 함수를 호출하여 DB에 데이터 삽입
-        $insert_id = $this->Event_model->insert_event_data($insert_data);
+        $insert_id = $this->Schedule_model->insert_event_data($insert_data);
 
         if ($insert_id) {
             echo json_encode([
