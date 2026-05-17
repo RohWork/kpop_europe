@@ -116,8 +116,8 @@ class Events_api extends CI_Controller {
             'yout'             => isset($data['yout']) ? $data['yout'] : null,
             'yout_foll'        => isset($data['yout_foll']) ? (int)$data['yout_foll'] : null,
             'remark'           => isset($data['remark']) ? $data['remark'] : null,
-            'start_date'       => isset($data['start_date']) ? $data['start_date'] : null,
-            'end_date'         => isset($data['end_date']) ? $data['end_date'] : null,
+            'start_date'       => !empty($data['start_date']) ? $data['start_date'] : null,
+            'end_date'         => !empty($data['end_date']) ? $data['end_date'] : null,
             'reg_date'         => date("Y-m-d H:i:s"), // 현재 시간
             'udt_date'         => date("Y-m-d H:i:s"), // 현재 시간
             'type'             => isset($data['type']) ? $data['type'] : null,
