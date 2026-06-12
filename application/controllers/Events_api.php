@@ -42,7 +42,7 @@ class Events_api extends CI_Controller {
                 $country_idx = $country_row['idx'];
             } else {
                 $country_params = array(
-                    'country' => $country_name,
+                    'name' => $country_name,
                     'space_x' => $country_x,
                     'space_y' => $country_y,
                     'regi_date' => date('Y-m-d H:i:s'),
