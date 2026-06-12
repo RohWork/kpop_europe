@@ -11,12 +11,14 @@ class Country_model extends CI_Model {
         
         $params = array();
 
-        $params['name'] = $country['country'];
-        $params['writer'] = $this->session->userdata('name');
-        $params['ord'] = $country['order'];
+
         
         if(!empty($country['space_x'])){
             $params = $country;
+        }else{
+            $params['name'] = $country['country'];
+            $params['writer'] = $this->session->userdata('name');
+            $params['ord'] = $country['order'];
         }
         
         $params['regi_date'] = date('Y-m-d h:i:s');
