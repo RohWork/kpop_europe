@@ -10,7 +10,9 @@ class Country_model extends CI_Model {
     function insert_country($country){
         
         $params = array();
-        
+        if(empty($country['order'])){
+            $country['order'] = 0 ;
+        }
         $params['name'] = $country['country'];
         $params['writer'] = $this->session->userdata('name');
         $params['ord'] = $country['order'];
