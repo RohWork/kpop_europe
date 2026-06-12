@@ -305,13 +305,19 @@ class DataApi extends CI_Controller {
             'type'             => $this->input->post('type') ?: 'party',
             'reg_date'         => date('Y-m-d H:i:s')
         ];
-
-        // [CODE 500] 저장 실행
-        $new_idx = $this->Schedule_model->insert_schedule($params);
-        if ($new_idx) {
-            echo json_encode(["status" => "success", "idx" => $new_idx, "message" => "등록 성공"]);
-        } else {
-            echo json_encode(["status" => "error", "code" => 500, "message" => "서버 저장 오류가 발생했습니다."]);
+        
+        $check_exist = $this->Schedule_model->check_event_exists($name);
+        if(!$check_exist){
+            echo json_encode(["status" => "error", "code" => 501, "message" => "중복된 일정입니다."]);
+        }else{
+        
+            // [CODE 500] 저장 실행
+            $new_idx = $this->Schedule_model->insert_schedule($params);
+            if ($new_idx) {
+                echo json_encode(["status" => "success", "idx" => $new_idx, "message" => "등록 성공"]);
+            } else {
+                echo json_encode(["status" => "error", "code" => 500, "message" => "서버 저장 오류가 발생했습니다."]);
+            }
         }
     }
 }
