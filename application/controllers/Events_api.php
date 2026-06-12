@@ -13,6 +13,82 @@ class Events_api extends CI_Controller {
     }
 
     /**
+     * Python 크롤러에서 호출할 장소 동기화 엔드포인트
+     */
+    public function sync_location() {
+        header("Content-Type: application/json; charset=UTF-8");
+        $json_data = file_get_contents("php://input");
+        $data = json_decode($json_data, true);
+
+        if (empty($data)) {
+            echo json_encode(['status' => 'error', 'error_code' => 'ERR_EMPTY_DATA', 'message' => '입력된 데이터가 없습니다.']);
+            return;
+        }
+
+        $country_name = isset($data['country_name']) ? $data['country_name'] : null;
+        $country_x = isset($data['country_lat']) ? $data['country_lat'] : null;
+        $country_y = isset($data['country_lng']) ? $data['country_lng'] : null;
+
+        $city_name = isset($data['city_name']) ? $data['city_name'] : null;
+        $city_x = isset($data['city_lat']) ? $data['city_lat'] : null;
+        $city_y = isset($data['city_lng']) ? $data['city_lng'] : null;
+
+        $country_idx = null;
+        $city_idx = null;
+
+        if ($country_name) {
+            $country_row = $this->Country_model->get_country_name($country_name);
+            if (!empty($country_row) && isset($country_row['idx'])) {
+                $country_idx = $country_row['idx'];
+            } else {
+                $country_params = array(
+                    'name' => $country_name,
+                    'space_x' => $country_x,
+                    'space_y' => $country_y,
+                    'regi_date' => date('Y-m-d H:i:s'),
+                    'modi_date' => date('Y-m-d H:i:s'),
+                    'state' => '1',
+                    'writer' => 'api_system'
+                );
+                $country_idx = $this->Country_model->insert_country($country_params);
+                if (!$country_idx) {
+                    echo json_encode(['status' => 'error', 'error_code' => 'ERR_COUNTRY_INSERT_FAIL', 'message' => "국가 자동 등록에 실패했습니다: " . $country_name]);
+                    return;
+                }
+            }
+        }
+
+        if ($city_name) {
+            $city_row = $this->City_model->get_city_name($city_name);
+            if (!empty($city_row) && isset($city_row['idx'])) {
+                $city_idx = $city_row['idx'];
+            } else {
+                $city_params = array(
+                    'country_idx' => $country_idx,
+                    'name' => $city_name,
+                    'space_x' => $city_x,
+                    'space_y' => $city_y,
+                    'regi_date' => date('Y-m-d H:i:s'),
+                    'modi_date' => date('Y-m-d H:i:s'),
+                    'state' => '1',
+                    'writer' => 'api_system'
+                );
+                $city_idx = $this->City_model->insert_city($city_params);
+                if (!$city_idx) {
+                    echo json_encode(['status' => 'error', 'error_code' => 'ERR_CITY_INSERT_FAIL', 'message' => "도시 자동 등록에 실패했습니다: " . $city_name]);
+                    return;
+                }
+            }
+        }
+
+        echo json_encode([
+            'status' => 'success',
+            'country_idx' => $country_idx,
+            'city_idx' => $city_idx
+        ]);
+    }
+
+    /**
      * Python 크롤러에서 호출할 엔드포인트 함수
      * 주소 예시: http://도메인/index.php/Events_api/insert_event
      */
@@ -40,31 +116,9 @@ class Events_api extends CI_Controller {
             }
         }
 
-        // 파이썬 크롤러에서 전달받은 국가명, 도시명을 이용하여 모델에서 idx 조회
-        $country_name = isset($data['country_name']) ? $data['country_name'] : null;
-        $city_name = isset($data['city_name']) ? $data['city_name'] : null;
-
-        $country_idx = null;
-        $city_idx = null;
-
-        if ($country_name) {
-            $country_row = $this->Country_model->get_country_name($country_name);
-            if (!empty($country_row) && isset($country_row['idx'])) {
-                $country_idx = $country_row['idx'];
-            } else {
-                echo json_encode(['status' => 'error', 'error_code' => 'ERR_COUNTRY_NOT_FOUND', 'message' => "등록되지 않은 국가명입니다: " . $country_name]);
-                return;
-            }
-        }
-        if ($city_name) {
-            $city_row = $this->City_model->get_city_name($city_name);
-            if (!empty($city_row) && isset($city_row['idx'])) {
-                $city_idx = $city_row['idx'];
-            } else {
-                echo json_encode(['status' => 'error', 'error_code' => 'ERR_CITY_NOT_FOUND', 'message' => "등록되지 않은 도시명입니다: " . $city_name]);
-                return;
-            }
-        }
+        // 파이썬 크롤러에서 전달받은 국가/도시 idx
+        $country_idx = isset($data['country_idx']) ? (int)$data['country_idx'] : null;
+        $city_idx = isset($data['city_idx']) ? (int)$data['city_idx'] : null;
 
         $space_x = isset($data['space_x']) ? $data['space_x'] : null;
         $space_y = isset($data['space_y']) ? $data['space_y'] : null;
